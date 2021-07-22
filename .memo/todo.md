@@ -1,6 +1,6 @@
 ## 環境構築
 
-- [ ] ディレクトリ作成
+- [x] ディレクトリ作成
 - [ ] prettier&eslint設定
 - [ ] jest設定
 - [ ] styled-component設定

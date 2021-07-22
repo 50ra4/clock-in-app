@@ -1,0 +1,30 @@
+{
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    // @typescript-eslint/eslint-plugin のおすすめルールを適用する
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    // "prettier"は最後に記載する
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": { "node": true, "jest": true, "browser": true, "commonjs": true },
+  "rules": {
+    "complexity": ["error", 4],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/semi": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    // turn on errors for missing imports
+    "import/no-unresolved": "off",
+    "no-var": "error",
+    "no-console": "warn"
+  }
+}

@@ -1,26 +1,26 @@
 ## 環境構築
 
 - [x] ディレクトリ作成
-- [ ] prettier&eslint設定
-- [ ] jest設定
-- [ ] styled-component設定
-- [ ] storybook設定
-- [ ] firebase設定
-- [ ] CI設定
-- [ ] CD設定
+- [x] prettier&eslint 設定
+- [ ] jest 設定
+- [ ] styled-component 設定
+- [ ] storybook 設定
+- [ ] firebase 設定
+- [ ] CI 設定
+- [ ] CD 設定
 
-## redux設定
+## redux 設定
 
 - [ ] package install
-- [ ] middleware設定
-- [ ] modules作成
+- [ ] middleware 設定
+- [ ] modules 作成
 
 ## service&thunk-action
 
-- [ ] service作成
-- [ ] thunk-action作成
+- [ ] service 作成
+- [ ] thunk-action 作成
 
-## コンポーネント&画面mock作成
+## コンポーネント&画面 mock 作成
 
 ### コンポーネント（feedback）
 
@@ -64,7 +64,6 @@
 - [ ] RegistrationPage
 - [ ] TimecardPage
 
-
 ### その他
 
 - [ ] ErrorBoundary
@@ -77,6 +76,6 @@
 
 - [ ] TBD
 
-## Firestoreバリデーション
+## Firestore バリデーション
 
 - [ ] TBD

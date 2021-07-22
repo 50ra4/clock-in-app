@@ -2,8 +2,8 @@
 
 - [x] ディレクトリ作成
 - [x] prettier&eslint 設定
-- [ ] jest 設定
-- [ ] styled-component 設定
+- [ ] jest 設定 （ディレクトリを分けるのが難しく一旦断念）
+- [x] styled-component 設定
 - [ ] storybook 設定
 - [ ] firebase 設定
 - [ ] CI 設定

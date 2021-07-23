@@ -4,8 +4,10 @@
 - [x] prettier&eslint 設定
 - [ ] jest 設定 （ディレクトリを分けるのが難しく一旦断念）
 - [x] styled-component 設定
-- [ ] storybook 設定
+- [x] storybook 設定
 - [ ] firebase 設定
+- [ ] typedoc 設定
+- [ ] storybook の baseURL の指定ミスったので修正する
 - [ ] CI 設定
 - [ ] CD 設定
 

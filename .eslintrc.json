@@ -26,5 +26,13 @@
     "import/no-unresolved": "off",
     "no-var": "error",
     "no-console": "warn"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ]
 }

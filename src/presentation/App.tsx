@@ -1,23 +1,29 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import styled, { keyframes, ThemeProvider } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 import { darkTheme } from 'styles/theme';
+import { configureStore } from 'store/root';
+
+const store = configureStore({});
 
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={darkTheme}>
-        <AppHeader>
-          <AppLogo src={logo} alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-        </AppHeader>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={darkTheme}>
+          <AppHeader>
+            <AppLogo src={logo} alt="logo" />
+            <p>
+              Edit <code>src/App.tsx</code> and save to reload.
+            </p>
+            <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+              Learn React
+            </a>
+          </AppHeader>
+        </ThemeProvider>
+      </Provider>
     </div>
   );
 }

@@ -24,9 +24,9 @@
 
 ## redux 設定
 
-- [ ] package install
-- [ ] middleware 設定
-- [ ] modules 作成
+- [x] package install
+- [x] middleware 設定
+- [x] modules 作成
 
 ## service&thunk-action
 

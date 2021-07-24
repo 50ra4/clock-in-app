@@ -65,6 +65,8 @@
     "eslint": "7.31.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
+    "firebase": "8.8.0",
+    "firebase-tools": "9.16.0",
     "husky": "7.0.1",
     "lint-staged": "11.0.1",
     "prettier": "2.3.2",

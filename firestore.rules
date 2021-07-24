@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // "/{id}"がないとエラーになる
+    match /health/{id} {
+      allow get: if true;
+      allow list, write: if false;
+    }
+  }
+}

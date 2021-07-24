@@ -23,7 +23,9 @@
     "lint:stylelint": "stylelint 'src/**/*.{ts,tsx}'",
     "lint": "npm run lint:prettier && npm run lint:eslint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "rimraf dist/storybook && build-storybook -s public -o dist/storybook"
+    "touch-nojeykll": "nodetouch docs/.nojekyll",
+    "build-storybook": "rimraf dist/storybook && build-storybook -s public -o dist/storybook",
+    "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json"
   },
   "lint-staged": {
     "*.{js,json}": "prettier --write",
@@ -77,7 +79,9 @@
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
+    "touch": "3.1.0",
     "ts-jest": "26.5.6",
-    "ts-node": "10.1.0"
+    "ts-node": "10.1.0",
+    "typedoc": "0.21.4"
   }
 }

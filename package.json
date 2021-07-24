@@ -25,7 +25,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "touch-nojeykll": "nodetouch docs/.nojekyll",
     "build-storybook": "rimraf docs/storybook && build-storybook -s public -o docs/storybook",
-    "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json"
+    "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json",
+    "check-type": "tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,json}": "prettier --write",

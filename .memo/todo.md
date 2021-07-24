@@ -10,7 +10,7 @@
 - [x] storybook の baseURL の指定ミスったので修正する
 - [x] CI 設定
 - [x] CD 設定
-- [ ] Test 修正（タイムゾーン問題）
+- [x] Test 修正（タイムゾーン問題）
 
 ## redux 設定
 

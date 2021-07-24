@@ -1,6 +1,6 @@
 import { FETCH_STATUS_ENUM, LOGIN_STATUS_ENUM } from 'constants/enum';
 
-type EnumValue<O extends { [K: string]: string }> = O[keyof O];
+export type EnumValue<O extends { [K: string]: string }> = O[keyof O];
 
 type FetchStatus = EnumValue<typeof FETCH_STATUS_ENUM>;
 type LoginStatus = EnumValue<typeof LOGIN_STATUS_ENUM>;

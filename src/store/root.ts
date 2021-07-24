@@ -3,6 +3,7 @@ import { combineReducers, compose, applyMiddleware, StoreCreator, createStore } 
 import thunk from 'redux-thunk';
 import { authenticationReducer } from './authentication';
 import { myProfileReducer } from './myProfile';
+import { ROOT_ACTIONS } from './rootActions';
 
 export const reducers = combineReducers({
   authentication: authenticationReducer,
@@ -11,9 +12,9 @@ export const reducers = combineReducers({
 export type AppState = ReturnType<typeof reducers>;
 
 const rootReducer = (state: any, action: any) => {
-  // if (action.type === rootActions.clearAllState.type) {
-  //   state = undefined;
-  // }
+  if (action.type === ROOT_ACTIONS.initializeState) {
+    state = undefined;
+  }
   return reducers(state, action);
 };
 

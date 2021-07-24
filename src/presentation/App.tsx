@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes, ThemeProvider } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
-import { darkTheme } from './styles/theme';
+import { darkTheme } from 'styles/theme';
 
 function App() {
   return (

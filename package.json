@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "8.8.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.3",
@@ -21,7 +22,8 @@
     "lint:stylelint": "stylelint 'src/**/*.{ts,tsx}'",
     "lint": "npm run lint:prettier && npm run lint:eslint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "rimraf dist/storybook && build-storybook -s public -o dist/storybook"
+    "build-storybook": "rimraf dist/storybook && build-storybook -s public -o dist/storybook",
+    "test:firestore": "ts-node --project tsconfig.tools.json tools/firebase-test.script.ts"
   },
   "lint-staged": {
     "*.{js,json}": "prettier --write",
@@ -62,10 +64,10 @@
     "@types/styled-components": "5.1.11",
     "@typescript-eslint/eslint-plugin": "4.28.4",
     "@typescript-eslint/parser": "4.28.4",
+    "dotenv": "10.0.0",
     "eslint": "7.31.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-jsx-a11y": "6.4.1",
-    "firebase": "8.8.0",
     "firebase-tools": "9.16.0",
     "husky": "7.0.1",
     "lint-staged": "11.0.1",
@@ -74,6 +76,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-styled-components": "0.1.1",
-    "stylelint-processor-styled-components": "1.10.0"
+    "stylelint-processor-styled-components": "1.10.0",
+    "ts-node": "10.1.0"
   }
 }

@@ -13,7 +13,8 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": ["./tsconfig.json", "./tsconfig.tools.json"]
   },
   "env": { "node": true, "jest": true, "browser": true, "commonjs": true },
   "rules": {

@@ -12,6 +12,13 @@
 - [x] CD 設定
 - [x] Test 修正（タイムゾーン問題）
 
+## 環境構築の追加修正
+
+- [ ] storybook の baseURL の指定ミスったので修正する
+- [ ] readme の修正
+- [ ] github-pages の root に index.html を置く
+- [ ] package.json の順番並び替え
+
 ## redux 設定
 
 - [ ] package install

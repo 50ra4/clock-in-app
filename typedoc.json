@@ -1,0 +1,12 @@
+{
+  "entryPoints": ["src"],
+  "exclude": [
+    "src/*.{ts,tsx}",
+    "**/+(presentation|store)/**/*",
+    "**/*+(.spec|.test|.stories).{ts,tsx}",
+    "**/__snapshots__/**/*",
+    "src/utils/storybookUtils.tsx"
+  ],
+  "name": "clock-in-app API document",
+  "out": "docs/typedoc"
+}

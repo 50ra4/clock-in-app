@@ -13,43 +13,6 @@
     "typescript": "4.3.5",
     "web-vitals": "1.1.2"
   },
-  "scripts": {
-    "prepare": "husky install",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint:prettier": "prettier --write '{src,test,tools}/**/*.{ts,tsx}'",
-    "lint:eslint": "eslint --fix '{src,test,tools}/**/*.{ts,tsx}'",
-    "lint:stylelint": "stylelint 'src/**/*.{ts,tsx}'",
-    "lint": "npm run lint:prettier && npm run lint:eslint",
-    "storybook": "start-storybook -p 6006 -s public",
-    "touch-nojeykll": "nodetouch docs/.nojekyll",
-    "build-storybook": "rimraf docs/storybook && build-storybook -s public -o docs/storybook",
-    "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json",
-    "build-docs": "npm run build-storybook && npm run build-typedoc && npm run touch-nojeykll",
-    "check-type": "tsc --noEmit"
-  },
-  "lint-staged": {
-    "*.{js,json}": "prettier --write",
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "stylelint",
-      "eslint --cache --fix"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@storybook/addon-a11y": "6.3.5",
     "@storybook/addon-actions": "6.3.5",
@@ -87,5 +50,42 @@
     "ts-jest": "26.5.6",
     "ts-node": "10.1.0",
     "typedoc": "0.21.4"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint:prettier": "prettier --write '{src,test,tools}/**/*.{ts,tsx}'",
+    "lint:eslint": "eslint --fix '{src,test,tools}/**/*.{ts,tsx}'",
+    "lint:stylelint": "stylelint 'src/**/*.{ts,tsx}'",
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "storybook": "start-storybook -p 6006 -s public",
+    "touch-nojeykll": "nodetouch docs/.nojekyll",
+    "build-storybook": "rimraf docs/storybook && build-storybook -s public -o docs/storybook",
+    "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json",
+    "build-docs": "npm run build-storybook && npm run build-typedoc && npm run touch-nojeykll",
+    "check-type": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.{js,json}": "prettier --write",
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "stylelint",
+      "eslint --cache --fix"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

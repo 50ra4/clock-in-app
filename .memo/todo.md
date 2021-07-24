@@ -12,6 +12,16 @@
 - [x] CD 設定
 - [x] Test 修正（タイムゾーン問題）
 
+## 環境構築の追加修正
+
+- [x] storybook の baseURL の指定ミスったので修正する
+- [x] readme の修正
+- [x] github-pages の root に index.html を置く
+- [x] package.json の順番並び替え
+- [ ] typedoc の出力対象から tsx を除外（hooks の場合もあるので、一旦なしで）
+- [x] style のディレクトリを直下に移動
+- [x] theme の型定義を const に変更
+
 ## redux 設定
 
 - [ ] package install

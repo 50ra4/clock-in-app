@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { lightTheme } from '../src/presentation/styles/theme';
+import { lightTheme } from '../src/styles/theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

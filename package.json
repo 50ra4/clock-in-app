@@ -26,6 +26,7 @@
     "touch-nojeykll": "nodetouch docs/.nojekyll",
     "build-storybook": "rimraf docs/storybook && build-storybook -s public -o docs/storybook",
     "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json",
+    "build-docs": "npm run build-storybook && npm run build-typedoc && npm run touch-nojeykll",
     "check-type": "tsc --noEmit"
   },
   "lint-staged": {

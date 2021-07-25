@@ -1,12 +1,57 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React, { useState } from 'react';
+import { Provider, useDispatch } from 'react-redux';
 import styled, { keyframes, ThemeProvider } from 'styled-components';
 import logo from './logo.svg';
 import './App.css';
 import { darkTheme } from 'styles/theme';
 import { configureStore } from 'store/root';
+import { TextInput } from './components/inputs/TextInput/TextInput';
+import { PasswordInput } from './components/inputs/PasswordInput/PasswordInput';
+import { signInUser, signUpUser } from 'thunks/authentication';
+import { Button } from './components/inputs/Button/Button';
 
 const store = configureStore({});
+
+const useFormInput = () => {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signUp = () => {
+    dispatch(signUpUser(email, password));
+  };
+
+  const signIn = () => {
+    dispatch(signInUser(email, password));
+  };
+
+  return {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    signUp,
+    signIn,
+  };
+};
+
+const TestForm = () => {
+  const { email, setEmail, password, setPassword, signIn } = useFormInput();
+
+  return (
+    <div>
+      <label htmlFor="email">
+        email
+        <TextInput id="email" type="email" value={email} onChange={(e) => setEmail(e.currentTarget.value ?? '')} />
+      </label>
+      <label htmlFor="password">
+        password
+        <PasswordInput id="password" value={password} onChange={(e) => setPassword(e.currentTarget.value ?? '')} />
+      </label>
+      <Button onClick={() => signIn()}>Try</Button>
+    </div>
+  );
+};
 
 function App() {
   return (
@@ -21,6 +66,7 @@ function App() {
             <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
               Learn React
             </a>
+            <TestForm />
           </AppHeader>
         </ThemeProvider>
       </Provider>

@@ -5,7 +5,7 @@ import { AppState } from 'store/root';
 import { AuthenticationActions, authenticationActions } from 'store/authentication';
 import { initializeState, RootActions } from 'store/rootActions';
 
-export const signIn =
+export const signInUser =
   (email: string, password: string): ThunkAction<void, AppState, undefined, AuthenticationActions> =>
   async (dispatch: Dispatch<AuthenticationActions>) => {
     dispatch(authenticationActions.loggingIn());
@@ -19,7 +19,7 @@ export const signIn =
       });
   };
 
-export const signUp =
+export const signUpUser =
   (email: string, password: string): ThunkAction<void, AppState, undefined, AuthenticationActions> =>
   async (dispatch: Dispatch<AuthenticationActions>) => {
     dispatch(authenticationActions.loggingIn());
@@ -33,7 +33,7 @@ export const signUp =
       });
   };
 
-export const signOut =
+export const signOutUser =
   (): ThunkAction<void, AppState, undefined, RootActions> => async (dispatch: Dispatch<RootActions>) => {
     await authenticationService.signOut();
     dispatch(initializeState());

@@ -57,4 +57,6 @@ const { actions: authenticationActions, reducer: authenticationReducer } = creat
   },
 });
 
+export type AuthenticationActions = ReturnType<typeof authenticationActions[keyof typeof authenticationActions]>;
+
 export { authenticationActions, authenticationReducer };

@@ -1,0 +1,521 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AppCheck | clock-in-app API document</title>
+	<meta name="description" content="Documentation for clock-in-app API document">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">clock-in-app API document</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">clock-in-app API document</a>
+				</li>
+				<li>
+					<a href="../modules/services_firebase_import.html">services/firebase.import</a>
+				</li>
+				<li>
+					<a href="../modules/services_firebase_import.default.html">default</a>
+				</li>
+				<li>
+					<a href="../modules/services_firebase_import.default.appCheck.html">appCheck</a>
+				</li>
+				<li>
+					<a href="services_firebase_import.default.appCheck.AppCheck.html">AppCheck</a>
+				</li>
+			</ul>
+			<h1>Interface AppCheck</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The Firebase AppCheck service interface.</p>
+					</div>
+					<p>Do not call this constructor directly. Instead, use
+					{@link firebase.appCheck <code>firebase.appCheck()</code>}.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AppCheck</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="services_firebase_import.default.appCheck.AppCheck.html#activate" class="tsd-kind-icon">activate</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="services_firebase_import.default.appCheck.AppCheck.html#getToken" class="tsd-kind-icon">get<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="services_firebase_import.default.appCheck.AppCheck.html#onTokenChanged" class="tsd-kind-icon">on<wbr>Token<wbr>Changed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="services_firebase_import.default.appCheck.AppCheck.html#setTokenAutoRefreshEnabled" class="tsd-kind-icon">set<wbr>Token<wbr>Auto<wbr>Refresh<wbr>Enabled</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="activate" class="tsd-anchor"></a>
+					<h3>activate</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">activate<span class="tsd-signature-symbol">(</span>siteKeyOrProvider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="services_firebase_import.default.appCheck.AppCheckProvider.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckProvider</a>, isTokenAutoRefreshEnabled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:1561</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Activate AppCheck</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>siteKeyOrProvider: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="services_firebase_import.default.appCheck.AppCheckProvider.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckProvider</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>reCAPTCHA v3 site key (public key) or
+										custom token provider.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isTokenAutoRefreshEnabled: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, the SDK automatically
+											refreshes App Check tokens as needed. If undefined, defaults to the
+											value of <code>app.automaticDataCollectionEnabled</code>, which defaults to
+										false and can be set in the app config.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="getToken" class="tsd-anchor"></a>
+					<h3>get<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Token<span class="tsd-signature-symbol">(</span>forceRefresh<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:1581</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the current App Check token. Attaches to the most recent
+										in-flight request if one is present. Returns null if no token
+									is present and no token requests are in-flight.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> forceRefresh: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, will always try to fetch a fresh token.
+										If false, will use a cached token if found in storage.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="onTokenChanged" class="tsd-anchor"></a>
+					<h3>on<wbr>Token<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Token<wbr>Changed<span class="tsd-signature-symbol">(</span>observer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>complete<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Unsubscribe</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Token<wbr>Changed<span class="tsd-signature-symbol">(</span>onNext<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>tokenResult<span class="tsd-signature-symbol">: </span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, onError<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, onCompletion<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Unsubscribe</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:1600</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener to changes in the token state. There can be more
+										than one listener registered at the same time for one or more
+										App Check instances. The listeners call back on the UI thread whenever
+									the current token associated with this App Check instance changes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>observer: <span class="tsd-signature-symbol">{ </span>complete<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>next<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object with <code>next</code>, <code>error</code>, and <code>complete</code>
+											properties. <code>next</code> is called with an
+											{@link firebase.appCheck.AppCheckTokenResult <code>AppCheckTokenResult</code>}
+											whenever the token changes. <code>error</code> is optional and is called if an
+											error is thrown by the listener (the <code>next</code> function). <code>complete</code>
+										is unused, as the token stream is unending.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>complete<span class="tsd-signature-symbol">: </span>function</h5>
+											<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon">complete<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<aside class="tsd-sources">
+														<ul>
+															<li>Defined in node_modules/firebase/index.d.ts:1603</li>
+														</ul>
+													</aside>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>error<span class="tsd-signature-symbol">: </span>function</h5>
+											<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<aside class="tsd-sources">
+														<ul>
+															<li>Defined in node_modules/firebase/index.d.ts:1602</li>
+														</ul>
+													</aside>
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>error: <span class="tsd-signature-type">Error</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+										<li class="tsd-parameter">
+											<h5>next<span class="tsd-signature-symbol">: </span>function</h5>
+											<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span>tokenResult<span class="tsd-signature-symbol">: </span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<aside class="tsd-sources">
+														<ul>
+															<li>Defined in node_modules/firebase/index.d.ts:1601</li>
+														</ul>
+													</aside>
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>tokenResult: <a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Unsubscribe</span></h4>
+							<p>A function that unsubscribes this listener.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:1619</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Registers a listener to changes in the token state. There can be more
+										than one listener registered at the same time for one or more
+										App Check instances. The listeners call back on the UI thread whenever
+									the current token associated with this App Check instance changes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>onNext: <span class="tsd-signature-symbol">(</span>tokenResult<span class="tsd-signature-symbol">: </span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>When the token changes, this function is called with aa
+										{@link firebase.appCheck.AppCheckTokenResult <code>AppCheckTokenResult</code>}.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>tokenResult<span class="tsd-signature-symbol">: </span><a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>tokenResult: <a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-signature-type" data-tsd-kind="Interface">AppCheckTokenResult</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> onError: <span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional. Called if there is an error thrown by the
+										listener (the <code>onNext</code> function).</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>error: <span class="tsd-signature-type">Error</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> onCompletion: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Currently unused, as the token stream is unending.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Unsubscribe</span></h4>
+							<p>A function that unsubscribes this listener.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="setTokenAutoRefreshEnabled" class="tsd-anchor"></a>
+					<h3>set<wbr>Token<wbr>Auto<wbr>Refresh<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Token<wbr>Auto<wbr>Refresh<wbr>Enabled<span class="tsd-signature-symbol">(</span>isTokenAutoRefreshEnabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:1572</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>isTokenAutoRefreshEnabled: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, the SDK automatically
+											refreshes App Check tokens as needed. This overrides any value set
+										during <code>activate()</code>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/services_firebase_import.html">services/firebase.import</a>
+						<ul>
+							<li class="current tsd-kind-namespace tsd-parent-kind-module tsd-is-external">
+								<a href="../modules/services_firebase_import.default.html">default</a>
+								<ul>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.User.html">User</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.analytics.html">analytics</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.app.html">app</a>
+									</li>
+									<li class="current tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.appCheck.html">app<wbr>Check</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.auth.html">auth</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.database.html">database</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.firestore.html">firestore</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.functions.html">functions</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.installations.html">installations</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.messaging.html">messaging</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.performance.html">performance</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.remoteConfig.html">remote<wbr>Config</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/services_firebase_import.default.storage.html">storage</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="services_firebase_import.default.appCheck.AppCheck.html" class="tsd-kind-icon">App<wbr>Check</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="services_firebase_import.default.appCheck.AppCheck.html#activate" class="tsd-kind-icon">activate</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="services_firebase_import.default.appCheck.AppCheck.html#getToken" class="tsd-kind-icon">get<wbr>Token</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="services_firebase_import.default.appCheck.AppCheck.html#onTokenChanged" class="tsd-kind-icon">on<wbr>Token<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="services_firebase_import.default.appCheck.AppCheck.html#setTokenAutoRefreshEnabled" class="tsd-kind-icon">set<wbr>Token<wbr>Auto<wbr>Refresh<wbr>Enabled</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="services_firebase_import.default.appCheck.AppCheckProvider.html" class="tsd-kind-icon">App<wbr>Check<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="services_firebase_import.default.appCheck.AppCheckToken.html" class="tsd-kind-icon">App<wbr>Check<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="services_firebase_import.default.appCheck.AppCheckTokenResult.html" class="tsd-kind-icon">App<wbr>Check<wbr>Token<wbr>Result</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

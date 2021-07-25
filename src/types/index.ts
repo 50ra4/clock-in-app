@@ -12,13 +12,16 @@ export type SingleEntityState<T> = {
   updatedAt?: string;
 };
 
-export type Profile = {
+export type User = {
+  firstName: string;
+  lastName: string;
+};
+
+export type Profile = User & {
   uid?: string;
   email: string | null;
   photoURL: string | null;
   displayName: string | null;
-  firstName: string;
-  lastName: string;
 };
 
 export type Authentication = {

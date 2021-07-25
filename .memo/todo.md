@@ -30,10 +30,13 @@
 
 ## service&thunk-action
 
-- [ ] service 作成
-- [ ] thunk-action 作成
+- [x] service 作成
+- [x] thunk-action 作成
+- [ ] （上記ではサンプルしか作成していない）他の service と thunk も作成する
 
 ## コンポーネント&画面 mock 作成
+
+- [ ] ResetCSS の作成
 
 ### コンポーネント（feedback）
 

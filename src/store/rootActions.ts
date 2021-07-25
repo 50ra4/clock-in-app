@@ -7,3 +7,5 @@ export const ROOT_ACTIONS = {
 export const initializeState = (): Action<typeof ROOT_ACTIONS.initializeState> => ({
   type: ROOT_ACTIONS.initializeState,
 });
+
+export type RootActions = ReturnType<typeof initializeState>;

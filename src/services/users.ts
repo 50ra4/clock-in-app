@@ -22,3 +22,12 @@ export const updateUser = async (uid: string, { firstName, lastName }: User) => 
     updatedAt: timestamp,
   });
 };
+
+export const readUserByUid = async (uid: string): Promise<User> => {
+  const documentRef = firestore.collection(USER_DOCUMENT_PATH).doc(uid);
+  const snapshot = await documentRef.get();
+  return {
+    firstName: snapshot.get('firstName') ?? '',
+    lastName: snapshot.get('lastName') ?? '',
+  };
+};

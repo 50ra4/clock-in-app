@@ -53,3 +53,4 @@ const { actions: myProfileActions, reducer: myProfileReducer } = createSlice({
 });
 
 export { myProfileActions, myProfileReducer };
+export type MyProfileActions = ReturnType<typeof myProfileActions[keyof typeof myProfileActions]>;

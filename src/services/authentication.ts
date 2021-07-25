@@ -1,7 +1,7 @@
 import { fireAuthentication } from './firebase';
 
 export const signIn = async (email: string, password: string) => {
-  const result = await fireAuthentication.setPersistence('SESSION').catch((err) => new Error(err.message));
+  const result = await fireAuthentication.setPersistence('session').catch((err) => new Error(err.message));
   if (result instanceof Error) {
     throw result;
   }

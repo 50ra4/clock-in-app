@@ -1,13 +1,12 @@
 import * as authenticationService from 'services/authentication';
 import { ThunkAction } from 'redux-thunk';
-import { Dispatch } from '@reduxjs/toolkit';
 import { AppState } from 'store/root';
 import { AuthenticationActions, authenticationActions } from 'store/authentication';
 import { initializeState, RootActions } from 'store/rootActions';
 
 export const signInUser =
   (email: string, password: string): ThunkAction<void, AppState, undefined, AuthenticationActions> =>
-  async (dispatch: Dispatch<AuthenticationActions>) => {
+  async (dispatch) => {
     dispatch(authenticationActions.loggingIn());
     await authenticationService
       .signIn(email, password)
@@ -21,7 +20,7 @@ export const signInUser =
 
 export const signUpUser =
   (email: string, password: string): ThunkAction<void, AppState, undefined, AuthenticationActions> =>
-  async (dispatch: Dispatch<AuthenticationActions>) => {
+  async (dispatch) => {
     dispatch(authenticationActions.loggingIn());
     await authenticationService
       .signUp(email, password)
@@ -33,8 +32,7 @@ export const signUpUser =
       });
   };
 
-export const signOutUser =
-  (): ThunkAction<void, AppState, undefined, RootActions> => async (dispatch: Dispatch<RootActions>) => {
-    await authenticationService.signOut();
-    dispatch(initializeState());
-  };
+export const signOutUser = (): ThunkAction<void, AppState, undefined, RootActions> => async (dispatch) => {
+  await authenticationService.signOut();
+  dispatch(initializeState());
+};

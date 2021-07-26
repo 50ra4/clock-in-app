@@ -13,7 +13,7 @@ export const UnStyledButton = React.memo(function Button({ fullWidth = false, ch
 });
 
 export const Button = styled(UnStyledButton)`
-  color: ${({ theme }) => theme.font.color.main};
+  color: ${({ theme }) => theme.color.palette.main.font};
   ${({ fullWidth }) =>
     !!fullWidth &&
     css`

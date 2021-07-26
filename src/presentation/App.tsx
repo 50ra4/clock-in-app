@@ -93,7 +93,7 @@ const AppHeader = styled.header`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: ${({ theme }) => theme.font.color.main};
+  color: ${({ theme }) => theme.color.palette.main.font};
 `;
 
 const AppLogo = styled.img`

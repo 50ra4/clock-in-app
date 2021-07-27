@@ -96,6 +96,10 @@ const colorPalette = {
 } as const;
 
 const bgColorPalette = {
+  default: {
+    font: fontColorPalette.white,
+    background: colorPalette.gray.light,
+  },
   main: {
     font: fontColorPalette.black,
     background: colorPalette.white.main,
@@ -125,6 +129,7 @@ const bgColorPalette = {
     background: colorPalette.darkGray.light,
   },
 } as const;
+export type ColorPalette = keyof typeof bgColorPalette;
 
 const snackbarTheme = {
   success: {

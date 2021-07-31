@@ -1,9 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots display/Chip Docs 1`] = `
+<button
+  className="sc-bdnxRM IJvqI"
+  color="primary"
+>
+  docs
+</button>
+`;
+
+exports[`Storyshots display/Chip Secondary 1`] = `
+<button
+  className="sc-bdnxRM coVcpk"
+  color="secondary"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots display/Divider Docs 1`] = `
+<hr
+  className="sc-gtsrHT kVrAVC"
+/>
+`;
+
+exports[`Storyshots display/Divider Sample 1`] = `
+Array [
+  <p>
+    sample1
+  </p>,
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />,
+  <p>
+    sample2
+  </p>,
+]
+`;
+
+exports[`Storyshots display/ResponsiveLayout Docs 1`] = `
+<div
+  className="sc-dlnjwi JvYPV"
+>
+  <div
+    className="sc-hKFxyN hORXlA"
+  >
+    Responsive
+  </div>
+</div>
+`;
+
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
-  className="sc-bdnxRM beXrKy"
+  className="sc-eCApnc hNrOEv"
 >
   button sample
 </button>
+`;
+
+exports[`Storyshots surfaces/Accordion Docs 1`] = `
+<section
+  className="sc-iCoGMd lhCsLa"
+>
+  <button
+    aria-controls="accordion-undefined-header"
+    aria-disabled={true}
+    onClick={[Function]}
+  >
+    <h3>
+      Sample Accordion
+    </h3>
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj dFzqsj sc-gKAaRy Accordion__icon--collapsed"
+      color="main"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
+      />
+    </svg>
+  </button>
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />
+  <div
+    aria-labelledby="accordion-undefined-header"
+    className="Accordion__contents--collapsed"
+  >
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Storyshots surfaces/Card Docs 1`] = `
+<section
+  className="sc-fujyAs ddYgOD"
+>
+  <h3>
+    sample card
+  </h3>
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Storyshots surfaces/Header Docs 1`] = `
+<header
+  className="sc-pNWdM Kcwsi"
+>
+  <h2>
+    Clock In
+  </h2>
+</header>
+`;
+
+exports[`Storyshots surfaces/Paper Docs 1`] = `
+<section
+  className="sc-jrsJWt cVHePC"
+>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
 `;

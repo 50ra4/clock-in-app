@@ -47,10 +47,10 @@
 
 ### コンポーネント（surfaces）
 
-- [ ] Header
-- [ ] Card
-- [ ] Paper
-- [ ] Accordion（低）
+- [x] Header
+- [x] Card
+- [x] Paper
+- [x] Accordion（低）
 
 ### コンポーネント（displays）
 

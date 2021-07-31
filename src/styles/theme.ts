@@ -150,6 +150,12 @@ const snackbarTheme = {
   },
 } as const;
 
+const borderColor = {
+  light: colorPalette.white.dark,
+  main: colorPalette.gray.light,
+  dark: colorPalette.gray.main,
+} as const;
+
 export const lightTheme = {
   breakpoint: {
     small: 576,
@@ -163,6 +169,7 @@ export const lightTheme = {
     palette: bgColorPalette,
     font: fontColorPalette,
     snackbar: snackbarTheme,
+    border: borderColor,
   },
   font: {
     family: fontFamilies,

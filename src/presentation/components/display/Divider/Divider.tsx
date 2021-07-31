@@ -15,5 +15,5 @@ export const UnStyledDivider = React.memo(function Divider({ ...otherProps }: Di
 export const Divider = styled(UnStyledDivider)`
   height: 1px;
   margin: ${({ theme }) => `${theme.space.middle}px 0`};
-  background-color: ${({ theme }) => theme.color.palette.negative.background};
+  background-color: ${({ theme }) => theme.color.border.light};
 `;

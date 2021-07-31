@@ -155,6 +155,14 @@ const customCss = (theme: StyledComponentsTheme) => css`
     color: ${theme.color.palette.main.font};
     background-color: ${theme.color.palette.main.background};
   }
+
+  button {
+    appearance: none;
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+    }
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle<{ theme: StyledComponentsTheme }>`

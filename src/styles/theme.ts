@@ -96,6 +96,10 @@ const colorPalette = {
 } as const;
 
 const bgColorPalette = {
+  default: {
+    font: fontColorPalette.white,
+    background: colorPalette.gray.light,
+  },
   main: {
     font: fontColorPalette.black,
     background: colorPalette.white.main,
@@ -125,6 +129,7 @@ const bgColorPalette = {
     background: colorPalette.darkGray.light,
   },
 } as const;
+export type ColorPalette = keyof typeof bgColorPalette;
 
 const snackbarTheme = {
   success: {
@@ -145,6 +150,12 @@ const snackbarTheme = {
   },
 } as const;
 
+const borderColor = {
+  light: colorPalette.white.dark,
+  main: colorPalette.gray.light,
+  dark: colorPalette.gray.main,
+} as const;
+
 export const lightTheme = {
   breakpoint: {
     small: 576,
@@ -158,6 +169,7 @@ export const lightTheme = {
     palette: bgColorPalette,
     font: fontColorPalette,
     snackbar: snackbarTheme,
+    border: borderColor,
   },
   font: {
     family: fontFamilies,

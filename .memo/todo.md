@@ -54,10 +54,10 @@
 
 ### コンポーネント（displays）
 
-- [ ] Chip
-- [ ] Responsive
-- [ ] List
-- [ ] Divider
+- [x] Chip
+- [x] Responsive
+- [ ] List（該当箇所がないので後回し）
+- [x] Divider
 
 ### コンポーネント（inputs）
 

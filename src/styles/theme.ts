@@ -167,6 +167,19 @@ const iconSize = {
 } as const;
 export type IconSize = keyof typeof iconSize;
 
+/**
+ * @see https://material-ui.com/customization/z-index/
+ */
+const zIndex = {
+  mobileStepper: 1000,
+  speedDial: 1050,
+  appBar: 1100,
+  drawer: 1200,
+  modal: 1300,
+  snackbar: 1400,
+  tooltip: 1500,
+} as const;
+
 const rotation = keyframes`
   from { 
     transform:rotate(0);
@@ -202,6 +215,7 @@ export const lightTheme = {
   keyframes: {
     rotation,
   },
+  zIndex,
 } as const;
 type LightTheme = typeof lightTheme;
 

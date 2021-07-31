@@ -25,6 +25,7 @@ const fontSize = {
   small: 14,
   middle: 16,
   large: 18,
+  extraLarge: 24,
 } as const;
 
 const colorPalette = {

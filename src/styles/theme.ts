@@ -157,6 +157,13 @@ const borderColor = {
   dark: colorPalette.gray.main,
 } as const;
 
+const iconSize = {
+  small: 18,
+  medium: 24,
+  large: 36,
+} as const;
+export type IconSize = keyof typeof iconSize;
+
 export const lightTheme = {
   breakpoint: {
     small: 576,
@@ -165,6 +172,9 @@ export const lightTheme = {
     small: 2,
     middle: 4,
     large: 8,
+  },
+  icon: {
+    size: iconSize,
   },
   color: {
     palette: bgColorPalette,

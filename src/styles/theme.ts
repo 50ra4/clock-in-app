@@ -1,4 +1,4 @@
-import { Keyframes, keyframes } from 'styled-components';
+import { css, DefaultTheme, Keyframes, keyframes, ThemedCssFunction } from 'styled-components';
 
 const fontFamilies = [
   'Hiragino Kaku Gothic ProN',
@@ -137,7 +137,7 @@ export type ColorPalette = keyof typeof bgColorPalette;
 const snackbarTheme = {
   success: {
     font: fontColorPalette.white,
-    background: colorPalette.blue.main,
+    background: colorPalette.green.main,
   },
   error: {
     font: fontColorPalette.white,
@@ -149,9 +149,10 @@ const snackbarTheme = {
   },
   info: {
     font: fontColorPalette.white,
-    background: colorPalette.green.main,
+    background: colorPalette.blue.main,
   },
 } as const;
+export type SnackbarSeverity = keyof typeof snackbarTheme;
 
 const borderColor = {
   light: colorPalette.white.dark,
@@ -182,12 +183,53 @@ const zIndex = {
 
 const rotation = keyframes`
   from { 
-    transform:rotate(0);
+    transform: rotate(0);
   }
   to {
-    transform:rotate(360deg); 
+    transform: rotate(360deg); 
   }
 `;
+
+const fadeIn = keyframes`
+  from { 
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
+`;
+
+const fadeOut = keyframes`
+  from { 
+    opacity: 1;
+  }
+  to {
+    opacity: 0; 
+  }
+`;
+
+type InsetSafeArea = (
+  property: string,
+  value: string,
+  symbol: '+' | '-',
+) => ReturnType<ThemedCssFunction<DefaultTheme>>;
+const insetSafeArea: Record<'top' | 'bottom' | 'topBottom', InsetSafeArea> = {
+  top: (prop, value, symbol) => css`
+    ${`${prop}: calc(${value})`};
+    ${`${prop}: calc(${value} ${symbol} constant(safe-area-inset-top))`};
+    ${`${prop}: calc(${value} ${symbol} env(safe-area-inset-top))`};
+  `,
+  bottom: (prop, value, symbol) => css`
+    ${`${prop}: calc(${value})`};
+    ${`${prop}: calc(${value} ${symbol} constant(safe-area-inset-bottom))`};
+    ${`${prop}: calc(${value} ${symbol} env(safe-area-inset-bottom))`};
+  `,
+  topBottom: (prop, value, symbol) => css`
+    ${`${prop}: calc(${value})`};
+    ${`${prop}: calc(${value} ${symbol} calc(constant(safe-area-inset-top) + constant(safe-area-inset-bottom)))`};
+    ${`${prop}: calc(${value} ${symbol} calc(env(safe-area-inset-top) + env(safe-area-inset-bottom)))`};
+  `,
+};
 
 export const lightTheme = {
   breakpoint: {
@@ -212,8 +254,11 @@ export const lightTheme = {
     weight: fontWeight,
     size: fontSize,
   },
+  insetSafeArea,
   keyframes: {
     rotation,
+    fadeIn,
+    fadeOut,
   },
   zIndex,
 } as const;
@@ -230,6 +275,8 @@ type NestedIndexedObject<T extends IndexedObjectType> = {
     ? number
     : T[K] extends Keyframes
     ? Keyframes
+    : T[K] extends InsetSafeArea
+    ? InsetSafeArea
     : T[K] extends FunctionType
     ? T[K]
     : never;

@@ -1,3 +1,5 @@
+import { Keyframes, keyframes } from 'styled-components';
+
 const fontFamilies = [
   'Hiragino Kaku Gothic ProN',
   'Hiragino Sans',
@@ -161,8 +163,18 @@ const iconSize = {
   small: 18,
   medium: 24,
   large: 36,
+  extraLarge: 72,
 } as const;
 export type IconSize = keyof typeof iconSize;
+
+const rotation = keyframes`
+  from { 
+    transform:rotate(0);
+  }
+  to {
+    transform:rotate(360deg); 
+  }
+`;
 
 export const lightTheme = {
   breakpoint: {
@@ -187,6 +199,9 @@ export const lightTheme = {
     weight: fontWeight,
     size: fontSize,
   },
+  keyframes: {
+    rotation,
+  },
 } as const;
 type LightTheme = typeof lightTheme;
 
@@ -199,6 +214,8 @@ type NestedIndexedObject<T extends IndexedObjectType> = {
     ? string
     : T[K] extends number
     ? number
+    : T[K] extends Keyframes
+    ? Keyframes
     : T[K] extends FunctionType
     ? T[K]
     : never;

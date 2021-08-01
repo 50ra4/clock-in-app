@@ -1,8 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ColorPalette } from 'styles/theme';
 
 type OwnProps = {
   fullWidth?: boolean;
+  color?: ColorPalette;
 };
 type InheritedProps = Omit<JSX.IntrinsicElements['button'], keyof OwnProps>;
 
@@ -13,7 +15,10 @@ export const UnStyledButton = React.memo(function Button({ fullWidth = false, ch
 });
 
 export const Button = styled(UnStyledButton)`
-  color: ${({ theme }) => theme.font.color.main};
+  ${({ theme, color = 'default' }) => css`
+    color: ${theme.color.palette[color].font};
+    background-color: ${theme.color.palette[color].background};
+  `}
   ${({ fullWidth }) =>
     !!fullWidth &&
     css`

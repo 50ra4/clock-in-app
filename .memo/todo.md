@@ -40,24 +40,31 @@
 
 ### コンポーネント（feedback）
 
-- [ ] LoadingSpinner
-- [ ] Loading
-- [ ] Dialog
-- [ ] SnackBar
+- [x] LoadingSpinner
+- [x] Backdrop
+  - [x] StopPropagation
+- [x] LoadingGuard
+- [x] Dialog
+  - [x] PopupDialog
+  - [x] AlertDialog
+  - [x] ConfirmDialog
+  - [x] SelectDialog
+  - [x] CustomDialog
+- [x] SnackBar
 
 ### コンポーネント（surfaces）
 
-- [ ] Header
-- [ ] Card
-- [ ] Paper
-- [ ] Accordion（低）
+- [x] Header
+- [x] Card
+- [x] Paper
+- [x] Accordion（低）
 
 ### コンポーネント（displays）
 
-- [ ] Chip
-- [ ] Responsive
-- [ ] List
-- [ ] Divider
+- [x] Chip
+- [x] Responsive
+- [ ] List（該当箇所がないので後回し）
+- [x] Divider
 
 ### コンポーネント（inputs）
 
@@ -69,7 +76,7 @@
 - [ ] DateInput
 - [ ] Button
 - [ ] SelectBox
-- [ ] ChipsCheckbox
+- [ ] ChipCheckbox
 - [ ] DatePicker（低）
 
 ### 画面

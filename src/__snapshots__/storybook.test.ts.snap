@@ -1,9 +1,380 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots display/Chip Docs 1`] = `
+<button
+  className="sc-bdnxRM IJvqI"
+  color="primary"
+>
+  docs
+</button>
+`;
+
+exports[`Storyshots display/Chip Secondary 1`] = `
+<button
+  className="sc-bdnxRM coVcpk"
+  color="secondary"
+>
+  Secondary
+</button>
+`;
+
+exports[`Storyshots display/Divider Docs 1`] = `
+<hr
+  className="sc-gtsrHT kVrAVC"
+/>
+`;
+
+exports[`Storyshots display/Divider Sample 1`] = `
+Array [
+  <p>
+    sample1
+  </p>,
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />,
+  <p>
+    sample2
+  </p>,
+]
+`;
+
+exports[`Storyshots display/ResponsiveLayout Docs 1`] = `
+<div
+  className="sc-dlnjwi JvYPV"
+>
+  <div
+    className="sc-hKFxyN hORXlA"
+  >
+    Responsive
+  </div>
+</div>
+`;
+
+exports[`Storyshots feedback/Backdrop Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Backdrop With Loading 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/Dialogs/AlertDialog Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Dialogs/AlertDialog Show Dialog 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/Dialogs/ConfirmDialog Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Dialogs/ConfirmDialog Show Dialog 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/Dialogs/CustomDialog Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Dialogs/CustomDialog Open 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/Dialogs/PopupDialog Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Dialogs/PopupDialog Show Dialog 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/Dialogs/SelectDialog Docs 1`] = `null`;
+
+exports[`Storyshots feedback/Dialogs/SelectDialog Show Dialog 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/LoadingGuard Docs 1`] = `null`;
+
+exports[`Storyshots feedback/LoadingGuard Loading 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open
+</button>
+`;
+
+exports[`Storyshots feedback/LoadingSpinner Docs 1`] = `
+<div
+  className="sc-iCoGMd eUVsUk"
+>
+  <div
+    className="LoadingSpinner__icon--message-only"
+  >
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj cFbtJI sc-gKAaRy kPSiFL"
+      color="default"
+      size="extraLarge"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Storyshots feedback/LoadingSpinner With Children 1`] = `
+<div
+  className="sc-iCoGMd bMRgkA"
+>
+  <div
+    className="LoadingSpinner__icon"
+  >
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj hyprxY sc-gKAaRy kPSiFL"
+      color="default"
+      size="large"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
+      />
+    </svg>
+  </div>
+  <div
+    className="LoadingSpinner__message"
+  >
+    <p>
+      ローディング中
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots feedback/LoadingSpinner With Message 1`] = `
+<div
+  className="sc-iCoGMd bMRgkA"
+>
+  <div
+    className="LoadingSpinner__icon"
+  >
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj hyprxY sc-gKAaRy kPSiFL"
+      color="default"
+      size="large"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"
+      />
+    </svg>
+  </div>
+  <div
+    className="LoadingSpinner__message"
+  >
+    <p
+      className="LoadingSpinner__message__text"
+    >
+      ローディング中
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots feedback/Snackbar Docs 1`] = `
+<div
+  className="sc-hBMUJo kKTOMm Snackbar"
+  context="show snackbar"
+  onAnimationEnd={[Function]}
+>
+  <div
+    className="Snackbar__content"
+  />
+</div>
+`;
+
+exports[`Storyshots feedback/Snackbar Info 1`] = `
+Array [
+  <button
+    onClick={[Function]}
+  >
+    Open
+  </button>,
+  <div
+    className="sc-hBMUJo kKTOMm Snackbar"
+    onAnimationEnd={[Function]}
+  >
+    <div
+      className="Snackbar__content"
+    >
+      <p
+        className="Snackbar__content__text"
+      >
+        Some text some message..
+      </p>
+    </div>
+  </div>,
+]
+`;
+
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
-  className="sc-bdnxRM beXrKy"
+  className="sc-jrsJWt eIYzTR"
 >
   button sample
 </button>
+`;
+
+exports[`Storyshots surfaces/Accordion Docs 1`] = `
+<section
+  className="sc-fFSPTT kTztUo"
+>
+  <button
+    aria-controls="accordion-undefined-header"
+    aria-disabled={true}
+    onClick={[Function]}
+  >
+    <h3>
+      Sample Accordion
+    </h3>
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj dFzqsj sc-fnVZcZ Accordion__icon--collapsed"
+      color="main"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"
+      />
+    </svg>
+  </button>
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />
+  <div
+    aria-labelledby="accordion-undefined-header"
+    className="Accordion__contents--collapsed"
+  >
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Storyshots surfaces/Card Docs 1`] = `
+<section
+  className="sc-bkbkJK jucYzA"
+>
+  <h3>
+    sample card
+  </h3>
+  <hr
+    className="sc-gtsrHT kVrAVC"
+  />
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Storyshots surfaces/Header Docs 1`] = `
+<header
+  className="sc-iemWCZ cJKRWp"
+>
+  <h2>
+    Clock In
+  </h2>
+</header>
+`;
+
+exports[`Storyshots surfaces/Paper Docs 1`] = `
+<section
+  className="sc-dIvrsQ dmtbUX"
+>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+</section>
+`;
+
+exports[`Storyshots utils/StopPropagation Docs 1`] = `
+<div
+  onClick={[Function]}
+  role="none"
+/>
+`;
+
+exports[`Storyshots utils/StopPropagation Test 1`] = `
+<div
+  onClick={[Function]}
+  role="none"
+>
+  <div
+    className="sc-hHEiqL eRekoc"
+    onClick={[Function]}
+    role="none"
+  >
+    <button
+      className="sc-jrsJWt cdWpkO"
+      color="secondary"
+      onClick={[Function]}
+    >
+      toggle
+    </button>
+    <button
+      className="sc-jrsJWt eCMjnu"
+      color="primary"
+      onClick={[Function]}
+    >
+      stopPropagation true
+    </button>
+  </div>
+</div>
 `;

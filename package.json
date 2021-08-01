@@ -68,7 +68,7 @@
     "lint": "npm run lint:prettier && npm run lint:eslint",
     "storybook": "start-storybook -p 6006 -s public",
     "touch-nojeykll": "nodetouch docs/.nojekyll",
-    "build-storybook": "rimraf docs/storybook && build-storybook -s public -o docs/storybook",
+    "build-storybook": "rimraf docs/storybook && cpx -C tools/gh-pages/manager-head.html .storybook && build-storybook -s public -o docs/storybook && rimraf .storybook/manager-head.html",
     "build-typedoc": "rimraf docs/typedoc && typedoc --options ./typedoc.json",
     "build-docs": "npm run build-storybook && npm run build-typedoc && npm run touch-nojeykll && cpx -C tools/gh-pages/index.html docs",
     "check-type": "tsc --noEmit"

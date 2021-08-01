@@ -9,6 +9,7 @@ import { TextInput } from './components/inputs/TextInput/TextInput';
 import { PasswordInput } from './components/inputs/PasswordInput/PasswordInput';
 import { signInUser, signUpUser } from 'thunks/authentication';
 import { Button } from './components/inputs/Button/Button';
+import { GlobalStyle } from 'styles/global';
 
 const store = configureStore({});
 
@@ -58,6 +59,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <ThemeProvider theme={darkTheme}>
+          <GlobalStyle theme={darkTheme} />
           <AppHeader>
             <AppLogo src={logo} alt="logo" />
             <p>
@@ -91,7 +93,7 @@ const AppHeader = styled.header`
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: ${({ theme }) => theme.font.color.main};
+  color: ${({ theme }) => theme.color.palette.main.font};
 `;
 
 const AppLogo = styled.img`

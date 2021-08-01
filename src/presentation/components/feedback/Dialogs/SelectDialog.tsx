@@ -27,7 +27,7 @@ const UnStyledSelectDialog = React.memo(function SelectDialog({
   return (
     <CustomDialog
       {...otherProps}
-      id="confirm"
+      id="select"
       open={open}
       className={className}
       onClose={onClose}

@@ -1,3 +1,4 @@
+import { StopPropagation } from 'presentation/components/utils/StopPropagation/StopPropagation';
 import React from 'react';
 import styled from 'styled-components';
 import { Backdrop } from '../Backdrop/Backdrop';
@@ -7,6 +8,7 @@ type OwnProps = {
   className?: string;
   open?: boolean;
   onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  stopPropagation?: boolean;
   message?: string | React.ReactNode;
 };
 
@@ -16,14 +18,22 @@ const UnStyledLoadingGuard = React.memo(function LoadingGuard({
   open = false,
   onClick,
   className,
+  stopPropagation,
   message,
   ...otherProps
 }: LoadingGuardProps) {
   return (
     <Backdrop {...otherProps} open={open} className={className} onClick={onClick}>
-      <LoadingSpinner iconSize="extraLarge" message={message} />
+      <StyledStopPropagation stopPropagation={stopPropagation}>
+        <LoadingSpinner iconSize="extraLarge" message={message} />
+      </StyledStopPropagation>
     </Backdrop>
   );
 });
 
-export const LoadingGuard = styled(UnStyledLoadingGuard)``;
+const StyledStopPropagation = styled(StopPropagation)``;
+export const LoadingGuard = styled(UnStyledLoadingGuard)`
+  & > ${StyledStopPropagation} {
+    display: inline-block;
+  }
+`;

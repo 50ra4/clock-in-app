@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { Backdrop } from '../Backdrop/Backdrop';
 import { CloseIcon } from 'presentation/components/display/Icons/CloseIcon';
+import { StopPropagation } from 'presentation/components/utils/StopPropagation/StopPropagation';
 
 type OwnProps = {
   id: string;
@@ -48,10 +49,6 @@ export const UnStyledCustomDialog = React.memo(function CustomDialog({
     [onClose],
   );
 
-  const handleStopPropagation = useCallback((e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.stopPropagation();
-  }, []);
-
   return (
     <Backdrop open={open} onClick={handleClose}>
       <div
@@ -63,7 +60,7 @@ export const UnStyledCustomDialog = React.memo(function CustomDialog({
         aria-describedby={typeof children === 'string' ? `${rootId}__described` : undefined}
         aria-modal="true"
       >
-        <div role="none" onClick={handleStopPropagation}>
+        <StyledStopPropagation stopPropagation={true}>
           <button className={CustomDialogClassNames.closeButton} onClick={handleClose}>
             <CloseIcon color="negative" size="large" />
           </button>
@@ -79,18 +76,19 @@ export const UnStyledCustomDialog = React.memo(function CustomDialog({
             {children}
           </div>
           {actions && <div className={CustomDialogClassNames.actions}>{actions}</div>}
-        </div>
+        </StyledStopPropagation>
       </div>
     </Backdrop>
   );
 });
 
+const StyledStopPropagation = styled(StopPropagation)``;
 export const CustomDialog = styled(UnStyledCustomDialog)`
   width: 90%;
   color: ${({ theme }) => theme.color.palette.main.font};
   background-color: ${({ theme }) => theme.color.palette.main.background};
   z-index: ${({ theme }) => theme.zIndex.modal};
-  & > div {
+  & > ${StyledStopPropagation} {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

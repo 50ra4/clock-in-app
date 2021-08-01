@@ -19,7 +19,7 @@ const UnStyledBackdrop = React.memo(function Backdrop({
 }: BackdropProps) {
   const handleClick = useCallback(
     (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      event.preventDefault();
+      event.stopPropagation();
       if (onClick) {
         onClick(event);
       }

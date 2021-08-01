@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CustomDialog } from './CustomDialog';
-import { Button } from 'presentation/components/inputs/Button/Button';
+import { SelectDialogActions } from './DialogActions';
 
 type OwnProps = {
   className?: string;
@@ -35,47 +35,6 @@ const UnStyledSelectDialog = React.memo(function SelectDialog({
     >
       {message}
     </CustomDialog>
-  );
-});
-
-const SelectDialogActions = React.memo(function SelectDialogAction({
-  onClose,
-  onClickYes,
-  onClickNo,
-}: Pick<OwnProps, 'onClose' | 'onClickYes' | 'onClickNo'>) {
-  const handleClickYes = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClickYes) {
-        onClickYes(e);
-      }
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClickYes, onClose],
-  );
-
-  const handleClickNo = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClickNo) {
-        onClickNo(e);
-      }
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClickNo, onClose],
-  );
-
-  return (
-    <>
-      <Button color="secondary" onClick={handleClickNo}>
-        いいえ
-      </Button>
-      <Button color="primary" onClick={handleClickYes}>
-        はい
-      </Button>
-    </>
   );
 });
 

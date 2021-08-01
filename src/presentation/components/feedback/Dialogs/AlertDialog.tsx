@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CustomDialog } from './CustomDialog';
-import { Button } from 'presentation/components/inputs/Button/Button';
+import { AlertDialogActions } from './DialogActions';
 
 type OwnProps = {
   className?: string;
@@ -33,31 +33,6 @@ const UnStyledAlertDialog = React.memo(function AlertDialog({
     >
       {message}
     </CustomDialog>
-  );
-});
-
-const AlertDialogActions = React.memo(function AlertDialogAction({
-  onClose,
-  onClickOK,
-}: Pick<OwnProps, 'onClose' | 'onClickOK'>) {
-  const handleClickOK = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClickOK) {
-        onClickOK(e);
-      }
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClickOK, onClose],
-  );
-
-  return (
-    <>
-      <Button color="primary" onClick={handleClickOK}>
-        OK
-      </Button>
-    </>
   );
 });
 

@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CustomDialog } from './CustomDialog';
-import { Button } from 'presentation/components/inputs/Button/Button';
+import { ConfirmDialogActions } from './DialogActions';
 
 type OwnProps = {
   className?: string;
@@ -33,34 +33,6 @@ const UnStyledConfirmDialog = React.memo(function ConfirmDialog({
     >
       {message}
     </CustomDialog>
-  );
-});
-
-const ConfirmDialogActions = React.memo(function ConfirmDialogAction({
-  onClose,
-  onClickOK,
-}: Pick<OwnProps, 'onClose' | 'onClickOK'>) {
-  const handleClickOK = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClickOK) {
-        onClickOK(e);
-      }
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClickOK, onClose],
-  );
-
-  return (
-    <>
-      <Button color="default" onClick={onClose}>
-        キャンセル
-      </Button>
-      <Button color="primary" onClick={handleClickOK}>
-        OK
-      </Button>
-    </>
   );
 });
 

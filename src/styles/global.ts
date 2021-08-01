@@ -157,6 +157,8 @@ const customCss = (theme: StyledComponentsTheme) => css`
   }
 
   button {
+    padding: 0;
+    margin: 0;
     appearance: none;
     cursor: pointer;
     &:disabled {

@@ -89,10 +89,9 @@ export const CustomDialog = styled(UnStyledCustomDialog)`
   width: 90%;
   color: ${({ theme }) => theme.color.palette.main.font};
   background-color: ${({ theme }) => theme.color.palette.main.background};
-  display: inline-block;
   z-index: ${({ theme }) => theme.zIndex.modal};
   & > div {
-    display: inline-block;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
@@ -116,6 +115,14 @@ export const CustomDialog = styled(UnStyledCustomDialog)`
     }
     & > .${CustomDialogClassNames.contents}, & > .${CustomDialogClassNames.actions} {
       padding: ${({ theme }) => theme.space.large}px;
+    }
+    & > .${CustomDialogClassNames.actions} {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      & > button + button {
+        margin-left: ${({ theme }) => theme.space.large}px;
+      }
     }
   }
 `;

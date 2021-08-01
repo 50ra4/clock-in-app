@@ -36,7 +36,8 @@
 
 ## コンポーネント&画面 mock 作成
 
-- [ ] ResetCSS の作成
+- [x] ResetCSS の作成
+- [ ] 行間スタイルの適用（ref: https://www.asobou.co.jp/blog/web/fontsize#i-2）
 
 ### コンポーネント（feedback）
 
@@ -74,7 +75,7 @@
 - [ ] TimeInput
 - [ ] TimeRangeInput
 - [ ] DateInput
-- [ ] Button
+- [x] Button
 - [ ] SelectBox
 - [ ] ChipCheckbox
 - [ ] DatePicker（低）

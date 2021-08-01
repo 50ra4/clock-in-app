@@ -5,23 +5,64 @@ import { ColorPalette } from 'styles/theme';
 type OwnProps = {
   fullWidth?: boolean;
   color?: ColorPalette;
+  disabled?: boolean;
+  variant?: 'outline' | 'default';
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  children: string | React.ReactNode;
 };
 type InheritedProps = Omit<JSX.IntrinsicElements['button'], keyof OwnProps>;
 
 export type ButtonProps = OwnProps & InheritedProps;
 
-export const UnStyledButton = React.memo(function Button({ fullWidth = false, children, ...otherProps }: ButtonProps) {
-  return <button {...otherProps}>{children}</button>;
+const ButtonRootClassName = 'button';
+export const ButtonClassNames = {
+  root: ButtonRootClassName,
+  text: `${ButtonRootClassName}__text`,
+} as const;
+
+export const UnStyledButton = React.memo(function Button({
+  className = '',
+  fullWidth = false,
+  disabled = false,
+  children,
+  ...otherProps
+}: ButtonProps) {
+  return (
+    <button {...otherProps} className={[className, ButtonClassNames.root].join(' ')} disabled={disabled}>
+      {typeof children === 'string' ? <p className={ButtonClassNames.text}>{children}</p> : children}
+    </button>
+  );
 });
 
 export const Button = styled(UnStyledButton)`
-  ${({ theme, color = 'default' }) => css`
-    color: ${theme.color.palette[color].font};
-    background-color: ${theme.color.palette[color].background};
-  `}
+  display: inline-block;
+  font-size: ${({ theme }) => theme.font.size.middle}px;
+  border: 1px solid ${({ theme, color = 'default' }) => theme.color.palette[color].background};
+  ${({ theme, color = 'default', variant = 'default' }) =>
+    variant === 'default'
+      ? css`
+          color: ${theme.color.palette[color].font};
+          background-color: ${theme.color.palette[color].background};
+        `
+      : css`
+          color: ${({ theme }) => theme.color.palette[color].background};
+          background-color: inherit;
+        `}
+  ${({ theme, disabled, variant = 'default' }) =>
+    !!disabled &&
+    css`
+      border: 1px solid ${theme.color.palette.negative.background};
+      color: ${variant === 'outline' && theme.color.palette.negative.background};
+      background-color: ${variant === 'default' && theme.color.palette.negative.background};
+    `};
   ${({ fullWidth }) =>
     !!fullWidth &&
     css`
       width: 100%;
     `};
+  & > .${ButtonClassNames.text} {
+    height: 38px;
+    line-height: 38px;
+    margin: 0 ${({ theme }) => theme.space.large}px;
+  }
 `;

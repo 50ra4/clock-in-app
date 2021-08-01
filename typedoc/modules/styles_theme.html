@@ -72,6 +72,9 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="styles_theme.html#ColorPalette" class="tsd-kind-icon">Color<wbr>Palette</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="styles_theme.html#IconSize" class="tsd-kind-icon">Icon<wbr>Size</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="styles_theme.html#SnackbarSeverity" class="tsd-kind-icon">Snackbar<wbr>Severity</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="styles_theme.html#StyledComponentsTheme" class="tsd-kind-icon">Styled<wbr>Components<wbr>Theme</a></li>
 							</ul>
 						</section>
@@ -88,12 +91,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="ColorPalette" class="tsd-anchor"></a>
+					<h3>Color<wbr>Palette</h3>
+					<div class="tsd-signature tsd-kind-icon">Color<wbr>Palette<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">bgColorPalette</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L135">src/styles/theme.ts:135</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="IconSize" class="tsd-anchor"></a>
+					<h3>Icon<wbr>Size</h3>
+					<div class="tsd-signature tsd-kind-icon">Icon<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">iconSize</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L169">src/styles/theme.ts:169</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="SnackbarSeverity" class="tsd-anchor"></a>
+					<h3>Snackbar<wbr>Severity</h3>
+					<div class="tsd-signature tsd-kind-icon">Snackbar<wbr>Severity<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">snackbarTheme</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L155">src/styles/theme.ts:155</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="StyledComponentsTheme" class="tsd-anchor"></a>
 					<h3>Styled<wbr>Components<wbr>Theme</h3>
 					<div class="tsd-signature tsd-kind-icon">Styled<wbr>Components<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">LightTheme</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/d5d1d09/src/styles/theme.ts#L57">src/styles/theme.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L302">src/styles/theme.ts:302</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -103,28 +136,229 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="darkTheme" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> dark<wbr>Theme</h3>
-					<div class="tsd-signature tsd-kind-icon">dark<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">dark<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>breakpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>insetSafeArea<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">&quot;top&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;bottom&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;topBottom&quot;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">InsetSafeArea</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>keyframes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>fadeIn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>fadeOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>space<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>zIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>appBar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span><span class="tsd-signature-symbol">; </span>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span><span class="tsd-signature-symbol">; </span>mobileStepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span><span class="tsd-signature-symbol">; </span>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span><span class="tsd-signature-symbol">; </span>speedDial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span><span class="tsd-signature-symbol">; </span>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/d5d1d09/src/styles/theme.ts#L55">src/styles/theme.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L300">src/styles/theme.ts:300</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>breakpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+										<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter">
-												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+												<h5>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span></h5>
 											</li>
 										</ul>
 									</li>
 									<li class="tsd-parameter">
+										<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>dark<wbr>Gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>light<wbr>Gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+											</li>
+										</ul>
+									</li>
+									<li class="tsd-parameter">
+										<h5>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="tsd-parameter">
+										<h5>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
 										<h5>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>extra<wbr>Large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span></h5>
+											</li>
+										</ul>
 									</li>
 									<li class="tsd-parameter">
 										<h5>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span></h5>
@@ -139,34 +373,314 @@
 									</li>
 								</ul>
 							</li>
+							<li class="tsd-parameter">
+								<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>extra<wbr>Large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span></h5>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>inset<wbr>Safe<wbr>Area<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">&quot;top&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;bottom&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;topBottom&quot;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">InsetSafeArea</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>keyframes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>fadeIn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>fadeOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>fade<wbr>In<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>fade<wbr>Out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>space<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>z<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>appBar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span><span class="tsd-signature-symbol">; </span>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span><span class="tsd-signature-symbol">; </span>mobileStepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span><span class="tsd-signature-symbol">; </span>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span><span class="tsd-signature-symbol">; </span>speedDial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span><span class="tsd-signature-symbol">; </span>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>app<wbr>Bar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>mobile<wbr>Stepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>speed<wbr>Dial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span></h5>
+									</li>
+								</ul>
+							</li>
 						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="lightTheme" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> light<wbr>Theme</h3>
-					<div class="tsd-signature tsd-kind-icon">light<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<div class="tsd-signature tsd-kind-icon">light<wbr>Theme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>breakpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>insetSafeArea<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">&quot;top&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;bottom&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;topBottom&quot;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">InsetSafeArea</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>keyframes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>fadeIn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>fadeOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>space<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>zIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>appBar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span><span class="tsd-signature-symbol">; </span>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span><span class="tsd-signature-symbol">; </span>mobileStepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span><span class="tsd-signature-symbol">; </span>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span><span class="tsd-signature-symbol">; </span>speedDial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span><span class="tsd-signature-symbol">; </span>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/d5d1d09/src/styles/theme.ts#L33">src/styles/theme.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/16a961e/src/styles/theme.ts#L234">src/styles/theme.ts:234</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<h5>breakpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span><span class="tsd-signature-symbol"> }</span></h5>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
-										<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+										<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">576</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>color<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>border<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span><span class="tsd-signature-symbol">; </span>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
 										<ul class="tsd-parameters">
 											<li class="tsd-parameter">
-												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+												<h5>dark<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#556059&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>light<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c7c7c7&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span></h5>
 											</li>
 										</ul>
 									</li>
 									<li class="tsd-parameter">
+										<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol">; </span>darkGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span><span class="tsd-signature-symbol">; </span>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span><span class="tsd-signature-symbol">; </span>lightGray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span><span class="tsd-signature-symbol">; </span>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>black<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>dark<wbr>Gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#545454&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#808080&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>light<wbr>Gray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#afafaf&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>red<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>white<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+											</li>
+										</ul>
+									</li>
+									<li class="tsd-parameter">
+										<h5>palette<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>default<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#828d86&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>main<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>negative<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#62727b&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>positive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>primary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#263228&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>quaternary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#f8bbd0&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>secondary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c6a700&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>tertiary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#ac0800&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="tsd-parameter">
+										<h5>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#c62828&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#0d47a1&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>success<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#2e7c31&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fafafa&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li class="tsd-parameter">
+												<h5>warning<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span><span class="tsd-signature-symbol">; </span>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>background<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#fdd835&quot;</span></h5>
+													</li>
+													<li class="tsd-parameter">
+														<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;#212121&quot;</span></h5>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>font<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
 										<h5>family<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>extra<wbr>Large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">16</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">14</span></h5>
+											</li>
+										</ul>
 									</li>
 									<li class="tsd-parameter">
 										<h5>weight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>bold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;bold&quot;</span><span class="tsd-signature-symbol">; </span>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span><span class="tsd-signature-symbol"> }</span></h5>
@@ -178,6 +692,85 @@
 												<h5>normal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">400</span></h5>
 											</li>
 										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>icon<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>extraLarge<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span><span class="tsd-signature-symbol">; </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span><span class="tsd-signature-symbol">; </span>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span><span class="tsd-signature-symbol"> }</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter">
+												<h5>extra<wbr>Large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">72</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">36</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>medium<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">24</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">18</span></h5>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>inset<wbr>Safe<wbr>Area<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">&quot;top&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;bottom&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;topBottom&quot;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">InsetSafeArea</span><span class="tsd-signature-symbol">&gt;</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>keyframes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>fadeIn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>fadeOut<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol">; </span>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>fade<wbr>In<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>fade<wbr>Out<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>rotation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Keyframes</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>space<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span><span class="tsd-signature-symbol">; </span>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span><span class="tsd-signature-symbol">; </span>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>large<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>middle<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>small<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span></h5>
+									</li>
+								</ul>
+							</li>
+							<li class="tsd-parameter">
+								<h5>z<wbr>Index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>appBar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span><span class="tsd-signature-symbol">; </span>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span><span class="tsd-signature-symbol">; </span>mobileStepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span><span class="tsd-signature-symbol">; </span>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span><span class="tsd-signature-symbol">; </span>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span><span class="tsd-signature-symbol">; </span>speedDial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span><span class="tsd-signature-symbol">; </span>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span><span class="tsd-signature-symbol"> }</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>app<wbr>Bar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1100</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>drawer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1200</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>mobile<wbr>Stepper<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1000</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>modal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1300</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>snackbar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1400</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>speed<wbr>Dial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1050</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5>tooltip<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1500</span></h5>
 									</li>
 								</ul>
 							</li>
@@ -210,6 +803,9 @@
 					<li class=" tsd-kind-module">
 						<a href="services_users.html">services/users</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="styles_global.html">styles/global</a>
+					</li>
 					<li class="current tsd-kind-module">
 						<a href="styles_theme.html">styles/theme</a>
 					</li>
@@ -232,6 +828,15 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="styles_theme.html#ColorPalette" class="tsd-kind-icon">Color<wbr>Palette</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="styles_theme.html#IconSize" class="tsd-kind-icon">Icon<wbr>Size</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="styles_theme.html#SnackbarSeverity" class="tsd-kind-icon">Snackbar<wbr>Severity</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="styles_theme.html#StyledComponentsTheme" class="tsd-kind-icon">Styled<wbr>Components<wbr>Theme</a>
 					</li>

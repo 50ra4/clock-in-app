@@ -40,10 +40,17 @@
 
 ### コンポーネント（feedback）
 
-- [ ] LoadingSpinner
-- [ ] Loading
-- [ ] Dialog
-- [ ] SnackBar
+- [x] LoadingSpinner
+- [x] Backdrop
+  - [x] StopPropagation
+- [x] LoadingGuard
+- [x] Dialog
+  - [x] PopupDialog
+  - [x] AlertDialog
+  - [x] ConfirmDialog
+  - [x] SelectDialog
+  - [x] CustomDialog
+- [x] SnackBar
 
 ### コンポーネント（surfaces）
 
@@ -69,7 +76,7 @@
 - [ ] DateInput
 - [ ] Button
 - [ ] SelectBox
-- [ ] ChipsCheckbox
+- [ ] ChipCheckbox
 - [ ] DatePicker（低）
 
 ### 画面

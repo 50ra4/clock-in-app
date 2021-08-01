@@ -8,8 +8,7 @@ type OwnProps = {
   disabled?: boolean;
   color?: ColorPalette;
   variant?: 'outline' | 'default';
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onClick?: (event: React.MouseEvent<any, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
   children: React.ReactNode;
 };
 

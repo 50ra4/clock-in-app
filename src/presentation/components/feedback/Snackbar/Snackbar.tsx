@@ -130,12 +130,14 @@ export const Snackbar = styled(UnStyledSnackbar)`
   /* 30px from the bottom */
   ${({ theme }) => theme.insetSafeArea.bottom('bottom', '30px', '+')}
   &.${SnackbarClassNames.open} {
-    visibility: visible; /* Show the snackbar */
     animation: ${fadeIn} 0.5s linear;
-    z-index: ${({ theme }) => theme.zIndex.snackbar}; /* Add a z-index if needed */
   }
   &.${SnackbarClassNames.dismiss} {
-    animation: ${fadeOut} 0.5s;
+    animation: ${fadeOut} 0.5s linear;
+  }
+  &.${SnackbarClassNames.open}, &.${SnackbarClassNames.dismiss} {
+    visibility: visible; /* Show the snackbar */
+    z-index: ${({ theme }) => theme.zIndex.snackbar}; /* Add a z-index if needed */
   }
   & > .${SnackbarClassNames.content.root} {
     ${({ theme, severity = 'info' }) => css`

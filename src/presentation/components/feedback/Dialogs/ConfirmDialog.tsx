@@ -54,7 +54,7 @@ const ConfirmDialogActions = React.memo(function ConfirmDialogAction({
 
   return (
     <>
-      <Button color="secondary" onClick={onClose}>
+      <Button color="default" onClick={onClose}>
         キャンセル
       </Button>
       <Button color="primary" onClick={handleClickOK}>

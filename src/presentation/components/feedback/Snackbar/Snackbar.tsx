@@ -126,9 +126,7 @@ export const Snackbar = styled(UnStyledSnackbar)`
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */
   display: inline-block;
-
-  /* 30px from the bottom */
-  ${({ theme }) => theme.insetSafeArea.bottom('bottom', '30px', '+')}
+  ${({ theme }) => theme.insetSafeArea.bottom('margin-bottom', '0px', '+')}
   &.${SnackbarClassNames.open} {
     animation: ${fadeIn} 0.5s linear;
   }

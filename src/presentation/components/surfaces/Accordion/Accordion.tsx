@@ -104,6 +104,8 @@ export const Accordion = styled(UnStyledAccordion)`
       font-size: ${({ theme }) => theme.font.size.large}px;
     }
     & > ${StyledArrowLeftIcon} {
+      height: 24px;
+      width: 24px;
       transition: transform 0.3s linear;
       transform: rotate(270deg);
       &.${AccordionClassNames.icon.expanded} {

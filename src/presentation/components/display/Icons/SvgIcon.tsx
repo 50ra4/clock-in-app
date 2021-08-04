@@ -17,8 +17,8 @@ export type SvgIconProps = IconProps & {
 type StyledProps = Required<Pick<SvgIconProps, 'color' | 'size'>>;
 const StyledSvg = styled.svg<StyledProps>`
   fill: ${({ color, theme }) => theme.color.palette[color].background};
-  max-width: ${({ size, theme }) => `${theme.icon.size[size]}px`};
-  max-height: ${({ size, theme }) => `${theme.icon.size[size]}px`};
+  min-width: ${({ size, theme }) => `${theme.icon.size[size]}px`};
+  min-height: ${({ size, theme }) => `${theme.icon.size[size]}px`};
 `;
 
 /**

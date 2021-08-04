@@ -30,6 +30,13 @@ const fontSize = {
   extraLarge: 24,
 } as const;
 
+const ellipsisSingle = () => css`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+`;
+
 const colorPalette = {
   black: {
     light: '#4e5b50',
@@ -253,6 +260,9 @@ export const lightTheme = {
     family: fontFamilies,
     weight: fontWeight,
     size: fontSize,
+    ellipsis: {
+      single: ellipsisSingle,
+    },
   },
   insetSafeArea,
   keyframes: {

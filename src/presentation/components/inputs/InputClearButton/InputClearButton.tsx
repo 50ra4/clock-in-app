@@ -8,7 +8,7 @@ export type InputClearButtonProps = Omit<IconButtonProps, 'children'>;
 const UnStyledInputClearButton = React.memo(function UnStyledInputClearButton({ ref, ...otherProps }: IconButtonProps) {
   return (
     <IconButton {...otherProps}>
-      <HighLightOffIcon />
+      <HighLightOffIcon titleAccess="クリア" />
     </IconButton>
   );
 });

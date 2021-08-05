@@ -25,6 +25,7 @@ export const UnStyledTextInput = React.memo(function TextInput({
 }: TextInputProps) {
   return (
     <div className={className}>
+      {/* fix: reRender */}
       {description && <DescriptionForInput description={description} />}
       <div>
         <InputBase {...otherProps} type={type} rightIcon={true} error={error} value={value} />

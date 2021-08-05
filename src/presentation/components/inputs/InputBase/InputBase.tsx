@@ -58,4 +58,5 @@ export const InputBase = styled(UnStyledInputBase)`
     background-color: #ffffff;
     outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
   }
+  caret-color: ${({ theme }) => theme.color.palette.secondary.background};
 `;

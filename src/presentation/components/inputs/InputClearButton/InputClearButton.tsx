@@ -1,16 +1,13 @@
 import { HighLightOffIcon } from 'presentation/components/display/Icons/HighLightOff';
 import React from 'react';
-import styled from 'styled-components';
 import { IconButton, IconButtonProps } from '../IconButton/IconButton';
 
 export type InputClearButtonProps = Omit<IconButtonProps, 'children'>;
 
-const UnStyledInputClearButton = React.memo(function UnStyledInputClearButton({ ref, ...otherProps }: IconButtonProps) {
+export const InputClearButton = React.memo(function InputClearButton({ ref, ...otherProps }: IconButtonProps) {
   return (
-    <IconButton {...otherProps}>
-      <HighLightOffIcon titleAccess="クリア" />
+    <IconButton aria-label="クリア" {...otherProps}>
+      <HighLightOffIcon />
     </IconButton>
   );
 });
-
-export const InputClearButton = styled(UnStyledInputClearButton)``;

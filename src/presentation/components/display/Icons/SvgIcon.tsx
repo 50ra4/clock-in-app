@@ -39,6 +39,7 @@ export function SvgIcon({
       color={color}
       size={size}
       aria-hidden={titleAccess ? undefined : true}
+      aria-label={titleAccess || undefined}
       role={titleAccess ? 'img' : undefined}
       viewBox={viewBox}
     >

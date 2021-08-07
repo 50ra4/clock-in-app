@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { SnackbarSeverity } from 'styles/theme';
 import { EnumValue } from 'types';
+import { matchClassNames } from 'utils/classNameUtil';
 
 type OwnProps = {
   className?: string;
@@ -32,16 +33,6 @@ const SNACKBAR_STATUS = {
   remaining: 'REMAINING',
   fadeOut: 'FADE_OUT',
 } as const;
-type SnackbarStatus = EnumValue<typeof SNACKBAR_STATUS>;
-
-const getRootClass = (status: SnackbarStatus): string => {
-  const isOpen = status === SNACKBAR_STATUS.fadeIn || status === SNACKBAR_STATUS.remaining;
-  return isOpen
-    ? SnackbarClassNames.open
-    : status === SNACKBAR_STATUS.fadeOut
-    ? SnackbarClassNames.dismiss
-    : SnackbarClassNames.root;
-};
 
 const UnStyledSnackbar = React.memo(function Snackbar({
   className = '',
@@ -52,7 +43,7 @@ const UnStyledSnackbar = React.memo(function Snackbar({
   onClose,
   ...otherProps
 }: SnackbarProps) {
-  const [status, setStatus] = useState<SnackbarStatus>(SNACKBAR_STATUS.initial);
+  const [status, setStatus] = useState<EnumValue<typeof SNACKBAR_STATUS>>(SNACKBAR_STATUS.initial);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -83,16 +74,23 @@ const UnStyledSnackbar = React.memo(function Snackbar({
     }
   }, [onClose, status]);
 
-  const rootClass = getRootClass(status);
+  const rootClassName = matchClassNames([
+    [className, () => true],
+    [SnackbarClassNames.root, () => true],
+    [SnackbarClassNames.open, () => status === SNACKBAR_STATUS.fadeIn || status === SNACKBAR_STATUS.remaining],
+    [SnackbarClassNames.dismiss, () => status === SNACKBAR_STATUS.fadeOut],
+  ]).join(' ');
 
   return (
-    <div {...otherProps} className={[className, rootClass].join(' ')} onAnimationEnd={onAnimationEnd}>
+    <div {...otherProps} className={rootClassName} onAnimationEnd={onAnimationEnd}>
       <div className={SnackbarClassNames.content.root}>
         {typeof content === 'string' ? <p className={SnackbarClassNames.content.text}>{content}</p> : content}
       </div>
     </div>
   );
 });
+
+const bottomPosition = 30;
 
 const fadeIn = keyframes`
   from { 
@@ -101,14 +99,14 @@ const fadeIn = keyframes`
   }
   to {
     opacity: 1; 
-    bottom: 30px;
+    bottom: ${bottomPosition}px;
   }
 `;
 
 const fadeOut = keyframes`
   from { 
     opacity: 1;
-    bottom: 30px;
+    bottom: ${bottomPosition}px;
   }
   to {
     opacity: 0;
@@ -126,6 +124,8 @@ export const Snackbar = styled(UnStyledSnackbar)`
   min-width: 250px; /* Set a default minimum width */
   margin-left: -125px; /* Divide value of min-width by 2 */
   display: inline-block;
+  /* FIXME: include safe-area */
+  bottom: ${bottomPosition}px;
   ${({ theme }) => theme.insetSafeArea.bottom('margin-bottom', '0px', '+')}
   &.${SnackbarClassNames.open} {
     animation: ${fadeIn} 0.5s linear;

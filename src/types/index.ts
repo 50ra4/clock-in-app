@@ -33,3 +33,8 @@ export type Lookup = {
   id: string;
   value: string;
 };
+
+export type Time = {
+  hour?: number;
+  minute?: number;
+};

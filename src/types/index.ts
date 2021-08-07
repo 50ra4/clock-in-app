@@ -28,3 +28,8 @@ export type Authentication = {
   loginStatus: LoginStatus;
   emailVerified: boolean;
 };
+
+export type Lookup = {
+  id: string;
+  value: string;
+};

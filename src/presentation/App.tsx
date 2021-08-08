@@ -53,7 +53,12 @@ const TestForm = () => {
       </label>
       <label htmlFor="password">
         password
-        <PasswordInput id="password" value={password} onChange={(e) => setPassword(e.currentTarget.value ?? '')} />
+        <PasswordInput
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.currentTarget.value ?? '')}
+        />
       </label>
       <Button onClick={() => signIn()}>Try</Button>
     </div>

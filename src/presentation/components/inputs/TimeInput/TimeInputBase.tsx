@@ -13,7 +13,7 @@ type TimeInputBaseOwnProps = {
   value?: Time;
   onChange: (time: Time, event?: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (time: Time, event?: React.FocusEvent<HTMLInputElement>) => void;
-  onClear: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClear?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   error?: string;
   placeholder?: string;
 };
@@ -60,20 +60,24 @@ export const TimeInputBase = React.memo(function TimeInputBase({
     const handleOnClear = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
       setTimeString('00:00');
-      onClear(e);
+      if (onClear) {
+        onClear(e);
+      }
     };
+
+    const showClearIcon = !!timeString && !!onClear;
 
     return (
       <div className={className}>
         <InputBase
           {...otherProps}
           type="text"
-          rightIcon={true}
+          rightIcon={showClearIcon}
           value={timeString}
           onBlur={handleOnBlur}
           onChange={handleOnChange}
         />
-        {!!timeString && !!onClear && <InputClearButton onClick={handleOnClear} />}
+        {showClearIcon && <InputClearButton onClick={handleOnClear} />}
       </div>
     );
   }

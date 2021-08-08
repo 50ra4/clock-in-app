@@ -38,3 +38,8 @@ export type Time = {
   hour?: number;
   minute?: number;
 };
+
+export type Range<T> = {
+  start?: T;
+  end?: T;
+};

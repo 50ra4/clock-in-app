@@ -165,6 +165,13 @@ const customCss = (theme: StyledComponentsTheme) => css`
       cursor: default;
     }
   }
+
+  select {
+    appearance: none;
+    &:-ms-expand {
+      display: none;
+    }
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle<{ theme: StyledComponentsTheme }>`

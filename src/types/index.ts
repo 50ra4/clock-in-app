@@ -28,3 +28,18 @@ export type Authentication = {
   loginStatus: LoginStatus;
   emailVerified: boolean;
 };
+
+export type Lookup = {
+  id: string;
+  value: string;
+};
+
+export type Time = {
+  hour?: number;
+  minute?: number;
+};
+
+export type Range<T> = {
+  start?: T;
+  end?: T;
+};

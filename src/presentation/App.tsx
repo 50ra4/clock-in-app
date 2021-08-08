@@ -43,11 +43,22 @@ const TestForm = () => {
     <div>
       <label htmlFor="email">
         email
-        <TextInput id="email" type="email" value={email} onChange={(e) => setEmail(e.currentTarget.value ?? '')} />
+        <TextInput
+          id="email"
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.currentTarget.value ?? '')}
+        />
       </label>
       <label htmlFor="password">
         password
-        <PasswordInput id="password" value={password} onChange={(e) => setPassword(e.currentTarget.value ?? '')} />
+        <PasswordInput
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.currentTarget.value ?? '')}
+        />
       </label>
       <Button onClick={() => signIn()}>Try</Button>
     </div>

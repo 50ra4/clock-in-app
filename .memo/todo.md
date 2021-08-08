@@ -36,7 +36,8 @@
 
 ## コンポーネント&画面 mock 作成
 
-- [ ] ResetCSS の作成
+- [x] ResetCSS の作成
+- [ ] 行間スタイルの適用（ref: https://www.asobou.co.jp/blog/web/fontsize#i-2）
 
 ### コンポーネント（feedback）
 
@@ -68,16 +69,17 @@
 
 ### コンポーネント（inputs）
 
-- [ ] TextInput
-- [ ] PasswordInput
-- [ ] TextArea
-- [ ] TimeInput
-- [ ] TimeRangeInput
-- [ ] DateInput
-- [ ] Button
-- [ ] SelectBox
-- [ ] ChipCheckbox
+- [x] TextInput
+- [x] PasswordInput
+- [x] TextArea
+- [x] TimeInput
+- [x] TimeRangeInput
+- [x] DateInput
+- [x] Button
+- [x] SelectBox
+- [ ] ChipCheckbox（低）
 - [ ] DatePicker（低）
+- [ ] CheckboxGroupInput（低）
 
 ### 画面
 
@@ -86,6 +88,26 @@
 - [ ] LoginPage
 - [ ] RegistrationPage
 - [ ] TimecardPage
+
+### コンポーネント(inputs) refactor
+
+- [ ] TextInputBase
+- [ ] DateInput
+- [ ] DateSelect
+- [ ] TimeInput
+- [ ] SelectInput
+- [ ] TextInput
+- [ ] PasswordInput
+
+### コンポーネント（forms）
+
+- [ ] LabelForForm
+- [ ] TextForm
+- [ ] PasswordForm
+- [ ] TextAreaForm
+- [ ] TimeForm
+- [ ] TimeRangeForm
+- [ ] DateForm
 
 ### その他
 

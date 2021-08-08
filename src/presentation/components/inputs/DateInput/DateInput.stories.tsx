@@ -12,6 +12,10 @@ const Template = createStoryTemplate(DateInput);
 const voidFunction = () => {};
 
 const initialDate = '2021-07-23';
+const dateOption = {
+  start: new Date('2021-07-01'),
+  end: new Date('2021-07-31'),
+};
 
 export const Docs = Template;
 Docs.args = {
@@ -22,6 +26,7 @@ Docs.args = {
   onChange: voidFunction,
   onBlur: voidFunction,
   onClear: voidFunction,
+  option: dateOption,
 };
 
 export const Error = () => (
@@ -33,6 +38,7 @@ export const Error = () => (
     onChange={voidFunction}
     onBlur={voidFunction}
     onClear={voidFunction}
+    option={dateOption}
   />
 );
 
@@ -53,6 +59,7 @@ export const DateType = () => {
       onChange={handleOnChange}
       onClear={voidFunction}
       onBlur={voidFunction}
+      option={dateOption}
     />
   );
 };
@@ -74,6 +81,7 @@ export const SelectType = () => {
       onBlur={voidFunction}
       onClear={voidFunction}
       onChange={handleOnChange}
+      option={dateOption}
     />
   );
 };

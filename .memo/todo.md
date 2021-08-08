@@ -69,16 +69,17 @@
 
 ### コンポーネント（inputs）
 
-- [ ] TextInput
-- [ ] PasswordInput
-- [ ] TextArea
-- [ ] TimeInput
-- [ ] TimeRangeInput
-- [ ] DateInput
+- [x] TextInput
+- [x] PasswordInput
+- [x] TextArea
+- [x] TimeInput
+- [x] TimeRangeInput
+- [x] DateInput
 - [x] Button
-- [ ] SelectBox
-- [ ] ChipCheckbox
+- [x] SelectBox
+- [ ] ChipCheckbox（低）
 - [ ] DatePicker（低）
+- [ ] CheckboxGroupInput（低）
 
 ### 画面
 
@@ -87,6 +88,26 @@
 - [ ] LoginPage
 - [ ] RegistrationPage
 - [ ] TimecardPage
+
+### コンポーネント(inputs) refactor
+
+- [ ] TextInputBase
+- [ ] DateInput
+- [ ] DateSelect
+- [ ] TimeInput
+- [ ] SelectInput
+- [ ] TextInput
+- [ ] PasswordInput
+
+### コンポーネント（forms）
+
+- [ ] LabelForForm
+- [ ] TextForm
+- [ ] PasswordForm
+- [ ] TextAreaForm
+- [ ] TimeForm
+- [ ] TimeRangeForm
+- [ ] DateForm
 
 ### その他
 

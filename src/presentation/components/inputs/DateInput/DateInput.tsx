@@ -1,45 +1,61 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
+import format from 'date-fns/format';
 
-import { DateInputBase, DateInputBaseProps, DateSelect } from './DateInputBase';
+import { InputBase, InputBaseProps } from '../InputBase/InputBase';
+import { DATE_FORMAT } from 'constants/dateFormat';
 
-export type DateInputProps = DateInputBaseProps;
+type OwnProps = {
+  className?: string;
+  id: string;
+  name: string;
+  value?: string;
+  error?: string;
+  placeholder?: string;
+  max?: Date;
+  min?: Date;
+  onChange: (date: string, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur: (date: string, event?: React.FocusEvent<HTMLInputElement>) => void;
+  onClear?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+};
+
+type ExcludeProps = 'children' | 'type' | 'ref';
+export type DateInputProps = OwnProps & Omit<InputBaseProps, ExcludeProps | keyof OwnProps>;
 
 export const UnStyledDateInput = React.memo(function DateInput({
   className,
+  id,
+  name,
+  value,
   error,
-  description,
-  forceSelect = !isMobile,
-  ...otherProps
+  placeholder,
+  min,
+  max,
+  onChange,
 }: DateInputProps) {
-  if (forceSelect) {
-    return <DateSelect {...otherProps} error={error} description={description} />;
-  }
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(e.currentTarget.value, e);
+  };
+
+  const maxDateString = max ? format(max, DATE_FORMAT.dateISO) : undefined;
+  const minDateString = min ? format(min, DATE_FORMAT.dateISO) : undefined;
 
   return (
     <div className={className}>
-      {/* fix: reRender */}
-      {/* {description && <DescriptionForInput description={description} />} */}
-      <StyledDateInputBase {...otherProps} error={error} forceSelect={forceSelect} />
-      {/* {error && <ErrorMessageForInput message={error} />} */}
+      <InputBase
+        type="date"
+        id={id}
+        name={name}
+        className={className}
+        value={value}
+        max={maxDateString}
+        min={minDateString}
+        error={error}
+        placeholder={placeholder}
+        onChange={handleOnChange}
+      />
     </div>
   );
 });
 
-const StyledDateInputBase = styled(DateInputBase)``;
-export const DateInput = styled(UnStyledDateInput)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  & > ${StyledDateInputBase} {
-    width: 100%;
-    position: relative;
-    & > button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  }
-`;
+export const DateInput = styled(UnStyledDateInput)``;

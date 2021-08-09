@@ -18,7 +18,7 @@ export type DateSelectProps = {
   max?: Date;
   min?: Date;
   onChange: (date: string, event?: React.ChangeEvent<HTMLSelectElement>) => void;
-  onBlur: (date: string, event?: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur: (date: string, event?: React.FocusEvent<HTMLSelectElement>) => void;
   onClear?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 

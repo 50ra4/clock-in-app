@@ -13,17 +13,9 @@ Docs.args = {
   id: 'docs',
   name: 'docs',
   value: 'password1234',
-  description: 'please enter password.',
   onChange: () => {},
 };
 
 export const Error = () => (
-  <PasswordInput
-    id="error"
-    name="error"
-    value="password1234"
-    description="please enter password."
-    error="incorrect password"
-    onChange={() => {}}
-  />
+  <PasswordInput id="error" name="error" value="password1234" error="incorrect password" onChange={() => {}} />
 );

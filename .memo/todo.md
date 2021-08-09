@@ -92,22 +92,24 @@
 ### コンポーネント(inputs) refactor
 
 - [ ] TextInputBase
-- [ ] DateInput
-- [ ] DateSelect
-- [ ] TimeInput
-- [ ] SelectInput
-- [ ] TextInput
-- [ ] PasswordInput
+- [x] TextArea
+- [x] DateInput
+- [x] DateSelect
+- [x] TimeInput
+- [x] TextTextInput
+- [x] SelectInput
+- [x] TextInput
+- [x] PasswordInput
 
 ### コンポーネント（forms）
 
-- [ ] LabelForForm
-- [ ] TextForm
-- [ ] PasswordForm
-- [ ] TextAreaForm
-- [ ] TimeForm
-- [ ] TimeRangeForm
-- [ ] DateForm
+- [x] LabelForForm
+- [x] TextForm
+- [x] PasswordForm
+- [x] TextAreaForm
+- [x] TimeForm
+- [x] TimeRangeForm
+- [x] DateForm
 
 ### その他
 

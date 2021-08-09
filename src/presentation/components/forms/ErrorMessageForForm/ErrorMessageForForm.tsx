@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { WarningIcon } from 'presentation/components/display/Icons/WarningIcon';
 
-export type ErrorMessageForInputProps = {
+export type ErrorMessageForFormProps = {
   className?: string;
   message: string;
 };
 
-function UnStyledErrorMessageForInput({ className, message }: ErrorMessageForInputProps) {
+function UnStyledErrorMessageForForm({ className, message }: ErrorMessageForFormProps) {
   return (
     <div className={className}>
       <StyledWarningIcon />
@@ -17,7 +17,7 @@ function UnStyledErrorMessageForInput({ className, message }: ErrorMessageForInp
 }
 
 const StyledWarningIcon = styled(WarningIcon)``;
-export const ErrorMessageForInput = styled(UnStyledErrorMessageForInput)`
+export const ErrorMessageForForm = styled(UnStyledErrorMessageForForm)`
   display: flex;
   margin: ${({ theme }) => `${theme.space.large}px 0`};
 

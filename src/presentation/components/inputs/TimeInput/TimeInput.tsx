@@ -1,48 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
-import { TimeInputBase, TimeInputBaseProps } from './TimeInputBase';
+import { Time } from 'types';
+import { stringToTimeString, timeStringToTime, timeToTimeString } from 'utils/timeUtil';
+import { InputBase, InputBaseProps } from '../InputBase/InputBase';
 
 type OwnProps = {
-  description?: string;
+  ref?: React.RefObject<HTMLInputElement> | null;
+  className?: string;
+  id: string;
+  name: string;
+  value?: Time;
+  onChange: (time: Time, event?: React.ChangeEvent<HTMLInputElement>) => void;
+  onClear?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  error?: string;
+  placeholder?: string;
 };
-
-export type TimeInputProps = OwnProps & Omit<TimeInputBaseProps, keyof OwnProps>;
+export type TimeInputProps = OwnProps & Omit<InputBaseProps, 'type' | keyof OwnProps>;
 
 export const UnStyledTimeInput = React.memo(function TimeInput({
   ref,
   className,
-  error,
-  description,
-  forceText = !isMobile,
+  value,
+  onChange,
   ...otherProps
 }: TimeInputProps) {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const _timeString = stringToTimeString(e.currentTarget.value);
+    const time = timeStringToTime(_timeString);
+    onChange(time, e);
+  };
+
+  const timeString = timeToTimeString(value);
+
   return (
     <div className={className}>
-      {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
-      <StyledTimeInputBase {...otherProps} error={error} forceText={forceText} />
-      {error && <ErrorMessageForInput message={error} />}
+      <InputBase {...otherProps} type="time" ref={ref} value={timeString} onChange={handleOnChange} />
     </div>
   );
 });
 
-const StyledTimeInputBase = styled(TimeInputBase)``;
 export const TimeInput = styled(UnStyledTimeInput)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  & > ${StyledTimeInputBase} {
-    width: 100%;
-    position: relative;
-    & > button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
+  width: 100%;
+  position: relative;
+  & > button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
   }
 `;

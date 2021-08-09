@@ -1,13 +1,13 @@
-import { TimeRangeInput } from './TimeRangeInput';
+import { TimeRangeForm } from './TimeRangeForm';
 import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 import { useState } from 'react';
 import { Time, Range } from 'types';
 
-export default createStoryMeta(TimeRangeInput, {
-  title: 'inputs/TimeRangeInput',
+export default createStoryMeta(TimeRangeForm, {
+  title: 'forms/TimeRangeForm',
 });
 
-const Template = createStoryTemplate(TimeRangeInput);
+const Template = createStoryTemplate(TimeRangeForm);
 
 const initialTime: Range<Time> = { start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 } };
 
@@ -18,6 +18,7 @@ export const Docs = Template;
 Docs.args = {
   id: 'docs',
   name: 'docs',
+  label: '休憩時間',
   value: initialTime,
   description: 'please enter rest time.',
   onChange: voidFunction,
@@ -25,29 +26,20 @@ Docs.args = {
   onClear: voidFunction,
 };
 
-export const Error = () => (
-  <TimeRangeInput
-    id="error"
-    name="error"
-    value={initialTime}
-    error="enter time"
-    forceText={false}
-    onChange={voidFunction}
-    onBlur={voidFunction}
-  />
-);
-
 /**
  * For native time picker
  */
 export const TimeType = () => {
   const [timeRange, setTimeRange] = useState<Range<Time>>(initialTime);
   return (
-    <TimeRangeInput
+    <TimeRangeForm
       id="time"
       name="time"
+      label="休憩時間"
       value={timeRange}
-      forceText={false}
+      type="input"
+      error="enter time"
+      inline={true}
       onChange={setTimeRange}
       onBlur={voidFunction}
     />
@@ -64,11 +56,13 @@ export const TextType = () => {
   };
 
   return (
-    <TimeRangeInput
+    <TimeRangeForm
       id="text"
       name="text"
+      label="休憩時間"
       value={timeRange}
-      forceText={true}
+      type="text"
+      description="please enter rest time"
       onChange={setTimeRange}
       onClear={handleOnClear}
       onBlur={voidFunction}

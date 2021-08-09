@@ -2,8 +2,6 @@ import React, { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { Lookup } from 'types';
 import { ArrowDropDownIcon } from 'presentation/components/display/Icons/ArrowDropDownIcon';
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 
 type OwnProps = {
   ref?: React.RefObject<HTMLSelectElement> | null;
@@ -44,18 +42,13 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
 
   return (
     <div className={className}>
-      {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
-      <div>
-        <select {...otherProps} value={selectedId}>
-          <option key={''} value={undefined}>
-            {selectedId ? '未選択にする' : placeholder}
-          </option>
-          <>{optionElements}</>
-        </select>
-        <StyledArrowDropDownIcon />
-      </div>
-      {error && <ErrorMessageForInput message={error} />}
+      <select {...otherProps} value={selectedId}>
+        <option key={''} value={undefined}>
+          {selectedId ? '未選択にする' : placeholder}
+        </option>
+        <>{optionElements}</>
+      </select>
+      <StyledArrowDropDownIcon />
     </div>
   );
 });
@@ -63,39 +56,34 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
 const StyledArrowDropDownIcon = styled(ArrowDropDownIcon)``;
 
 export const SelectInput = styled(UnStyledSelectInput)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  & > div {
+  width: 100%;
+  position: relative;
+  & > select {
     width: 100%;
-    position: relative;
-    & > select {
-      width: 100%;
-      height: 38px;
-      line-height: 38px;
-      font-size: ${({ theme }) => theme.font.size.middle}px;
+    height: 38px;
+    line-height: 38px;
+    font-size: ${({ theme }) => theme.font.size.middle}px;
+    background-color: #ffffff;
+    ${({ error }) =>
+      error &&
+      css`
+        background-color: #ffeeff;
+        outline: 2px solid ${({ theme }) => theme.color.font.red};
+      `}
+    &:focus {
       background-color: #ffffff;
-      ${({ error }) =>
-        error &&
-        css`
-          background-color: #ffeeff;
-          outline: 2px solid ${({ theme }) => theme.color.font.red};
-        `}
-      &:focus {
-        background-color: #ffffff;
-        outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
-      }
-      padding: ${({ theme }) => `0 38px 0 ${theme.space.large}px`};
-      appearance: none;
-      &:-ms-expand {
-        display: none;
-      }
+      outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
     }
-    & > ${StyledArrowDropDownIcon} {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
+    padding: ${({ theme }) => `0 38px 0 ${theme.space.large}px`};
+    appearance: none;
+    &:-ms-expand {
+      display: none;
     }
+  }
+  & > ${StyledArrowDropDownIcon} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
   }
 `;

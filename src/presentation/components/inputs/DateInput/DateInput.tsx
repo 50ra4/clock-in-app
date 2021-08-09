@@ -9,7 +9,7 @@ type OwnProps = {
   className?: string;
   id: string;
   name: string;
-  value?: string;
+  value: string | undefined;
   error?: string;
   placeholder?: string;
   max?: Date;

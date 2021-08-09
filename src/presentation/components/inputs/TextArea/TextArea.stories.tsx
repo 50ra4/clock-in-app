@@ -17,6 +17,4 @@ Docs.args = {
   onChange: () => {},
 };
 
-export const Error = () => (
-  <TextArea id="error" name="error" value="0120-1234-1234" error="enter without hyphens" onChange={() => {}} />
-);
+export const Error = () => <TextArea id="error" name="error" value="0120-1234-1234" error={true} onChange={() => {}} />;

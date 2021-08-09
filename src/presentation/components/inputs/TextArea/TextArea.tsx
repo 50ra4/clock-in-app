@@ -10,8 +10,7 @@ type OwnProps = {
   row?: number;
   required?: boolean;
   readOnly?: boolean;
-  error?: string;
-  description?: string;
+  error?: boolean;
   placeholder?: string;
 };
 
@@ -22,25 +21,18 @@ export type TextAreaProps = OwnProps & InheritedProps;
 export const UnStyledTextArea = React.memo(function TextArea({
   ref,
   className,
-  error,
-  description,
   value = '',
+  error,
   ...otherProps
 }: TextAreaProps) {
   return (
     <div className={className}>
-      {/* fix: reRender */}
-      {/* {description && <DescriptionForInput description={description} />} */}
       <textarea {...otherProps} ref={ref} value={value} />
-      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });
 
 export const TextArea = styled(UnStyledTextArea)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   & > textarea {
     resize: none;
     width: 100%;

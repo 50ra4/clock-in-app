@@ -51,14 +51,14 @@ export const WithLabelForForm = styled(UnStyledWithLabelForForm)`
     flex-direction: column;
     justify-content: flex-start;
   }
-  ${({ inline }) =>
+  ${({ inline, description }) =>
     inline
       ? css`
           display: flex;
           & > label {
             flex-basis: 100px;
-            line-height: 24px;
-            padding-top: ${({ theme }) => theme.space.large}px;
+            line-height: 28px;
+            padding-top: ${({ theme }) => (!description ? 0 : `${theme.space.large}px`)};
           }
           & > div {
             flex-basis: auto;

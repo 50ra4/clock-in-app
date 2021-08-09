@@ -36,7 +36,6 @@ export const TextArea = styled(UnStyledTextArea)`
   & > textarea {
     resize: none;
     width: 100%;
-    line-height: 24px;
     height: ${({ row = 3 }) => row * 24}px;
     font-size: ${({ theme }) => theme.font.size.middle}px;
     padding: ${({ theme }) => `0 ${theme.space.large}px`};

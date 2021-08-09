@@ -135,8 +135,8 @@ export const TimeRangeForm = styled(UnStyledTimeRangeForm)`
     }
     & > span {
       width: 38px;
-      height: 38px;
-      line-height: 38px;
+      height: 28px;
+      line-height: 28px;
       text-align: center;
       font-size: ${({ theme }) => theme.font.size.large}px;
       font-weight: ${({ theme }) => theme.font.weight.bold};

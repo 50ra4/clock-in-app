@@ -16,8 +16,9 @@ const UnStyledHeader = React.memo(function Header({ ...otherProps }: HeaderProps
   );
 });
 
+export const headerHeight = 57;
 export const Header = styled(UnStyledHeader)`
-  height: 57px;
+  height: ${headerHeight}px;
   display: flex;
   justify-content: space-between;
   align-items: center;

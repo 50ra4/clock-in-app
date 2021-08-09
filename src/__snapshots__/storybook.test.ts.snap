@@ -253,6 +253,1507 @@ Array [
 ]
 `;
 
+exports[`Storyshots forms/DateForm Date Input Type 1`] = `
+<div
+  className="sc-fKgJPI"
+>
+  <div
+    className="sc-iemWCZ jiJYii"
+  >
+    <label
+      htmlFor="date"
+      required={true}
+    >
+      予約日
+    </label>
+    <div>
+      <div
+        className="sc-hHEiqL"
+      >
+        <input
+          className="sc-dIvrsQ CZvzW sc-hHEiqL input-base"
+          error="required"
+          id="date"
+          max="2021-07-31"
+          min="2021-06-01"
+          name="date"
+          onChange={[Function]}
+          type="date"
+          value="2021-07-23"
+        />
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          required
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/DateForm Docs 1`] = `
+<div
+  className="sc-fKgJPI"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="docs"
+    >
+      予約日
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          enter the date to book
+        </p>
+      </div>
+      <div
+        className="sc-kfYoZR pWDXE"
+      >
+        <select
+          id="docs"
+          name="docs"
+          onChange={[Function]}
+        >
+          <option>
+            選択する
+          </option>
+          <option
+            value="2021-06-01"
+          >
+            2021/06/01
+          </option>
+          <option
+            value="2021-06-02"
+          >
+            2021/06/02
+          </option>
+          <option
+            value="2021-06-03"
+          >
+            2021/06/03
+          </option>
+          <option
+            value="2021-06-04"
+          >
+            2021/06/04
+          </option>
+          <option
+            value="2021-06-05"
+          >
+            2021/06/05
+          </option>
+          <option
+            value="2021-06-06"
+          >
+            2021/06/06
+          </option>
+          <option
+            value="2021-06-07"
+          >
+            2021/06/07
+          </option>
+          <option
+            value="2021-06-08"
+          >
+            2021/06/08
+          </option>
+          <option
+            value="2021-06-09"
+          >
+            2021/06/09
+          </option>
+          <option
+            value="2021-06-10"
+          >
+            2021/06/10
+          </option>
+          <option
+            value="2021-06-11"
+          >
+            2021/06/11
+          </option>
+          <option
+            value="2021-06-12"
+          >
+            2021/06/12
+          </option>
+          <option
+            value="2021-06-13"
+          >
+            2021/06/13
+          </option>
+          <option
+            value="2021-06-14"
+          >
+            2021/06/14
+          </option>
+          <option
+            value="2021-06-15"
+          >
+            2021/06/15
+          </option>
+          <option
+            value="2021-06-16"
+          >
+            2021/06/16
+          </option>
+          <option
+            value="2021-06-17"
+          >
+            2021/06/17
+          </option>
+          <option
+            value="2021-06-18"
+          >
+            2021/06/18
+          </option>
+          <option
+            value="2021-06-19"
+          >
+            2021/06/19
+          </option>
+          <option
+            value="2021-06-20"
+          >
+            2021/06/20
+          </option>
+          <option
+            value="2021-06-21"
+          >
+            2021/06/21
+          </option>
+          <option
+            value="2021-06-22"
+          >
+            2021/06/22
+          </option>
+          <option
+            value="2021-06-23"
+          >
+            2021/06/23
+          </option>
+          <option
+            value="2021-06-24"
+          >
+            2021/06/24
+          </option>
+          <option
+            value="2021-06-25"
+          >
+            2021/06/25
+          </option>
+          <option
+            value="2021-06-26"
+          >
+            2021/06/26
+          </option>
+          <option
+            value="2021-06-27"
+          >
+            2021/06/27
+          </option>
+          <option
+            value="2021-06-28"
+          >
+            2021/06/28
+          </option>
+          <option
+            value="2021-06-29"
+          >
+            2021/06/29
+          </option>
+          <option
+            value="2021-06-30"
+          >
+            2021/06/30
+          </option>
+          <option
+            value="2021-07-01"
+          >
+            2021/07/01
+          </option>
+          <option
+            value="2021-07-02"
+          >
+            2021/07/02
+          </option>
+          <option
+            value="2021-07-03"
+          >
+            2021/07/03
+          </option>
+          <option
+            value="2021-07-04"
+          >
+            2021/07/04
+          </option>
+          <option
+            value="2021-07-05"
+          >
+            2021/07/05
+          </option>
+          <option
+            value="2021-07-06"
+          >
+            2021/07/06
+          </option>
+          <option
+            value="2021-07-07"
+          >
+            2021/07/07
+          </option>
+          <option
+            value="2021-07-08"
+          >
+            2021/07/08
+          </option>
+          <option
+            value="2021-07-09"
+          >
+            2021/07/09
+          </option>
+          <option
+            value="2021-07-10"
+          >
+            2021/07/10
+          </option>
+          <option
+            value="2021-07-11"
+          >
+            2021/07/11
+          </option>
+          <option
+            value="2021-07-12"
+          >
+            2021/07/12
+          </option>
+          <option
+            value="2021-07-13"
+          >
+            2021/07/13
+          </option>
+          <option
+            value="2021-07-14"
+          >
+            2021/07/14
+          </option>
+          <option
+            value="2021-07-15"
+          >
+            2021/07/15
+          </option>
+          <option
+            value="2021-07-16"
+          >
+            2021/07/16
+          </option>
+          <option
+            value="2021-07-17"
+          >
+            2021/07/17
+          </option>
+          <option
+            value="2021-07-18"
+          >
+            2021/07/18
+          </option>
+          <option
+            value="2021-07-19"
+          >
+            2021/07/19
+          </option>
+          <option
+            value="2021-07-20"
+          >
+            2021/07/20
+          </option>
+          <option
+            value="2021-07-21"
+          >
+            2021/07/21
+          </option>
+          <option
+            value="2021-07-22"
+          >
+            2021/07/22
+          </option>
+          <option
+            value="2021-07-23"
+          >
+            2021/07/23
+          </option>
+          <option
+            value="2021-07-24"
+          >
+            2021/07/24
+          </option>
+          <option
+            value="2021-07-25"
+          >
+            2021/07/25
+          </option>
+          <option
+            value="2021-07-26"
+          >
+            2021/07/26
+          </option>
+          <option
+            value="2021-07-27"
+          >
+            2021/07/27
+          </option>
+          <option
+            value="2021-07-28"
+          >
+            2021/07/28
+          </option>
+          <option
+            value="2021-07-29"
+          >
+            2021/07/29
+          </option>
+          <option
+            value="2021-07-30"
+          >
+            2021/07/30
+          </option>
+          <option
+            value="2021-07-31"
+          >
+            2021/07/31
+          </option>
+        </select>
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-dlMDgC"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/DateForm Select Type 1`] = `
+<div
+  className="sc-fKgJPI"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="select"
+    >
+      予約日
+    </label>
+    <div>
+      <div
+        className="sc-kfYoZR pWDXE"
+      >
+        <select
+          id="select"
+          name="select"
+          onChange={[Function]}
+        >
+          <option>
+            選択する
+          </option>
+          <option
+            value="2021-06-01"
+          >
+            2021/06/01
+          </option>
+          <option
+            value="2021-06-02"
+          >
+            2021/06/02
+          </option>
+          <option
+            value="2021-06-03"
+          >
+            2021/06/03
+          </option>
+          <option
+            value="2021-06-04"
+          >
+            2021/06/04
+          </option>
+          <option
+            value="2021-06-05"
+          >
+            2021/06/05
+          </option>
+          <option
+            value="2021-06-06"
+          >
+            2021/06/06
+          </option>
+          <option
+            value="2021-06-07"
+          >
+            2021/06/07
+          </option>
+          <option
+            value="2021-06-08"
+          >
+            2021/06/08
+          </option>
+          <option
+            value="2021-06-09"
+          >
+            2021/06/09
+          </option>
+          <option
+            value="2021-06-10"
+          >
+            2021/06/10
+          </option>
+          <option
+            value="2021-06-11"
+          >
+            2021/06/11
+          </option>
+          <option
+            value="2021-06-12"
+          >
+            2021/06/12
+          </option>
+          <option
+            value="2021-06-13"
+          >
+            2021/06/13
+          </option>
+          <option
+            value="2021-06-14"
+          >
+            2021/06/14
+          </option>
+          <option
+            value="2021-06-15"
+          >
+            2021/06/15
+          </option>
+          <option
+            value="2021-06-16"
+          >
+            2021/06/16
+          </option>
+          <option
+            value="2021-06-17"
+          >
+            2021/06/17
+          </option>
+          <option
+            value="2021-06-18"
+          >
+            2021/06/18
+          </option>
+          <option
+            value="2021-06-19"
+          >
+            2021/06/19
+          </option>
+          <option
+            value="2021-06-20"
+          >
+            2021/06/20
+          </option>
+          <option
+            value="2021-06-21"
+          >
+            2021/06/21
+          </option>
+          <option
+            value="2021-06-22"
+          >
+            2021/06/22
+          </option>
+          <option
+            value="2021-06-23"
+          >
+            2021/06/23
+          </option>
+          <option
+            value="2021-06-24"
+          >
+            2021/06/24
+          </option>
+          <option
+            value="2021-06-25"
+          >
+            2021/06/25
+          </option>
+          <option
+            value="2021-06-26"
+          >
+            2021/06/26
+          </option>
+          <option
+            value="2021-06-27"
+          >
+            2021/06/27
+          </option>
+          <option
+            value="2021-06-28"
+          >
+            2021/06/28
+          </option>
+          <option
+            value="2021-06-29"
+          >
+            2021/06/29
+          </option>
+          <option
+            value="2021-06-30"
+          >
+            2021/06/30
+          </option>
+          <option
+            value="2021-07-01"
+          >
+            2021/07/01
+          </option>
+          <option
+            value="2021-07-02"
+          >
+            2021/07/02
+          </option>
+          <option
+            value="2021-07-03"
+          >
+            2021/07/03
+          </option>
+          <option
+            value="2021-07-04"
+          >
+            2021/07/04
+          </option>
+          <option
+            value="2021-07-05"
+          >
+            2021/07/05
+          </option>
+          <option
+            value="2021-07-06"
+          >
+            2021/07/06
+          </option>
+          <option
+            value="2021-07-07"
+          >
+            2021/07/07
+          </option>
+          <option
+            value="2021-07-08"
+          >
+            2021/07/08
+          </option>
+          <option
+            value="2021-07-09"
+          >
+            2021/07/09
+          </option>
+          <option
+            value="2021-07-10"
+          >
+            2021/07/10
+          </option>
+          <option
+            value="2021-07-11"
+          >
+            2021/07/11
+          </option>
+          <option
+            value="2021-07-12"
+          >
+            2021/07/12
+          </option>
+          <option
+            value="2021-07-13"
+          >
+            2021/07/13
+          </option>
+          <option
+            value="2021-07-14"
+          >
+            2021/07/14
+          </option>
+          <option
+            value="2021-07-15"
+          >
+            2021/07/15
+          </option>
+          <option
+            value="2021-07-16"
+          >
+            2021/07/16
+          </option>
+          <option
+            value="2021-07-17"
+          >
+            2021/07/17
+          </option>
+          <option
+            value="2021-07-18"
+          >
+            2021/07/18
+          </option>
+          <option
+            value="2021-07-19"
+          >
+            2021/07/19
+          </option>
+          <option
+            value="2021-07-20"
+          >
+            2021/07/20
+          </option>
+          <option
+            value="2021-07-21"
+          >
+            2021/07/21
+          </option>
+          <option
+            value="2021-07-22"
+          >
+            2021/07/22
+          </option>
+          <option
+            value="2021-07-23"
+          >
+            2021/07/23
+          </option>
+          <option
+            value="2021-07-24"
+          >
+            2021/07/24
+          </option>
+          <option
+            value="2021-07-25"
+          >
+            2021/07/25
+          </option>
+          <option
+            value="2021-07-26"
+          >
+            2021/07/26
+          </option>
+          <option
+            value="2021-07-27"
+          >
+            2021/07/27
+          </option>
+          <option
+            value="2021-07-28"
+          >
+            2021/07/28
+          </option>
+          <option
+            value="2021-07-29"
+          >
+            2021/07/29
+          </option>
+          <option
+            value="2021-07-30"
+          >
+            2021/07/30
+          </option>
+          <option
+            value="2021-07-31"
+          >
+            2021/07/31
+          </option>
+        </select>
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-dlMDgC"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/DescriptionForForm Docs 1`] = `
+<div
+  className="sc-fnVZcZ deMolw"
+>
+  <p>
+    Please enter phone number without hyphens.
+  </p>
+</div>
+`;
+
+exports[`Storyshots forms/ErrorMessageForForm Docs 1`] = `
+<div
+  className="sc-bkbkJK kxoWrp"
+>
+  <svg
+    aria-hidden={true}
+    className="sc-jSFjdj edwqPA sc-fFSPTT"
+    color="default"
+    size="medium"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+    />
+  </svg>
+  <p>
+    Don't enter phone number with hyphens.
+  </p>
+</div>
+`;
+
+exports[`Storyshots forms/PasswordForm Docs 1`] = `
+<div
+  className="sc-lmgQwP"
+>
+  <div
+    className="sc-iemWCZ coDBvo"
+  >
+    <label
+      htmlFor="docs"
+      required={true}
+    >
+      パスワード
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter password.
+        </p>
+      </div>
+      <div
+        className="sc-cxNHIi kRxbkg"
+      >
+        <input
+          className="sc-dIvrsQ bdBFfT input-base"
+          id="docs"
+          name="docs"
+          onChange={[Function]}
+          type="password"
+          value="password1234"
+        />
+        <button
+          aria-label="パスワードを表示"
+          className="sc-bCwfaz jnBGYy sc-iwajpm"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-jSFjdj edwqPA"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/PasswordForm Error 1`] = `
+<div
+  className="sc-lmgQwP"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="error"
+    >
+      パスワード
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter password.
+        </p>
+      </div>
+      <div
+        className="sc-cxNHIi kRxbkg"
+      >
+        <input
+          className="sc-dIvrsQ jgSpLZ input-base"
+          error="incorrect password"
+          id="error"
+          name="error"
+          onChange={[Function]}
+          type="password"
+          value="password1234"
+        />
+        <button
+          aria-label="パスワードを表示"
+          className="sc-bCwfaz jnBGYy sc-iwajpm"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-jSFjdj edwqPA"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          incorrect password
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TextAreaForm Docs 1`] = `
+<div
+  className="sc-giAqHp"
+>
+  <div
+    className="sc-iemWCZ jiJYii"
+  >
+    <label
+      htmlFor="docs"
+      required={true}
+    >
+      備考
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter remarks.
+        </p>
+      </div>
+      <div
+        className="sc-iJCRrE jyRJfF"
+      >
+        <textarea
+          id="docs"
+          name="docs"
+          onChange={[Function]}
+          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TextAreaForm Error 1`] = `
+<div
+  className="sc-giAqHp"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="error"
+    >
+      備考
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter remarks.
+        </p>
+      </div>
+      <div
+        className="sc-iJCRrE hABEFW"
+      >
+        <textarea
+          id="error"
+          name="error"
+          onChange={[Function]}
+          row={2}
+          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        />
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          too long
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TextForm Docs 1`] = `
+<div
+  className="sc-kLojOw"
+>
+  <div
+    className="sc-iemWCZ coDBvo"
+  >
+    <label
+      htmlFor="docs"
+      required={true}
+    >
+      メールアドレス
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter remarks.
+        </p>
+      </div>
+      <div
+        className="sc-bYwzuL eNoNmh"
+      >
+        <input
+          className="sc-dIvrsQ bdBFfT input-base"
+          id="docs"
+          name="docs"
+          onChange={[Function]}
+          type="email"
+          value="example@example.com"
+        />
+        <button
+          aria-label="クリア"
+          className="sc-bCwfaz jnBGYy sc-ezzafa"
+          disabled={false}
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-jSFjdj edwqPA"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TextForm Error 1`] = `
+<div
+  className="sc-kLojOw"
+>
+  <div
+    className="sc-iemWCZ fvTEKE"
+  >
+    <label
+      htmlFor="error"
+    >
+      電話番号
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter phone number.
+        </p>
+      </div>
+      <div
+        className="sc-bYwzuL eNoNmh"
+      >
+        <input
+          className="sc-dIvrsQ jgSpLZ input-base"
+          error="too long"
+          id="error"
+          name="error"
+          onChange={[Function]}
+          type="tel"
+          value="0000-0000-0000-0000"
+        />
+        <button
+          aria-label="クリア"
+          className="sc-bCwfaz jnBGYy sc-ezzafa"
+          disabled={false}
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-jSFjdj edwqPA"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          too long
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeForm Docs 1`] = `
+<div
+  className="sc-hiKfDv"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="docs"
+    >
+      始業時間
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          enter the date to book
+        </p>
+      </div>
+      <div
+        className="sc-iklJeh iFTkvG"
+      >
+        <input
+          className="sc-dIvrsQ iolwys input-base"
+          id="docs"
+          name="docs"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value="10:10"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeForm Text Type 1`] = `
+<div
+  className="sc-hiKfDv"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="select"
+    >
+      始業時間
+    </label>
+    <div>
+      <div
+        className="sc-iklJeh iFTkvG"
+      >
+        <input
+          className="sc-dIvrsQ iolwys input-base"
+          id="select"
+          name="select"
+          onBlur={[Function]}
+          onChange={[Function]}
+          type="text"
+          value="10:10"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
+<div
+  className="sc-hiKfDv"
+>
+  <div
+    className="sc-iemWCZ jiJYii"
+  >
+    <label
+      htmlFor="date"
+      required={true}
+    >
+      始業時間
+    </label>
+    <div>
+      <div
+        className="sc-jJMGnK kiGVsQ"
+      >
+        <input
+          className="sc-dIvrsQ CZvzW input-base"
+          error="required"
+          id="date"
+          name="date"
+          onChange={[Function]}
+          type="time"
+          value="10:10"
+        />
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          required
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
+<div
+  className="sc-ciSkZP duDoIi"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="docs"
+    >
+      休憩時間
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter rest time.
+        </p>
+      </div>
+      <div
+        className="time-range-form__wrap"
+      >
+        <div
+          className="sc-iklJeh sc-gXfVKN iFTkvG"
+        >
+          <input
+            className="sc-dIvrsQ iolwys input-base"
+            id="docs"
+            name="docs"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-iklJeh sc-gXfVKN iFTkvG"
+        >
+          <input
+            className="sc-dIvrsQ iolwys input-base"
+            id="docs-end"
+            name="docs-end"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="02:30"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
+<div
+  className="sc-ciSkZP duDoIi"
+>
+  <div
+    className="sc-iemWCZ gQdfJy"
+  >
+    <label
+      htmlFor="text"
+    >
+      休憩時間
+    </label>
+    <div>
+      <div
+        className="sc-fnVZcZ deMolw"
+      >
+        <p>
+          please enter rest time
+        </p>
+      </div>
+      <div
+        className="time-range-form__wrap"
+      >
+        <div
+          className="sc-iklJeh sc-gXfVKN iFTkvG"
+        >
+          <input
+            className="sc-dIvrsQ iolwys input-base"
+            id="text"
+            name="text"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-iklJeh sc-gXfVKN iFTkvG"
+        >
+          <input
+            className="sc-dIvrsQ iolwys input-base"
+            id="text-end"
+            name="text-end"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="02:30"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
+<div
+  className="sc-ciSkZP duDoIi"
+>
+  <div
+    className="sc-iemWCZ fvTEKE"
+  >
+    <label
+      htmlFor="time"
+    >
+      休憩時間
+    </label>
+    <div>
+      <div
+        className="time-range-form__wrap"
+      >
+        <div
+          className="sc-jJMGnK sc-cBoqAE kiGVsQ"
+        >
+          <input
+            className="sc-dIvrsQ CZvzW input-base"
+            error="enter time"
+            id="time"
+            name="time"
+            onChange={[Function]}
+            type="time"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-jJMGnK sc-cBoqAE kiGVsQ"
+        >
+          <input
+            className="sc-dIvrsQ CZvzW input-base"
+            error="enter time"
+            id="time-end"
+            name="time-end"
+            onChange={[Function]}
+            type="time"
+            value="02:30"
+          />
+        </div>
+      </div>
+      <div
+        className="sc-bkbkJK kxoWrp"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          enter time
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
   className="sc-jrsJWt fxVgBS button"
@@ -298,7 +1799,7 @@ exports[`Storyshots inputs/Button Outline 1`] = `
 
 exports[`Storyshots inputs/Checkbox Docs 1`] = `
 <div
-  className="sc-fnVZcZ hSsVUO"
+  className="sc-jcwpoC gtdcTl"
 >
   <input
     disabled={false}
@@ -332,14 +1833,16 @@ exports[`Storyshots inputs/Checkbox Docs 1`] = `
 </div>
 `;
 
-exports[`Storyshots inputs/DateInput Date Type 1`] = `
+exports[`Storyshots inputs/DateInput Docs 1`] = `
 <div
-  className="sc-fKgJPI diaciw"
+  className="sc-hHEiqL"
 >
   <input
-    className="sc-dIvrsQ iolwys sc-kfYoZR input-base"
-    id="date"
-    name="date"
+    className="sc-dIvrsQ iolwys sc-hHEiqL input-base"
+    id="docs"
+    max="2021-07-31"
+    min="2021-07-01"
+    name="docs"
     onChange={[Function]}
     type="date"
     value="2021-07-23"
@@ -347,613 +1850,177 @@ exports[`Storyshots inputs/DateInput Date Type 1`] = `
 </div>
 `;
 
-exports[`Storyshots inputs/DateInput Docs 1`] = `
+exports[`Storyshots inputs/DateSelect Docs 1`] = `
 <div
-  className="sc-dlMDgC UQhKA"
+  className="sc-kfYoZR pWDXE"
 >
-  <div>
-    <select
-      id="docs"
-      name="docs"
-      onChange={[Function]}
-    >
-      <option>
-        選択する
-      </option>
-      <option
-        value="2021-07-01"
-      >
-        2021/07/01
-      </option>
-      <option
-        value="2021-07-02"
-      >
-        2021/07/02
-      </option>
-      <option
-        value="2021-07-03"
-      >
-        2021/07/03
-      </option>
-      <option
-        value="2021-07-04"
-      >
-        2021/07/04
-      </option>
-      <option
-        value="2021-07-05"
-      >
-        2021/07/05
-      </option>
-      <option
-        value="2021-07-06"
-      >
-        2021/07/06
-      </option>
-      <option
-        value="2021-07-07"
-      >
-        2021/07/07
-      </option>
-      <option
-        value="2021-07-08"
-      >
-        2021/07/08
-      </option>
-      <option
-        value="2021-07-09"
-      >
-        2021/07/09
-      </option>
-      <option
-        value="2021-07-10"
-      >
-        2021/07/10
-      </option>
-      <option
-        value="2021-07-11"
-      >
-        2021/07/11
-      </option>
-      <option
-        value="2021-07-12"
-      >
-        2021/07/12
-      </option>
-      <option
-        value="2021-07-13"
-      >
-        2021/07/13
-      </option>
-      <option
-        value="2021-07-14"
-      >
-        2021/07/14
-      </option>
-      <option
-        value="2021-07-15"
-      >
-        2021/07/15
-      </option>
-      <option
-        value="2021-07-16"
-      >
-        2021/07/16
-      </option>
-      <option
-        value="2021-07-17"
-      >
-        2021/07/17
-      </option>
-      <option
-        value="2021-07-18"
-      >
-        2021/07/18
-      </option>
-      <option
-        value="2021-07-19"
-      >
-        2021/07/19
-      </option>
-      <option
-        value="2021-07-20"
-      >
-        2021/07/20
-      </option>
-      <option
-        value="2021-07-21"
-      >
-        2021/07/21
-      </option>
-      <option
-        value="2021-07-22"
-      >
-        2021/07/22
-      </option>
-      <option
-        value="2021-07-23"
-      >
-        2021/07/23
-      </option>
-      <option
-        value="2021-07-24"
-      >
-        2021/07/24
-      </option>
-      <option
-        value="2021-07-25"
-      >
-        2021/07/25
-      </option>
-      <option
-        value="2021-07-26"
-      >
-        2021/07/26
-      </option>
-      <option
-        value="2021-07-27"
-      >
-        2021/07/27
-      </option>
-      <option
-        value="2021-07-28"
-      >
-        2021/07/28
-      </option>
-      <option
-        value="2021-07-29"
-      >
-        2021/07/29
-      </option>
-      <option
-        value="2021-07-30"
-      >
-        2021/07/30
-      </option>
-      <option
-        value="2021-07-31"
-      >
-        2021/07/31
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-hHEiqL"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/DateInput Error 1`] = `
-<div
-  className="sc-dlMDgC czfAbi"
->
-  <div>
-    <select
-      id="error"
-      name="error"
-      onChange={[Function]}
-    >
-      <option>
-        選択する
-      </option>
-      <option
-        value="2021-07-01"
-      >
-        2021/07/01
-      </option>
-      <option
-        value="2021-07-02"
-      >
-        2021/07/02
-      </option>
-      <option
-        value="2021-07-03"
-      >
-        2021/07/03
-      </option>
-      <option
-        value="2021-07-04"
-      >
-        2021/07/04
-      </option>
-      <option
-        value="2021-07-05"
-      >
-        2021/07/05
-      </option>
-      <option
-        value="2021-07-06"
-      >
-        2021/07/06
-      </option>
-      <option
-        value="2021-07-07"
-      >
-        2021/07/07
-      </option>
-      <option
-        value="2021-07-08"
-      >
-        2021/07/08
-      </option>
-      <option
-        value="2021-07-09"
-      >
-        2021/07/09
-      </option>
-      <option
-        value="2021-07-10"
-      >
-        2021/07/10
-      </option>
-      <option
-        value="2021-07-11"
-      >
-        2021/07/11
-      </option>
-      <option
-        value="2021-07-12"
-      >
-        2021/07/12
-      </option>
-      <option
-        value="2021-07-13"
-      >
-        2021/07/13
-      </option>
-      <option
-        value="2021-07-14"
-      >
-        2021/07/14
-      </option>
-      <option
-        value="2021-07-15"
-      >
-        2021/07/15
-      </option>
-      <option
-        value="2021-07-16"
-      >
-        2021/07/16
-      </option>
-      <option
-        value="2021-07-17"
-      >
-        2021/07/17
-      </option>
-      <option
-        value="2021-07-18"
-      >
-        2021/07/18
-      </option>
-      <option
-        value="2021-07-19"
-      >
-        2021/07/19
-      </option>
-      <option
-        value="2021-07-20"
-      >
-        2021/07/20
-      </option>
-      <option
-        value="2021-07-21"
-      >
-        2021/07/21
-      </option>
-      <option
-        value="2021-07-22"
-      >
-        2021/07/22
-      </option>
-      <option
-        value="2021-07-23"
-      >
-        2021/07/23
-      </option>
-      <option
-        value="2021-07-24"
-      >
-        2021/07/24
-      </option>
-      <option
-        value="2021-07-25"
-      >
-        2021/07/25
-      </option>
-      <option
-        value="2021-07-26"
-      >
-        2021/07/26
-      </option>
-      <option
-        value="2021-07-27"
-      >
-        2021/07/27
-      </option>
-      <option
-        value="2021-07-28"
-      >
-        2021/07/28
-      </option>
-      <option
-        value="2021-07-29"
-      >
-        2021/07/29
-      </option>
-      <option
-        value="2021-07-30"
-      >
-        2021/07/30
-      </option>
-      <option
-        value="2021-07-31"
-      >
-        2021/07/31
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-hHEiqL"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
+  <select
+    id="docs"
+    name="docs"
+    onChange={[Function]}
   >
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+    <option>
+      選択する
+    </option>
+    <option
+      value="2021-07-01"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      enter time
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/DateInput Select Type 1`] = `
-<div
-  className="sc-dlMDgC UQhKA"
->
-  <div>
-    <select
-      id="text"
-      name="text"
-      onChange={[Function]}
+      2021/07/01
+    </option>
+    <option
+      value="2021-07-02"
     >
-      <option>
-        選択する
-      </option>
-      <option
-        value="2021-07-01"
-      >
-        2021/07/01
-      </option>
-      <option
-        value="2021-07-02"
-      >
-        2021/07/02
-      </option>
-      <option
-        value="2021-07-03"
-      >
-        2021/07/03
-      </option>
-      <option
-        value="2021-07-04"
-      >
-        2021/07/04
-      </option>
-      <option
-        value="2021-07-05"
-      >
-        2021/07/05
-      </option>
-      <option
-        value="2021-07-06"
-      >
-        2021/07/06
-      </option>
-      <option
-        value="2021-07-07"
-      >
-        2021/07/07
-      </option>
-      <option
-        value="2021-07-08"
-      >
-        2021/07/08
-      </option>
-      <option
-        value="2021-07-09"
-      >
-        2021/07/09
-      </option>
-      <option
-        value="2021-07-10"
-      >
-        2021/07/10
-      </option>
-      <option
-        value="2021-07-11"
-      >
-        2021/07/11
-      </option>
-      <option
-        value="2021-07-12"
-      >
-        2021/07/12
-      </option>
-      <option
-        value="2021-07-13"
-      >
-        2021/07/13
-      </option>
-      <option
-        value="2021-07-14"
-      >
-        2021/07/14
-      </option>
-      <option
-        value="2021-07-15"
-      >
-        2021/07/15
-      </option>
-      <option
-        value="2021-07-16"
-      >
-        2021/07/16
-      </option>
-      <option
-        value="2021-07-17"
-      >
-        2021/07/17
-      </option>
-      <option
-        value="2021-07-18"
-      >
-        2021/07/18
-      </option>
-      <option
-        value="2021-07-19"
-      >
-        2021/07/19
-      </option>
-      <option
-        value="2021-07-20"
-      >
-        2021/07/20
-      </option>
-      <option
-        value="2021-07-21"
-      >
-        2021/07/21
-      </option>
-      <option
-        value="2021-07-22"
-      >
-        2021/07/22
-      </option>
-      <option
-        value="2021-07-23"
-      >
-        2021/07/23
-      </option>
-      <option
-        value="2021-07-24"
-      >
-        2021/07/24
-      </option>
-      <option
-        value="2021-07-25"
-      >
-        2021/07/25
-      </option>
-      <option
-        value="2021-07-26"
-      >
-        2021/07/26
-      </option>
-      <option
-        value="2021-07-27"
-      >
-        2021/07/27
-      </option>
-      <option
-        value="2021-07-28"
-      >
-        2021/07/28
-      </option>
-      <option
-        value="2021-07-29"
-      >
-        2021/07/29
-      </option>
-      <option
-        value="2021-07-30"
-      >
-        2021/07/30
-      </option>
-      <option
-        value="2021-07-31"
-      >
-        2021/07/31
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-hHEiqL"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      2021/07/02
+    </option>
+    <option
+      value="2021-07-03"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/DescriptionForInput Docs 1`] = `
-<div
-  className="sc-fFSPTT dEVgCC"
->
-  <p>
-    Please enter phone number without hyphens.
-  </p>
-</div>
-`;
-
-exports[`Storyshots inputs/ErrorMessageForInput Docs 1`] = `
-<div
-  className="sc-iemWCZ yTHrl"
->
+      2021/07/03
+    </option>
+    <option
+      value="2021-07-04"
+    >
+      2021/07/04
+    </option>
+    <option
+      value="2021-07-05"
+    >
+      2021/07/05
+    </option>
+    <option
+      value="2021-07-06"
+    >
+      2021/07/06
+    </option>
+    <option
+      value="2021-07-07"
+    >
+      2021/07/07
+    </option>
+    <option
+      value="2021-07-08"
+    >
+      2021/07/08
+    </option>
+    <option
+      value="2021-07-09"
+    >
+      2021/07/09
+    </option>
+    <option
+      value="2021-07-10"
+    >
+      2021/07/10
+    </option>
+    <option
+      value="2021-07-11"
+    >
+      2021/07/11
+    </option>
+    <option
+      value="2021-07-12"
+    >
+      2021/07/12
+    </option>
+    <option
+      value="2021-07-13"
+    >
+      2021/07/13
+    </option>
+    <option
+      value="2021-07-14"
+    >
+      2021/07/14
+    </option>
+    <option
+      value="2021-07-15"
+    >
+      2021/07/15
+    </option>
+    <option
+      value="2021-07-16"
+    >
+      2021/07/16
+    </option>
+    <option
+      value="2021-07-17"
+    >
+      2021/07/17
+    </option>
+    <option
+      value="2021-07-18"
+    >
+      2021/07/18
+    </option>
+    <option
+      value="2021-07-19"
+    >
+      2021/07/19
+    </option>
+    <option
+      value="2021-07-20"
+    >
+      2021/07/20
+    </option>
+    <option
+      value="2021-07-21"
+    >
+      2021/07/21
+    </option>
+    <option
+      value="2021-07-22"
+    >
+      2021/07/22
+    </option>
+    <option
+      value="2021-07-23"
+    >
+      2021/07/23
+    </option>
+    <option
+      value="2021-07-24"
+    >
+      2021/07/24
+    </option>
+    <option
+      value="2021-07-25"
+    >
+      2021/07/25
+    </option>
+    <option
+      value="2021-07-26"
+    >
+      2021/07/26
+    </option>
+    <option
+      value="2021-07-27"
+    >
+      2021/07/27
+    </option>
+    <option
+      value="2021-07-28"
+    >
+      2021/07/28
+    </option>
+    <option
+      value="2021-07-29"
+    >
+      2021/07/29
+    </option>
+    <option
+      value="2021-07-30"
+    >
+      2021/07/30
+    </option>
+    <option
+      value="2021-07-31"
+    >
+      2021/07/31
+    </option>
+  </select>
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA sc-bkbkJK"
+    className="sc-jSFjdj edwqPA sc-dlMDgC"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -964,12 +2031,9 @@ exports[`Storyshots inputs/ErrorMessageForInput Docs 1`] = `
       fill="none"
     />
     <path
-      d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+      d="M7 10l5 5 5-5z"
     />
   </svg>
-  <p>
-    Don't enter phone number with hyphens.
-  </p>
 </div>
 `;
 
@@ -1024,271 +2088,190 @@ exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 
 exports[`Storyshots inputs/PasswordInput Docs 1`] = `
 <div
-  className="sc-cxNHIi bnxDHa"
+  className="sc-cxNHIi kRxbkg"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
+  <input
+    className="sc-dIvrsQ bdBFfT input-base"
+    id="docs"
+    name="docs"
+    onChange={[Function]}
+    type="password"
+    value="password1234"
+  />
+  <button
+    aria-label="パスワードを表示"
+    className="sc-bCwfaz jnBGYy sc-iwajpm"
+    disabled={false}
+    onClick={[Function]}
   >
-    <p>
-      please enter password.
-    </p>
-  </div>
-  <div>
-    <input
-      className="sc-dIvrsQ bdBFfT input-base"
-      id="docs"
-      name="docs"
-      onChange={[Function]}
-      type="password"
-      value="password1234"
-    />
-    <button
-      aria-label="パスワードを表示"
-      className="sc-bCwfaz jnBGYy sc-iwajpm"
-      disabled={false}
-      onClick={[Function]}
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj edwqPA"
+      color="default"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0V0z"
-          fill="none"
-        />
-        <path
-          d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
-        />
-      </svg>
-    </button>
-  </div>
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
 exports[`Storyshots inputs/PasswordInput Error 1`] = `
 <div
-  className="sc-cxNHIi bnxDHa"
+  className="sc-cxNHIi kRxbkg"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
-  >
-    <p>
-      please enter password.
-    </p>
-  </div>
-  <div>
-    <input
-      className="sc-dIvrsQ jgSpLZ input-base"
-      error="incorrect password"
-      id="error"
-      name="error"
-      onChange={[Function]}
-      type="password"
-      value="password1234"
-    />
-    <button
-      aria-label="パスワードを表示"
-      className="sc-bCwfaz jnBGYy sc-iwajpm"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0V0z"
-          fill="none"
-        />
-        <path
-          d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
-        />
-      </svg>
-    </button>
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
+  <input
+    className="sc-dIvrsQ jgSpLZ input-base"
+    error="incorrect password"
+    id="error"
+    name="error"
+    onChange={[Function]}
+    type="password"
+    value="password1234"
+  />
+  <button
+    aria-label="パスワードを表示"
+    className="sc-bCwfaz jnBGYy sc-iwajpm"
+    disabled={false}
+    onClick={[Function]}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
+      className="sc-jSFjdj edwqPA"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M0 0h24v24H0z"
+        d="M0 0h24v24H0V0z"
         fill="none"
       />
       <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+        d="M12 6c3.79 0 7.17 2.13 8.82 5.5C19.17 14.87 15.79 17 12 17s-7.17-2.13-8.82-5.5C4.83 8.13 8.21 6 12 6m0-2C7 4 2.73 7.11 1 11.5 2.73 15.89 7 19 12 19s9.27-3.11 11-7.5C21.27 7.11 17 4 12 4zm0 5c1.38 0 2.5 1.12 2.5 2.5S13.38 14 12 14s-2.5-1.12-2.5-2.5S10.62 9 12 9m0-2c-2.48 0-4.5 2.02-4.5 4.5S9.52 16 12 16s4.5-2.02 4.5-4.5S14.48 7 12 7z"
       />
     </svg>
-    <p>
-      incorrect password
-    </p>
-  </div>
+  </button>
 </div>
 `;
 
 exports[`Storyshots inputs/SelectInput Docs 1`] = `
 <div
-  className="sc-dlMDgC UQhKA"
+  className="sc-kfYoZR pWDXE"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
+  <select
+    id="docs"
+    name="docs"
+    onChange={[Function]}
   >
-    <p>
-      please enter phone number.
-    </p>
-  </div>
-  <div>
-    <select
-      id="docs"
-      name="docs"
-      onChange={[Function]}
+    <option>
+      選択する
+    </option>
+    <option
+      value="1"
     >
-      <option>
-        選択する
-      </option>
-      <option
-        value="1"
-      >
-        Strawberry
-      </option>
-      <option
-        value="2"
-      >
-        Melon
-      </option>
-      <option
-        value="3"
-      >
-        Grapes
-      </option>
-      <option
-        value="4"
-      >
-        Cherry
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-hHEiqL"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+      Strawberry
+    </option>
+    <option
+      value="2"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
-  </div>
+      Melon
+    </option>
+    <option
+      value="3"
+    >
+      Grapes
+    </option>
+    <option
+      value="4"
+    >
+      Cherry
+    </option>
+  </select>
+  <svg
+    aria-hidden={true}
+    className="sc-jSFjdj edwqPA sc-dlMDgC"
+    color="default"
+    size="medium"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
 </div>
 `;
 
 exports[`Storyshots inputs/SelectInput Error 1`] = `
 <div
-  className="sc-dlMDgC czfAbi"
+  className="sc-kfYoZR iXwEHq"
 >
-  <div>
-    <select
-      id="error"
-      name="error"
-    >
-      <option>
-        選択する
-      </option>
-      <option
-        value="1"
-      >
-        Strawberry
-      </option>
-      <option
-        value="2"
-      >
-        Melon
-      </option>
-      <option
-        value="3"
-      >
-        Grapes
-      </option>
-      <option
-        value="4"
-      >
-        Cherry
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-hHEiqL"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
+  <select
+    id="error"
+    name="error"
   >
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+    <option>
+      選択する
+    </option>
+    <option
+      value="1"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      enter without hyphens
-    </p>
-  </div>
+      Strawberry
+    </option>
+    <option
+      value="2"
+    >
+      Melon
+    </option>
+    <option
+      value="3"
+    >
+      Grapes
+    </option>
+    <option
+      value="4"
+    >
+      Cherry
+    </option>
+  </select>
+  <svg
+    aria-hidden={true}
+    className="sc-jSFjdj edwqPA sc-dlMDgC"
+    color="default"
+    size="medium"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
 </div>
 `;
 
 exports[`Storyshots inputs/TextArea Docs 1`] = `
 <div
-  className="sc-lmgQwP hIMnTL"
+  className="sc-iJCRrE jyRJfF"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
-  >
-    <p>
-      please enter phone number.
-    </p>
-  </div>
   <textarea
+    description="please enter phone number."
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -1299,7 +2282,7 @@ exports[`Storyshots inputs/TextArea Docs 1`] = `
 
 exports[`Storyshots inputs/TextArea Error 1`] = `
 <div
-  className="sc-lmgQwP hoXZdt"
+  className="sc-iJCRrE dFqTOL"
 >
   <textarea
     id="error"
@@ -1307,121 +2290,67 @@ exports[`Storyshots inputs/TextArea Error 1`] = `
     onChange={[Function]}
     value="0120-1234-1234"
   />
-  <div
-    className="sc-iemWCZ yTHrl"
-  >
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      enter without hyphens
-    </p>
-  </div>
 </div>
 `;
 
 exports[`Storyshots inputs/TextInput Docs 1`] = `
 <div
-  className="sc-giAqHp iMjncA"
+  className="sc-bYwzuL eNoNmh"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
+  <input
+    className="sc-dIvrsQ bdBFfT input-base"
+    id="docs"
+    name="docs"
+    onChange={[Function]}
+    type="tel"
+    value="012012341234"
+  />
+  <button
+    aria-label="クリア"
+    className="sc-bCwfaz jnBGYy sc-ezzafa"
+    disabled={false}
   >
-    <p>
-      please enter phone number.
-    </p>
-  </div>
-  <div>
-    <input
-      className="sc-dIvrsQ bdBFfT input-base"
-      id="docs"
-      name="docs"
-      onChange={[Function]}
-      type="text"
-      value="012012341234"
-    />
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy sc-iJCRrE"
-      disabled={false}
+    <svg
+      aria-hidden={true}
+      className="sc-jSFjdj edwqPA"
+      color="default"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
 exports[`Storyshots inputs/TextInput Error 1`] = `
 <div
-  className="sc-giAqHp iMjncA"
+  className="sc-bYwzuL eNoNmh"
 >
-  <div>
-    <input
-      className="sc-dIvrsQ jgSpLZ input-base"
-      error="enter without hyphens"
-      id="error"
-      name="error"
-      onChange={[Function]}
-      type="text"
-      value="0120-1234-1234"
-    />
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy sc-iJCRrE"
-      disabled={false}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
+  <input
+    className="sc-dIvrsQ jgSpLZ input-base"
+    error="enter without hyphens"
+    id="error"
+    name="error"
+    onChange={[Function]}
+    type="tel"
+    value="0120-1234-1234"
+  />
+  <button
+    aria-label="クリア"
+    className="sc-bCwfaz jnBGYy sc-ezzafa"
+    disabled={false}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
+      className="sc-jSFjdj edwqPA"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -1432,89 +2361,51 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
         fill="none"
       />
       <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+        d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
       />
     </svg>
-    <p>
-      enter without hyphens
-    </p>
-  </div>
+  </button>
 </div>
 `;
 
 exports[`Storyshots inputs/TimeInput Docs 1`] = `
 <div
-  className="sc-bYwzuL iTXwrC"
+  className="sc-jJMGnK kiGVsQ"
 >
-  <div
-    className="sc-fFSPTT dEVgCC"
-  >
-    <p>
-      please enter phone number.
-    </p>
-  </div>
-  <div
-    className="sc-ezzafa"
-  >
-    <input
-      className="sc-dIvrsQ bdBFfT input-base"
-      id="docs"
-      name="docs"
-      onBlur={[Function]}
-      onChange={[Function]}
-      type="text"
-      value="01:59"
-    />
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
+  <input
+    className="sc-dIvrsQ iolwys input-base"
+    id="docs"
+    name="docs"
+    onChange={[Function]}
+    onClear={[Function]}
+    type="time"
+    value="01:59"
+  />
 </div>
 `;
 
-exports[`Storyshots inputs/TimeInput Error 1`] = `
+exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 <div
-  className="sc-bYwzuL iTXwrC"
+  className="sc-iklJeh iFTkvG"
 >
-  <div
-    className="sc-ezzafa"
-  >
-    <input
-      className="sc-dIvrsQ CZvzW input-base"
-      error="enter time"
-      id="error"
-      name="error"
-      onChange={[Function]}
-      type="time"
-      value="01:59"
-    />
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
+  <input
+    className="sc-dIvrsQ bdBFfT input-base"
+    id="docs"
+    name="docs"
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+    value="01:59"
+  />
+  <button
+    aria-label="クリア"
+    className="sc-bCwfaz jnBGYy"
+    disabled={false}
+    onClick={[Function]}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
+      className="sc-jSFjdj edwqPA"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -1525,307 +2416,16 @@ exports[`Storyshots inputs/TimeInput Error 1`] = `
         fill="none"
       />
       <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+        d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
       />
     </svg>
-    <p>
-      enter time
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeInput Text Type 1`] = `
-<div
-  className="sc-bYwzuL iTXwrC"
->
-  <div
-    className="sc-ezzafa"
-  >
-    <input
-      className="sc-dIvrsQ bdBFfT input-base"
-      id="text"
-      name="text"
-      onBlur={[Function]}
-      onChange={[Function]}
-      type="text"
-      value="01:59"
-    />
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeInput Time Type 1`] = `
-<div
-  className="sc-bYwzuL iTXwrC"
->
-  <div
-    className="sc-ezzafa"
-  >
-    <input
-      className="sc-dIvrsQ iolwys input-base"
-      id="text"
-      name="text"
-      onChange={[Function]}
-      type="time"
-      value="01:59"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeRangeInput Docs 1`] = `
-<div
-  className="sc-iklJeh hRQFtV"
->
-  <div
-    className="sc-fFSPTT dEVgCC"
-  >
-    <p>
-      please enter rest time.
-    </p>
-  </div>
-  <div>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="docs"
-        name="docs"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value="01:59"
-      />
-    </div>
-    <span>
-      ~
-    </span>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="docs-end"
-        name="docs-end"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value="02:30"
-      />
-    </div>
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeRangeInput Error 1`] = `
-<div
-  className="sc-iklJeh hRQFtV"
->
-  <div>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ CZvzW input-base"
-        error="enter time"
-        id="error"
-        name="error"
-        onChange={[Function]}
-        type="time"
-        value="01:59"
-      />
-    </div>
-    <span>
-      ~
-    </span>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ CZvzW input-base"
-        error="enter time"
-        id="error-end"
-        name="error-end"
-        onChange={[Function]}
-        type="time"
-        value="02:30"
-      />
-    </div>
-  </div>
-  <div
-    className="sc-iemWCZ yTHrl"
-  >
-    <svg
-      aria-hidden={true}
-      className="sc-jSFjdj edwqPA sc-bkbkJK"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      enter time
-    </p>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeRangeInput Text Type 1`] = `
-<div
-  className="sc-iklJeh hRQFtV"
->
-  <div>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="text"
-        name="text"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value="01:59"
-      />
-    </div>
-    <span>
-      ~
-    </span>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="text-end"
-        name="text-end"
-        onBlur={[Function]}
-        onChange={[Function]}
-        type="text"
-        value="02:30"
-      />
-    </div>
-    <button
-      aria-label="クリア"
-      className="sc-bCwfaz jnBGYy"
-      disabled={false}
-      onClick={[Function]}
-    >
-      <svg
-        aria-hidden={true}
-        className="sc-jSFjdj edwqPA"
-        color="default"
-        size="medium"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Storyshots inputs/TimeRangeInput Time Type 1`] = `
-<div
-  className="sc-iklJeh hRQFtV"
->
-  <div>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="time"
-        name="time"
-        onChange={[Function]}
-        type="time"
-        value="01:59"
-      />
-    </div>
-    <span>
-      ~
-    </span>
-    <div
-      className="sc-kLojOw"
-    >
-      <input
-        className="sc-dIvrsQ iolwys input-base"
-        id="time-end"
-        name="time-end"
-        onChange={[Function]}
-        type="time"
-        value="02:30"
-      />
-    </div>
-  </div>
+  </button>
 </div>
 `;
 
 exports[`Storyshots surfaces/Accordion Docs 1`] = `
 <section
-  className="sc-hiKfDv gFmdSa"
+  className="sc-iTVJFM cWAaZk"
 >
   <button
     aria-controls="accordion-undefined-header"
@@ -1837,7 +2437,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
     </h3>
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj XDZXn sc-jJMGnK Accordion__icon--collapsed"
+      className="sc-jSFjdj XDZXn sc-carFqZ Accordion__icon--collapsed"
       color="main"
       size="medium"
       viewBox="0 0 24 24"
@@ -1868,7 +2468,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
 
 exports[`Storyshots surfaces/Card Docs 1`] = `
 <section
-  className="sc-gXfVKN emiWLb"
+  className="sc-iBzEeX fecNTs"
 >
   <h3>
     sample card
@@ -1886,7 +2486,7 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-cBoqAE gsBpXh"
+  className="sc-efHYUO jWMAPe"
 >
   <h2>
     Clock In
@@ -1896,7 +2496,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-ciSkZP hSCVjg"
+  className="sc-cTJkRt gKBzRw"
 >
   <div>
     <p>
@@ -1919,7 +2519,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-jcwpoC rFNBD"
+    className="sc-jNnpgg dRvxiH"
     onClick={[Function]}
     role="none"
   >

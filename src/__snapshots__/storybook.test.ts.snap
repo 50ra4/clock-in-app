@@ -258,7 +258,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
   className="sc-fKgJPI"
 >
   <div
-    className="sc-iemWCZ jiJYii"
+    className="sc-iemWCZ gkAIZi"
   >
     <label
       htmlFor="date"
@@ -271,7 +271,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
         className="sc-hHEiqL"
       >
         <input
-          className="sc-dIvrsQ CZvzW sc-hHEiqL input-base"
+          className="sc-dIvrsQ dXONCb sc-hHEiqL input-base"
           error="required"
           id="date"
           max="2021-07-31"
@@ -331,7 +331,7 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-kfYoZR pWDXE"
+        className="sc-kfYoZR doyTZ"
       >
         <select
           id="docs"
@@ -683,7 +683,7 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-kfYoZR pWDXE"
+        className="sc-kfYoZR doyTZ"
       >
         <select
           id="select"
@@ -1082,7 +1082,7 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
         className="sc-cxNHIi kRxbkg"
       >
         <input
-          className="sc-dIvrsQ bdBFfT input-base"
+          className="sc-dIvrsQ cPKOty input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1142,7 +1142,7 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         className="sc-cxNHIi kRxbkg"
       >
         <input
-          className="sc-dIvrsQ jgSpLZ input-base"
+          className="sc-dIvrsQ gDGySc input-base"
           error="incorrect password"
           id="error"
           name="error"
@@ -1207,7 +1207,7 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
   className="sc-giAqHp"
 >
   <div
-    className="sc-iemWCZ jiJYii"
+    className="sc-iemWCZ gkAIZi"
   >
     <label
       htmlFor="docs"
@@ -1224,7 +1224,7 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-iJCRrE jyRJfF"
+        className="sc-iJCRrE hZyMGQ"
       >
         <textarea
           id="docs"
@@ -1259,7 +1259,7 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
         </p>
       </div>
       <div
-        className="sc-iJCRrE hABEFW"
+        className="sc-iJCRrE YONbH"
       >
         <textarea
           id="error"
@@ -1322,7 +1322,7 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
         className="sc-bYwzuL eNoNmh"
       >
         <input
-          className="sc-dIvrsQ bdBFfT input-base"
+          className="sc-dIvrsQ cPKOty input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1362,7 +1362,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
   className="sc-kLojOw"
 >
   <div
-    className="sc-iemWCZ fvTEKE"
+    className="sc-iemWCZ blrUtg"
   >
     <label
       htmlFor="error"
@@ -1381,7 +1381,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         className="sc-bYwzuL eNoNmh"
       >
         <input
-          className="sc-dIvrsQ jgSpLZ input-base"
+          className="sc-dIvrsQ gDGySc input-base"
           error="too long"
           id="error"
           name="error"
@@ -1464,7 +1464,7 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
         className="sc-iklJeh iFTkvG"
       >
         <input
-          className="sc-dIvrsQ iolwys input-base"
+          className="sc-dIvrsQ iWgRpR input-base"
           id="docs"
           name="docs"
           onBlur={[Function]}
@@ -1495,7 +1495,7 @@ exports[`Storyshots forms/TimeForm Text Type 1`] = `
         className="sc-iklJeh iFTkvG"
       >
         <input
-          className="sc-dIvrsQ iolwys input-base"
+          className="sc-dIvrsQ iWgRpR input-base"
           id="select"
           name="select"
           onBlur={[Function]}
@@ -1514,7 +1514,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
   className="sc-hiKfDv"
 >
   <div
-    className="sc-iemWCZ jiJYii"
+    className="sc-iemWCZ gkAIZi"
   >
     <label
       htmlFor="date"
@@ -1527,7 +1527,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
         className="sc-jJMGnK kiGVsQ"
       >
         <input
-          className="sc-dIvrsQ CZvzW input-base"
+          className="sc-dIvrsQ dXONCb input-base"
           error="required"
           id="date"
           name="date"
@@ -1566,7 +1566,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
 <div
-  className="sc-ciSkZP duDoIi"
+  className="sc-ciSkZP kYwZsy"
 >
   <div
     className="sc-iemWCZ gQdfJy"
@@ -1591,7 +1591,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-iklJeh sc-gXfVKN iFTkvG"
         >
           <input
-            className="sc-dIvrsQ iolwys input-base"
+            className="sc-dIvrsQ iWgRpR input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -1607,7 +1607,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-iklJeh sc-gXfVKN iFTkvG"
         >
           <input
-            className="sc-dIvrsQ iolwys input-base"
+            className="sc-dIvrsQ iWgRpR input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -1624,7 +1624,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
 <div
-  className="sc-ciSkZP duDoIi"
+  className="sc-ciSkZP kYwZsy"
 >
   <div
     className="sc-iemWCZ gQdfJy"
@@ -1649,7 +1649,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-iklJeh sc-gXfVKN iFTkvG"
         >
           <input
-            className="sc-dIvrsQ iolwys input-base"
+            className="sc-dIvrsQ iWgRpR input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -1665,7 +1665,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-iklJeh sc-gXfVKN iFTkvG"
         >
           <input
-            className="sc-dIvrsQ iolwys input-base"
+            className="sc-dIvrsQ iWgRpR input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -1682,10 +1682,10 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 <div
-  className="sc-ciSkZP duDoIi"
+  className="sc-ciSkZP kYwZsy"
 >
   <div
-    className="sc-iemWCZ fvTEKE"
+    className="sc-iemWCZ blrUtg"
   >
     <label
       htmlFor="time"
@@ -1700,7 +1700,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-jJMGnK sc-cBoqAE kiGVsQ"
         >
           <input
-            className="sc-dIvrsQ CZvzW input-base"
+            className="sc-dIvrsQ dXONCb input-base"
             error="enter time"
             id="time"
             name="time"
@@ -1716,7 +1716,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-jJMGnK sc-cBoqAE kiGVsQ"
         >
           <input
-            className="sc-dIvrsQ CZvzW input-base"
+            className="sc-dIvrsQ dXONCb input-base"
             error="enter time"
             id="time-end"
             name="time-end"
@@ -1838,7 +1838,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
   className="sc-hHEiqL"
 >
   <input
-    className="sc-dIvrsQ iolwys sc-hHEiqL input-base"
+    className="sc-dIvrsQ iWgRpR sc-hHEiqL input-base"
     id="docs"
     max="2021-07-31"
     min="2021-07-01"
@@ -1852,7 +1852,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
 
 exports[`Storyshots inputs/DateSelect Docs 1`] = `
 <div
-  className="sc-kfYoZR pWDXE"
+  className="sc-kfYoZR doyTZ"
 >
   <select
     id="docs"
@@ -2091,7 +2091,7 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
   className="sc-cxNHIi kRxbkg"
 >
   <input
-    className="sc-dIvrsQ bdBFfT input-base"
+    className="sc-dIvrsQ cPKOty input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2129,7 +2129,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
   className="sc-cxNHIi kRxbkg"
 >
   <input
-    className="sc-dIvrsQ jgSpLZ input-base"
+    className="sc-dIvrsQ gDGySc input-base"
     error="incorrect password"
     id="error"
     name="error"
@@ -2165,7 +2165,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
 
 exports[`Storyshots inputs/SelectInput Docs 1`] = `
 <div
-  className="sc-kfYoZR pWDXE"
+  className="sc-kfYoZR doyTZ"
 >
   <select
     id="docs"
@@ -2217,7 +2217,7 @@ exports[`Storyshots inputs/SelectInput Docs 1`] = `
 
 exports[`Storyshots inputs/SelectInput Error 1`] = `
 <div
-  className="sc-kfYoZR iXwEHq"
+  className="sc-kfYoZR jutfoP"
 >
   <select
     id="error"
@@ -2268,7 +2268,7 @@ exports[`Storyshots inputs/SelectInput Error 1`] = `
 
 exports[`Storyshots inputs/TextArea Docs 1`] = `
 <div
-  className="sc-iJCRrE jyRJfF"
+  className="sc-iJCRrE hZyMGQ"
 >
   <textarea
     description="please enter phone number."
@@ -2282,7 +2282,7 @@ exports[`Storyshots inputs/TextArea Docs 1`] = `
 
 exports[`Storyshots inputs/TextArea Error 1`] = `
 <div
-  className="sc-iJCRrE dFqTOL"
+  className="sc-iJCRrE hUcUeC"
 >
   <textarea
     id="error"
@@ -2298,7 +2298,7 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
   className="sc-bYwzuL eNoNmh"
 >
   <input
-    className="sc-dIvrsQ bdBFfT input-base"
+    className="sc-dIvrsQ cPKOty input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2335,7 +2335,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
   className="sc-bYwzuL eNoNmh"
 >
   <input
-    className="sc-dIvrsQ jgSpLZ input-base"
+    className="sc-dIvrsQ gDGySc input-base"
     error="enter without hyphens"
     id="error"
     name="error"
@@ -2373,7 +2373,7 @@ exports[`Storyshots inputs/TimeInput Docs 1`] = `
   className="sc-jJMGnK kiGVsQ"
 >
   <input
-    className="sc-dIvrsQ iolwys input-base"
+    className="sc-dIvrsQ iWgRpR input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2389,7 +2389,7 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
   className="sc-iklJeh iFTkvG"
 >
   <input
-    className="sc-dIvrsQ bdBFfT input-base"
+    className="sc-dIvrsQ cPKOty input-base"
     id="docs"
     name="docs"
     onBlur={[Function]}

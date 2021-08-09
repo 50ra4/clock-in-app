@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
+// import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
+// import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 import { TimeInputBase, TimeInputBaseProps } from '../TimeInput/TimeInputBase';
 import { Time, Range } from 'types';
 import { InputClearButton } from '../InputClearButton/InputClearButton';
@@ -67,7 +67,7 @@ export const UnStyledTimeRangeInput = React.memo(function TimeRangeInput({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <div>
         <StyledTimeInputBase
           id={id}
@@ -90,7 +90,7 @@ export const UnStyledTimeRangeInput = React.memo(function TimeRangeInput({
         />
         {showClearButton && <InputClearButton onClick={onClear} />}
       </div>
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

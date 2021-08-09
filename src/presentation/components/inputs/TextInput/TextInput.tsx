@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
+// import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
+// import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 import { InputBase, InputBaseProps } from '../InputBase/InputBase';
 import { InputClearButton } from '../InputClearButton/InputClearButton';
 
@@ -26,12 +26,12 @@ export const UnStyledTextInput = React.memo(function TextInput({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <div>
         <InputBase {...otherProps} type={type} rightIcon={true} error={error} value={value} />
         {value && <StyledInputClearButton onClick={onClear} />}
       </div>
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 import { DateInputBase, DateInputBaseProps, DateSelect } from './DateInputBase';
 
 export type DateInputProps = DateInputBaseProps;
@@ -22,9 +20,9 @@ export const UnStyledDateInput = React.memo(function DateInput({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <StyledDateInputBase {...otherProps} error={error} forceSelect={forceSelect} />
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

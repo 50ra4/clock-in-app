@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
+// import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
+// import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 import { TimeInputBase, TimeInputBaseProps } from './TimeInputBase';
 
 type OwnProps = {
@@ -23,9 +23,9 @@ export const UnStyledTimeInput = React.memo(function TimeInput({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <StyledTimeInputBase {...otherProps} error={error} forceText={forceText} />
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 
 type OwnProps = {
   ref?: React.RefObject<HTMLTextAreaElement> | null;
@@ -32,9 +30,9 @@ export const UnStyledTextArea = React.memo(function TextArea({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <textarea {...otherProps} ref={ref} value={value} />
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

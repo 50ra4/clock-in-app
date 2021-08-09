@@ -2,8 +2,6 @@ import React, { useMemo } from 'react';
 import styled, { css } from 'styled-components';
 import { Lookup } from 'types';
 import { ArrowDropDownIcon } from 'presentation/components/display/Icons/ArrowDropDownIcon';
-import { DescriptionForInput } from '../DescriptionForInput/DescriptionForInput';
-import { ErrorMessageForInput } from '../ErrorMessageForInput/ErrorMessageForInput';
 
 type OwnProps = {
   ref?: React.RefObject<HTMLSelectElement> | null;
@@ -45,7 +43,7 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
   return (
     <div className={className}>
       {/* fix: reRender */}
-      {description && <DescriptionForInput description={description} />}
+      {/* {description && <DescriptionForInput description={description} />} */}
       <div>
         <select {...otherProps} value={selectedId}>
           <option key={''} value={undefined}>
@@ -55,7 +53,7 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
         </select>
         <StyledArrowDropDownIcon />
       </div>
-      {error && <ErrorMessageForInput message={error} />}
+      {/* {error && <ErrorMessageForInput message={error} />} */}
     </div>
   );
 });

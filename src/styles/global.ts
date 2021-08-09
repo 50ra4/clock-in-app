@@ -156,7 +156,8 @@ const customCss = (theme: StyledComponentsTheme) => css`
     background-color: ${theme.color.palette.main.background};
   }
 
-  button {
+  button,
+  input {
     padding: 0;
     margin: 0;
     appearance: none;

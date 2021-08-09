@@ -60,8 +60,7 @@ export const SelectInput = styled(UnStyledSelectInput)`
   position: relative;
   & > select {
     width: 100%;
-    height: 38px;
-    line-height: 38px;
+    height: 28px;
     font-size: ${({ theme }) => theme.font.size.middle}px;
     background-color: #ffffff;
     ${({ error }) =>

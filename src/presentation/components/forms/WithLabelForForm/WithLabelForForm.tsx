@@ -68,6 +68,7 @@ export const WithLabelForForm = styled(UnStyledWithLabelForForm)`
           & > label {
             display: block;
             width: 100%;
+            margin-bottom: ${({ theme }) => theme.space.middle}px;
           }
         `}
 `;

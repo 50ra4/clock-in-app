@@ -1,31 +1,22 @@
-import { Header, headerHeight } from 'presentation/components/surfaces/Header/Header';
 import styled from 'styled-components';
+import { WithHeader } from 'presentation/layouts/WithHeader';
+
+const text =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 const TopPage = () => {
   return (
-    <StyledRoot>
-      <div className="top-page__header">
-        <Header />
-      </div>
-      <div className="top-page__content">
-        <p>TopPage</p>
-      </div>
-    </StyledRoot>
+    <WithHeader>
+      <StyledRoot>
+        <h2>TopPage</h2>
+        <div>
+          <p>{text}</p>
+        </div>
+      </StyledRoot>
+    </WithHeader>
   );
 };
 
-const StyledRoot = styled.div`
-  & > div.top-page__header {
-    position: fixed;
-    width: 100%;
-    height: ${headerHeight}px;
-  }
-  & > div.top-page__content {
-    position: fixed;
-    width: 100%;
-    margin-top: ${headerHeight}px;
-    min-height: calc(100vh - ${headerHeight}px);
-  }
-`;
+const StyledRoot = styled.div``;
 
 export default TopPage;

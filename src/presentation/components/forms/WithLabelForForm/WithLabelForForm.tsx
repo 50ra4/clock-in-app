@@ -62,6 +62,7 @@ export const WithLabelForForm = styled(UnStyledWithLabelForForm)`
           }
           & > div {
             flex-basis: auto;
+            flex-grow: 1;
           }
         `
       : css`

@@ -8,8 +8,11 @@ import { configureStore } from 'store/root';
 import { GlobalStyle } from 'styles/global';
 import { LoadingGuard } from './components/feedback/LoadingGuard/LoadingGuard';
 import { ROUTES } from './routes';
-import { PAGE_PATH } from 'constants/path';
 import { ErrorBoundary } from './ErrorBoundary';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+// TODO:
+const NotFoundError = new Error('お探しのページは見つかりません');
 
 const store = configureStore({});
 
@@ -26,8 +29,7 @@ function App() {
                   {ROUTES.map((routeProps, i) => (
                     <Route key={`route-${i}`} {...routeProps} />
                   ))}
-                  {/* FIXME: temporary */}
-                  <Route exact={true} path={PAGE_PATH.top} />
+                  <Route component={() => <ErrorPage error={NotFoundError} />} />
                 </Switch>
               </ErrorBoundary>
             </Suspense>

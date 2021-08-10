@@ -1,4 +1,5 @@
 import React, { ErrorInfo } from 'react';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 type OwnProps = {
   fallback?: React.ReactNode;
@@ -39,14 +40,14 @@ export class ErrorBoundary extends React.Component<OwnProps, OwnState> {
   }
 
   render() {
-    if (!this.state.hasError) {
+    if (!this.state.hasError || !this.state.error) {
       return this.props.children;
     }
     // TODO: custom fallback UI
     if (this.props.fallback) {
-      // You can render any custom fallback UI
       return this.props.fallback;
     }
-    return <h3>Something went wrong.</h3>;
+
+    return <ErrorPage error={this.state.error} />;
   }
 }

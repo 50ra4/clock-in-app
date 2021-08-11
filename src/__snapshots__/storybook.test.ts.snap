@@ -258,7 +258,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
   className="sc-fKgJPI"
 >
   <div
-    className="sc-iemWCZ gkAIZi"
+    className="sc-iemWCZ kcBbuP"
   >
     <label
       htmlFor="date"
@@ -1207,7 +1207,7 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
   className="sc-giAqHp"
 >
   <div
-    className="sc-iemWCZ gkAIZi"
+    className="sc-iemWCZ kcBbuP"
   >
     <label
       htmlFor="docs"
@@ -1362,7 +1362,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
   className="sc-kLojOw"
 >
   <div
-    className="sc-iemWCZ blrUtg"
+    className="sc-iemWCZ iLWWfl"
   >
     <label
       htmlFor="error"
@@ -1514,7 +1514,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
   className="sc-hiKfDv"
 >
   <div
-    className="sc-iemWCZ gkAIZi"
+    className="sc-iemWCZ kcBbuP"
   >
     <label
       htmlFor="date"
@@ -1685,7 +1685,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
   className="sc-ciSkZP kYwZsy"
 >
   <div
-    className="sc-iemWCZ blrUtg"
+    className="sc-iemWCZ iLWWfl"
   >
     <label
       htmlFor="time"
@@ -2486,7 +2486,7 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-efHYUO jWMAPe"
+  className="sc-efHYUO fUxYlF"
 >
   <h2>
     Clock In

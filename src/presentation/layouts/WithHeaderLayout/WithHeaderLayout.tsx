@@ -34,7 +34,8 @@ const StyledRoot = styled.div`
   }
   & > .${WithHeaderLayoutClassNames.contents} {
     width: 100%;
-    ${({ theme }) => theme.insetSafeArea.top('padding-top', `${headerHeight}px`, '+')}
+    padding: ${({ theme }) => theme.space.large}px;
+    ${({ theme }) => theme.insetSafeArea.top('padding-top', `${headerHeight + theme.space.large}px`, '+')}
     ${({ theme }) => theme.insetSafeArea.top('min-height', `100vh - ${headerHeight}px`, '+')}
   }
 `;

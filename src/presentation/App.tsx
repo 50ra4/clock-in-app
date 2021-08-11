@@ -7,9 +7,8 @@ import { lightTheme } from 'styles/theme';
 import { configureStore } from 'store/root';
 import { GlobalStyle } from 'styles/global';
 import { LoadingGuard } from './components/feedback/LoadingGuard/LoadingGuard';
-import { ROUTES } from './routes';
+import { ROUTES, ErrorPage } from './routes';
 import { ErrorBoundary } from './ErrorBoundary';
-import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 // TODO:
 const NotFoundError = new Error('お探しのページは見つかりません');

@@ -7,32 +7,32 @@ type OwnProps = {
   children: React.ReactNode;
 };
 
-const rootClassName = 'with-header';
-export const WithHeaderClassName = {
+const rootClassName = 'with-header-layout';
+export const WithHeaderLayoutClassNames = {
   root: rootClassName,
   header: `${rootClassName}__header`,
   contents: `${rootClassName}__contents`,
 } as const;
 
-export const WithHeader = React.memo(function WithHeader({ className = '', children }: OwnProps) {
+export const WithHeaderLayout = React.memo(function WithHeaderLayout({ className = '', children }: OwnProps) {
   const rootClass = [className, rootClassName].filter((c) => !!c).join(' ');
 
   return (
     <StyledRoot className={rootClass}>
-      <Header className={WithHeaderClassName.header} />
-      <main className={WithHeaderClassName.contents}>{children}</main>
+      <Header className={WithHeaderLayoutClassNames.header} />
+      <main className={WithHeaderLayoutClassNames.contents}>{children}</main>
     </StyledRoot>
   );
 });
 
 const StyledRoot = styled.div`
-  & > .${WithHeaderClassName.header} {
+  & > .${WithHeaderLayoutClassNames.header} {
     width: 100%;
     position: fixed;
     left: 0;
     ${({ theme }) => theme.insetSafeArea.top('top', '0', '+')}
   }
-  & > .${WithHeaderClassName.contents} {
+  & > .${WithHeaderLayoutClassNames.contents} {
     width: 100%;
     ${({ theme }) => theme.insetSafeArea.top('padding-top', `${headerHeight}px`, '+')}
     ${({ theme }) => theme.insetSafeArea.top('min-height', `100vh - ${headerHeight}px`, '+')}

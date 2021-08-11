@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { WithHeader } from 'presentation/layouts/WithHeader';
+import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 
 type Props = {
   error: Error;
@@ -7,14 +7,14 @@ type Props = {
 
 const ErrorPage = ({ error }: Props) => {
   return (
-    <WithHeader>
+    <WithHeaderLayout>
       <StyledRoot>
         <h2>ErrorPage</h2>
         <div>
           <p>{error.message}</p>
         </div>
       </StyledRoot>
-    </WithHeader>
+    </WithHeaderLayout>
   );
 };
 

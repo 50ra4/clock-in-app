@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Header, headerHeight } from 'presentation/components/surfaces/Header/Header';
+import { SideNavigation } from './SideNavigation';
 
 type OwnProps = {
   className?: string;
@@ -15,11 +16,22 @@ export const WithHeaderLayoutClassNames = {
 } as const;
 
 export const WithHeaderLayout = React.memo(function WithHeaderLayout({ className = '', children }: OwnProps) {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const handleOnCloseMenu = useCallback(() => {
+    setOpenMenu(false);
+  }, []);
+
+  const handleOnToggleMenu = useCallback(() => {
+    setOpenMenu((prev) => !prev);
+  }, []);
+
   const rootClass = [className, rootClassName].filter((c) => !!c).join(' ');
 
   return (
     <StyledRoot className={rootClass}>
-      <Header className={WithHeaderLayoutClassNames.header} />
+      <Header className={WithHeaderLayoutClassNames.header} openMenu={openMenu} onToggleMenu={handleOnToggleMenu} />
+      <SideNavigation open={openMenu} onClose={handleOnCloseMenu} />
       <main className={WithHeaderLayoutClassNames.contents}>{children}</main>
     </StyledRoot>
   );

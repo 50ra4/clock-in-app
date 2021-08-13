@@ -16,6 +16,8 @@ type OwnProps = {
  * @see https://www.w3schools.com/howto/howto_js_sidenav.asp
  */
 export const SideNavigation = React.memo(function SideNavigation({ className, open, onClose }: OwnProps) {
+  const timeCardId = '1111';
+
   return (
     <StyledBackdrop className={className} open={open} onClick={onClose}>
       <StyledRoot>
@@ -34,6 +36,12 @@ export const SideNavigation = React.memo(function SideNavigation({ className, op
             <li>
               <Link to={PAGE_PATH.registration}>
                 <button>アカウント登録</button>
+              </Link>
+            </li>
+            <li>
+              {/* FIXME: */}
+              <Link to={`/timecards/${timeCardId}`}>
+                <button>自分のタイムカード</button>
               </Link>
             </li>
           </ul>

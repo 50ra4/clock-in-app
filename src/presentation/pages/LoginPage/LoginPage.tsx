@@ -1,18 +1,11 @@
 import styled from 'styled-components';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 
-type Props = {
-  error: Error;
-};
-
-const ErrorPage = ({ error }: Props) => {
+const LoginPage = () => {
   return (
     <WithHeaderLayout>
       <StyledRoot>
-        <h2>ErrorPage</h2>
-        <div>
-          <p>{error.message}</p>
-        </div>
+        <h2>LoginPage</h2>
       </StyledRoot>
     </WithHeaderLayout>
   );
@@ -20,4 +13,4 @@ const ErrorPage = ({ error }: Props) => {
 
 const StyledRoot = styled.div``;
 
-export default ErrorPage;
+export default LoginPage;

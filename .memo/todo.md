@@ -2,7 +2,7 @@
 
 - [x] ディレクトリ作成
 - [x] prettier&eslint 設定
-- [ ] jest 設定 （ディレクトリを分けるのが難しく一旦断念）
+- [ ] jest 設定 （/tests にディレクトリを分けるのが難しく一旦断念）
 - [x] styled-component 設定
 - [x] storybook 設定
 - [x] firebase 設定
@@ -81,6 +81,14 @@
 - [ ] DatePicker（低）
 - [ ] CheckboxGroupInput（低）
 
+### その他残タスク
+
+- [x] NavigationMenu の作成
+- [ ] WithLabel に description を移動する
+- [ ] memo 化を適切に配置する
+- [ ] Style の指定を props から class で行うようにする
+- [ ] 処理が速い場合 LoadingGuard がチラつくので background の表示を 1s 遅らせる
+
 ### 画面
 
 - [ ] TopPage
@@ -113,7 +121,7 @@
 
 ### その他
 
-- [ ] ErrorBoundary
+- [x] ErrorBoundary
 
 ##　スタイル&デザイン
 

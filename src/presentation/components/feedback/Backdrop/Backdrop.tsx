@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 type OwnProps = {
@@ -17,15 +17,12 @@ const UnStyledBackdrop = React.memo(function Backdrop({
   className,
   ...otherProps
 }: BackdropProps) {
-  const handleClick = useCallback(
-    (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      event.stopPropagation();
-      if (onClick) {
-        onClick(event);
-      }
-    },
-    [onClick],
-  );
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    event.stopPropagation();
+    if (onClick) {
+      onClick(event);
+    }
+  };
 
   if (!open) {
     return null;

@@ -3,5 +3,5 @@ export const PAGE_PATH = {
   error: '/error',
   login: '/login',
   registration: '/registration',
-  timecard: '/timecards',
+  timecardDetail: '/timecards/:id',
 } as const;

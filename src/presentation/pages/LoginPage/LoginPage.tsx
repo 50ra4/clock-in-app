@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
@@ -11,10 +11,15 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 
 import { signInUser } from 'thunks/authentication';
 import { PAGE_PATH } from 'constants/path';
+import { AppState } from 'store/root';
+import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
 const LoginPage = () => {
+  const isLoading = useSelector((state: AppState) => state.authentication.fetchStatus === 'FETCHING');
+
   return (
     <WithHeaderLayout>
+      <LoadingGuard open={isLoading} />
       <StyledRoot>
         <StyledCard title="ログイン">
           <LoginPageForm />

@@ -20,10 +20,9 @@ const UnStyledLoadingGuard = React.memo(function LoadingGuard({
   className,
   stopPropagation,
   message,
-  ...otherProps
 }: LoadingGuardProps) {
   return (
-    <Backdrop {...otherProps} open={open} className={className} onClick={onClick}>
+    <Backdrop open={open} className={className} onClick={onClick}>
       <StyledStopPropagation stopPropagation={stopPropagation}>
         <LoadingSpinner iconSize="extraLarge" message={message} />
       </StyledStopPropagation>

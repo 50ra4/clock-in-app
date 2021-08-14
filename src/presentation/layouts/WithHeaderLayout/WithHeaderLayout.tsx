@@ -46,8 +46,8 @@ const StyledRoot = styled.div`
   }
   & > .${WithHeaderLayoutClassNames.contents} {
     width: 100%;
-    padding: ${({ theme }) => theme.space.large}px;
+    padding: ${({ theme }) => `0 ${theme.space.large}px`};
     ${({ theme }) => theme.insetSafeArea.top('padding-top', `${headerHeight + theme.space.large}px`, '+')}
-    ${({ theme }) => theme.insetSafeArea.top('min-height', `100vh - ${headerHeight}px`, '+')}
+    ${({ theme }) => theme.insetSafeArea.top('min-height', '100vh', '+')}
   }
 `;

@@ -4,7 +4,7 @@ import { ResponsiveLayout } from './ResponsiveLayout';
 import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 
 export default createStoryMeta(ResponsiveLayout, {
-  title: 'display/ResponsiveLayout',
+  title: 'layouts/ResponsiveLayout',
 });
 
 const Content = styled.div`

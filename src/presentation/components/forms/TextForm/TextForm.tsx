@@ -30,6 +30,7 @@ export const UnStyledTextForm = React.memo(function TextForm({
   type,
   onChange,
   onBlur,
+  onClear,
 }: TextFormProps) {
   return (
     <div className={className}>
@@ -45,6 +46,7 @@ export const UnStyledTextForm = React.memo(function TextForm({
           readOnly={readOnly}
           onChange={onChange}
           onBlur={onBlur}
+          onClear={onClear}
         />
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>

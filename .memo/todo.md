@@ -85,9 +85,15 @@
 
 - [x] NavigationMenu の作成
 - [ ] WithLabel に description を移動する
-- [ ] memo 化を適切に配置する
+- [ ] モバイルの場合、description を tooltip にする
+- [ ] memo 化を適切にする
 - [ ] Style の指定を props から class で行うようにする
 - [ ] 処理が速い場合 LoadingGuard がチラつくので background の表示を 1s 遅らせる
+- [ ] Card のデザインが致命的にダサいので修正する
+- [ ] Logo のコンポーネント作成
+- [ ] アカウント登録画面とログイン画面からヘッダーをなくす
+- [ ] path の id を置換する関数作成
+- [ ] Link のコンポーネント作成
 
 ### 画面
 

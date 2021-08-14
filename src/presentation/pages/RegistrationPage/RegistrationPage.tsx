@@ -8,11 +8,12 @@ import { Card } from 'presentation/components/surfaces/Card/Card';
 import { TextForm } from 'presentation/components/forms/TextForm/TextForm';
 import { PasswordForm } from 'presentation/components/forms/PasswordForm/PasswordForm';
 import { Button } from 'presentation/components/inputs/Button/Button';
+import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
+import { Link } from 'presentation/components/navigation/Link/Link';
 
 import { signUpUser } from 'thunks/authentication';
 import { PAGE_PATH } from 'constants/path';
 import { AppState } from 'store/root';
-import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
 const RegistrationPage = () => {
   const isLoading = useSelector((state: AppState) => state.authentication.fetchStatus === 'FETCHING');
@@ -24,6 +25,9 @@ const RegistrationPage = () => {
         <StyledCard title="アカウント登録">
           <RegistrationPageForm />
         </StyledCard>
+        <StyledDescription>
+          既にアカウントをお持ちの方は<Link to={PAGE_PATH.login}>ログイン</Link>
+        </StyledDescription>
       </StyledRoot>
     </WithHeaderLayout>
   );
@@ -31,13 +35,23 @@ const RegistrationPage = () => {
 
 const StyledRoot = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 100px;
 `;
 const StyledCard = styled(Card)`
   width: 100%;
   max-width: 480px;
+`;
+const StyledDescription = styled.p`
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  border: 1px solid ${({ theme }) => theme.color.border.dark};
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin: ${({ theme }) => theme.space.middle}px;
 `;
 
 type Dispatch = Parameters<ReturnType<typeof signUpUser>>[0];

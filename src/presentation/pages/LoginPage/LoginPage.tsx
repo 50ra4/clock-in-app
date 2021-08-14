@@ -50,9 +50,10 @@ const LoginPageForm = React.memo(function LoginPageForm() {
   const dispatch = useDispatch<Dispatch>();
   const login = useCallback(async () => {
     const result = await dispatch(signInUser(email, password));
-    if (result) {
-      history.replace(PAGE_PATH.top);
+    if (!result) {
+      // TODO: error handling
     }
+    history.replace(PAGE_PATH.top);
   }, [dispatch, email, history, password]);
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {

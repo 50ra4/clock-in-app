@@ -8,7 +8,7 @@ export const signInWithPassword = async (email: string, password: string) => {
   return fireAuthentication.signInWithEmailAndPassword(email, password).then((data) => data.user);
 };
 
-export const signUp = async (email: string, password: string) => {
+export const signUpWithPassword = async (email: string, password: string) => {
   return await fireAuthentication.createUserWithEmailAndPassword(email, password).then((data) => data.user);
 };
 

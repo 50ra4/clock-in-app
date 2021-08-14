@@ -15,14 +15,14 @@ export const UnStyledPasswordInput = React.memo(function PasswordInput({
   ...otherProps
 }: PasswordInputProps) {
   const [visible, setVisible] = useState(false);
-  const toggleVisible = useCallback(() => {
+  const toggleVisible = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     setVisible((prev) => !prev);
   }, []);
 
   return (
     <div className={className}>
       <InputBase {...otherProps} type={visible ? 'text' : 'password'} rightIcon={true} error={error} value={value} />
-      <StyledVisibilityButton visible={visible} onClick={toggleVisible} />
+      <StyledVisibilityButton type="button" visible={visible} onClick={toggleVisible} />
     </div>
   );
 });

@@ -8,11 +8,12 @@ import { Card } from 'presentation/components/surfaces/Card/Card';
 import { TextForm } from 'presentation/components/forms/TextForm/TextForm';
 import { PasswordForm } from 'presentation/components/forms/PasswordForm/PasswordForm';
 import { Button } from 'presentation/components/inputs/Button/Button';
+import { Link } from 'presentation/components/navigation/Link/Link';
+import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
 import { signInUser } from 'thunks/authentication';
 import { PAGE_PATH } from 'constants/path';
 import { AppState } from 'store/root';
-import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
 const LoginPage = () => {
   const isLoading = useSelector((state: AppState) => state.authentication.fetchStatus === 'FETCHING');
@@ -24,6 +25,11 @@ const LoginPage = () => {
         <StyledCard title="ログイン">
           <LoginPageForm />
         </StyledCard>
+        <StyledDescription>
+          初めての方は<Link to={PAGE_PATH.registration}>新規アカウント登録</Link>
+        </StyledDescription>
+        {/* TODO: パスワードをお忘れの方 */}
+        {/* TODO: その他のログイン方法 */}
       </StyledRoot>
     </WithHeaderLayout>
   );
@@ -31,13 +37,23 @@ const LoginPage = () => {
 
 const StyledRoot = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 100px;
 `;
 const StyledCard = styled(Card)`
   width: 100%;
   max-width: 480px;
+`;
+const StyledDescription = styled.p`
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  border: 1px solid ${({ theme }) => theme.color.border.dark};
+  border-radius: 5px;
+  padding: 15px 20px;
+  margin: ${({ theme }) => theme.space.middle}px;
 `;
 
 type Dispatch = Parameters<ReturnType<typeof signInUser>>[0];
@@ -52,6 +68,8 @@ const LoginPageForm = React.memo(function LoginPageForm() {
     const result = await dispatch(signInUser(email, password));
     if (!result) {
       // TODO: error handling
+      window.alert('error');
+      return;
     }
     history.replace(PAGE_PATH.top);
   }, [dispatch, email, history, password]);
@@ -78,7 +96,7 @@ const LoginPageForm = React.memo(function LoginPageForm() {
         value={password}
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
-      <Button type="submit" color="secondary" fullWidth={true} onClick={login}>
+      <Button type="submit" color="secondary" fullWidth={true}>
         ログイン
       </Button>
     </StyledForm>

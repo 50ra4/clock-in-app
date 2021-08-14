@@ -52,6 +52,8 @@ const LoginPageForm = React.memo(function LoginPageForm() {
     const result = await dispatch(signInUser(email, password));
     if (!result) {
       // TODO: error handling
+      window.alert('error');
+      return;
     }
     history.replace(PAGE_PATH.top);
   }, [dispatch, email, history, password]);
@@ -78,7 +80,7 @@ const LoginPageForm = React.memo(function LoginPageForm() {
         value={password}
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
-      <Button type="submit" color="secondary" fullWidth={true} onClick={login}>
+      <Button type="submit" color="secondary" fullWidth={true}>
         ログイン
       </Button>
     </StyledForm>

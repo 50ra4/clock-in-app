@@ -2417,19 +2417,29 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 
 exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 <div
-  className="sc-cTJkRt hRbzdv"
+  className="sc-jNnpgg cTKjeR"
 >
   <div
-    className="sc-jNnpgg feQEjc"
+    className="sc-dPaNzc hicKZY"
   >
     Responsive
   </div>
 </div>
 `;
 
+exports[`Storyshots navigation/Link Docs 1`] = `
+<a
+  className="sc-ciSkZP flazKN"
+  href="/"
+  onClick={[Function]}
+>
+  Link sample
+</a>
+`;
+
 exports[`Storyshots surfaces/Accordion Docs 1`] = `
 <section
-  className="sc-jcwpoC ktxCxF"
+  className="sc-carFqZ jQeZsw"
 >
   <button
     aria-controls="accordion-undefined-header"
@@ -2441,7 +2451,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
     </h3>
     <svg
       aria-hidden={true}
-      className="sc-hKFxyN juDrWq sc-ciSkZP Accordion__icon--collapsed"
+      className="sc-hKFxyN juDrWq sc-jcwpoC Accordion__icon--collapsed"
       color="main"
       size="medium"
       viewBox="0 0 24 24"
@@ -2472,7 +2482,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
 
 exports[`Storyshots surfaces/Card Docs 1`] = `
 <section
-  className="sc-carFqZ wwtbU"
+  className="sc-iTVJFM iguzXb"
 >
   <h3>
     sample card
@@ -2490,7 +2500,7 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-iTVJFM izHdLj"
+  className="sc-iBzEeX hIddyo"
 >
   <h2>
     Clock In
@@ -2523,7 +2533,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-iBzEeX hOlGcZ"
+  className="sc-efHYUO dxoiFU"
 >
   <div>
     <p>
@@ -2546,7 +2556,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-efHYUO jWgtdx"
+    className="sc-cTJkRt dBpytF"
     onClick={[Function]}
     role="none"
   >

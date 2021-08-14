@@ -19,6 +19,6 @@ export const createStoryTemplate =
   (args) =>
     <Component {...args} />;
 
-export const withBrowserRouter: StoryMetaDecorator = (storyFn) => {
-  return <BrowserRouter>{storyFn()}</BrowserRouter>;
+export const withBrowserRouter: StoryMetaDecorator = (fn) => {
+  return <BrowserRouter>{fn()}</BrowserRouter>;
 };

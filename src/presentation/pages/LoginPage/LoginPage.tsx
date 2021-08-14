@@ -29,16 +29,15 @@ const LoginPage = () => {
   );
 };
 
-const StyledCard = styled(Card)``;
 const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 100px;
-  & > ${StyledCard} {
-    width: 100%;
-    max-width: 480px;
-  }
+`;
+const StyledCard = styled(Card)`
+  width: 100%;
+  max-width: 480px;
 `;
 
 type Dispatch = Parameters<ReturnType<typeof signInUser>>[0];
@@ -85,12 +84,13 @@ const LoginPageForm = React.memo(function LoginPageForm() {
   );
 });
 
-const StyledTextForm = styled(TextForm)``;
-const StyledPasswordForm = styled(PasswordForm)``;
-const StyledForm = styled.form`
-  & > ${StyledTextForm}, & > ${StyledPasswordForm} {
-    margin-bottom: 20px;
-  }
+const StyledForm = styled.form``;
+const StyledTextForm = styled(TextForm)`
+  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+const StyledPasswordForm = styled(PasswordForm)`
+  margin-bottom: 20px;
 `;
 
 export default LoginPage;

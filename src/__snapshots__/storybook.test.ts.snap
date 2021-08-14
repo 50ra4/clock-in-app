@@ -38,18 +38,6 @@ Array [
 ]
 `;
 
-exports[`Storyshots display/ResponsiveLayout Docs 1`] = `
-<div
-  className="sc-dlnjwi JvYPV"
->
-  <div
-    className="sc-hKFxyN hORXlA"
-  >
-    Responsive
-  </div>
-</div>
-`;
-
 exports[`Storyshots feedback/Backdrop Docs 1`] = `null`;
 
 exports[`Storyshots feedback/Backdrop With Loading 1`] = `
@@ -122,14 +110,14 @@ exports[`Storyshots feedback/LoadingGuard Loading 1`] = `
 
 exports[`Storyshots feedback/LoadingSpinner Docs 1`] = `
 <div
-  className="sc-iCoGMd eUVsUk"
+  className="sc-jSFjdj erFFpw"
 >
   <div
     className="LoadingSpinner__icon--message-only"
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj dexhFY sc-gKAaRy kPSiFL"
+      className="sc-hKFxyN hQZYzl sc-eCApnc iKiFlG"
       color="default"
       size="extraLarge"
       viewBox="0 0 24 24"
@@ -149,14 +137,14 @@ exports[`Storyshots feedback/LoadingSpinner Docs 1`] = `
 
 exports[`Storyshots feedback/LoadingSpinner With Children 1`] = `
 <div
-  className="sc-iCoGMd bMRgkA"
+  className="sc-jSFjdj bjBsFM"
 >
   <div
     className="LoadingSpinner__icon"
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj jzrwZY sc-gKAaRy kPSiFL"
+      className="sc-hKFxyN cWyEup sc-eCApnc iKiFlG"
       color="default"
       size="large"
       viewBox="0 0 24 24"
@@ -183,14 +171,14 @@ exports[`Storyshots feedback/LoadingSpinner With Children 1`] = `
 
 exports[`Storyshots feedback/LoadingSpinner With Message 1`] = `
 <div
-  className="sc-iCoGMd bMRgkA"
+  className="sc-jSFjdj bjBsFM"
 >
   <div
     className="LoadingSpinner__icon"
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj jzrwZY sc-gKAaRy kPSiFL"
+      className="sc-hKFxyN cWyEup sc-eCApnc iKiFlG"
       color="default"
       size="large"
       viewBox="0 0 24 24"
@@ -219,7 +207,7 @@ exports[`Storyshots feedback/LoadingSpinner With Message 1`] = `
 
 exports[`Storyshots feedback/Snackbar Docs 1`] = `
 <div
-  className="sc-hBMUJo hHEgCR Snackbar"
+  className="sc-bqGGPW gwcPe Snackbar"
   context="show snackbar"
   onAnimationEnd={[Function]}
 >
@@ -237,7 +225,7 @@ Array [
     Open
   </button>,
   <div
-    className="sc-hBMUJo hHEgCR Snackbar"
+    className="sc-bqGGPW gwcPe Snackbar"
     onAnimationEnd={[Function]}
   >
     <div
@@ -255,10 +243,10 @@ Array [
 
 exports[`Storyshots forms/DateForm Date Input Type 1`] = `
 <div
-  className="sc-fKgJPI"
+  className="sc-dlMDgC"
 >
   <div
-    className="sc-iemWCZ kcBbuP"
+    className="sc-fFSPTT hjKcrX"
   >
     <label
       htmlFor="date"
@@ -268,10 +256,10 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-hHEiqL"
+        className="sc-iemWCZ"
       >
         <input
-          className="sc-dIvrsQ dXONCb sc-hHEiqL input-base"
+          className="sc-bkbkJK AOIMZ sc-iemWCZ input-base"
           error="required"
           id="date"
           max="2021-07-31"
@@ -283,11 +271,11 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
         />
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -312,10 +300,10 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
 
 exports[`Storyshots forms/DateForm Docs 1`] = `
 <div
-  className="sc-fKgJPI"
+  className="sc-dlMDgC"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="docs"
@@ -324,14 +312,14 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           enter the date to book
         </p>
       </div>
       <div
-        className="sc-kfYoZR doyTZ"
+        className="sc-hHEiqL jzRAhp"
       >
         <select
           id="docs"
@@ -649,7 +637,7 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
         </select>
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-dlMDgC"
+          className="sc-hKFxyN ivKCeV sc-dIvrsQ"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -671,10 +659,10 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
 
 exports[`Storyshots forms/DateForm Select Type 1`] = `
 <div
-  className="sc-fKgJPI"
+  className="sc-dlMDgC"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="select"
@@ -683,7 +671,7 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-kfYoZR doyTZ"
+        className="sc-hHEiqL jzRAhp"
       >
         <select
           id="select"
@@ -1001,7 +989,7 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
         </select>
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-dlMDgC"
+          className="sc-hKFxyN ivKCeV sc-dIvrsQ"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1023,7 +1011,7 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
 
 exports[`Storyshots forms/DescriptionForForm Docs 1`] = `
 <div
-  className="sc-fnVZcZ deMolw"
+  className="sc-ksluID jOtGJN"
 >
   <p>
     Please enter phone number without hyphens.
@@ -1033,11 +1021,11 @@ exports[`Storyshots forms/DescriptionForForm Docs 1`] = `
 
 exports[`Storyshots forms/ErrorMessageForForm Docs 1`] = `
 <div
-  className="sc-bkbkJK kxoWrp"
+  className="sc-fnVZcZ cvjjrN"
 >
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA sc-fFSPTT"
+    className="sc-hKFxyN ivKCeV sc-hBMUJo"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -1059,10 +1047,10 @@ exports[`Storyshots forms/ErrorMessageForForm Docs 1`] = `
 
 exports[`Storyshots forms/PasswordForm Docs 1`] = `
 <div
-  className="sc-lmgQwP"
+  className="sc-iwajpm"
 >
   <div
-    className="sc-iemWCZ coDBvo"
+    className="sc-fFSPTT iIDBaE"
   >
     <label
       htmlFor="docs"
@@ -1072,17 +1060,17 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter password.
         </p>
       </div>
       <div
-        className="sc-cxNHIi kRxbkg"
+        className="sc-bCwfaz klYHaj"
       >
         <input
-          className="sc-dIvrsQ cPKOty input-base"
+          className="sc-bkbkJK jTNUwg input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1091,13 +1079,14 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
         />
         <button
           aria-label="パスワードを表示"
-          className="sc-bCwfaz jnBGYy sc-iwajpm"
+          className="sc-kfYoZR bfMjAa sc-fKgJPI"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
-            className="sc-jSFjdj edwqPA"
+            className="sc-hKFxyN ivKCeV"
             color="default"
             size="medium"
             viewBox="0 0 24 24"
@@ -1120,10 +1109,10 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
 
 exports[`Storyshots forms/PasswordForm Error 1`] = `
 <div
-  className="sc-lmgQwP"
+  className="sc-iwajpm"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="error"
@@ -1132,17 +1121,17 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter password.
         </p>
       </div>
       <div
-        className="sc-cxNHIi kRxbkg"
+        className="sc-bCwfaz klYHaj"
       >
         <input
-          className="sc-dIvrsQ gDGySc input-base"
+          className="sc-bkbkJK kblwiy input-base"
           error="incorrect password"
           id="error"
           name="error"
@@ -1152,13 +1141,14 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         />
         <button
           aria-label="パスワードを表示"
-          className="sc-bCwfaz jnBGYy sc-iwajpm"
+          className="sc-kfYoZR bfMjAa sc-fKgJPI"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
-            className="sc-jSFjdj edwqPA"
+            className="sc-hKFxyN ivKCeV"
             color="default"
             size="medium"
             viewBox="0 0 24 24"
@@ -1175,11 +1165,11 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         </button>
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1204,10 +1194,10 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
 
 exports[`Storyshots forms/TextAreaForm Docs 1`] = `
 <div
-  className="sc-giAqHp"
+  className="sc-lmgQwP"
 >
   <div
-    className="sc-iemWCZ kcBbuP"
+    className="sc-fFSPTT hjKcrX"
   >
     <label
       htmlFor="docs"
@@ -1217,14 +1207,14 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter remarks.
         </p>
       </div>
       <div
-        className="sc-iJCRrE hZyMGQ"
+        className="sc-cxNHIi eUekkk"
       >
         <textarea
           id="docs"
@@ -1240,10 +1230,10 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
 
 exports[`Storyshots forms/TextAreaForm Error 1`] = `
 <div
-  className="sc-giAqHp"
+  className="sc-lmgQwP"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="error"
@@ -1252,14 +1242,14 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter remarks.
         </p>
       </div>
       <div
-        className="sc-iJCRrE YONbH"
+        className="sc-cxNHIi hGtjDj"
       >
         <textarea
           id="error"
@@ -1270,11 +1260,11 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
         />
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1299,10 +1289,10 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
 
 exports[`Storyshots forms/TextForm Docs 1`] = `
 <div
-  className="sc-kLojOw"
+  className="sc-ezzafa"
 >
   <div
-    className="sc-iemWCZ coDBvo"
+    className="sc-fFSPTT iIDBaE"
   >
     <label
       htmlFor="docs"
@@ -1312,17 +1302,17 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter remarks.
         </p>
       </div>
       <div
-        className="sc-bYwzuL eNoNmh"
+        className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-dIvrsQ cPKOty input-base"
+          className="sc-bkbkJK jTNUwg input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1331,12 +1321,12 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz jnBGYy sc-ezzafa"
+          className="sc-kfYoZR bfMjAa sc-iJCRrE"
           disabled={false}
         >
           <svg
             aria-hidden={true}
-            className="sc-jSFjdj edwqPA"
+            className="sc-hKFxyN ivKCeV"
             color="default"
             size="medium"
             viewBox="0 0 24 24"
@@ -1359,10 +1349,10 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
 
 exports[`Storyshots forms/TextForm Error 1`] = `
 <div
-  className="sc-kLojOw"
+  className="sc-ezzafa"
 >
   <div
-    className="sc-iemWCZ iLWWfl"
+    className="sc-fFSPTT jEEtfp"
   >
     <label
       htmlFor="error"
@@ -1371,17 +1361,17 @@ exports[`Storyshots forms/TextForm Error 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter phone number.
         </p>
       </div>
       <div
-        className="sc-bYwzuL eNoNmh"
+        className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-dIvrsQ gDGySc input-base"
+          className="sc-bkbkJK kblwiy input-base"
           error="too long"
           id="error"
           name="error"
@@ -1391,12 +1381,12 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz jnBGYy sc-ezzafa"
+          className="sc-kfYoZR bfMjAa sc-iJCRrE"
           disabled={false}
         >
           <svg
             aria-hidden={true}
-            className="sc-jSFjdj edwqPA"
+            className="sc-hKFxyN ivKCeV"
             color="default"
             size="medium"
             viewBox="0 0 24 24"
@@ -1413,11 +1403,11 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         </button>
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1442,10 +1432,10 @@ exports[`Storyshots forms/TextForm Error 1`] = `
 
 exports[`Storyshots forms/TimeForm Docs 1`] = `
 <div
-  className="sc-hiKfDv"
+  className="sc-iklJeh"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="docs"
@@ -1454,17 +1444,17 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           enter the date to book
         </p>
       </div>
       <div
-        className="sc-iklJeh iFTkvG"
+        className="sc-bYwzuL igmxAQ"
       >
         <input
-          className="sc-dIvrsQ iWgRpR input-base"
+          className="sc-bkbkJK bneZX input-base"
           id="docs"
           name="docs"
           onBlur={[Function]}
@@ -1480,10 +1470,10 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
 
 exports[`Storyshots forms/TimeForm Text Type 1`] = `
 <div
-  className="sc-hiKfDv"
+  className="sc-iklJeh"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="select"
@@ -1492,10 +1482,10 @@ exports[`Storyshots forms/TimeForm Text Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-iklJeh iFTkvG"
+        className="sc-bYwzuL igmxAQ"
       >
         <input
-          className="sc-dIvrsQ iWgRpR input-base"
+          className="sc-bkbkJK bneZX input-base"
           id="select"
           name="select"
           onBlur={[Function]}
@@ -1511,10 +1501,10 @@ exports[`Storyshots forms/TimeForm Text Type 1`] = `
 
 exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
 <div
-  className="sc-hiKfDv"
+  className="sc-iklJeh"
 >
   <div
-    className="sc-iemWCZ kcBbuP"
+    className="sc-fFSPTT hjKcrX"
   >
     <label
       htmlFor="date"
@@ -1524,10 +1514,10 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-jJMGnK kiGVsQ"
+        className="sc-kLojOw dZWHJR"
       >
         <input
-          className="sc-dIvrsQ dXONCb input-base"
+          className="sc-bkbkJK AOIMZ input-base"
           error="required"
           id="date"
           name="date"
@@ -1537,11 +1527,11 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
         />
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1566,10 +1556,10 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
 <div
-  className="sc-ciSkZP kYwZsy"
+  className="sc-gXfVKN eZquhw"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="docs"
@@ -1578,7 +1568,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter rest time.
@@ -1588,10 +1578,10 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-dIvrsQ iWgRpR input-base"
+            className="sc-bkbkJK bneZX input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -1604,10 +1594,10 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           ~
         </span>
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-dIvrsQ iWgRpR input-base"
+            className="sc-bkbkJK bneZX input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -1624,10 +1614,10 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
 <div
-  className="sc-ciSkZP kYwZsy"
+  className="sc-gXfVKN eZquhw"
 >
   <div
-    className="sc-iemWCZ gQdfJy"
+    className="sc-fFSPTT iUdoju"
   >
     <label
       htmlFor="text"
@@ -1636,7 +1626,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-fnVZcZ deMolw"
+        className="sc-ksluID jOtGJN"
       >
         <p>
           please enter rest time
@@ -1646,10 +1636,10 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-dIvrsQ iWgRpR input-base"
+            className="sc-bkbkJK bneZX input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -1662,10 +1652,10 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           ~
         </span>
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-dIvrsQ iWgRpR input-base"
+            className="sc-bkbkJK bneZX input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -1682,10 +1672,10 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
 
 exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 <div
-  className="sc-ciSkZP kYwZsy"
+  className="sc-gXfVKN eZquhw"
 >
   <div
-    className="sc-iemWCZ iLWWfl"
+    className="sc-fFSPTT jEEtfp"
   >
     <label
       htmlFor="time"
@@ -1697,10 +1687,10 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-jJMGnK sc-cBoqAE kiGVsQ"
+          className="sc-kLojOw sc-hiKfDv dZWHJR"
         >
           <input
-            className="sc-dIvrsQ dXONCb input-base"
+            className="sc-bkbkJK AOIMZ input-base"
             error="enter time"
             id="time"
             name="time"
@@ -1713,10 +1703,10 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           ~
         </span>
         <div
-          className="sc-jJMGnK sc-cBoqAE kiGVsQ"
+          className="sc-kLojOw sc-hiKfDv dZWHJR"
         >
           <input
-            className="sc-dIvrsQ dXONCb input-base"
+            className="sc-bkbkJK AOIMZ input-base"
             error="enter time"
             id="time-end"
             name="time-end"
@@ -1727,11 +1717,11 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
         </div>
       </div>
       <div
-        className="sc-bkbkJK kxoWrp"
+        className="sc-fnVZcZ cvjjrN"
       >
         <svg
           aria-hidden={true}
-          className="sc-jSFjdj edwqPA sc-fFSPTT"
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
           color="default"
           size="medium"
           viewBox="0 0 24 24"
@@ -1756,7 +1746,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
-  className="sc-jrsJWt fxVgBS button"
+  className="sc-fujyAs hPHCSO button"
   color="primary"
   disabled={false}
 >
@@ -1770,7 +1760,7 @@ exports[`Storyshots inputs/Button Docs 1`] = `
 
 exports[`Storyshots inputs/Button Full Width 1`] = `
 <button
-  className="sc-jrsJWt iNKUyB button"
+  className="sc-fujyAs jPtcZ button"
   color="primary"
   disabled={false}
 >
@@ -1784,7 +1774,7 @@ exports[`Storyshots inputs/Button Full Width 1`] = `
 
 exports[`Storyshots inputs/Button Outline 1`] = `
 <button
-  className="sc-jrsJWt imejSj button"
+  className="sc-fujyAs bGMgXf button"
   color="primary"
   disabled={false}
   variant="outline"
@@ -1799,7 +1789,7 @@ exports[`Storyshots inputs/Button Outline 1`] = `
 
 exports[`Storyshots inputs/Checkbox Docs 1`] = `
 <div
-  className="sc-jcwpoC gtdcTl"
+  className="sc-cBoqAE LFuKM"
 >
   <input
     disabled={false}
@@ -1810,7 +1800,7 @@ exports[`Storyshots inputs/Checkbox Docs 1`] = `
   <div>
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj hJXBtP"
+      className="sc-hKFxyN iFbXqu"
       color="secondary"
       size="medium"
       viewBox="0 0 24 24"
@@ -1835,10 +1825,10 @@ exports[`Storyshots inputs/Checkbox Docs 1`] = `
 
 exports[`Storyshots inputs/DateInput Docs 1`] = `
 <div
-  className="sc-hHEiqL"
+  className="sc-iemWCZ"
 >
   <input
-    className="sc-dIvrsQ iWgRpR sc-hHEiqL input-base"
+    className="sc-bkbkJK bneZX sc-iemWCZ input-base"
     id="docs"
     max="2021-07-31"
     min="2021-07-01"
@@ -1852,7 +1842,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
 
 exports[`Storyshots inputs/DateSelect Docs 1`] = `
 <div
-  className="sc-kfYoZR doyTZ"
+  className="sc-hHEiqL jzRAhp"
 >
   <select
     id="docs"
@@ -2020,7 +2010,7 @@ exports[`Storyshots inputs/DateSelect Docs 1`] = `
   </select>
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA sc-dlMDgC"
+    className="sc-hKFxyN ivKCeV sc-dIvrsQ"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -2039,12 +2029,12 @@ exports[`Storyshots inputs/DateSelect Docs 1`] = `
 
 exports[`Storyshots inputs/IconButton Docs 1`] = `
 <button
-  className="sc-bCwfaz jnBGYy"
+  className="sc-kfYoZR bfMjAa"
   disabled={false}
 >
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj dzLSAr"
+    className="sc-hKFxyN jvuzga"
     color="primary"
     size="medium"
     viewBox="0 0 24 24"
@@ -2064,12 +2054,12 @@ exports[`Storyshots inputs/IconButton Docs 1`] = `
 exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 <button
   aria-label="クリア"
-  className="sc-bCwfaz jnBGYy"
+  className="sc-kfYoZR bfMjAa"
   disabled={false}
 >
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA"
+    className="sc-hKFxyN ivKCeV"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -2088,10 +2078,10 @@ exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 
 exports[`Storyshots inputs/PasswordInput Docs 1`] = `
 <div
-  className="sc-cxNHIi kRxbkg"
+  className="sc-bCwfaz klYHaj"
 >
   <input
-    className="sc-dIvrsQ cPKOty input-base"
+    className="sc-bkbkJK jTNUwg input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2100,13 +2090,14 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
   />
   <button
     aria-label="パスワードを表示"
-    className="sc-bCwfaz jnBGYy sc-iwajpm"
+    className="sc-kfYoZR bfMjAa sc-fKgJPI"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2126,10 +2117,10 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
 
 exports[`Storyshots inputs/PasswordInput Error 1`] = `
 <div
-  className="sc-cxNHIi kRxbkg"
+  className="sc-bCwfaz klYHaj"
 >
   <input
-    className="sc-dIvrsQ gDGySc input-base"
+    className="sc-bkbkJK kblwiy input-base"
     error="incorrect password"
     id="error"
     name="error"
@@ -2139,13 +2130,14 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
   />
   <button
     aria-label="パスワードを表示"
-    className="sc-bCwfaz jnBGYy sc-iwajpm"
+    className="sc-kfYoZR bfMjAa sc-fKgJPI"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2165,7 +2157,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
 
 exports[`Storyshots inputs/SelectInput Docs 1`] = `
 <div
-  className="sc-kfYoZR doyTZ"
+  className="sc-hHEiqL jzRAhp"
 >
   <select
     id="docs"
@@ -2198,7 +2190,7 @@ exports[`Storyshots inputs/SelectInput Docs 1`] = `
   </select>
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA sc-dlMDgC"
+    className="sc-hKFxyN ivKCeV sc-dIvrsQ"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -2217,7 +2209,7 @@ exports[`Storyshots inputs/SelectInput Docs 1`] = `
 
 exports[`Storyshots inputs/SelectInput Error 1`] = `
 <div
-  className="sc-kfYoZR jutfoP"
+  className="sc-hHEiqL eoOeHP"
 >
   <select
     id="error"
@@ -2249,7 +2241,7 @@ exports[`Storyshots inputs/SelectInput Error 1`] = `
   </select>
   <svg
     aria-hidden={true}
-    className="sc-jSFjdj edwqPA sc-dlMDgC"
+    className="sc-hKFxyN ivKCeV sc-dIvrsQ"
     color="default"
     size="medium"
     viewBox="0 0 24 24"
@@ -2268,7 +2260,7 @@ exports[`Storyshots inputs/SelectInput Error 1`] = `
 
 exports[`Storyshots inputs/TextArea Docs 1`] = `
 <div
-  className="sc-iJCRrE hZyMGQ"
+  className="sc-cxNHIi eUekkk"
 >
   <textarea
     description="please enter phone number."
@@ -2282,7 +2274,7 @@ exports[`Storyshots inputs/TextArea Docs 1`] = `
 
 exports[`Storyshots inputs/TextArea Error 1`] = `
 <div
-  className="sc-iJCRrE hUcUeC"
+  className="sc-cxNHIi gSskwC"
 >
   <textarea
     id="error"
@@ -2295,10 +2287,10 @@ exports[`Storyshots inputs/TextArea Error 1`] = `
 
 exports[`Storyshots inputs/TextInput Docs 1`] = `
 <div
-  className="sc-bYwzuL eNoNmh"
+  className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-dIvrsQ cPKOty input-base"
+    className="sc-bkbkJK jTNUwg input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2307,12 +2299,12 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz jnBGYy sc-ezzafa"
+    className="sc-kfYoZR bfMjAa sc-iJCRrE"
     disabled={false}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2332,10 +2324,10 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
 
 exports[`Storyshots inputs/TextInput Error 1`] = `
 <div
-  className="sc-bYwzuL eNoNmh"
+  className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-dIvrsQ gDGySc input-base"
+    className="sc-bkbkJK kblwiy input-base"
     error="enter without hyphens"
     id="error"
     name="error"
@@ -2345,12 +2337,12 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz jnBGYy sc-ezzafa"
+    className="sc-kfYoZR bfMjAa sc-iJCRrE"
     disabled={false}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2370,10 +2362,10 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
 
 exports[`Storyshots inputs/TimeInput Docs 1`] = `
 <div
-  className="sc-jJMGnK kiGVsQ"
+  className="sc-kLojOw dZWHJR"
 >
   <input
-    className="sc-dIvrsQ iWgRpR input-base"
+    className="sc-bkbkJK bneZX input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2386,10 +2378,10 @@ exports[`Storyshots inputs/TimeInput Docs 1`] = `
 
 exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 <div
-  className="sc-iklJeh iFTkvG"
+  className="sc-bYwzuL igmxAQ"
 >
   <input
-    className="sc-dIvrsQ cPKOty input-base"
+    className="sc-bkbkJK jTNUwg input-base"
     id="docs"
     name="docs"
     onBlur={[Function]}
@@ -2399,13 +2391,13 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz jnBGYy"
+    className="sc-kfYoZR bfMjAa"
     disabled={false}
     onClick={[Function]}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2423,9 +2415,21 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 </div>
 `;
 
+exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
+<div
+  className="sc-cTJkRt hRbzdv"
+>
+  <div
+    className="sc-jNnpgg feQEjc"
+  >
+    Responsive
+  </div>
+</div>
+`;
+
 exports[`Storyshots surfaces/Accordion Docs 1`] = `
 <section
-  className="sc-iTVJFM cWAaZk"
+  className="sc-jcwpoC ktxCxF"
 >
   <button
     aria-controls="accordion-undefined-header"
@@ -2437,7 +2441,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
     </h3>
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj XDZXn sc-carFqZ Accordion__icon--collapsed"
+      className="sc-hKFxyN juDrWq sc-ciSkZP Accordion__icon--collapsed"
       color="main"
       size="medium"
       viewBox="0 0 24 24"
@@ -2468,7 +2472,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
 
 exports[`Storyshots surfaces/Card Docs 1`] = `
 <section
-  className="sc-iBzEeX fecNTs"
+  className="sc-carFqZ wwtbU"
 >
   <h3>
     sample card
@@ -2486,19 +2490,19 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-efHYUO iRfllt"
+  className="sc-iTVJFM izHdLj"
 >
   <h2>
     Clock In
   </h2>
   <button
     aria-label="メニューを表示"
-    className="sc-bCwfaz jnBGYy"
+    className="sc-kfYoZR bfMjAa"
     disabled={false}
   >
     <svg
       aria-hidden={true}
-      className="sc-jSFjdj edwqPA"
+      className="sc-hKFxyN ivKCeV"
       color="default"
       size="medium"
       viewBox="0 0 24 24"
@@ -2519,7 +2523,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-cTJkRt gKBzRw"
+  className="sc-iBzEeX hOlGcZ"
 >
   <div>
     <p>
@@ -2542,12 +2546,12 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-jNnpgg dRvxiH"
+    className="sc-efHYUO jWgtdx"
     onClick={[Function]}
     role="none"
   >
     <button
-      className="sc-jrsJWt dqyNhW button"
+      className="sc-fujyAs fBzvxG button"
       color="secondary"
       disabled={false}
       onClick={[Function]}
@@ -2559,7 +2563,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
       </p>
     </button>
     <button
-      className="sc-jrsJWt fxVgBS button"
+      className="sc-fujyAs hPHCSO button"
       color="primary"
       disabled={false}
       onClick={[Function]}

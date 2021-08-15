@@ -9,9 +9,7 @@ import { GlobalStyle } from 'styles/global';
 import { LoadingGuard } from './components/feedback/LoadingGuard/LoadingGuard';
 import { ROUTES, ErrorPage } from './routes';
 import { ErrorBoundary } from './ErrorBoundary';
-
-// TODO:
-const NotFoundError = new Error('お探しのページは見つかりません');
+import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
 
 const store = configureStore({});
 
@@ -28,7 +26,7 @@ function App() {
                   {ROUTES.map((routeProps, i) => (
                     <Route key={`route-${i}`} {...routeProps} />
                   ))}
-                  <Route component={() => <ErrorPage error={NotFoundError} />} />
+                  <Route component={() => <ErrorPage {...ERROR_HEADING_WITH_MESSAGE.NOT_FOUND} />} />
                 </Switch>
               </ErrorBoundary>
             </Suspense>

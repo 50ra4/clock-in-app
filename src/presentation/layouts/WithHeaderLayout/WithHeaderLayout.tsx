@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Header, headerHeight } from 'presentation/components/surfaces/Header/Header';
-import { SideNavigation } from './SideNavigation';
 import { Logo } from 'presentation/components/unique/Logo/Logo';
+import { SideNavigation } from 'presentation/components/unique/SideNavigation/SideNavigation';
 
 type OwnProps = {
   className?: string;

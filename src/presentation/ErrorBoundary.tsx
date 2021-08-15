@@ -1,5 +1,6 @@
 import React, { ErrorInfo } from 'react';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import { errorToHeadingWithMessage } from 'utils/errorUtil';
 
 type OwnProps = {
   fallback?: React.ReactNode;
@@ -48,6 +49,7 @@ export class ErrorBoundary extends React.Component<OwnProps, OwnState> {
       return this.props.fallback;
     }
 
-    return <ErrorPage error={this.state.error} />;
+    const { heading, message, crashed } = errorToHeadingWithMessage(this.state.error);
+    return <ErrorPage heading={heading} message={message} crashed={crashed} />;
   }
 }

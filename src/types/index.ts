@@ -43,3 +43,8 @@ export type Range<T> = {
   start?: T;
   end?: T;
 };
+
+export type ErrorHeadingWithMessage = {
+  heading: string;
+  message: string;
+};

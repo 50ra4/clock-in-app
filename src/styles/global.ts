@@ -156,6 +156,11 @@ const customCss = (theme: StyledComponentsTheme) => css`
     background-color: ${theme.color.palette.main.background};
   }
 
+  p {
+    word-break: break-all;
+    white-space: pre-line;
+  }
+
   button,
   input {
     padding: 0;

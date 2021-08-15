@@ -10,13 +10,13 @@ export const UnStyledLink = React.memo(function UnStyledLink({ children, ...othe
 
 export const Link = styled(UnStyledLink)`
   text-decoration: none;
-  color: ${({ theme }) => theme.color.font.link.default};
+  color: ${({ theme }) => theme.color.font.link};
   &:visited {
-    color: ${({ theme }) => theme.color.font.link.visited};
+    color: ${({ theme }) => theme.color.font.link};
   }
   &:hover,
   &:active {
-    color: ${({ theme }) => theme.color.font.link.active};
+    color: ${({ theme }) => theme.color.font.link};
     text-decoration: underline;
   }
 `;

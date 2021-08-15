@@ -21,11 +21,7 @@ const fontColorPalette = {
   gray: '#808080',
   lightGray: '#afafaf',
   red: '#c62828',
-  link: {
-    default: '#c6a700',
-    visited: '#6a1b9a',
-    active: '#f8bbd0',
-  },
+  link: '#c6a700',
 } as const;
 
 const fontSize = {

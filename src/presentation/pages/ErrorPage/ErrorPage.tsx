@@ -8,13 +8,22 @@ import { headerHeight } from 'presentation/components/surfaces/Header/Header';
 import { WarningIcon } from 'presentation/components/display/Icons/WarningIcon';
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { PAGE_PATH } from 'constants/path';
+import { isErrorCode } from 'utils/errorUtil';
 
 type Props = ErrorHeadingWithMessage & {
   crashed?: boolean;
 };
 
-const ErrorPage = ({ heading, message, crashed }: Props) => {
+const ErrorPage = ({ crashed, ...props }: Props) => {
   const history = useHistory();
+  const errorCode = new URLSearchParams(history.location.search).get('errorCode');
+  const { heading, message } = isErrorCode(errorCode)
+    ? ERROR_HEADING_WITH_MESSAGE[errorCode]
+    : {
+        heading: props.heading || ERROR_HEADING_WITH_MESSAGE.UNKNOWN.heading,
+        message: props.message || ERROR_HEADING_WITH_MESSAGE.UNKNOWN.message,
+      };
+
   const handleOnClick = () => {
     if (!crashed) {
       history.replace(PAGE_PATH.top);
@@ -28,8 +37,8 @@ const ErrorPage = ({ heading, message, crashed }: Props) => {
       <StyledRoot>
         <div>
           <StyledWarningIcon color="secondary" />
-          <h2>{heading || ERROR_HEADING_WITH_MESSAGE.UNKNOWN.heading}</h2>
-          <p>{message || ERROR_HEADING_WITH_MESSAGE.UNKNOWN.message}</p>
+          <h2>{heading}</h2>
+          <p>{message}</p>
           <Button onClick={handleOnClick} color="secondary">
             Topへ戻る
           </Button>

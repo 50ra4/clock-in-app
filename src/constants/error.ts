@@ -5,7 +5,7 @@ export const ERROR_CODE = {
   serviceTemporarilyUnavailable: 'SERVICE_TEMPORARILY_UNAVAILABLE',
   unknown: 'UNKNOWN',
 } as const;
-type ErrorCode = EnumValue<typeof ERROR_CODE>;
+export type ErrorCode = EnumValue<typeof ERROR_CODE>;
 
 export const ERROR_HEADING_WITH_MESSAGE: Readonly<Record<ErrorCode, ErrorHeadingWithMessage>> = {
   [ERROR_CODE.notFound]: {

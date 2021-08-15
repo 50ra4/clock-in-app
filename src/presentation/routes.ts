@@ -1,7 +1,6 @@
 import React from 'react';
 import { RouteProps } from 'react-router-dom';
-import { PAGE_PATH } from 'constants/path';
-import { EnumValue } from 'types';
+import { PAGE_PATH, PagePath } from 'constants/path';
 
 export const ErrorPage = React.lazy(() => import('./pages/ErrorPage/ErrorPage'));
 const TopPage = React.lazy(() => import('./pages/TopPage/TopPage'));
@@ -9,7 +8,6 @@ const LoginPage = React.lazy(() => import('./pages/LoginPage/LoginPage'));
 const RegistrationPage = React.lazy(() => import('./pages/RegistrationPage/RegistrationPage'));
 const TimecardDetailPage = React.lazy(() => import('./pages/TimecardDetailPage/TimecardDetailPage'));
 
-type PagePath = EnumValue<typeof PAGE_PATH>;
 export const ROUTES: RouteProps<PagePath>[] = [
   {
     exact: true,

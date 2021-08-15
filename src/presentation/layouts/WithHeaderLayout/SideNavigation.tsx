@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PAGE_PATH } from 'constants/path';
 import { Backdrop } from 'presentation/components/feedback/Backdrop/Backdrop';
 import { headerHeight } from 'presentation/components/surfaces/Header/Header';
+import { replacePathParams } from 'utils/pathUtil';
 
 type OwnProps = {
   className?: string;
@@ -16,7 +17,8 @@ type OwnProps = {
  * @see https://www.w3schools.com/howto/howto_js_sidenav.asp
  */
 export const SideNavigation = React.memo(function SideNavigation({ className, open, onClose }: OwnProps) {
-  const timeCardId = '1111';
+  // FIXME:
+  const uid = '1111';
 
   return (
     <StyledBackdrop className={className} open={open} onClick={onClose}>
@@ -39,8 +41,7 @@ export const SideNavigation = React.memo(function SideNavigation({ className, op
               </Link>
             </li>
             <li>
-              {/* FIXME: */}
-              <Link to={`/timecards/${timeCardId}`}>
+              <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>
                 <button>自分のタイムカード</button>
               </Link>
             </li>

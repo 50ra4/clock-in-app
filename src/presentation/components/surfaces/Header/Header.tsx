@@ -6,7 +6,7 @@ import { IconButton, IconButtonProps } from 'presentation/components/inputs/Icon
 
 type OwnProps = {
   className?: string;
-  title?: string;
+  title: string | React.ReactNode;
   openMenu?: boolean;
   onToggleMenu?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
@@ -17,14 +17,14 @@ export type HeaderProps = OwnProps & InheritedProps;
 
 const UnStyledHeader = React.memo(function Header({
   className,
-  title = 'Clock In',
+  title,
   openMenu = false,
   onToggleMenu,
   ...otherProps
 }: HeaderProps) {
   return (
     <header {...otherProps} className={className}>
-      <h2>{title}</h2>
+      {typeof title === 'string' ? <h2>{title}</h2> : title}
       <RightActionButton open={openMenu} onClick={onToggleMenu} />
     </header>
   );

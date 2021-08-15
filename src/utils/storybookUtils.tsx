@@ -3,7 +3,7 @@ import React, { ComponentProps } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { BrowserRouter } from 'react-router-dom';
 
-type StoryMetaDecorator = NonNullable<Meta<unknown>['decorators']>[number];
+export type StoryMetaDecorator = NonNullable<Meta<unknown>['decorators']>[number];
 type StoryMetaParameter<T> = Omit<Meta<T>, 'component'>;
 
 export const createStoryMeta = <T extends React.FC<any>>(

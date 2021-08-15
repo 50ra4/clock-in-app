@@ -2417,10 +2417,10 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 
 exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 <div
-  className="sc-jNnpgg cTKjeR"
+  className="sc-cOifOu cBDnYW"
 >
   <div
-    className="sc-dPaNzc hicKZY"
+    className="sc-Arkif hzCHql"
   >
     Responsive
   </div>
@@ -2429,7 +2429,7 @@ exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 
 exports[`Storyshots navigation/Link Docs 1`] = `
 <a
-  className="sc-ciSkZP flazKN"
+  className="sc-ciSkZP iAxGeb"
   href="/"
   onClick={[Function]}
 >
@@ -2502,8 +2502,71 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
   className="sc-iBzEeX hIddyo"
 >
+  <a
+    aria-label="'clock in' homepage"
+    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
+    href="/"
+    onClick={[Function]}
+  >
+    <h1>
+      Cl
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN ivKCeV sc-efHYUO"
+        color="default"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <rect
+            fill="none"
+            x="0"
+          />
+        </g>
+        <g>
+          <g>
+            <path
+              d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z M12.5,7H11v6l5.2,3.2l0.8-1.3l-4.5-2.7V7z"
+            />
+          </g>
+        </g>
+      </svg>
+      ck in
+    </h1>
+  </a>
+  <button
+    aria-label="メニューを表示"
+    className="sc-kfYoZR bfMjAa"
+    disabled={false}
+  >
+    <svg
+      aria-hidden={true}
+      className="sc-hKFxyN ivKCeV"
+      color="default"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+      />
+       
+    </svg>
+  </button>
+</header>
+`;
+
+exports[`Storyshots surfaces/Header Text Header 1`] = `
+<header
+  className="sc-iBzEeX hIddyo"
+>
   <h2>
-    Clock In
+    ログイン
   </h2>
   <button
     aria-label="メニューを表示"
@@ -2533,7 +2596,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-efHYUO dxoiFU"
+  className="sc-jNnpgg lnvytm"
 >
   <div>
     <p>
@@ -2541,6 +2604,46 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
     </p>
   </div>
 </section>
+`;
+
+exports[`Storyshots unique/Logo Docs 1`] = `
+<div
+  className="sc-dPaNzc iANbGW"
+>
+  <a
+    aria-label="'clock in' homepage"
+    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
+    href="/"
+    onClick={[Function]}
+  >
+    <h1>
+      Cl
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN ivKCeV sc-efHYUO"
+        color="default"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <rect
+            fill="none"
+            x="0"
+          />
+        </g>
+        <g>
+          <g>
+            <path
+              d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z M12.5,7H11v6l5.2,3.2l0.8-1.3l-4.5-2.7V7z"
+            />
+          </g>
+        </g>
+      </svg>
+      ck in
+    </h1>
+  </a>
+</div>
 `;
 
 exports[`Storyshots utils/StopPropagation Docs 1`] = `
@@ -2556,7 +2659,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-cTJkRt dBpytF"
+    className="sc-bBjRSN dUVBxs"
     onClick={[Function]}
     role="none"
   >

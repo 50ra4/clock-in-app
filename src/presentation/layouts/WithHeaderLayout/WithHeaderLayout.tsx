@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Header, headerHeight } from 'presentation/components/surfaces/Header/Header';
 import { SideNavigation } from './SideNavigation';
+import { Logo } from 'presentation/components/unique/Logo/Logo';
 
 type OwnProps = {
   className?: string;
@@ -30,7 +31,12 @@ export const WithHeaderLayout = React.memo(function WithHeaderLayout({ className
 
   return (
     <StyledRoot className={rootClass}>
-      <Header className={WithHeaderLayoutClassNames.header} openMenu={openMenu} onToggleMenu={handleOnToggleMenu} />
+      <Header
+        className={WithHeaderLayoutClassNames.header}
+        title={<Logo />}
+        openMenu={openMenu}
+        onToggleMenu={handleOnToggleMenu}
+      />
       <SideNavigation open={openMenu} onClose={handleOnCloseMenu} />
       <main className={WithHeaderLayoutClassNames.contents}>{children}</main>
     </StyledRoot>

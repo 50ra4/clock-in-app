@@ -49,7 +49,7 @@ export class ErrorBoundary extends React.Component<OwnProps, OwnState> {
       return this.props.fallback;
     }
 
-    const { heading, message } = errorToHeadingWithMessage(this.state.error);
-    return <ErrorPage heading={heading} message={message} />;
+    const { heading, message, crashed } = errorToHeadingWithMessage(this.state.error);
+    return <ErrorPage heading={heading} message={message} crashed={crashed} />;
   }
 }

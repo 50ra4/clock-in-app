@@ -1,6 +1,9 @@
+import { EnumValue } from 'types';
+
 export const DATE_FORMAT = {
+  yearMonth: 'yyyy/MM',
   yearMonthJP: 'yyyy年MM月',
-  yearMonthISO: 'yyyy/MM',
+  yearMonthISO: 'yyyy-MM',
   monthDayJP: 'MM月dd日',
   monthDayISO: 'MM/dd',
   hourMinuteJP: 'HH時mm分',
@@ -15,3 +18,4 @@ export const DATE_FORMAT = {
   timestampISO: 'yyyy-MM-dd HH:mm:ss.SSS',
   ISOString: "yyy-MM-dd'T'HH:mm:ss.sssXXX",
 } as const;
+export type DateFormat = EnumValue<typeof DATE_FORMAT>;

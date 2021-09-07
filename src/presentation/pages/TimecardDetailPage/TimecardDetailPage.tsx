@@ -1,16 +1,12 @@
-import styled from 'styled-components';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
+import { MobileView } from './MobileView';
 
 const TimecardDetailPage = () => {
   return (
     <WithHeaderLayout>
-      <StyledRoot>
-        <h2>TimecardDetailPage</h2>
-      </StyledRoot>
+      <MobileView />
     </WithHeaderLayout>
   );
 };
-
-const StyledRoot = styled.div``;
 
 export default TimecardDetailPage;

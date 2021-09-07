@@ -8,9 +8,9 @@ import startOfMonth from 'date-fns/startOfMonth';
 import { MonthSelect } from 'presentation/components/inputs/MonthSelect/MonthSelect';
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { DATE_FORMAT } from 'constants/dateFormat';
-import { stringDateToDate } from 'utils/dateUtil';
+import { stringDateToDate, getThisMonthDateString } from 'utils/dateUtil';
 
-const THIS_MONTH_DATE_STRING = format(startOfMonth(new Date()), DATE_FORMAT.yearMonthISO);
+const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
 type Props = {
   className?: string;

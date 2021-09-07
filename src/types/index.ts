@@ -48,3 +48,23 @@ export type ErrorHeadingWithMessage = {
   heading: string;
   message: string;
 };
+
+export type RestTime = Range<Time>;
+
+export type InHouseWork = Range<Time> & {
+  remarks?: string;
+};
+
+export type DailyTimeRecord = {
+  date: string;
+  start?: Time;
+  end?: Time;
+  inHouseWorks: InHouseWork[];
+  restTimes: RestTime[];
+  // TODO: holiday ...etc
+};
+
+export type MonthlyTimeCard = {
+  month: string;
+  dailyRecords: DailyTimeRecord[];
+};

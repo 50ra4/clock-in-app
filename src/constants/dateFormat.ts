@@ -5,7 +5,7 @@ export const DATE_FORMAT = {
   yearMonthJP: 'yyyy年MM月',
   yearMonthISO: 'yyyy-MM',
   monthDayJP: 'MM月dd日',
-  monthDayISO: 'MM/dd',
+  monthDay: 'MM/dd',
   hourMinuteJP: 'HH時mm分',
   hourMinuteISO: 'HH:mm',
   date: 'yyyy/MM/dd',
@@ -17,5 +17,6 @@ export const DATE_FORMAT = {
   dateTimeJP: 'yyyy年MM月dd日 HH時mm分ss秒',
   timestampISO: 'yyyy-MM-dd HH:mm:ss.SSS',
   ISOString: "yyy-MM-dd'T'HH:mm:ss.sssXXX",
+  dayOfWeek: 'EEEEE',
 } as const;
 export type DateFormat = EnumValue<typeof DATE_FORMAT>;

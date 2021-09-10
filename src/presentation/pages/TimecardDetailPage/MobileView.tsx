@@ -5,8 +5,10 @@ import { DATE_FORMAT } from 'constants/dateFormat';
 import { isValidDateString, getThisMonthDateString } from 'utils/dateUtil';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQueryString';
-import { MonthSelector } from './components/MonthSelector';
+import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { mockTimeCards } from './mockData';
+import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
+import { headerHeight } from 'presentation/components/surfaces/Header/Header';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -54,12 +56,25 @@ export const MobileView = React.memo(function MobileView() {
 
   return (
     <StyledRoot>
-      <h2>Mobile view</h2>
-      <MonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
-      {monthlyTimeCard.month}
-      {monthlyTimeCard.dailyRecords.map(({ date }) => date).join('\n')}
+      <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
+      <StyledMonthlyTimeCardTable month={monthlyTimeCard.month} dailyRecords={monthlyTimeCard.dailyRecords} />
     </StyledRoot>
   );
 });
+
+const StyledMonthSelector = styled(MonthSelector)`
+  background-color: #fff;
+  padding-top: ${({ theme }) => theme.space.large}px;
+  position: sticky;
+  ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight + theme.space.large}px`, '+')};
+`;
+const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
+  ${({ theme }) =>
+    theme.insetSafeArea.topBottom(
+      'max-height',
+      `100vh - ${headerHeight + theme.space.large + monthSelectorHeight}px`,
+      '+',
+    )};
+`;
 
 const StyledRoot = styled(ResponsiveLayout)``;

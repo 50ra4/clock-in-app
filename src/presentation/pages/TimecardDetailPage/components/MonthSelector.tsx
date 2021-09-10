@@ -68,9 +68,11 @@ export const MonthSelector = React.memo(function MonthSelect({ className, select
   );
 });
 
+export const monthSelectorHeight = 50;
 const StyledMonthSelect = styled(MonthSelect)``;
 const StyledMonthButton = styled(Button)``;
 const StyledRoot = styled.div`
+  height: ${monthSelectorHeight}px;
   display: flex;
   padding: ${({ theme }) => theme.space.middle}px;
   font-size: ${({ theme }) => theme.font.size.extraSmall}px;

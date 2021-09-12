@@ -26,6 +26,14 @@ const getRandomTimeRange = (): Range<Time> => {
   const end = Math.random() > 0.1 ? { hour: endHour, minute: getRandom(0, 59) } : undefined;
   return { start, end };
 };
+const createRemarks = (): string => {
+  const length = getRandom(0, 100);
+  return (
+    Array.from({ length })
+      .map(() => 'あ')
+      .join('') ?? ''
+  );
+};
 
 export const mockTimeCards: MonthlyTimeCard[] = months.map((monthStart) => {
   const month = format(monthStart, DATE_FORMAT.yearMonthISO);
@@ -38,6 +46,7 @@ export const mockTimeCards: MonthlyTimeCard[] = months.map((monthStart) => {
       date: format(date, DATE_FORMAT.dateISO),
       inHouseWorks: [],
       restTimes: [],
+      remarks: createRemarks(),
     };
   });
   return { month, dailyRecords };

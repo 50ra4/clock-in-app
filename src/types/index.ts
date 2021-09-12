@@ -61,6 +61,7 @@ export type DailyTimeRecord = {
   end?: Time;
   inHouseWorks: InHouseWork[];
   restTimes: RestTime[];
+  remarks: string;
   // TODO: holiday ...etc
 };
 

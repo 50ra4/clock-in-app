@@ -69,6 +69,7 @@ const StyledMonthSelector = styled(MonthSelector)`
   ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight + theme.space.large}px`, '+')};
 `;
 const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
+  overflow-y: auto;
   ${({ theme }) =>
     theme.insetSafeArea.topBottom(
       'max-height',

@@ -30,44 +30,49 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   }, [month]);
 
   return (
-    <StyledTable className={className}>
-      <thead>
-        <tr>
-          <th scope="col">日付</th>
-          <th scope="col">編集</th>
-          <th scope="col">出社</th>
-          <th scope="col">退社</th>
-          <th scope="col">備考</th>
-        </tr>
-      </thead>
-      <tbody>
-        {days.map((day) => {
-          const dateString = format(day, DATE_FORMAT.dateISO);
-          const record = dailyRecords.find((record) => record.date === dateString);
-          // TODO: add other remarks field
-          const remarks = [record?.remarks].filter((v) => v).join('\n');
-          return (
-            <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
-              <th scope="row">
-                <>
-                  {format(day, DATE_FORMAT.monthDay)}
-                  <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
-                </>
-              </th>
-              <td>TBD</td>
-              <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
-              <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
-              <td>{remarks || ' '}</td>
-            </RecordRow>
-          );
-        })}
-      </tbody>
-    </StyledTable>
+    <StyledRoot className={className}>
+      <StyledTable>
+        <thead>
+          <tr>
+            <th scope="col">日付</th>
+            <th scope="col">編集</th>
+            <th scope="col">出社</th>
+            <th scope="col">退社</th>
+            <th scope="col">備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          {days.map((day) => {
+            const dateString = format(day, DATE_FORMAT.dateISO);
+            const record = dailyRecords.find((record) => record.date === dateString);
+            // TODO: add other remarks field
+            const remarks = [record?.remarks].filter((v) => v).join('\n');
+            return (
+              <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
+                <th scope="row">
+                  <>
+                    {format(day, DATE_FORMAT.monthDay)}
+                    <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
+                  </>
+                </th>
+                <td>TBD</td>
+                <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
+                <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
+                <td>{remarks || ' '}</td>
+              </RecordRow>
+            );
+          })}
+        </tbody>
+      </StyledTable>
+    </StyledRoot>
   );
 });
 
+const StyledRoot = styled.div`
+  border-top: 1px solid #b8b8c5;
+`;
+
 const StyledTable = styled.table`
-  display: block;
   overflow-y: auto;
 
   tbody {
@@ -93,9 +98,9 @@ const StyledTable = styled.table`
   }
 
   /* border */
-  border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #b8b8c5;
+  border-top: none;
   th,
   td {
     border: 1px solid #b8b8c5;
@@ -134,10 +139,13 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
   & > td {
     text-align: center;
     &:nth-child(2) {
+      width: 50px;
     }
     &:nth-child(3) {
+      width: 60px;
     }
     &:nth-child(4) {
+      width: 60px;
     }
     &:nth-child(5) {
       text-align: left;

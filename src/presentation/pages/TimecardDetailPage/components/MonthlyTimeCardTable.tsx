@@ -31,7 +31,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
 
   return (
     <StyledRoot className={className}>
-      <StyledTable>
+      <table>
         <thead>
           <tr>
             <th scope="col">日付</th>
@@ -63,84 +63,78 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
             );
           })}
         </tbody>
-      </StyledTable>
+      </table>
     </StyledRoot>
   );
 });
 
 const StyledRoot = styled.div`
-  border-top: 1px solid #b8b8c5;
-`;
-
-const StyledTable = styled.table`
-  overflow-y: auto;
-  table-layout: fixed;
   width: 100%;
+  & > table {
+    overflow-y: auto;
+    table-layout: fixed;
+    width: calc(100% - 2px); // for border
 
-  tbody {
-    white-space: nowrap;
-  }
-
-  thead th:last-child {
-    text-align: left;
-  }
-
-  th,
-  td {
-    padding: ${({ theme }) => `${theme.space.middle}px`};
-  }
-
-  // sticky header
-  thead th {
-    position: sticky;
-    top: 0;
-    vertical-align: bottom;
-    background-color: #fff;
-    z-index: ${({ theme }) => theme.zIndex.appBar};
-  }
-
-  /* border */
-  border-spacing: 0;
-  border: 1px solid #b8b8c5;
-  border-top: none;
-  th,
-  td {
-    border: 1px solid #b8b8c5;
-    border-top: none;
-    border-left: none;
-    &:last-child {
-      border-right: none;
+    tbody {
+      white-space: nowrap;
     }
-  }
-  tr:last-child {
-    &:not(:first-child) {
-      th,
-      td {
-        border-bottom: none;
+
+    th,
+    td {
+      padding: ${({ theme }) => `${theme.space.middle}px`};
+    }
+
+    // sticky header
+    thead th {
+      position: sticky;
+      top: 0;
+      z-index: ${({ theme }) => theme.zIndex.appBar};
+    }
+
+    /* table border style */
+    border-spacing: 0;
+    th,
+    td {
+      border: 1px solid #b8b8c5;
+      border-top: none;
+    }
+
+    // cells style
+    tr > th,
+    tr > td {
+      text-align: center;
+      &:nth-child(1) {
+        width: 80px;
+        z-index: ${({ theme }) => theme.zIndex.appBar - 1};
+      }
+      &:nth-child(2) {
+        width: 50px;
+      }
+      &:nth-child(3) {
+        width: 60px;
+      }
+      &:nth-child(4) {
+        width: 60px;
+      }
+      &:nth-child(5) {
+        text-align: left;
+        ${({ theme }) => theme.font.ellipsis.single()}
       }
     }
-  }
 
-  /* cell width */
-  tr > th,
-  tr > td {
-    text-align: center;
-    &:nth-child(1) {
-      width: 80px;
-      z-index: ${({ theme }) => theme.zIndex.appBar - 1};
-    }
-    &:nth-child(2) {
-      width: 50px;
-    }
-    &:nth-child(3) {
-      width: 60px;
-    }
-    &:nth-child(4) {
-      width: 60px;
-    }
-    &:nth-child(5) {
-      text-align: left;
-      ${({ theme }) => theme.font.ellipsis.single()}
+    // header style
+    & > thead {
+      th {
+        border: none;
+        background-color: ${({ theme }) => theme.color.palette.primary.background};
+        color: ${({ theme }) => theme.color.palette.primary.font};
+        font-weight: ${({ theme }) => theme.font.weight.bold};
+        vertical-align: bottom;
+
+        &:last-child {
+          text-align: center;
+        }
+      }
     }
   }
 `;

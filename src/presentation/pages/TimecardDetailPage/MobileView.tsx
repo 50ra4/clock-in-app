@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
@@ -9,8 +9,19 @@ import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { mockTimeCards } from './mockData';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
 import { headerHeight } from 'presentation/components/surfaces/Header/Header';
+import { DailyTimeRecord } from 'types';
+import { InputRecordDialog } from './components/InputRecordDialog';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
+
+const INITIAL_STATE: DailyTimeRecord = {
+  date: '',
+  start: undefined,
+  end: undefined,
+  inHouseWorks: [],
+  restTimes: [],
+  remarks: '',
+};
 
 const initialQuery = {
   month: THIS_MONTH_DATE_STRING,
@@ -30,6 +41,9 @@ const parseQuery = (queryString: string) => {
 };
 
 export const MobileView = React.memo(function MobileView() {
+  const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
+  const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
+
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
@@ -54,10 +68,33 @@ export const MobileView = React.memo(function MobileView() {
     return mockData;
   }, [selectedMonth]);
 
+  const selectEditedRecord = useCallback(
+    (targetDate: string) => {
+      const record = monthlyTimeCard.dailyRecords.find(({ date }) => date === targetDate) ?? {
+        ...INITIAL_STATE,
+        date: targetDate,
+      };
+      setEditedRecord(record);
+      setOpenInputDialog(true);
+    },
+    [monthlyTimeCard.dailyRecords],
+  );
+
+  const closeInputDialog = useCallback(() => {
+    setOpenInputDialog(false);
+  }, []);
+
   return (
     <StyledRoot>
       <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
-      <StyledMonthlyTimeCardTable month={monthlyTimeCard.month} dailyRecords={monthlyTimeCard.dailyRecords} />
+      <StyledMonthlyTimeCardTable
+        month={monthlyTimeCard.month}
+        dailyRecords={monthlyTimeCard.dailyRecords}
+        selectEditedRecord={selectEditedRecord}
+      />
+      {openInputDialog && editedRecord && (
+        <InputRecordDialog open={openInputDialog} onClose={closeInputDialog} dailyTimeRecord={editedRecord} />
+      )}
     </StyledRoot>
   );
 });

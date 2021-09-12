@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { CustomDialog } from 'presentation/components/feedback/Dialogs/CustomDialog';
 import { ConfirmDialogActions } from 'presentation/components/feedback/Dialogs/DialogActions';
 import { DailyTimeRecord } from 'types';
+import { InputRecordForm } from './InputRecordForm';
 
 type OwnProps = {
   className?: string;
   open?: boolean;
   onClickOK?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onClose?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
-  dailyTimeRecord?: DailyTimeRecord;
+  dailyTimeRecord: DailyTimeRecord;
 };
 
 export const InputRecordDialog = React.memo(function InputRecordDialog({
@@ -26,16 +27,15 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
       {...otherProps}
       id="input-record"
       // FIXME: display date format
-      title={`${dailyTimeRecord?.date ?? ''} の勤怠`}
+      title={`${dailyTimeRecord.date} 勤怠情報入力`}
       open={open}
       className={className}
       onClose={onClose}
       actions={<ConfirmDialogActions onClickOK={onClickOK} onClose={onClose} />}
     >
-      <StyledContentWrap>TBD</StyledContentWrap>
+      <InputRecordForm dailyTimeRecord={dailyTimeRecord} />
     </StyledCustomDialog>
   );
 });
 
 const StyledCustomDialog = styled(CustomDialog)``;
-const StyledContentWrap = styled.div``;

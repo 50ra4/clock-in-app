@@ -30,7 +30,10 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
   value,
   ...otherProps
 }: SelectInputProps) {
-  const selectedId = options.find((option) => option.value === value)?.id;
+  const selectedId = useMemo(
+    () => options.find((option) => option.id === value || option.value === value)?.id,
+    [options, value],
+  );
 
   const optionElements = useMemo(() => {
     return options.map(({ id, value }) => (
@@ -56,11 +59,11 @@ export const UnStyledSelectInput = React.memo(function SelectInput({
 const StyledArrowDropDownIcon = styled(ArrowDropDownIcon)``;
 
 export const SelectInput = styled(UnStyledSelectInput)`
-  width: 100%;
+  display: inline-block;
   position: relative;
   & > select {
     width: 100%;
-    height: 28px;
+    height: 100%;
     font-size: ${({ theme }) => theme.font.size.middle}px;
     background-color: #ffffff;
     ${({ error }) =>
@@ -83,6 +86,7 @@ export const SelectInput = styled(UnStyledSelectInput)`
     position: absolute;
     top: 0;
     right: 0;
+    width: 24px;
     height: 100%;
   }
 `;

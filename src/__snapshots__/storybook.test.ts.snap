@@ -319,15 +319,16 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-hHEiqL jzRAhp"
+        className="sc-hHEiqL emNzhV"
       >
         <select
           id="docs"
           name="docs"
           onChange={[Function]}
+          value="2021-07-23"
         >
           <option>
-            選択する
+            未選択にする
           </option>
           <option
             value="2021-06-01"
@@ -671,15 +672,16 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-hHEiqL jzRAhp"
+        className="sc-hHEiqL emNzhV"
       >
         <select
           id="select"
           name="select"
           onChange={[Function]}
+          value="2021-07-23"
         >
           <option>
-            選択する
+            未選択にする
           </option>
           <option
             value="2021-06-01"
@@ -1842,15 +1844,16 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
 
 exports[`Storyshots inputs/DateSelect Docs 1`] = `
 <div
-  className="sc-hHEiqL jzRAhp"
+  className="sc-hHEiqL emNzhV"
 >
   <select
     id="docs"
     name="docs"
     onChange={[Function]}
+    value="2021-07-23"
   >
     <option>
-      選択する
+      未選択にする
     </option>
     <option
       value="2021-07-01"
@@ -2076,6 +2079,114 @@ exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 </button>
 `;
 
+exports[`Storyshots inputs/MonthSelect Docs 1`] = `
+<div
+  className="sc-hHEiqL emNzhV"
+>
+  <select
+    id="docs"
+    name="docs"
+    onChange={[Function]}
+    value="2021-01"
+  >
+    <option>
+      未選択にする
+    </option>
+    <option
+      value="2020-01"
+    >
+      2020年01月
+    </option>
+    <option
+      value="2020-02"
+    >
+      2020年02月
+    </option>
+    <option
+      value="2020-03"
+    >
+      2020年03月
+    </option>
+    <option
+      value="2020-04"
+    >
+      2020年04月
+    </option>
+    <option
+      value="2020-05"
+    >
+      2020年05月
+    </option>
+    <option
+      value="2020-06"
+    >
+      2020年06月
+    </option>
+    <option
+      value="2020-07"
+    >
+      2020年07月
+    </option>
+    <option
+      value="2020-08"
+    >
+      2020年08月
+    </option>
+    <option
+      value="2020-09"
+    >
+      2020年09月
+    </option>
+    <option
+      value="2020-10"
+    >
+      2020年10月
+    </option>
+    <option
+      value="2020-11"
+    >
+      2020年11月
+    </option>
+    <option
+      value="2020-12"
+    >
+      2020年12月
+    </option>
+    <option
+      value="2021-01"
+    >
+      2021年01月
+    </option>
+    <option
+      value="2021-02"
+    >
+      2021年02月
+    </option>
+    <option
+      value="2021-03"
+    >
+      2021年03月
+    </option>
+  </select>
+  <svg
+    aria-hidden={true}
+    className="sc-hKFxyN ivKCeV sc-dIvrsQ"
+    color="default"
+    size="medium"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Storyshots inputs/PasswordInput Docs 1`] = `
 <div
   className="sc-bCwfaz klYHaj"
@@ -2157,7 +2268,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
 
 exports[`Storyshots inputs/SelectInput Docs 1`] = `
 <div
-  className="sc-hHEiqL jzRAhp"
+  className="sc-hHEiqL emNzhV"
 >
   <select
     id="docs"
@@ -2209,14 +2320,15 @@ exports[`Storyshots inputs/SelectInput Docs 1`] = `
 
 exports[`Storyshots inputs/SelectInput Error 1`] = `
 <div
-  className="sc-hHEiqL eoOeHP"
+  className="sc-hHEiqL erpUsL"
 >
   <select
     id="error"
     name="error"
+    value="1"
   >
     <option>
-      選択する
+      未選択にする
     </option>
     <option
       value="1"
@@ -2435,6 +2547,931 @@ exports[`Storyshots navigation/Link Docs 1`] = `
 >
   Link sample
 </a>
+`;
+
+exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
+<div
+  className="sc-jgPyTC RTEWx"
+>
+  <button
+    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+    variant="outline"
+  >
+    <p
+      className="button__text"
+    >
+      先月
+    </p>
+  </button>
+  <div
+    className="sc-hHEiqL emNzhV sc-khIgEk"
+  >
+    <select
+      id="selectedMonth"
+      name="selectedMonth"
+      onChange={[Function]}
+      value="2021-01"
+    >
+      <option>
+        未選択にする
+      </option>
+      <option
+        value="2020-03"
+      >
+        2020年03月
+      </option>
+      <option
+        value="2020-04"
+      >
+        2020年04月
+      </option>
+      <option
+        value="2020-05"
+      >
+        2020年05月
+      </option>
+      <option
+        value="2020-06"
+      >
+        2020年06月
+      </option>
+      <option
+        value="2020-07"
+      >
+        2020年07月
+      </option>
+      <option
+        value="2020-08"
+      >
+        2020年08月
+      </option>
+      <option
+        value="2020-09"
+      >
+        2020年09月
+      </option>
+      <option
+        value="2020-10"
+      >
+        2020年10月
+      </option>
+      <option
+        value="2020-11"
+      >
+        2020年11月
+      </option>
+      <option
+        value="2020-12"
+      >
+        2020年12月
+      </option>
+      <option
+        value="2021-01"
+      >
+        2021年01月
+      </option>
+      <option
+        value="2021-02"
+      >
+        2021年02月
+      </option>
+      <option
+        value="2021-03"
+      >
+        2021年03月
+      </option>
+    </select>
+    <svg
+      aria-hidden={true}
+      className="sc-hKFxyN ivKCeV sc-dIvrsQ"
+      color="default"
+      size="medium"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+  </div>
+  <button
+    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+    variant="outline"
+  >
+    <p
+      className="button__text"
+    >
+      今月
+    </p>
+  </button>
+  <button
+    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    color="primary"
+    disabled={false}
+    onClick={[Function]}
+    variant="outline"
+  >
+    <p
+      className="button__text"
+    >
+      来月
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
+<div
+  className="sc-gSYDnn foCGeS"
+>
+  <table>
+    <thead>
+      <tr>
+        <th
+          scope="col"
+        >
+          日付
+        </th>
+        <th
+          scope="col"
+        >
+          編集
+        </th>
+        <th
+          scope="col"
+        >
+          出社
+        </th>
+        <th
+          scope="col"
+        >
+          退社
+        </th>
+        <th
+          scope="col"
+        >
+          備考
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/01
+          <span>
+            木
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          10:57
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          ああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/02
+          <span>
+            金
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          12:09
+        </td>
+        <td>
+          15:42
+        </td>
+        <td>
+          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dizYCr"
+      >
+        <th
+          scope="row"
+        >
+          07/03
+          <span>
+            土
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          13:19
+        </td>
+        <td>
+          19:53
+        </td>
+        <td>
+          ああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dMCthq"
+      >
+        <th
+          scope="row"
+        >
+          07/04
+          <span>
+            日
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          11:17
+        </td>
+        <td>
+          20:51
+        </td>
+        <td>
+          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/05
+          <span>
+            月
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          13:05
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          あああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/06
+          <span>
+            火
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          12:25
+        </td>
+        <td>
+          20:54
+        </td>
+        <td>
+          あああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/07
+          <span>
+            水
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          14:15
+        </td>
+        <td>
+          20:10
+        </td>
+        <td>
+          あああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/08
+          <span>
+            木
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          14:57
+        </td>
+        <td>
+          18:37
+        </td>
+        <td>
+          ああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/09
+          <span>
+            金
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          11:27
+        </td>
+        <td>
+          19:07
+        </td>
+        <td>
+          あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dizYCr"
+      >
+        <th
+          scope="row"
+        >
+          07/10
+          <span>
+            土
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          09:04
+        </td>
+        <td>
+          13:09
+        </td>
+        <td>
+          あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dMCthq"
+      >
+        <th
+          scope="row"
+        >
+          07/11
+          <span>
+            日
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/12
+          <span>
+            月
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/13
+          <span>
+            火
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/14
+          <span>
+            水
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/15
+          <span>
+            木
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/16
+          <span>
+            金
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dizYCr"
+      >
+        <th
+          scope="row"
+        >
+          07/17
+          <span>
+            土
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dMCthq"
+      >
+        <th
+          scope="row"
+        >
+          07/18
+          <span>
+            日
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/19
+          <span>
+            月
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/20
+          <span>
+            火
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/21
+          <span>
+            水
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/22
+          <span>
+            木
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/23
+          <span>
+            金
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dizYCr"
+      >
+        <th
+          scope="row"
+        >
+          07/24
+          <span>
+            土
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dMCthq"
+      >
+        <th
+          scope="row"
+        >
+          07/25
+          <span>
+            日
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/26
+          <span>
+            月
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/27
+          <span>
+            火
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/28
+          <span>
+            水
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/29
+          <span>
+            木
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE kNGce"
+      >
+        <th
+          scope="row"
+        >
+          07/30
+          <span>
+            金
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+      <tr
+        className="sc-laZMeE dizYCr"
+      >
+        <th
+          scope="row"
+        >
+          07/31
+          <span>
+            土
+          </span>
+        </th>
+        <td>
+          TBD
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+          -
+        </td>
+        <td>
+           
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Storyshots surfaces/Accordion Docs 1`] = `

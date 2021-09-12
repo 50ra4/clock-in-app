@@ -74,6 +74,8 @@ const StyledRoot = styled.div`
 
 const StyledTable = styled.table`
   overflow-y: auto;
+  table-layout: fixed;
+  width: 100%;
 
   tbody {
     white-space: nowrap;
@@ -118,26 +120,15 @@ const StyledTable = styled.table`
       }
     }
   }
-`;
 
-type DayOfWeekStyledProps = {
-  isSunday: boolean;
-  isSaturday: boolean;
-};
-
-const RecordRow = styled.tr<DayOfWeekStyledProps>`
-  & > th {
-    z-index: ${({ theme }) => theme.zIndex.appBar - 1};
-    width: 80px;
-    text-align: right;
-    & > span {
-      margin-left: ${({ theme }) => `${theme.space.middle}px`};
-      /* TODO: change color style */
-      color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
-    }
-  }
-  & > td {
+  /* cell width */
+  tr > th,
+  tr > td {
     text-align: center;
+    &:nth-child(1) {
+      width: 80px;
+      z-index: ${({ theme }) => theme.zIndex.appBar - 1};
+    }
     &:nth-child(2) {
       width: 50px;
     }
@@ -150,6 +141,21 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
     &:nth-child(5) {
       text-align: left;
       ${({ theme }) => theme.font.ellipsis.single()}
+    }
+  }
+`;
+
+type DayOfWeekStyledProps = {
+  isSunday: boolean;
+  isSaturday: boolean;
+};
+
+const RecordRow = styled.tr<DayOfWeekStyledProps>`
+  & > th {
+    & > span {
+      margin-left: ${({ theme }) => `${theme.space.middle}px`};
+      /* TODO: change color style */
+      color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
     }
   }
 `;

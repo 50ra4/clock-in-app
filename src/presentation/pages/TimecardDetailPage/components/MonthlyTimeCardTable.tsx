@@ -37,12 +37,15 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
           <th scope="col">編集</th>
           <th scope="col">出社</th>
           <th scope="col">退社</th>
+          <th scope="col">備考</th>
         </tr>
       </thead>
       <tbody>
         {days.map((day) => {
           const dateString = format(day, DATE_FORMAT.dateISO);
           const record = dailyRecords.find((record) => record.date === dateString);
+          // TODO: add other remarks field
+          const remarks = [record?.remarks].filter((v) => v).join('\n');
           return (
             <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
               <th scope="row">
@@ -54,6 +57,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
               <td>TBD</td>
               <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
               <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
+              <td>{remarks || ' '}</td>
             </RecordRow>
           );
         })}
@@ -68,6 +72,15 @@ const StyledTable = styled.table`
 
   tbody {
     white-space: nowrap;
+  }
+
+  thead th:last-child {
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: ${({ theme }) => `${theme.space.middle}px`};
   }
 
   // sticky header
@@ -91,7 +104,6 @@ const StyledTable = styled.table`
     &:last-child {
       border-right: none;
     }
-    padding: ${({ theme }) => `${theme.space.middle}px`};
   }
   tr:last-child {
     &:not(:first-child) {
@@ -121,11 +133,15 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
   }
   & > td {
     text-align: center;
-    &:nth-child(1) {
-    }
     &:nth-child(2) {
     }
-    &:nth-child(2) {
+    &:nth-child(3) {
+    }
+    &:nth-child(4) {
+    }
+    &:nth-child(5) {
+      text-align: left;
+      ${({ theme }) => theme.font.ellipsis.single()}
     }
   }
 `;

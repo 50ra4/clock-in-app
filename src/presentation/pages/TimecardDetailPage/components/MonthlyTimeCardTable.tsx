@@ -11,17 +11,21 @@ import { DailyTimeRecord } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
+import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
+import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
 
 type Props = {
   className?: string;
   month: string;
   dailyRecords: DailyTimeRecord[];
+  selectEditedRecord: (date: string) => void;
 };
 
 export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   className,
   month,
   dailyRecords,
+  selectEditedRecord,
 }: Props) {
   const days = useMemo(() => {
     const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
@@ -55,7 +59,13 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                     <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
                   </>
                 </th>
-                <td>TBD</td>
+                <td>
+                  <EditButton
+                    onClick={() => {
+                      selectEditedRecord(dateString);
+                    }}
+                  />
+                </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
                 <td>{remarks || ' '}</td>
@@ -153,3 +163,11 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
     }
   }
 `;
+
+const EditButton = React.memo(function InputClearButton({ ref, ...otherProps }: IconButtonProps) {
+  return (
+    <IconButton aria-label="クリア" {...otherProps}>
+      <EditIcon />
+    </IconButton>
+  );
+});

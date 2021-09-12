@@ -91,11 +91,6 @@ const StyledRoot = styled.div`
       white-space: nowrap;
     }
 
-    th,
-    td {
-      padding: ${({ theme }) => `${theme.space.middle}px`};
-    }
-
     // sticky header
     thead th {
       position: sticky;
@@ -112,33 +107,37 @@ const StyledRoot = styled.div`
     }
 
     // cells style
-    tr > th,
-    tr > td {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-      &:nth-child(1) {
-        width: 80px;
-        z-index: ${({ theme }) => theme.zIndex.appBar - 1};
-      }
-      &:nth-child(2) {
-        width: 56px;
-      }
-      &:nth-child(3) {
-        width: 60px;
-      }
-      &:nth-child(4) {
-        width: 60px;
-      }
-      &:nth-child(5) {
-        text-align: left;
-        ${({ theme }) => theme.font.ellipsis.single()}
+    tr {
+      & > th,
+      & > td {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        &:nth-child(1) {
+          width: 80px;
+          z-index: ${({ theme }) => theme.zIndex.appBar - 1};
+        }
+        &:nth-child(2) {
+          width: 48px;
+        }
+        &:nth-child(3) {
+          width: 60px;
+        }
+        &:nth-child(4) {
+          width: 60px;
+        }
+        &:nth-child(5) {
+          padding: ${({ theme }) => `${theme.space.middle}px`};
+          text-align: left;
+          ${({ theme }) => theme.font.ellipsis.single()}
+        }
       }
     }
 
     // header style
     & > thead {
       th {
+        padding: ${({ theme }) => `${theme.space.middle}px`};
         border: none;
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
@@ -182,7 +181,8 @@ const EditButton = React.memo(function EditButton({
 const StyledEditButton = styled(EditButton)`
   padding: 0;
   & > svg {
-    min-height: 48px;
-    min-width: 48px;
+    min-height: 24px;
+    min-width: 24px;
+    margin: 12px;
   }
 `;

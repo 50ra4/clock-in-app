@@ -60,7 +60,9 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                   </>
                 </th>
                 <td>
-                  <EditButton
+                  <StyledEditButton
+                    color="primary"
+                    areaLabel={`${dateString}の勤怠を修正する`}
                     onClick={() => {
                       selectEditedRecord(dateString);
                     }}
@@ -112,13 +114,15 @@ const StyledRoot = styled.div`
     // cells style
     tr > th,
     tr > td {
+      display: table-cell;
+      vertical-align: middle;
       text-align: center;
       &:nth-child(1) {
         width: 80px;
         z-index: ${({ theme }) => theme.zIndex.appBar - 1};
       }
       &:nth-child(2) {
-        width: 50px;
+        width: 56px;
       }
       &:nth-child(3) {
         width: 60px;
@@ -164,10 +168,21 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
   }
 `;
 
-const EditButton = React.memo(function InputClearButton({ ref, ...otherProps }: IconButtonProps) {
+const EditButton = React.memo(function EditButton({
+  ref,
+  areaLabel,
+  ...otherProps
+}: IconButtonProps & { areaLabel: string }) {
   return (
-    <IconButton aria-label="クリア" {...otherProps}>
-      <EditIcon />
+    <IconButton aria-label={areaLabel} {...otherProps}>
+      <EditIcon color="secondary" />
     </IconButton>
   );
 });
+const StyledEditButton = styled(EditButton)`
+  padding: 0;
+  & > svg {
+    min-height: 48px;
+    min-width: 48px;
+  }
+`;

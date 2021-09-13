@@ -46,9 +46,21 @@ export const InputRecordForm = React.memo(function InputRecordForm({ className, 
         onBlur={onChangeClockOutTime}
         onChange={onChangeClockOutTime}
       />
-      <TextAreaForm id="remarks" name="remarks" label="備考" row={3} value={state.remarks} onChange={onChangeRemarks} />
+      <TextAreaForm
+        id="remarks"
+        name="remarks"
+        label="備考"
+        row={3}
+        value={state.remarks}
+        inline={true}
+        onChange={onChangeRemarks}
+      />
     </StyledRoot>
   );
 });
 
-const StyledRoot = styled.div``;
+const StyledRoot = styled.div`
+  & > * {
+    padding: ${({ theme }) => theme.space.middle}px;
+  }
+`;

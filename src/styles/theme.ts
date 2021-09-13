@@ -190,6 +190,17 @@ const zIndex = {
   tooltip: 1500,
 } as const;
 
+const scrollBar = {
+  hidden: () => css`
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox 対応 */
+    &::-webkit-scrollbar {
+      /* Chrome, Safari 対応 */
+      display: none;
+    }
+  `,
+} as const;
+
 const rotation = keyframes`
   from { 
     transform: rotate(0);
@@ -273,6 +284,7 @@ export const lightTheme = {
     fadeOut,
   },
   zIndex,
+  scrollBar,
 } as const;
 type LightTheme = typeof lightTheme;
 

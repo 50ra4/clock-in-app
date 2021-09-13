@@ -5,6 +5,8 @@ import { CustomDialog } from 'presentation/components/feedback/Dialogs/CustomDia
 import { ConfirmDialogActions } from 'presentation/components/feedback/Dialogs/DialogActions';
 import { DailyTimeRecord } from 'types';
 import { InputRecordForm } from './InputRecordForm';
+import { DATE_FORMAT } from 'constants/dateFormat';
+import { dateStringToDateString } from 'utils/dateUtil';
 
 type OwnProps = {
   className?: string;
@@ -26,8 +28,10 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     <StyledCustomDialog
       {...otherProps}
       id="input-record"
-      // FIXME: display date format
-      title={`${dailyTimeRecord.date} 勤怠情報入力`}
+      title={`${dateStringToDateString(dailyTimeRecord.date, {
+        from: DATE_FORMAT.dateISO,
+        to: DATE_FORMAT.date,
+      })} 勤怠情報入力`}
       open={open}
       className={className}
       onClose={onClose}

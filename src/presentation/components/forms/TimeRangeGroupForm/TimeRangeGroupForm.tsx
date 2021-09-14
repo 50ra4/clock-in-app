@@ -45,9 +45,6 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
   const handleOnChange = (time: Time, rowIndex: number, key: keyof Range<Time>) => {
     onChange(values.map((v, i) => (rowIndex !== i ? v : { ...v, [key]: time })));
   };
-  const handleOnClear = (rowIndex: number, key: keyof Range<Time>) => {
-    onChange(values.map((v, i) => (rowIndex !== i ? v : { ...v, [key]: undefined })));
-  };
 
   return (
     <div className={className}>
@@ -66,9 +63,6 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
                   error={error}
                   onBlur={(time) => {
                     handleOnChange(time, rowIndex, 'start');
-                  }}
-                  onClear={() => {
-                    handleOnClear(rowIndex, 'start');
                   }}
                 />
               ) : (
@@ -95,9 +89,6 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
                   error={error}
                   onBlur={(time) => {
                     handleOnChange(time, rowIndex, 'end');
-                  }}
-                  onClear={() => {
-                    handleOnClear(rowIndex, 'end');
                   }}
                 />
               ) : (
@@ -140,11 +131,15 @@ export const TimeRangeGroupForm = styled(UnStyledTimeRangeGroupForm)`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    & > ${StyledTimeTextInput}, & > ${StyledTimeInput} {
+    & > ${StyledTimeTextInput} {
+      width: 82px;
+    }
+    & > ${StyledTimeInput} {
+      /* FIXME adjust size */
       width: 100px;
     }
     & > span {
-      width: 38px;
+      max-width: 28px;
       height: 28px;
       line-height: 28px;
       text-align: center;
@@ -154,7 +149,7 @@ export const TimeRangeGroupForm = styled(UnStyledTimeRangeGroupForm)`
     margin-bottom: ${({ theme }) => theme.space.large}px;
   }
   ${StyledButton} {
-    width: 238px;
+    min-width: 160px;
     & > div {
       height: 48px;
       display: flex;

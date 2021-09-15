@@ -9,5 +9,6 @@
     "source.fixAll.eslint": true
   },
   // default formatter setting is prettier
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": []
 }

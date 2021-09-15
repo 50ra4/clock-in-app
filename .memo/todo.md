@@ -97,6 +97,9 @@
 - [ ] パスワード忘れた場合の画面作成
 - [ ] その他のログイン画面作成
 - [ ] タイムカードのテーブルが ios だとバグってるので修正する
+- [ ] タイムカードのテーブルの日付と備考は 2 行にしようそうしよう
+- [ ] 編集モーダルがダサいのでモバイルは編集画面を作成する
+- [ ] 編集モーダルのデザイン修正
 
 ### 画面
 
@@ -104,7 +107,8 @@
 - [ ] ErrorPage
 - [ ] LoginPage
 - [ ] RegistrationPage
-- [ ] TimecardPage
+- [ ] TimecardDetailPage
+- [ ] DailyRecordEditPage
 
 ### コンポーネント(inputs) refactor
 

@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
-import { DailyTimeRecord, Time, Range } from 'types';
+import { DailyTimeRecord, Time, Range, InHouseWork } from 'types';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
 import { TimeRangeGroupForm } from 'presentation/components/forms/TimeRangeGroupForm/TimeRangeGroupForm';
+import { InHouseWorksForm } from 'presentation/components/unique/InHouseWorksForm/InHouseWorksForm';
 
 type Props = {
   className?: string;
@@ -11,10 +12,14 @@ type Props = {
 };
 
 export const InputRecordForm = React.memo(function InputRecordForm({ className, dailyTimeRecord }: Props) {
-  const [state, setState] = useState({
+  const [{ start, end, restTimes, inHouseWorks, remarks }, setState] = useState({
     ...dailyTimeRecord,
     restTimes:
       dailyTimeRecord.restTimes.length > 0 ? dailyTimeRecord.restTimes : [{ start: undefined, end: undefined }],
+    inHouseWorks:
+      dailyTimeRecord.inHouseWorks.length > 0
+        ? dailyTimeRecord.inHouseWorks
+        : [{ start: undefined, end: undefined, remarks: '' }],
   });
 
   const onChangeClockInTime = useCallback((time: Time) => {
@@ -29,6 +34,9 @@ export const InputRecordForm = React.memo(function InputRecordForm({ className, 
   const onChangeRestTimes = useCallback((timeRange: Range<Time>[]) => {
     setState((prev) => ({ ...prev, restTimes: timeRange }));
   }, []);
+  const onChangeInHouseWorks = useCallback((values: InHouseWork[]) => {
+    setState((prev) => ({ ...prev, inHouseWorks: values }));
+  }, []);
 
   return (
     <StyledRoot className={className}>
@@ -36,7 +44,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({ className, 
         type="text"
         id="clock-in-time"
         name="clock-in-time"
-        value={state.start}
+        value={start}
         label="出社"
         required={false}
         inline={true}
@@ -47,7 +55,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({ className, 
         type="text"
         id="clock-out-time"
         name="clock-out-time"
-        value={state.end}
+        value={end}
         label="退社"
         required={false}
         inline={true}
@@ -59,16 +67,25 @@ export const InputRecordForm = React.memo(function InputRecordForm({ className, 
         id="rest-time"
         name="rest-time"
         label="休憩時間"
-        value={state.restTimes}
+        value={restTimes}
         inline={true}
         onChange={onChangeRestTimes}
+      />
+      <InHouseWorksForm
+        type="text"
+        id="in-house-works"
+        name="in-house-works"
+        label="社内作業"
+        value={inHouseWorks}
+        inline={true}
+        onChange={onChangeInHouseWorks}
       />
       <TextAreaForm
         id="remarks"
         name="remarks"
         label="備考"
         row={3}
-        value={state.remarks}
+        value={remarks}
         inline={true}
         onChange={onChangeRemarks}
       />

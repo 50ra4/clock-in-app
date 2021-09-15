@@ -57,8 +57,8 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
         {description && <DescriptionForForm description={description} />}
         {values.map(({ start, end, remarks }, rowIndex) => {
           return (
-            <>
-              <div className={InHouseWorksFormClassNames.wrap} key={`${id}-range-${rowIndex}`}>
+            <React.Fragment key={`${id}-${rowIndex}`}>
+              <div className={InHouseWorksFormClassNames.wrap}>
                 {type === 'text' ? (
                   <StyledTimeTextInput
                     id={id}
@@ -112,7 +112,6 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                 )}
               </div>
               <StyledTextInput
-                key={`${id}-remarks-${rowIndex}`}
                 id={`${id}-remarks-${rowIndex}`}
                 name={`${name}-remarks`}
                 value={remarks}
@@ -126,7 +125,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                   handleOnRemarks('', rowIndex);
                 }}
               />
-            </>
+            </React.Fragment>
           );
         })}
         <StyledButton
@@ -171,6 +170,7 @@ export const InHouseWorksForm = styled(UnStyledInHouseWorksForm)`
     }
   }
   ${StyledTextInput} {
+    max-width: 175px;
     margin: ${({ theme }) => `${theme.space.large}px 0`};
   }
   ${StyledButton} {

@@ -1746,6 +1746,202 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 </div>
 `;
 
+exports[`Storyshots forms/TimeRangeGroupForm Docs 1`] = `
+<div
+  className="sc-carFqZ hticiE"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="docs"
+    >
+      休憩時間
+    </label>
+    <div>
+      <div
+        className="sc-ksluID jOtGJN"
+      >
+        <p>
+          enter rest times
+        </p>
+      </div>
+      <div
+        className="time-range-group-form__wrap"
+      >
+        <div
+          className="sc-bYwzuL sc-cBoqAE igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK bneZX input-base"
+            id="docs"
+            name="docs"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-bYwzuL sc-cBoqAE igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK bneZX input-base"
+            id="docs-end"
+            name="docs-end"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="02:30"
+          />
+        </div>
+      </div>
+      <button
+        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeRangeGroupForm Text Type 1`] = `
+<div
+  className="sc-carFqZ hticiE"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="text"
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots forms/TimeRangeGroupForm Time Input Type 1`] = `
+<div
+  className="sc-carFqZ hticiE"
+>
+  <div
+    className="sc-fFSPTT hjKcrX"
+  >
+    <label
+      htmlFor="input"
+      required={true}
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+      <div
+        className="sc-fnVZcZ cvjjrN"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          required
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
   className="sc-fujyAs hPHCSO button"
@@ -1791,7 +1987,7 @@ exports[`Storyshots inputs/Button Outline 1`] = `
 
 exports[`Storyshots inputs/Checkbox Docs 1`] = `
 <div
-  className="sc-cBoqAE LFuKM"
+  className="sc-iTVJFM llPeaN"
 >
   <input
     disabled={false}
@@ -2529,10 +2725,10 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 
 exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 <div
-  className="sc-cOifOu cBDnYW"
+  className="sc-eJocfa eXmDwT"
 >
   <div
-    className="sc-Arkif hzCHql"
+    className="sc-oeezt cxmYCD"
   >
     Responsive
   </div>
@@ -2541,7 +2737,7 @@ exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 
 exports[`Storyshots navigation/Link Docs 1`] = `
 <a
-  className="sc-ciSkZP iAxGeb"
+  className="sc-iBzEeX fSHthe"
   href="/"
   onClick={[Function]}
 >
@@ -2551,10 +2747,10 @@ exports[`Storyshots navigation/Link Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 <div
-  className="sc-jgPyTC RTEWx"
+  className="sc-lbVvki kkfIMp"
 >
   <button
-    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    className="sc-fujyAs sc-eirqVv bGMgXf button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -2567,7 +2763,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     </p>
   </button>
   <div
-    className="sc-hHEiqL emNzhV sc-khIgEk"
+    className="sc-hHEiqL emNzhV sc-hhIiOg"
   >
     <select
       id="selectedMonth"
@@ -2662,7 +2858,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     </svg>
   </div>
   <button
-    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    className="sc-fujyAs sc-eirqVv bGMgXf button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -2675,7 +2871,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     </p>
   </button>
   <button
-    className="sc-fujyAs sc-hTRkXV bGMgXf button"
+    className="sc-fujyAs sc-eirqVv bGMgXf button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -2692,7 +2888,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 <div
-  className="sc-gSYDnn foCGeS"
+  className="sc-gGLxEB fgVQWC"
 >
   <table>
     <thead>
@@ -2726,7 +2922,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2737,7 +2933,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-01の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           10:57
@@ -2750,7 +2969,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2761,7 +2980,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-02の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           12:09
@@ -2774,7 +3016,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dizYCr"
+        className="sc-ckTSus iIEGDo"
       >
         <th
           scope="row"
@@ -2785,7 +3027,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-03の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           13:19
@@ -2798,7 +3063,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dMCthq"
+        className="sc-ckTSus dczLGp"
       >
         <th
           scope="row"
@@ -2809,7 +3074,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-04の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           11:17
@@ -2822,7 +3110,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2833,7 +3121,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-05の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           13:05
@@ -2846,7 +3157,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2857,7 +3168,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-06の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           12:25
@@ -2870,7 +3204,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2881,7 +3215,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-07の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           14:15
@@ -2894,7 +3251,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2905,7 +3262,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-08の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           14:57
@@ -2918,7 +3298,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -2929,7 +3309,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-09の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           11:27
@@ -2942,7 +3345,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dizYCr"
+        className="sc-ckTSus iIEGDo"
       >
         <th
           scope="row"
@@ -2953,7 +3356,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-10の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           09:04
@@ -2966,7 +3392,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dMCthq"
+        className="sc-ckTSus dczLGp"
       >
         <th
           scope="row"
@@ -2977,7 +3403,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-11の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -2990,7 +3439,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3001,7 +3450,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-12の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3014,7 +3486,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3025,7 +3497,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-13の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3038,7 +3533,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3049,7 +3544,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-14の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3062,7 +3580,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3073,7 +3591,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-15の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3086,7 +3627,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3097,7 +3638,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-16の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3110,7 +3674,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dizYCr"
+        className="sc-ckTSus iIEGDo"
       >
         <th
           scope="row"
@@ -3121,7 +3685,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-17の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3134,7 +3721,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dMCthq"
+        className="sc-ckTSus dczLGp"
       >
         <th
           scope="row"
@@ -3145,7 +3732,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-18の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3158,7 +3768,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3169,7 +3779,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-19の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3182,7 +3815,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3193,7 +3826,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-20の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3206,7 +3862,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3217,7 +3873,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-21の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3230,7 +3909,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3241,7 +3920,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-22の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3254,7 +3956,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3265,7 +3967,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-23の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3278,7 +4003,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dizYCr"
+        className="sc-ckTSus iIEGDo"
       >
         <th
           scope="row"
@@ -3289,7 +4014,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-24の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3302,7 +4050,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dMCthq"
+        className="sc-ckTSus dczLGp"
       >
         <th
           scope="row"
@@ -3313,7 +4061,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-25の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3326,7 +4097,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3337,7 +4108,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-26の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3350,7 +4144,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3361,7 +4155,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-27の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3374,7 +4191,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3385,7 +4202,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-28の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3398,7 +4238,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3409,7 +4249,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-29の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3422,7 +4285,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE kNGce"
+        className="sc-ckTSus dwiZCF"
       >
         <th
           scope="row"
@@ -3433,7 +4296,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-30の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3446,7 +4332,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-laZMeE dizYCr"
+        className="sc-ckTSus iIEGDo"
       >
         <th
           scope="row"
@@ -3457,7 +4343,30 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           </span>
         </th>
         <td>
-          TBD
+          <button
+            aria-label="2021-07-31の勤怠を修正する"
+            className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
+            color="primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <svg
+              aria-hidden={true}
+              className="sc-hKFxyN iFbXqu"
+              color="secondary"
+              size="medium"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0V0z"
+                fill="none"
+              />
+              <path
+                d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"
+              />
+            </svg>
+          </button>
         </td>
         <td>
           -
@@ -3476,7 +4385,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 
 exports[`Storyshots surfaces/Accordion Docs 1`] = `
 <section
-  className="sc-carFqZ jQeZsw"
+  className="sc-cTJkRt cSoXKP"
 >
   <button
     aria-controls="accordion-undefined-header"
@@ -3488,7 +4397,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
     </h3>
     <svg
       aria-hidden={true}
-      className="sc-hKFxyN juDrWq sc-jcwpoC Accordion__icon--collapsed"
+      className="sc-hKFxyN juDrWq sc-efHYUO Accordion__icon--collapsed"
       color="main"
       size="medium"
       viewBox="0 0 24 24"
@@ -3519,7 +4428,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
 
 exports[`Storyshots surfaces/Card Docs 1`] = `
 <section
-  className="sc-iTVJFM iguzXb"
+  className="sc-jNnpgg laqviL"
 >
   <h3>
     sample card
@@ -3537,11 +4446,11 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-iBzEeX hIddyo"
+  className="sc-dPaNzc cnYTjX"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
+    className="sc-iBzEeX fSHthe sc-cOifOu iteJks"
     href="/"
     onClick={[Function]}
   >
@@ -3549,7 +4458,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-efHYUO"
+        className="sc-hKFxyN ivKCeV sc-bBjRSN"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -3600,7 +4509,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Text Header 1`] = `
 <header
-  className="sc-iBzEeX hIddyo"
+  className="sc-dPaNzc cnYTjX"
 >
   <h2>
     ログイン
@@ -3633,7 +4542,7 @@ exports[`Storyshots surfaces/Header Text Header 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-jNnpgg lnvytm"
+  className="sc-Arkif lhvbjH"
 >
   <div>
     <p>
@@ -3643,13 +4552,244 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 </section>
 `;
 
+exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
+<div
+  className="sc-laZMeE hlyuMn"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="docs"
+    >
+      社内作業
+    </label>
+    <div>
+      <div
+        className="sc-ksluID jOtGJN"
+      >
+        <p>
+          enter in house work times
+        </p>
+      </div>
+      <div
+        className="in-house-works-form__wrap"
+      >
+        <div
+          className="sc-bYwzuL sc-khIgEk igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK bneZX input-base"
+            id="docs"
+            name="docs"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-bYwzuL sc-khIgEk igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK bneZX input-base"
+            id="docs-end"
+            name="docs-end"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="02:30"
+          />
+        </div>
+      </div>
+      <div
+        className="sc-giAqHp sc-jgPyTC bjKIoq"
+      >
+        <input
+          className="sc-bkbkJK jTNUwg input-base"
+          id="docs-remarks-0"
+          name="docs-remarks"
+          onChange={[Function]}
+          type="text"
+          value="移動時間"
+        />
+        <button
+          aria-label="クリア"
+          className="sc-kfYoZR bfMjAa sc-iJCRrE"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN ivKCeV"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M14.59 8L12 10.59 9.41 8 8 9.41 10.59 12 8 14.59 9.41 16 12 13.41 14.59 16 16 14.59 13.41 12 16 9.41 14.59 8zM12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+        </button>
+      </div>
+      <button
+        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          社内作業
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
+<div
+  className="sc-laZMeE hlyuMn"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="text"
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
+<div
+  className="sc-laZMeE hlyuMn"
+>
+  <div
+    className="sc-fFSPTT hjKcrX"
+  >
+    <label
+      htmlFor="input"
+      required={true}
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+      <div
+        className="sc-fnVZcZ cvjjrN"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          required
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots unique/Logo Docs 1`] = `
 <div
-  className="sc-dPaNzc iANbGW"
+  className="sc-iNiQyp kbTSau"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
+    className="sc-iBzEeX fSHthe sc-cOifOu iteJks"
     href="/"
     onClick={[Function]}
   >
@@ -3657,7 +4797,7 @@ exports[`Storyshots unique/Logo Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-efHYUO"
+        className="sc-hKFxyN ivKCeV sc-bBjRSN"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -3696,7 +4836,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-bBjRSN dUVBxs"
+    className="sc-jffHpj cczFGJ"
     onClick={[Function]}
     role="none"
   >

@@ -18,3 +18,6 @@ export const isValidDateString = (dateString: string, dateFormat: DateFormat): b
   isValid(stringDateToDate(dateString, dateFormat));
 
 export const getThisMonthDateString = () => format(startOfMonth(new Date()), DATE_FORMAT.yearMonthISO);
+
+export const dateStringToDateString = (dateString: string, options: { from: DateFormat; to: DateFormat }): string =>
+  format(stringDateToDate(dateString, options.from), options.to);

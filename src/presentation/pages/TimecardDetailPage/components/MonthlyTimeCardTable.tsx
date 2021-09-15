@@ -11,17 +11,21 @@ import { DailyTimeRecord } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
+import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
+import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
 
 type Props = {
   className?: string;
   month: string;
   dailyRecords: DailyTimeRecord[];
+  selectEditedRecord: (date: string) => void;
 };
 
 export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   className,
   month,
   dailyRecords,
+  selectEditedRecord,
 }: Props) {
   const days = useMemo(() => {
     const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
@@ -55,7 +59,15 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                     <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
                   </>
                 </th>
-                <td>TBD</td>
+                <td>
+                  <StyledEditButton
+                    color="primary"
+                    areaLabel={`${dateString}の勤怠を修正する`}
+                    onClick={() => {
+                      selectEditedRecord(dateString);
+                    }}
+                  />
+                </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
                 <td>{remarks || ' '}</td>
@@ -79,11 +91,6 @@ const StyledRoot = styled.div`
       white-space: nowrap;
     }
 
-    th,
-    td {
-      padding: ${({ theme }) => `${theme.space.middle}px`};
-    }
-
     // sticky header
     thead th {
       position: sticky;
@@ -100,31 +107,37 @@ const StyledRoot = styled.div`
     }
 
     // cells style
-    tr > th,
-    tr > td {
-      text-align: center;
-      &:nth-child(1) {
-        width: 80px;
-        z-index: ${({ theme }) => theme.zIndex.appBar - 1};
-      }
-      &:nth-child(2) {
-        width: 50px;
-      }
-      &:nth-child(3) {
-        width: 60px;
-      }
-      &:nth-child(4) {
-        width: 60px;
-      }
-      &:nth-child(5) {
-        text-align: left;
-        ${({ theme }) => theme.font.ellipsis.single()}
+    tr {
+      & > th,
+      & > td {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        &:nth-child(1) {
+          width: 80px;
+          z-index: ${({ theme }) => theme.zIndex.appBar - 1};
+        }
+        &:nth-child(2) {
+          width: 48px;
+        }
+        &:nth-child(3) {
+          width: 60px;
+        }
+        &:nth-child(4) {
+          width: 60px;
+        }
+        &:nth-child(5) {
+          padding: ${({ theme }) => `${theme.space.middle}px`};
+          text-align: left;
+          ${({ theme }) => theme.font.ellipsis.single()}
+        }
       }
     }
 
     // header style
     & > thead {
       th {
+        padding: ${({ theme }) => `${theme.space.middle}px`};
         border: none;
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
@@ -151,5 +164,25 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
       /* TODO: change color style */
       color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
     }
+  }
+`;
+
+const EditButton = React.memo(function EditButton({
+  ref,
+  areaLabel,
+  ...otherProps
+}: IconButtonProps & { areaLabel: string }) {
+  return (
+    <IconButton aria-label={areaLabel} {...otherProps}>
+      <EditIcon color="secondary" />
+    </IconButton>
+  );
+});
+const StyledEditButton = styled(EditButton)`
+  padding: 0;
+  & > svg {
+    min-height: 24px;
+    min-width: 24px;
+    margin: 12px;
   }
 `;

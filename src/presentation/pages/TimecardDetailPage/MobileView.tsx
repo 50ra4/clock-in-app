@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
@@ -9,7 +9,7 @@ import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { mockTimeCards } from './mockData';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
 import { headerHeight } from 'presentation/components/surfaces/Header/Header';
-import { DailyTimeRecord } from 'types';
+import { DailyTimeRecord, MonthlyTimeCard } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
@@ -41,14 +41,28 @@ const parseQuery = (queryString: string) => {
 };
 
 export const MobileView = React.memo(function MobileView() {
-  const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
-  const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
-
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
     initialQuery,
   });
+
+  const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
+  const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
+  const [monthlyTimeCard, setMonthlyTimeCard] = useState<MonthlyTimeCard>({
+    month: selectedMonth,
+    dailyRecords: [],
+  });
+
+  useEffect(() => {
+    const mockData = mockTimeCards.find(({ month }) => month === selectedMonth) ?? {
+      month: selectedMonth,
+      dailyRecords: [],
+    };
+    // eslint-disable-next-line no-console
+    console.log(mockTimeCards, mockData);
+    setMonthlyTimeCard(mockData);
+  }, [selectedMonth]);
 
   const updateSelectedMonth = useCallback(
     (month: string) => {
@@ -56,17 +70,6 @@ export const MobileView = React.memo(function MobileView() {
     },
     [setQuery],
   );
-
-  const monthlyTimeCard = useMemo(() => {
-    // FIXME: replace data
-    const mockData = mockTimeCards.find(({ month }) => month === selectedMonth) ?? {
-      month: selectedMonth,
-      dailyRecords: [],
-    };
-    // eslint-disable-next-line no-console
-    console.log(mockTimeCards, mockData);
-    return mockData;
-  }, [selectedMonth]);
 
   const selectEditedRecord = useCallback(
     (targetDate: string) => {
@@ -84,6 +87,17 @@ export const MobileView = React.memo(function MobileView() {
     setOpenInputDialog(false);
   }, []);
 
+  const onSaveDailyTimeRecord = useCallback((record: DailyTimeRecord) => {
+    // FIXME: mock実装
+    setMonthlyTimeCard((prev) => {
+      const { month, dailyRecords } = prev;
+      const hasRecord = dailyRecords.map(({ date }) => date).includes(record.date);
+      return hasRecord
+        ? { month, dailyRecords: dailyRecords.map((r) => (r.date === record.date ? record : r)) }
+        : { month, dailyRecords: [...dailyRecords, record] };
+    });
+  }, []);
+
   return (
     <StyledRoot>
       <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
@@ -93,7 +107,12 @@ export const MobileView = React.memo(function MobileView() {
         selectEditedRecord={selectEditedRecord}
       />
       {openInputDialog && editedRecord && (
-        <InputRecordDialog open={openInputDialog} onClose={closeInputDialog} dailyTimeRecord={editedRecord} />
+        <InputRecordDialog
+          open={openInputDialog}
+          onClose={closeInputDialog}
+          dailyTimeRecord={editedRecord}
+          onSaveDailyTimeRecord={onSaveDailyTimeRecord}
+        />
       )}
     </StyledRoot>
   );

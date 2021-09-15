@@ -7,23 +7,34 @@ import { DailyTimeRecord } from 'types';
 import { InputRecordForm } from './InputRecordForm';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString } from 'utils/dateUtil';
+import { useFormGroup } from '../hooks/useFormGroup';
 
 type OwnProps = {
   className?: string;
   open?: boolean;
-  onClickOK?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onClose?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
   dailyTimeRecord: DailyTimeRecord;
+  onSaveDailyTimeRecord: (record: DailyTimeRecord) => void;
 };
 
 export const InputRecordDialog = React.memo(function InputRecordDialog({
   open = false,
-  onClickOK,
   onClose,
   className,
-  dailyTimeRecord,
+  dailyTimeRecord: initialTimeRecord,
+  onSaveDailyTimeRecord,
   ...otherProps
 }: OwnProps) {
+  const { formState: dailyTimeRecord, onChangeFormState: onChangeDailyTimeRecord } = useFormGroup({
+    ...initialTimeRecord,
+    restTimes:
+      initialTimeRecord.restTimes.length > 0 ? initialTimeRecord.restTimes : [{ start: undefined, end: undefined }],
+    inHouseWorks:
+      initialTimeRecord.inHouseWorks.length > 0
+        ? initialTimeRecord.inHouseWorks
+        : [{ start: undefined, end: undefined, remarks: '' }],
+  });
+
   return (
     <StyledCustomDialog
       {...otherProps}
@@ -35,9 +46,16 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
       open={open}
       className={className}
       onClose={onClose}
-      actions={<ConfirmDialogActions onClickOK={onClickOK} onClose={onClose} />}
+      actions={
+        <ConfirmDialogActions
+          onClickOK={() => {
+            onSaveDailyTimeRecord(dailyTimeRecord);
+          }}
+          onClose={onClose}
+        />
+      }
     >
-      <InputRecordForm dailyTimeRecord={dailyTimeRecord} />
+      <InputRecordForm dailyTimeRecord={dailyTimeRecord} onChangeDailyTimeRecord={onChangeDailyTimeRecord} />
     </StyledCustomDialog>
   );
 });

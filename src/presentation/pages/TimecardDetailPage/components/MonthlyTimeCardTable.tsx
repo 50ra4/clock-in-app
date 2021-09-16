@@ -57,7 +57,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
                 <th scope="row">
                   {format(day, DATE_FORMAT.monthDay)}
-                  <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
+                  <span>{`（${format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}）`}</span>
                 </th>
                 <td>
                   <StyledEditButton
@@ -119,7 +119,7 @@ const StyledRoot = styled.div`
         vertical-align: middle;
         text-align: center;
         &:nth-child(1) {
-          width: 80px;
+          width: 60px;
           z-index: ${({ theme }) => theme.zIndex.appBar - 1};
         }
         &:nth-child(2) {
@@ -172,7 +172,7 @@ type DayOfWeekStyledProps = {
 const RecordRow = styled.tr<DayOfWeekStyledProps>`
   & > th {
     & > span {
-      margin-left: ${({ theme }) => `${theme.space.middle}px`};
+      display: block;
       /* TODO: change color style */
       color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
     }

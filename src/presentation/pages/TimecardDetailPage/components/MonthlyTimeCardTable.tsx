@@ -50,14 +50,14 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
             const dateString = format(day, DATE_FORMAT.dateISO);
             const record = dailyRecords.find((record) => record.date === dateString);
             // TODO: add other remarks field
-            const remarks = [record?.remarks].filter((v) => v).join('\n');
+            const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
+              .filter((v) => v)
+              .join('\n');
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
                 <th scope="row">
-                  <>
-                    {format(day, DATE_FORMAT.monthDay)}
-                    <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
-                  </>
+                  {format(day, DATE_FORMAT.monthDay)}
+                  <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
                 </th>
                 <td>
                   <StyledEditButton
@@ -84,6 +84,7 @@ const StyledRoot = styled.div`
   width: 100%;
   & > table {
     overflow-y: auto;
+    ${({ theme }) => theme.scrollBar.hidden()}
     table-layout: fixed;
     width: calc(100% - 2px); // for border
 
@@ -138,7 +139,6 @@ const StyledRoot = styled.div`
     & > thead {
       th {
         padding: ${({ theme }) => `${theme.space.middle}px`};
-        border: none;
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
         font-weight: ${({ theme }) => theme.font.weight.bold};

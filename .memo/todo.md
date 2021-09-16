@@ -84,31 +84,36 @@
 ### その他残タスク
 
 - [x] NavigationMenu の作成
-- [ ] WithLabel に description を移動する
-- [ ] モバイルの場合、description を tooltip にする
-- [ ] memo 化を適切にする
+- [ ] WithLabel をやめて、FormLabel に分解する
+- [ ] description を tooltip にする
+- [ ] Form のコンポーネントを全体的に修正する
+- [ ] SelectInput のアイコン部分がタップしても反応しない
+- [ ] memo 化を見直す
 - [ ] Style の指定を props から class で行うようにする
 - [ ] 処理が速い場合 LoadingGuard がチラつくので background の表示を 1s 遅らせる
 - [ ] Card のデザインが致命的にダサいので修正する
 - [x] Logo のコンポーネント作成
+- [ ] Top 画面にアカウント登録画面とログイン画面の導線を追加する
 - [ ] アカウント登録画面とログイン画面からヘッダーをなくす
-- [ ] path の id を置換する関数作成
+- [x] path の id を置換する関数作成
 - [x] Link のコンポーネント作成
 - [ ] パスワード忘れた場合の画面作成
 - [ ] その他のログイン画面作成
 - [ ] タイムカードのテーブルが ios だとバグってるので修正する
-- [ ] タイムカードのテーブルの日付と備考は 2 行にしようそうしよう
-- [ ] 編集モーダルがダサいのでモバイルは編集画面を作成する
-- [ ] 編集モーダルのデザイン修正
+- [x] タイムカードのテーブルの日付と備考は 2 行にしようそうしよう
+- [ ] 編集モーダルがダサいので、モバイル用の編集画面を作成する
+- [ ] 編集モーダルの幅にも max-width を適用する
 
 ### 画面
 
 - [ ] TopPage
-- [ ] ErrorPage
-- [ ] LoginPage
-- [ ] RegistrationPage
-- [ ] TimecardDetailPage
-- [ ] DailyRecordEditPage
+- [x] ErrorPage
+- [x] LoginPage
+- [x] RegistrationPage
+- [x] TimecardDetailPage
+  - [x] モバイル版
+  - [ ] PC 版
+- [ ] TimeCardEditPage
 
 ### コンポーネント(inputs) refactor
 

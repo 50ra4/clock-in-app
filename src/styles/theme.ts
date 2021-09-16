@@ -39,6 +39,19 @@ const ellipsisSingle = () => css`
   word-wrap: normal;
 `;
 
+const ellipsisMultiple = (row: number) => css`
+  overflow: hidden;
+  /* stylelint-disable value-no-vendor-prefix, property-no-vendor-prefix */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: ${row};
+`;
+
+const ellipsis = {
+  single: ellipsisSingle,
+  multiple: ellipsisMultiple,
+} as const;
+
 const colorPalette = {
   black: {
     light: '#4e5b50',
@@ -273,9 +286,7 @@ export const lightTheme = {
     family: fontFamilies,
     weight: fontWeight,
     size: fontSize,
-    ellipsis: {
-      single: ellipsisSingle,
-    },
+    ellipsis,
   },
   insetSafeArea,
   keyframes: {
@@ -289,7 +300,7 @@ export const lightTheme = {
 type LightTheme = typeof lightTheme;
 
 type IndexedObjectType<T = unknown> = { [key: string]: T };
-type FunctionType<P extends unknown[] = [], R = void> = (...args: P) => R;
+type FunctionType<P extends unknown[] = [], R = unknown> = (...args: P) => R;
 type NestedIndexedObject<T extends IndexedObjectType> = {
   [K in keyof T]: T[K] extends IndexedObjectType
     ? NestedIndexedObject<T[K]>
@@ -303,6 +314,8 @@ type NestedIndexedObject<T extends IndexedObjectType> = {
     ? InsetSafeArea
     : T[K] extends FunctionType
     ? T[K]
+    : T[K] extends typeof ellipsis.multiple
+    ? typeof ellipsis.multiple
     : never;
 };
 

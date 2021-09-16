@@ -52,7 +52,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
             // TODO: add other remarks field
             const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
               .filter((v) => v)
-              .join('\n');
+              .join(' ');
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
                 <th scope="row">
@@ -70,7 +70,11 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                 </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
-                <td>{remarks || ' '}</td>
+                <td>
+                  <div>
+                    <p>{remarks || ' '}</p>
+                  </div>
+                </td>
               </RecordRow>
             );
           })}
@@ -129,8 +133,16 @@ const StyledRoot = styled.div`
         }
         &:nth-child(5) {
           padding: ${({ theme }) => `${theme.space.middle}px`};
-          text-align: left;
-          ${({ theme }) => theme.font.ellipsis.single()}
+          & > div {
+            height: 40px;
+            display: flex;
+            align-items: flex-start;
+            & > p {
+              text-align: left;
+              line-height: calc(40px / 2);
+              ${({ theme }) => theme.font.ellipsis.multiple(2)}
+            }
+          }
         }
       }
     }

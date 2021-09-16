@@ -87,8 +87,6 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
 const StyledRoot = styled.div`
   width: 100%;
   & > table {
-    overflow-y: auto;
-    ${({ theme }) => theme.scrollBar.hidden()}
     table-layout: fixed;
     width: calc(100% - 2px); // for border
 
@@ -173,6 +171,7 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
   & > th {
     & > span {
       display: block;
+      margin-top: ${({ theme }) => `${theme.space.middle}px`};
       /* TODO: change color style */
       color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
     }

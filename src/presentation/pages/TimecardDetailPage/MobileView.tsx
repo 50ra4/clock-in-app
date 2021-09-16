@@ -126,6 +126,7 @@ const StyledMonthSelector = styled(MonthSelector)`
 `;
 const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
   overflow-y: auto;
+  ${({ theme }) => theme.scrollBar.hidden()}
   ${({ theme }) =>
     theme.insetSafeArea.topBottom(
       'max-height',

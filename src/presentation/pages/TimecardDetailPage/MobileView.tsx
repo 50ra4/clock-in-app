@@ -119,17 +119,17 @@ export const MobileView = React.memo(function MobileView() {
 });
 
 const StyledMonthSelector = styled(MonthSelector)`
-  background-color: #fff;
-  padding-top: ${({ theme }) => theme.space.large}px;
+  margin-bottom: ${({ theme }) => theme.space.middle}px;
   position: sticky;
-  ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight + theme.space.large}px`, '+')};
+  ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight}px`, '+')};
 `;
 const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
   overflow-y: auto;
+  ${({ theme }) => theme.scrollBar.hidden()}
   ${({ theme }) =>
     theme.insetSafeArea.topBottom(
       'max-height',
-      `100vh - ${headerHeight + theme.space.large + monthSelectorHeight}px`,
+      `100vh - ${headerHeight + theme.space.large + monthSelectorHeight + theme.space.middle}px`,
       '+',
     )};
 `;

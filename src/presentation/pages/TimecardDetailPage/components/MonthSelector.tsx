@@ -18,7 +18,7 @@ type Props = {
   onChangeMonth: (month: string) => void;
 };
 
-export const MonthSelector = React.memo(function MonthSelect({ className, selectedMonth, onChangeMonth }: Props) {
+export const MonthSelector = React.memo(function MonthSelector({ className, selectedMonth, onChangeMonth }: Props) {
   const selectableRange = useMemo(() => {
     const startDate = startOfMonth(stringDateToDate(selectedMonth, DATE_FORMAT.yearMonthISO));
     const start = addMonths(startDate, -10);
@@ -51,16 +51,18 @@ export const MonthSelector = React.memo(function MonthSelect({ className, select
       <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickLastMonth}>
         先月
       </StyledMonthButton>
-      <StyledMonthSelect
-        id="selectedMonth"
-        name="selectedMonth"
-        selectedMonth={selectedMonth}
-        onChange={onChangeMonth}
-        range={selectableRange}
-      />
-      <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickThisMonth}>
-        今月
-      </StyledMonthButton>
+      <div>
+        <StyledMonthSelect
+          id="selectedMonth"
+          name="selectedMonth"
+          selectedMonth={selectedMonth}
+          onChange={onChangeMonth}
+          range={selectableRange}
+        />
+        <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickThisMonth}>
+          今月
+        </StyledMonthButton>
+      </div>
       <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickNextMonth}>
         来月
       </StyledMonthButton>
@@ -74,12 +76,20 @@ const StyledMonthButton = styled(Button)``;
 const StyledRoot = styled.div`
   height: ${monthSelectorHeight}px;
   display: flex;
-  padding: ${({ theme }) => theme.space.middle}px;
-  font-size: ${({ theme }) => theme.font.size.extraSmall}px;
-  & > ${StyledMonthSelect} {
-    width: 160px;
+  justify-content: space-between;
+  align-items: center;
+  & > div {
+    display: flex;
+    align-items: center;
+    & > ${StyledMonthSelect} {
+      height: 40px;
+      width: 160px;
+      margin-right: ${({ theme }) => theme.space.middle}px;
+    }
   }
-  & > ${StyledMonthButton} {
+  font-size: ${({ theme }) => theme.font.size.extraSmall}px;
+
+  ${StyledMonthButton} {
     width: 50px;
     font-size: ${({ theme }) => theme.font.size.extraSmall}px;
   }

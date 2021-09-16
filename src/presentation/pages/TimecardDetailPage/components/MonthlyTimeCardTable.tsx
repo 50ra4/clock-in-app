@@ -50,14 +50,14 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
             const dateString = format(day, DATE_FORMAT.dateISO);
             const record = dailyRecords.find((record) => record.date === dateString);
             // TODO: add other remarks field
-            const remarks = [record?.remarks].filter((v) => v).join('\n');
+            const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
+              .filter((v) => v)
+              .join(' ');
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
                 <th scope="row">
-                  <>
-                    {format(day, DATE_FORMAT.monthDay)}
-                    <span>{format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}</span>
-                  </>
+                  {format(day, DATE_FORMAT.monthDay)}
+                  <span>{`（${format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}）`}</span>
                 </th>
                 <td>
                   <StyledEditButton
@@ -70,7 +70,11 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                 </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
-                <td>{remarks || ' '}</td>
+                <td>
+                  <div>
+                    <p>{remarks || ' '}</p>
+                  </div>
+                </td>
               </RecordRow>
             );
           })}
@@ -83,7 +87,6 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
 const StyledRoot = styled.div`
   width: 100%;
   & > table {
-    overflow-y: auto;
     table-layout: fixed;
     width: calc(100% - 2px); // for border
 
@@ -114,7 +117,7 @@ const StyledRoot = styled.div`
         vertical-align: middle;
         text-align: center;
         &:nth-child(1) {
-          width: 80px;
+          width: 60px;
           z-index: ${({ theme }) => theme.zIndex.appBar - 1};
         }
         &:nth-child(2) {
@@ -128,8 +131,16 @@ const StyledRoot = styled.div`
         }
         &:nth-child(5) {
           padding: ${({ theme }) => `${theme.space.middle}px`};
-          text-align: left;
-          ${({ theme }) => theme.font.ellipsis.single()}
+          & > div {
+            height: 40px;
+            display: flex;
+            align-items: flex-start;
+            & > p {
+              text-align: left;
+              line-height: calc(40px / 2);
+              ${({ theme }) => theme.font.ellipsis.multiple(2)}
+            }
+          }
         }
       }
     }
@@ -138,7 +149,6 @@ const StyledRoot = styled.div`
     & > thead {
       th {
         padding: ${({ theme }) => `${theme.space.middle}px`};
-        border: none;
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
         font-weight: ${({ theme }) => theme.font.weight.bold};
@@ -160,7 +170,8 @@ type DayOfWeekStyledProps = {
 const RecordRow = styled.tr<DayOfWeekStyledProps>`
   & > th {
     & > span {
-      margin-left: ${({ theme }) => `${theme.space.middle}px`};
+      display: block;
+      margin-top: ${({ theme }) => `${theme.space.middle}px`};
       /* TODO: change color style */
       color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
     }

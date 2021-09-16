@@ -2747,7 +2747,7 @@ exports[`Storyshots navigation/Link Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 <div
-  className="sc-lbVvki kkfIMp"
+  className="sc-lbVvki fWjOLQ"
 >
   <button
     className="sc-fujyAs sc-eirqVv bGMgXf button"
@@ -2762,114 +2762,116 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
       先月
     </p>
   </button>
-  <div
-    className="sc-hHEiqL emNzhV sc-hhIiOg"
-  >
-    <select
-      id="selectedMonth"
-      name="selectedMonth"
-      onChange={[Function]}
-      value="2021-01"
+  <div>
+    <div
+      className="sc-hHEiqL emNzhV sc-hhIiOg"
     >
-      <option>
-        未選択にする
-      </option>
-      <option
-        value="2020-03"
-      >
-        2020年03月
-      </option>
-      <option
-        value="2020-04"
-      >
-        2020年04月
-      </option>
-      <option
-        value="2020-05"
-      >
-        2020年05月
-      </option>
-      <option
-        value="2020-06"
-      >
-        2020年06月
-      </option>
-      <option
-        value="2020-07"
-      >
-        2020年07月
-      </option>
-      <option
-        value="2020-08"
-      >
-        2020年08月
-      </option>
-      <option
-        value="2020-09"
-      >
-        2020年09月
-      </option>
-      <option
-        value="2020-10"
-      >
-        2020年10月
-      </option>
-      <option
-        value="2020-11"
-      >
-        2020年11月
-      </option>
-      <option
-        value="2020-12"
-      >
-        2020年12月
-      </option>
-      <option
+      <select
+        id="selectedMonth"
+        name="selectedMonth"
+        onChange={[Function]}
         value="2021-01"
       >
-        2021年01月
-      </option>
-      <option
-        value="2021-02"
+        <option>
+          未選択にする
+        </option>
+        <option
+          value="2020-03"
+        >
+          2020年03月
+        </option>
+        <option
+          value="2020-04"
+        >
+          2020年04月
+        </option>
+        <option
+          value="2020-05"
+        >
+          2020年05月
+        </option>
+        <option
+          value="2020-06"
+        >
+          2020年06月
+        </option>
+        <option
+          value="2020-07"
+        >
+          2020年07月
+        </option>
+        <option
+          value="2020-08"
+        >
+          2020年08月
+        </option>
+        <option
+          value="2020-09"
+        >
+          2020年09月
+        </option>
+        <option
+          value="2020-10"
+        >
+          2020年10月
+        </option>
+        <option
+          value="2020-11"
+        >
+          2020年11月
+        </option>
+        <option
+          value="2020-12"
+        >
+          2020年12月
+        </option>
+        <option
+          value="2021-01"
+        >
+          2021年01月
+        </option>
+        <option
+          value="2021-02"
+        >
+          2021年02月
+        </option>
+        <option
+          value="2021-03"
+        >
+          2021年03月
+        </option>
+      </select>
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN ivKCeV sc-dIvrsQ"
+        color="default"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        2021年02月
-      </option>
-      <option
-        value="2021-03"
-      >
-        2021年03月
-      </option>
-    </select>
-    <svg
-      aria-hidden={true}
-      className="sc-hKFxyN ivKCeV sc-dIvrsQ"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+    <button
+      className="sc-fujyAs sc-eirqVv bGMgXf button"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+      variant="outline"
     >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7 10l5 5 5-5z"
-      />
-    </svg>
+      <p
+        className="button__text"
+      >
+        今月
+      </p>
+    </button>
   </div>
-  <button
-    className="sc-fujyAs sc-eirqVv bGMgXf button"
-    color="primary"
-    disabled={false}
-    onClick={[Function]}
-    variant="outline"
-  >
-    <p
-      className="button__text"
-    >
-      今月
-    </p>
-  </button>
   <button
     className="sc-fujyAs sc-eirqVv bGMgXf button"
     color="primary"
@@ -2888,7 +2890,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 <div
-  className="sc-gGLxEB fgVQWC"
+  className="sc-gGLxEB cKZbWC"
 >
   <table>
     <thead>
@@ -2922,14 +2924,14 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/01
           <span>
-            木
+            （木）
           </span>
         </th>
         <td>
@@ -2965,18 +2967,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-          ああああああああああああああああああああああああああ
+          <div>
+            <p>
+               ああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/02
           <span>
-            金
+            （金）
           </span>
         </th>
         <td>
@@ -3012,18 +3018,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           15:42
         </td>
         <td>
-          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus iIEGDo"
+        className="sc-ckTSus gEsmk"
       >
         <th
           scope="row"
         >
           07/03
           <span>
-            土
+            （土）
           </span>
         </th>
         <td>
@@ -3059,18 +3069,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           19:53
         </td>
         <td>
-          ああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               ああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dczLGp"
+        className="sc-ckTSus kyYSbd"
       >
         <th
           scope="row"
         >
           07/04
           <span>
-            日
+            （日）
           </span>
         </th>
         <td>
@@ -3106,18 +3120,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           20:51
         </td>
         <td>
-          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/05
           <span>
-            月
+            （月）
           </span>
         </th>
         <td>
@@ -3153,18 +3171,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-          あああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               あああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/06
           <span>
-            火
+            （火）
           </span>
         </th>
         <td>
@@ -3200,18 +3222,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           20:54
         </td>
         <td>
-          あああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               あああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/07
           <span>
-            水
+            （水）
           </span>
         </th>
         <td>
@@ -3247,18 +3273,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           20:10
         </td>
         <td>
-          あああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               あああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/08
           <span>
-            木
+            （木）
           </span>
         </th>
         <td>
@@ -3294,18 +3324,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           18:37
         </td>
         <td>
-          ああああああああああ
+          <div>
+            <p>
+               ああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/09
           <span>
-            金
+            （金）
           </span>
         </th>
         <td>
@@ -3341,18 +3375,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           19:07
         </td>
         <td>
-          あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus iIEGDo"
+        className="sc-ckTSus gEsmk"
       >
         <th
           scope="row"
         >
           07/10
           <span>
-            土
+            （土）
           </span>
         </th>
         <td>
@@ -3388,18 +3426,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           13:09
         </td>
         <td>
-          あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          <div>
+            <p>
+               あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dczLGp"
+        className="sc-ckTSus kyYSbd"
       >
         <th
           scope="row"
         >
           07/11
           <span>
-            日
+            （日）
           </span>
         </th>
         <td>
@@ -3435,18 +3477,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/12
           <span>
-            月
+            （月）
           </span>
         </th>
         <td>
@@ -3482,18 +3528,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/13
           <span>
-            火
+            （火）
           </span>
         </th>
         <td>
@@ -3529,18 +3579,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/14
           <span>
-            水
+            （水）
           </span>
         </th>
         <td>
@@ -3576,18 +3630,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/15
           <span>
-            木
+            （木）
           </span>
         </th>
         <td>
@@ -3623,18 +3681,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/16
           <span>
-            金
+            （金）
           </span>
         </th>
         <td>
@@ -3670,18 +3732,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus iIEGDo"
+        className="sc-ckTSus gEsmk"
       >
         <th
           scope="row"
         >
           07/17
           <span>
-            土
+            （土）
           </span>
         </th>
         <td>
@@ -3717,18 +3783,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dczLGp"
+        className="sc-ckTSus kyYSbd"
       >
         <th
           scope="row"
         >
           07/18
           <span>
-            日
+            （日）
           </span>
         </th>
         <td>
@@ -3764,18 +3834,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/19
           <span>
-            月
+            （月）
           </span>
         </th>
         <td>
@@ -3811,18 +3885,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/20
           <span>
-            火
+            （火）
           </span>
         </th>
         <td>
@@ -3858,18 +3936,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/21
           <span>
-            水
+            （水）
           </span>
         </th>
         <td>
@@ -3905,18 +3987,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/22
           <span>
-            木
+            （木）
           </span>
         </th>
         <td>
@@ -3952,18 +4038,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/23
           <span>
-            金
+            （金）
           </span>
         </th>
         <td>
@@ -3999,18 +4089,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus iIEGDo"
+        className="sc-ckTSus gEsmk"
       >
         <th
           scope="row"
         >
           07/24
           <span>
-            土
+            （土）
           </span>
         </th>
         <td>
@@ -4046,18 +4140,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dczLGp"
+        className="sc-ckTSus kyYSbd"
       >
         <th
           scope="row"
         >
           07/25
           <span>
-            日
+            （日）
           </span>
         </th>
         <td>
@@ -4093,18 +4191,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/26
           <span>
-            月
+            （月）
           </span>
         </th>
         <td>
@@ -4140,18 +4242,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/27
           <span>
-            火
+            （火）
           </span>
         </th>
         <td>
@@ -4187,18 +4293,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/28
           <span>
-            水
+            （水）
           </span>
         </th>
         <td>
@@ -4234,18 +4344,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/29
           <span>
-            木
+            （木）
           </span>
         </th>
         <td>
@@ -4281,18 +4395,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus dwiZCF"
+        className="sc-ckTSus fxobLd"
       >
         <th
           scope="row"
         >
           07/30
           <span>
-            金
+            （金）
           </span>
         </th>
         <td>
@@ -4328,18 +4446,22 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
       <tr
-        className="sc-ckTSus iIEGDo"
+        className="sc-ckTSus gEsmk"
       >
         <th
           scope="row"
         >
           07/31
           <span>
-            土
+            （土）
           </span>
         </th>
         <td>
@@ -4375,7 +4497,11 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           -
         </td>
         <td>
-           
+          <div>
+            <p>
+               
+            </p>
+          </div>
         </td>
       </tr>
     </tbody>

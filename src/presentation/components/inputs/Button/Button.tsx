@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { ColorPalette } from 'styles/theme';
 
@@ -29,6 +29,13 @@ export const UnStyledButton = React.memo(function Button({
   children = null,
   ...otherProps
 }: ButtonProps) {
+  // eslint-disable-next-line complexity
+  useEffect(() => {
+    if ((text && children) || (!text && !children)) {
+      throw Error('<Button /> Props accepts only text or children');
+    }
+  }, [text, children]);
+
   return (
     <button {...otherProps} className={[className, ButtonClassNames.root].join(' ')} disabled={disabled}>
       {text ? <p className={ButtonClassNames.text}>{text}</p> : children}

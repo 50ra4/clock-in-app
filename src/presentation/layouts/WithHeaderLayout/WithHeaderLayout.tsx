@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { Header, headerHeight } from 'presentation/components/surfaces/Header/Header';
+import { Header } from 'presentation/components/surfaces/Header/Header';
 import { Logo } from 'presentation/components/unique/Logo/Logo';
 import { SideNavigation } from 'presentation/components/unique/SideNavigation/SideNavigation';
 
@@ -53,7 +53,7 @@ const StyledRoot = styled.div`
   & > .${WithHeaderLayoutClassNames.contents} {
     width: 100%;
     padding: ${({ theme }) => `0 ${theme.space.large}px`};
-    ${({ theme }) => theme.insetSafeArea.top('padding-top', `${headerHeight + theme.space.large}px`, '+')}
+    ${({ theme }) => theme.insetSafeArea.top('padding-top', `${theme.height.header + theme.space.large}px`, '+')}
     ${({ theme }) => theme.insetSafeArea.top('min-height', '100vh', '+')}
   }
 `;

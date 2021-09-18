@@ -3,9 +3,9 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { lightTheme } from 'styles/theme';
+import { lightTheme } from './styles/theme';
 import { configureStore } from 'store/root';
-import { GlobalStyle } from 'styles/global';
+import { GlobalStyle } from './styles/global';
 import { LoadingGuard } from './components/feedback/LoadingGuard/LoadingGuard';
 import { ROUTES, ErrorPage } from './routes';
 import { ErrorBoundary } from './ErrorBoundary';

@@ -264,6 +264,12 @@ const insetSafeArea: Record<'top' | 'bottom' | 'topBottom', InsetSafeArea> = {
   `,
 };
 
+const componentHeight = {
+  header: 56,
+  button: 48,
+  input: 45,
+} as const;
+
 export const lightTheme = {
   breakpoint: {
     small: 576,
@@ -296,6 +302,7 @@ export const lightTheme = {
   },
   zIndex,
   scrollBar,
+  height: componentHeight,
 } as const;
 type LightTheme = typeof lightTheme;
 

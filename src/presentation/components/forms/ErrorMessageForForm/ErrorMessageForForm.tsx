@@ -7,14 +7,17 @@ export type ErrorMessageForFormProps = {
   message: string;
 };
 
-function UnStyledErrorMessageForForm({ className, message }: ErrorMessageForFormProps) {
+const UnStyledErrorMessageForForm = React.memo(function ErrorMessageForForm({
+  className,
+  message,
+}: ErrorMessageForFormProps) {
   return (
     <div className={className}>
       <StyledWarningIcon />
       <p>{message}</p>
     </div>
   );
-}
+});
 
 const StyledWarningIcon = styled(WarningIcon)``;
 export const ErrorMessageForForm = styled(UnStyledErrorMessageForForm)`

@@ -6,13 +6,16 @@ export type DescriptionForFormProps = {
   description: string;
 };
 
-function UnStyledDescriptionForForm({ className, description }: DescriptionForFormProps) {
+const UnStyledDescriptionForForm = React.memo(function DescriptionForForm({
+  className,
+  description,
+}: DescriptionForFormProps) {
   return (
     <div className={className}>
       <p>{description}</p>
     </div>
   );
-}
+});
 
 export const DescriptionForForm = styled(UnStyledDescriptionForForm)`
   margin: ${({ theme }) => `${theme.space.large}px 0`};

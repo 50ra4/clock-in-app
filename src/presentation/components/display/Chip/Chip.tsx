@@ -1,7 +1,7 @@
 /* eslint-disable complexity */
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ColorPalette } from 'styles/theme';
+import { ColorPalette } from 'presentation/styles/theme';
 
 type OwnProps = {
   className?: string;

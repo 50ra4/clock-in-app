@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { SnackbarSeverity } from 'styles/theme';
+import { SnackbarSeverity } from 'presentation/styles/theme';
 import { EnumValue } from 'types';
 import { matchClassNames } from 'utils/classNameUtil';
 

@@ -41,7 +41,7 @@ const UnStyledInputBase = React.memo(function UnStyledInputBase({
 
 export const InputBase = styled(UnStyledInputBase)`
   width: 100%;
-  height: 28px;
+  height: ${({ theme }) => theme.height.input}px;
   font-size: ${({ theme }) => theme.font.size.middle}px;
   ${({ theme }) => theme.font.ellipsis.single()};
   padding: ${({ theme, rightIcon, leftIcon }) =>

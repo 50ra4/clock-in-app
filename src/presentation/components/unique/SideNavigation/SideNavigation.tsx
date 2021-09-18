@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 import { PAGE_PATH } from 'constants/path';
 import { Backdrop } from 'presentation/components/feedback/Backdrop/Backdrop';
-import { headerHeight } from 'presentation/components/surfaces/Header/Header';
 import { replacePathParams } from 'utils/pathUtil';
 
 type OwnProps = {
@@ -55,7 +54,7 @@ export const SideNavigation = React.memo(function SideNavigation({ className, op
 const StyledBackdrop = styled(Backdrop)`
   align-items: flex-start;
   justify-content: flex-end;
-  ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight}px`, '+')}
+  ${({ theme }) => theme.insetSafeArea.top('top', `${theme.height.header}px`, '+')}
 `;
 
 const StyledRoot = styled.div`

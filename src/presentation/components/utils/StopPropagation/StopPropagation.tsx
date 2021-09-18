@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 type OwnProps = {
   className?: string;
@@ -10,17 +10,14 @@ type OwnProps = {
 export type StopPropagationProps = OwnProps;
 
 export function StopPropagation({ children, onClick, stopPropagation = false, ...otherProps }: StopPropagationProps) {
-  const handleStopPropagation = useCallback(
-    (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      if (stopPropagation) {
-        e.stopPropagation();
-      }
-      if (onClick) {
-        onClick(e);
-      }
-    },
-    [onClick, stopPropagation],
-  );
+  const handleStopPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (stopPropagation) {
+      e.stopPropagation();
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
 
   return (
     <div {...otherProps} role="none" onClick={handleStopPropagation}>

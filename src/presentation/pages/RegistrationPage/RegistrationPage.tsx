@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -62,7 +62,7 @@ function RegistrationPageForm() {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch<Dispatch>();
-  const signUp = useCallback(async () => {
+  const signUp = async () => {
     const result = await dispatch(signUpUser(email, password));
     if (!result) {
       // TODO: error handling
@@ -70,7 +70,7 @@ function RegistrationPageForm() {
       return;
     }
     history.replace(PAGE_PATH.top);
-  }, [dispatch, email, history, password]);
+  };
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -64,7 +64,7 @@ function LoginPageForm() {
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch<Dispatch>();
-  const login = useCallback(async () => {
+  const login = async () => {
     const result = await dispatch(signInUser(email, password));
     if (!result) {
       // TODO: error handling
@@ -72,7 +72,7 @@ function LoginPageForm() {
       return;
     }
     history.replace(PAGE_PATH.top);
-  }, [dispatch, email, history, password]);
+  };
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,9 +96,7 @@ function LoginPageForm() {
         value={password}
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
-      <Button type="submit" color="secondary" fullWidth={true}>
-        ログイン
-      </Button>
+      <Button type="submit" color="secondary" fullWidth={true} text="ログイン" />
     </StyledForm>
   );
 }

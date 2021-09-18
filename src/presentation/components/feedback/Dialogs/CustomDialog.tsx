@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Backdrop } from '../Backdrop/Backdrop';
 import { CloseIcon } from 'presentation/components/display/Icons/CloseIcon';
@@ -39,15 +39,12 @@ function UnStyledCustomDialog({
 }: CustomDialogProps) {
   const rootId = `dialog-${id}`;
 
-  const handleClose = useCallback(
-    (e: React.MouseEvent<unknown, MouseEvent>) => {
-      e.stopPropagation();
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClose],
-  );
+  const handleClose = (e: React.MouseEvent<unknown, MouseEvent>) => {
+    e.stopPropagation();
+    if (onClose) {
+      onClose(e);
+    }
+  };
 
   return (
     <Backdrop open={open} onClick={handleClose}>

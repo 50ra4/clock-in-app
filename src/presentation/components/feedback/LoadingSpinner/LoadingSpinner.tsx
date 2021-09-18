@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ColorPalette, IconSize } from 'styles/theme';
+import { ColorPalette, IconSize } from 'presentation/styles/theme';
 import { SyncIcon } from 'presentation/components/display/Icons/SyncIcon';
 
 type OwnProps = {

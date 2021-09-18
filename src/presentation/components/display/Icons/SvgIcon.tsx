@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ColorPalette, IconSize } from 'styles/theme';
+import { ColorPalette, IconSize } from 'presentation/styles/theme';
 
 export type IconProps = {
   className?: string;

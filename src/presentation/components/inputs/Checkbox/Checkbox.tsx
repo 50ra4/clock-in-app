@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ColorPalette, IconSize } from 'styles/theme';
+import { ColorPalette, IconSize } from 'presentation/styles/theme';
 import { CheckboxOffIcon, CheckboxOnIcon } from 'presentation/components/display/Icons/CheckboxIcon';
 
 type OwnProps = {

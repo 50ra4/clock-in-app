@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { ErrorHeadingWithMessage } from 'types';
 import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
-import { headerHeight } from 'presentation/components/surfaces/Header/Header';
 import { WarningIcon } from 'presentation/components/display/Icons/WarningIcon';
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { PAGE_PATH } from 'constants/path';
@@ -53,7 +52,7 @@ const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${({ theme }) => theme.insetSafeArea.top('height', `100vh - ${headerHeight + theme.space.large}px`, '+')}
+  ${({ theme }) => theme.insetSafeArea.top('height', `100vh - ${theme.height.header + theme.space.large}px`, '+')}
   & > div {
     margin: 0 ${({ theme }) => theme.space.large * 2}px;
     text-align: center;

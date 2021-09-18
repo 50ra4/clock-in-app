@@ -8,7 +8,6 @@ import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQuerySt
 import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { mockTimeCards } from './mockData';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
-import { headerHeight } from 'presentation/components/surfaces/Header/Header';
 import { DailyTimeRecord, MonthlyTimeCard } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 
@@ -121,7 +120,7 @@ export function MobileView() {
 const StyledMonthSelector = styled(MonthSelector)`
   margin-bottom: ${({ theme }) => theme.space.middle}px;
   position: sticky;
-  ${({ theme }) => theme.insetSafeArea.top('top', `${headerHeight}px`, '+')};
+  ${({ theme }) => theme.insetSafeArea.top('top', `${theme.height.header}px`, '+')};
 `;
 const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
   overflow-y: auto;
@@ -129,7 +128,7 @@ const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
   ${({ theme }) =>
     theme.insetSafeArea.topBottom(
       'max-height',
-      `100vh - ${headerHeight + theme.space.large + monthSelectorHeight + theme.space.middle}px`,
+      `100vh - ${theme.height.header + theme.space.large + monthSelectorHeight + theme.space.middle}px`,
       '+',
     )};
 `;

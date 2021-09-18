@@ -42,9 +42,8 @@ const RightActionButton = React.memo(function RightActionButton({
   );
 });
 
-export const headerHeight = 57;
 export const Header = styled(UnStyledHeader)`
-  height: ${headerHeight}px;
+  height: ${({ theme }) => theme.height.header}px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,7 +53,7 @@ export const Header = styled(UnStyledHeader)`
     color: ${({ theme }) => theme.color.palette.primary.font};
     font-weight: ${({ theme }) => theme.font.weight.bold};
     font-size: ${({ theme }) => theme.font.size.extraLarge}px;
-    line-height: ${headerHeight}px;
-    height: ${headerHeight}px;
+    line-height: ${({ theme }) => theme.height.header}px;
+    height: ${({ theme }) => theme.height.header}px;
   }
 `;

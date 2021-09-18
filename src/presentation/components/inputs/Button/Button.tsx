@@ -70,8 +70,8 @@ export const Button = styled(UnStyledButton)`
       width: 100%;
     `};
   & > .${ButtonClassNames.text} {
-    height: 38px;
-    line-height: 38px;
+    height: ${({ theme }) => theme.height.button - 2}px;
+    line-height: ${({ theme }) => theme.height.button - 2}px;
     margin: 0 ${({ theme }) => theme.space.large}px;
   }
 `;

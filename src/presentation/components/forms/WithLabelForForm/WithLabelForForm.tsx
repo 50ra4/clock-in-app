@@ -57,7 +57,7 @@ export const WithLabelForForm = styled(UnStyledWithLabelForForm)`
           display: flex;
           & > label {
             flex-basis: 100px;
-            line-height: 28px;
+            line-height: ${({ theme }) => theme.height.input}px;
             padding-top: ${({ theme }) => (!description ? 0 : `${theme.space.large}px`)};
           }
           & > div {

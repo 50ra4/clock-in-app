@@ -94,9 +94,7 @@ function RegistrationPageForm() {
         value={password}
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
-      <Button type="submit" color="secondary" fullWidth={true}>
-        アカウント登録
-      </Button>
+      <Button type="submit" color="secondary" fullWidth={true} text="アカウント登録" />
     </StyledForm>
   );
 }

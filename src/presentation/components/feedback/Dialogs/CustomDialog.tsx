@@ -27,7 +27,7 @@ export const CustomDialogClassNames = {
 
 // FIXME:
 // eslint-disable-next-line complexity
-export const UnStyledCustomDialog = React.memo(function CustomDialog({
+function UnStyledCustomDialog({
   id,
   className = '',
   open,
@@ -80,7 +80,7 @@ export const UnStyledCustomDialog = React.memo(function CustomDialog({
       </div>
     </Backdrop>
   );
-});
+}
 
 const StyledStopPropagation = styled(StopPropagation)``;
 export const CustomDialog = styled(UnStyledCustomDialog)`

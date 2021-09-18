@@ -10,12 +10,9 @@ type OwnProps = {
 
 export type ResponsiveLayoutProps = OwnProps;
 
-const UnStyledResponsiveLayout = React.memo(function ResponsiveLayout({
-  children,
-  ...otherProps
-}: ResponsiveLayoutProps) {
+function UnStyledResponsiveLayout({ children, ...otherProps }: ResponsiveLayoutProps) {
   return <div {...otherProps}>{children}</div>;
-});
+}
 
 export const ResponsiveLayout = styled(UnStyledResponsiveLayout)`
   ${({ theme, placement = 'center' }) => css`

@@ -10,13 +10,7 @@ type OwnProps = {
 
 export type BackdropProps = OwnProps;
 
-const UnStyledBackdrop = React.memo(function Backdrop({
-  open = false,
-  onClick,
-  children = null,
-  className,
-  ...otherProps
-}: BackdropProps) {
+function UnStyledBackdrop({ open = false, onClick, children = null, className, ...otherProps }: BackdropProps) {
   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
     if (onClick) {
@@ -33,7 +27,7 @@ const UnStyledBackdrop = React.memo(function Backdrop({
       {children}
     </div>
   );
-});
+}
 
 export const Backdrop = styled(UnStyledBackdrop)`
   top: 0;

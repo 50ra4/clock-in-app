@@ -58,7 +58,7 @@ const StyledDescription = styled.p`
 
 type Dispatch = Parameters<ReturnType<typeof signInUser>>[0];
 
-const LoginPageForm = React.memo(function LoginPageForm() {
+function LoginPageForm() {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -101,7 +101,7 @@ const LoginPageForm = React.memo(function LoginPageForm() {
       </Button>
     </StyledForm>
   );
-});
+}
 
 const StyledForm = styled.form``;
 const StyledTextForm = styled(TextForm)`

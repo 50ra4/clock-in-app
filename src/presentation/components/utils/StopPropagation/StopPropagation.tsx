@@ -9,12 +9,7 @@ type OwnProps = {
 
 export type StopPropagationProps = OwnProps;
 
-export const StopPropagation = React.memo(function StopPropagation({
-  children,
-  onClick,
-  stopPropagation = false,
-  ...otherProps
-}: StopPropagationProps) {
+export function StopPropagation({ children, onClick, stopPropagation = false, ...otherProps }: StopPropagationProps) {
   const handleStopPropagation = useCallback(
     (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
       if (stopPropagation) {
@@ -32,4 +27,4 @@ export const StopPropagation = React.memo(function StopPropagation({
       {children}
     </div>
   );
-});
+}

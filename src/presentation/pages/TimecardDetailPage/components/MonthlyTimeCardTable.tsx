@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import ja from 'date-fns/locale/ja';
 import format from 'date-fns/format';
@@ -18,7 +18,7 @@ type Props = {
   className?: string;
   month: string;
   dailyRecords: DailyTimeRecord[];
-  selectEditedRecord: (date: string) => void;
+  selectEditedRecord: (dateString: string) => void;
 };
 
 export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
@@ -32,6 +32,15 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
     const end = endOfMonth(start);
     return eachDayOfInterval({ start, end });
   }, [month]);
+
+  const onClickEdit = useCallback(
+    (dateString: string) => {
+      return () => {
+        selectEditedRecord(dateString);
+      };
+    },
+    [selectEditedRecord],
+  );
 
   return (
     <StyledRoot className={className}>
@@ -63,9 +72,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                   <StyledEditButton
                     color="primary"
                     areaLabel={`${dateString}の勤怠を修正する`}
-                    onClick={() => {
-                      selectEditedRecord(dateString);
-                    }}
+                    onClick={onClickEdit(dateString)}
                   />
                 </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>

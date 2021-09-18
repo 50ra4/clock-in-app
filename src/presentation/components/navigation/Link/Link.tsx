@@ -4,9 +4,9 @@ import { LinkProps as OwnProps, Link as RouterLink } from 'react-router-dom';
 
 export type LinkProps = OwnProps;
 
-export const UnStyledLink = React.memo(function UnStyledLink({ children, ...otherProps }: LinkProps) {
+export function UnStyledLink({ children, ...otherProps }: LinkProps) {
   return <RouterLink {...otherProps}>{children}</RouterLink>;
-});
+}
 
 export const Link = styled(UnStyledLink)`
   text-decoration: none;

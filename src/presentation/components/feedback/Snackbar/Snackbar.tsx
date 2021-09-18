@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { SnackbarSeverity } from 'styles/theme';
 import { EnumValue } from 'types';
@@ -64,7 +64,7 @@ const UnStyledSnackbar = React.memo(function Snackbar({
     }, duration);
   }, [duration, onClose, status]);
 
-  const onAnimationEnd = useCallback(() => {
+  const onAnimationEnd = () => {
     if (status !== SNACKBAR_STATUS.fadeOut) {
       return;
     }
@@ -72,7 +72,7 @@ const UnStyledSnackbar = React.memo(function Snackbar({
       setStatus(SNACKBAR_STATUS.initial);
       onClose();
     }
-  }, [onClose, status]);
+  };
 
   const rootClassName = matchClassNames([
     [className, () => true],

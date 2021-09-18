@@ -33,7 +33,7 @@ const VisibilityButton = React.memo(function VisibilityButton({
   ...otherProps
 }: IconButtonProps & { visible: boolean }) {
   return (
-    <IconButton {...otherProps} aria-label={visible ? 'パスワードを非表示' : 'パスワードを表示'}>
+    <IconButton {...otherProps} aria-label={visible ? 'パスワードを非表示にする' : 'パスワードを表示する'}>
       {visible ? <VisibilityOffIcon /> : <VisibilityIcon />}
     </IconButton>
   );

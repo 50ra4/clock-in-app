@@ -1080,7 +1080,7 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
           value="password1234"
         />
         <button
-          aria-label="パスワードを表示"
+          aria-label="パスワードを表示する"
           className="sc-kfYoZR bfMjAa sc-fKgJPI"
           disabled={false}
           onClick={[Function]}
@@ -1142,7 +1142,7 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
           value="password1234"
         />
         <button
-          aria-label="パスワードを表示"
+          aria-label="パスワードを表示する"
           className="sc-kfYoZR bfMjAa sc-fKgJPI"
           disabled={false}
           onClick={[Function]}
@@ -1948,11 +1948,7 @@ exports[`Storyshots inputs/Button Docs 1`] = `
   color="primary"
   disabled={false}
 >
-  <p
-    className="button__text"
-  >
-    button sample
-  </p>
+  button sample
 </button>
 `;
 
@@ -1962,11 +1958,7 @@ exports[`Storyshots inputs/Button Full Width 1`] = `
   color="primary"
   disabled={false}
 >
-  <p
-    className="button__text"
-  >
-    full width
-  </p>
+  full width
 </button>
 `;
 
@@ -1977,11 +1969,7 @@ exports[`Storyshots inputs/Button Outline 1`] = `
   disabled={false}
   variant="outline"
 >
-  <p
-    className="button__text"
-  >
-    outline
-  </p>
+  outline
 </button>
 `;
 
@@ -2396,7 +2384,7 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
     value="password1234"
   />
   <button
-    aria-label="パスワードを表示"
+    aria-label="パスワードを表示する"
     className="sc-kfYoZR bfMjAa sc-fKgJPI"
     disabled={false}
     onClick={[Function]}
@@ -2436,7 +2424,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
     value="password1234"
   />
   <button
-    aria-label="パスワードを表示"
+    aria-label="パスワードを表示する"
     className="sc-kfYoZR bfMjAa sc-fKgJPI"
     disabled={false}
     onClick={[Function]}
@@ -2759,7 +2747,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     <p
       className="button__text"
     >
-      先月
+      前月
     </p>
   </button>
   <div>
@@ -2882,7 +2870,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     <p
       className="button__text"
     >
-      来月
+      次月
     </p>
   </button>
 </div>
@@ -4972,11 +4960,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      <p
-        className="button__text"
-      >
-        toggle
-      </p>
+      toggle
     </button>
     <button
       className="sc-fujyAs hPHCSO button"
@@ -4984,11 +4968,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      <p
-        className="button__text"
-      >
-        stopPropagation true
-      </p>
+      stopPropagation true
     </button>
   </div>
 </div>

@@ -28,14 +28,7 @@ export const AccordionClassNames = {
   },
 } as const;
 
-export const UnStyledAccordion = React.memo(function Accordion({
-  id,
-  title,
-  defaultExpanded,
-  disabled,
-  children,
-  ...otherProps
-}: AccordionProps) {
+export function UnStyledAccordion({ id, title, defaultExpanded, disabled, children, ...otherProps }: AccordionProps) {
   const areaLabel = `accordion-${id}-header`;
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const onClickHandler = (_: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -69,7 +62,7 @@ export const UnStyledAccordion = React.memo(function Accordion({
       </div>
     </section>
   );
-});
+}
 
 const StyledArrowLeftIcon = styled(ArrowLeftIcon)``;
 export const Accordion = styled(UnStyledAccordion)`

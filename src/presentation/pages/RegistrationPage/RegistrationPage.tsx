@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -56,13 +56,13 @@ const StyledDescription = styled.p`
 
 type Dispatch = Parameters<ReturnType<typeof signUpUser>>[0];
 
-const RegistrationPageForm = React.memo(function RegistrationPageForm() {
+function RegistrationPageForm() {
   const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const dispatch = useDispatch<Dispatch>();
-  const signUp = useCallback(async () => {
+  const signUp = async () => {
     const result = await dispatch(signUpUser(email, password));
     if (!result) {
       // TODO: error handling
@@ -70,7 +70,7 @@ const RegistrationPageForm = React.memo(function RegistrationPageForm() {
       return;
     }
     history.replace(PAGE_PATH.top);
-  }, [dispatch, email, history, password]);
+  };
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,12 +94,10 @@ const RegistrationPageForm = React.memo(function RegistrationPageForm() {
         value={password}
         onChange={(e) => setPassword(e.currentTarget.value)}
       />
-      <Button type="submit" color="secondary" fullWidth={true}>
-        アカウント登録
-      </Button>
+      <Button type="submit" color="secondary" fullWidth={true} text="アカウント登録" />
     </StyledForm>
   );
-});
+}
 
 const StyledForm = styled.form``;
 const StyledTextForm = styled(TextForm)`

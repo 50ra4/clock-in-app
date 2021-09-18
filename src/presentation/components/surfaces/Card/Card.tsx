@@ -11,7 +11,7 @@ type InheritedProps = Omit<JSX.IntrinsicElements['section'], keyof OwnProps>;
 
 export type CardProps = OwnProps & InheritedProps;
 
-export const UnStyledCard = React.memo(function Card({ title, children, ...otherProps }: CardProps) {
+export function UnStyledCard({ title, children, ...otherProps }: CardProps) {
   return (
     <section {...otherProps}>
       <h3>{title}</h3>
@@ -19,7 +19,7 @@ export const UnStyledCard = React.memo(function Card({ title, children, ...other
       <div>{children}</div>
     </section>
   );
-});
+}
 
 export const Card = styled(UnStyledCard)`
   margin: ${({ theme }) => `${theme.space.small}px ${theme.space.middle}px ${theme.space.middle}px`};

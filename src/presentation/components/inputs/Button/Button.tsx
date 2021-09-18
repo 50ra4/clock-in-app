@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { ColorPalette } from 'styles/theme';
 
@@ -8,7 +8,8 @@ type OwnProps = {
   disabled?: boolean;
   variant?: 'outline' | 'default';
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  children: string | React.ReactNode;
+  text?: string;
+  children?: React.ReactNode;
 };
 type InheritedProps = Omit<JSX.IntrinsicElements['button'], keyof OwnProps>;
 
@@ -24,12 +25,20 @@ export const UnStyledButton = React.memo(function Button({
   className = '',
   fullWidth = false,
   disabled = false,
-  children,
+  text,
+  children = null,
   ...otherProps
 }: ButtonProps) {
+  // eslint-disable-next-line complexity
+  useEffect(() => {
+    if ((text && children) || (!text && !children)) {
+      throw Error('<Button /> Props accepts only text or children');
+    }
+  }, [text, children]);
+
   return (
     <button {...otherProps} className={[className, ButtonClassNames.root].join(' ')} disabled={disabled}>
-      {typeof children === 'string' ? <p className={ButtonClassNames.text}>{children}</p> : children}
+      {text ? <p className={ButtonClassNames.text}>{text}</p> : children}
     </button>
   );
 });

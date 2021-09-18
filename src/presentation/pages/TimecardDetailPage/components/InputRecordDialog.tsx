@@ -23,7 +23,6 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
   className,
   dailyTimeRecord: initialTimeRecord,
   onSaveDailyTimeRecord,
-  ...otherProps
 }: OwnProps) {
   const { formState: dailyTimeRecord, onChangeFormState: onChangeDailyTimeRecord } = useFormGroup({
     ...initialTimeRecord,
@@ -37,7 +36,6 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
 
   return (
     <StyledCustomDialog
-      {...otherProps}
       id="input-record"
       title={`${dateStringToDateString(dailyTimeRecord.date, {
         from: DATE_FORMAT.dateISO,

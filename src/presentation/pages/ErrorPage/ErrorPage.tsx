@@ -39,9 +39,7 @@ const ErrorPage = ({ crashed, ...props }: Props) => {
           <StyledWarningIcon color="secondary" />
           <h2>{heading}</h2>
           <p>{message}</p>
-          <Button onClick={handleOnClick} color="secondary">
-            Topへ戻る
-          </Button>
+          <Button onClick={handleOnClick} color="secondary" text="Topへ戻る" />
         </div>
       </StyledRoot>
     </WithHeaderLayout>

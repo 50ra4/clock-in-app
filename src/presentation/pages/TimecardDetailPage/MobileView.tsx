@@ -40,7 +40,7 @@ const parseQuery = (queryString: string) => {
   return { month };
 };
 
-export const MobileView = React.memo(function MobileView() {
+export function MobileView() {
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
@@ -116,7 +116,7 @@ export const MobileView = React.memo(function MobileView() {
       )}
     </StyledRoot>
   );
-});
+}
 
 const StyledMonthSelector = styled(MonthSelector)`
   margin-bottom: ${({ theme }) => theme.space.middle}px;

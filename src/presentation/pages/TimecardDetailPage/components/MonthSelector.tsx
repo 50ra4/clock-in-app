@@ -48,9 +48,7 @@ export const MonthSelector = React.memo(function MonthSelector({ className, sele
 
   return (
     <StyledRoot className={className}>
-      <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickLastMonth}>
-        先月
-      </StyledMonthButton>
+      <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickLastMonth} text="前月" />
       <div>
         <StyledMonthSelect
           id="selectedMonth"
@@ -59,13 +57,9 @@ export const MonthSelector = React.memo(function MonthSelector({ className, sele
           onChange={onChangeMonth}
           range={selectableRange}
         />
-        <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickThisMonth}>
-          今月
-        </StyledMonthButton>
+        <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickThisMonth} text="今月" />
       </div>
-      <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickNextMonth}>
-        来月
-      </StyledMonthButton>
+      <StyledMonthButton color="primary" variant="outline" onClick={handleOnClickNextMonth} text="次月" />
     </StyledRoot>
   );
 });

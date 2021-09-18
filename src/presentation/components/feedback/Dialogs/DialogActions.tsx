@@ -9,7 +9,7 @@ export const ConfirmDialogActions = React.memo(function ConfirmDialogAction({
   onClose,
   onClickOK,
 }: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'>) {
-  const handleClickOK = useCallback(
+  const handleOnClickOK = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       if (onClickOK) {
         onClickOK(e);
@@ -23,12 +23,8 @@ export const ConfirmDialogActions = React.memo(function ConfirmDialogAction({
 
   return (
     <>
-      <Button color="default" onClick={onClose}>
-        キャンセル
-      </Button>
-      <Button color="primary" onClick={handleClickOK}>
-        OK
-      </Button>
+      <Button color="default" onClick={onClose} text="キャンセル" />
+      <Button color="primary" onClick={handleOnClickOK} text="OK" />
     </>
   );
 });
@@ -37,7 +33,7 @@ export const AlertDialogActions = React.memo(function AlertDialogAction({
   onClose,
   onClickOK,
 }: Pick<AlertDialogProps, 'onClose' | 'onClickOK'>) {
-  const handleClickOK = useCallback(
+  const handleOnClickOK = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       if (onClickOK) {
         onClickOK(e);
@@ -51,9 +47,7 @@ export const AlertDialogActions = React.memo(function AlertDialogAction({
 
   return (
     <>
-      <Button color="primary" onClick={handleClickOK}>
-        OK
-      </Button>
+      <Button color="primary" onClick={handleOnClickOK} text="OK" />
     </>
   );
 });
@@ -63,7 +57,7 @@ export const SelectDialogActions = React.memo(function SelectDialogAction({
   onClickYes,
   onClickNo,
 }: Pick<SelectDialogProps, 'onClose' | 'onClickYes' | 'onClickNo'>) {
-  const handleClickYes = useCallback(
+  const handleOnClickYes = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       if (onClickYes) {
         onClickYes(e);
@@ -75,7 +69,7 @@ export const SelectDialogActions = React.memo(function SelectDialogAction({
     [onClickYes, onClose],
   );
 
-  const handleClickNo = useCallback(
+  const handleOnClickNo = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       if (onClickNo) {
         onClickNo(e);
@@ -89,12 +83,8 @@ export const SelectDialogActions = React.memo(function SelectDialogAction({
 
   return (
     <>
-      <Button color="secondary" onClick={handleClickNo}>
-        いいえ
-      </Button>
-      <Button color="primary" onClick={handleClickYes}>
-        はい
-      </Button>
+      <Button color="secondary" onClick={handleOnClickNo} text="いいえ" />
+      <Button color="primary" onClick={handleOnClickYes} text="はい" />
     </>
   );
 });

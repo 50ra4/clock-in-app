@@ -11,19 +11,13 @@ type InheritedProps = Omit<JSX.IntrinsicElements['button'], keyof OwnProps>;
 
 export type IconButtonProps = OwnProps & InheritedProps;
 
-const UnStyledIconButton = React.memo(function UnStyledIconButton({
-  className,
-  disabled = false,
-  onClick,
-  children = null,
-  ...otherProps
-}: IconButtonProps) {
+function UnStyledIconButton({ className, disabled = false, onClick, children = null, ...otherProps }: IconButtonProps) {
   return (
     <button {...otherProps} className={className} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
-});
+}
 
 export const IconButton = styled(UnStyledIconButton)`
   display: flex;

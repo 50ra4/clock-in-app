@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconProps, SvgIcon } from 'presentation/components/display/Icons/SvgIcon';
 
+// FIXME: move icons directory
 /**
  * watch_later icon
  * @see https://fonts.google.com/icons

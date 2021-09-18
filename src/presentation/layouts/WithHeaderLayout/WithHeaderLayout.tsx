@@ -16,7 +16,7 @@ export const WithHeaderLayoutClassNames = {
   contents: `${rootClassName}__contents`,
 } as const;
 
-export const WithHeaderLayout = React.memo(function WithHeaderLayout({ className = '', children }: OwnProps) {
+export function WithHeaderLayout({ className = '', children }: OwnProps) {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleOnCloseMenu = useCallback(() => {
@@ -41,7 +41,7 @@ export const WithHeaderLayout = React.memo(function WithHeaderLayout({ className
       <main className={WithHeaderLayoutClassNames.contents}>{children}</main>
     </StyledRoot>
   );
-});
+}
 
 const StyledRoot = styled.div`
   & > .${WithHeaderLayoutClassNames.header} {

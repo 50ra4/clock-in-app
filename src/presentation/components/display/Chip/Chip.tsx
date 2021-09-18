@@ -14,9 +14,9 @@ type OwnProps = {
 
 export type ChipProps = OwnProps;
 
-export const UnStyledChip = React.memo(function Chip({ children, ...otherProps }: ChipProps) {
+export const UnStyledChip = ({ children, ...otherProps }: ChipProps) => {
   return <button {...otherProps}>{children}</button>;
-});
+};
 
 const outlineStyle = (isOutline: boolean, color: ColorPalette) =>
   isOutline &&

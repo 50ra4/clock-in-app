@@ -11,13 +11,13 @@ type OwnProps = {
 /**
  * Do not show elements, but screen readers can read
  */
-export const VisuallyHidden = React.memo(function VisuallyHidden({ className = '', hidden, children }: OwnProps) {
+export function VisuallyHidden({ className = '', hidden, children }: OwnProps) {
   const rootClassName = matchClassNames([
     [className, () => !!className],
     ['visually-hidden--hidden', () => hidden],
   ]);
   return <Wrap className={rootClassName.join(' ')}>{children}</Wrap>;
-});
+}
 
 /**
  * @see https://qiita.com/randy39/items/fca820d500dfe9ec1a52

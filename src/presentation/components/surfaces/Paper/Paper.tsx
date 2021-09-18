@@ -8,13 +8,13 @@ type InheritedProps = Omit<JSX.IntrinsicElements['section'], keyof OwnProps>;
 
 export type PaperProps = OwnProps & InheritedProps;
 
-const UnStyledPaper = React.memo(function Paper({ title, children, ...otherProps }: PaperProps) {
+function UnStyledPaper({ title, children, ...otherProps }: PaperProps) {
   return (
     <section {...otherProps}>
       <div>{children}</div>
     </section>
   );
-});
+}
 
 export const Paper = styled(UnStyledPaper)`
   margin: ${({ theme }) => `${theme.space.small}px ${theme.space.middle}px ${theme.space.middle}px`};

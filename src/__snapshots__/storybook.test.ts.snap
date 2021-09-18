@@ -246,7 +246,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
   className="sc-dlMDgC"
 >
   <div
-    className="sc-fFSPTT hjKcrX"
+    className="sc-fFSPTT imubeo"
   >
     <label
       htmlFor="date"
@@ -259,7 +259,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
         className="sc-iemWCZ"
       >
         <input
-          className="sc-bkbkJK AOIMZ sc-iemWCZ input-base"
+          className="sc-bkbkJK hBwKvJ sc-iemWCZ input-base"
           error="required"
           id="date"
           max="2021-07-31"
@@ -1072,7 +1072,7 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
         className="sc-bCwfaz klYHaj"
       >
         <input
-          className="sc-bkbkJK jTNUwg input-base"
+          className="sc-bkbkJK eJcvHU input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1133,7 +1133,7 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         className="sc-bCwfaz klYHaj"
       >
         <input
-          className="sc-bkbkJK kblwiy input-base"
+          className="sc-bkbkJK hQSHie input-base"
           error="incorrect password"
           id="error"
           name="error"
@@ -1199,7 +1199,7 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
   className="sc-lmgQwP"
 >
   <div
-    className="sc-fFSPTT hjKcrX"
+    className="sc-fFSPTT imubeo"
   >
     <label
       htmlFor="docs"
@@ -1314,7 +1314,7 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
         className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-bkbkJK jTNUwg input-base"
+          className="sc-bkbkJK eJcvHU input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1354,7 +1354,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
   className="sc-ezzafa"
 >
   <div
-    className="sc-fFSPTT jEEtfp"
+    className="sc-fFSPTT gdBAUW"
   >
     <label
       htmlFor="error"
@@ -1373,7 +1373,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-bkbkJK kblwiy input-base"
+          className="sc-bkbkJK hQSHie input-base"
           error="too long"
           id="error"
           name="error"
@@ -1456,7 +1456,7 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
         className="sc-bYwzuL igmxAQ"
       >
         <input
-          className="sc-bkbkJK bneZX input-base"
+          className="sc-bkbkJK YSqgP input-base"
           id="docs"
           name="docs"
           onBlur={[Function]}
@@ -1487,7 +1487,7 @@ exports[`Storyshots forms/TimeForm Text Type 1`] = `
         className="sc-bYwzuL igmxAQ"
       >
         <input
-          className="sc-bkbkJK bneZX input-base"
+          className="sc-bkbkJK YSqgP input-base"
           id="select"
           name="select"
           onBlur={[Function]}
@@ -1506,7 +1506,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
   className="sc-iklJeh"
 >
   <div
-    className="sc-fFSPTT hjKcrX"
+    className="sc-fFSPTT imubeo"
   >
     <label
       htmlFor="date"
@@ -1519,7 +1519,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
         className="sc-kLojOw dZWHJR"
       >
         <input
-          className="sc-bkbkJK AOIMZ input-base"
+          className="sc-bkbkJK hBwKvJ input-base"
           error="required"
           id="date"
           name="date"
@@ -1583,7 +1583,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -1599,7 +1599,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -1641,7 +1641,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -1657,7 +1657,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-bYwzuL sc-jJMGnK igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -1677,7 +1677,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
   className="sc-gXfVKN eZquhw"
 >
   <div
-    className="sc-fFSPTT jEEtfp"
+    className="sc-fFSPTT gdBAUW"
   >
     <label
       htmlFor="time"
@@ -1692,7 +1692,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-kLojOw sc-hiKfDv dZWHJR"
         >
           <input
-            className="sc-bkbkJK AOIMZ input-base"
+            className="sc-bkbkJK hBwKvJ input-base"
             error="enter time"
             id="time"
             name="time"
@@ -1708,7 +1708,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-kLojOw sc-hiKfDv dZWHJR"
         >
           <input
-            className="sc-bkbkJK AOIMZ input-base"
+            className="sc-bkbkJK hBwKvJ input-base"
             error="enter time"
             id="time-end"
             name="time-end"
@@ -1773,7 +1773,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Docs 1`] = `
           className="sc-bYwzuL sc-cBoqAE igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -1789,7 +1789,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Docs 1`] = `
           className="sc-bYwzuL sc-cBoqAE igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -1800,7 +1800,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Docs 1`] = `
         </div>
       </div>
       <button
-        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        className="sc-fujyAs sc-jcwpoC hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -1844,7 +1844,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Text Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        className="sc-fujyAs sc-jcwpoC hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -1879,7 +1879,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Time Input Type 1`] = `
   className="sc-carFqZ hticiE"
 >
   <div
-    className="sc-fFSPTT hjKcrX"
+    className="sc-fFSPTT imubeo"
   >
     <label
       htmlFor="input"
@@ -1889,7 +1889,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Time Input Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-jcwpoC bPXTMW button"
+        className="sc-fujyAs sc-jcwpoC hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -1944,7 +1944,7 @@ exports[`Storyshots forms/TimeRangeGroupForm Time Input Type 1`] = `
 
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
-  className="sc-fujyAs hPHCSO button"
+  className="sc-fujyAs aUBae button"
   color="primary"
   disabled={false}
 >
@@ -1954,7 +1954,7 @@ exports[`Storyshots inputs/Button Docs 1`] = `
 
 exports[`Storyshots inputs/Button Full Width 1`] = `
 <button
-  className="sc-fujyAs jPtcZ button"
+  className="sc-fujyAs bHhhkV button"
   color="primary"
   disabled={false}
 >
@@ -1964,7 +1964,7 @@ exports[`Storyshots inputs/Button Full Width 1`] = `
 
 exports[`Storyshots inputs/Button Outline 1`] = `
 <button
-  className="sc-fujyAs bGMgXf button"
+  className="sc-fujyAs cuzrjr button"
   color="primary"
   disabled={false}
   variant="outline"
@@ -2014,7 +2014,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
   className="sc-iemWCZ"
 >
   <input
-    className="sc-bkbkJK bneZX sc-iemWCZ input-base"
+    className="sc-bkbkJK YSqgP sc-iemWCZ input-base"
     id="docs"
     max="2021-07-31"
     min="2021-07-01"
@@ -2376,7 +2376,7 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
   className="sc-bCwfaz klYHaj"
 >
   <input
-    className="sc-bkbkJK jTNUwg input-base"
+    className="sc-bkbkJK eJcvHU input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2415,7 +2415,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
   className="sc-bCwfaz klYHaj"
 >
   <input
-    className="sc-bkbkJK kblwiy input-base"
+    className="sc-bkbkJK hQSHie input-base"
     error="incorrect password"
     id="error"
     name="error"
@@ -2586,7 +2586,7 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
   className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-bkbkJK jTNUwg input-base"
+    className="sc-bkbkJK eJcvHU input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2623,7 +2623,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
   className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-bkbkJK kblwiy input-base"
+    className="sc-bkbkJK hQSHie input-base"
     error="enter without hyphens"
     id="error"
     name="error"
@@ -2661,7 +2661,7 @@ exports[`Storyshots inputs/TimeInput Docs 1`] = `
   className="sc-kLojOw dZWHJR"
 >
   <input
-    className="sc-bkbkJK bneZX input-base"
+    className="sc-bkbkJK YSqgP input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2677,7 +2677,7 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
   className="sc-bYwzuL igmxAQ"
 >
   <input
-    className="sc-bkbkJK jTNUwg input-base"
+    className="sc-bkbkJK eJcvHU input-base"
     id="docs"
     name="docs"
     onBlur={[Function]}
@@ -2738,7 +2738,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
   className="sc-lbVvki fWjOLQ"
 >
   <button
-    className="sc-fujyAs sc-eirqVv bGMgXf button"
+    className="sc-fujyAs sc-eirqVv cuzrjr button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -2847,7 +2847,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
       </svg>
     </div>
     <button
-      className="sc-fujyAs sc-eirqVv bGMgXf button"
+      className="sc-fujyAs sc-eirqVv cuzrjr button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -2861,7 +2861,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     </button>
   </div>
   <button
-    className="sc-fujyAs sc-eirqVv bGMgXf button"
+    className="sc-fujyAs sc-eirqVv cuzrjr button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -4560,7 +4560,7 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-dPaNzc cnYTjX"
+  className="sc-dPaNzc bqzBwS"
 >
   <a
     aria-label="'clock in' homepage"
@@ -4623,7 +4623,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Text Header 1`] = `
 <header
-  className="sc-dPaNzc cnYTjX"
+  className="sc-dPaNzc bqzBwS"
 >
   <h2>
     ログイン
@@ -4693,7 +4693,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
           className="sc-bYwzuL sc-khIgEk igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -4709,7 +4709,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
           className="sc-bYwzuL sc-khIgEk igmxAQ"
         >
           <input
-            className="sc-bkbkJK bneZX input-base"
+            className="sc-bkbkJK YSqgP input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -4723,7 +4723,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
         className="sc-giAqHp sc-jgPyTC bjKIoq"
       >
         <input
-          className="sc-bkbkJK jTNUwg input-base"
+          className="sc-bkbkJK eJcvHU input-base"
           id="docs-remarks-0"
           name="docs-remarks"
           onChange={[Function]}
@@ -4755,7 +4755,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
         </button>
       </div>
       <button
-        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        className="sc-fujyAs sc-gSYDnn hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4799,7 +4799,7 @@ exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        className="sc-fujyAs sc-gSYDnn hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4834,7 +4834,7 @@ exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
   className="sc-laZMeE hlyuMn"
 >
   <div
-    className="sc-fFSPTT hjKcrX"
+    className="sc-fFSPTT imubeo"
   >
     <label
       htmlFor="input"
@@ -4844,7 +4844,7 @@ exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-gSYDnn bPXTMW button"
+        className="sc-fujyAs sc-gSYDnn hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4955,7 +4955,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
     role="none"
   >
     <button
-      className="sc-fujyAs fBzvxG button"
+      className="sc-fujyAs jQHPEi button"
       color="secondary"
       disabled={false}
       onClick={[Function]}
@@ -4963,7 +4963,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
       toggle
     </button>
     <button
-      className="sc-fujyAs hPHCSO button"
+      className="sc-fujyAs aUBae button"
       color="primary"
       disabled={false}
       onClick={[Function]}

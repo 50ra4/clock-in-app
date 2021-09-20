@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
+import { useLoginRedirection } from 'hooks/useAuthentication';
 
 const HomePage = () => {
+  useLoginRedirection();
+
   return (
     <WithHeaderLayout>
       <HomePageContents />

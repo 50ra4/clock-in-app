@@ -8,6 +8,9 @@ import { fireAuthentication } from 'services/firebase';
 import { authenticationActions } from 'store/authentication';
 import { AppState } from 'store/root';
 
+/**
+ * @see https://usehooks.com/useAuth/
+ */
 export const useAuthentication = () => {
   const dispatch = useDispatch();
 

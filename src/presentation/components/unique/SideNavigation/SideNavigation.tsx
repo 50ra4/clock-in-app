@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PAGE_PATH } from 'constants/path';
 import { Backdrop } from 'presentation/components/feedback/Backdrop/Backdrop';
 import { replacePathParams } from 'utils/pathUtil';
+import { signOut } from 'services/authentication';
 
 type OwnProps = {
   className?: string;
@@ -19,30 +20,29 @@ export const SideNavigation = React.memo(function SideNavigation({ className, op
   // FIXME:
   const uid = '1111';
 
+  const onClickSignOut = async () => {
+    await signOut();
+  };
+
   return (
     <StyledBackdrop className={className} open={open} onClick={onClose}>
       <StyledRoot>
         <nav>
           <ul>
             <li>
-              <Link to={PAGE_PATH.top}>
-                <button>Top</button>
-              </Link>
+              <Link to={PAGE_PATH.top}>Top</Link>
             </li>
             <li>
-              <Link to={PAGE_PATH.login}>
-                <button>ログイン</button>
-              </Link>
+              <Link to={PAGE_PATH.login}>ログイン</Link>
             </li>
             <li>
-              <Link to={PAGE_PATH.registration}>
-                <button>アカウント登録</button>
-              </Link>
+              <Link to={PAGE_PATH.registration}>アカウント登録</Link>
             </li>
             <li>
-              <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>
-                <button>自分のタイムカード</button>
-              </Link>
+              <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>自分のタイムカード</Link>
+            </li>
+            <li>
+              <button onClick={onClickSignOut}>ログアウト</button>
             </li>
           </ul>
         </nav>
@@ -64,18 +64,18 @@ const StyledRoot = styled.div`
   & > nav {
     & > ul {
       & > li {
-        & > a {
+        & > a,
+        & > button {
           display: inline-block;
           width: 100%;
-          & button {
-            width: 100%;
-            background-color: ${({ theme }) => theme.color.palette.main.background};
-            text-align: left;
-            font-size: ${({ theme }) => theme.font.size.large}px;
-            font-weight: ${({ theme }) => theme.font.weight.bold};
-            padding: ${({ theme }) => theme.space.large}px;
-            padding-left: ${({ theme }) => theme.space.large * 2}px;
-          }
+          background-color: ${({ theme }) => theme.color.palette.main.background};
+          text-align: left;
+          font-size: ${({ theme }) => theme.font.size.large}px;
+          font-weight: ${({ theme }) => theme.font.weight.bold};
+          padding: ${({ theme }) => theme.space.large}px;
+          padding-left: ${({ theme }) => theme.space.large * 2}px;
+          text-decoration: none;
+          color: ${({ theme }) => theme.color.font.darkGray};
         }
       }
     }

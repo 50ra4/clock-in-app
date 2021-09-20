@@ -68,6 +68,8 @@ const StyledRoot = styled.div`
         & > button {
           display: inline-block;
           width: 100%;
+          height: ${({ theme }) => theme.height.button}px;
+          line-height: ${({ theme }) => theme.height.button}px;
           background-color: ${({ theme }) => theme.color.palette.main.background};
           text-align: left;
           font-size: ${({ theme }) => theme.font.size.large}px;

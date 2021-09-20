@@ -88,9 +88,10 @@ export const useDetectAuthStateChanged = () => {
             dispatch(authenticationActions.success());
           }
           dispatch(authenticationActions.setData({ emailVerified: !!user.emailVerified, uid: user.uid }));
-        }
-        if (isLoggedIn) {
-          dispatch(authenticationActions.logout());
+        } else {
+          if (isLoggedIn) {
+            dispatch(authenticationActions.logout());
+          }
         }
       },
       (error) => {
@@ -117,7 +118,7 @@ export const useDetectAuthStateChanged = () => {
   }, [error]);
 };
 
-export const useAuthRedirection = () => {
+export const useLoginRedirection = () => {
   const history = useHistory();
   const { isLoggedIn } = useAuthentication();
 

@@ -10,8 +10,12 @@ type OwnProps = {
 
 export type ResponsiveLayoutProps = OwnProps;
 
-function UnStyledResponsiveLayout({ children, ...otherProps }: ResponsiveLayoutProps) {
-  return <div {...otherProps}>{children}</div>;
+function UnStyledResponsiveLayout({ children, placement, className, ...otherProps }: ResponsiveLayoutProps) {
+  return (
+    <div className={className} {...otherProps}>
+      {children}
+    </div>
+  );
 }
 
 export const ResponsiveLayout = styled(UnStyledResponsiveLayout)`

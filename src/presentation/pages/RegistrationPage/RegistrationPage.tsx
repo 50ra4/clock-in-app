@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
+import { PAGE_PATH } from 'constants/path';
+import { useAuthentication } from 'hooks/useAuthentication';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { Card } from 'presentation/components/surfaces/Card/Card';
 import { TextForm } from 'presentation/components/forms/TextForm/TextForm';
@@ -10,20 +11,37 @@ import { PasswordForm } from 'presentation/components/forms/PasswordForm/Passwor
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { Link } from 'presentation/components/navigation/Link/Link';
-
-import { signUpUser } from 'thunks/authentication';
-import { PAGE_PATH } from 'constants/path';
-import { AppState } from 'store/root';
+import { authenticationErrorToMessage } from 'utils/authUtil';
 
 const RegistrationPage = () => {
-  const isLoading = useSelector((state: AppState) => state.authentication.fetchStatus === 'FETCHING');
+  const history = useHistory();
+  const { isFetching, isLoggedIn, signUpWithPassword } = useAuthentication();
+
+  const handleOnSignUp = async (email: string, password: string) => {
+    if (isFetching) {
+      return;
+    }
+    const response = await signUpWithPassword(email, password);
+    if (response.result) {
+      return; // NOTE: Automatically redirected by useEffect
+    }
+
+    // TODO: feedback ui
+    window.alert(authenticationErrorToMessage(response.error));
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      history.replace(PAGE_PATH.home);
+    }
+  }, [history, isLoggedIn]);
 
   return (
     <WithHeaderLayout>
-      <LoadingGuard open={isLoading} />
+      <LoadingGuard open={isFetching} />
       <StyledRoot>
         <StyledCard title="アカウント登録">
-          <RegistrationPageForm />
+          <RegistrationPageForm onSignUp={handleOnSignUp} />
         </StyledCard>
         <StyledDescription>
           既にアカウントをお持ちの方は<Link to={PAGE_PATH.login}>ログイン</Link>
@@ -54,27 +72,17 @@ const StyledDescription = styled.p`
   margin: ${({ theme }) => theme.space.middle}px;
 `;
 
-type Dispatch = Parameters<ReturnType<typeof signUpUser>>[0];
+type FormProps = {
+  onSignUp: (email: string, password: string) => void;
+};
 
-function RegistrationPageForm() {
-  const history = useHistory();
+function RegistrationPageForm({ onSignUp }: FormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch<Dispatch>();
-  const signUp = async () => {
-    const result = await dispatch(signUpUser(email, password));
-    if (!result) {
-      // TODO: error handling
-      window.alert('error');
-      return;
-    }
-    history.replace(PAGE_PATH.top);
-  };
-
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    signUp();
+    onSignUp(email, password);
   };
 
   return (
@@ -84,6 +92,7 @@ function RegistrationPageForm() {
         name="email"
         label="メールアドレス"
         value={email}
+        // FIXME: use useCallback
         onChange={(e) => setEmail(e.currentTarget.value)}
         onClear={() => setEmail('')}
       />

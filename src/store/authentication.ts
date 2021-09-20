@@ -7,6 +7,7 @@ type State = SingleEntityState<Authentication>;
 const initialData: Authentication = {
   emailVerified: false,
   loginStatus: LOGIN_STATUS_ENUM.initialized,
+  uid: '',
 };
 const initialState: State = {
   fetchStatus: FETCH_STATUS_ENUM.initialized,
@@ -27,12 +28,20 @@ const { actions: authenticationActions, reducer: authenticationReducer } = creat
         fetchStatus: FETCH_STATUS_ENUM.fetching,
       };
     },
-    success: (state: State, action: PayloadAction<{ emailVerified: boolean }>) => {
-      const { emailVerified } = action.payload;
+    success: (state: State, _: PayloadAction<void>) => {
       return {
         ...state,
-        data: { ...state.data, loginStatus: LOGIN_STATUS_ENUM.success, emailVerified },
+        data: { ...state.data, loginStatus: LOGIN_STATUS_ENUM.success },
         fetchStatus: FETCH_STATUS_ENUM.fetched,
+        updatedAt: new Date().toISOString(),
+      };
+    },
+    setData: (state: State, action: PayloadAction<{ emailVerified: boolean; uid: string }>) => {
+      const { emailVerified, uid } = action.payload;
+
+      return {
+        ...state,
+        data: { ...state.data, emailVerified, uid },
         updatedAt: new Date().toISOString(),
       };
     },
@@ -46,7 +55,7 @@ const { actions: authenticationActions, reducer: authenticationReducer } = creat
         updatedAt: new Date().toISOString(),
       };
     },
-    logout: (state: State, _: PayloadAction<void>) => {
+    logout: () => {
       return {
         ...initialState,
         data: {

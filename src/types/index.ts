@@ -27,6 +27,7 @@ export type Profile = User & {
 export type Authentication = {
   loginStatus: LoginStatus;
   emailVerified: boolean;
+  uid: string;
 };
 
 export type Lookup = {

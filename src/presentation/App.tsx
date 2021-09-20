@@ -8,8 +8,11 @@ import { LoadingGuard } from './components/feedback/LoadingGuard/LoadingGuard';
 import { ROUTES, ErrorPage } from './routes';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
+import { useDetectAuthStateChanged } from 'hooks/useAuthentication';
 
 function App() {
+  useDetectAuthStateChanged();
+
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle theme={lightTheme} />

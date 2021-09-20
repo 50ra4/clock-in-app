@@ -75,6 +75,7 @@ export const useAuthentication = () => {
 
 export const useDetectAuthStateChanged = () => {
   const dispatch = useDispatch();
+  const [isInitialized, setIsInitialized] = useState(false);
   const [error, setError] = useState<Error>();
 
   const { isLoggedIn } = useAuthentication();
@@ -82,6 +83,7 @@ export const useDetectAuthStateChanged = () => {
   // Subscribe to user on mount
   useEffect(() => {
     const unsubscribe = fireAuthentication.onAuthStateChanged(
+      // eslint-disable-next-line complexity
       (user) => {
         if (user) {
           if (!isLoggedIn) {
@@ -92,6 +94,10 @@ export const useDetectAuthStateChanged = () => {
           if (isLoggedIn) {
             dispatch(authenticationActions.logout());
           }
+        }
+
+        if (!isInitialized) {
+          setIsInitialized(true);
         }
       },
       (error) => {
@@ -116,6 +122,8 @@ export const useDetectAuthStateChanged = () => {
       throw error;
     }
   }, [error]);
+
+  return { isInitialized };
 };
 
 export const useLoginRedirection = () => {

@@ -11,19 +11,23 @@ import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
 import { useDetectAuthStateChanged } from 'hooks/useAuthentication';
 
 function App() {
-  useDetectAuthStateChanged();
+  const { isInitialized } = useDetectAuthStateChanged();
 
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle theme={lightTheme} />
       <Suspense fallback={<LoadingGuard open={true} />}>
         <ErrorBoundary>
-          <Switch>
-            {ROUTES.map((routeProps, i) => (
-              <Route key={`route-${i}`} {...routeProps} />
-            ))}
-            <Route component={() => <ErrorPage {...ERROR_HEADING_WITH_MESSAGE.NOT_FOUND} />} />
-          </Switch>
+          {!isInitialized ? (
+            <LoadingGuard open={true} />
+          ) : (
+            <Switch>
+              {ROUTES.map((routeProps, i) => (
+                <Route key={`route-${i}`} {...routeProps} />
+              ))}
+              <Route component={() => <ErrorPage {...ERROR_HEADING_WITH_MESSAGE.NOT_FOUND} />} />
+            </Switch>
+          )}
         </ErrorBoundary>
       </Suspense>
     </ThemeProvider>

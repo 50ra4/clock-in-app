@@ -2,6 +2,7 @@ import { EnumValue } from 'types';
 
 export const PAGE_PATH = {
   top: '/',
+  home: '/home',
   error: '/error',
   login: '/login',
   registration: '/registration',

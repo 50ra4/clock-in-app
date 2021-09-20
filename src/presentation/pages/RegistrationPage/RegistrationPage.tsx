@@ -11,6 +11,7 @@ import { PasswordForm } from 'presentation/components/forms/PasswordForm/Passwor
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { Link } from 'presentation/components/navigation/Link/Link';
+import { authenticationErrorToMessage } from 'utils/authUtil';
 
 const RegistrationPage = () => {
   const history = useHistory();
@@ -20,12 +21,13 @@ const RegistrationPage = () => {
     if (isFetching) {
       return;
     }
-    const { result } = await signUpWithPassword(email, password);
-    if (result) {
+    const response = await signUpWithPassword(email, password);
+    if (response.result) {
       return; // NOTE: Automatically redirected by useEffect
     }
-    // TODO: error handling
-    window.alert('error');
+
+    // TODO: feedback ui
+    window.alert(authenticationErrorToMessage(response.error));
   };
 
   useEffect(() => {

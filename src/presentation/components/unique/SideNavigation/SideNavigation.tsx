@@ -80,6 +80,7 @@ const StyledRoot = styled.div`
           text-align: left;
           font-size: ${({ theme }) => theme.font.size.large}px;
           font-weight: ${({ theme }) => theme.font.weight.bold};
+          font-family: ${({ theme }) => theme.font.family};
           padding: ${({ theme }) => theme.space.large}px;
           padding-left: ${({ theme }) => theme.space.large * 2}px;
           text-decoration: none;

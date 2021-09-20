@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
@@ -11,19 +10,40 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { Link } from 'presentation/components/navigation/Link/Link';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
-import { signInUser } from 'thunks/authentication';
 import { PAGE_PATH } from 'constants/path';
-import { AppState } from 'store/root';
+import { useAuthentication } from 'hooks/useAuthentication';
 
 const LoginPage = () => {
-  const isLoading = useSelector((state: AppState) => state.authentication.fetchStatus === 'FETCHING');
+  const history = useHistory();
+  const { isFetching, isLoggedIn, signInWithPassword } = useAuthentication();
+
+  // FIXME: use useCallback
+  const handleOnSignIn = async (email: string, password: string) => {
+    if (isFetching) {
+      return;
+    }
+    const { result } = await signInWithPassword(email, password);
+    if (result) {
+      return; // NOTE: Automatically redirected by useEffect
+    }
+    // TODO: error handling
+    window.alert('error');
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      const from = new URLSearchParams(history.location.search).get('from');
+      const path = from ? from : PAGE_PATH.home;
+      history.replace(path);
+    }
+  }, [history, isLoggedIn]);
 
   return (
     <WithHeaderLayout>
-      <LoadingGuard open={isLoading} />
+      <LoadingGuard open={isFetching} />
       <StyledRoot>
         <StyledCard title="ログイン">
-          <LoginPageForm />
+          <LoginPageForm onSignIn={handleOnSignIn} />
         </StyledCard>
         <StyledDescription>
           初めての方は<Link to={PAGE_PATH.registration}>新規アカウント登録</Link>
@@ -56,27 +76,18 @@ const StyledDescription = styled.p`
   margin: ${({ theme }) => theme.space.middle}px;
 `;
 
-type Dispatch = Parameters<ReturnType<typeof signInUser>>[0];
+type FormProps = {
+  onSignIn: (email: string, password: string) => void;
+};
 
-function LoginPageForm() {
-  const history = useHistory();
+// TODO: use React.memo
+function LoginPageForm({ onSignIn }: FormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch<Dispatch>();
-  const login = async () => {
-    const result = await dispatch(signInUser(email, password));
-    if (!result) {
-      // TODO: error handling
-      window.alert('error');
-      return;
-    }
-    history.replace(PAGE_PATH.top);
-  };
-
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    login();
+    onSignIn(email, password);
   };
 
   return (
@@ -86,6 +97,7 @@ function LoginPageForm() {
         name="email"
         label="メールアドレス"
         value={email}
+        // FIXME: use useCallback
         onChange={(e) => setEmail(e.currentTarget.value)}
         onClear={() => setEmail('')}
       />

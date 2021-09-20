@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { PAGE_PATH } from 'constants/path';
 import { Backdrop } from 'presentation/components/feedback/Backdrop/Backdrop';
 import { replacePathParams } from 'utils/pathUtil';
-import { signOut } from 'services/authentication';
+import { useAuthentication } from 'hooks/useAuthentication';
 
 type OwnProps = {
   className?: string;
@@ -17,33 +17,39 @@ type OwnProps = {
  * @see https://www.w3schools.com/howto/howto_js_sidenav.asp
  */
 export const SideNavigation = React.memo(function SideNavigation({ className, open, onClose }: OwnProps) {
-  // FIXME:
-  const uid = '1111';
-
-  const onClickSignOut = async () => {
-    await signOut();
-  };
+  const { loggedInUid: uid, isLoggedIn, signOut } = useAuthentication();
 
   return (
     <StyledBackdrop className={className} open={open} onClick={onClose}>
       <StyledRoot>
         <nav>
           <ul>
-            <li>
-              <Link to={PAGE_PATH.top}>Top</Link>
-            </li>
-            <li>
-              <Link to={PAGE_PATH.login}>ログイン</Link>
-            </li>
-            <li>
-              <Link to={PAGE_PATH.registration}>アカウント登録</Link>
-            </li>
-            <li>
-              <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>自分のタイムカード</Link>
-            </li>
-            <li>
-              <button onClick={onClickSignOut}>ログアウト</button>
-            </li>
+            {!isLoggedIn && (
+              <>
+                <li>
+                  <Link to={PAGE_PATH.top}>Top</Link>
+                </li>
+                <li>
+                  <Link to={PAGE_PATH.login}>ログイン</Link>
+                </li>
+                <li>
+                  <Link to={PAGE_PATH.registration}>アカウント登録</Link>
+                </li>
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <li>
+                  <Link to={PAGE_PATH.home}>Home</Link>
+                </li>
+                <li>
+                  <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>タイムカード</Link>
+                </li>
+                <li>
+                  <button onClick={signOut}>ログアウト</button>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </StyledRoot>

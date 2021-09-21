@@ -14,7 +14,7 @@ service cloud.firestore {
       match /users/{uid} {
         match /{document=**} {
           allow list: if true;
-          allow write: if isLoggedInUser(request.auth.uid, uid);
+          allow write: if isLoggedInUser(request.auth, uid);
         }
       }
     }

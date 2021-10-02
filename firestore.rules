@@ -1,10 +1,22 @@
 rules_version = '2';
 service cloud.firestore {
+  function isLoggedInUser(auth, uid) {
+    return auth != null && auth.uid == uid;
+  }
+
   match /databases/{database}/documents {
     // "/{id}"がないとエラーになる
     match /health/{id} {
       allow get: if true;
       allow list, write: if false;
+    }
+    match /versions/{version} {
+      match /users/{uid} {
+        match /{document=**} {
+          allow list: if true;
+          allow write: if isLoggedInUser(request.auth, uid);
+        }
+      }
     }
   }
 }

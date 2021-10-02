@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useParams } from 'react-router';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
@@ -6,10 +7,10 @@ import { isValidDateString, getThisMonthDateString } from 'utils/dateUtil';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQueryString';
 import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
-import { mockTimeCards } from './mockData';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
-import { DailyTimeRecord, MonthlyTimeCard } from 'types';
+import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
+import { useMonthlyTimeCard } from 'hooks/useMonthlyTimeCard';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -45,23 +46,12 @@ export function MobileView() {
     parser: parseQuery,
     initialQuery,
   });
+  const { uid } = useParams<{ uid: string }>();
+
+  const { data: monthlyTimeCard, createDailyTimeRecord } = useMonthlyTimeCard({ month: selectedMonth, uid });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
-  const [monthlyTimeCard, setMonthlyTimeCard] = useState<MonthlyTimeCard>({
-    month: selectedMonth,
-    dailyRecords: [],
-  });
-
-  useEffect(() => {
-    const mockData = mockTimeCards.find(({ month }) => month === selectedMonth) ?? {
-      month: selectedMonth,
-      dailyRecords: [],
-    };
-    // eslint-disable-next-line no-console
-    console.log(mockTimeCards, mockData);
-    setMonthlyTimeCard(mockData);
-  }, [selectedMonth]);
 
   const updateSelectedMonth = useCallback(
     (month: string) => {
@@ -86,16 +76,12 @@ export function MobileView() {
     setOpenInputDialog(false);
   }, []);
 
-  const onSaveDailyTimeRecord = useCallback((record: DailyTimeRecord) => {
-    // FIXME: mock実装
-    setMonthlyTimeCard((prev) => {
-      const { month, dailyRecords } = prev;
-      const hasRecord = dailyRecords.map(({ date }) => date).includes(record.date);
-      return hasRecord
-        ? { month, dailyRecords: dailyRecords.map((r) => (r.date === record.date ? record : r)) }
-        : { month, dailyRecords: [...dailyRecords, record] };
-    });
-  }, []);
+  const onSaveDailyTimeRecord = useCallback(
+    (record: DailyTimeRecord) => {
+      createDailyTimeRecord(record);
+    },
+    [createDailyTimeRecord],
+  );
 
   return (
     <StyledRoot>

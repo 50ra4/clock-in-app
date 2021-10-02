@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { firestore, firebase } from 'services/firebase';
+import { firestore } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord } from 'types';
-import { omitUndefinedProps } from 'utils/converterUtil';
+import { saveDailyTimeRecord } from 'services/dailyTimeRecord';
 
 type Props = {
   uid: string;
@@ -15,21 +15,10 @@ export const useMonthlyTimeCard = ({ uid, month }: Props) => {
 
   const createDailyTimeRecord = useCallback(
     (data: DailyTimeRecord) => {
-      // FIXME: Save restTimes and inHouseWorks separately
-      const { restTimes, inHouseWorks, ...rest } = data;
-      const path = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
-      const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-      firestore
-        .collection(path)
-        .doc(rest.date)
-        .set({
-          ...omitUndefinedProps<Omit<DailyTimeRecord, 'restTimes' | 'inHouseWorks'>>(rest),
-          // FIXME: Do not update createdAt if data already exists
-          createdAt: timestamp,
-          updatedAt: timestamp,
-        });
+      // TODO: error handling
+      saveDailyTimeRecord(uid, data);
     },
-    [month, uid],
+    [uid],
   );
 
   useEffect(() => {

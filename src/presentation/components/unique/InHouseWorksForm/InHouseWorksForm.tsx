@@ -130,7 +130,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
         })}
         <StyledButton
           onClick={() => {
-            onChange([...values, { start: undefined, end: undefined }]);
+            onChange([...values, { id: undefined, start: undefined, end: undefined }]);
           }}
         >
           <div>

@@ -13,7 +13,7 @@ const Template = createStoryTemplate(InHouseWorksForm);
 const voidFunction = () => {};
 
 const initialTime: InHouseWork[] = [
-  { start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 }, remarks: '移動時間' },
+  { id: undefined, start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 }, remarks: '移動時間' },
 ];
 
 export const Docs = Template;

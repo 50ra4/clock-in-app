@@ -53,6 +53,7 @@ export type ErrorHeadingWithMessage = {
 export type RestTime = Range<Time>;
 
 export type InHouseWork = Range<Time> & {
+  id: string | undefined;
   remarks?: string;
 };
 

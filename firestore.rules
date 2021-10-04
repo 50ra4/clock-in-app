@@ -1,7 +1,10 @@
 rules_version = '2';
 service cloud.firestore {
-  function isLoggedInUser(auth, uid) {
-    return auth != null && auth.uid == uid;
+  function isLoggedUser(auth) {
+    return auth != null;
+  }
+  function isEqualsLoggedInUser(auth, uid) {
+    return isLoggedUser(auth) && auth.uid == uid;
   }
 
   match /databases/{database}/documents {
@@ -13,8 +16,8 @@ service cloud.firestore {
     match /versions/{version} {
       match /users/{uid} {
         match /{document=**} {
-          allow list: if true;
-          allow write: if isLoggedInUser(request.auth, uid);
+          allow read: if isLoggedUser(request.auth);
+          allow write: if isEqualsLoggedInUser(request.auth, uid);
         }
       }
     }

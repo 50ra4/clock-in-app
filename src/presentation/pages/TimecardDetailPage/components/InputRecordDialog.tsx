@@ -31,7 +31,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     inHouseWorks:
       initialTimeRecord.inHouseWorks.length > 0
         ? initialTimeRecord.inHouseWorks
-        : [{ start: undefined, end: undefined, remarks: '' }],
+        : [{ id: undefined, start: undefined, end: undefined, remarks: '' }],
   });
 
   return (

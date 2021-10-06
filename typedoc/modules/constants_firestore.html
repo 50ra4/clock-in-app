@@ -72,6 +72,7 @@
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="constants_firestore.html#DAILY_IN_HOUSE_WORK_COLLECTION_PATH" class="tsd-kind-icon">DAILY_<wbr>IN_<wbr>HOUSE_<wbr>WORK_<wbr>COLLECTION_<wbr>PATH</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="constants_firestore.html#DAILY_RECORDS_COLLECTION_PATH" class="tsd-kind-icon">DAILY_<wbr>RECORDS_<wbr>COLLECTION_<wbr>PATH</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="constants_firestore.html#MONTHLY_TIMECARD_DOCUMENT_PATH" class="tsd-kind-icon">MONTHLY_<wbr>TIMECARD_<wbr>DOCUMENT_<wbr>PATH</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module"><a href="constants_firestore.html#USER_COLLECTION_PATH" class="tsd-kind-icon">USER_<wbr>COLLECTION_<wbr>PATH</a></li>
@@ -83,12 +84,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
+					<a name="DAILY_IN_HOUSE_WORK_COLLECTION_PATH" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> DAILY_<wbr>IN_<wbr>HOUSE_<wbr>WORK_<wbr>COLLECTION_<wbr>PATH</h3>
+					<div class="tsd-signature tsd-kind-icon">DAILY_<wbr>IN_<wbr>HOUSE_<wbr>WORK_<wbr>COLLECTION_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;versions/v1/users/:uid/timecards/:month/days/:day/in-house-works&quot;</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331c6b0/src/constants/firestore.ts#L12">src/constants/firestore.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module">
 					<a name="DAILY_RECORDS_COLLECTION_PATH" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> DAILY_<wbr>RECORDS_<wbr>COLLECTION_<wbr>PATH</h3>
 					<div class="tsd-signature tsd-kind-icon">DAILY_<wbr>RECORDS_<wbr>COLLECTION_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;versions/v1/users/:uid/timecards/:month/days&quot;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331caa0/src/constants/firestore.ts#L10">src/constants/firestore.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331c6b0/src/constants/firestore.ts#L10">src/constants/firestore.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -98,7 +109,7 @@
 					<div class="tsd-signature tsd-kind-icon">MONTHLY_<wbr>TIMECARD_<wbr>DOCUMENT_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;versions/v1/users/:uid/timecards/:month&quot;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331caa0/src/constants/firestore.ts#L8">src/constants/firestore.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331c6b0/src/constants/firestore.ts#L8">src/constants/firestore.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -108,7 +119,7 @@
 					<div class="tsd-signature tsd-kind-icon">USER_<wbr>COLLECTION_<wbr>PATH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;versions/v1/users&quot;</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331caa0/src/constants/firestore.ts#L6">src/constants/firestore.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/331c6b0/src/constants/firestore.ts#L6">src/constants/firestore.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -147,7 +158,13 @@
 						<a href="hooks_useMonthlyTimeCard.html">hooks/use<wbr>Monthly<wbr>Time<wbr>Card</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="hooks_usePreviousRef.html">hooks/use<wbr>Previous<wbr>Ref</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="hooks_useSyncStateWithURLQueryString.html">hooks/use<wbr>Sync<wbr>State<wbr>WithURLQuery<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="services_dailyTimeRecord.html">services/daily<wbr>Time<wbr>Record</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="services_firebase.html">services/firebase</a>
@@ -192,6 +209,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-variable tsd-parent-kind-module">
+						<a href="constants_firestore.html#DAILY_IN_HOUSE_WORK_COLLECTION_PATH" class="tsd-kind-icon">DAILY_<wbr>IN_<wbr>HOUSE_<wbr>WORK_<wbr>COLLECTION_<wbr>PATH</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-module">
 						<a href="constants_firestore.html#DAILY_RECORDS_COLLECTION_PATH" class="tsd-kind-icon">DAILY_<wbr>RECORDS_<wbr>COLLECTION_<wbr>PATH</a>
 					</li>

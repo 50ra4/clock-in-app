@@ -8,3 +8,5 @@ export const USER_COLLECTION_PATH = `${DOCUMENT_BASE_PATH}/users` as const;
 export const MONTHLY_TIMECARD_DOCUMENT_PATH = `${USER_COLLECTION_PATH}/:uid/timecards/:month` as const;
 
 export const DAILY_RECORDS_COLLECTION_PATH = `${MONTHLY_TIMECARD_DOCUMENT_PATH}/days` as const;
+
+export const DAILY_IN_HOUSE_WORK_COLLECTION_PATH = `${DAILY_RECORDS_COLLECTION_PATH}/:day/in-house-works` as const;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { DailyTimeRecord } from 'types';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
-import { TimeRangeGroupForm } from 'presentation/components/forms/TimeRangeGroupForm/TimeRangeGroupForm';
+import { TimeRangeGroupForm } from 'presentation/components/unique/TimeRangeGroupForm/TimeRangeGroupForm';
 import { InHouseWorksForm } from 'presentation/components/unique/InHouseWorksForm/InHouseWorksForm';
 import { FormGroupChangeFn } from '../hooks/useFormGroup';
 

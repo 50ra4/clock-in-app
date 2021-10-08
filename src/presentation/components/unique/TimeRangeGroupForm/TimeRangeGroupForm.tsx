@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
 import { Time, Range } from 'types';
-import { FormBaseProps } from '../FormBase/FormBase';
-import { DescriptionForForm } from '../DescriptionForForm/DescriptionForForm';
-import { ErrorMessageForForm } from '../ErrorMessageForForm/ErrorMessageForForm';
-import { WithLabelForForm } from '../WithLabelForForm/WithLabelForForm';
+import { FormBaseProps } from 'presentation/components/forms/FormBase/FormBase';
+import { DescriptionForForm } from 'presentation/components/forms/DescriptionForForm/DescriptionForForm';
+import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
+import { WithLabelForForm } from 'presentation/components/forms/WithLabelForForm/WithLabelForForm';
 import { TimeTextInput } from 'presentation/components/inputs/TimeTextInput/TimeTextInput';
 import { TimeInput } from 'presentation/components/inputs/TimeInput/TimeInput';
 import { Button } from 'presentation/components/inputs/Button/Button';

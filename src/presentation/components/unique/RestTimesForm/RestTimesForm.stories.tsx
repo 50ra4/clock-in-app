@@ -1,18 +1,18 @@
-import { TimeRangeGroupForm } from './TimeRangeGroupForm';
+import { RestTimesForm } from './RestTimesForm';
 import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 import { useState } from 'react';
-import { Time, Range } from 'types';
+import { RestTime } from 'types';
 
-export default createStoryMeta(TimeRangeGroupForm, {
-  title: 'forms/TimeRangeGroupForm',
+export default createStoryMeta(RestTimesForm, {
+  title: 'unique/RestTimesForm',
 });
 
-const Template = createStoryTemplate(TimeRangeGroupForm);
+const Template = createStoryTemplate(RestTimesForm);
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
-const initialTime: Range<Time>[] = [{ start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 } }];
+const initialTime: RestTime[] = [{ id: undefined, start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 } }];
 
 export const Docs = Template;
 Docs.args = {
@@ -30,10 +30,10 @@ Docs.args = {
  * For native time picker
  */
 export const TimeInputType = () => {
-  const [values, setValues] = useState<Range<Time>[]>([]);
+  const [values, setValues] = useState<RestTime[]>([]);
 
   return (
-    <TimeRangeGroupForm
+    <RestTimesForm
       id="input"
       name="input"
       value={values}
@@ -53,9 +53,9 @@ export const TimeInputType = () => {
  * Text Type
  */
 export const TextType = () => {
-  const [values, setValues] = useState<Range<Time>[]>([]);
+  const [values, setValues] = useState<RestTime[]>([]);
   return (
-    <TimeRangeGroupForm
+    <RestTimesForm
       id="text"
       name="text"
       value={values}

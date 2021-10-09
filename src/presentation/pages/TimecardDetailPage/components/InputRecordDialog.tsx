@@ -12,6 +12,7 @@ import { useFormGroup } from '../hooks/useFormGroup';
 type OwnProps = {
   className?: string;
   open?: boolean;
+  readOnly: boolean;
   onClose?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
   dailyTimeRecord: DailyTimeRecord;
   onSaveDailyTimeRecord: (record: DailyTimeRecord) => void;
@@ -19,6 +20,7 @@ type OwnProps = {
 
 export const InputRecordDialog = React.memo(function InputRecordDialog({
   open = false,
+  readOnly,
   onClose,
   className,
   dailyTimeRecord: initialTimeRecord,
@@ -55,7 +57,11 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
         />
       }
     >
-      <InputRecordForm dailyTimeRecord={dailyTimeRecord} onChangeDailyTimeRecord={onChangeDailyTimeRecord} />
+      <InputRecordForm
+        readOnly={readOnly}
+        dailyTimeRecord={dailyTimeRecord}
+        onChangeDailyTimeRecord={onChangeDailyTimeRecord}
+      />
     </StyledCustomDialog>
   );
 });

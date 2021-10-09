@@ -11,6 +11,7 @@ import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
 import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
+import { useAuthentication } from 'hooks/useAuthentication';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -53,6 +54,9 @@ export function MobileView() {
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
 
+  const { loggedInUid } = useAuthentication();
+  const isReadOnly = loggedInUid !== uid;
+
   const updateSelectedMonth = useCallback(
     (month: string) => {
       setQuery((prev) => ({ ...prev, month }));
@@ -94,6 +98,7 @@ export function MobileView() {
       {openInputDialog && editedRecord && (
         <InputRecordDialog
           open={openInputDialog}
+          readOnly={isReadOnly}
           onClose={closeInputDialog}
           dailyTimeRecord={editedRecord}
           onSaveDailyTimeRecord={onSaveDailyTimeRecord}

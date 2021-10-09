@@ -8,6 +8,7 @@ export type FormBaseProps<T> = {
   value: T | undefined;
   placeholder?: string;
   readOnly?: boolean;
+  disabled?: boolean;
 
   // for label
   label: string;

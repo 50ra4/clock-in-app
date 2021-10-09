@@ -1746,202 +1746,6 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 </div>
 `;
 
-exports[`Storyshots forms/TimeRangeGroupForm Docs 1`] = `
-<div
-  className="sc-carFqZ hticiE"
->
-  <div
-    className="sc-fFSPTT iUdoju"
-  >
-    <label
-      htmlFor="docs"
-    >
-      休憩時間
-    </label>
-    <div>
-      <div
-        className="sc-ksluID jOtGJN"
-      >
-        <p>
-          enter rest times
-        </p>
-      </div>
-      <div
-        className="time-range-group-form__wrap"
-      >
-        <div
-          className="sc-bYwzuL sc-cBoqAE igmxAQ"
-        >
-          <input
-            className="sc-bkbkJK YSqgP input-base"
-            id="docs"
-            name="docs"
-            onBlur={[Function]}
-            onChange={[Function]}
-            type="text"
-            value="01:59"
-          />
-        </div>
-        <span>
-          ~
-        </span>
-        <div
-          className="sc-bYwzuL sc-cBoqAE igmxAQ"
-        >
-          <input
-            className="sc-bkbkJK YSqgP input-base"
-            id="docs-end"
-            name="docs-end"
-            onBlur={[Function]}
-            onChange={[Function]}
-            type="text"
-            value="02:30"
-          />
-        </div>
-      </div>
-      <button
-        className="sc-fujyAs sc-jcwpoC hVDsba button"
-        disabled={false}
-        onClick={[Function]}
-      >
-        <div>
-          <svg
-            aria-hidden={true}
-            className="sc-hKFxyN juDrWq"
-            color="main"
-            size="medium"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 0h24v24H0V0z"
-              fill="none"
-            />
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-            />
-          </svg>
-          休憩時間
-          を追加
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots forms/TimeRangeGroupForm Text Type 1`] = `
-<div
-  className="sc-carFqZ hticiE"
->
-  <div
-    className="sc-fFSPTT iUdoju"
-  >
-    <label
-      htmlFor="text"
-    >
-      休憩時間
-    </label>
-    <div>
-      <button
-        className="sc-fujyAs sc-jcwpoC hVDsba button"
-        disabled={false}
-        onClick={[Function]}
-      >
-        <div>
-          <svg
-            aria-hidden={true}
-            className="sc-hKFxyN juDrWq"
-            color="main"
-            size="medium"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 0h24v24H0V0z"
-              fill="none"
-            />
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-            />
-          </svg>
-          休憩時間
-          を追加
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots forms/TimeRangeGroupForm Time Input Type 1`] = `
-<div
-  className="sc-carFqZ hticiE"
->
-  <div
-    className="sc-fFSPTT imubeo"
-  >
-    <label
-      htmlFor="input"
-      required={true}
-    >
-      休憩時間
-    </label>
-    <div>
-      <button
-        className="sc-fujyAs sc-jcwpoC hVDsba button"
-        disabled={false}
-        onClick={[Function]}
-      >
-        <div>
-          <svg
-            aria-hidden={true}
-            className="sc-hKFxyN juDrWq"
-            color="main"
-            size="medium"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 0h24v24H0V0z"
-              fill="none"
-            />
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
-            />
-          </svg>
-          休憩時間
-          を追加
-        </div>
-      </button>
-      <div
-        className="sc-fnVZcZ cvjjrN"
-      >
-        <svg
-          aria-hidden={true}
-          className="sc-hKFxyN ivKCeV sc-hBMUJo"
-          color="default"
-          size="medium"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 0h24v24H0z"
-            fill="none"
-          />
-          <path
-            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-          />
-        </svg>
-        <p>
-          required
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots inputs/Button Docs 1`] = `
 <button
   className="sc-fujyAs aUBae button"
@@ -1975,7 +1779,7 @@ exports[`Storyshots inputs/Button Outline 1`] = `
 
 exports[`Storyshots inputs/Checkbox Docs 1`] = `
 <div
-  className="sc-iTVJFM llPeaN"
+  className="sc-cBoqAE LFuKM"
 >
   <input
     disabled={false}
@@ -2725,7 +2529,7 @@ exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 
 exports[`Storyshots navigation/Link Docs 1`] = `
 <a
-  className="sc-iBzEeX fSHthe"
+  className="sc-ciSkZP iAxGeb"
   href="/"
   onClick={[Function]}
 >
@@ -4499,7 +4303,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 
 exports[`Storyshots surfaces/Accordion Docs 1`] = `
 <section
-  className="sc-cTJkRt cSoXKP"
+  className="sc-carFqZ jQeZsw"
 >
   <button
     aria-controls="accordion-undefined-header"
@@ -4511,7 +4315,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
     </h3>
     <svg
       aria-hidden={true}
-      className="sc-hKFxyN juDrWq sc-efHYUO Accordion__icon--collapsed"
+      className="sc-hKFxyN juDrWq sc-jcwpoC Accordion__icon--collapsed"
       color="main"
       size="medium"
       viewBox="0 0 24 24"
@@ -4542,7 +4346,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
 
 exports[`Storyshots surfaces/Card Docs 1`] = `
 <section
-  className="sc-jNnpgg laqviL"
+  className="sc-iTVJFM iguzXb"
 >
   <h3>
     sample card
@@ -4560,11 +4364,11 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-dPaNzc bqzBwS"
+  className="sc-iBzEeX gmsMHl"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-iBzEeX fSHthe sc-cOifOu iteJks"
+    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
     href="/"
     onClick={[Function]}
   >
@@ -4572,7 +4376,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-bBjRSN"
+        className="sc-hKFxyN ivKCeV sc-efHYUO"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -4623,7 +4427,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Text Header 1`] = `
 <header
-  className="sc-dPaNzc bqzBwS"
+  className="sc-iBzEeX gmsMHl"
 >
   <h2>
     ログイン
@@ -4656,7 +4460,7 @@ exports[`Storyshots surfaces/Header Text Header 1`] = `
 
 exports[`Storyshots surfaces/Paper Docs 1`] = `
 <section
-  className="sc-Arkif lhvbjH"
+  className="sc-jNnpgg lnvytm"
 >
   <div>
     <p>
@@ -4668,7 +4472,7 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
 <div
-  className="sc-laZMeE hlyuMn"
+  className="sc-khIgEk gJoBEF"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4690,7 +4494,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
         className="in-house-works-form__wrap"
       >
         <div
-          className="sc-bYwzuL sc-khIgEk igmxAQ"
+          className="sc-bYwzuL sc-dPaNzc igmxAQ"
         >
           <input
             className="sc-bkbkJK YSqgP input-base"
@@ -4706,7 +4510,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
           ~
         </span>
         <div
-          className="sc-bYwzuL sc-khIgEk igmxAQ"
+          className="sc-bYwzuL sc-dPaNzc igmxAQ"
         >
           <input
             className="sc-bkbkJK YSqgP input-base"
@@ -4720,7 +4524,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
         </div>
       </div>
       <div
-        className="sc-giAqHp sc-jgPyTC bjKIoq"
+        className="sc-giAqHp sc-cOifOu bjKIoq"
       >
         <input
           className="sc-bkbkJK eJcvHU input-base"
@@ -4755,7 +4559,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
         </button>
       </div>
       <button
-        className="sc-fujyAs sc-gSYDnn hVDsba button"
+        className="sc-fujyAs sc-Arkif hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4787,7 +4591,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
 <div
-  className="sc-laZMeE hlyuMn"
+  className="sc-khIgEk gJoBEF"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4799,7 +4603,7 @@ exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-gSYDnn hVDsba button"
+        className="sc-fujyAs sc-Arkif hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4831,7 +4635,7 @@ exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
 <div
-  className="sc-laZMeE hlyuMn"
+  className="sc-khIgEk gJoBEF"
 >
   <div
     className="sc-fFSPTT imubeo"
@@ -4844,7 +4648,7 @@ exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
     </label>
     <div>
       <button
-        className="sc-fujyAs sc-gSYDnn hVDsba button"
+        className="sc-fujyAs sc-Arkif hVDsba button"
         disabled={false}
         onClick={[Function]}
       >
@@ -4899,11 +4703,11 @@ exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
 
 exports[`Storyshots unique/Logo Docs 1`] = `
 <div
-  className="sc-iNiQyp kbTSau"
+  className="sc-hTRkXV bJZoqP"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-iBzEeX fSHthe sc-cOifOu iteJks"
+    className="sc-ciSkZP iAxGeb sc-cTJkRt eCThAw"
     href="/"
     onClick={[Function]}
   >
@@ -4911,7 +4715,7 @@ exports[`Storyshots unique/Logo Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-bBjRSN"
+        className="sc-hKFxyN ivKCeV sc-efHYUO"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -4934,6 +4738,202 @@ exports[`Storyshots unique/Logo Docs 1`] = `
       ck in
     </h1>
   </a>
+</div>
+`;
+
+exports[`Storyshots unique/RestTimesForm Docs 1`] = `
+<div
+  className="sc-iNiQyp jNOVAC"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="docs"
+    >
+      休憩時間
+    </label>
+    <div>
+      <div
+        className="sc-ksluID jOtGJN"
+      >
+        <p>
+          enter rest times
+        </p>
+      </div>
+      <div
+        className="time-range-group-form__wrap"
+      >
+        <div
+          className="sc-bYwzuL sc-jgPyTC igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK YSqgP input-base"
+            id="docs"
+            name="docs"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="01:59"
+          />
+        </div>
+        <span>
+          ~
+        </span>
+        <div
+          className="sc-bYwzuL sc-jgPyTC igmxAQ"
+        >
+          <input
+            className="sc-bkbkJK YSqgP input-base"
+            id="docs-end"
+            name="docs-end"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value="02:30"
+          />
+        </div>
+      </div>
+      <button
+        className="sc-fujyAs sc-laZMeE hVDsba button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots unique/RestTimesForm Text Type 1`] = `
+<div
+  className="sc-iNiQyp jNOVAC"
+>
+  <div
+    className="sc-fFSPTT iUdoju"
+  >
+    <label
+      htmlFor="text"
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-laZMeE hVDsba button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots unique/RestTimesForm Time Input Type 1`] = `
+<div
+  className="sc-iNiQyp jNOVAC"
+>
+  <div
+    className="sc-fFSPTT imubeo"
+  >
+    <label
+      htmlFor="input"
+      required={true}
+    >
+      休憩時間
+    </label>
+    <div>
+      <button
+        className="sc-fujyAs sc-laZMeE hVDsba button"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <div>
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN juDrWq"
+            color="main"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+            />
+          </svg>
+          休憩時間
+          を追加
+        </div>
+      </button>
+      <div
+        className="sc-fnVZcZ cvjjrN"
+      >
+        <svg
+          aria-hidden={true}
+          className="sc-hKFxyN ivKCeV sc-hBMUJo"
+          color="default"
+          size="medium"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+          />
+        </svg>
+        <p>
+          required
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 

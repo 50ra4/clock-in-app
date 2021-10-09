@@ -48,7 +48,7 @@ export function MobileView() {
   });
   const { uid } = useParams<{ uid: string }>();
 
-  const { data: monthlyTimeCard, createDailyTimeRecord } = useDailyTimeRecordsOfMonth({ month: selectedMonth, uid });
+  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord } = useDailyTimeRecordsOfMonth({ month: selectedMonth, uid });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
@@ -62,14 +62,14 @@ export function MobileView() {
 
   const selectEditedRecord = useCallback(
     (targetDate: string) => {
-      const record = monthlyTimeCard.dailyRecords.find(({ date }) => date === targetDate) ?? {
+      const record = dailyTimeRecordsOfMonth.find(({ date }) => date === targetDate) ?? {
         ...INITIAL_STATE,
         date: targetDate,
       };
       setEditedRecord(record);
       setOpenInputDialog(true);
     },
-    [monthlyTimeCard.dailyRecords],
+    [dailyTimeRecordsOfMonth],
   );
 
   const closeInputDialog = useCallback(() => {
@@ -78,17 +78,17 @@ export function MobileView() {
 
   const onSaveDailyTimeRecord = useCallback(
     (record: DailyTimeRecord) => {
-      createDailyTimeRecord(record);
+      saveDailyTimeRecord(record);
     },
-    [createDailyTimeRecord],
+    [saveDailyTimeRecord],
   );
 
   return (
     <StyledRoot>
       <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
       <StyledMonthlyTimeCardTable
-        month={monthlyTimeCard.month}
-        dailyRecords={monthlyTimeCard.dailyRecords}
+        month={selectedMonth}
+        dailyRecords={dailyTimeRecordsOfMonth}
         selectEditedRecord={selectEditedRecord}
       />
       {openInputDialog && editedRecord && (

@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { firestore } from 'services/firebase';
+import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import {
-  getRestTimesAndInHouseWorks,
-  queryToDailyTimeRecord,
-  createUpdateDailyTimeRecord,
-} from 'services/dailyTimeRecord';
+import { getRestTimesAndInHouseWorks, queryToDailyTimeRecord, writeDailyTimeRecord } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
+import { AppError } from 'models/AppError';
 
 type Props = {
   uid: string;
@@ -25,6 +22,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   // FIXME: var-name
   const [rootCollectionData, setRootCollectionData] = useState(new Map<string, DailyTimeRecord>());
   const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());
+  const [error, setError] = useState<Error | null>(null);
 
   const previousRootCollectionData = usePreviousRef(rootCollectionData);
 
@@ -42,11 +40,20 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
   const saveDailyTimeRecord = useCallback(
     (data: DailyTimeRecord) => {
-      // TODO: error handling
-      createUpdateDailyTimeRecord(uid, data);
+      writeDailyTimeRecord(uid, data).catch((err: FirestoreError) => {
+        // TODO: show popup
+        setError(new AppError('FAILED_WRITE_DATA', { message: err.message, stack: err.stack }));
+      });
     },
     [uid],
   );
+
+  useEffect(() => {
+    if (!error) {
+      return;
+    }
+    throw error;
+  });
 
   useEffect(() => {
     if (!uid || !month) {
@@ -68,9 +75,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
         setRootCollectionData(updated);
       },
       (error) => {
-        // TODO: error handling
-        // eslint-disable-next-line no-console
-        console.error(collectionPath, error);
+        setError(new AppError('FAILED_READ_DATA', { message: error.message, stack: error.stack }));
       },
       () => {
         // TODO: ???
@@ -95,14 +100,17 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
       ...(await getRestTimesAndInHouseWorks(uid, day)),
     }));
 
-    Promise.all(getDataOfMonth).then((res) => {
-      const updatedData = new Map<string, SubCollection>();
-      res.forEach(({ day, ...rest }) => {
-        updatedData.set(day, rest);
+    Promise.all(getDataOfMonth)
+      .then((res) => {
+        const updatedData = new Map<string, SubCollection>();
+        res.forEach(({ day, ...rest }) => {
+          updatedData.set(day, rest);
+        });
+        setSubCollectionData(updatedData);
+      })
+      .catch((error) => {
+        setError(new AppError('FAILED_READ_DATA', { message: error.message, stack: error.stack }));
       });
-      setSubCollectionData(updatedData);
-    });
-    // TODO: errorHanding
   }, [rootCollectionData, month, uid]);
 
   return {

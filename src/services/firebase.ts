@@ -14,4 +14,7 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firestore = firebaseApp.firestore();
 const fireAuthentication = firebaseApp.auth();
+
+export type FirestoreError = firebase.firestore.FirestoreError;
+
 export { firebase, firestore, fireAuthentication };

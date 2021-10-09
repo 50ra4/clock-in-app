@@ -91,7 +91,7 @@ export const getDailyTimeRecords = async (uid: string, month: string): Promise<D
     .get()
     .then((snapshot) => snapshot.docs.map(queryToDailyTimeRecord));
 
-export const createUpdateDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
+export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
   // TODO: Save restTimes separately
   const { restTimes, inHouseWorks, date, ...rest } = data;
 

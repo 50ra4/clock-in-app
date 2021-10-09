@@ -21,6 +21,7 @@ export const UnStyledTextAreaForm = React.memo(function TextAreaForm({
   value,
   placeholder,
   readOnly,
+  disabled,
   label,
   required,
   inline,
@@ -41,6 +42,7 @@ export const UnStyledTextAreaForm = React.memo(function TextAreaForm({
           error={!!error}
           placeholder={placeholder}
           readOnly={readOnly}
+          disabled={disabled}
           row={row}
           onChange={onChange}
           onBlur={onBlur}

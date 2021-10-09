@@ -55,7 +55,7 @@ export function MobileView() {
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
 
   const { loggedInUid } = useAuthentication();
-  const isReadOnly = loggedInUid !== uid;
+  const isLoggedInUser = loggedInUid !== uid;
 
   const updateSelectedMonth = useCallback(
     (month: string) => {
@@ -82,16 +82,19 @@ export function MobileView() {
 
   const onSaveDailyTimeRecord = useCallback(
     (record: DailyTimeRecord) => {
+      if (!isLoggedInUser) {
+        return;
+      }
       saveDailyTimeRecord(record);
     },
-    [saveDailyTimeRecord],
+    [isLoggedInUser, saveDailyTimeRecord],
   );
 
   return (
     <StyledRoot>
       <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
       <StyledMonthlyTimeCardTable
-        readOnly={isReadOnly}
+        readOnly={!isLoggedInUser}
         month={selectedMonth}
         dailyRecords={dailyTimeRecordsOfMonth}
         selectEditedRecord={selectEditedRecord}
@@ -99,7 +102,7 @@ export function MobileView() {
       {openInputDialog && editedRecord && (
         <InputRecordDialog
           open={openInputDialog}
-          readOnly={isReadOnly}
+          readOnly={!isLoggedInUser}
           onClose={closeInputDialog}
           dailyTimeRecord={editedRecord}
           onSaveDailyTimeRecord={onSaveDailyTimeRecord}

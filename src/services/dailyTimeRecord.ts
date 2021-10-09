@@ -164,5 +164,5 @@ export const createUpdateDailyTimeRecord = async (uid: string, data: DailyTimeRe
     ...createAdditionalProps(uid, rootDocument.exists),
   });
 
-  batch.commit();
+  await batch.commit();
 };

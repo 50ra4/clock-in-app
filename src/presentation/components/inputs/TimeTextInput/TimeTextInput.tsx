@@ -30,6 +30,7 @@ export const UnStyledTimeTextInput = React.memo(function TimeTextInput({
   placeholder,
   onBlur,
   onClear,
+  ...otherProps
 }: Props) {
   const [timeString, setTimeString] = useState(timeToTimeString(value));
 
@@ -64,6 +65,7 @@ export const UnStyledTimeTextInput = React.memo(function TimeTextInput({
   return (
     <div className={className}>
       <InputBase
+        {...otherProps}
         ref={ref}
         type="text"
         id={id}

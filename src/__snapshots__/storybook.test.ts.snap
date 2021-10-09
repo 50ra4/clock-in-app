@@ -2730,7 +2730,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-01の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -2781,7 +2780,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-02の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -2832,7 +2830,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-03の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -2883,7 +2880,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-04の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -2934,7 +2930,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-05の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -2985,7 +2980,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-06の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3036,7 +3030,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-07の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3087,7 +3080,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-08の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3138,7 +3130,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-09の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3189,7 +3180,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-10の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3240,7 +3230,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-11の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3291,7 +3280,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-12の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3342,7 +3330,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-13の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3393,7 +3380,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-14の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3444,7 +3430,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-15の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3495,7 +3480,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-16の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3546,7 +3530,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-17の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3597,7 +3580,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-18の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3648,7 +3630,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-19の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3699,7 +3680,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-20の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3750,7 +3730,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-21の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3801,7 +3780,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-22の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3852,7 +3830,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-23の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3903,7 +3880,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-24の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -3954,7 +3930,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-25の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4005,7 +3980,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-26の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4056,7 +4030,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-27の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4107,7 +4080,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-28の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4158,7 +4130,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-29の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4209,7 +4180,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-30の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4260,7 +4230,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
           <button
             aria-label="2021-07-31の勤怠を修正する"
             className="sc-kfYoZR bfMjAa sc-fbIWvP iERsTv"
-            color="primary"
             disabled={false}
             onClick={[Function]}
           >
@@ -4472,7 +4441,7 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
 <div
-  className="sc-khIgEk gJoBEF"
+  className="sc-khIgEk ikEFPt"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4591,7 +4560,7 @@ exports[`Storyshots unique/InHouseWorksForm Docs 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
 <div
-  className="sc-khIgEk gJoBEF"
+  className="sc-khIgEk ikEFPt"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4635,7 +4604,7 @@ exports[`Storyshots unique/InHouseWorksForm Text Type 1`] = `
 
 exports[`Storyshots unique/InHouseWorksForm Time Input Type 1`] = `
 <div
-  className="sc-khIgEk gJoBEF"
+  className="sc-khIgEk ikEFPt"
 >
   <div
     className="sc-fFSPTT imubeo"
@@ -4743,7 +4712,7 @@ exports[`Storyshots unique/Logo Docs 1`] = `
 
 exports[`Storyshots unique/RestTimesForm Docs 1`] = `
 <div
-  className="sc-iNiQyp jNOVAC"
+  className="sc-iNiQyp kOThUC"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4827,7 +4796,7 @@ exports[`Storyshots unique/RestTimesForm Docs 1`] = `
 
 exports[`Storyshots unique/RestTimesForm Text Type 1`] = `
 <div
-  className="sc-iNiQyp jNOVAC"
+  className="sc-iNiQyp kOThUC"
 >
   <div
     className="sc-fFSPTT iUdoju"
@@ -4871,7 +4840,7 @@ exports[`Storyshots unique/RestTimesForm Text Type 1`] = `
 
 exports[`Storyshots unique/RestTimesForm Time Input Type 1`] = `
 <div
-  className="sc-iNiQyp jNOVAC"
+  className="sc-iNiQyp kOThUC"
 >
   <div
     className="sc-fFSPTT imubeo"

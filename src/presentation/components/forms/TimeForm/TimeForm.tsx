@@ -28,6 +28,7 @@ export const UnStyledTimeForm = React.memo(function TimeForm({
   value,
   placeholder,
   readOnly,
+  disabled,
   label,
   required,
   inline,
@@ -48,6 +49,7 @@ export const UnStyledTimeForm = React.memo(function TimeForm({
             error={error}
             placeholder={placeholder}
             readOnly={readOnly}
+            disabled={disabled}
             onChange={(time) => {
               onChange(time);
             }}
@@ -58,6 +60,9 @@ export const UnStyledTimeForm = React.memo(function TimeForm({
             name={name}
             value={value}
             error={error}
+            placeholder={placeholder}
+            readOnly={readOnly}
+            disabled={disabled}
             onBlur={(time) => {
               onBlur(time);
             }}

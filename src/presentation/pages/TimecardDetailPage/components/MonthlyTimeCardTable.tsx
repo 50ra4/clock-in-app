@@ -13,9 +13,11 @@ import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
 import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
 import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
+import { InfoIcon } from 'presentation/components/display/Icons/InfoIcon';
 
 type Props = {
   className?: string;
+  readOnly: boolean;
   month: string;
   dailyRecords: DailyTimeRecord[];
   selectEditedRecord: (dateString: string) => void;
@@ -23,6 +25,7 @@ type Props = {
 
 export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   className,
+  readOnly,
   month,
   dailyRecords,
   selectEditedRecord,
@@ -48,7 +51,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
         <thead>
           <tr>
             <th scope="col">日付</th>
-            <th scope="col">編集</th>
+            <th scope="col">{readOnly ? '詳細' : '編集'}</th>
             <th scope="col">出社</th>
             <th scope="col">退社</th>
             <th scope="col">備考</th>
@@ -69,11 +72,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                   <span>{`（${format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}）`}</span>
                 </th>
                 <td>
-                  <StyledEditButton
-                    color="primary"
-                    areaLabel={`${dateString}の勤怠を修正する`}
-                    onClick={onClickEdit(dateString)}
-                  />
+                  <StyledActionButton readOnly={readOnly} day={dateString} onClick={onClickEdit(dateString)} />
                 </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
@@ -185,18 +184,19 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
   }
 `;
 
-const EditButton = React.memo(function EditButton({
+const ActionButton = React.memo(function ActionButton({
   ref,
-  areaLabel,
+  day,
+  readOnly,
   ...otherProps
-}: IconButtonProps & { areaLabel: string }) {
+}: IconButtonProps & { day: string; readOnly: boolean }) {
   return (
-    <IconButton aria-label={areaLabel} {...otherProps}>
-      <EditIcon color="secondary" />
+    <IconButton aria-label={readOnly ? `${day}の勤怠の詳細を確認する` : `${day}の勤怠を修正する`} {...otherProps}>
+      {readOnly ? <InfoIcon color="secondary" /> : <EditIcon color="secondary" />}
     </IconButton>
   );
 });
-const StyledEditButton = styled(EditButton)`
+const StyledActionButton = styled(ActionButton)`
   padding: 0;
   & > svg {
     min-height: 24px;

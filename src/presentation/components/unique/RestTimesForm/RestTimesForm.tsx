@@ -35,6 +35,7 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
   value: values = [],
   placeholder,
   readOnly,
+  disabled,
   label,
   required,
   inline,
@@ -60,6 +61,7 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
                   value={value?.start}
                   placeholder={placeholder}
                   readOnly={readOnly}
+                  disabled={disabled}
                   error={error}
                   onBlur={(time) => {
                     handleOnChange(time, rowIndex, 'start');
@@ -72,6 +74,7 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
                   value={value?.start}
                   placeholder={placeholder}
                   readOnly={readOnly}
+                  disabled={disabled}
                   error={error}
                   onChange={(time) => {
                     handleOnChange(time, rowIndex, 'start');
@@ -86,6 +89,7 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
                   value={value?.end}
                   placeholder={placeholder}
                   readOnly={readOnly}
+                  disabled={disabled}
                   error={error}
                   onBlur={(time) => {
                     handleOnChange(time, rowIndex, 'end');
@@ -98,6 +102,7 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
                   value={value?.end}
                   placeholder={placeholder}
                   readOnly={readOnly}
+                  disabled={disabled}
                   error={error}
                   onChange={(time) => {
                     handleOnChange(time, rowIndex, 'end');
@@ -107,16 +112,19 @@ export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
             </div>
           );
         })}
-        <StyledButton
-          onClick={() => {
-            onChange([...values, { id: undefined, start: undefined, end: undefined }]);
-          }}
-        >
-          <div>
-            <AddCircleIcon color="main" />
-            {label}を追加
-          </div>
-        </StyledButton>
+        {!readOnly && (
+          <StyledButton
+            disabled={disabled}
+            onClick={() => {
+              onChange([...values, { id: undefined, start: undefined, end: undefined }]);
+            }}
+          >
+            <div>
+              <AddCircleIcon color="main" />
+              {label}を追加
+            </div>
+          </StyledButton>
+        )}
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>
     </div>
@@ -147,6 +155,9 @@ export const RestTimesForm = styled(UnStyledRestTimesForm)`
       font-weight: ${({ theme }) => theme.font.weight.bold};
     }
     margin-bottom: ${({ theme }) => theme.space.large}px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   ${StyledButton} {
     min-width: 160px;

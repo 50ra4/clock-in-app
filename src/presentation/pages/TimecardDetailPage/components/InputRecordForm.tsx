@@ -9,12 +9,14 @@ import { FormGroupChangeFn } from '../hooks/useFormGroup';
 
 type Props = {
   className?: string;
+  readOnly: boolean;
   dailyTimeRecord: DailyTimeRecord;
   onChangeDailyTimeRecord: FormGroupChangeFn<DailyTimeRecord>;
 };
 
 export const InputRecordForm = React.memo(function InputRecordForm({
   className,
+  readOnly,
   dailyTimeRecord: { start, end, restTimes, inHouseWorks, remarks },
   onChangeDailyTimeRecord,
 }: Props) {
@@ -26,6 +28,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         name="clock-in-time"
         value={start}
         label="出社"
+        readOnly={readOnly}
+        disabled={readOnly}
         required={false}
         inline={true}
         onBlur={(value) => {
@@ -41,6 +45,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         name="clock-out-time"
         value={end}
         label="退社"
+        readOnly={readOnly}
+        disabled={readOnly}
         required={false}
         inline={true}
         onBlur={(value) => {
@@ -56,6 +62,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         name="rest-time"
         label="休憩時間"
         value={restTimes}
+        readOnly={readOnly}
+        disabled={readOnly}
         inline={true}
         onChange={(value) => {
           onChangeDailyTimeRecord('restTimes', value);
@@ -67,6 +75,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         name="in-house-works"
         label="社内作業"
         value={inHouseWorks}
+        readOnly={readOnly}
+        disabled={readOnly}
         inline={true}
         onChange={(value) => {
           onChangeDailyTimeRecord('inHouseWorks', value);
@@ -78,6 +88,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         label="備考"
         row={3}
         value={remarks}
+        readOnly={readOnly}
+        disabled={readOnly}
         inline={true}
         onChange={(e) => {
           onChangeDailyTimeRecord('remarks', e.target?.value);

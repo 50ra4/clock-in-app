@@ -36,6 +36,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
   value: values = [],
   placeholder,
   readOnly,
+  disabled,
   label,
   required,
   inline,
@@ -66,6 +67,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                     value={start}
                     placeholder={placeholder}
                     readOnly={readOnly}
+                    disabled={disabled}
                     error={error}
                     onBlur={(time) => {
                       handleOnChangeTime(time, rowIndex, 'start');
@@ -78,6 +80,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                     value={start}
                     placeholder={placeholder}
                     readOnly={readOnly}
+                    disabled={disabled}
                     error={error}
                     onChange={(time) => {
                       handleOnChangeTime(time, rowIndex, 'start');
@@ -92,6 +95,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                     value={end}
                     placeholder={placeholder}
                     readOnly={readOnly}
+                    disabled={disabled}
                     error={error}
                     onBlur={(time) => {
                       handleOnChangeTime(time, rowIndex, 'end');
@@ -104,6 +108,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                     value={end}
                     placeholder={placeholder}
                     readOnly={readOnly}
+                    disabled={disabled}
                     error={error}
                     onChange={(time) => {
                       handleOnChangeTime(time, rowIndex, 'end');
@@ -118,6 +123,7 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
                 error={error}
                 placeholder={placeholder}
                 readOnly={readOnly}
+                disabled={disabled}
                 onChange={(e) => {
                   handleOnRemarks(e.currentTarget?.value ?? '', rowIndex);
                 }}
@@ -128,16 +134,18 @@ export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
             </React.Fragment>
           );
         })}
-        <StyledButton
-          onClick={() => {
-            onChange([...values, { id: undefined, start: undefined, end: undefined }]);
-          }}
-        >
-          <div>
-            <AddCircleIcon color="main" />
-            {label}を追加
-          </div>
-        </StyledButton>
+        {!readOnly && (
+          <StyledButton
+            onClick={() => {
+              onChange([...values, { id: undefined, start: undefined, end: undefined }]);
+            }}
+          >
+            <div>
+              <AddCircleIcon color="main" />
+              {label}を追加
+            </div>
+          </StyledButton>
+        )}
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>
     </div>
@@ -172,6 +180,9 @@ export const InHouseWorksForm = styled(UnStyledInHouseWorksForm)`
   ${StyledTextInput} {
     max-width: 175px;
     margin: ${({ theme }) => `${theme.space.large}px 0`};
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   ${StyledButton} {
     min-width: 160px;

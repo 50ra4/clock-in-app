@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 
-import { Time, Range } from 'types';
-import { FormBaseProps } from '../FormBase/FormBase';
-import { DescriptionForForm } from '../DescriptionForForm/DescriptionForForm';
-import { ErrorMessageForForm } from '../ErrorMessageForForm/ErrorMessageForForm';
-import { WithLabelForForm } from '../WithLabelForForm/WithLabelForForm';
+import { Time, Range, RestTime } from 'types';
+import { FormBaseProps } from 'presentation/components/forms/FormBase/FormBase';
+import { DescriptionForForm } from 'presentation/components/forms/DescriptionForForm/DescriptionForForm';
+import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
+import { WithLabelForForm } from 'presentation/components/forms/WithLabelForForm/WithLabelForForm';
 import { TimeTextInput } from 'presentation/components/inputs/TimeTextInput/TimeTextInput';
 import { TimeInput } from 'presentation/components/inputs/TimeInput/TimeInput';
 import { Button } from 'presentation/components/inputs/Button/Button';
@@ -14,20 +14,20 @@ import { AddCircleIcon } from 'presentation/components/display/Icons/AddCircleIc
 
 type OwnProps = {
   type?: 'text' | 'input';
-  onChange: (values: Range<Time>[]) => void;
-  onBlur?: (values: Range<Time>[]) => void;
+  onChange: (values: RestTime[]) => void;
+  onBlur?: (values: RestTime[]) => void;
 };
 
-export type TimeRangeGroupFormProps = OwnProps & Omit<FormBaseProps<Range<Time>[]>, keyof OwnProps>;
+export type RestTimesFormProps = OwnProps & Omit<FormBaseProps<RestTime[]>, keyof OwnProps>;
 
 const rootClassName = 'time-range-group-form';
-export const TimeRangeGroupFormClassNames = {
+export const RestTimesFormClassNames = {
   root: rootClassName,
   wrap: `${rootClassName}__wrap`,
 } as const;
 
 // eslint-disable-next-line complexity
-export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm({
+export const UnStyledRestTimesForm = React.memo(function RestTimesForm({
   className,
   type = isMobile ? 'input' : 'text',
   id,
@@ -41,7 +41,7 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
   error,
   description,
   onChange,
-}: TimeRangeGroupFormProps) {
+}: RestTimesFormProps) {
   const handleOnChange = (time: Time, rowIndex: number, key: keyof Range<Time>) => {
     onChange(values.map((v, i) => (rowIndex !== i ? v : { ...v, [key]: time })));
   };
@@ -52,7 +52,7 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
         {description && <DescriptionForForm description={description} />}
         {values.map((value, rowIndex) => {
           return (
-            <div key={`${id}-${rowIndex}`} className={TimeRangeGroupFormClassNames.wrap}>
+            <div key={`${id}-${rowIndex}`} className={RestTimesFormClassNames.wrap}>
               {type === 'text' ? (
                 <StyledTimeTextInput
                   id={id}
@@ -109,7 +109,7 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
         })}
         <StyledButton
           onClick={() => {
-            onChange([...values, { start: undefined, end: undefined }]);
+            onChange([...values, { id: undefined, start: undefined, end: undefined }]);
           }}
         >
           <div>
@@ -126,8 +126,8 @@ export const UnStyledTimeRangeGroupForm = React.memo(function TimeRangeGroupForm
 const StyledTimeTextInput = styled(TimeTextInput)``;
 const StyledTimeInput = styled(TimeInput)``;
 const StyledButton = styled(Button)``;
-export const TimeRangeGroupForm = styled(UnStyledTimeRangeGroupForm)`
-  div.${TimeRangeGroupFormClassNames.wrap} {
+export const RestTimesForm = styled(UnStyledRestTimesForm)`
+  div.${RestTimesFormClassNames.wrap} {
     display: flex;
     justify-content: flex-start;
     align-items: center;

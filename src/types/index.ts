@@ -50,7 +50,9 @@ export type ErrorHeadingWithMessage = {
   message: string;
 };
 
-export type RestTime = Range<Time>;
+export type RestTime = Range<Time> & {
+  id: string | undefined;
+};
 
 export type InHouseWork = Range<Time> & {
   id: string | undefined;

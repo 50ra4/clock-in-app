@@ -1,6 +1,10 @@
 import { DATE_FORMAT } from 'constants/dateFormat';
-import { DAILY_RECORDS_COLLECTION_PATH, DAILY_IN_HOUSE_WORK_COLLECTION_PATH } from 'constants/firestore';
-import { DailyTimeRecord, InHouseWork } from 'types';
+import {
+  DAILY_RECORDS_COLLECTION_PATH,
+  DAILY_IN_HOUSE_WORK_COLLECTION_PATH,
+  DAILY_REST_TIME_COLLECTION_PATH,
+} from 'constants/firestore';
+import { DailyTimeRecord, InHouseWork, RestTime, Time } from 'types';
 import { omitUndefinedProps } from 'utils/converterUtil';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
@@ -14,6 +18,20 @@ const createAdditionalProps = (uid: string, isUpdated?: boolean) => {
     updatedAt: timestamp,
   };
 };
+
+const formatTimeToQuery = (time?: Time) => (!time ? {} : omitUndefinedProps(time));
+
+export const queryToRestTime = (
+  query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
+): RestTime =>
+  ({
+    id: query.id,
+    start: query.get('start'),
+    end: query.get('end'),
+    // FIXME: RestTime type
+    updatedAt: query.get('updatedAt'),
+    createdAt: query.get('createdAt'),
+  } as InHouseWork);
 
 export const queryToInHouseWork = (
   query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
@@ -43,14 +61,28 @@ export const queryToDailyTimeRecord = (
     createdAt: query.get('createdAt'),
   } as DailyTimeRecord);
 
-export const getInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]> => {
+const getRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
+  const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
+  return firestore
+    .collection(replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day }))
+    .get()
+    .then((snapshot) => snapshot.docs.map(queryToRestTime));
+};
+
+const getInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
   return firestore
     .collection(replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day }))
     .get()
-    .then((snapshot) => {
-      return snapshot.docs.map(queryToInHouseWork);
-    });
+    .then((snapshot) => snapshot.docs.map(queryToInHouseWork));
+};
+
+export const getRestTimesAndInHouseWorks = async (
+  uid: string,
+  day: string,
+): Promise<Pick<DailyTimeRecord, 'inHouseWorks' | 'restTimes'>> => {
+  const [inHouseWorks, restTimes] = await Promise.all([await getInHouseWorks(uid, day), await getRestTimes(uid, day)]);
+  return { inHouseWorks, restTimes };
 };
 
 export const getDailyTimeRecords = async (uid: string, month: string): Promise<DailyTimeRecord[]> =>
@@ -59,7 +91,7 @@ export const getDailyTimeRecords = async (uid: string, month: string): Promise<D
     .get()
     .then((snapshot) => snapshot.docs.map(queryToDailyTimeRecord));
 
-export const saveDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
+export const createUpdateDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
   // TODO: Save restTimes separately
   const { restTimes, inHouseWorks, date, ...rest } = data;
 
@@ -70,27 +102,60 @@ export const saveDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =>
     .doc(date);
   const rootDocument = await rootDocumentRef.get();
   const alreadySavedInHouseWorks = await getInHouseWorks(uid, date);
+  const alreadySavedRestTimes = await getRestTimes(uid, date);
 
   const inHouseWorkCollectionRef = firestore.collection(
     replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day: date }),
   );
 
+  const restTimeCollectionRef = firestore.collection(
+    replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day: date }),
+  );
+
   const batch = firestore.batch();
   // inHouseWorks
-  alreadySavedInHouseWorks
-    .filter(({ id }) => inHouseWorks.some((inHouseWork) => id !== inHouseWork.id))
-    .forEach(({ id }) => {
-      const document = inHouseWorkCollectionRef.doc(id);
-      batch.delete(document);
-    });
+  const inHouseWorkIdsToDelete = alreadySavedInHouseWorks.filter(
+    ({ id: previousId }) => !inHouseWorks.some(({ id: currentId }) => currentId === previousId),
+  );
+  inHouseWorkIdsToDelete.forEach(({ id }) => {
+    const document = inHouseWorkCollectionRef.doc(id);
+    batch.delete(document);
+  });
 
-  inHouseWorks.forEach(({ id, ...rest }) => {
+  inHouseWorks.forEach(({ id, start, end, remarks }) => {
     const isUpdated = !!id && alreadySavedInHouseWorks.some(({ id: _id }) => _id === id);
     const documentRef = isUpdated ? inHouseWorkCollectionRef.doc(id) : inHouseWorkCollectionRef.doc();
-    batch.set(documentRef, {
-      ...omitUndefinedProps({ ...rest }),
-      ...createAdditionalProps(uid, !!isUpdated),
-    });
+    batch.set(
+      documentRef,
+      {
+        start: formatTimeToQuery(start),
+        end: formatTimeToQuery(end),
+        remarks,
+        ...createAdditionalProps(uid, !!isUpdated),
+      },
+      { merge: true },
+    );
+  });
+
+  // restTimes
+  const restTimeIdsToDelete = alreadySavedRestTimes.filter(
+    ({ id: previousId }) => !restTimes.some(({ id: currentId }) => currentId === previousId),
+  );
+  restTimeIdsToDelete.forEach(({ id }) => {
+    const document = restTimeCollectionRef.doc(id);
+    batch.delete(document);
+  });
+
+  restTimes.forEach(({ id, start, end }) => {
+    batch.set(
+      restTimeCollectionRef.doc(id),
+      {
+        start: formatTimeToQuery(start),
+        end: formatTimeToQuery(end),
+        ...createAdditionalProps(uid, !!id),
+      },
+      { merge: true },
+    );
   });
 
   // root

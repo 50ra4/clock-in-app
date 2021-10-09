@@ -27,7 +27,9 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
   const { formState: dailyTimeRecord, onChangeFormState: onChangeDailyTimeRecord } = useFormGroup({
     ...initialTimeRecord,
     restTimes:
-      initialTimeRecord.restTimes.length > 0 ? initialTimeRecord.restTimes : [{ start: undefined, end: undefined }],
+      initialTimeRecord.restTimes.length > 0
+        ? initialTimeRecord.restTimes
+        : [{ id: undefined, start: undefined, end: undefined }],
     inHouseWorks:
       initialTimeRecord.inHouseWorks.length > 0
         ? initialTimeRecord.inHouseWorks

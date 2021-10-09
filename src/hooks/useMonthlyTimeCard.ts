@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { firestore } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
-import { DailyTimeRecord, InHouseWork } from 'types';
-import { getInHouseWorks, queryToDailyTimeRecord, saveDailyTimeRecord } from 'services/dailyTimeRecord';
+import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
+import { getRestTimesAndInHouseWorks, queryToDailyTimeRecord, saveDailyTimeRecord } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 
 type Props = {
@@ -11,9 +11,16 @@ type Props = {
   month: string;
 };
 
+// FIXME: name
+type SubCollection = {
+  inHouseWorks: InHouseWork[];
+  restTimes: RestTime[];
+};
+
 export const useMonthlyTimeCard = ({ uid, month }: Props) => {
   const [dailyTimeRecords, setDailyTimeRecords] = useState(new Map<string, DailyTimeRecord>());
-  const [inHouseWorks, setInHouseWorks] = useState(new Map<string, InHouseWork[]>());
+  // FIXME: var-name
+  const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());
 
   const createDailyTimeRecord = useCallback(
     (data: DailyTimeRecord) => {
@@ -33,13 +40,14 @@ export const useMonthlyTimeCard = ({ uid, month }: Props) => {
     const collectionPath = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
     const unsubscribe = firestore.collection(collectionPath).onSnapshot(
       (snapshot) => {
+        const changedDocs = snapshot.docChanges().map(({ type, doc }) => ({ id: doc.id, doc, type }));
         const updated = new Map(previousDailyTimeRecords.current);
-        snapshot.docChanges().forEach(({ type, doc }) => {
+        changedDocs.forEach(({ id, doc, type }) => {
           if (type === 'removed') {
-            updated.delete(doc.id);
+            updated.delete(id);
             return;
           }
-          updated.set(doc.id, queryToDailyTimeRecord(doc));
+          updated.set(id, queryToDailyTimeRecord(doc));
         });
         setDailyTimeRecords(updated);
       },
@@ -56,38 +64,42 @@ export const useMonthlyTimeCard = ({ uid, month }: Props) => {
     );
     return () => {
       unsubscribe();
+      setDailyTimeRecords(new Map());
     };
   }, [month, previousDailyTimeRecords, uid]);
 
   useEffect(() => {
-    if (!uid || !month) {
+    const days = Array.from(dailyTimeRecords.keys());
+    if (!uid || !month || days.length < 1) {
       return;
     }
 
-    const days = Array.from(dailyTimeRecords.keys());
-    const getInHouseWorksOfMonth = days.map(async (date) => ({
-      date,
-      inHouseWorks: await getInHouseWorks(uid, date),
+    const getDataOfMonth = days.map(async (day) => ({
+      day,
+      ...(await getRestTimesAndInHouseWorks(uid, day)),
     }));
 
-    Promise.all(getInHouseWorksOfMonth).then((res) => {
-      const updated = new Map<string, InHouseWork[]>();
-      res.forEach(({ date, inHouseWorks }) => updated.set(date, inHouseWorks));
-      setInHouseWorks(updated);
+    Promise.all(getDataOfMonth).then((res) => {
+      const updatedData = new Map<string, SubCollection>();
+      res.forEach(({ day, ...rest }) => {
+        updatedData.set(day, rest);
+      });
+      setSubCollectionData(updatedData);
     });
+    // TODO: errorHanding
   }, [dailyTimeRecords, month, uid]);
 
   const data = useMemo(() => {
     // FIXME: modify the dailyRecords type definition
     const dailyRecords = Array.from(dailyTimeRecords.values()).map((record) => ({
       ...record,
-      inHouseWorks: inHouseWorks.get(record.date) ?? [],
+      ...subCollectionData.get(record.date),
     }));
     // TODO: remove
     // eslint-disable-next-line no-console
     console.log(dailyRecords);
     return { month, dailyRecords };
-  }, [dailyTimeRecords, inHouseWorks, month]);
+  }, [dailyTimeRecords, month, subCollectionData]);
 
   return {
     data,

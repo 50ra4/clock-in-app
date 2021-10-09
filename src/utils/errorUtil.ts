@@ -1,10 +1,15 @@
 import { ERROR_HEADING_WITH_MESSAGE, ErrorCode, ERROR_CODE } from 'constants/error';
+import { AppError } from 'models/AppError';
 import { ErrorHeadingWithMessage } from 'types';
 
 export const errorToHeadingWithMessage = <E extends Error>(
   error: E,
 ): ErrorHeadingWithMessage & { crashed?: boolean } => {
   // TODO: 中身を実装する
+  if (error instanceof AppError) {
+    return { ...ERROR_HEADING_WITH_MESSAGE[error.code], crashed: true };
+  }
+
   return { ...ERROR_HEADING_WITH_MESSAGE.UNKNOWN, crashed: true };
 };
 

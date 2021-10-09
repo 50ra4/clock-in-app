@@ -91,6 +91,7 @@ export function MobileView() {
     <StyledRoot>
       <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
       <StyledMonthlyTimeCardTable
+        readOnly={isReadOnly}
         month={selectedMonth}
         dailyRecords={dailyTimeRecordsOfMonth}
         selectEditedRecord={selectEditedRecord}

@@ -17,7 +17,7 @@ type SubCollection = {
   restTimes: RestTime[];
 };
 
-export const useMonthlyTimeCard = ({ uid, month }: Props) => {
+export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   const [dailyTimeRecords, setDailyTimeRecords] = useState(new Map<string, DailyTimeRecord>());
   // FIXME: var-name
   const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());

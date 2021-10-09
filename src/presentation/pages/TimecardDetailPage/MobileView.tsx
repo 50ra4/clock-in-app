@@ -10,7 +10,7 @@ import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
 import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
-import { useMonthlyTimeCard } from 'hooks/useMonthlyTimeCard';
+import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -48,7 +48,7 @@ export function MobileView() {
   });
   const { uid } = useParams<{ uid: string }>();
 
-  const { data: monthlyTimeCard, createDailyTimeRecord } = useMonthlyTimeCard({ month: selectedMonth, uid });
+  const { data: monthlyTimeCard, createDailyTimeRecord } = useDailyTimeRecordsOfMonth({ month: selectedMonth, uid });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);

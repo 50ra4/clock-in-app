@@ -2,6 +2,8 @@ import { ErrorHeadingWithMessage, EnumValue } from 'types';
 
 export const ERROR_CODE = {
   notFound: 'NOT_FOUND',
+  failedReadData: 'FAILED_READ_DATA',
+  failedWriteData: 'FAILED_WRITE_DATA',
   serviceTemporarilyUnavailable: 'SERVICE_TEMPORARILY_UNAVAILABLE',
   unknown: 'UNKNOWN',
 } as const;
@@ -19,6 +21,14 @@ export const ERROR_HEADING_WITH_MESSAGE: Readonly<Record<ErrorCode, ErrorHeading
   [ERROR_CODE.unknown]: {
     heading: 'エラーが発生しました',
     message: 'お手数をおかけしますが、管理者にお問い合わせください。',
+  },
+  [ERROR_CODE.failedReadData]: {
+    heading: 'エラーが発生しました',
+    message: 'データの取得に失敗しました。お手数をおかけしますが、暫く時間をおいてから再度お試しください。',
+  },
+  [ERROR_CODE.failedWriteData]: {
+    heading: 'エラーが発生しました',
+    message: 'データの更新に失敗しました。お手数をおかけしますが、暫く時間をおいてから再度お試しください。',
   },
   // [ERROR_CODE.template]: {heading: '', message: ''},
 };

@@ -5,7 +5,7 @@ import { DailyTimeRecord } from 'types';
 import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
 import { RestTimesForm } from 'presentation/components/unique/RestTimesForm/RestTimesForm';
-import { InHouseWorksForm } from 'presentation/components/unique/InHouseWorksForm/InHouseWorksForm';
+import { InHouseWorkFormGroup } from 'presentation/components/unique/InHouseWorkFormGroup/InHouseWorkFormGroup';
 import { FormGroupChangeFn } from '../hooks/useFormGroup';
 
 type Props = {
@@ -72,11 +72,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
           onChangeDailyTimeRecord('restTimes', value);
         }}
       />
-      <InHouseWorksForm
+      <InHouseWorkFormGroup
         type="text"
-        id="in-house-works"
-        name="in-house-works"
-        label="社内作業"
         value={inHouseWorks}
         readOnly={readOnly}
         disabled={readOnly}

@@ -23,6 +23,8 @@ export const UnStyledTextInput = React.memo(function TextInput({
   onClear,
   ...otherProps
 }: TextInputProps) {
+  const showClearIcon = !!value && !readOnly;
+
   return (
     <div className={className}>
       <InputBase
@@ -30,11 +32,11 @@ export const UnStyledTextInput = React.memo(function TextInput({
         type={type}
         disabled={disabled}
         readOnly={readOnly}
-        rightIcon={true}
+        rightIcon={showClearIcon}
         error={error}
         value={value}
       />
-      {value && !readOnly && <StyledInputClearButton disabled={disabled} onClick={onClear} />}
+      {showClearIcon && <StyledInputClearButton disabled={disabled} onClick={onClear} />}
     </div>
   );
 });

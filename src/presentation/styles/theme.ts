@@ -267,7 +267,7 @@ const insetSafeArea: Record<'top' | 'bottom' | 'topBottom', InsetSafeArea> = {
 const componentHeight = {
   header: 56,
   button: 48,
-  input: 45,
+  input: 48,
 } as const;
 
 export const lightTheme = {

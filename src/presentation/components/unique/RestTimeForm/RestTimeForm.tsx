@@ -131,10 +131,12 @@ const StyledSeparator = styled.span`
 const StyledTimeTextInput = styled(TimeTextInput)`
   width: 64px;
   flex-shrink: 0;
+  flex-grow: 1;
 `;
 const StyledTimeInput = styled(TimeInput)`
   width: 64px;
   flex-shrink: 0;
+  flex-grow: 1;
 `;
 const StyledEmptyArea = styled.div`
   width: 100%;

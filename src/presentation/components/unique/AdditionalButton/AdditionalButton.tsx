@@ -7,12 +7,13 @@ import { AddCircleIcon } from 'presentation/components/display/Icons/AddCircleIc
 type Props = {
   className?: string;
   label: string;
+  disabled?: boolean;
   onClick: () => void;
 };
 
-export const AdditionalButton = React.memo(function AdditionalButton({ className, label, onClick }: Props) {
+export const AdditionalButton = React.memo(function AdditionalButton({ className, label, disabled, onClick }: Props) {
   return (
-    <StyledButton className={className} onClick={onClick}>
+    <StyledButton className={className} onClick={onClick} disabled={disabled}>
       <AddCircleIcon color="main" />
       {label}
     </StyledButton>

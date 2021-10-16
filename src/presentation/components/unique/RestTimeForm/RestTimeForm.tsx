@@ -144,4 +144,5 @@ const StyledEmptyArea = styled.div`
 `;
 const StyledDeleteButton = styled(DeleteButton)`
   flex-shrink: 0;
+  margin-left: ${({ theme }) => theme.space.middle}px;
 `;

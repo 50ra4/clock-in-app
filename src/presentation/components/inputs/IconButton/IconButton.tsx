@@ -25,4 +25,7 @@ export const IconButton = styled(UnStyledIconButton)`
   align-items: center;
   background-color: inherit;
   padding: ${({ theme }) => theme.space.middle}px;
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+  }
 `;

@@ -29,4 +29,7 @@ const StyledButton = styled(Button)`
     width: 24px;
     height: 24px;
   }
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+  }
 `;

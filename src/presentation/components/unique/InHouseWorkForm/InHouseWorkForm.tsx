@@ -159,4 +159,5 @@ const StyledTextInput = styled(TextInput)`
 `;
 const StyledDeleteButton = styled(DeleteButton)`
   flex-shrink: 0;
+  margin-left: ${({ theme }) => theme.space.middle}px;
 `;

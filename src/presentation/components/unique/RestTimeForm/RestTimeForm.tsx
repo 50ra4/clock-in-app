@@ -13,7 +13,7 @@ import { DeleteButton } from 'presentation/components/inputs/DeleteButton/Delete
 type OwnProps = {
   type?: 'text' | 'input';
   row?: number;
-  alignTrashRight?: boolean;
+  extendInput?: boolean;
   onChange: (value: RestTime, row: number) => void;
   onClear: (row: number) => void;
   onBlur?: (value: RestTime, row: number) => void;
@@ -28,7 +28,7 @@ export const RestTimeForm = React.memo(function RestTimeForm({
   id,
   name,
   row = 0,
-  alignTrashRight = false,
+  extendInput = true,
   value = { id: undefined },
   readOnly,
   disabled,
@@ -104,7 +104,7 @@ export const RestTimeForm = React.memo(function RestTimeForm({
               }}
             />
           )}
-          {alignTrashRight && <StyledEmptyArea />}
+          {!extendInput && <StyledEmptyArea />}
           <StyledDeleteButton ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}

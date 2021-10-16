@@ -62,7 +62,7 @@ export const TextType = () => {
       value={value}
       type="text"
       label="休憩時間"
-      alignTrashRight={true}
+      extendInput={true}
       onChange={(v) => {
         setValue(v);
       }}

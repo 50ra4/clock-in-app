@@ -48,7 +48,7 @@ export const TextType = () => {
     <RestTimeFormGroup
       value={values}
       type="text"
-      alignTrashRight={true}
+      extendInput={true}
       onChange={(v) => {
         setValues(v);
       }}

@@ -15,7 +15,7 @@ type OwnProps = {
   disabled?: boolean;
   inline?: boolean;
   error?: string;
-  alignTrashRight?: boolean;
+  extendInput?: boolean;
   onChange: (values: RestTime[]) => void;
   onBlur?: (values: RestTime[]) => void;
 };
@@ -31,7 +31,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   disabled,
   inline,
   error,
-  alignTrashRight,
+  extendInput,
   onChange,
 }: RestTimeFormGroupProps) {
   const handleOnChange = (value: RestTime, rowIndex: number) => {
@@ -56,7 +56,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
             readOnly={readOnly}
             disabled={disabled}
             row={index}
-            alignTrashRight={alignTrashRight}
+            extendInput={extendInput}
             value={value}
             onChange={handleOnChange}
             onClear={handleOnClickClear}

@@ -2,15 +2,15 @@ import { BackSpaceIcon } from 'presentation/components/display/Icons/BackSpaceIc
 import React from 'react';
 import { IconButton, IconButtonProps } from '../IconButton/IconButton';
 
-export type BackSpaceButtonProps = Omit<IconButtonProps, 'children'> & { areaLabel?: string };
+export type BackSpaceButtonProps = Omit<IconButtonProps, 'children'> & { ariaLabel?: string };
 
 export const BackSpaceButton = React.memo(function BackSpaceButton({
   ref,
-  areaLabel = '削除',
+  ariaLabel = '削除',
   ...otherProps
 }: BackSpaceButtonProps) {
   return (
-    <IconButton aria-label={areaLabel} {...otherProps}>
+    <IconButton aria-label={ariaLabel} {...otherProps}>
       <BackSpaceIcon />
     </IconButton>
   );

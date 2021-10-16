@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 type OwnProps = {
   className?: string;
-  htmlFor: string;
+  htmlFor?: string;
   label: string;
   required?: boolean;
   inline?: boolean;

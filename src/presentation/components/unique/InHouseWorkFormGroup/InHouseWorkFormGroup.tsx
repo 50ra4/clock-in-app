@@ -68,7 +68,7 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
       {!readOnly && (
         <StyledWrapper showLabel={values.length === 0} inline={!!inline}>
           {values.length === 0 && <StyledLabel label="社内作業" />}
-          <StyledAdditionalButton label="社内作業を追加" onClick={handleOnClickAdd} />
+          <StyledAdditionalButton disabled={disabled} label="社内作業を追加" onClick={handleOnClickAdd} />
         </StyledWrapper>
       )}
       {error && <ErrorMessageForForm message={error} />}

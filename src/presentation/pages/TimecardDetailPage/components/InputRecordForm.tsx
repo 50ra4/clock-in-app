@@ -65,7 +65,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         readOnly={readOnly}
         disabled={readOnly}
         inline={inline}
-        alignTrashRight={true}
+        alignTrashRight={inline}
         onChange={(value) => {
           onChangeDailyTimeRecord('restTimes', value);
         }}

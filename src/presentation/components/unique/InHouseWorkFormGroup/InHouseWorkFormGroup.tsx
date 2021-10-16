@@ -20,10 +20,10 @@ type OwnProps = {
   onBlur?: (values: InHouseWork[]) => void;
 };
 
-export type InHouseWorksFormProps = OwnProps;
+export type InHouseWorkFormGroupProps = OwnProps;
 
 // eslint-disable-next-line complexity
-export const InHouseWorksForm = React.memo(function InHouseWorksForm({
+export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
   className,
   type,
   value: values = [],
@@ -32,7 +32,7 @@ export const InHouseWorksForm = React.memo(function InHouseWorksForm({
   inline,
   error,
   onChange,
-}: InHouseWorksFormProps) {
+}: InHouseWorkFormGroupProps) {
   const handleOnChange = (value: InHouseWork, rowIndex: number) => {
     onChange(values.map((v, i) => (rowIndex !== i ? v : { ...value })));
   };

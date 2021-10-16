@@ -59,6 +59,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     >
       <InputRecordForm
         readOnly={readOnly}
+        inline={true}
         dailyTimeRecord={dailyTimeRecord}
         onChangeDailyTimeRecord={onChangeDailyTimeRecord}
       />

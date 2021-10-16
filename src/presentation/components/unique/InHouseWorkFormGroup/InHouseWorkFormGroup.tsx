@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { InHouseWork } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
-import { AdditionalButton } from '../AddButton/AdditionalButton';
+import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
 import { DeleteButton } from 'presentation/components/inputs/DeleteButton/DeleteButton';
 
 type OwnProps = {

@@ -55,7 +55,7 @@ export function MobileView() {
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
 
   const { loggedInUid } = useAuthentication();
-  const isLoggedInUser = loggedInUid !== uid;
+  const isLoggedInUser = loggedInUid === uid;
 
   const updateSelectedMonth = useCallback(
     (month: string) => {

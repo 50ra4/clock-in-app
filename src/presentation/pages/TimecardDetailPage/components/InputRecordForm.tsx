@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
+
 import { DailyTimeRecord } from 'types';
+import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
 import { RestTimesForm } from 'presentation/components/unique/RestTimesForm/RestTimesForm';
-import { InHouseWorksForm } from 'presentation/components/unique/InHouseWorksForm/InHouseWorksForm';
+import { InHouseWorkFormGroup } from 'presentation/components/unique/InHouseWorkFormGroup/InHouseWorkFormGroup';
 import { FormGroupChangeFn } from '../hooks/useFormGroup';
 
 type Props = {
   className?: string;
   readOnly: boolean;
+  inline?: boolean;
   dailyTimeRecord: DailyTimeRecord;
   onChangeDailyTimeRecord: FormGroupChangeFn<DailyTimeRecord>;
 };
@@ -17,6 +19,7 @@ type Props = {
 export const InputRecordForm = React.memo(function InputRecordForm({
   className,
   readOnly,
+  inline = false,
   dailyTimeRecord: { start, end, restTimes, inHouseWorks, remarks },
   onChangeDailyTimeRecord,
 }: Props) {
@@ -31,7 +34,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         readOnly={readOnly}
         disabled={readOnly}
         required={false}
-        inline={true}
+        inline={inline}
         onBlur={(value) => {
           onChangeDailyTimeRecord('start', value);
         }}
@@ -48,7 +51,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         readOnly={readOnly}
         disabled={readOnly}
         required={false}
-        inline={true}
+        inline={inline}
         onBlur={(value) => {
           onChangeDailyTimeRecord('end', value);
         }}
@@ -64,20 +67,17 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         value={restTimes}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={true}
+        inline={inline}
         onChange={(value) => {
           onChangeDailyTimeRecord('restTimes', value);
         }}
       />
-      <InHouseWorksForm
+      <InHouseWorkFormGroup
         type="text"
-        id="in-house-works"
-        name="in-house-works"
-        label="社内作業"
         value={inHouseWorks}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={true}
+        inline={inline}
         onChange={(value) => {
           onChangeDailyTimeRecord('inHouseWorks', value);
         }}
@@ -90,7 +90,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         value={remarks}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={true}
+        inline={inline}
         onChange={(e) => {
           onChangeDailyTimeRecord('remarks', e.target?.value);
         }}

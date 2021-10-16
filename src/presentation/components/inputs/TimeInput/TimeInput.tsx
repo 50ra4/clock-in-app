@@ -43,10 +43,16 @@ export const UnStyledTimeInput = React.memo(function TimeInput({
 export const TimeInput = styled(UnStyledTimeInput)`
   width: 100%;
   position: relative;
-  & > button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
+  & > input {
+    &[type='time']::-webkit-calendar-picker-indicator {
+      /* 
+      * for chrome
+      * @see https://stackoverflow.com/questions/61934148/hide-the-icon-on-a-html-time-input-field-in-chrome 
+      */
+      background: none;
+      background-color: transparent;
+      width: 100%;
+      position: absolute;
+    }
   }
 `;

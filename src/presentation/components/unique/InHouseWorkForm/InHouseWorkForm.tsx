@@ -9,11 +9,13 @@ import { WithLabelForForm } from 'presentation/components/forms/WithLabelForForm
 import { TimeTextInput } from 'presentation/components/inputs/TimeTextInput/TimeTextInput';
 import { TimeInput } from 'presentation/components/inputs/TimeInput/TimeInput';
 import { TextInput } from 'presentation/components/inputs/TextInput/TextInput';
+import { DeleteButton } from 'presentation/components/inputs/DeleteButton/DeleteButton';
 
 type OwnProps = {
   type?: 'text' | 'input';
   row?: number;
   onChange: (value: InHouseWork, row: number) => void;
+  onClear: (row: number) => void;
   onBlur?: (value: InHouseWork, row: number) => void;
 };
 
@@ -35,6 +37,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
   error,
   description,
   onChange,
+  onClear,
 }: InHouseWorkFormProps) {
   const handleOnChangeTime = (time: Time, key: keyof Range<Time>) => {
     onChange({ ...value, [key]: time }, row);
@@ -109,7 +112,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
             name="inHouseWork-remarks"
             value={value.remarks}
             error={error}
-            placeholder="内訳を入力してください"
+            placeholder="内容を入力してください"
             readOnly={readOnly}
             disabled={disabled}
             onChange={(e) => {
@@ -119,6 +122,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               handleOnChangeRemarks('');
             }}
           />
+          <StyledDeleteButton ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>
@@ -152,4 +156,7 @@ const StyledTimeInput = styled(TimeInput)`
 const StyledTextInput = styled(TextInput)`
   flex-shrink: 1;
   margin-left: ${({ theme }) => theme.space.large}px;
+`;
+const StyledDeleteButton = styled(DeleteButton)`
+  flex-shrink: 0;
 `;

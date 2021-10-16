@@ -5,7 +5,6 @@ import { InHouseWork } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
-import { DeleteButton } from 'presentation/components/inputs/DeleteButton/DeleteButton';
 
 type OwnProps = {
   className?: string;
@@ -56,11 +55,8 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
               disabled={disabled}
               row={index}
               value={value}
-              onChange={(v, row) => handleOnChange(v, row)}
-            />
-            <StyledDeleteButton
-              ariaLabel={`社内作業${index + 1}を削除する`}
-              onClick={() => handleOnClickClear(index)}
+              onChange={handleOnChange}
+              onClear={handleOnClickClear}
             />
           </StyledFormWrapper>
         );
@@ -82,8 +78,6 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
 const StyledRoot = styled.div`
   width: 100%;
 `;
-
-const StyledDeleteButton = styled(DeleteButton)``;
 
 const StyledInHouseWorkForm = styled(InHouseWorkForm)`
   width: 100%;

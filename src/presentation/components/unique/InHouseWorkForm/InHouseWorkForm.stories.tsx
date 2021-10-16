@@ -23,6 +23,7 @@ Docs.args = {
   value: initial,
   description: 'enter in house work time',
   onChange: () => {},
+  onClear: () => {},
   onBlur: () => {},
 };
 
@@ -45,6 +46,7 @@ export const TimeInputType = () => {
       onChange={(v) => {
         setValue(v);
       }}
+      onClear={() => {}}
     />
   );
 };
@@ -64,6 +66,7 @@ export const TextType = () => {
       onChange={(v) => {
         setValue(v);
       }}
+      onClear={() => {}}
     />
   );
 };

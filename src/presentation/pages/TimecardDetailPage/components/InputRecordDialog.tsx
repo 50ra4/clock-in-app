@@ -26,17 +26,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
   dailyTimeRecord: initialTimeRecord,
   onSaveDailyTimeRecord,
 }: OwnProps) {
-  const { formState: dailyTimeRecord, onChangeFormState: onChangeDailyTimeRecord } = useFormGroup({
-    ...initialTimeRecord,
-    restTimes:
-      initialTimeRecord.restTimes.length > 0
-        ? initialTimeRecord.restTimes
-        : [{ id: undefined, start: undefined, end: undefined }],
-    inHouseWorks:
-      initialTimeRecord.inHouseWorks.length > 0
-        ? initialTimeRecord.inHouseWorks
-        : [{ id: undefined, start: undefined, end: undefined, remarks: '' }],
-  });
+  const { formState: dailyTimeRecord, onChangeFormState: onChangeDailyTimeRecord } = useFormGroup(initialTimeRecord);
 
   return (
     <StyledCustomDialog

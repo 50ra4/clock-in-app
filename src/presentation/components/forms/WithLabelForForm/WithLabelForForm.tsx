@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { LabelForForm } from '../LabelForForm/LabelForForm';
 
 type OwnProps = {
   htmlFor: string;
@@ -24,9 +25,7 @@ export const UnStyledWithLabelForForm = React.memo(function WithLabelForForm({
 }: WithLabelForFormProps) {
   return (
     <div className={className}>
-      <label {...otherProps} htmlFor={htmlFor}>
-        {label}
-      </label>
+      <LabelForForm {...otherProps} htmlFor={htmlFor} label={label} inline={inline} />
       <div>{children}</div>
     </div>
   );
@@ -34,18 +33,6 @@ export const UnStyledWithLabelForForm = React.memo(function WithLabelForForm({
 
 export const WithLabelForForm = styled(UnStyledWithLabelForForm)`
   width: 100%;
-  & > label {
-    font-size: ${({ theme }) => theme.font.size.middle}px;
-    font-weight: ${({ theme }) => theme.font.weight.bold};
-    ${({ required }) =>
-      required &&
-      css`
-        &::after {
-          content: '*';
-          color: ${({ theme }) => theme.color.font.red};
-        }
-      `};
-  }
   & > div {
     display: flex;
     flex-direction: column;

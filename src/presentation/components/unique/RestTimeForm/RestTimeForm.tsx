@@ -1,33 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { InHouseWork, Time, Range } from 'types';
+import { RestTime, Time, Range } from 'types';
 import { FormBaseProps } from 'presentation/components/forms/FormBase/FormBase';
 import { DescriptionForForm } from 'presentation/components/forms/DescriptionForForm/DescriptionForForm';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { WithLabelForForm } from 'presentation/components/forms/WithLabelForForm/WithLabelForForm';
 import { TimeTextInput } from 'presentation/components/inputs/TimeTextInput/TimeTextInput';
 import { TimeInput } from 'presentation/components/inputs/TimeInput/TimeInput';
-import { TextInput } from 'presentation/components/inputs/TextInput/TextInput';
 import { DeleteButton } from 'presentation/components/inputs/DeleteButton/DeleteButton';
 
 type OwnProps = {
   type?: 'text' | 'input';
   row?: number;
-  onChange: (value: InHouseWork, row: number) => void;
+  extendInput?: boolean;
+  onChange: (value: RestTime, row: number) => void;
   onClear: (row: number) => void;
-  onBlur?: (value: InHouseWork, row: number) => void;
+  onBlur?: (value: RestTime, row: number) => void;
 };
 
-export type InHouseWorkFormProps = OwnProps & Omit<FormBaseProps<InHouseWork>, keyof OwnProps>;
+export type RestTimeFormProps = OwnProps & Omit<FormBaseProps<RestTime>, keyof OwnProps>;
 
 // eslint-disable-next-line complexity
-export const InHouseWorkForm = React.memo(function InHouseWorkForm({
+export const RestTimeForm = React.memo(function RestTimeForm({
   className,
   type = 'text',
   id,
   name,
   row = 0,
+  extendInput = true,
   value = { id: undefined },
   readOnly,
   disabled,
@@ -38,13 +39,9 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
   description,
   onChange,
   onClear,
-}: InHouseWorkFormProps) {
+}: RestTimeFormProps) {
   const handleOnChangeTime = (time: Time, key: keyof Range<Time>) => {
     onChange({ ...value, [key]: time }, row);
-  };
-
-  const handleOnChangeRemarks = (remarks: string) => {
-    onChange({ ...value, remarks }, row);
   };
 
   return (
@@ -107,23 +104,9 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               }}
             />
           )}
-          <StyledTextInput
-            id={`${id}-remarks`}
-            name="inHouseWork-remarks"
-            value={value.remarks}
-            error={error}
-            placeholder="内容を入力してください"
-            readOnly={readOnly}
-            disabled={disabled}
-            onChange={(e) => {
-              handleOnChangeRemarks(e.currentTarget?.value ?? '');
-            }}
-            onClear={(e) => {
-              handleOnChangeRemarks('');
-            }}
-          />
+          {!extendInput && <StyledEmptyArea />}
           {!readOnly && (
-            <StyledDeleteButton ariaLabel={`${label}を削除する`} disabled={disabled} onClick={() => onClear(row)} />
+            <StyledDeleteButton disabled={disabled} ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
           )}
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}
@@ -150,14 +133,16 @@ const StyledSeparator = styled.span`
 const StyledTimeTextInput = styled(TimeTextInput)`
   width: 64px;
   flex-shrink: 0;
+  flex-grow: 1;
 `;
 const StyledTimeInput = styled(TimeInput)`
   width: 64px;
   flex-shrink: 0;
+  flex-grow: 1;
 `;
-const StyledTextInput = styled(TextInput)`
+const StyledEmptyArea = styled.div`
+  width: 100%;
   flex-shrink: 1;
-  margin-left: ${({ theme }) => theme.space.large}px;
 `;
 const StyledDeleteButton = styled(DeleteButton)`
   flex-shrink: 0;

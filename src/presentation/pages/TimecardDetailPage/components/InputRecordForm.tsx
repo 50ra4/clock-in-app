@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DailyTimeRecord } from 'types';
 import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
-import { RestTimesForm } from 'presentation/components/unique/RestTimesForm/RestTimesForm';
+import { RestTimeFormGroup } from 'presentation/components/unique/RestTimeFormGroup/RestTimeFormGroup';
 import { InHouseWorkFormGroup } from 'presentation/components/unique/InHouseWorkFormGroup/InHouseWorkFormGroup';
 import { FormGroupChangeFn } from '../hooks/useFormGroup';
 
@@ -59,11 +59,8 @@ export const InputRecordForm = React.memo(function InputRecordForm({
           onChangeDailyTimeRecord('end', value);
         }}
       />
-      <RestTimesForm
+      <RestTimeFormGroup
         type="text"
-        id="rest-time"
-        name="rest-time"
-        label="休憩時間"
         value={restTimes}
         readOnly={readOnly}
         disabled={readOnly}

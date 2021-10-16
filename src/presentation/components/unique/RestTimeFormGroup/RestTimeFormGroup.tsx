@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { InHouseWork } from 'types';
+import { RestTime } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
-import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
+import { RestTimeForm } from '../RestTimeForm/RestTimeForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
 import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
 
@@ -11,19 +11,20 @@ type OwnProps = {
   className?: string;
   type?: 'text' | 'input';
   label?: string;
-  value?: InHouseWork[];
+  value?: RestTime[];
   readOnly?: boolean;
   disabled?: boolean;
   inline?: boolean;
   error?: string;
-  onChange: (values: InHouseWork[]) => void;
-  onBlur?: (values: InHouseWork[]) => void;
+  extendInput?: boolean;
+  onChange: (values: RestTime[]) => void;
+  onBlur?: (values: RestTime[]) => void;
 };
 
-export type InHouseWorkFormGroupProps = OwnProps;
+export type RestTimeFormGroupProps = OwnProps;
 
 // eslint-disable-next-line complexity
-export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
+export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   className,
   type,
   value: values = [],
@@ -31,9 +32,10 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
   disabled,
   inline,
   error,
+  extendInput,
   onChange,
-}: InHouseWorkFormGroupProps) {
-  const handleOnChange = (value: InHouseWork, rowIndex: number) => {
+}: RestTimeFormGroupProps) {
+  const handleOnChange = (value: RestTime, rowIndex: number) => {
     onChange(values.map((v, i) => (rowIndex !== i ? v : { ...value })));
   };
 
@@ -49,16 +51,17 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
     <StyledRoot className={className}>
       {values.map((value, index) => {
         return (
-          <StyledInHouseWorkForm
+          <StyledRestTimeForm
+            key={`restTime-${index + 1}`}
             type={type}
-            key={`inHouseWork-${index + 1}`}
-            id={`inHouseWork-${index + 1}`}
-            name="inHouseWork"
-            label={`社内作業${index + 1}`}
+            id={`restTime-${index + 1}`}
+            name="restTime"
+            label={`休憩時間${index + 1}`}
             inline={inline}
             readOnly={readOnly}
             disabled={disabled}
             row={index}
+            extendInput={extendInput}
             value={value}
             onChange={handleOnChange}
             onClear={handleOnClickClear}
@@ -67,8 +70,8 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
       })}
       {!readOnly && (
         <StyledWrapper showLabel={values.length === 0} inline={!!inline}>
-          {values.length === 0 && <StyledLabel label="社内作業" />}
-          <StyledAdditionalButton disabled={disabled} label="社内作業を追加" onClick={handleOnClickAdd} />
+          {values.length === 0 && <StyledLabel label="休憩時間" />}
+          <StyledAdditionalButton disabled={disabled} label="休憩時間を追加" onClick={handleOnClickAdd} />
         </StyledWrapper>
       )}
       {error && <ErrorMessageForForm message={error} />}
@@ -80,7 +83,7 @@ const StyledRoot = styled.div`
   width: 100%;
 `;
 
-const StyledInHouseWorkForm = styled(InHouseWorkForm)`
+const StyledRestTimeForm = styled(RestTimeForm)`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.space.large}px;
   &:last-child {

@@ -27,7 +27,6 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
   name,
   row = 0,
   value = { id: undefined },
-  placeholder,
   readOnly,
   disabled,
   label,
@@ -55,7 +54,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               id={id}
               name={name}
               value={value?.start}
-              placeholder={placeholder}
+              placeholder="hh:mm"
               readOnly={readOnly}
               disabled={disabled}
               error={error}
@@ -68,7 +67,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               id={id}
               name={name}
               value={value?.start}
-              placeholder={placeholder}
+              placeholder="hh:mm"
               readOnly={readOnly}
               disabled={disabled}
               error={error}
@@ -83,7 +82,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               id={`${id}-end`}
               name={`${name}-end`}
               value={value?.end}
-              placeholder={placeholder}
+              placeholder="hh:mm"
               readOnly={readOnly}
               disabled={disabled}
               error={error}
@@ -96,7 +95,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               id={`${id}-end`}
               name={`${name}-end`}
               value={value?.end}
-              placeholder={placeholder}
+              placeholder="hh:mm"
               readOnly={readOnly}
               disabled={disabled}
               error={error}
@@ -110,7 +109,7 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
             name="inHouseWork-remarks"
             value={value.remarks}
             error={error}
-            placeholder={placeholder}
+            placeholder="内訳を入力してください"
             readOnly={readOnly}
             disabled={disabled}
             onChange={(e) => {

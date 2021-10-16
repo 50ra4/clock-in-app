@@ -122,7 +122,9 @@ export const InHouseWorkForm = React.memo(function InHouseWorkForm({
               handleOnChangeRemarks('');
             }}
           />
-          <StyledDeleteButton ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
+          {!readOnly && (
+            <StyledDeleteButton ariaLabel={`${label}を削除する`} disabled={disabled} onClick={() => onClear(row)} />
+          )}
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>

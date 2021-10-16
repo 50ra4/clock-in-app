@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { InHouseWork } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
+import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
 
 type OwnProps = {
   className?: string;
@@ -40,36 +41,36 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
     onChange(values.filter((_, i) => rowIndex !== i));
   };
 
+  const handleOnClickAdd = () => {
+    onChange([...values, { id: undefined }]);
+  };
+
   return (
     <StyledRoot className={className}>
       {values.map((value, index) => {
         return (
-          <StyledFormWrapper key={`inHouseWork-${index + 1}`}>
-            <StyledInHouseWorkForm
-              type={type}
-              id={`inHouseWork-${index + 1}`}
-              name="inHouseWork"
-              label={`社内作業${index + 1}`}
-              inline={inline}
-              readOnly={readOnly}
-              disabled={disabled}
-              row={index}
-              value={value}
-              onChange={handleOnChange}
-              onClear={handleOnClickClear}
-            />
-          </StyledFormWrapper>
+          <StyledInHouseWorkForm
+            type={type}
+            key={`inHouseWork-${index + 1}`}
+            id={`inHouseWork-${index + 1}`}
+            name="inHouseWork"
+            label={`社内作業${index + 1}`}
+            inline={inline}
+            readOnly={readOnly}
+            disabled={disabled}
+            row={index}
+            value={value}
+            onChange={handleOnChange}
+            onClear={handleOnClickClear}
+          />
         );
       })}
-      <StyledButtonWrapper>
-        {/* TODO: add label if inHouseWorks is empty array */}
-        <StyledAdditionalButton
-          label="社内作業を追加"
-          onClick={() => {
-            onChange([...values, { id: undefined }]);
-          }}
-        />
-      </StyledButtonWrapper>
+      {!readOnly && (
+        <StyledWrapper showLabel={values.length === 0} inline={!!inline}>
+          {values.length === 0 && <StyledLabel label="社内作業" />}
+          <StyledAdditionalButton label="社内作業を追加" onClick={handleOnClickAdd} />
+        </StyledWrapper>
+      )}
       {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
   );
@@ -81,24 +82,33 @@ const StyledRoot = styled.div`
 
 const StyledInHouseWorkForm = styled(InHouseWorkForm)`
   width: 100%;
-`;
-
-const StyledFormWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-
-  & + & {
-    margin-top: ${({ theme }) => theme.space.large}px;
+  margin-bottom: ${({ theme }) => theme.space.large}px;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
-const StyledButtonWrapper = styled.div`
-  /* for label */
-  padding-left: 100px;
+const StyledLabel = styled(LabelForForm)`
+  display: block;
+  width: 100px;
+  flex-shrink: 0;
+`;
+
+const StyledWrapper = styled.div<{ inline: boolean; showLabel: boolean }>`
+  ${({ inline, showLabel }) =>
+    !inline
+      ? css``
+      : showLabel
+      ? css`
+          display: flex;
+          align-items: center;
+        `
+      : css`
+          /* for label width */
+          padding-left: 100px;
+        `}
 `;
 
 const StyledAdditionalButton = styled(AdditionalButton)`
   width: 100%;
-  margin-top: ${({ theme }) => theme.space.large}px;
 `;

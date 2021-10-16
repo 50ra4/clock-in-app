@@ -5,7 +5,7 @@ import { InHouseWork } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
 import { AdditionalButton } from '../AddButton/AdditionalButton';
-import { BackSpaceButton } from 'presentation/components/inputs/BackSpaceButton/BackSpaceButton';
+import { DeleteButton } from 'presentation/components/inputs/DeleteButton/DeleteButton';
 
 type OwnProps = {
   className?: string;
@@ -46,11 +46,7 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
       {values.map((value, index) => {
         return (
           <StyledFormWrapper key={`inHouseWork-${index + 1}`}>
-            <StyledBackSpaceButton
-              ariaLabel={`社内作業${index + 1}を削除する`}
-              onClick={() => handleOnClickClear(index)}
-            />
-            <InHouseWorkForm
+            <StyledInHouseWorkForm
               type={type}
               id={`inHouseWork-${index + 1}`}
               name="inHouseWork"
@@ -62,25 +58,35 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
               value={value}
               onChange={(v, row) => handleOnChange(v, row)}
             />
+            <StyledDeleteButton
+              ariaLabel={`社内作業${index + 1}を削除する`}
+              onClick={() => handleOnClickClear(index)}
+            />
           </StyledFormWrapper>
         );
       })}
-      <StyledAdditionalButton
-        label="社内作業を追加"
-        onClick={() => {
-          onChange([...values, { id: undefined }]);
-        }}
-      />
+      <StyledButtonWrapper>
+        {/* TODO: add label if inHouseWorks is empty array */}
+        <StyledAdditionalButton
+          label="社内作業を追加"
+          onClick={() => {
+            onChange([...values, { id: undefined }]);
+          }}
+        />
+      </StyledButtonWrapper>
       {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
   );
 });
 
-const StyledRoot = styled.div``;
+const StyledRoot = styled.div`
+  width: 100%;
+`;
 
-const StyledBackSpaceButton = styled(BackSpaceButton)`
-  /* FIXME: inline style */
-  transform: rotate(180deg);
+const StyledDeleteButton = styled(DeleteButton)``;
+
+const StyledInHouseWorkForm = styled(InHouseWorkForm)`
+  width: 100%;
 `;
 
 const StyledFormWrapper = styled.div`
@@ -91,6 +97,11 @@ const StyledFormWrapper = styled.div`
   & + & {
     margin-top: ${({ theme }) => theme.space.large}px;
   }
+`;
+
+const StyledButtonWrapper = styled.div`
+  /* for label */
+  padding-left: 100px;
 `;
 
 const StyledAdditionalButton = styled(AdditionalButton)`

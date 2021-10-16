@@ -105,7 +105,9 @@ export const RestTimeForm = React.memo(function RestTimeForm({
             />
           )}
           {!extendInput && <StyledEmptyArea />}
-          <StyledDeleteButton ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
+          {!readOnly && (
+            <StyledDeleteButton disabled={disabled} ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
+          )}
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}
       </WithLabelForForm>

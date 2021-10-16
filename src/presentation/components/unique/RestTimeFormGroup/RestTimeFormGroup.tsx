@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { RestTime } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { RestTimeForm } from '../RestTimeForm/RestTimeForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
+import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
 
 type OwnProps = {
   className?: string;
@@ -42,6 +43,10 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
     onChange(values.filter((_, i) => rowIndex !== i));
   };
 
+  const handleOnClickAdd = () => {
+    onChange([...values, { id: undefined }]);
+  };
+
   return (
     <StyledRoot className={className}>
       {values.map((value, index) => {
@@ -63,23 +68,11 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
           />
         );
       })}
-      {inline ? (
-        <StyledButtonWrapper>
-          {/* TODO: add label if RestTimes is empty array */}
-          <StyledAdditionalButton
-            label="休憩時間を追加"
-            onClick={() => {
-              onChange([...values, { id: undefined }]);
-            }}
-          />
-        </StyledButtonWrapper>
-      ) : (
-        <StyledAdditionalButton
-          label="休憩時間を追加"
-          onClick={() => {
-            onChange([...values, { id: undefined }]);
-          }}
-        />
+      {!readOnly && (
+        <StyledWrapper showLabel={values.length === 0} inline={!!inline}>
+          {values.length === 0 && <StyledLabel label="休憩時間" />}
+          <StyledAdditionalButton disabled={disabled} label="休憩時間を追加" onClick={handleOnClickAdd} />
+        </StyledWrapper>
       )}
       {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
@@ -92,17 +85,33 @@ const StyledRoot = styled.div`
 
 const StyledRestTimeForm = styled(RestTimeForm)`
   width: 100%;
-  & + & {
-    margin-top: ${({ theme }) => theme.space.large}px;
+  margin-bottom: ${({ theme }) => theme.space.large}px;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
-const StyledButtonWrapper = styled.div`
-  /* for label */
-  padding-left: 100px;
+const StyledLabel = styled(LabelForForm)`
+  display: block;
+  width: 100px;
+  flex-shrink: 0;
+`;
+
+const StyledWrapper = styled.div<{ inline: boolean; showLabel: boolean }>`
+  ${({ inline, showLabel }) =>
+    !inline
+      ? css``
+      : showLabel
+      ? css`
+          display: flex;
+          align-items: center;
+        `
+      : css`
+          /* for label width */
+          padding-left: 100px;
+        `}
 `;
 
 const StyledAdditionalButton = styled(AdditionalButton)`
   width: 100%;
-  margin-top: ${({ theme }) => theme.space.large}px;
 `;

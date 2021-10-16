@@ -1,200 +1,99 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
-import { InHouseWork, Time, Range } from 'types';
-import { FormBaseProps } from 'presentation/components/forms/FormBase/FormBase';
-import { DescriptionForForm } from 'presentation/components/forms/DescriptionForForm/DescriptionForForm';
+import { InHouseWork } from 'types';
 import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
-import { WithLabelForForm } from 'presentation/components/forms/WithLabelForForm/WithLabelForForm';
-import { TimeTextInput } from 'presentation/components/inputs/TimeTextInput/TimeTextInput';
-import { TimeInput } from 'presentation/components/inputs/TimeInput/TimeInput';
-import { Button } from 'presentation/components/inputs/Button/Button';
-import { AddCircleIcon } from 'presentation/components/display/Icons/AddCircleIcon';
-import { TextInput } from 'presentation/components/inputs/TextInput/TextInput';
+import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
+import { AdditionalButton } from '../AddButton/AdditionalButton';
+import { BackSpaceButton } from 'presentation/components/inputs/BackSpaceButton/BackSpaceButton';
 
 type OwnProps = {
+  className?: string;
   type?: 'text' | 'input';
+  label?: string;
+  value?: InHouseWork[];
+  readOnly?: boolean;
+  disabled?: boolean;
+  inline?: boolean;
+  error?: string;
   onChange: (values: InHouseWork[]) => void;
   onBlur?: (values: InHouseWork[]) => void;
 };
 
-export type InHouseWorksFormProps = OwnProps & Omit<FormBaseProps<InHouseWork[]>, keyof OwnProps>;
-
-const rootClassName = 'in-house-works-form';
-export const InHouseWorksFormClassNames = {
-  root: rootClassName,
-  wrap: `${rootClassName}__wrap`,
-} as const;
+export type InHouseWorksFormProps = OwnProps;
 
 // eslint-disable-next-line complexity
-export const UnStyledInHouseWorksForm = React.memo(function InHouseWorksForm({
+export const InHouseWorksForm = React.memo(function InHouseWorksForm({
   className,
-  type = isMobile ? 'input' : 'text',
-  id,
-  name,
+  type,
   value: values = [],
-  placeholder,
   readOnly,
   disabled,
-  label,
-  required,
   inline,
   error,
-  description,
   onChange,
 }: InHouseWorksFormProps) {
-  const handleOnChangeTime = (time: Time, rowIndex: number, key: keyof Range<Time>) => {
-    onChange(values.map((v, i) => (rowIndex !== i ? v : { ...v, [key]: time })));
+  const handleOnChange = (value: InHouseWork, rowIndex: number) => {
+    onChange(values.map((v, i) => (rowIndex !== i ? v : { ...value })));
   };
 
-  const handleOnRemarks = (remarks: string, rowIndex: number) => {
-    onChange(values.map((v, i) => (rowIndex !== i ? v : { ...v, remarks })));
+  const handleOnClickClear = (rowIndex: number) => {
+    onChange(values.filter((_, i) => rowIndex !== i));
   };
 
   return (
-    <div className={className}>
-      <WithLabelForForm htmlFor={id} label={label} required={required} inline={inline}>
-        {description && <DescriptionForForm description={description} />}
-        {values.map(({ start, end, remarks }, rowIndex) => {
-          return (
-            <React.Fragment key={`${id}-${rowIndex}`}>
-              <div className={InHouseWorksFormClassNames.wrap}>
-                {type === 'text' ? (
-                  <StyledTimeTextInput
-                    id={id}
-                    name={name}
-                    value={start}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    disabled={disabled}
-                    error={error}
-                    onBlur={(time) => {
-                      handleOnChangeTime(time, rowIndex, 'start');
-                    }}
-                  />
-                ) : (
-                  <StyledTimeInput
-                    id={id}
-                    name={name}
-                    value={start}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    disabled={disabled}
-                    error={error}
-                    onChange={(time) => {
-                      handleOnChangeTime(time, rowIndex, 'start');
-                    }}
-                  />
-                )}
-                <span>~</span>
-                {type === 'text' ? (
-                  <StyledTimeTextInput
-                    id={`${id}-end`}
-                    name={`${name}-end`}
-                    value={end}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    disabled={disabled}
-                    error={error}
-                    onBlur={(time) => {
-                      handleOnChangeTime(time, rowIndex, 'end');
-                    }}
-                  />
-                ) : (
-                  <StyledTimeInput
-                    id={`${id}-end`}
-                    name={`${name}-end`}
-                    value={end}
-                    placeholder={placeholder}
-                    readOnly={readOnly}
-                    disabled={disabled}
-                    error={error}
-                    onChange={(time) => {
-                      handleOnChangeTime(time, rowIndex, 'end');
-                    }}
-                  />
-                )}
-              </div>
-              <StyledTextInput
-                id={`${id}-remarks-${rowIndex}`}
-                name={`${name}-remarks`}
-                value={remarks}
-                error={error}
-                placeholder={placeholder}
-                readOnly={readOnly}
-                disabled={disabled}
-                onChange={(e) => {
-                  handleOnRemarks(e.currentTarget?.value ?? '', rowIndex);
-                }}
-                onClear={(e) => {
-                  handleOnRemarks('', rowIndex);
-                }}
-              />
-            </React.Fragment>
-          );
-        })}
-        {!readOnly && (
-          <StyledButton
-            onClick={() => {
-              onChange([...values, { id: undefined, start: undefined, end: undefined }]);
-            }}
-          >
-            <div>
-              <AddCircleIcon color="main" />
-              {label}を追加
-            </div>
-          </StyledButton>
-        )}
-        {error && <ErrorMessageForForm message={error} />}
-      </WithLabelForForm>
-    </div>
+    <StyledRoot className={className}>
+      {values.map((value, index) => {
+        return (
+          <StyledFormWrapper key={`inHouseWork-${index + 1}`}>
+            <StyledBackSpaceButton
+              ariaLabel={`社内作業${index + 1}を削除する`}
+              onClick={() => handleOnClickClear(index)}
+            />
+            <InHouseWorkForm
+              type={type}
+              id={`inHouseWork-${index + 1}`}
+              name="inHouseWork"
+              label={`社内作業${index + 1}`}
+              inline={inline}
+              readOnly={readOnly}
+              disabled={disabled}
+              row={index}
+              value={value}
+              onChange={(v, row) => handleOnChange(v, row)}
+            />
+          </StyledFormWrapper>
+        );
+      })}
+      <StyledAdditionalButton
+        label="社内作業を追加"
+        onClick={() => {
+          onChange([...values, { id: undefined }]);
+        }}
+      />
+      {error && <ErrorMessageForForm message={error} />}
+    </StyledRoot>
   );
 });
 
-const StyledTimeTextInput = styled(TimeTextInput)``;
-const StyledTimeInput = styled(TimeInput)``;
-const StyledTextInput = styled(TextInput)``;
-const StyledButton = styled(Button)``;
-export const InHouseWorksForm = styled(UnStyledInHouseWorksForm)`
-  div.${InHouseWorksFormClassNames.wrap} {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    & > ${StyledTimeTextInput} {
-      width: 82px;
-    }
-    & > ${StyledTimeInput} {
-      /* FIXME adjust size */
-      width: 100px;
-    }
-    & > span {
-      max-width: 28px;
-      height: 28px;
-      line-height: 28px;
-      text-align: center;
-      font-size: ${({ theme }) => theme.font.size.large}px;
-      font-weight: ${({ theme }) => theme.font.weight.bold};
-    }
+const StyledRoot = styled.div``;
+
+const StyledBackSpaceButton = styled(BackSpaceButton)`
+  /* FIXME: inline style */
+  transform: rotate(180deg);
+`;
+
+const StyledFormWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  & + & {
+    margin-top: ${({ theme }) => theme.space.large}px;
   }
-  ${StyledTextInput} {
-    max-width: 175px;
-    margin: ${({ theme }) => `${theme.space.large}px 0`};
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  ${StyledButton} {
-    min-width: 160px;
-    & > div {
-      height: 48px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      & > svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
+`;
+
+const StyledAdditionalButton = styled(AdditionalButton)`
+  width: 100%;
+  margin-top: ${({ theme }) => theme.space.large}px;
 `;

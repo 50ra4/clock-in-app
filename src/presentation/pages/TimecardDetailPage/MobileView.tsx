@@ -57,7 +57,10 @@ export function MobileView() {
   });
   const { uid } = useParams<{ uid: string }>();
 
-  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord } = useDailyTimeRecordsOfMonth({ month: selectedMonth, uid });
+  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth({
+    month: selectedMonth,
+    uid,
+  });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
@@ -101,11 +104,10 @@ export function MobileView() {
         return;
       }
 
-      // TODO: remove
-      // eslint-disable-next-line no-console
-      console.log('remove record');
+      removeDailyTimeRecord(date);
+      setOpenInputDialog(false);
     },
-    [dispatch],
+    [dispatch, removeDailyTimeRecord],
   );
 
   const onSaveDailyTimeRecord = useCallback(

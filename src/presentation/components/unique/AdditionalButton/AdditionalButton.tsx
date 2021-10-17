@@ -13,7 +13,7 @@ type Props = {
 
 export const AdditionalButton = React.memo(function AdditionalButton({ className, label, disabled, onClick }: Props) {
   return (
-    <StyledButton className={className} onClick={onClick} disabled={disabled}>
+    <StyledButton className={className} color="primary" onClick={onClick} disabled={disabled}>
       <AddCircleIcon color="main" />
       {label}
     </StyledButton>

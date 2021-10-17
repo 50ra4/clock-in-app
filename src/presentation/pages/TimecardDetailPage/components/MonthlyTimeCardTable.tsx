@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import ja from 'date-fns/locale/ja';
 import format from 'date-fns/format';
@@ -20,7 +20,7 @@ type Props = {
   readOnly: boolean;
   month: string;
   dailyRecords: DailyTimeRecord[];
-  selectEditedRecord: (dateString: string) => void;
+  onSelectDate: (dateString: string) => void;
 };
 
 export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
@@ -28,22 +28,13 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   readOnly,
   month,
   dailyRecords,
-  selectEditedRecord,
+  onSelectDate,
 }: Props) {
   const days = useMemo(() => {
     const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
     const end = endOfMonth(start);
     return eachDayOfInterval({ start, end });
   }, [month]);
-
-  const onClickEdit = useCallback(
-    (dateString: string) => {
-      return () => {
-        selectEditedRecord(dateString);
-      };
-    },
-    [selectEditedRecord],
-  );
 
   return (
     <StyledRoot className={className}>
@@ -72,7 +63,13 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                   <span>{`（${format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}）`}</span>
                 </th>
                 <td>
-                  <StyledActionButton readOnly={readOnly} day={dateString} onClick={onClickEdit(dateString)} />
+                  <StyledActionButton
+                    readOnly={readOnly}
+                    day={dateString}
+                    onClick={() => {
+                      onSelectDate(dateString);
+                    }}
+                  />
                 </td>
                 <td>{record?.start ? timeToTimeString(record?.start) : '-'}</td>
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>

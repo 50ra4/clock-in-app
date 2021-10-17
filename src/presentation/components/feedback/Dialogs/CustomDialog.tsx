@@ -59,7 +59,7 @@ function UnStyledCustomDialog({
       >
         <StyledStopPropagation stopPropagation={true}>
           <button className={CustomDialogClassNames.closeButton} onClick={handleClose}>
-            <CloseIcon color="negative" size="large" />
+            <CloseIcon color="main" size="large" />
           </button>
           {title && (
             <h2 className={CustomDialogClassNames.title} id={`${rootId}__label`}>

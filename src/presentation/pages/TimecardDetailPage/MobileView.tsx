@@ -1,8 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { isValidDateString, getThisMonthDateString } from 'utils/dateUtil';
@@ -14,10 +12,6 @@ import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useAuthentication } from 'hooks/useAuthentication';
-
-import { AppState } from 'store/root';
-import { showConfirmDialog } from 'thunks/connectedDialog';
-import { ConnectedDialogActions } from 'store/connectedDialog';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -48,8 +42,6 @@ const parseQuery = (queryString: string) => {
 };
 
 export function MobileView() {
-  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions>>();
-
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
@@ -57,7 +49,10 @@ export function MobileView() {
   });
   const { uid } = useParams<{ uid: string }>();
 
-  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord } = useDailyTimeRecordsOfMonth({ month: selectedMonth, uid });
+  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth({
+    month: selectedMonth,
+    uid,
+  });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
@@ -90,30 +85,19 @@ export function MobileView() {
 
   const onDeleteDailyTimeRecord = useCallback(
     async (date: string) => {
-      const result = await dispatch(
-        showConfirmDialog({
-          title: '確認',
-          message: `${date}の勤怠情報を削除します。よろしいですか？`,
-        }),
-      );
-
-      if (result !== 'ok') {
-        return;
-      }
-
-      // TODO: remove
-      // eslint-disable-next-line no-console
-      console.log('remove record');
+      await removeDailyTimeRecord(date);
+      setOpenInputDialog(false);
     },
-    [dispatch],
+    [removeDailyTimeRecord],
   );
 
   const onSaveDailyTimeRecord = useCallback(
-    (record: DailyTimeRecord) => {
+    async (record: DailyTimeRecord) => {
       if (!isLoggedInUser) {
         return;
       }
-      saveDailyTimeRecord(record);
+      await saveDailyTimeRecord(record);
+      setOpenInputDialog(false);
     },
     [isLoggedInUser, saveDailyTimeRecord],
   );
@@ -125,7 +109,7 @@ export function MobileView() {
         readOnly={!isLoggedInUser}
         month={selectedMonth}
         dailyRecords={dailyTimeRecordsOfMonth}
-        selectEditedRecord={selectEditedRecord}
+        onSelectDate={selectEditedRecord}
       />
       {openInputDialog && editedRecord && (
         <InputRecordDialog

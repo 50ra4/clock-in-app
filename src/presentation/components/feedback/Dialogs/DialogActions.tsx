@@ -95,27 +95,15 @@ export const InputRecordDialogActions = React.memo(function ConfirmDialogAction(
   onClickOK,
   onClickDelete,
 }: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'> & { onClickDelete: () => void }) {
-  const handleOnClickOK = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      if (onClickOK) {
-        onClickOK(e);
-      }
-      if (onClose) {
-        onClose(e);
-      }
-    },
-    [onClickOK, onClose],
-  );
-
   return (
     <>
-      <StyledButton color="secondary" onClick={onClickDelete} text="削除する" />
+      <StyledButton color="secondary" onClick={onClickDelete} text="削除" />
       <StyledButton color="default" onClick={onClose} text="キャンセル" />
-      <StyledButton color="primary" onClick={handleOnClickOK} text="OK" />
+      <StyledButton color="primary" onClick={onClickOK} text="OK" />
     </>
   );
 });
 
 const StyledButton = styled(Button)`
-  min-width: 100px;
+  min-width: 80px;
 `;

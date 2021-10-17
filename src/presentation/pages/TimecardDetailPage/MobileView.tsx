@@ -109,7 +109,7 @@ export function MobileView() {
         readOnly={!isLoggedInUser}
         month={selectedMonth}
         dailyRecords={dailyTimeRecordsOfMonth}
-        selectEditedRecord={selectEditedRecord}
+        onSelectDate={selectEditedRecord}
       />
       {openInputDialog && editedRecord && (
         <InputRecordDialog

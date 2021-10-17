@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
 import { Time, Range } from 'types';
 import { FormBaseProps } from '../FormBase/FormBase';
@@ -30,7 +29,7 @@ export const TimeRangeFormClassNames = {
 // eslint-disable-next-line complexity
 export const UnStyledTimeRangeForm = React.memo(function TimeRangeForm({
   className,
-  type = isMobile ? 'input' : 'text',
+  type = 'input',
   id,
   name,
   value,

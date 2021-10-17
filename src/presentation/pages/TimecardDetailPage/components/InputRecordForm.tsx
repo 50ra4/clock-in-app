@@ -26,7 +26,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
   return (
     <StyledRoot className={className}>
       <TimeForm
-        type="text"
+        type="input"
         id="clock-in-time"
         name="clock-in-time"
         value={start}
@@ -43,7 +43,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         }}
       />
       <TimeForm
-        type="text"
+        type="input"
         id="clock-out-time"
         name="clock-out-time"
         value={end}
@@ -60,7 +60,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         }}
       />
       <RestTimeFormGroup
-        type="text"
+        type="input"
         value={restTimes}
         readOnly={readOnly}
         disabled={readOnly}
@@ -70,7 +70,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         }}
       />
       <InHouseWorkFormGroup
-        type="text"
+        type="input"
         value={inHouseWorks}
         readOnly={readOnly}
         disabled={readOnly}

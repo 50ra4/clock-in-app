@@ -1463,15 +1463,14 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-iklJeh iFTkvG"
+        className="sc-jJMGnK cLxhvE"
       >
         <input
           className="sc-dIvrsQ QnAUU input-base"
           id="docs"
           name="docs"
-          onBlur={[Function]}
           onChange={[Function]}
-          type="text"
+          type="time"
           value="10:10"
         />
       </div>
@@ -1593,15 +1592,14 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-jJMGnK sc-cBoqAE cLxhvE"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
             id="docs"
             name="docs"
-            onBlur={[Function]}
             onChange={[Function]}
-            type="text"
+            type="time"
             value="01:59"
           />
         </div>
@@ -1609,15 +1607,14 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           ~
         </span>
         <div
-          className="sc-iklJeh sc-gXfVKN iFTkvG"
+          className="sc-jJMGnK sc-cBoqAE cLxhvE"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
             id="docs-end"
             name="docs-end"
-            onBlur={[Function]}
             onChange={[Function]}
-            type="text"
+            type="time"
             value="02:30"
           />
         </div>
@@ -4506,7 +4503,8 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 
 exports[`Storyshots unique/AdditionalButton Docs 1`] = `
 <button
-  className="sc-fujyAs sc-cOifOu hVDsba bZIBTg button"
+  className="sc-fujyAs sc-cOifOu aUBae bZIBTg button"
+  color="primary"
   disabled={false}
   onClick={[Function]}
 >
@@ -5025,7 +5023,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
     className="sc-oeezt hSuqyC"
   >
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-hhIiOg hIsbPH button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-hhIiOg hIsbPH button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >
@@ -5087,7 +5086,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Text Type 1`] = `
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-hhIiOg hIsbPH button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-hhIiOg hIsbPH button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >
@@ -5126,7 +5126,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Time Input Type 1`] = `
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-hhIiOg hIsbPH button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-hhIiOg hIsbPH button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >
@@ -5542,7 +5543,8 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
     className="sc-amiJK ehCGNn"
   >
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-jOFryr czmHWN button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-jOFryr czmHWN button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >
@@ -5604,7 +5606,8 @@ exports[`Storyshots unique/RestTimeFormGroup Text Type 1`] = `
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-jOFryr czmHWN button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-jOFryr czmHWN button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >
@@ -5643,7 +5646,8 @@ exports[`Storyshots unique/RestTimeFormGroup Time Input Type 1`] = `
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-cOifOu hVDsba bZIBTg sc-jOFryr czmHWN button"
+      className="sc-fujyAs sc-cOifOu aUBae bZIBTg sc-jOFryr czmHWN button"
+      color="primary"
       disabled={false}
       onClick={[Function]}
     >

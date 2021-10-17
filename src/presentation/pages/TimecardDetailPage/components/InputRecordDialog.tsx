@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 import { CustomDialog } from 'presentation/components/feedback/Dialogs/CustomDialog';
 import { InputRecordDialogActions } from 'presentation/components/feedback/Dialogs/DialogActions';
@@ -54,7 +55,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     >
       <InputRecordForm
         readOnly={readOnly}
-        inline={true}
+        inline={!isMobile}
         dailyTimeRecord={dailyTimeRecord}
         onChangeDailyTimeRecord={onChangeDailyTimeRecord}
       />

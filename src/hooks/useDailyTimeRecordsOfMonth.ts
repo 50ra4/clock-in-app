@@ -1,4 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+
+import { AppState } from 'store/root';
 import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
@@ -11,6 +15,8 @@ import {
 } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
+import { ConnectedDialogActions } from 'store/connectedDialog';
+import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
 
 type Props = {
   uid: string;
@@ -24,6 +30,8 @@ type SubCollection = {
 };
 
 export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
+  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions>>();
+
   // FIXME: var-name
   const [rootCollectionData, setRootCollectionData] = useState(new Map<string, DailyTimeRecord>());
   const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());
@@ -44,23 +52,46 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   }, [rootCollectionData, subCollectionData]);
 
   const saveDailyTimeRecord = useCallback(
-    (data: DailyTimeRecord) => {
-      writeDailyTimeRecord(uid, data).catch((err: FirestoreError) => {
-        // TODO: show popup
-        setError(new AppError('FAILED_WRITE_DATA', { message: err.message, stack: err.stack }));
+    async (data: DailyTimeRecord) => {
+      // TODO: add loading...
+      await writeDailyTimeRecord(uid, data).catch((err: FirestoreError) => {
+        dispatch(
+          showAlertDialog({
+            // TODO: move to constants
+            title: 'エラー',
+            message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
+          }),
+        );
       });
     },
-    [uid],
+    [dispatch, uid],
   );
 
   const removeDailyTimeRecord = useCallback(
-    (date: string) => {
-      deleteDailyTimeRecord(uid, date).catch((err: FirestoreError) => {
-        // TODO: show popup
-        setError(new AppError('FAILED_WRITE_DATA', { message: err.message, stack: err.stack }));
+    async (date: string) => {
+      const result = await dispatch(
+        showConfirmDialog({
+          title: '確認',
+          message: `${date}の勤怠情報を削除します。よろしいですか？`,
+        }),
+      );
+
+      if (result !== 'ok') {
+        return;
+      }
+
+      // TODO: add loading...
+      await deleteDailyTimeRecord(uid, date).catch((err: FirestoreError) => {
+        dispatch(
+          showAlertDialog({
+            // TODO: move to constants
+            title: 'エラー',
+            message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
+          }),
+        );
       });
     },
-    [uid],
+    [dispatch, uid],
   );
 
   useEffect(() => {

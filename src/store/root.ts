@@ -2,12 +2,14 @@
 import { combineReducers, compose, applyMiddleware, StoreCreator, createStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import { authenticationReducer } from './authentication';
+import { connectedDialogReducer } from './connectedDialog';
 import { myProfileReducer } from './myProfile';
 import { ROOT_ACTIONS } from './rootActions';
 
 export const reducers = combineReducers({
   authentication: authenticationReducer,
   myProfile: myProfileReducer,
+  connectedDialog: connectedDialogReducer,
 });
 export type AppState = ReturnType<typeof reducers>;
 

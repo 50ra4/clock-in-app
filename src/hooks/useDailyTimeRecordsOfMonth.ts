@@ -3,7 +3,7 @@ import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import { getRestTimesAndInHouseWorks, queryToDailyTimeRecord, writeDailyTimeRecord } from 'services/dailyTimeRecord';
+import { readRestTimesAndInHouseWorks, queryToDailyTimeRecord, writeDailyTimeRecord } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 
@@ -97,7 +97,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
     const getDataOfMonth = days.map(async (day) => ({
       day,
-      ...(await getRestTimesAndInHouseWorks(uid, day)),
+      ...(await readRestTimesAndInHouseWorks(uid, day)),
     }));
 
     Promise.all(getDataOfMonth)

@@ -61,7 +61,7 @@ export const queryToDailyTimeRecord = (
     createdAt: query.get('createdAt'),
   } as DailyTimeRecord);
 
-const getRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
+const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
   return firestore
     .collection(replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day }))
@@ -69,7 +69,7 @@ const getRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
     .then((snapshot) => snapshot.docs.map(queryToRestTime));
 };
 
-const getInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]> => {
+const readInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
   return firestore
     .collection(replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day }))
@@ -77,11 +77,14 @@ const getInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]>
     .then((snapshot) => snapshot.docs.map(queryToInHouseWork));
 };
 
-export const getRestTimesAndInHouseWorks = async (
+export const readRestTimesAndInHouseWorks = async (
   uid: string,
   day: string,
 ): Promise<Pick<DailyTimeRecord, 'inHouseWorks' | 'restTimes'>> => {
-  const [inHouseWorks, restTimes] = await Promise.all([await getInHouseWorks(uid, day), await getRestTimes(uid, day)]);
+  const [inHouseWorks, restTimes] = await Promise.all([
+    await readInHouseWorks(uid, day),
+    await readRestTimes(uid, day),
+  ]);
   return { inHouseWorks, restTimes };
 };
 
@@ -101,8 +104,8 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
     .collection(replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month }))
     .doc(date);
   const rootDocument = await rootDocumentRef.get();
-  const alreadySavedInHouseWorks = await getInHouseWorks(uid, date);
-  const alreadySavedRestTimes = await getRestTimes(uid, date);
+  const alreadySavedInHouseWorks = await readInHouseWorks(uid, date);
+  const alreadySavedRestTimes = await readRestTimes(uid, date);
 
   const inHouseWorkCollectionRef = firestore.collection(
     replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day: date }),

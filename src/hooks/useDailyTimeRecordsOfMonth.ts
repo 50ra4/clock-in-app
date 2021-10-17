@@ -3,7 +3,12 @@ import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import { readRestTimesAndInHouseWorks, queryToDailyTimeRecord, writeDailyTimeRecord } from 'services/dailyTimeRecord';
+import {
+  readRestTimesAndInHouseWorks,
+  queryToDailyTimeRecord,
+  writeDailyTimeRecord,
+  deleteDailyTimeRecord,
+} from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 
@@ -41,6 +46,16 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   const saveDailyTimeRecord = useCallback(
     (data: DailyTimeRecord) => {
       writeDailyTimeRecord(uid, data).catch((err: FirestoreError) => {
+        // TODO: show popup
+        setError(new AppError('FAILED_WRITE_DATA', { message: err.message, stack: err.stack }));
+      });
+    },
+    [uid],
+  );
+
+  const removeDailyTimeRecord = useCallback(
+    (date: string) => {
+      deleteDailyTimeRecord(uid, date).catch((err: FirestoreError) => {
         // TODO: show popup
         setError(new AppError('FAILED_WRITE_DATA', { message: err.message, stack: err.stack }));
       });
@@ -116,5 +131,6 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   return {
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
+    removeDailyTimeRecord,
   };
 };

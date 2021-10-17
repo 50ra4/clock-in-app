@@ -1,6 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { isValidDateString, getThisMonthDateString } from 'utils/dateUtil';
@@ -12,6 +14,10 @@ import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useAuthentication } from 'hooks/useAuthentication';
+
+import { AppState } from 'store/root';
+import { showConfirmDialog } from 'thunks/connectedDialog';
+import { ConnectedDialogActions } from 'store/connectedDialog';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -42,6 +48,8 @@ const parseQuery = (queryString: string) => {
 };
 
 export function MobileView() {
+  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions>>();
+
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
@@ -76,9 +84,29 @@ export function MobileView() {
     [dailyTimeRecordsOfMonth],
   );
 
-  const closeInputDialog = useCallback(() => {
+  const closeInputDialog = useCallback(async () => {
     setOpenInputDialog(false);
   }, []);
+
+  const onDeleteDailyTimeRecord = useCallback(
+    async (date: string) => {
+      const result = await dispatch(
+        showConfirmDialog({
+          title: '確認',
+          message: `${date}の勤怠情報を削除します。よろしいですか？`,
+        }),
+      );
+
+      if (result !== 'ok') {
+        return;
+      }
+
+      // TODO: remove
+      // eslint-disable-next-line no-console
+      console.log('remove record');
+    },
+    [dispatch],
+  );
 
   const onSaveDailyTimeRecord = useCallback(
     (record: DailyTimeRecord) => {
@@ -106,6 +134,7 @@ export function MobileView() {
           onClose={closeInputDialog}
           dailyTimeRecord={editedRecord}
           onSaveDailyTimeRecord={onSaveDailyTimeRecord}
+          onDeleteDailyTimeRecord={onDeleteDailyTimeRecord}
         />
       )}
     </StyledRoot>

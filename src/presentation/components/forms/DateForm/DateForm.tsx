@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
 import { FormBaseProps } from '../FormBase/FormBase';
 import { DescriptionForForm } from '../DescriptionForForm/DescriptionForForm';
@@ -23,7 +22,7 @@ export type DateFormProps = OwnProps & Omit<FormBaseProps<string>, keyof OwnProp
 // eslint-disable-next-line complexity
 export const UnStyledDateForm = React.memo(function DateForm({
   className,
-  type = isMobile ? 'input' : 'select',
+  type = 'select',
   id,
   name,
   value,

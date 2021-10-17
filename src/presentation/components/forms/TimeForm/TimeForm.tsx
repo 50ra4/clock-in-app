@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
 import { FormBaseProps } from '../FormBase/FormBase';
 import { DescriptionForForm } from '../DescriptionForForm/DescriptionForForm';
@@ -22,7 +21,7 @@ export type TimeFormProps = OwnProps & Omit<FormBaseProps<Time>, keyof OwnProps>
 // eslint-disable-next-line complexity
 export const UnStyledTimeForm = React.memo(function TimeForm({
   className,
-  type = isMobile ? 'input' : 'text',
+  type = 'input',
   id,
   name,
   value,

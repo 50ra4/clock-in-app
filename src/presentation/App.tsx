@@ -9,6 +9,7 @@ import { ROUTES, ErrorPage } from './routes';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
 import { useDetectAuthStateChanged } from 'hooks/useAuthentication';
+import { ConnectedDialog } from 'containers/ConnectedDialog';
 
 function App() {
   const { isInitialized } = useDetectAuthStateChanged();
@@ -30,6 +31,7 @@ function App() {
           )}
         </ErrorBoundary>
       </Suspense>
+      <ConnectedDialog />
     </ThemeProvider>
   );
 }

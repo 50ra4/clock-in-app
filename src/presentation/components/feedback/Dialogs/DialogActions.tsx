@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import styled from 'styled-components';
 import { Button } from 'presentation/components/inputs/Button/Button';
 
 import { ConfirmDialogProps } from './ConfirmDialog';
@@ -23,8 +24,8 @@ export const ConfirmDialogActions = React.memo(function ConfirmDialogAction({
 
   return (
     <>
-      <Button color="default" onClick={onClose} text="キャンセル" />
-      <Button color="primary" onClick={handleOnClickOK} text="OK" />
+      <StyledButton color="default" onClick={onClose} text="キャンセル" />
+      <StyledButton color="primary" onClick={handleOnClickOK} text="OK" />
     </>
   );
 });
@@ -47,7 +48,7 @@ export const AlertDialogActions = React.memo(function AlertDialogAction({
 
   return (
     <>
-      <Button color="primary" onClick={handleOnClickOK} text="OK" />
+      <StyledButton color="primary" onClick={handleOnClickOK} text="OK" />
     </>
   );
 });
@@ -83,8 +84,38 @@ export const SelectDialogActions = React.memo(function SelectDialogAction({
 
   return (
     <>
-      <Button color="secondary" onClick={handleOnClickNo} text="いいえ" />
-      <Button color="primary" onClick={handleOnClickYes} text="はい" />
+      <StyledButton color="secondary" onClick={handleOnClickNo} text="いいえ" />
+      <StyledButton color="primary" onClick={handleOnClickYes} text="はい" />
     </>
   );
 });
+
+export const InputRecordDialogActions = React.memo(function ConfirmDialogAction({
+  onClose,
+  onClickOK,
+  onClickDelete,
+}: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'> & { onClickDelete: () => void }) {
+  const handleOnClickOK = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (onClickOK) {
+        onClickOK(e);
+      }
+      if (onClose) {
+        onClose(e);
+      }
+    },
+    [onClickOK, onClose],
+  );
+
+  return (
+    <>
+      <StyledButton color="secondary" onClick={onClickDelete} text="削除する" />
+      <StyledButton color="default" onClick={onClose} text="キャンセル" />
+      <StyledButton color="primary" onClick={handleOnClickOK} text="OK" />
+    </>
+  );
+});
+
+const StyledButton = styled(Button)`
+  min-width: 100px;
+`;

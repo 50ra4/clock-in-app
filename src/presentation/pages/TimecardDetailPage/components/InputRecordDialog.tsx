@@ -63,4 +63,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
   );
 });
 
-const StyledCustomDialog = styled(CustomDialog)``;
+const StyledCustomDialog = styled(CustomDialog)`
+  width: 95%;
+  max-width: 550px;
+`;

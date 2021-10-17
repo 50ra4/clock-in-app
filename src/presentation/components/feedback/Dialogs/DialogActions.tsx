@@ -97,7 +97,7 @@ export const InputRecordDialogActions = React.memo(function ConfirmDialogAction(
 }: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'> & { onClickDelete: () => void }) {
   return (
     <>
-      <StyledButton color="secondary" onClick={onClickDelete} text="削除する" />
+      <StyledButton color="secondary" onClick={onClickDelete} text="削除" />
       <StyledButton color="default" onClick={onClose} text="キャンセル" />
       <StyledButton color="primary" onClick={onClickOK} text="OK" />
     </>
@@ -105,5 +105,5 @@ export const InputRecordDialogActions = React.memo(function ConfirmDialogAction(
 });
 
 const StyledButton = styled(Button)`
-  min-width: 100px;
+  min-width: 80px;
 `;

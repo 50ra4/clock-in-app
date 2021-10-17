@@ -88,12 +88,6 @@ export const readRestTimesAndInHouseWorks = async (
   return { inHouseWorks, restTimes };
 };
 
-export const getDailyTimeRecords = async (uid: string, month: string): Promise<DailyTimeRecord[]> =>
-  firestore
-    .collection(replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month }))
-    .get()
-    .then((snapshot) => snapshot.docs.map(queryToDailyTimeRecord));
-
 export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
   // TODO: Save restTimes separately
   const { restTimes, inHouseWorks, date, ...rest } = data;
@@ -165,6 +159,34 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
   batch.set(rootDocumentRef, {
     ...omitUndefinedProps({ ...rest }),
     ...createAdditionalProps(uid, rootDocument.exists),
+  });
+
+  await batch.commit();
+};
+
+export const deleteDailyTimeRecord = async (uid: string, date: string) => {
+  const month = dateStringToDateString(date, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
+  const rootDocumentRef = firestore
+    .collection(replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month }))
+    .doc(date);
+
+  const inHouseWorkCollectionRef = firestore.collection(
+    replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day: date }),
+  );
+  const inHouseWorkDocumentRefs = await readInHouseWorks(uid, date).then((inHouseWorks) =>
+    inHouseWorks.map(({ id }) => inHouseWorkCollectionRef.doc(id)),
+  );
+
+  const restTimeCollectionRef = firestore.collection(
+    replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day: date }),
+  );
+  const restTimes = await readRestTimes(uid, date).then((restTimes) =>
+    restTimes.map(({ id }) => restTimeCollectionRef.doc(id)),
+  );
+
+  const batch = firestore.batch();
+  [rootDocumentRef, ...inHouseWorkDocumentRefs, ...restTimes].forEach((doc) => {
+    batch.delete(doc);
   });
 
   await batch.commit();

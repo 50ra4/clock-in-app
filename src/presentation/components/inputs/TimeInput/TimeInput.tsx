@@ -26,16 +26,12 @@ export const UnStyledTimeInput = React.memo(function TimeInput({
   ...otherProps
 }: TimeInputProps) {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const _timeString = stringToTimeString(e.currentTarget.value);
-    const time = timeStringToTime(_timeString);
+    const time = timeStringToTime(stringToTimeString(e.currentTarget.value));
     onChange(time, e);
   };
-
-  const timeString = timeToTimeString(value);
-
   return (
     <div className={className}>
-      <InputBase {...otherProps} type="time" ref={ref} value={timeString} onChange={handleOnChange} />
+      <InputBase {...otherProps} type="time" ref={ref} value={timeToTimeString(value)} onChange={handleOnChange} />
     </div>
   );
 });
@@ -44,7 +40,7 @@ export const TimeInput = styled(UnStyledTimeInput)`
   width: 100%;
   position: relative;
   & > input {
-    &[type='time']::-webkit-calendar-picker-indicator {
+    &::-webkit-calendar-picker-indicator {
       /* 
       * for chrome
       * @see https://stackoverflow.com/questions/61934148/hide-the-icon-on-a-html-time-input-field-in-chrome 

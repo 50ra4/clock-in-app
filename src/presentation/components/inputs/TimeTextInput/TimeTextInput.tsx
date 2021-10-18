@@ -54,7 +54,7 @@ export const UnStyledTimeTextInput = React.memo(function TimeTextInput({
 
   const handleOnClear = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    setTimeString('00:00');
+    setTimeString('');
     if (onClear) {
       onClear(e);
     }

@@ -98,6 +98,7 @@ export const InputRecordForm = React.memo(function InputRecordForm({
 
 const StyledRoot = styled.div`
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: calc(100vh - 160px);
   ${({ theme }) => theme.scrollBar.hidden()}
 

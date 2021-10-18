@@ -1463,7 +1463,7 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-jJMGnK cLxhvE"
+        className="sc-jJMGnK hShWoS"
       >
         <input
           className="sc-dIvrsQ QnAUU input-base"
@@ -1527,7 +1527,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-jJMGnK cLxhvE"
+        className="sc-jJMGnK hShWoS"
       >
         <input
           className="sc-dIvrsQ eFXUYy input-base"
@@ -1592,7 +1592,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-jJMGnK sc-cBoqAE cLxhvE"
+          className="sc-jJMGnK sc-cBoqAE hShWoS"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -1607,7 +1607,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           ~
         </span>
         <div
-          className="sc-jJMGnK sc-cBoqAE cLxhvE"
+          className="sc-jJMGnK sc-cBoqAE hShWoS"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -1701,7 +1701,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
         className="time-range-form__wrap"
       >
         <div
-          className="sc-jJMGnK sc-cBoqAE cLxhvE"
+          className="sc-jJMGnK sc-cBoqAE hShWoS"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -1717,7 +1717,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           ~
         </span>
         <div
-          className="sc-jJMGnK sc-cBoqAE cLxhvE"
+          className="sc-jJMGnK sc-cBoqAE hShWoS"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -2524,7 +2524,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
 
 exports[`Storyshots inputs/TimeInput Docs 1`] = `
 <div
-  className="sc-jJMGnK cLxhvE"
+  className="sc-jJMGnK hShWoS"
 >
   <input
     className="sc-dIvrsQ QnAUU input-base"
@@ -4780,7 +4780,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
         className="sc-Arkif fhdJoL"
       >
         <div
-          className="sc-jJMGnK sc-jgPyTC cLxhvE ePYxiu"
+          className="sc-jJMGnK sc-jgPyTC hShWoS ePYxiu"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -4800,7 +4800,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           ~
         </span>
         <div
-          className="sc-jJMGnK sc-jgPyTC cLxhvE ePYxiu"
+          className="sc-jJMGnK sc-jgPyTC hShWoS ePYxiu"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -5373,7 +5373,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
         className="sc-lbVvki hORhrs"
       >
         <div
-          className="sc-jJMGnK sc-fbIWvP cLxhvE hKArBA"
+          className="sc-jJMGnK sc-fbIWvP hShWoS hKArBA"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -5393,7 +5393,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
           ~
         </span>
         <div
-          className="sc-jJMGnK sc-fbIWvP cLxhvE hKArBA"
+          className="sc-jJMGnK sc-fbIWvP hShWoS hKArBA"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"

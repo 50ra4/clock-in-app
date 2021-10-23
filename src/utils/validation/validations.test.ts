@@ -145,4 +145,24 @@ describe('validations', () => {
       });
     });
   });
+
+  describe('isInvalidDateString', () => {
+    describe('required', () => {
+      it(`should return "${VALIDATION_ERROR_MESSAGE.dateIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: true }, validator.isInvalidDateString);
+        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.dateIsEmpty);
+      });
+      it(`should NOT return "${VALIDATION_ERROR_MESSAGE.dateIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: false }, validator.isInvalidDateString);
+        expect(undefined).not.toBe(VALIDATION_ERROR_MESSAGE.dateIsEmpty);
+      });
+    });
+    describe('invalid format', () => {
+      const expect = createExpectForValidator({ required: false }, validator.isInvalidDateString);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid}"`, () => {
+        expect('2021-10-10').not.toBe(VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid);
+        expect('2021-02-31').toBe(VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid);
+      });
+    });
+  });
 });

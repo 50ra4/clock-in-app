@@ -4926,7 +4926,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-iklJeh sc-hTRkXV iFTkvG hLxqHO"
           >
             <input
-              className="sc-dIvrsQ QnAUU input-base"
+              className="sc-dIvrsQ eFXUYy input-base"
+              error="required"
               id="inHouseWork-1"
               name="inHouseWork"
               onBlur={[Function]}
@@ -4946,7 +4947,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-iklJeh sc-hTRkXV iFTkvG hLxqHO"
           >
             <input
-              className="sc-dIvrsQ QnAUU input-base"
+              className="sc-dIvrsQ eFXUYy input-base"
+              error="required"
               id="inHouseWork-1-end"
               name="inHouseWork-end"
               onBlur={[Function]}
@@ -4960,7 +4962,8 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-bYwzuL sc-gSYDnn eNoNmh dJyekG"
           >
             <input
-              className="sc-dIvrsQ egthDb input-base"
+              className="sc-dIvrsQ jFEMLV input-base"
+              error="required"
               id="inHouseWork-1-remarks"
               name="inHouseWork-remarks"
               onChange={[Function]}
@@ -5016,6 +5019,29 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             </svg>
           </button>
         </div>
+        <div
+          className="sc-fFSPTT cVCoUN"
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN ivKCeV sc-fnVZcZ"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+            />
+          </svg>
+          <p>
+            required
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -5046,29 +5072,6 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
       </svg>
       社内作業を追加
     </button>
-  </div>
-  <div
-    className="sc-fFSPTT cVCoUN"
-  >
-    <svg
-      aria-hidden={true}
-      className="sc-hKFxyN ivKCeV sc-fnVZcZ"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      required
-    </p>
   </div>
 </div>
 `;
@@ -5482,7 +5485,8 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             className="sc-iklJeh sc-ckTSus iFTkvG cXaSgB"
           >
             <input
-              className="sc-dIvrsQ QnAUU input-base"
+              className="sc-dIvrsQ eFXUYy input-base"
+              error="required"
               id="restTime-1"
               name="restTime"
               onBlur={[Function]}
@@ -5502,7 +5506,8 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             className="sc-iklJeh sc-ckTSus iFTkvG cXaSgB"
           >
             <input
-              className="sc-dIvrsQ QnAUU input-base"
+              className="sc-dIvrsQ eFXUYy input-base"
+              error="required"
               id="restTime-1-end"
               name="restTime-end"
               onBlur={[Function]}
@@ -5536,6 +5541,29 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             </svg>
           </button>
         </div>
+        <div
+          className="sc-fFSPTT cVCoUN"
+        >
+          <svg
+            aria-hidden={true}
+            className="sc-hKFxyN ivKCeV sc-fnVZcZ"
+            color="default"
+            size="medium"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+            />
+          </svg>
+          <p>
+            required
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -5566,29 +5594,6 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
       </svg>
       休憩時間を追加
     </button>
-  </div>
-  <div
-    className="sc-fFSPTT cVCoUN"
-  >
-    <svg
-      aria-hidden={true}
-      className="sc-hKFxyN ivKCeV sc-fnVZcZ"
-      color="default"
-      size="medium"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
-      />
-    </svg>
-    <p>
-      required
-    </p>
   </div>
 </div>
 `;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { RestTime } from 'types';
-import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { RestTimeForm } from '../RestTimeForm/RestTimeForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
 import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
@@ -15,7 +14,7 @@ type OwnProps = {
   readOnly?: boolean;
   disabled?: boolean;
   inline?: boolean;
-  error?: string;
+  errors?: string[];
   extendInput?: boolean;
   onChange: (values: RestTime[]) => void;
   onBlur?: (values: RestTime[]) => void;
@@ -31,7 +30,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   readOnly,
   disabled,
   inline,
-  error,
+  errors,
   extendInput,
   onChange,
 }: RestTimeFormGroupProps) {
@@ -63,6 +62,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
             row={index}
             extendInput={extendInput}
             value={value}
+            error={errors?.[index]}
             onChange={handleOnChange}
             onClear={handleOnClickClear}
           />
@@ -74,7 +74,6 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
           <StyledAdditionalButton disabled={disabled} label="休憩時間を追加" onClick={handleOnClickAdd} />
         </StyledWrapper>
       )}
-      {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
   );
 });

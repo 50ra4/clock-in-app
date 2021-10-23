@@ -15,7 +15,7 @@ type OwnProps = {
   readOnly?: boolean;
   disabled?: boolean;
   inline?: boolean;
-  error?: string;
+  errors?: string[];
   onChange: (values: InHouseWork[]) => void;
   onBlur?: (values: InHouseWork[]) => void;
 };
@@ -30,7 +30,7 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
   readOnly,
   disabled,
   inline,
-  error,
+  errors,
   onChange,
 }: InHouseWorkFormGroupProps) {
   const handleOnChange = (value: InHouseWork, rowIndex: number) => {
@@ -44,6 +44,13 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
   const handleOnClickAdd = () => {
     onChange([...values, { id: undefined }]);
   };
+
+  const error = errors?.reduce((acc, cur, index) => {
+    if (acc || !cur) {
+      return acc;
+    }
+    return `社内作業${index + 1}: ${cur}`;
+  }, '');
 
   return (
     <StyledRoot className={className}>
@@ -60,6 +67,7 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
             disabled={disabled}
             row={index}
             value={value}
+            error={errors?.[index]}
             onChange={handleOnChange}
             onClear={handleOnClickClear}
           />

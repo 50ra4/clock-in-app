@@ -15,7 +15,7 @@ type OwnProps = {
   readOnly?: boolean;
   disabled?: boolean;
   inline?: boolean;
-  error?: string;
+  errors?: string[];
   extendInput?: boolean;
   onChange: (values: RestTime[]) => void;
   onBlur?: (values: RestTime[]) => void;
@@ -31,7 +31,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   readOnly,
   disabled,
   inline,
-  error,
+  errors,
   extendInput,
   onChange,
 }: RestTimeFormGroupProps) {
@@ -46,6 +46,13 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   const handleOnClickAdd = () => {
     onChange([...values, { id: undefined }]);
   };
+
+  const error = errors?.reduce((acc, cur, index) => {
+    if (acc || !cur) {
+      return acc;
+    }
+    return `休憩時間${index + 1}: ${cur}`;
+  }, '');
 
   return (
     <StyledRoot className={className}>
@@ -63,6 +70,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
             row={index}
             extendInput={extendInput}
             value={value}
+            error={errors?.[index]}
             onChange={handleOnChange}
             onClear={handleOnClickClear}
           />

@@ -12,7 +12,7 @@ export const isInvalidHour: Validator<number> =
       }
       return new ValidationError(hour, VALIDATION_ERROR_MESSAGE.hourIsEmpty);
     }
-    if (hour < 0 || hour <= 23) {
+    if (hour < 0 || 23 < hour) {
       return new ValidationError(hour, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
     }
     return false;
@@ -29,7 +29,11 @@ export const isInvalidMinute: Validator<number> =
 export const isInvalidTime: Validator<Time> =
   ({ required }) =>
   (time) => {
-    // TODO: hourが不正
+    // TODO: 必須入力か
+    const invalidHourMessage = isInvalidHour({ required })(time?.hour);
+    if (invalidHourMessage) {
+      return invalidHourMessage;
+    }
     // TODO: minuteが不正
     return false;
   };
@@ -37,6 +41,7 @@ export const isInvalidTime: Validator<Time> =
 export const isInvalidTimeRange: Validator<Range<Time>> =
   ({ required }) =>
   ({ start, end } = {}) => {
+    // TODO: 必須入力か
     // TODO: startが不正
     // TODO: endが不正
     return false;

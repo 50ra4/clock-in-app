@@ -100,8 +100,8 @@ describe('validations', () => {
     });
     describe('invalid time end', () => {
       const expect = createExpectForValidator({ required: false }, validator.isInvalidTimeRange);
-      it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange}"`, () => {
-        expect({ start: { hour: 1, minute: 60 } }).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsOutOfRange}"`, () => {
+        expect({ end: { hour: 59 } }).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
       });
     });
   });

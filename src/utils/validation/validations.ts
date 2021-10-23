@@ -1,10 +1,10 @@
+/* eslint-disable complexity */
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { Time, Range, RestTime, InHouseWork, DailyTimeRecord } from 'types';
 import { ValidationError, Validator } from '../validationUtil';
 
 export const isInvalidHour: Validator<number> =
   ({ required }) =>
-  // eslint-disable-next-line complexity
   (hour) => {
     if (typeof hour !== 'number') {
       if (!required) {
@@ -21,29 +21,56 @@ export const isInvalidHour: Validator<number> =
 export const isInvalidMinute: Validator<number> =
   ({ required }) =>
   (minute) => {
-    // TODO: numberでない
-    // TODO: 0から59までのnumberでない
+    if (typeof minute !== 'number') {
+      if (!required) {
+        return false;
+      }
+      return new ValidationError(minute, VALIDATION_ERROR_MESSAGE.minuteIsEmpty);
+    }
+    if (minute < 0 || 59 < minute) {
+      return new ValidationError(minute, VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+    }
     return false;
   };
 
 export const isInvalidTime: Validator<Time> =
   ({ required }) =>
-  (time) => {
-    // TODO: 必須入力か
-    const invalidHourMessage = isInvalidHour({ required })(time?.hour);
+  ({ hour, minute } = {}) => {
+    if (typeof hour === 'undefined' && typeof minute === 'undefined') {
+      if (!required) {
+        return false;
+      }
+
+      return new ValidationError({ hour, minute }, VALIDATION_ERROR_MESSAGE.timeIsEmpty);
+    }
+    const invalidHourMessage = isInvalidHour({ required })(hour);
     if (invalidHourMessage) {
       return invalidHourMessage;
     }
-    // TODO: minuteが不正
+    const invalidMinuteMessage = isInvalidMinute({ required })(minute);
+    if (invalidMinuteMessage) {
+      return invalidMinuteMessage;
+    }
     return false;
   };
 
 export const isInvalidTimeRange: Validator<Range<Time>> =
   ({ required }) =>
   ({ start, end } = {}) => {
-    // TODO: 必須入力か
-    // TODO: startが不正
-    // TODO: endが不正
+    if (typeof start === 'undefined' && typeof end === 'undefined') {
+      if (!required) {
+        return false;
+      }
+      return new ValidationError({ start, end }, VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty);
+    }
+    const startMessage = isInvalidTime({ required })(start);
+    if (startMessage) {
+      return startMessage;
+    }
+    const endMessage = isInvalidTime({ required })(end);
+    if (endMessage) {
+      return endMessage;
+    }
     return false;
   };
 
@@ -97,7 +124,6 @@ export const isInvalidDateInDailyTimeRecord: Validator<string> =
 
 export const isInvalidDailyTimeRecord: Validator<DailyTimeRecord> =
   (option) =>
-  // eslint-disable-next-line complexity
   (
     { date, start, end, inHouseWorks, restTimes, remarks } = {
       date: '',

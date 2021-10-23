@@ -15,7 +15,7 @@ export const Docs = Template;
 Docs.args = {
   label: '',
   value: initialValue,
-  error: 'required',
+  errors: ['required'],
   onChange: () => {},
   onBlur: () => {},
 };

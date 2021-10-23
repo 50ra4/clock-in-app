@@ -4,9 +4,15 @@ export const createExpectForValidator = <T>(option: ValidationOption, validator:
   return (value: T | undefined) => {
     const result = validator(option)(value);
     const message = !result ? false : result.message;
+
     return {
       toBe: (expected: string | false) => {
         expect(message).toBe(expected);
+      },
+      not: {
+        toBe: (expected: string | false) => {
+          expect(message).not.toBe(expected);
+        },
       },
     };
   };

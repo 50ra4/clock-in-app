@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { RestTime } from 'types';
-import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { RestTimeForm } from '../RestTimeForm/RestTimeForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
 import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
@@ -47,13 +46,6 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
     onChange([...values, { id: undefined }]);
   };
 
-  const error = errors?.reduce((acc, cur, index) => {
-    if (acc || !cur) {
-      return acc;
-    }
-    return `休憩時間${index + 1}: ${cur}`;
-  }, '');
-
   return (
     <StyledRoot className={className}>
       {values.map((value, index) => {
@@ -82,7 +74,6 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
           <StyledAdditionalButton disabled={disabled} label="休憩時間を追加" onClick={handleOnClickAdd} />
         </StyledWrapper>
       )}
-      {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
   );
 });

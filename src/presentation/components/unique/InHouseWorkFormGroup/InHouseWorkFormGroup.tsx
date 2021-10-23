@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { InHouseWork } from 'types';
-import { ErrorMessageForForm } from 'presentation/components/forms/ErrorMessageForForm/ErrorMessageForForm';
 import { InHouseWorkForm } from '../InHouseWorkForm/InHouseWorkForm';
 import { AdditionalButton } from '../AdditionalButton/AdditionalButton';
 import { LabelForForm } from 'presentation/components/forms/LabelForForm/LabelForForm';
@@ -45,13 +44,6 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
     onChange([...values, { id: undefined }]);
   };
 
-  const error = errors?.reduce((acc, cur, index) => {
-    if (acc || !cur) {
-      return acc;
-    }
-    return `社内作業${index + 1}: ${cur}`;
-  }, '');
-
   return (
     <StyledRoot className={className}>
       {values.map((value, index) => {
@@ -79,7 +71,6 @@ export const InHouseWorkFormGroup = React.memo(function InHouseWorkFormGroup({
           <StyledAdditionalButton disabled={disabled} label="社内作業を追加" onClick={handleOnClickAdd} />
         </StyledWrapper>
       )}
-      {error && <ErrorMessageForForm message={error} />}
     </StyledRoot>
   );
 });

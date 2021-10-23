@@ -42,6 +42,7 @@ export const VALIDATION_ERROR_MESSAGE = {
   timeRangeIsEmpty: '時間帯を入力してください',
   restTimeIsEmpty: '休憩時間を入力してください',
   inHouseWorkIsEmpty: '社内作業を入力してください',
+  remarksIsEmpty: '備考を入力してください',
   over50Length: '50文字以内で入力してください',
   over100Length: '100文字以内で入力してください',
   dateFormatIsInvalid: '日付をyyyy-mm-ddで入力してください',

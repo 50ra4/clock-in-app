@@ -1,5 +1,5 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
-import { createExpectForValidator } from 'utils/testUtil';
+import { createExpectForValidator, createTestString } from 'utils/testUtil';
 import * as validator from './validations';
 
 describe('validations', () => {
@@ -102,6 +102,46 @@ describe('validations', () => {
       const expect = createExpectForValidator({ required: false }, validator.isInvalidTimeRange);
       it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsOutOfRange}"`, () => {
         expect({ end: { hour: 59 } }).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+      });
+    });
+  });
+
+  describe('isInvalidRemarksInInHouseWork', () => {
+    describe('required', () => {
+      it(`should return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: true }, validator.isInvalidRemarksInInHouseWork);
+        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+      it(`should NOT return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInInHouseWork);
+        expect(undefined).not.toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+    });
+    describe('invalid length', () => {
+      const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInInHouseWork);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.over50Length}"`, () => {
+        expect(createTestString(50)).not.toBe(VALIDATION_ERROR_MESSAGE.over50Length);
+        expect(createTestString(51)).toBe(VALIDATION_ERROR_MESSAGE.over50Length);
+      });
+    });
+  });
+
+  describe('isInvalidRemarksInDailyTimeRecord', () => {
+    describe('required', () => {
+      it(`should return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: true }, validator.isInvalidRemarksInDailyTimeRecord);
+        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+      it(`should NOT return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInDailyTimeRecord);
+        expect(undefined).not.toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+    });
+    describe('invalid length', () => {
+      const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInDailyTimeRecord);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.over100Length}"`, () => {
+        expect(createTestString(100)).not.toBe(VALIDATION_ERROR_MESSAGE.over100Length);
+        expect(createTestString(101)).toBe(VALIDATION_ERROR_MESSAGE.over100Length);
       });
     });
   });

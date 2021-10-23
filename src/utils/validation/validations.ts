@@ -1,6 +1,8 @@
 /* eslint-disable complexity */
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
+import isValid from 'date-fns/isValid';
 import { Time, Range, RestTime, InHouseWork, DailyTimeRecord } from 'types';
+import { stringDateToDate } from 'utils/dateUtil';
 import { ValidationError, Validator } from '../validationUtil';
 
 export const isInvalidHour: Validator<number> =
@@ -132,11 +134,21 @@ export const isInvalidRemarksInDailyTimeRecord: Validator<string> =
     return false;
   };
 
-export const isInvalidDateInDailyTimeRecord: Validator<string> =
+const isValidDateStringFormat = (str: string): boolean =>
+  !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));
+
+export const isInvalidDateString: Validator<string> =
   ({ required }) =>
   (date) => {
-    // TODO: stringでない
-    // TODO: 日付のフォーマットでない
+    if (typeof date !== 'string') {
+      if (!required) {
+        return false;
+      }
+      return new ValidationError(date, VALIDATION_ERROR_MESSAGE.dateIsEmpty);
+    }
+    if (!isValidDateStringFormat(date)) {
+      return new ValidationError(date, VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid);
+    }
     return false;
   };
 
@@ -150,7 +162,7 @@ export const isInvalidDailyTimeRecord: Validator<DailyTimeRecord> =
       remarks: '',
     },
   ) => {
-    const invalidDateInDailyTimeRecordMessage = isInvalidDateInDailyTimeRecord({ required: true })(date);
+    const invalidDateInDailyTimeRecordMessage = isInvalidDateString({ required: true })(date);
     if (invalidDateInDailyTimeRecordMessage) {
       return invalidDateInDailyTimeRecordMessage;
     }

@@ -87,8 +87,17 @@ export const isInvalidRestTime: Validator<RestTime> =
 export const isInvalidRemarksInInHouseWork: Validator<string> =
   ({ required }) =>
   (remarks) => {
-    // TODO: stringでない
-    // TODO: 50文字以内でない
+    if (typeof remarks !== 'string') {
+      if (!required) {
+        return false;
+      }
+      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+    }
+
+    if (50 < remarks.length) {
+      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.over50Length);
+    }
+
     return false;
   };
 
@@ -109,8 +118,17 @@ export const isInvalidInHouseWork: Validator<InHouseWork> =
 export const isInvalidRemarksInDailyTimeRecord: Validator<string> =
   ({ required }) =>
   (remarks) => {
-    // TODO: stringでない
-    // TODO: 100文字以内でない
+    if (typeof remarks !== 'string') {
+      if (!required) {
+        return false;
+      }
+      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+    }
+
+    if (100 < remarks.length) {
+      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.over100Length);
+    }
+
     return false;
   };
 

@@ -1,6 +1,5 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { createExpectForValidator } from 'utils/testUtil';
-import { ValidationError } from 'utils/validationUtil';
 import * as validator from './validations';
 
 describe('validations', () => {
@@ -20,7 +19,10 @@ describe('validations', () => {
         expect(undefined).toBe(false);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsOutOfRange}"`, () => {
-        expect(25).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+        expect(-1).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+        expect(0).not.toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+        expect(23).not.toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+        expect(24).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
       });
     });
   });
@@ -32,7 +34,10 @@ describe('validations', () => {
         expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.minuteIsEmpty);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange}"`, () => {
-        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(-1).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(0).not.toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(59).not.toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(60).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
       });
     });
     describe('option is not required', () => {
@@ -41,61 +46,62 @@ describe('validations', () => {
         expect(undefined).toBe(false);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange}"`, () => {
-        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(-1).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(0).not.toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(59).not.toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect(60).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
       });
     });
   });
 
   describe('isInvalidTime', () => {
-    const mockedIsInvalidHour = jest.spyOn(validator, 'isInvalidHour');
-    const mockedIsInvalidMinute = jest.spyOn(validator, 'isInvalidMinute');
-
     describe('option is required', () => {
-      beforeEach(() => {
-        mockedIsInvalidHour.mockReset();
-        mockedIsInvalidMinute.mockReset();
-      });
-
       const expect = createExpectForValidator({ required: true }, validator.isInvalidTime);
       it(`should return "${VALIDATION_ERROR_MESSAGE.timeIsEmpty}"`, () => {
         expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.timeIsEmpty);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsEmpty}"`, () => {
-        mockedIsInvalidHour.mockImplementationOnce(
-          (option) => (value) => new ValidationError(value, VALIDATION_ERROR_MESSAGE.hourIsEmpty),
-        );
-        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.hourIsEmpty);
+        expect({ hour: undefined, minute: 59 }).toBe(VALIDATION_ERROR_MESSAGE.hourIsEmpty);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsEmpty}"`, () => {
-        mockedIsInvalidHour.mockImplementationOnce((option) => (value) => false);
-        mockedIsInvalidMinute.mockImplementationOnce(
-          (option) => (value) => new ValidationError(value, VALIDATION_ERROR_MESSAGE.minuteIsEmpty),
-        );
-        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.minuteIsEmpty);
+        expect({ hour: 1, minute: undefined }).toBe(VALIDATION_ERROR_MESSAGE.minuteIsEmpty);
       });
     });
     describe('option is not required', () => {
-      beforeEach(() => {
-        mockedIsInvalidHour.mockReset();
-        mockedIsInvalidMinute.mockReset();
-      });
-
       const expect = createExpectForValidator({ required: false }, validator.isInvalidTime);
       it(`should NOT return "${VALIDATION_ERROR_MESSAGE.timeIsEmpty}"`, () => {
         expect(undefined).toBe(false);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsOutOfRange}"`, () => {
-        mockedIsInvalidHour.mockImplementationOnce(
-          (option) => (value) => new ValidationError(value, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange),
-        );
-        expect({ hour: 25 }).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+        expect({ hour: -1, minute: 1 }).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
       });
       it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange}"`, () => {
-        mockedIsInvalidHour.mockImplementationOnce((option) => (value) => false);
-        mockedIsInvalidMinute.mockImplementationOnce(
-          (option) => (value) => new ValidationError(value, VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange),
-        );
-        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+        expect({ hour: 1, minute: -1 }).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
+      });
+    });
+  });
+
+  describe('isInvalidTimeRange', () => {
+    describe('timeRange is required', () => {
+      it(`should return "${VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: true }, validator.isInvalidTimeRange);
+        expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty);
+      });
+      it(`should NOT return "${VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty}"`, () => {
+        const expect = createExpectForValidator({ required: false }, validator.isInvalidTimeRange);
+        expect(undefined).toBe(false);
+      });
+    });
+    describe('invalid time start', () => {
+      const expect = createExpectForValidator({ required: false }, validator.isInvalidTimeRange);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.hourIsOutOfRange}"`, () => {
+        expect({ start: { hour: 59 } }).toBe(VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+      });
+    });
+    describe('invalid time end', () => {
+      const expect = createExpectForValidator({ required: false }, validator.isInvalidTimeRange);
+      it(`should return "${VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange}"`, () => {
+        expect({ start: { hour: 1, minute: 60 } }).toBe(VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
       });
     });
   });

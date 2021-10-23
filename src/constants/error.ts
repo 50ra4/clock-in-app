@@ -32,3 +32,14 @@ export const ERROR_HEADING_WITH_MESSAGE: Readonly<Record<ErrorCode, ErrorHeading
   },
   // [ERROR_CODE.template]: {heading: '', message: ''},
 };
+
+export const VALIDATION_ERROR_MESSAGE = {
+  hourIsEmpty: '時刻を入力してください',
+  hourIsOutOfRange: '時刻を0から23の範囲で入力してください',
+  minuteIsEmpty: '分を入力してください',
+  minuteIsOutOfRange: '分を0から59の範囲で入力してください',
+  timeIsEmpty: '時間を入力してください',
+  over50Length: '50文字以内で入力してください',
+  over100Length: '100文字以内で入力してください',
+  dateFormatIsInvalid: '日付をyyyy-mm-ddで入力してください',
+} as const;

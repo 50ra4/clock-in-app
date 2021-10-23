@@ -6,7 +6,7 @@ import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
 import { RestTimeFormGroup } from 'presentation/components/unique/RestTimeFormGroup/RestTimeFormGroup';
 import { InHouseWorkFormGroup } from 'presentation/components/unique/InHouseWorkFormGroup/InHouseWorkFormGroup';
-import { FormGroupChangeFn, FormGroupError } from '../hooks/useFormGroup';
+import { FormGroupChangeFn, FormGroupError } from 'hooks/useFormGroup';
 
 type Props = {
   className?: string;

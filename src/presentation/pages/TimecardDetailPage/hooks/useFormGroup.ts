@@ -23,15 +23,16 @@ export const useFormGroup = <T extends Record<string, unknown>>(initialState: T,
   }, []);
 
   const formErrors = useMemo(() => {
-    return Object.entries(state).reduce((acc, cur) => {
+    return Object.entries(validations).reduce((acc, cur) => {
       type K = keyof T;
-      const [key, value] = cur as [K, T[K]];
+      const [key, validation] = cur as [K, ValidationGroup<T>[K]];
+      const value = state[key];
       if (Array.isArray(value)) {
-        const results = value.map((v) => validations[key](v)).map((r) => (r ? r.message : ''));
-        return { ...acc, key: results };
+        const results = value.map((v) => validation(v)).map((r) => (r ? r.message : ''));
+        return { ...acc, [key]: results };
       }
-      const result = validations[key](value);
-      return { ...acc, key: result ? result.message : undefined };
+      const result = validation(value);
+      return { ...acc, [key]: result ? result.message : undefined };
     }, {} as FormGroupError<T>);
   }, [state, validations]);
 

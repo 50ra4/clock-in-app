@@ -34,6 +34,8 @@ export const ERROR_HEADING_WITH_MESSAGE: Readonly<Record<ErrorCode, ErrorHeading
 };
 
 export const VALIDATION_ERROR_MESSAGE = {
+  isEmpty: '%displayName%を入力してください',
+  typeIsInvalid: '%displayName%の値が不正です',
   hourIsEmpty: '時刻を入力してください',
   hourIsOutOfRange: '時刻を0から23の範囲で入力してください',
   minuteIsEmpty: '分を入力してください',

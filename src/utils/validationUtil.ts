@@ -1,6 +1,6 @@
 import { Either, right, left } from 'fp-ts/Either';
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
-import { EnumValue, Nullable } from 'types';
+import { EnumValue, Nullable, NullOrUndefined } from 'types';
 import { isNullable } from './typeGuard';
 import { replaceMessage } from './messageUtil';
 
@@ -27,13 +27,18 @@ export type Validator<T> = (option: ValidationOption) => (value: T | undefined) 
 export const failed = (value: unknown, message: string): Either<ValidationError, true> =>
   left(new ValidationError(value, message));
 
+type ValidateIsEmpty<T> = (x: Nullable<T>) => x is NullOrUndefined;
+
+const createIsEmpty =
+  <T>(): ValidateIsEmpty<T> =>
+  (x): x is NullOrUndefined =>
+    isNullable<T>(x);
+
 export class ValidationFactory<Value, Message extends string = string> {
   constructor(
     public readonly name: string,
     private readonly displayName: string,
-    /** type guard */
-    private readonly is: (x: unknown) => x is Value,
-    private readonly isEmpty: (value: Nullable<Value>) => boolean = isNullable,
+    private readonly isEmpty: ValidateIsEmpty<Value> = createIsEmpty<Value>(),
   ) {}
 
   private readonly validators: {
@@ -47,14 +52,10 @@ export class ValidationFactory<Value, Message extends string = string> {
   }
 
   public create({ required }: ValidationOption) {
-    const { is, isEmpty, displayName, validators } = this;
+    const { isEmpty, displayName, validators } = this;
 
     // eslint-disable-next-line complexity
     return (value: Nullable<Value>): Either<ValidationError, true> => {
-      if (!is(value)) {
-        const message = replaceMessage(VALIDATION_ERROR_MESSAGE.typeIsInvalid, { displayName });
-        return failed(value, message);
-      }
       if (isEmpty(value)) {
         if (!required) {
           return right(true);

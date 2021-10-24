@@ -1,9 +1,9 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import * as either from 'fp-ts/lib/Either';
-import { EnumValue, Nullable } from 'types';
+import { EnumValue, Nullable, NullOrUndefined } from 'types';
 import { replaceMessage } from './messageUtil';
 import { createTestString } from './testUtil';
-import { isObject, hasPropertiesInObject, isNonNullable } from './typeGuard';
+import { isNonNullable } from './typeGuard';
 import { ValidationErrorMessage, ValidationFactory, failed } from './validationUtil';
 
 type User = {
@@ -11,8 +11,8 @@ type User = {
   name: string;
   age: number;
 };
-const isUser = (x: unknown): x is User => !isObject(x) || hasPropertiesInObject(['id', 'name', 'age'])(x);
-const isEmptyUser = (x: Nullable<User>) => !isNonNullable(x) || !x.id;
+
+const isEmptyUser = (x: Nullable<User>): x is NullOrUndefined => !isNonNullable(x) || !x.id;
 
 const MESSAGE = {
   isInvalidType: VALIDATION_ERROR_MESSAGE.typeIsInvalid,
@@ -27,7 +27,7 @@ type Message = ValidationErrorMessage | EnumValue<typeof MESSAGE>;
 
 describe('validationUtil', () => {
   describe('ValidationFactory', () => {
-    const factory = new ValidationFactory<User, Message>(typeName, displayName, isUser, isEmptyUser);
+    const factory = new ValidationFactory<User, Message>(typeName, displayName, isEmptyUser);
     factory
       .add((user) => !!user.name, MESSAGE.isEmptyUserName)
       .add((user) => user.name.length < 51, MESSAGE.isOverLength);
@@ -38,12 +38,6 @@ describe('validationUtil', () => {
       expect(validate1(user1)).toEqual(either.right(true));
       const validate2 = factory.create({ required: false });
       expect(validate2(user1)).toEqual(either.right(true));
-    });
-
-    it('should return type guard message', () => {
-      const validate = factory.create({ required: true });
-      const user1 = { id: '', name: '' } as User;
-      expect(validate(user1)).toEqual(failed(user1, replaceMessage(MESSAGE.isInvalidType, { displayName })));
     });
 
     it('should return empty error message', () => {

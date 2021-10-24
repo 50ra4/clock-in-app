@@ -3,6 +3,8 @@ const toPairs = <T extends Record<string, unknown>, K extends keyof T = keyof T>
 
 type Primitive = string | number | boolean | string[] | number[] | undefined;
 
+export type ParamsToReplaceMessage = Record<string | number, Primitive>;
+
 const toString = (x: Primitive): string => {
   if (typeof x === 'undefined') {
     return 'undefined';
@@ -13,10 +15,12 @@ const toString = (x: Primitive): string => {
   return typeof x === 'string' ? x : x.toString();
 };
 
-export const replaceMessage =
-  (replaceKey: string = '%') =>
-  (template: string, replaceParams: Record<string | number, Primitive>): string =>
-    toPairs(replaceParams).reduce(
-      (acc, [key, value]) => acc.replace(`${replaceKey}${key}${replaceKey}`, toString(value)),
-      template,
-    );
+export const replaceMessage = (
+  template: string,
+  replaceParams: ParamsToReplaceMessage,
+  replaceKey: string = '%',
+): string =>
+  toPairs(replaceParams).reduce(
+    (acc, [key, value]) => acc.replace(`${replaceKey}${key}${replaceKey}`, toString(value)),
+    template,
+  );

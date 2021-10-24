@@ -8,3 +8,6 @@ export const hasPropertiesInObject =
 
 export const isNonNullable = <T>(value: Nullable<T>): value is NonNullable<T> =>
   typeof value !== 'undefined' && value !== null;
+
+export const isNullable = <T>(value: Nullable<T>): value is null | undefined =>
+  typeof value === 'undefined' || value === null;

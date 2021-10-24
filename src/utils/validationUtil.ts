@@ -1,4 +1,4 @@
-import { Either, right, left, isLeft } from 'fp-ts/Either';
+import { Either, right, left } from 'fp-ts/Either';
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { EnumValue, Nullable } from 'types';
 import { isNullable } from './typeGuard';
@@ -41,6 +41,7 @@ export class ValidationFactory<Value, Message extends string = string> {
   }
 
   public create({ required }: ValidationOption) {
+    // eslint-disable-next-line complexity
     return (value: Nullable<Value>): Either<ValidationError, false> => {
       if (!this.is(value)) {
         return left(new ValidationError(value, VALIDATION_ERROR_MESSAGE.typeIsInvalid));
@@ -51,16 +52,12 @@ export class ValidationFactory<Value, Message extends string = string> {
         }
         return left(new ValidationError(value, VALIDATION_ERROR_MESSAGE.isEmpty));
       }
-      return this.validators.reduce((acc, { isValid, message }) => {
-        if (isLeft(acc)) {
-          // If already in error
-          return acc;
+      for (const { isValid, message } of this.validators) {
+        if (!isValid(value)) {
+          return left(new ValidationError(value, message));
         }
-        if (isValid(value)) {
-          return acc;
-        }
-        return left(new ValidationError(value, message));
-      }, right<ValidationError, false>(false));
+      }
+      return right<ValidationError, false>(false);
     };
   }
 }

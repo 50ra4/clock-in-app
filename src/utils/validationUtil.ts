@@ -1,4 +1,4 @@
-import { Either, right, left } from 'fp-ts/Either';
+import { Either, right, left, isLeft, Left } from 'fp-ts/Either';
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { EnumValue, Nullable, NullOrUndefined } from 'types';
 import { isNullable } from './typeGuard';
@@ -27,6 +27,8 @@ export type Validator<T> = (option: ValidationOption) => (value: T | undefined) 
 export const failed = (value: unknown, message: string): Either<ValidationError, true> =>
   left(new ValidationError(value, message));
 
+export const isFailed = (result: Either<ValidationError, true>): result is Left<ValidationError> => isLeft(result);
+
 type ValidateIsEmpty<T> = (x: Nullable<T>) => x is NullOrUndefined;
 
 const createIsEmpty =
@@ -36,7 +38,7 @@ const createIsEmpty =
 
 export class ValidationFactory<Value, Message extends string = string> {
   constructor(
-    public readonly name: string,
+    private readonly name: string,
     private readonly displayName: string,
     private readonly isEmpty: ValidateIsEmpty<Value> = createIsEmpty<Value>(),
   ) {}

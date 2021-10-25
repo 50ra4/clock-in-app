@@ -43,14 +43,12 @@ const createIsEmpty =
   (x): x is NullOrUndefined =>
     isNullable<T>(x);
 
-export class ValidationFactory<Input, Message extends string = string> {
+class ValidatorFactoryImpl<Input, Message extends string = string> {
   constructor(
-    private readonly name: string,
-    private readonly displayName: string,
-    private readonly isEmpty: ValidateIsEmpty<Input> = createIsEmpty<Input>(),
+    protected readonly name: string,
+    protected readonly displayName: string,
+    protected readonly validators: ValidateWithMessage<Input, Message>[] = [],
   ) {}
-
-  private readonly validators: ValidateWithMessage<Input, Message>[] = [];
 
   public add(isValid: Validate<Input>, message: Message) {
     this.validators.push({ validate: isValid, message });
@@ -58,17 +56,8 @@ export class ValidationFactory<Input, Message extends string = string> {
   }
 
   public create(option: ValidationOption) {
-    const { isEmpty, displayName, validators } = this;
-
-    // eslint-disable-next-line complexity
-    return (value: Nullable<Input>): Either<ValidationError, true> => {
-      if (isEmpty(value)) {
-        if (!option?.required) {
-          return right(true);
-        }
-        const message = replaceMessage(VALIDATION_ERROR_MESSAGE.isEmpty, { displayName });
-        return failed(value, message);
-      }
+    const { validators } = this;
+    return (value: Input): Either<ValidationError, true> => {
       for (const { validate, message } of validators) {
         if (!validate(value, option)) {
           return failed(value, message);
@@ -76,5 +65,21 @@ export class ValidationFactory<Input, Message extends string = string> {
       }
       return right(true);
     };
+  }
+}
+
+export class ValidationFactory<Input, Message extends string = string> extends ValidatorFactoryImpl<Input, Message> {
+  constructor(name: string, displayName: string) {
+    super(name, displayName, []);
+  }
+
+  public addIsType<T>(is: (x: unknown) => x is T, message: string) {
+    const validators = [{ validate: is, message }, ...this.validators] as unknown as ValidateWithMessage<T, Message>[];
+    console.log(validators);
+    return new ValidatorFactoryImpl<T, Message>(this.name, this.displayName, validators);
+  }
+
+  public create(option: ValidationOption) {
+    return super.create(option);
   }
 }

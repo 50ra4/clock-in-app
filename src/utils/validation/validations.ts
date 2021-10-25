@@ -5,10 +5,9 @@ import { Time, Range, RestTime, InHouseWork, DailyTimeRecord } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { isFailed, ValidationError, ValidationFactory, Validator } from '../validationUtil';
 
-const hourValidatorFactory = new ValidationFactory<number>('hour', '時刻').add(
-  (hour) => 0 <= hour && hour < 24,
-  VALIDATION_ERROR_MESSAGE.hourIsOutOfRange,
-);
+const hourValidatorFactory = new ValidationFactory<number | undefined>('hour', '時刻')
+  .addIsType((x): x is number => typeof x === 'number', VALIDATION_ERROR_MESSAGE.hourIsEmpty)
+  .add((hour) => 0 <= hour && hour < 24, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
 
 export const isInvalidHour: Validator<number> = (option) => (hour) => {
   const result = hourValidatorFactory.create(option)(hour);

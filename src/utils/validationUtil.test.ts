@@ -1,9 +1,9 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import * as either from 'fp-ts/lib/Either';
-import { EnumValue, Nullable, NullOrUndefined } from 'types';
+import { EnumValue, Nullable } from 'types';
 import { replaceMessage } from './messageUtil';
 import { createTestString } from './testUtil';
-import { isNonNullable } from './typeGuard';
+import { hasPropertiesInObject, isNonNullable, isObject } from './typeGuard';
 import { ValidationErrorMessage, ValidationFactory, failed } from './validationUtil';
 
 type User = {
@@ -12,7 +12,8 @@ type User = {
   age: number;
 };
 
-const isEmptyUser = (x: Nullable<User>): x is NullOrUndefined => !isNonNullable(x) || !x.id;
+const isUser = (x: unknown): x is User =>
+  isNonNullable(x) && isObject(x) && hasPropertiesInObject(['id', 'name', 'age'])(x) && !!x.id;
 
 const MESSAGE = {
   isInvalidType: VALIDATION_ERROR_MESSAGE.typeIsInvalid,
@@ -27,8 +28,8 @@ type Message = ValidationErrorMessage | EnumValue<typeof MESSAGE>;
 
 describe('validationUtil', () => {
   describe('ValidationFactory', () => {
-    const factory = new ValidationFactory<User, Message>(typeName, displayName, isEmptyUser);
-    factory
+    const factory = new ValidationFactory<Nullable<User>, Message>(typeName, displayName)
+      .addIsType<User>(isUser, MESSAGE.isEmptyUser)
       .add((user) => !!user.name, MESSAGE.isEmptyUserName)
       .add((user) => user.name.length < 51, MESSAGE.isOverLength);
 
@@ -42,10 +43,10 @@ describe('validationUtil', () => {
 
     it('should return empty error message', () => {
       const validate = factory.create({ required: true });
-      const user1 = null;
-      expect(validate(user1)).toEqual(failed(user1, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
-      const user2 = undefined;
-      expect(validate(user2)).toEqual(failed(user2, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
+      // const user1 = null;
+      // expect(validate(user1)).toEqual(failed(user1, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
+      // const user2 = undefined;
+      // expect(validate(user2)).toEqual(failed(user2, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
       const user3 = { id: '', name: '', age: 12 };
       expect(validate(user3)).toEqual(failed(user3, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
     });

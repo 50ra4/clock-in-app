@@ -3,14 +3,17 @@ import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import isValid from 'date-fns/isValid';
 import { Time, Range, RestTime, InHouseWork, DailyTimeRecord } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
-import { isFailed, ValidationError, ValidationFactory, Validator } from '../validationUtil';
+import { isNonNullable } from 'utils/typeGuard';
+import { isFailed, ValidationError, ValidatorFactory, Validator } from '../validationUtil';
 
-const hourValidatorFactory = new ValidationFactory<number | undefined>('hour', '時刻')
-  .addIsType((x): x is number => typeof x === 'number', VALIDATION_ERROR_MESSAGE.hourIsEmpty)
-  .add((hour) => 0 <= hour && hour < 24, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
+const hourValidator = new ValidatorFactory<number | undefined>('hour', '時刻')
+  .skipIf((hour, { required }) => !required && typeof hour !== 'number')
+  .add((hour) => isNonNullable(hour), VALIDATION_ERROR_MESSAGE.hourIsEmpty)
+  .add((hour) => isNonNullable(hour) && 0 <= hour && hour < 24, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange)
+  .create();
 
 export const isInvalidHour: Validator<number> = (option) => (hour) => {
-  const result = hourValidatorFactory.create(option)(hour);
+  const result = hourValidator(option)(hour);
   return isFailed(result) ? result.left : false;
 };
 

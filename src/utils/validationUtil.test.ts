@@ -1,9 +1,9 @@
+import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import * as either from 'fp-ts/lib/Either';
-import { EnumValue, Nullable } from 'types';
-import { replaceMessage } from './messageUtil';
+import { Nullable } from 'types';
 import { createTestString } from './testUtil';
 import { isNonNullable, isNullable } from './typeGuard';
-import { ValidationErrorMessage, ValidatorFactory, failed, ValidatorOption } from './validationUtil';
+import { ValidatorFactory, failed, ValidatorOption, messageReplacer } from './validationUtil';
 
 type User = {
   id: string;
@@ -11,23 +11,22 @@ type User = {
   age: number;
 };
 
-const MESSAGE = {
-  isEmptyUser: 'ユーザーを入力してください',
-  isEmptyUserName: 'ユーザー名を入力してください',
-  isOverLength: 'ユーザー名を50文字以内で入力してください',
-} as const;
 const typeName = 'User';
 const displayName = 'ユーザー';
 
-type Message = ValidationErrorMessage | EnumValue<typeof MESSAGE>;
-
 describe('validationUtil', () => {
   describe('ValidationFactory', () => {
-    const validator = new ValidatorFactory<Nullable<User>, ValidatorOption, Message>(typeName, displayName)
-      .skipIf((value, { required }) => !required && isNullable(value))
-      .add((user) => isNonNullable(user) && !!user.id, MESSAGE.isEmptyUser)
-      .add((user) => isNonNullable(user) && !!user.name, MESSAGE.isEmptyUserName)
-      .add((user) => isNonNullable(user) && user.name.length < 51, MESSAGE.isOverLength)
+    const validator = new ValidatorFactory<Nullable<User>, ValidatorOption>(typeName, displayName)
+      .skip((value, { required }) => !required && isNullable(value))
+      .add((user) => isNonNullable(user) && !!user.id, messageReplacer(VALIDATION_ERROR_MESSAGE.isEmpty))
+      .add(
+        (user) => isNonNullable(user) && !!user.name,
+        () => messageReplacer(VALIDATION_ERROR_MESSAGE.isEmpty)({ displayName: 'ユーザー名' }),
+      )
+      .add(
+        (user) => isNonNullable(user) && user.name.length < 51,
+        () => messageReplacer(VALIDATION_ERROR_MESSAGE.over50Length)({ displayName: 'ユーザー名' }),
+      )
       .create();
 
     it('should return true', () => {
@@ -40,21 +39,22 @@ describe('validationUtil', () => {
 
     it('should return empty error message', () => {
       const validate = validator({ required: true });
+      const expectedMessage = 'ユーザーを入力してください';
       const user1 = null;
-      expect(validate(user1)).toEqual(failed(user1, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
+      expect(validate(user1)).toEqual(failed(user1, expectedMessage));
       const user2 = undefined;
-      expect(validate(user2)).toEqual(failed(user2, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
+      expect(validate(user2)).toEqual(failed(user2, expectedMessage));
       const user3 = { id: '', name: '', age: 12 };
-      expect(validate(user3)).toEqual(failed(user3, replaceMessage(MESSAGE.isEmptyUser, { displayName })));
+      expect(validate(user3)).toEqual(failed(user3, expectedMessage));
     });
 
     it('should return invalid error message', () => {
       const validate = validator({ required: false });
       const user1 = { id: '1', name: '', age: 12 };
-      expect(validate(user1)).toEqual(failed(user1, MESSAGE.isEmptyUserName));
+      expect(validate(user1)).toEqual(failed(user1, 'ユーザー名を入力してください'));
 
       const user2 = { id: '1', name: createTestString(51), age: 12 };
-      expect(validate(user2)).toEqual(failed(user2, MESSAGE.isOverLength));
+      expect(validate(user2)).toEqual(failed(user2, VALIDATION_ERROR_MESSAGE.over50Length));
     });
   });
 });

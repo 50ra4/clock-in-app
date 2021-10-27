@@ -7,9 +7,15 @@ import { isNonNullable } from 'utils/typeGuard';
 import { isFailed, ValidationError, ValidatorFactory, Validator } from '../validationUtil';
 
 const hourValidator = new ValidatorFactory<number | undefined>('hour', '時刻')
-  .skipIf((hour, { required }) => !required && typeof hour !== 'number')
-  .add((hour) => isNonNullable(hour), VALIDATION_ERROR_MESSAGE.hourIsEmpty)
-  .add((hour) => isNonNullable(hour) && 0 <= hour && hour < 24, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange)
+  .skip((hour, { required }) => !required && typeof hour !== 'number')
+  .add(
+    (hour) => isNonNullable(hour),
+    () => VALIDATION_ERROR_MESSAGE.hourIsEmpty,
+  )
+  .add(
+    (hour) => isNonNullable(hour) && 0 <= hour && hour < 24,
+    () => VALIDATION_ERROR_MESSAGE.hourIsOutOfRange,
+  )
   .create();
 
 export const isInvalidHour: Validator<number> = (option) => (hour) => {

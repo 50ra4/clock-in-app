@@ -1,6 +1,7 @@
 import { Either, right, left, isLeft, Left, fold } from 'fp-ts/Either';
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { EnumValue } from 'types';
+import { ParamsToReplaceMessage, replaceMessage } from './messageUtil';
 
 export type ValidationErrorMessage = EnumValue<typeof VALIDATION_ERROR_MESSAGE>;
 
@@ -109,16 +110,10 @@ export const toResult = fold(
 // }
 
 export type ValidatorOption = {
-  name: string;
-  displayName: string;
   required?: boolean;
 };
 type Validate<Input, Option extends ValidatorOption> = (value: Input, option: Option) => boolean;
-export class ValidatorFactory<
-  Input,
-  Option extends ValidatorOption = ValidatorOption,
-  Message extends string = string,
-> {
+export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorOption> {
   constructor(
     private readonly name: string, //
     private readonly displayName: string,
@@ -130,28 +125,30 @@ export class ValidatorFactory<
     message: string;
   }[] = [];
 
-  public skipIf(isSkip: Validate<Input, Option>) {
+  public skip(isSkip: Validate<Input, Option>) {
     this.skips.push(isSkip);
     return this;
   }
 
-  public add(isValid: Validate<Input, Option>, invalidMessage: Message) {
-    this.validations.push({ validate: isValid, message: invalidMessage });
+  public add(
+    isValid: Validate<Input, Option>,
+    toInvalidMessage: (params: { name: string; displayName: string }) => string,
+  ) {
+    const { name, displayName } = this;
+    this.validations.push({ validate: isValid, message: toInvalidMessage({ name, displayName }) });
     return this;
   }
 
   public create() {
-    const { name, displayName } = this;
     const skips = [...this.skips];
     const validations = [...this.validations];
-    return (option: Omit<Option, 'name' | 'displayName'>) =>
+    return (option: Option) =>
       (value: Input): Either<ValidationError, true> => {
-        const validatorOption = { ...option, name, displayName } as Option;
-        if (skips.some((isSkip) => isSkip(value, validatorOption))) {
+        if (skips.some((isSkip) => isSkip(value, option))) {
           return right(true);
         }
         for (const { validate, message } of validations) {
-          if (!validate(value, validatorOption)) {
+          if (!validate(value, option)) {
             return failed(value, message);
           }
         }
@@ -159,7 +156,12 @@ export class ValidatorFactory<
       };
   }
 
-  public validate(value: Input, option: Omit<Option, 'name' | 'displayName'>) {
+  public validate(value: Input, option: Option) {
     return this.create()(option)(value);
   }
 }
+
+export const messageReplacer =
+  <T extends string, P extends ParamsToReplaceMessage>(template: T) =>
+  (params: P): string =>
+    replaceMessage(template, params);

@@ -15,12 +15,12 @@ const toString = (x: Primitive): string => {
   return typeof x === 'string' ? x : x.toString();
 };
 
-export const replaceMessage = (
-  template: string,
-  replaceParams: ParamsToReplaceMessage,
+export const replaceMessage = <T extends string, P extends ParamsToReplaceMessage>(
+  template: T,
+  replaceParams: P,
   replaceKey: string = '%',
 ): string =>
   toPairs(replaceParams).reduce(
     (acc, [key, value]) => acc.replace(`${replaceKey}${key}${replaceKey}`, toString(value)),
-    template,
+    template as string,
   );

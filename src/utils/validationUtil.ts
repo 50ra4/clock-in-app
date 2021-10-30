@@ -35,6 +35,9 @@ export const toMessage = fold(
 export type ValidatorOption = {
   required?: boolean;
 };
+type InvalidMessageConverter<Option extends ValidatorOption> = (
+  params: Option & { name: string; displayName: string },
+) => string;
 type Validate<Input, Option extends ValidatorOption> = (value: Input, option: Option) => boolean;
 type ValidateEither<Input, Option extends ValidatorOption> = (
   value: Input,
@@ -43,7 +46,7 @@ type ValidateEither<Input, Option extends ValidatorOption> = (
 type Validation<Input, Option extends ValidatorOption> =
   | {
       validate: Validate<Input, Option>;
-      message: string;
+      toInvalidMessage: InvalidMessageConverter<Option>;
     }
   | {
       validate: ValidateEither<Input, Option>;
@@ -64,19 +67,10 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
     return this;
   }
 
-  public add(
-    isValid: Validate<Input, Option>,
-    toInvalidMessage: (params: { name: string; displayName: string }) => string,
-  ): this;
   public add(isValid: ValidateEither<Input, Option>): this;
-  public add(
-    isValid: Validation<Input, Option>['validate'],
-    toInvalidMessage?: (params: { name: string; displayName: string }) => string,
-  ) {
-    const { name, displayName } = this;
-    const validation = toInvalidMessage
-      ? { validate: isValid, message: toInvalidMessage({ name, displayName }) }
-      : { validate: isValid };
+  public add(isValid: Validate<Input, Option>, toInvalidMessage: InvalidMessageConverter<Option>): this;
+  public add(isValid: Validation<Input, Option>['validate'], toInvalidMessage?: InvalidMessageConverter<Option>) {
+    const validation = toInvalidMessage ? { validate: isValid, toInvalidMessage } : { validate: isValid };
     this.validations.push(validation as Validation<Input, Option>);
     return this;
   }
@@ -84,6 +78,7 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
   public create() {
     const skips = [...this.skips];
     const validations = [...this.validations];
+    const { name, displayName } = this;
     return (option: Option) =>
       // eslint-disable-next-line complexity
       (value: Input): Either<ValidationError, true> => {
@@ -91,9 +86,9 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
           return right(true);
         }
         for (const validation of validations) {
-          if ('message' in validation) {
+          if ('toInvalidMessage' in validation) {
             if (!validation.validate(value, option)) {
-              return failed(value, validation.message);
+              return failed(value, validation.toInvalidMessage({ ...option, name, displayName }));
             }
           } else {
             const result = validation.validate(value, option);

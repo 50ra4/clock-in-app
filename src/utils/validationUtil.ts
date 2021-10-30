@@ -33,7 +33,7 @@ export const failed = (value: unknown, message: string): Either<ValidationError,
 
 export const isFailed = (result: Either<ValidationError, true>): result is Left<ValidationError> => isLeft(result);
 
-export const toResult = fold(
+export const toMessage = fold(
   (e: ValidationError) => e.message,
   (_: true) => '',
 );

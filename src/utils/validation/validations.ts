@@ -4,7 +4,7 @@ import isValid from 'date-fns/isValid';
 import { Time, Range, RestTime, InHouseWork, Nullable, NullOrUndefined } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { isNonNullable, isNullable } from 'utils/typeGuard';
-import { ValidatorFactory } from '../validationUtil';
+import { messageReplacer, ValidatorFactory, ValidatorOption } from '../validationUtil';
 
 export const hourValidatorFactory = new ValidatorFactory<number | undefined>('hour', '時刻')
   .skip((hour, { required }) => !required && typeof hour !== 'number')
@@ -58,32 +58,25 @@ export const restTimeValidatorFactory = new ValidatorFactory<RestTime>('RestTime
 
 const isEmptyString = (value: Nullable<string>): boolean => isNullable(value) || value.length < 1;
 
-export const inHouseWorkValidatorFactory = new ValidatorFactory<InHouseWork>('InHouseWork', '社内作業')
-  .add(({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option))
-  // TODO: remarks validator factory
+export const remarksValidatorFactory = new ValidatorFactory<Nullable<string>, ValidatorOption & { maxLength: number }>(
+  'remarks',
+  '備考',
+)
+  .skip((value, { required }) => !required && isEmptyString(value))
   .add(
-    ({ remarks } = { id: undefined }, { required }) => !!required && isEmptyString(remarks),
+    (value) => !isEmptyString(value),
     () => VALIDATION_ERROR_MESSAGE.remarksIsEmpty,
   )
   .add(
-    ({ remarks } = { id: undefined }, { required }) => !required || (isNonNullable(remarks) && remarks.length > 50),
-    () => VALIDATION_ERROR_MESSAGE.over50Length,
+    (value, { maxLength }) => isNonNullable(value) && value.length <= maxLength,
+    messageReplacer(VALIDATION_ERROR_MESSAGE.overLength),
   );
 
-// export const isInvalidRemarksInDailyTimeRecord: Validator<string> = (option) => (remarks) => {
-//   if (typeof remarks !== 'string') {
-//     if (!option?.required) {
-//       return false;
-//     }
-//     return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
-//   }
-
-//   if (100 < remarks.length) {
-//     return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.over100Length);
-//   }
-
-//   return false;
-// };
+export const inHouseWorkValidatorFactory = new ValidatorFactory<InHouseWork>('InHouseWork', '社内作業')
+  .add(({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option))
+  .add(({ remarks } = { id: undefined }, option) =>
+    remarksValidatorFactory.validate(remarks, { ...option, maxLength: 50 }),
+  );
 
 const isValidDateStringFormat = (str: string): boolean =>
   !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));

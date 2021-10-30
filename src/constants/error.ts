@@ -45,8 +45,9 @@ export const VALIDATION_ERROR_MESSAGE = {
   restTimeIsEmpty: '休憩時間を入力してください',
   inHouseWorkIsEmpty: '社内作業を入力してください',
   remarksIsEmpty: '備考を入力してください',
-  over50Length: '50文字以内で入力してください',
-  over100Length: '100文字以内で入力してください',
+  over50Length: '50字以内で入力してください',
+  over100Length: '100字以内で入力してください',
+  overLength: '%displayName%を%maxLength%字以内で入力してください',
   dateIsEmpty: '日付を入力してください',
   dateFormatIsInvalid: '日付をyyyy-mm-ddで入力してください',
 } as const;

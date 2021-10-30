@@ -21,17 +21,6 @@ export class ValidationError implements TypeError {
 export type ValidationOption = {
   required?: boolean;
 };
-// /**
-//  * @deprecated
-//  */
-// type _Validate<Input> = (value: Input, option: ValidationOption) => boolean;
-// /**
-//  * @deprecated
-//  */
-// type ValidateWithMessage<Input, Message extends string = string> = {
-//   validate: _Validate<Input>;
-//   message: Message;
-// };
 
 /**
  * TODO: remove
@@ -48,66 +37,6 @@ export const toResult = fold(
   (e: ValidationError) => e.message,
   (_: true) => '',
 );
-
-// /**
-//  * @deprecated
-//  */
-// type ValidateIsEmpty<T> = (x: Nullable<T>) => x is NullOrUndefined;
-
-// /**
-//  * @deprecated
-//  */
-// const createIsEmpty =
-//   <T>(): ValidateIsEmpty<T> =>
-//   (x): x is NullOrUndefined =>
-//     isNullable<T>(x);
-
-// /**
-//  * @deprecated
-//  */
-// class ValidatorFactoryImpl<Input, Message extends string = string> {
-//   constructor(
-//     protected readonly name: string,
-//     protected readonly displayName: string,
-//     protected readonly validators: ValidateWithMessage<Input, Message>[] = [],
-//   ) {}
-
-//   public add(isValid: _Validate<Input>, message: Message) {
-//     this.validators.push({ validate: isValid, message });
-//     return this;
-//   }
-
-//   public create(option: ValidationOption) {
-//     const { validators } = this;
-//     return (value: Input): Either<ValidationError, true> => {
-//       for (const { validate, message } of validators) {
-//         if (!validate(value, option)) {
-//           return failed(value, message);
-//         }
-//       }
-//       return right(true);
-//     };
-//   }
-// }
-
-// /**
-//  * @deprecated
-//  */
-// export class ValidationFactory<Input, Message extends string = string> extends ValidatorFactoryImpl<Input, Message> {
-//   constructor(name: string, displayName: string) {
-//     super(name, displayName, []);
-//   }
-
-//   public addIsType<T>(is: (x: unknown) => x is T, message: string) {
-//     const validators = [{ validate: is, message }, ...this.validators] as unknown as ValidateWithMessage<T, Message>[];
-//     console.log(validators);
-//     return new ValidatorFactoryImpl<T, Message>(this.name, this.displayName, validators);
-//   }
-
-//   public create(option: ValidationOption) {
-//     return super.create(option);
-//   }
-// }
 
 export type ValidatorOption = {
   required?: boolean;

@@ -1,4 +1,6 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
+import { replaceMessage } from 'utils/messageUtil';
+import { createTestString } from 'utils/testUtil';
 import { toMessage, ValidatorFactory, ValidatorOption } from 'utils/validationUtil';
 import * as validator from './validations';
 
@@ -125,25 +127,30 @@ describe('validations', () => {
     });
   });
 
-  // describe('isInvalidRemarksInDailyTimeRecord', () => {
-  //   describe('required', () => {
-  //     it(`should return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
-  //       const expect = createExpectForValidator({ required: true }, validator.isInvalidRemarksInDailyTimeRecord);
-  //       expect(undefined).toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
-  //     });
-  //     it(`should NOT return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
-  //       const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInDailyTimeRecord);
-  //       expect(undefined).not.toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
-  //     });
-  //   });
-  //   describe('invalid length', () => {
-  //     const expect = createExpectForValidator({ required: false }, validator.isInvalidRemarksInDailyTimeRecord);
-  //     it(`should return "${VALIDATION_ERROR_MESSAGE.over100Length}"`, () => {
-  //       expect(createTestString(100)).not.toBe(VALIDATION_ERROR_MESSAGE.over100Length);
-  //       expect(createTestString(101)).toBe(VALIDATION_ERROR_MESSAGE.over100Length);
-  //     });
-  //   });
-  // });
+  describe('remarkValidatorFactory', () => {
+    const { remarksValidatorFactory } = validator;
+    describe('required', () => {
+      it(`should return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const testFn = toInvalidMessage(remarksValidatorFactory, { required: true, maxLength: 50 });
+        expect(testFn(undefined)).toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+      it(`should NOT return "${VALIDATION_ERROR_MESSAGE.remarksIsEmpty}"`, () => {
+        const testFn = toInvalidMessage(remarksValidatorFactory, { required: false, maxLength: 50 });
+        expect(testFn(undefined)).not.toBe(VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
+      });
+    });
+    describe('invalid length', () => {
+      const testFn = toInvalidMessage(remarksValidatorFactory, { required: false, maxLength: 100 });
+      const expectedInvalidMessage = replaceMessage(VALIDATION_ERROR_MESSAGE.overLength, {
+        maxLength: 100,
+        displayName: '備考',
+      });
+      it(`should return "${expectedInvalidMessage}"`, () => {
+        expect(testFn(createTestString(100))).not.toBe(expectedInvalidMessage);
+        expect(testFn(createTestString(101))).toBe(expectedInvalidMessage);
+      });
+    });
+  });
 
   describe('dateStringValidatorFactory', () => {
     const { dateStringValidatorFactory } = validator;

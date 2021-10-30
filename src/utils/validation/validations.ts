@@ -47,14 +47,8 @@ const timeValidatorFactory = new ValidatorFactory<Time | undefined>('time', '時
     (time) => !isEmptyTime(time),
     () => VALIDATION_ERROR_MESSAGE.timeIsEmpty,
   )
-  .add(
-    ({ hour } = {}, option) => hourValidatorFactory.validate(hour, option),
-    () => '', // FIXME: add interface
-  )
-  .add(
-    ({ minute } = {}, option) => minuteValidatorFactory.validate(minute, option),
-    () => '', // FIXME: add interface
-  );
+  .add(({ hour } = {}, option) => hourValidatorFactory.validate(hour, option))
+  .add(({ minute } = {}, option) => minuteValidatorFactory.validate(minute, option));
 
 export const isInvalidTime: Validator<Time> = (option) => (time) => {
   const result = timeValidatorFactory.validate(time, option);
@@ -70,14 +64,8 @@ const timeRangeValidatorFactory = new ValidatorFactory<Range<Time> | undefined>(
     (timeRange) => !isEmptyTimeRange(timeRange),
     () => VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty,
   )
-  .add(
-    ({ start } = {}, option) => timeValidatorFactory.validate(start, option),
-    () => '', // FIXME: add interface
-  )
-  .add(
-    ({ end } = {}, option) => timeValidatorFactory.validate(end, option),
-    () => '', // FIXME: add interface
-  );
+  .add(({ start } = {}, option) => timeValidatorFactory.validate(start, option))
+  .add(({ end } = {}, option) => timeValidatorFactory.validate(end, option));
 
 export const isInvalidTimeRange: Validator<Range<Time>> = (option) => (timeRange) => {
   const result = timeRangeValidatorFactory.validate(timeRange, option);
@@ -87,7 +75,6 @@ export const isInvalidTimeRange: Validator<Range<Time>> = (option) => (timeRange
 // TODO: remove: undefined
 const restTimeValidatorFactory = new ValidatorFactory<RestTime | undefined>('RestTime', '休憩時間').add(
   ({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option),
-  () => '',
 );
 
 export const isInvalidRestTime: Validator<RestTime> = (option) => (restTime) => {
@@ -99,10 +86,7 @@ const isEmptyString = (value: Nullable<string>): boolean => isNullable(value) ||
 
 // TODO: remove: undefined
 const inHouseWorkValidatorFactory = new ValidatorFactory<InHouseWork | undefined>('InHouseWork', '社内作業')
-  .add(
-    ({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option),
-    () => '',
-  )
+  .add(({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option))
   // TODO: remarks validator factory
   .add(
     ({ remarks } = { id: undefined }, { required }) => !!required && isEmptyString(remarks),

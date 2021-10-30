@@ -41,10 +41,20 @@ export const toResult = fold(
 export type ValidatorOption = {
   required?: boolean;
 };
-type Validate<Input, Option extends ValidatorOption> = (
+type Validate<Input, Option extends ValidatorOption> = (value: Input, option: Option) => boolean;
+type ValidateEither<Input, Option extends ValidatorOption> = (
   value: Input,
   option: Option,
-) => boolean | Either<ValidationError, true>;
+) => Either<ValidationError, true>;
+type Validation<Input, Option extends ValidatorOption> =
+  | {
+      validate: Validate<Input, Option>;
+      message: string;
+    }
+  | {
+      validate: ValidateEither<Input, Option>;
+    };
+
 export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorOption> {
   // TODO: is を追加する
   constructor(
@@ -53,10 +63,7 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
   ) {}
 
   private readonly skips: Validate<Input, Option>[] = [];
-  private readonly validations: {
-    validate: Validate<Input, Option>;
-    message: string;
-  }[] = [];
+  private readonly validations: Validation<Input, Option>[] = [];
 
   public skip(isSkip: Validate<Input, Option>) {
     this.skips.push(isSkip);
@@ -66,9 +73,17 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
   public add(
     isValid: Validate<Input, Option>,
     toInvalidMessage: (params: { name: string; displayName: string }) => string,
+  ): this;
+  public add(isValid: ValidateEither<Input, Option>): this;
+  public add(
+    isValid: Validation<Input, Option>['validate'],
+    toInvalidMessage?: (params: { name: string; displayName: string }) => string,
   ) {
     const { name, displayName } = this;
-    this.validations.push({ validate: isValid, message: toInvalidMessage({ name, displayName }) });
+    const validation = toInvalidMessage
+      ? { validate: isValid, message: toInvalidMessage({ name, displayName }) }
+      : { validate: isValid };
+    this.validations.push(validation as Validation<Input, Option>);
     return this;
   }
 
@@ -81,15 +96,16 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
         if (skips.some((isSkip) => isSkip(value, option))) {
           return right(true);
         }
-        for (const { validate, message } of validations) {
-          const result = validate(value, option);
-          if (typeof result !== 'boolean') {
+        for (const validation of validations) {
+          if ('message' in validation) {
+            if (!validation.validate(value, option)) {
+              return failed(value, validation.message);
+            }
+          } else {
+            const result = validation.validate(value, option);
             if (isLeft(result)) {
               return result;
             }
-          }
-          if (!result) {
-            return failed(value, message);
           }
         }
         return right(true);

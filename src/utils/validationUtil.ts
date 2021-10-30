@@ -41,8 +41,12 @@ export const toResult = fold(
 export type ValidatorOption = {
   required?: boolean;
 };
-type Validate<Input, Option extends ValidatorOption> = (value: Input, option: Option) => boolean;
+type Validate<Input, Option extends ValidatorOption> = (
+  value: Input,
+  option: Option,
+) => boolean | Either<ValidationError, true>;
 export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorOption> {
+  // TODO: is を追加する
   constructor(
     private readonly name: string, //
     private readonly displayName: string,
@@ -72,12 +76,19 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
     const skips = [...this.skips];
     const validations = [...this.validations];
     return (option: Option) =>
+      // eslint-disable-next-line complexity
       (value: Input): Either<ValidationError, true> => {
         if (skips.some((isSkip) => isSkip(value, option))) {
           return right(true);
         }
         for (const { validate, message } of validations) {
-          if (!validate(value, option)) {
+          const result = validate(value, option);
+          if (typeof result !== 'boolean') {
+            if (isLeft(result)) {
+              return result;
+            }
+          }
+          if (!result) {
             return failed(value, message);
           }
         }

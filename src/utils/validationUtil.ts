@@ -22,12 +22,6 @@ export type ValidationOption = {
   required?: boolean;
 };
 
-/**
- * TODO: remove
- * @deprecated old type
- */
-export type Validator<Input> = (option: ValidationOption) => (value: Input | undefined) => ValidationError | false;
-
 export const failed = (value: unknown, message: string): Either<ValidationError, true> =>
   left(new ValidationError(value, message));
 

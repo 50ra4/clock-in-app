@@ -15,23 +15,17 @@ export class ValidationError implements TypeError {
   ) {}
 }
 
-/**
- * @deprecated
- */
-export type ValidationOption = {
-  required?: boolean;
-};
-
 export const failed = (value: unknown, message: string): Either<ValidationError, true> =>
   left(new ValidationError(value, message));
 
 export const isFailed = (result: Either<ValidationError, true>): result is Left<ValidationError> => isLeft(result);
 
-export const toMessage = fold(
+export const toValidationErrorMessage = fold(
   (e: ValidationError) => e.message,
   (_: true) => '',
 );
 
+export type ValidationResult = Either<ValidationError, true>;
 export type ValidatorOption = {
   required?: boolean;
 };
@@ -39,10 +33,7 @@ type InvalidMessageConverter<Option extends ValidatorOption> = (
   params: Option & { name: string; displayName: string },
 ) => string;
 type Validate<Input, Option extends ValidatorOption> = (value: Input, option: Option) => boolean;
-type ValidateEither<Input, Option extends ValidatorOption> = (
-  value: Input,
-  option: Option,
-) => Either<ValidationError, true>;
+type ValidateEither<Input, Option extends ValidatorOption> = (value: Input, option: Option) => ValidationResult;
 type Validation<Input, Option extends ValidatorOption> =
   | {
       validate: Validate<Input, Option>;
@@ -75,34 +66,33 @@ export class ValidatorFactory<Input, Option extends ValidatorOption = ValidatorO
     return this;
   }
 
-  public create() {
+  public create(option: Option) {
     const skips = [...this.skips];
     const validations = [...this.validations];
     const { name, displayName } = this;
-    return (option: Option) =>
-      // eslint-disable-next-line complexity
-      (value: Input): Either<ValidationError, true> => {
-        if (skips.some((isSkip) => isSkip(value, option))) {
-          return right(true);
-        }
-        for (const validation of validations) {
-          if ('toInvalidMessage' in validation) {
-            if (!validation.validate(value, option)) {
-              return failed(value, validation.toInvalidMessage({ ...option, name, displayName }));
-            }
-          } else {
-            const result = validation.validate(value, option);
-            if (isLeft(result)) {
-              return result;
-            }
+    // eslint-disable-next-line complexity
+    return (value: Input): ValidationResult => {
+      if (skips.some((isSkip) => isSkip(value, option))) {
+        return right(true);
+      }
+      for (const validation of validations) {
+        if ('toInvalidMessage' in validation) {
+          if (!validation.validate(value, option)) {
+            return failed(value, validation.toInvalidMessage({ ...option, name, displayName }));
+          }
+        } else {
+          const result = validation.validate(value, option);
+          if (isLeft(result)) {
+            return result;
           }
         }
-        return right(true);
-      };
+      }
+      return right(true);
+    };
   }
 
   public validate(value: Input, option: Option) {
-    return this.create()(option)(value);
+    return this.create(option)(value);
   }
 }
 

@@ -16,7 +16,7 @@ const displayName = 'ユーザー';
 
 describe('validationUtil', () => {
   describe('ValidationFactory', () => {
-    const validator = new ValidatorFactory<Nullable<User>, ValidatorOption>(typeName, displayName)
+    const validatorFactory = new ValidatorFactory<Nullable<User>, ValidatorOption>(typeName, displayName)
       .skip((value, { required }) => !required && isNullable(value))
       .add((user) => isNonNullable(user) && !!user.id, messageReplacer(VALIDATION_ERROR_MESSAGE.isEmpty))
       .add(
@@ -26,19 +26,18 @@ describe('validationUtil', () => {
       .add(
         (user) => isNonNullable(user) && user.name.length < 51,
         () => messageReplacer(VALIDATION_ERROR_MESSAGE.over50Length)({ displayName: 'ユーザー名' }),
-      )
-      .create();
+      );
 
     it('should return true', () => {
       const user1 = { id: '1', name: 'うずまき', age: 12 };
-      const validate1 = validator({ required: true });
+      const validate1 = validatorFactory.create({ required: true });
       expect(validate1(user1)).toEqual(either.right(true));
-      const validate2 = validator({ required: false });
+      const validate2 = validatorFactory.create({ required: false });
       expect(validate2(user1)).toEqual(either.right(true));
     });
 
     it('should return empty error message', () => {
-      const validate = validator({ required: true });
+      const validate = validatorFactory.create({ required: true });
       const expectedMessage = 'ユーザーを入力してください';
       const user1 = null;
       expect(validate(user1)).toEqual(failed(user1, expectedMessage));
@@ -49,7 +48,7 @@ describe('validationUtil', () => {
     });
 
     it('should return invalid error message', () => {
-      const validate = validator({ required: false });
+      const validate = validatorFactory.create({ required: false });
       const user1 = { id: '1', name: '', age: 12 };
       expect(validate(user1)).toEqual(failed(user1, 'ユーザー名を入力してください'));
 

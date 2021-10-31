@@ -1,13 +1,13 @@
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { replaceMessage } from 'utils/messageUtil';
 import { createTestString } from 'utils/testUtil';
-import { toMessage, ValidatorFactory, ValidatorOption } from 'utils/validationUtil';
+import { toValidationErrorMessage, ValidatorFactory, ValidatorOption } from 'utils/validationUtil';
 import * as validator from './validations';
 
 const toInvalidMessage =
   <I, O extends ValidatorOption>(factory: ValidatorFactory<I, O>, option: O) =>
   (value: I) =>
-    toMessage(factory.validate(value, option));
+    toValidationErrorMessage(factory.validate(value, option)) ?? '';
 
 describe('validations', () => {
   describe('hourValidatorFactory', () => {

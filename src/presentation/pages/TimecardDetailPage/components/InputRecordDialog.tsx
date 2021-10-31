@@ -33,6 +33,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     formState: dailyTimeRecord,
     onChangeFormState: onChangeDailyTimeRecord,
     formErrors,
+    hasFormError,
   } = useInputRecordForm(initialTimeRecord);
 
   return (
@@ -50,6 +51,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
           onClickDelete={() => {
             onDeleteDailyTimeRecord(dailyTimeRecord.date);
           }}
+          disabledOK={hasFormError}
           onClickOK={() => {
             onSaveDailyTimeRecord(dailyTimeRecord);
           }}

@@ -34,5 +34,9 @@ export const useInputRecordForm = (initialState: DailyTimeRecord) => {
     ),
   };
 
-  return { formState, onChangeFormState, formErrors };
+  const hasFormError = Object.values(formErrors).some((error) =>
+    Array.isArray(error) ? error.some((v) => !!v) : !!error,
+  );
+
+  return { formState, onChangeFormState, formErrors, hasFormError };
 };

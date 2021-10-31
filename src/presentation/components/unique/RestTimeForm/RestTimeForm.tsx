@@ -110,14 +110,22 @@ export const RestTimeForm = React.memo(function RestTimeForm({
           )}
           {!extendInput && <StyledEmptyArea />}
           {!readOnly && (
-            <StyledDeleteButton disabled={disabled} ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
-          )}
-          {!readOnly && onSortUp && (
-            <StyledMoveUpButton
-              disabled={disabled || row === 0}
-              ariaLabel={`${label}を一つ上に移動する`}
-              onClick={() => onSortUp(row)}
-            />
+            <>
+              <StyledDeleteButton disabled={disabled} ariaLabel={`${label}を削除する`} onClick={() => onClear(row)} />
+              {onSortUp && (
+                <>
+                  {row === 0 ? (
+                    <StyledHiddenMoveUpButton />
+                  ) : (
+                    <StyledMoveUpButton
+                      disabled={disabled}
+                      ariaLabel={`${label}を上に移動する`}
+                      onClick={() => onSortUp(row)}
+                    />
+                  )}
+                </>
+              )}
+            </>
           )}
         </StyledInputWrapper>
         {error && <ErrorMessageForForm message={error} />}
@@ -175,4 +183,7 @@ const MoveUpButton = React.memo(function MoveUpButton({
 const StyledMoveUpButton = styled(MoveUpButton)`
   flex-shrink: 0;
   margin-left: ${({ theme }) => theme.space.middle}px;
+`;
+const StyledHiddenMoveUpButton = styled(StyledMoveUpButton)`
+  visibility: hidden;
 `;

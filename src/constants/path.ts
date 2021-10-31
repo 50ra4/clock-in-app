@@ -7,5 +7,6 @@ export const PAGE_PATH = {
   login: '/login',
   registration: '/registration',
   timecardDetail: '/timecards/:uid',
+  userSetting: '/setting/:uid',
 } as const;
 export type PagePath = EnumValue<typeof PAGE_PATH>;

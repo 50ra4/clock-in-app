@@ -1,190 +1,93 @@
 /* eslint-disable complexity */
 import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import isValid from 'date-fns/isValid';
-import { Time, Range, RestTime, InHouseWork, DailyTimeRecord } from 'types';
+import { Time, Range, RestTime, InHouseWork, Nullable, NullOrUndefined } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
-import { ValidationError, Validator } from '../validationUtil';
+import { isNonNullable, isNullable } from 'utils/typeGuard';
+import { messageReplacer, ValidatorFactory, ValidatorOption } from '../validationUtil';
 
-export const isInvalidHour: Validator<number> =
-  ({ required }) =>
-  (hour) => {
-    if (typeof hour !== 'number') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError(hour, VALIDATION_ERROR_MESSAGE.hourIsEmpty);
-    }
-    if (hour < 0 || 23 < hour) {
-      return new ValidationError(hour, VALIDATION_ERROR_MESSAGE.hourIsOutOfRange);
-    }
-    return false;
-  };
+export const hourValidatorFactory = new ValidatorFactory<number | undefined>('hour', '時刻')
+  .skip((hour, { required }) => !required && typeof hour !== 'number')
+  .add(
+    (hour) => isNonNullable(hour),
+    () => VALIDATION_ERROR_MESSAGE.hourIsEmpty,
+  )
+  .add(
+    (hour) => isNonNullable(hour) && 0 <= hour && hour < 24,
+    () => VALIDATION_ERROR_MESSAGE.hourIsOutOfRange,
+  );
 
-export const isInvalidMinute: Validator<number> =
-  ({ required }) =>
-  (minute) => {
-    if (typeof minute !== 'number') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError(minute, VALIDATION_ERROR_MESSAGE.minuteIsEmpty);
-    }
-    if (minute < 0 || 59 < minute) {
-      return new ValidationError(minute, VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange);
-    }
-    return false;
-  };
+export const minuteValidatorFactory = new ValidatorFactory<number | undefined>('minute', '分')
+  .skip((minute, { required }) => !required && typeof minute !== 'number')
+  .add(
+    (minute) => isNonNullable(minute),
+    () => VALIDATION_ERROR_MESSAGE.minuteIsEmpty,
+  )
+  .add(
+    (minute) => isNonNullable(minute) && 0 <= minute && minute < 60,
+    () => VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange,
+  );
 
-export const isInvalidTime: Validator<Time> =
-  ({ required }) =>
-  ({ hour, minute } = {}) => {
-    if (typeof hour === 'undefined' && typeof minute === 'undefined') {
-      if (!required) {
-        return false;
-      }
+const isEmptyTime = (time: Nullable<Time>): time is NullOrUndefined =>
+  isNullable(time) || (typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined');
 
-      return new ValidationError({ hour, minute }, VALIDATION_ERROR_MESSAGE.timeIsEmpty);
-    }
-    const invalidHourMessage = isInvalidHour({ required })(hour);
-    if (invalidHourMessage) {
-      return invalidHourMessage;
-    }
-    const invalidMinuteMessage = isInvalidMinute({ required })(minute);
-    if (invalidMinuteMessage) {
-      return invalidMinuteMessage;
-    }
-    return false;
-  };
+export const timeValidatorFactory = new ValidatorFactory<Time | undefined>('time', '時間')
+  .skip((time, { required }) => !required && isEmptyTime(time))
+  .add(
+    (time) => !isEmptyTime(time),
+    () => VALIDATION_ERROR_MESSAGE.timeIsEmpty,
+  )
+  .add(({ hour } = {}, option) => hourValidatorFactory.validate(hour, option))
+  .add(({ minute } = {}, option) => minuteValidatorFactory.validate(minute, option));
 
-export const isInvalidTimeRange: Validator<Range<Time>> =
-  ({ required }) =>
-  ({ start, end } = {}) => {
-    if (typeof start === 'undefined' && typeof end === 'undefined') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError({ start, end }, VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty);
-    }
-    const startMessage = isInvalidTime({ required })(start);
-    if (startMessage) {
-      return startMessage;
-    }
-    const endMessage = isInvalidTime({ required })(end);
-    if (endMessage) {
-      return endMessage;
-    }
-    return false;
-  };
+const isEmptyTimeRange = (timeRange: Nullable<Range<Time>>): timeRange is NullOrUndefined =>
+  isNullable(timeRange) || (isEmptyTime(timeRange?.start) && isEmptyTime(timeRange?.end));
 
-export const isInvalidRestTime: Validator<RestTime> =
-  ({ required }) =>
-  ({ start, end } = { id: undefined }) => {
-    const invalidTimeRangeMessage = isInvalidTimeRange({ required })({ start, end });
-    if (invalidTimeRangeMessage) {
-      return invalidTimeRangeMessage;
-    }
-    return false;
-  };
+export const timeRangeValidatorFactory = new ValidatorFactory<Range<Time> | undefined>('timeRange', '時間帯')
+  .skip((timeRange, { required }) => !required && isEmptyTimeRange(timeRange))
+  .add(
+    (timeRange) => !isEmptyTimeRange(timeRange),
+    () => VALIDATION_ERROR_MESSAGE.timeRangeIsEmpty,
+  )
+  .add(({ start } = {}, option) => timeValidatorFactory.validate(start, option))
+  .add(({ end } = {}, option) => timeValidatorFactory.validate(end, option));
 
-export const isInvalidRemarksInInHouseWork: Validator<string> =
-  ({ required }) =>
-  (remarks) => {
-    if (typeof remarks !== 'string') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
-    }
+export const restTimeValidatorFactory = new ValidatorFactory<RestTime>('RestTime', '休憩時間').add(
+  ({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option),
+);
 
-    if (50 < remarks.length) {
-      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.over50Length);
-    }
+const isEmptyString = (value: Nullable<string>): boolean => isNullable(value) || value.length < 1;
 
-    return false;
-  };
+export const remarksValidatorFactory = new ValidatorFactory<Nullable<string>, ValidatorOption & { maxLength: number }>(
+  'remarks',
+  '備考',
+)
+  .skip((value, { required }) => !required && isEmptyString(value))
+  .add(
+    (value) => !isEmptyString(value),
+    () => VALIDATION_ERROR_MESSAGE.remarksIsEmpty,
+  )
+  .add(
+    (value, { maxLength }) => isNonNullable(value) && value.length <= maxLength,
+    messageReplacer(VALIDATION_ERROR_MESSAGE.overLength),
+  );
 
-export const isInvalidInHouseWork: Validator<InHouseWork> =
-  ({ required }) =>
-  ({ start, end, remarks } = { id: undefined }) => {
-    const invalidTimeRangeMessage = isInvalidTimeRange({ required })({ start, end });
-    if (invalidTimeRangeMessage) {
-      return invalidTimeRangeMessage;
-    }
-    const invalidRemarksInInHouseWorkMessage = isInvalidRemarksInInHouseWork({ required })(remarks);
-    if (invalidRemarksInInHouseWorkMessage) {
-      return invalidRemarksInInHouseWorkMessage;
-    }
-    return false;
-  };
-
-export const isInvalidRemarksInDailyTimeRecord: Validator<string> =
-  ({ required }) =>
-  (remarks) => {
-    if (typeof remarks !== 'string') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.remarksIsEmpty);
-    }
-
-    if (100 < remarks.length) {
-      return new ValidationError(remarks, VALIDATION_ERROR_MESSAGE.over100Length);
-    }
-
-    return false;
-  };
+export const inHouseWorkValidatorFactory = new ValidatorFactory<InHouseWork>('InHouseWork', '社内作業')
+  .add(({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option))
+  .add(({ remarks } = { id: undefined }, option) =>
+    remarksValidatorFactory.validate(remarks, { ...option, maxLength: 50 }),
+  );
 
 const isValidDateStringFormat = (str: string): boolean =>
   !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));
 
-export const isInvalidDateString: Validator<string> =
-  ({ required }) =>
-  (date) => {
-    if (typeof date !== 'string') {
-      if (!required) {
-        return false;
-      }
-      return new ValidationError(date, VALIDATION_ERROR_MESSAGE.dateIsEmpty);
-    }
-    if (!isValidDateStringFormat(date)) {
-      return new ValidationError(date, VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid);
-    }
-    return false;
-  };
-
-export const isInvalidDailyTimeRecord: Validator<DailyTimeRecord> =
-  (option) =>
-  (
-    { date, start, end, inHouseWorks, restTimes, remarks } = {
-      date: '',
-      inHouseWorks: [],
-      restTimes: [],
-      remarks: '',
-    },
-  ) => {
-    const invalidDateInDailyTimeRecordMessage = isInvalidDateString({ required: true })(date);
-    if (invalidDateInDailyTimeRecordMessage) {
-      return invalidDateInDailyTimeRecordMessage;
-    }
-    const invalidTimeRangeMessage = isInvalidTimeRange(option)({ start, end });
-    if (invalidTimeRangeMessage) {
-      return invalidTimeRangeMessage;
-    }
-    const invalidRemarksInDailyTimeRecordMessage = isInvalidRemarksInDailyTimeRecord({ required: false })(remarks);
-    if (invalidRemarksInDailyTimeRecordMessage) {
-      return invalidRemarksInDailyTimeRecordMessage;
-    }
-    const invalidInHouseWorksMessage = inHouseWorks
-      .map((inHouseWork) => isInvalidInHouseWork({ required: true })(inHouseWork))
-      .find((v) => !!v);
-    if (invalidInHouseWorksMessage) {
-      return invalidInHouseWorksMessage;
-    }
-    const invalidRestTimesMessage = restTimes
-      .map((inHouseWork) => isInvalidRestTime({ required: true })(inHouseWork))
-      .find((v) => !!v);
-    if (invalidRestTimesMessage) {
-      return invalidRestTimesMessage;
-    }
-    return false;
-  };
+export const dateStringValidatorFactory = new ValidatorFactory<string>('Date', '日付')
+  .skip((value, { required }) => !required && isEmptyString(value))
+  .add(
+    (value) => !isEmptyString(value),
+    () => VALIDATION_ERROR_MESSAGE.dateIsEmpty,
+  )
+  .add(
+    (value) => isNonNullable(value) && isValidDateStringFormat(value),
+    () => VALIDATION_ERROR_MESSAGE.dateFormatIsInvalid,
+  );

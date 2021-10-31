@@ -8,23 +8,7 @@ import { DailyTimeRecord } from 'types';
 import { InputRecordForm } from './InputRecordForm';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString } from 'utils/dateUtil';
-import { useFormGroup, ValidationGroup } from '../hooks/useFormGroup';
-import {
-  isInvalidDateString,
-  isInvalidInHouseWork,
-  isInvalidRemarksInDailyTimeRecord,
-  isInvalidRestTime,
-  isInvalidTime,
-} from 'utils/validation/validations';
-
-const validations: ValidationGroup<DailyTimeRecord> = {
-  date: isInvalidDateString({ required: true }),
-  start: isInvalidTime({ required: false }),
-  end: isInvalidTime({ required: false }),
-  remarks: isInvalidRemarksInDailyTimeRecord({ required: false }),
-  inHouseWorks: isInvalidInHouseWork({ required: true }),
-  restTimes: isInvalidRestTime({ required: true }),
-};
+import { useInputRecordForm } from '../hooks/useInputRecordForm';
 
 type OwnProps = {
   className?: string;
@@ -49,7 +33,8 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     formState: dailyTimeRecord,
     onChangeFormState: onChangeDailyTimeRecord,
     formErrors,
-  } = useFormGroup(initialTimeRecord, validations);
+    hasFormError,
+  } = useInputRecordForm(initialTimeRecord);
 
   return (
     <StyledCustomDialog
@@ -66,6 +51,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
           onClickDelete={() => {
             onDeleteDailyTimeRecord(dailyTimeRecord.date);
           }}
+          disabledOK={hasFormError}
           onClickOK={() => {
             onSaveDailyTimeRecord(dailyTimeRecord);
           }}

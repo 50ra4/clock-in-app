@@ -94,12 +94,13 @@ export const InputRecordDialogActions = React.memo(function ConfirmDialogAction(
   onClose,
   onClickOK,
   onClickDelete,
-}: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'> & { onClickDelete: () => void }) {
+  disabledOK,
+}: Pick<ConfirmDialogProps, 'onClose' | 'onClickOK'> & { onClickDelete: () => void; disabledOK: boolean }) {
   return (
     <>
       <StyledButton color="secondary" onClick={onClickDelete} text="削除" />
       <StyledButton color="default" onClick={onClose} text="キャンセル" />
-      <StyledButton color="primary" onClick={onClickOK} text="OK" />
+      <StyledButton color="primary" disabled={disabledOK} onClick={onClickOK} text="OK" />
     </>
   );
 });

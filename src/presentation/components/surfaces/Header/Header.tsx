@@ -43,6 +43,7 @@ const RightActionButton = React.memo(function RightActionButton({
 });
 
 export const Header = styled(UnStyledHeader)`
+  z-index: ${({ theme }) => theme.zIndex.appBar};
   height: ${({ theme }) => theme.height.header}px;
   display: flex;
   justify-content: space-between;

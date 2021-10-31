@@ -21,9 +21,12 @@ Docs.args = {
   label: '休憩時間',
   value: initial,
   description: 'enter rest time',
+  disabled: false,
+  readOnly: true,
   onChange: () => {},
   onClear: () => {},
   onBlur: () => {},
+  onSortUp: undefined,
 };
 
 /**
@@ -67,6 +70,27 @@ export const TextType = () => {
         setValue(v);
       }}
       onClear={() => {}}
+    />
+  );
+};
+
+export const WithSortUp = () => {
+  const [value, setValue] = useState<RestTime>({ ...initial });
+  return (
+    <RestTimeForm
+      id="sort-up"
+      name="sort-up"
+      value={value}
+      type="input"
+      label="休憩時間"
+      row={1}
+      disabled={false}
+      extendInput={true}
+      onChange={(v) => {
+        setValue(v);
+      }}
+      onClear={() => {}}
+      onSortUp={() => {}}
     />
   );
 };

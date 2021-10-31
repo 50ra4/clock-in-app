@@ -11,9 +11,6 @@ const Template = createStoryTemplate(TimeRangeForm);
 
 const initialTime: Range<Time> = { start: { hour: 1, minute: 59 }, end: { hour: 2, minute: 30 } };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const voidFunction = () => {};
-
 export const Docs = Template;
 Docs.args = {
   id: 'docs',
@@ -21,9 +18,9 @@ Docs.args = {
   label: '休憩時間',
   value: initialTime,
   description: 'please enter rest time.',
-  onChange: voidFunction,
-  onBlur: voidFunction,
-  onClear: voidFunction,
+  onChange: () => {},
+  onBlur: () => {},
+  onClear: () => {},
 };
 
 /**
@@ -41,7 +38,7 @@ export const TimeType = () => {
       error="enter time"
       inline={true}
       onChange={setTimeRange}
-      onBlur={voidFunction}
+      onBlur={() => {}}
     />
   );
 };
@@ -65,7 +62,7 @@ export const TextType = () => {
       description="please enter rest time"
       onChange={setTimeRange}
       onClear={handleOnClear}
-      onBlur={voidFunction}
+      onBlur={() => {}}
     />
   );
 };

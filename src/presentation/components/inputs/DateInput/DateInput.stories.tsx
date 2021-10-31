@@ -7,7 +7,6 @@ export default createStoryMeta(DateInput, {
 
 const Template = createStoryTemplate(DateInput);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
 export const Docs = Template;

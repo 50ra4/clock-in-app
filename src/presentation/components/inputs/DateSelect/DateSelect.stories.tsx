@@ -7,7 +7,6 @@ export default createStoryMeta(DateSelect, {
 
 const Template = createStoryTemplate(DateSelect);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
 const initialDate = '2021-07-23';

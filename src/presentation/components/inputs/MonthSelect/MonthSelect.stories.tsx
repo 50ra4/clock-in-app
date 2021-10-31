@@ -15,6 +15,6 @@ Docs.args = {
   name: 'docs',
   selectedMonth: '2021-01',
   range,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+
   onChange: () => {},
 };

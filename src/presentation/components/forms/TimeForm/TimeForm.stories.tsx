@@ -9,7 +9,6 @@ export default createStoryMeta(TimeForm, {
 
 const Template = createStoryTemplate(TimeForm);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
 const initialTime: Time = { hour: 10, minute: 10 };

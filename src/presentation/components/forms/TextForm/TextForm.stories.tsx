@@ -7,7 +7,6 @@ export default createStoryMeta(TextForm, {
 
 const Template = createStoryTemplate(TextForm);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const emptyFunction = () => {};
 
 export const Docs = Template;

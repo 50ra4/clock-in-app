@@ -7,7 +7,6 @@ export default createStoryMeta(TextAreaForm, {
 
 const Template = createStoryTemplate(TextAreaForm);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const emptyFunction = () => {};
 
 const text =

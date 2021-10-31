@@ -10,7 +10,6 @@ const Template = createStoryTemplate(TimeInput);
 
 const initialTime: Time = { hour: 1, minute: 59 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
 export const Docs = Template;

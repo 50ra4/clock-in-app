@@ -8,7 +8,6 @@ export default createStoryMeta(DateForm, {
 
 const Template = createStoryTemplate(DateForm);
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const voidFunction = () => {};
 
 const initialDate = '2021-07-23';

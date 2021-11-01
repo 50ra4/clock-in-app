@@ -7,6 +7,7 @@ export type EnumValue<O extends { [K: string]: string | number }> = O[keyof O];
 export type FetchStatus = EnumValue<typeof FETCH_STATUS_ENUM>;
 export type LoginStatus = EnumValue<typeof LOGIN_STATUS_ENUM>;
 export type DayOfWeekCode = EnumValue<typeof DAY_OF_WEEK_ENUM>;
+export type DayOfWeek = keyof typeof DAY_OF_WEEK_ENUM;
 
 export type Range<T> = {
   start?: T;

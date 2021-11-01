@@ -2,20 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { TimeRangeForm } from 'presentation/components/forms/TimeRangeForm/TimeRangeForm';
 import { MinuteForm } from 'presentation/components/forms/MinuteForm/MinuteForm';
-import { Range, RestTime, Time } from 'types';
+import { TimecardUserPreference } from 'types';
 import { useFormGroup } from 'hooks/useFormGroup';
 import { RestTimeFormGroup } from 'presentation/components/unique/RestTimeFormGroup/RestTimeFormGroup';
+import { DayOfWeekCheckForm } from 'presentation/components/unique/DayOfWeekCheckForm/DayOfWeekCheckForm';
 
-type UserSettingFormData = {
-  workingHours: Range<Time>;
-  roundDownMinutes: number;
-  restTimes: RestTime[];
-};
-
-const INITIAL_USER_SETTING_FORM: UserSettingFormData = {
+const INITIAL_FORM_STATE: TimecardUserPreference = {
   workingHours: {},
   roundDownMinutes: 15,
   restTimes: [],
+  regularHolidays: [],
 };
 
 type Props = {
@@ -24,8 +20,8 @@ type Props = {
   inline?: boolean;
 };
 
-export const UserSettingForm = React.memo(function UserSettingForm({ className, readOnly, inline = false }: Props) {
-  const { formState, onChangeFormState } = useFormGroup({ ...INITIAL_USER_SETTING_FORM });
+export const UserSettingForm = React.memo(function UserSettingForm({ className, readOnly }: Props) {
+  const { formState, onChangeFormState } = useFormGroup({ ...INITIAL_FORM_STATE });
 
   return (
     <StyledRoot className={className}>
@@ -37,7 +33,6 @@ export const UserSettingForm = React.memo(function UserSettingForm({ className, 
         value={formState.workingHours}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={inline}
         error={undefined} // FIXME:
         onChange={(v) => {
           onChangeFormState('workingHours', v);
@@ -51,7 +46,6 @@ export const UserSettingForm = React.memo(function UserSettingForm({ className, 
         max={60}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={inline}
         value={formState.roundDownMinutes}
         error={undefined} // FIXME:
         onChange={(v) => {
@@ -66,12 +60,21 @@ export const UserSettingForm = React.memo(function UserSettingForm({ className, 
         value={formState.restTimes}
         readOnly={readOnly}
         disabled={readOnly}
-        inline={inline}
         errors={[]} // FIXME:
         sortable={true}
         max={5}
         onChange={(value) => {
           onChangeFormState('restTimes', value);
+        }}
+      />
+      <DayOfWeekCheckForm
+        id="regular-holidays"
+        name="regular-holidays"
+        values={formState.regularHolidays}
+        label="休日"
+        error={undefined} // FIXME:
+        onChange={(value) => {
+          onChangeFormState('regularHolidays', value);
         }}
       />
     </StyledRoot>

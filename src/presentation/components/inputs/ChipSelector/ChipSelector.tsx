@@ -11,6 +11,7 @@ export type ChipSelectorProps<T> = Omit<ChipStyle, 'variant'> & {
   value: T;
   checked: boolean;
   disabled?: boolean;
+  readOnly?: boolean;
   onChange: (checked: boolean, value: T) => void;
 };
 
@@ -23,37 +24,46 @@ export const ChipSelector = React.memo(function ChipSelector<T>({
   value,
   checked,
   disabled,
+  readOnly,
   color,
   onChange,
 }: ChipSelectorProps<T>): JSX.Element {
   const handleOnChange = () => {
-    if (disabled) return;
+    if (disabled || readOnly) return;
     onChange(checked, value);
   };
 
   return (
-    <ChipWrapper className={className} disabled={disabled} color={color} variant={checked ? 'default' : 'outline'}>
+    <ChipWrapper
+      className={className}
+      disabled={disabled}
+      readOnly={readOnly}
+      color={color}
+      variant={checked ? 'default' : 'outline'}
+    >
       <label htmlFor={id}>
         <input type={type} id={id} name={name} checked={checked} onChange={handleOnChange} />
         {label}
       </label>
     </ChipWrapper>
   );
-}) as <T>(props: T) => JSX.Element;
+}) as <T>(props: ChipSelectorProps<T>) => JSX.Element;
 
 export type StyleChipSelector<T> = StyledComponent<
-  (props: T) => JSX.Element,
+  (props: ChipSelectorProps<T>) => JSX.Element,
   DefaultTheme,
   Record<string, never>,
   never
 >;
 
-const ChipWrapper = styled.div<ChipStyle>`
+type StyleProps = ChipStyle & { readOnly?: boolean };
+
+const ChipWrapper = styled.div<StyleProps>`
   ${({ disabled, color, variant }) => chipStyle({ disabled, color, variant })}
 
   & > label {
     display: inline-block;
-    cursor: ${({ disabled = false }) => (!disabled ? 'pointer' : 'default')};
+    cursor: ${({ disabled = false, readOnly = false }) => (!disabled && !readOnly ? 'pointer' : 'default')};
     padding: ${({ theme }) => `${theme.space.large}px ${theme.space.large * 2}px`};
 
     & > input {

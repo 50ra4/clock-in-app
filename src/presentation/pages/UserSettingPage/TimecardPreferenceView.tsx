@@ -25,67 +25,76 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
 
   return (
     <StyledRoot className={className}>
-      <TimeRangeForm
-        id="working-hours"
-        name="working-hours"
-        label="定時"
-        type="input"
-        value={formState.workingHours}
-        readOnly={readOnly}
-        disabled={readOnly}
-        error={undefined} // FIXME:
-        onChange={(v) => {
-          onChangeFormState('workingHours', v);
-        }}
-      />
-      <MinuteForm
-        id="round-down-minutes"
-        name="round-down-minutes"
-        label="丸め処理(分)"
-        min={0}
-        max={60}
-        readOnly={readOnly}
-        disabled={readOnly}
-        value={formState.roundDownMinutes}
-        error={undefined} // FIXME:
-        onChange={(v) => {
-          onChangeFormState('roundDownMinutes', v);
-        }}
-        onClear={() => {
-          onChangeFormState('roundDownMinutes', 0);
-        }}
-      />
-      <RestTimeFormGroup
-        type="input"
-        value={formState.restTimes}
-        readOnly={readOnly}
-        disabled={readOnly}
-        errors={[]} // FIXME:
-        sortable={true}
-        max={5}
-        onChange={(value) => {
-          onChangeFormState('restTimes', value);
-        }}
-      />
-      <DayOfWeekCheckForm
-        id="regular-holidays"
-        name="regular-holidays"
-        values={formState.regularHolidays}
-        label="休日"
-        error={undefined} // FIXME:
-        onChange={(value) => {
-          onChangeFormState('regularHolidays', value);
-        }}
-      />
+      <h2>タイムカード設定</h2>
+      <div>
+        <TimeRangeForm
+          id="working-hours"
+          name="working-hours"
+          label="定時"
+          type="input"
+          value={formState.workingHours}
+          readOnly={readOnly}
+          disabled={readOnly}
+          error={undefined} // FIXME:
+          onChange={(v) => {
+            onChangeFormState('workingHours', v);
+          }}
+        />
+        <MinuteForm
+          id="round-down-minutes"
+          name="round-down-minutes"
+          label="丸め処理(分)"
+          min={0}
+          max={60}
+          readOnly={readOnly}
+          disabled={readOnly}
+          value={formState.roundDownMinutes}
+          error={undefined} // FIXME:
+          onChange={(v) => {
+            onChangeFormState('roundDownMinutes', v);
+          }}
+          onClear={() => {
+            onChangeFormState('roundDownMinutes', 0);
+          }}
+        />
+        <DayOfWeekCheckForm
+          id="regular-holidays"
+          name="regular-holidays"
+          values={formState.regularHolidays}
+          label="休日"
+          error={undefined} // FIXME:
+          onChange={(value) => {
+            onChangeFormState('regularHolidays', value);
+          }}
+        />
+        <RestTimeFormGroup
+          type="input"
+          value={formState.restTimes}
+          readOnly={readOnly}
+          disabled={readOnly}
+          errors={[]} // FIXME:
+          sortable={true}
+          max={5}
+          onChange={(value) => {
+            onChangeFormState('restTimes', value);
+          }}
+        />
+      </div>
     </StyledRoot>
   );
 });
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.section`
   overflow-y: scroll;
   ${({ theme }) => theme.scrollBar.hidden()}
 
-  & > * {
+  & > h2 {
+    font-size: ${({ theme }) => theme.font.size.large}px;
+    font-weight: ${({ theme }) => theme.font.weight.bold};
+    padding-left: ${({ theme }) => theme.space.middle}px;
+    margin-bottom: ${({ theme }) => theme.font.size.middle}px;
+  }
+  & > div > * {
     padding: ${({ theme }) => theme.space.middle}px;
   }
 `;

@@ -20,7 +20,7 @@ type Props = {
   inline?: boolean;
 };
 
-export const UserSettingForm = React.memo(function UserSettingForm({ className, readOnly }: Props) {
+export const TimecardPreferenceView = React.memo(function TimecardPreferenceView({ className, readOnly }: Props) {
   const { formState, onChangeFormState } = useFormGroup({ ...INITIAL_FORM_STATE });
 
   return (

@@ -1,13 +1,13 @@
 import { useLoginRedirection } from 'hooks/useAuthentication';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
-import { UserSettingForm } from './components/UserSettingForm';
+import { TimecardPreferenceView } from './TimecardPreferenceView';
 
 const UserSettingPage = () => {
   useLoginRedirection();
 
   return (
     <WithHeaderLayout>
-      <UserSettingForm readOnly={false} inline={true} />
+      <TimecardPreferenceView readOnly={false} inline={true} />
     </WithHeaderLayout>
   );
 };

@@ -1,13 +1,16 @@
 import { useLoginRedirection } from 'hooks/useAuthentication';
+import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
-import { UserSettingForm } from './components/UserSettingForm';
+import { TimecardPreferenceView } from './TimecardPreferenceView';
 
-const UserSettingPage = () => {
+const UserSettingPage = (): JSX.Element => {
   useLoginRedirection();
 
   return (
     <WithHeaderLayout>
-      <UserSettingForm readOnly={false} inline={true} />
+      <ResponsiveLayout>
+        <TimecardPreferenceView readOnly={false} inline={true} />
+      </ResponsiveLayout>
     </WithHeaderLayout>
   );
 };

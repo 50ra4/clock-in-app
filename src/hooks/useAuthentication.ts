@@ -24,7 +24,7 @@ export const useAuthentication = () => {
     async (email: string, password: string) => {
       dispatch(authenticationActions.loggingIn());
       try {
-        await fireAuthentication.setPersistence('session');
+        await fireAuthentication.setPersistence('local');
         const credential = await fireAuthentication.signInWithEmailAndPassword(email, password);
         dispatch(authenticationActions.success());
         return { result: true, credential } as const;

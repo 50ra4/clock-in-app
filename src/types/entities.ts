@@ -1,4 +1,4 @@
-import { Time, LoginStatus } from './utils';
+import { Time, LoginStatus, Range, DayOfWeekCode } from './utils';
 
 export type RestTime = {
   id: string | undefined;
@@ -40,4 +40,11 @@ export type Authentication = {
   uid: string;
   loginStatus: LoginStatus;
   emailVerified: boolean;
+};
+
+export type TimecardUserPreference = {
+  workingHours: Range<Time>;
+  roundDownMinutes: number;
+  restTimes: RestTime[];
+  regularHolidays: DayOfWeekCode[];
 };

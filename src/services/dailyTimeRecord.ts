@@ -4,22 +4,12 @@ import {
   DAILY_IN_HOUSE_WORK_COLLECTION_PATH,
   DAILY_REST_TIME_COLLECTION_PATH,
 } from 'constants/firestore';
-import { DailyTimeRecord, InHouseWork, RestTime, Time } from 'types';
+import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
 import { omitUndefinedProps } from 'utils/converterUtil';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
 import { firestore, firebase } from './firebase';
-
-const createAdditionalProps = (uid: string, isUpdated?: boolean) => {
-  const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-
-  return {
-    ...(isUpdated ? {} : { createdAt: timestamp }),
-    updatedAt: timestamp,
-  };
-};
-
-const formatTimeToQuery = (time?: Time) => (!time ? {} : omitUndefinedProps(time));
+import { createAdditionalProps, formatTimeToQuery } from './utils';
 
 export const queryToRestTime = (
   query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,

@@ -12,3 +12,5 @@ export const DAILY_RECORDS_COLLECTION_PATH = `${MONTHLY_TIMECARD_DOCUMENT_PATH}/
 export const DAILY_IN_HOUSE_WORK_COLLECTION_PATH = `${DAILY_RECORDS_COLLECTION_PATH}/:day/in-house-works` as const;
 
 export const DAILY_REST_TIME_COLLECTION_PATH = `${DAILY_RECORDS_COLLECTION_PATH}/:day/rest-times` as const;
+
+export const TIMECARD_USER_PREFERENCE_DOCUMENT_PATH = `${USER_COLLECTION_PATH}/:uid/preferences/timecard` as const;

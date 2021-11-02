@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>utils/errorUtil | clock-in-app API document</title>
+	<title>services/utils | clock-in-app API document</title>
 	<meta name="description" content="Documentation for clock-in-app API document">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">clock-in-app API document</a>
 				</li>
 				<li>
-					<a href="utils_errorUtil.html">utils/errorUtil</a>
+					<a href="services_utils.html">services/utils</a>
 				</li>
 			</ul>
-			<h1>Module utils/errorUtil</h1>
+			<h1>Module services/utils</h1>
 		</div>
 	</div>
 </header>
@@ -72,8 +72,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_errorUtil.html#errorToHeadingWithMessage" class="tsd-kind-icon">error<wbr>ToHeading<wbr>With<wbr>Message</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_errorUtil.html#isErrorCode" class="tsd-kind-icon">is<wbr>Error<wbr>Code</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="services_utils.html#createAdditionalProps" class="tsd-kind-icon">create<wbr>Additional<wbr>Props</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="services_utils.html#formatTimeToQuery" class="tsd-kind-icon">format<wbr>Time<wbr>ToQuery</a></li>
 							</ul>
 						</section>
 					</div>
@@ -81,55 +81,60 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="errorToHeadingWithMessage" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> error<wbr>ToHeading<wbr>With<wbr>Message</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">error<wbr>ToHeading<wbr>With<wbr>Message&lt;E&gt;<span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="types_utils.html#ErrorHeadingWithMessage" class="tsd-signature-type" data-tsd-kind="Type alias">ErrorHeadingWithMessage</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>crashed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="createAdditionalProps" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Additional<wbr>Props</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Additional<wbr>Props<span class="tsd-signature-symbol">(</span>uid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isUpdated<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>createdAt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a><span class="tsd-signature-symbol">; </span>updatedAt<span class="tsd-signature-symbol">: </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/efd95c6/src/utils/errorUtil.ts#L5">src/utils/errorUtil.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/efd95c6/src/services/utils.ts#L5">src/services/utils.ts:5</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>E<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>error: <span class="tsd-signature-type">E</span></h5>
+									<h5>uid: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isUpdated: <span class="tsd-signature-type">boolean</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="types_utils.html#ErrorHeadingWithMessage" class="tsd-signature-type" data-tsd-kind="Type alias">ErrorHeadingWithMessage</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>crashed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>createdAt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a><span class="tsd-signature-symbol">; </span>updatedAt<span class="tsd-signature-symbol">: </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>created<wbr>At<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>updated<wbr>At<span class="tsd-signature-symbol">: </span><a href="../classes/services_firebase_import.default.firestore.FieldValue.html" class="tsd-signature-type" data-tsd-kind="Class">FieldValue</a></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="isErrorCode" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Error<wbr>Code</h3>
+					<a name="formatTimeToQuery" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> format<wbr>Time<wbr>ToQuery</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Error<wbr>Code<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">code</span><span class="tsd-signature-symbol"> is </span><a href="constants_error.html#ErrorCode" class="tsd-signature-type" data-tsd-kind="Type alias">ErrorCode</a></li>
+						<li class="tsd-signature tsd-kind-icon">format<wbr>Time<wbr>ToQuery<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/efd95c6/src/utils/errorUtil.ts#L17">src/utils/errorUtil.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/efd95c6/src/services/utils.ts#L14">src/services/utils.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>code: <span class="tsd-signature-type">unknown</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">code</span><span class="tsd-signature-symbol"> is </span><a href="constants_error.html#ErrorCode" class="tsd-signature-type" data-tsd-kind="Type alias">ErrorCode</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -142,17 +147,17 @@
 						<a href="../modules.html">Modules</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="utils_errorUtil.html">utils/error<wbr>Util</a>
+						<a href="services_utils.html">services/utils</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="utils_errorUtil.html#errorToHeadingWithMessage" class="tsd-kind-icon">error<wbr>ToHeading<wbr>With<wbr>Message</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="services_utils.html#createAdditionalProps" class="tsd-kind-icon">create<wbr>Additional<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="utils_errorUtil.html#isErrorCode" class="tsd-kind-icon">is<wbr>Error<wbr>Code</a>
+						<a href="services_utils.html#formatTimeToQuery" class="tsd-kind-icon">format<wbr>Time<wbr>ToQuery</a>
 					</li>
 				</ul>
 			</nav>

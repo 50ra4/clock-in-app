@@ -85,7 +85,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
       {!readOnly && (
         <StyledWrapper showLabel={values.length === 0} inline={!!inline}>
           {values.length === 0 && <StyledLabel label="休憩時間" />}
-          {max && values.length < max && (
+          {(!max || values.length < max) && (
             <StyledAdditionalButton disabled={disabled} label="休憩時間を追加" onClick={handleOnClickAdd} />
           )}
         </StyledWrapper>

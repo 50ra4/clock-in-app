@@ -6,3 +6,8 @@ export type SingleEntityState<T> = {
   error?: Error;
   updatedAt?: string;
 };
+
+export type IndexedEntityState<T, K extends string = string> = Record<
+  K,
+  { data: T; error?: Error; updatedAt?: string } | undefined
+>;

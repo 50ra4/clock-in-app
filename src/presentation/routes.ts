@@ -43,7 +43,7 @@ export const ROUTES: RouteProps<PagePath>[] = [
   },
   {
     exact: true,
-    path: PAGE_PATH.userSetting,
+    path: PAGE_PATH.userPreference,
     component: UserSettingPage,
   },
 ];

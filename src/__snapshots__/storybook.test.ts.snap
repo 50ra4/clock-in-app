@@ -1088,6 +1088,7 @@ exports[`Storyshots forms/MinuteForm Docs 1`] = `
           aria-label="クリア"
           className="sc-bCwfaz dOpRzz sc-iwajpm"
           disabled={false}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1150,6 +1151,7 @@ exports[`Storyshots forms/MinuteForm Error 1`] = `
           aria-label="クリア"
           className="sc-bCwfaz dOpRzz sc-iwajpm"
           disabled={false}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1480,6 +1482,7 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
           aria-label="クリア"
           className="sc-bCwfaz dOpRzz sc-iklJeh"
           disabled={false}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1541,6 +1544,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
           aria-label="クリア"
           className="sc-bCwfaz dOpRzz sc-iklJeh"
           disabled={false}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1775,6 +1779,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-bCwfaz dOpRzz sc-cTJkRt gDrjBW"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1860,6 +1865,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-bCwfaz dOpRzz sc-cTJkRt gDrjBW"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -1967,6 +1973,7 @@ exports[`Storyshots inputs/BackSpaceButton Docs 1`] = `
   aria-label="削除"
   className="sc-bCwfaz dOpRzz"
   disabled={false}
+  type="button"
 >
   <svg
     aria-hidden={true}
@@ -2659,6 +2666,7 @@ exports[`Storyshots inputs/DeleteButton Docs 1`] = `
   aria-label="削除"
   className="sc-bCwfaz dOpRzz"
   disabled={false}
+  type="button"
 >
   <svg
     aria-hidden={true}
@@ -2683,6 +2691,7 @@ exports[`Storyshots inputs/IconButton Docs 1`] = `
 <button
   className="sc-bCwfaz dOpRzz"
   disabled={false}
+  type="button"
 >
   <svg
     aria-hidden={true}
@@ -2708,6 +2717,7 @@ exports[`Storyshots inputs/InputClearButton Docs 1`] = `
   aria-label="クリア"
   className="sc-bCwfaz dOpRzz"
   disabled={false}
+  type="button"
 >
   <svg
     aria-hidden={true}
@@ -2852,6 +2862,7 @@ exports[`Storyshots inputs/NumberInput Docs 1`] = `
     aria-label="クリア"
     className="sc-bCwfaz dOpRzz sc-iwajpm"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -2891,6 +2902,7 @@ exports[`Storyshots inputs/NumberInput Error 1`] = `
     aria-label="クリア"
     className="sc-bCwfaz dOpRzz sc-iwajpm"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -3138,6 +3150,7 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
     aria-label="クリア"
     className="sc-bCwfaz dOpRzz sc-iklJeh"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -3176,6 +3189,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
     aria-label="クリア"
     className="sc-bCwfaz dOpRzz sc-iklJeh"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -3231,6 +3245,7 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
     className="sc-bCwfaz dOpRzz"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -3469,6 +3484,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3519,6 +3535,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3569,6 +3586,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3619,6 +3637,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3669,6 +3688,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3719,6 +3739,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3769,6 +3790,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3819,6 +3841,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3869,6 +3892,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3919,6 +3943,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -3969,6 +3994,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4019,6 +4045,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4069,6 +4096,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4119,6 +4147,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4169,6 +4198,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4219,6 +4249,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4269,6 +4300,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4319,6 +4351,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4369,6 +4402,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4419,6 +4453,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4469,6 +4504,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4519,6 +4555,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4569,6 +4606,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4619,6 +4657,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4669,6 +4708,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4719,6 +4759,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4769,6 +4810,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4819,6 +4861,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4869,6 +4912,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4919,6 +4963,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -4969,6 +5014,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -5109,6 +5155,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
     aria-label="メニューを表示"
     className="sc-bCwfaz dOpRzz"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -5142,6 +5189,7 @@ exports[`Storyshots surfaces/Header Text Header 1`] = `
     aria-label="メニューを表示"
     className="sc-bCwfaz dOpRzz"
     disabled={false}
+    type="button"
   >
     <svg
       aria-hidden={true}
@@ -5587,6 +5635,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-iklJeh"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -5611,6 +5660,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -5701,6 +5751,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
             className="sc-bCwfaz dOpRzz sc-iklJeh"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -5725,6 +5776,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -5817,6 +5869,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
             className="sc-bCwfaz dOpRzz sc-iklJeh"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -5841,6 +5894,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -5962,6 +6016,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
               className="sc-bCwfaz dOpRzz sc-iklJeh"
               disabled={false}
               onClick={[Function]}
+              type="button"
             >
               <svg
                 aria-hidden={true}
@@ -5986,6 +6041,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -6302,6 +6358,7 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
           className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -6381,6 +6438,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
           className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -6482,6 +6540,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
           className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -6505,6 +6564,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
           className="sc-bCwfaz dOpRzz sc-kHWWYL jeyrVE"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <svg
             aria-hidden={true}
@@ -6604,6 +6664,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             <svg
               aria-hidden={true}
@@ -6651,7 +6712,32 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
   </div>
   <div
     className="sc-jQAxuV eRpoCm"
-  />
+  >
+    <button
+      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN juDrWq"
+        color="main"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+        />
+      </svg>
+      休憩時間を追加
+    </button>
+  </div>
 </div>
 `;
 
@@ -6667,6 +6753,30 @@ exports[`Storyshots unique/RestTimeFormGroup Text Type 1`] = `
     >
       休憩時間
     </label>
+    <button
+      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN juDrWq"
+        color="main"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+        />
+      </svg>
+      休憩時間を追加
+    </button>
   </div>
 </div>
 `;
@@ -6683,6 +6793,30 @@ exports[`Storyshots unique/RestTimeFormGroup Time Input Type 1`] = `
     >
       休憩時間
     </label>
+    <button
+      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      color="primary"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="sc-hKFxyN juDrWq"
+        color="main"
+        size="medium"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+        />
+      </svg>
+      休憩時間を追加
+    </button>
   </div>
 </div>
 `;

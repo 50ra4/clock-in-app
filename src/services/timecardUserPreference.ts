@@ -33,9 +33,12 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
   const restTimeCollectionRef = rootDocumentRef.collection('rest-times');
 
-  const { workingStart, workingEnd, roundDownMinutes, regularHolidays } = await rootDocumentRef
-    .get()
-    .then(docToTimecardUserPreference);
+  const {
+    workingStart = {},
+    workingEnd = {},
+    roundDownMinutes = 0,
+    regularHolidays = [],
+  } = await rootDocumentRef.get().then(docToTimecardUserPreference);
 
   const restTimes = await restTimeCollectionRef
     .orderBy('order', 'asc')

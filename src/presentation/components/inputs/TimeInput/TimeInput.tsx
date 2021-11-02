@@ -26,6 +26,9 @@ export const UnStyledTimeInput = React.memo(function TimeInput({
   ...otherProps
 }: TimeInputProps) {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // FIXME: remove
+    // eslint-disable-next-line no-console
+    console.log(e.currentTarget.value);
     const time = timeStringToTime(stringToTimeString(e.currentTarget.value));
     onChange(time, e);
   };

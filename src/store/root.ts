@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { combineReducers, compose, applyMiddleware, StoreCreator, createStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
+import { ROOT_ACTIONS } from './rootActions';
 import { authenticationReducer } from './authentication';
 import { connectedDialogReducer } from './connectedDialog';
 import { myProfileReducer } from './myProfile';
-import { ROOT_ACTIONS } from './rootActions';
+import { userPreferenceReducer } from './userPreference';
 
 export const reducers = combineReducers({
   authentication: authenticationReducer,
   myProfile: myProfileReducer,
   connectedDialog: connectedDialogReducer,
+  userPreference: userPreferenceReducer,
 });
 export type AppState = ReturnType<typeof reducers>;
 

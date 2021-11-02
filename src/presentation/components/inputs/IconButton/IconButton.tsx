@@ -11,9 +11,16 @@ type InheritedProps = Omit<JSX.IntrinsicElements['button'], keyof OwnProps>;
 
 export type IconButtonProps = OwnProps & InheritedProps;
 
-function UnStyledIconButton({ className, disabled = false, onClick, children = null, ...otherProps }: IconButtonProps) {
+function UnStyledIconButton({
+  className,
+  type = 'button',
+  disabled = false,
+  onClick,
+  children = null,
+  ...otherProps
+}: IconButtonProps) {
   return (
-    <button {...otherProps} className={className} onClick={onClick} disabled={disabled}>
+    <button {...otherProps} type={type} className={className} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

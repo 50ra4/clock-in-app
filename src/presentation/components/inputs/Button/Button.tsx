@@ -27,6 +27,7 @@ export const UnStyledButton = React.memo(function Button({
   disabled = false,
   text,
   children = null,
+  type = 'button',
   ...otherProps
 }: ButtonProps) {
   // eslint-disable-next-line complexity

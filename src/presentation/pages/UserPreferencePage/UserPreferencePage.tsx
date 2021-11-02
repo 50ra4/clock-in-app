@@ -7,7 +7,7 @@ import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/Responsi
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { TimecardPreferenceView } from './TimecardPreferenceView';
 
-const UserSettingPage = (): JSX.Element => {
+const UserPreferencePage = (): JSX.Element => {
   useLoginRedirection();
 
   const { uid } = useParams<{ uid: string }>();
@@ -32,4 +32,4 @@ const UserSettingPage = (): JSX.Element => {
   );
 };
 
-export default UserSettingPage;
+export default UserPreferencePage;

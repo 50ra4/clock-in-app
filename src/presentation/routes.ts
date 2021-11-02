@@ -8,7 +8,7 @@ const HomePage = React.lazy(() => import('./pages/HomePage/HomePage'));
 const LoginPage = React.lazy(() => import('./pages/LoginPage/LoginPage'));
 const RegistrationPage = React.lazy(() => import('./pages/RegistrationPage/RegistrationPage'));
 const TimecardDetailPage = React.lazy(() => import('./pages/TimecardDetailPage/TimecardDetailPage'));
-const UserSettingPage = React.lazy(() => import('./pages/UserSettingPage/UserSettingPage'));
+const UserPreferencePage = React.lazy(() => import('./pages/UserPreferencePage/UserPreferencePage'));
 
 export const ROUTES: RouteProps<PagePath>[] = [
   {
@@ -44,6 +44,6 @@ export const ROUTES: RouteProps<PagePath>[] = [
   {
     exact: true,
     path: PAGE_PATH.userPreference,
-    component: UserSettingPage,
+    component: UserPreferencePage,
   },
 ];

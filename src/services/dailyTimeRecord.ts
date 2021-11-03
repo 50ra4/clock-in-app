@@ -146,10 +146,14 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
   });
 
   // root
-  batch.set(rootDocumentRef, {
-    ...omitUndefinedProps({ ...rest }),
-    ...createAdditionalProps(uid, rootDocument.exists),
-  });
+  batch.set(
+    rootDocumentRef,
+    {
+      ...omitUndefinedProps({ ...rest }),
+      ...createAdditionalProps(uid, rootDocument.exists),
+    },
+    { merge: true },
+  );
 
   await batch.commit();
 };

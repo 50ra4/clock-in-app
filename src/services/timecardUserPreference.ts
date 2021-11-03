@@ -93,10 +93,14 @@ export const writeTimecardUserPreference = async (uid: string, data: TimecardUse
   });
 
   // root
-  batch.set(rootDocumentRef, {
-    ...omitUndefinedProps({ ...rest, workingStart, workingEnd }),
-    ...createAdditionalProps(uid, rootDocument.exists),
-  });
+  batch.set(
+    rootDocumentRef,
+    {
+      ...omitUndefinedProps({ ...rest, workingStart, workingEnd }),
+      ...createAdditionalProps(uid, rootDocument.exists),
+    },
+    { merge: true },
+  );
 
   await batch.commit();
 };

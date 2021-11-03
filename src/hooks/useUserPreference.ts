@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { FirestoreError } from 'services/firebase';
-import { writeTimecardUserPreference } from 'services/timecardUserPreference';
+import { writeTimecardUserPreference } from 'services/userPreference';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 
 import { AppState } from 'store/root';

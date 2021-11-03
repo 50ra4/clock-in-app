@@ -51,6 +51,7 @@ export const Radio = () => {
     <ChipSelectorGroup>
       {FRUIT_NAMES.map(([key, name]) => (
         <ChipSelector
+          key={key}
           type="radio"
           id={`radio-${key}`}
           name={`radio-${key}`}

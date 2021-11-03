@@ -1,12 +1,19 @@
-/* eslint-disable complexity */
-import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import isValid from 'date-fns/isValid';
+import { VALIDATION_ERROR_MESSAGE } from 'constants/error';
 import { Time, Range, RestTime, InHouseWork, Nullable, NullOrUndefined } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { isNonNullable, isNullable } from 'utils/typeGuard';
 import { messageReplacer, ValidatorFactory, ValidatorOption } from '../validationUtil';
 
-export const hourValidatorFactory = new ValidatorFactory<number | undefined>('hour', '時刻')
+const isEmptyString = (value: Nullable<string>): value is '' | NullOrUndefined => isNullable(value) || value.length < 1;
+
+const isEmptyTime = (time: Nullable<Time>): time is NullOrUndefined =>
+  isNullable(time) || (typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined');
+
+const isValidDateStringFormat = (str: string): boolean =>
+  !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));
+
+export const hourValidatorFactory = new ValidatorFactory<number | undefined>('Hour', '時刻')
   .skip((hour, { required }) => !required && typeof hour !== 'number')
   .add(
     (hour) => isNonNullable(hour),
@@ -17,7 +24,7 @@ export const hourValidatorFactory = new ValidatorFactory<number | undefined>('ho
     () => VALIDATION_ERROR_MESSAGE.hourIsOutOfRange,
   );
 
-export const minuteValidatorFactory = new ValidatorFactory<number | undefined>('minute', '分')
+export const minuteValidatorFactory = new ValidatorFactory<number | undefined>('Minute', '分')
   .skip((minute, { required }) => !required && typeof minute !== 'number')
   .add(
     (minute) => isNonNullable(minute),
@@ -28,10 +35,7 @@ export const minuteValidatorFactory = new ValidatorFactory<number | undefined>('
     () => VALIDATION_ERROR_MESSAGE.minuteIsOutOfRange,
   );
 
-const isEmptyTime = (time: Nullable<Time>): time is NullOrUndefined =>
-  isNullable(time) || (typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined');
-
-export const timeValidatorFactory = new ValidatorFactory<Time | undefined>('time', '時間')
+export const timeValidatorFactory = new ValidatorFactory<Time | undefined>('Time', '時間')
   .skip((time, { required }) => !required && isEmptyTime(time))
   .add(
     (time) => !isEmptyTime(time),
@@ -43,7 +47,7 @@ export const timeValidatorFactory = new ValidatorFactory<Time | undefined>('time
 const isEmptyTimeRange = (timeRange: Nullable<Range<Time>>): timeRange is NullOrUndefined =>
   isNullable(timeRange) || (isEmptyTime(timeRange?.start) && isEmptyTime(timeRange?.end));
 
-export const timeRangeValidatorFactory = new ValidatorFactory<Range<Time> | undefined>('timeRange', '時間帯')
+export const timeRangeValidatorFactory = new ValidatorFactory<Range<Time> | undefined>('TimeRange', '時間帯')
   .skip((timeRange, { required }) => !required && isEmptyTimeRange(timeRange))
   .add(
     (timeRange) => !isEmptyTimeRange(timeRange),
@@ -55,8 +59,6 @@ export const timeRangeValidatorFactory = new ValidatorFactory<Range<Time> | unde
 export const restTimeValidatorFactory = new ValidatorFactory<RestTime>('RestTime', '休憩時間').add(
   ({ id, ...timeRange } = { id: undefined }, option) => timeRangeValidatorFactory.validate(timeRange, option),
 );
-
-const isEmptyString = (value: Nullable<string>): boolean => isNullable(value) || value.length < 1;
 
 export const remarksValidatorFactory = new ValidatorFactory<Nullable<string>, ValidatorOption & { maxLength: number }>(
   'remarks',
@@ -77,9 +79,6 @@ export const inHouseWorkValidatorFactory = new ValidatorFactory<InHouseWork>('In
   .add(({ remarks } = { id: undefined }, option) =>
     remarksValidatorFactory.validate(remarks, { ...option, maxLength: 50 }),
   );
-
-const isValidDateStringFormat = (str: string): boolean =>
-  !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));
 
 export const dateStringValidatorFactory = new ValidatorFactory<string>('Date', '日付')
   .skip((value, { required }) => !required && isEmptyString(value))

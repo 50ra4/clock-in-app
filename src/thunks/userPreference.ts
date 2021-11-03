@@ -1,5 +1,5 @@
 import { ThunkDispatch } from 'redux-thunk';
-import { readTimecardUserPreference } from 'services/timecardUserPreference';
+import { readTimecardUserPreference } from 'services/userPreference';
 import { AppState } from 'store/root';
 import { UserPreferenceActions, userPreferenceActions } from 'store/userPreference';
 

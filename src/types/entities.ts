@@ -43,8 +43,8 @@ export type Authentication = {
 };
 
 export type TimecardUserPreference = {
-  workingHours: Range<Time>;
-  roundDownMinutes: number;
+  workingTimes: Range<Time>;
+  roundDownMinute: number;
   restTimes: RestTime[];
   regularHolidays: DayOfWeekCode[];
 };

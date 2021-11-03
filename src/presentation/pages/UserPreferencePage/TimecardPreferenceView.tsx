@@ -33,12 +33,12 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           name="working-hours"
           label="定時"
           type="input"
-          value={formState.workingHours}
+          value={formState.workingTimes}
           readOnly={readOnly}
           disabled={readOnly}
           error={undefined} // FIXME:
           onChange={(v) => {
-            onChangeFormState('workingHours', v);
+            onChangeFormState('workingTimes', v);
           }}
         />
         <DayOfWeekCheckForm
@@ -71,13 +71,13 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           max={60}
           readOnly={readOnly}
           disabled={readOnly}
-          value={formState.roundDownMinutes}
+          value={formState.roundDownMinute}
           error={undefined} // FIXME:
           onChange={(v) => {
-            onChangeFormState('roundDownMinutes', v);
+            onChangeFormState('roundDownMinute', v);
           }}
           onClear={() => {
-            onChangeFormState('roundDownMinutes', 0);
+            onChangeFormState('roundDownMinute', 0);
           }}
         />
       </div>

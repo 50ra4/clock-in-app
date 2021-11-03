@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import ja from 'date-fns/locale/ja';
@@ -14,6 +15,7 @@ import { timeToTimeString } from 'utils/timeUtil';
 import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
 import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
 import { InfoIcon } from 'presentation/components/display/Icons/InfoIcon';
+import { dailyTimeRecordToRemarks } from 'utils/converterUtil';
 
 type Props = {
   className?: string;
@@ -54,10 +56,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
           {days.map((day) => {
             const dateString = format(day, DATE_FORMAT.dateISO);
             const record = dailyRecords.find((record) => record.date === dateString);
-            // TODO: add other remarks field
-            const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
-              .filter((v) => v)
-              .join(' ');
+            const remarks = record ? dailyTimeRecordToRemarks(record, ' ') : '';
             const isHoliday = preference.regularHolidays.includes(day.getDay() as DayOfWeekCode);
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)} isHoliday={isHoliday}>
@@ -78,7 +77,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
                 <td>
                   <div>
-                    <p>{remarks || ' '}</p>
+                    <p>{remarks || ''}</p>
                   </div>
                 </td>
               </RecordRow>

@@ -153,4 +153,10 @@ export const Docs = Template;
 Docs.args = {
   month: mockData.month,
   dailyRecords: mockData.dailyRecords,
+  preference: {
+    regularHolidays: [0, 1],
+    roundDownMinute: 0,
+    restTimes: [],
+    workingTimes: {},
+  },
 };

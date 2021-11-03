@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { DailyTimeRecord } from 'types';
+import { DailyTimeRecord, RestTime, TimecardUserPreference } from 'types';
 import { TimeForm } from 'presentation/components/forms/TimeForm/TimeForm';
 import { TextAreaForm } from 'presentation/components/forms/TextAreaForm/TextAreaForm';
 import { RestTimeFormGroup } from 'presentation/components/unique/RestTimeFormGroup/RestTimeFormGroup';
@@ -13,6 +13,7 @@ type Props = {
   readOnly: boolean;
   inline?: boolean;
   dailyTimeRecord: DailyTimeRecord;
+  preference: TimecardUserPreference;
   formErrors: FormGroupError<DailyTimeRecord>;
   onChangeDailyTimeRecord: FormGroupChangeHandler<DailyTimeRecord>;
 };
@@ -22,9 +23,18 @@ export const InputRecordForm = React.memo(function InputRecordForm({
   readOnly,
   inline = false,
   dailyTimeRecord: { start, end, restTimes, inHouseWorks, remarks },
+  preference,
   formErrors,
   onChangeDailyTimeRecord,
 }: Props) {
+  const onAddRestTime = React.useCallback(
+    (prev: RestTime[]) => {
+      const { start, end } = preference.restTimes[prev.length] ?? { id: undefined };
+      onChangeDailyTimeRecord('restTimes', [...prev, { id: undefined, start: { ...start }, end: { ...end } }]);
+    },
+    [onChangeDailyTimeRecord, preference.restTimes],
+  );
+
   return (
     <StyledRoot className={className}>
       <TimeForm
@@ -70,9 +80,11 @@ export const InputRecordForm = React.memo(function InputRecordForm({
         disabled={readOnly}
         inline={inline}
         errors={formErrors.restTimes}
+        max={5}
         onChange={(value) => {
           onChangeDailyTimeRecord('restTimes', value);
         }}
+        onClickAdd={onAddRestTime}
       />
       <InHouseWorkFormGroup
         type="input"

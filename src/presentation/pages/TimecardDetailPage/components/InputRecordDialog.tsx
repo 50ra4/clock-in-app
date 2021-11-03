@@ -27,6 +27,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
   onClose,
   className,
   dailyTimeRecord: initialTimeRecord,
+  preference,
   onSaveDailyTimeRecord,
   onDeleteDailyTimeRecord,
 }: OwnProps) {
@@ -64,6 +65,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
         readOnly={readOnly}
         inline={!isMobile}
         dailyTimeRecord={dailyTimeRecord}
+        preference={preference}
         formErrors={formErrors}
         onChangeDailyTimeRecord={onChangeDailyTimeRecord}
       />

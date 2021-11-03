@@ -3468,7 +3468,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3519,7 +3519,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3570,7 +3570,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv iOZEQV"
+        className="sc-bsatvv dmevzQ"
       >
         <th
           scope="row"
@@ -3621,7 +3621,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv kGwoUI"
+        className="sc-bsatvv edxoHZ"
       >
         <th
           scope="row"
@@ -3672,7 +3672,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv gwuonJ"
       >
         <th
           scope="row"
@@ -3723,7 +3723,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3774,7 +3774,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3825,7 +3825,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3876,7 +3876,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -3927,7 +3927,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv iOZEQV"
+        className="sc-bsatvv dmevzQ"
       >
         <th
           scope="row"
@@ -3978,7 +3978,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv kGwoUI"
+        className="sc-bsatvv edxoHZ"
       >
         <th
           scope="row"
@@ -4029,7 +4029,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv gwuonJ"
       >
         <th
           scope="row"
@@ -4080,7 +4080,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4131,7 +4131,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4182,7 +4182,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4233,7 +4233,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4284,7 +4284,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv iOZEQV"
+        className="sc-bsatvv dmevzQ"
       >
         <th
           scope="row"
@@ -4335,7 +4335,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv kGwoUI"
+        className="sc-bsatvv edxoHZ"
       >
         <th
           scope="row"
@@ -4386,7 +4386,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv gwuonJ"
       >
         <th
           scope="row"
@@ -4437,7 +4437,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4488,7 +4488,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4539,7 +4539,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4590,7 +4590,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4641,7 +4641,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv iOZEQV"
+        className="sc-bsatvv dmevzQ"
       >
         <th
           scope="row"
@@ -4692,7 +4692,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv kGwoUI"
+        className="sc-bsatvv edxoHZ"
       >
         <th
           scope="row"
@@ -4743,7 +4743,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv gwuonJ"
       >
         <th
           scope="row"
@@ -4794,7 +4794,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4845,7 +4845,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4896,7 +4896,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4947,7 +4947,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv igQlaQ"
+        className="sc-bsatvv hpieqd"
       >
         <th
           scope="row"
@@ -4998,7 +4998,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv iOZEQV"
+        className="sc-bsatvv dmevzQ"
       >
         <th
           scope="row"

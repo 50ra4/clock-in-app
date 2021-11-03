@@ -63,6 +63,9 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           onChange={(value) => {
             onChangeFormState('restTimes', value);
           }}
+          onClickAdd={(prev) => {
+            onChangeFormState('restTimes', [...prev, { id: undefined }]);
+          }}
         />
         <MinuteForm
           id="round-down-minutes"

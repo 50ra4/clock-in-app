@@ -7,7 +7,7 @@ import eachDayOfInterval from 'date-fns/eachDayOfInterval';
 import isSunday from 'date-fns/isSunday';
 import isSaturday from 'date-fns/isSaturday';
 
-import { DailyTimeRecord } from 'types';
+import { DailyTimeRecord, DayOfWeekCode, TimecardUserPreference } from 'types';
 import { stringDateToDate } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
@@ -20,6 +20,7 @@ type Props = {
   readOnly: boolean;
   month: string;
   dailyRecords: DailyTimeRecord[];
+  preference: TimecardUserPreference;
   onSelectDate: (dateString: string) => void;
 };
 
@@ -28,6 +29,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   readOnly,
   month,
   dailyRecords,
+  preference,
   onSelectDate,
 }: Props) {
   const days = useMemo(() => {
@@ -56,8 +58,9 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
             const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
               .filter((v) => v)
               .join(' ');
+            const isHoliday = preference.regularHolidays.includes(day.getDay() as DayOfWeekCode);
             return (
-              <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)}>
+              <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)} isHoliday={isHoliday}>
                 <th scope="row">
                   {format(day, DATE_FORMAT.monthDay)}
                   <span>{`（${format(day, DATE_FORMAT.dayOfWeek, { locale: ja })}）`}</span>
@@ -168,9 +171,12 @@ const StyledRoot = styled.div`
 type DayOfWeekStyledProps = {
   isSunday: boolean;
   isSaturday: boolean;
+  isHoliday: boolean;
 };
 
 const RecordRow = styled.tr<DayOfWeekStyledProps>`
+  background-color: ${({ isHoliday }) => (isHoliday ? '#deefff' : 'inherit')};
+
   & > th {
     & > span {
       display: block;

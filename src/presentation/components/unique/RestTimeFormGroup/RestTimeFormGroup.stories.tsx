@@ -34,6 +34,9 @@ export const TimeInputType = () => {
       onChange={(v) => {
         setValues(v);
       }}
+      onClickAdd={(prev) => {
+        setValues([...prev, { id: undefined }]);
+      }}
     />
   );
 };
@@ -51,6 +54,9 @@ export const TextType = () => {
       extendInput={true}
       onChange={(v) => {
         setValues(v);
+      }}
+      onClickAdd={(prev) => {
+        setValues([...prev, { id: undefined }]);
       }}
     />
   );

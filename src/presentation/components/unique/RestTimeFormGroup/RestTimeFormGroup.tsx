@@ -19,6 +19,7 @@ type OwnProps = {
   sortable?: boolean;
   max?: number;
   onChange: (values: RestTime[]) => void;
+  onClickAdd: (values: RestTime[]) => void;
   onBlur?: (values: RestTime[]) => void;
 };
 
@@ -37,6 +38,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   sortable,
   max,
   onChange,
+  onClickAdd,
 }: RestTimeFormGroupProps) {
   const handleOnChange = (value: RestTime, rowIndex: number) => {
     onChange(values.map((v, i) => (rowIndex !== i ? v : { ...value })));
@@ -47,7 +49,7 @@ export const RestTimeFormGroup = React.memo(function RestTimeFormGroup({
   };
 
   const handleOnClickAdd = () => {
-    onChange([...values, { id: undefined }]);
+    onClickAdd(values);
   };
 
   const handleOnSortUp = (row: number) => {

@@ -12,6 +12,8 @@ import { DailyTimeRecord } from 'types';
 import { InputRecordDialog } from './components/InputRecordDialog';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useAuthentication } from 'hooks/useAuthentication';
+import { useUserPreference } from 'hooks/useUserPreference';
+import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -49,6 +51,7 @@ export function MobileView() {
   });
   const { uid } = useParams<{ uid: string }>();
 
+  const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);
   const { dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth({
     month: selectedMonth,
     uid,
@@ -104,22 +107,29 @@ export function MobileView() {
 
   return (
     <StyledRoot>
-      <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
-      <StyledMonthlyTimeCardTable
-        readOnly={!isLoggedInUser}
-        month={selectedMonth}
-        dailyRecords={dailyTimeRecordsOfMonth}
-        onSelectDate={selectEditedRecord}
-      />
-      {openInputDialog && editedRecord && (
-        <InputRecordDialog
-          open={openInputDialog}
-          readOnly={!isLoggedInUser}
-          onClose={closeInputDialog}
-          dailyTimeRecord={editedRecord}
-          onSaveDailyTimeRecord={onSaveDailyTimeRecord}
-          onDeleteDailyTimeRecord={onDeleteDailyTimeRecord}
-        />
+      <LoadingGuard open={isFetchingPreference} />
+      {!userPreference ? null : (
+        <>
+          <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />
+          <StyledMonthlyTimeCardTable
+            readOnly={!isLoggedInUser}
+            month={selectedMonth}
+            dailyRecords={dailyTimeRecordsOfMonth}
+            preference={userPreference.timecard}
+            onSelectDate={selectEditedRecord}
+          />
+          {openInputDialog && editedRecord && (
+            <InputRecordDialog
+              open={openInputDialog}
+              readOnly={!isLoggedInUser}
+              onClose={closeInputDialog}
+              dailyTimeRecord={editedRecord}
+              preference={userPreference.timecard}
+              onSaveDailyTimeRecord={onSaveDailyTimeRecord}
+              onDeleteDailyTimeRecord={onDeleteDailyTimeRecord}
+            />
+          )}
+        </>
       )}
     </StyledRoot>
   );

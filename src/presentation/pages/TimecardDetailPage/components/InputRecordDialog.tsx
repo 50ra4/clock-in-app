@@ -4,7 +4,7 @@ import { isMobile } from 'react-device-detect';
 
 import { CustomDialog } from 'presentation/components/feedback/Dialogs/CustomDialog';
 import { InputRecordDialogActions } from 'presentation/components/feedback/Dialogs/DialogActions';
-import { DailyTimeRecord } from 'types';
+import { DailyTimeRecord, TimecardUserPreference } from 'types';
 import { InputRecordForm } from './InputRecordForm';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString } from 'utils/dateUtil';
@@ -16,6 +16,7 @@ type OwnProps = {
   readOnly: boolean;
   onClose?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
   dailyTimeRecord: DailyTimeRecord;
+  preference: TimecardUserPreference;
   onSaveDailyTimeRecord: (record: DailyTimeRecord) => void;
   onDeleteDailyTimeRecord: (date: string) => void;
 };

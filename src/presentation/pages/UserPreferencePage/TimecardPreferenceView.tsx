@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TimecardUserPreference } from 'types';
-import { useFormGroup } from 'hooks/useFormGroup';
+
+import { useTimecardPreferenceForm } from './useTimecardPreferenceForm';
 
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { TimeRangeForm } from 'presentation/components/forms/TimeRangeForm/TimeRangeForm';
@@ -22,7 +23,7 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
   preference,
   onSave,
 }: Props) {
-  const { formState, onChangeFormState } = useFormGroup({ ...preference });
+  const { formState, formErrors, hasFormError, onChangeFormState } = useTimecardPreferenceForm({ ...preference });
 
   return (
     <StyledRoot className={className}>
@@ -36,7 +37,7 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           value={formState.workingTimes}
           readOnly={readOnly}
           disabled={readOnly}
-          error={undefined} // FIXME:
+          error={formErrors.workingTimes}
           onChange={(v) => {
             onChangeFormState('workingTimes', v);
           }}
@@ -46,7 +47,7 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           name="regular-holidays"
           values={formState.regularHolidays}
           label="休日"
-          error={undefined} // FIXME:
+          error={undefined} // FIXME: ...
           onChange={(value) => {
             onChangeFormState('regularHolidays', value);
           }}
@@ -56,7 +57,7 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           value={formState.restTimes}
           readOnly={readOnly}
           disabled={readOnly}
-          errors={[]} // FIXME:
+          errors={formErrors.restTimes}
           sortable={true}
           max={5}
           onChange={(value) => {
@@ -72,7 +73,7 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           readOnly={readOnly}
           disabled={readOnly}
           value={formState.roundDownMinute}
-          error={undefined} // FIXME:
+          error={formErrors.roundDownMinute}
           onChange={(v) => {
             onChangeFormState('roundDownMinute', v);
           }}
@@ -81,7 +82,9 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
           }}
         />
       </div>
-      {!readOnly && <SaveButton color="primary" text="更新する" onClick={() => onSave(formState)} />}
+      {!readOnly && (
+        <SaveButton color="primary" text="更新する" disabled={hasFormError} onClick={() => onSave(formState)} />
+      )}
     </StyledRoot>
   );
 });

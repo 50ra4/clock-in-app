@@ -90,6 +90,8 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
 });
 
 const StyledRoot = styled.section`
+  /* for form outline */
+  padding: ${({ theme }) => theme.space.middle}px;
   overflow-x: hidden;
   overflow-y: scroll;
   ${({ theme }) => theme.scrollBar.hidden()}

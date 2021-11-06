@@ -14,6 +14,8 @@ import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useAuthentication } from 'hooks/useAuthentication';
 import { useUserPreference } from 'hooks/useUserPreference';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
+import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
+import { toOverviewOfOperatingTimes } from 'utils/converterUtil';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -105,6 +107,23 @@ export function MobileView() {
     [isLoggedInUser, saveDailyTimeRecord],
   );
 
+  const onClickExport = () => {
+    // FIXME:
+    if (!window?.navigator?.clipboard?.writeText) {
+      window.alert('ご利用中のブラウザには対応していません!');
+      return;
+    }
+    const overviewOfOperatingTimes = toOverviewOfOperatingTimes(selectedMonth, dailyTimeRecordsOfMonth);
+    window.navigator.clipboard
+      .writeText(overviewOfOperatingTimes)
+      .then(() => {
+        window.alert('クリップボードに貼り付けました!');
+      })
+      .catch(() => {
+        window.alert('失敗しました、再度お試しください!');
+      });
+  };
+
   return (
     <StyledRoot>
       <LoadingGuard open={isFetchingPreference} />
@@ -129,11 +148,16 @@ export function MobileView() {
               onDeleteDailyTimeRecord={onDeleteDailyTimeRecord}
             />
           )}
+          <FloatingExportButton onClick={onClickExport}>
+            <LaunchIcon color="main" titleAccess="データを出力する" />
+          </FloatingExportButton>
         </>
       )}
     </StyledRoot>
   );
 }
+
+const StyledRoot = styled(ResponsiveLayout)``;
 
 const StyledMonthSelector = styled(MonthSelector)`
   margin-bottom: ${({ theme }) => theme.space.middle}px;
@@ -151,4 +175,23 @@ const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
     )};
 `;
 
-const StyledRoot = styled(ResponsiveLayout)``;
+const FloatingExportButton = styled.button`
+  position: fixed;
+  ${({ theme }) => theme.insetSafeArea.bottom('bottom', '24px', '+')};
+  right: 24px;
+  @media (min-width: ${({ theme }) => theme.breakpoint.small}px) {
+    right: calc((100% - 600px) / 2 + 24px);
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.color.palette.primary.background};
+  width: 48px;
+  height: 48px;
+  & > svg {
+    width: 24px;
+  }
+`;

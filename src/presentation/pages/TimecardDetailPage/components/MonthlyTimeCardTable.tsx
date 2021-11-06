@@ -156,7 +156,6 @@ const StyledRoot = styled.div`
         padding: ${({ theme }) => `${theme.space.middle}px`};
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
-        font-weight: ${({ theme }) => theme.font.weight.bold};
         vertical-align: bottom;
 
         &:last-child {

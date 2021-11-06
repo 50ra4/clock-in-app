@@ -93,7 +93,7 @@ const StyledRoot = styled.div`
   width: 100%;
   & > table {
     table-layout: fixed;
-    width: calc(100% - 2px); // for border
+    min-width: 100%;
 
     tbody {
       white-space: nowrap;
@@ -174,7 +174,7 @@ type DayOfWeekStyledProps = {
 };
 
 const RecordRow = styled.tr<DayOfWeekStyledProps>`
-  background-color: ${({ isHoliday }) => (isHoliday ? '#deefff' : 'inherit')};
+  background-color: ${({ isHoliday }) => (isHoliday ? '#eafae6' : 'inherit')};
 
   & > th {
     & > span {

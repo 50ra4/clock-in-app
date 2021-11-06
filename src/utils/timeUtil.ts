@@ -69,10 +69,18 @@ export const stringToTimeString = (str: string = ''): string => {
   return timeToTimeString({ hour, minute });
 };
 
-export const timeRangeToMinute = ({ start, end }: Range<Time>): number => {
+export const timeRangeToMinute = <T extends Range<Time>>({ start, end }: T): number => {
   if (!isNonEmptyTime(start) || !isNonEmptyTime(end)) {
     return Number.NaN;
   }
   const hourDiff = end.hour - start.hour + (start.hour > end.hour ? 24 : 0);
   return hourDiff * 60 + end.minute - start.minute;
+};
+
+export const minuteToTimeString = (minute: number, round: number = 0): string => {
+  const hour = Math.floor(minute / 60);
+  const restMinute = minute % 60;
+  // const remainder = minute % round;
+  // const _minute = Number.isFinite(remainder) ? restMinute - remainder : restMinute;
+  return timeToTimeString({ hour, minute: restMinute });
 };

@@ -179,8 +179,7 @@ const RecordRow = styled.tr<DayOfWeekStyledProps>`
     & > span {
       display: block;
       margin-top: ${({ theme }) => `${theme.space.middle}px`};
-      /* TODO: change color style */
-      color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
+      color: ${({ isSunday, isSaturday }) => (isSunday ? '#b50101' : isSaturday ? '#0000df' : '#000')};
     }
   }
 `;

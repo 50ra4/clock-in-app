@@ -72,7 +72,11 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converterUtil.html#dailyTimeRecordToRemarks" class="tsd-kind-icon">daily<wbr>Time<wbr>Record<wbr>ToRemarks</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converterUtil.html#omitUndefinedProps" class="tsd-kind-icon">omit<wbr>Undefined<wbr>Props</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converterUtil.html#toDetailsOfDailyTimeRecords" class="tsd-kind-icon">to<wbr>Details<wbr>OfDaily<wbr>Time<wbr>Records</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_converterUtil.html#toOverviewOfOperatingTimes" class="tsd-kind-icon">to<wbr>Overview<wbr>OfOperating<wbr>Times</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_converterUtil.html#toOverviewOfTimecardPreference" class="tsd-kind-icon">to<wbr>Overview<wbr>OfTimecard<wbr>Preference</a></li>
 							</ul>
 						</section>
 					</div>
@@ -80,6 +84,32 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="dailyTimeRecordToRemarks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> daily<wbr>Time<wbr>Record<wbr>ToRemarks</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">daily<wbr>Time<wbr>Record<wbr>ToRemarks<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a>, separator<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/converterUtil.ts#L14">src/utils/converterUtil.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a></h5>
+								</li>
+								<li>
+									<h5>separator: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;\n&#x27;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="omitUndefinedProps" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> omit<wbr>Undefined<wbr>Props</h3>
@@ -90,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/converterUtil.ts#L1">src/utils/converterUtil.ts:1</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/converterUtil.ts#L11">src/utils/converterUtil.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -109,6 +139,143 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="toDetailsOfDailyTimeRecords" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Details<wbr>OfDaily<wbr>Time<wbr>Records</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Details<wbr>OfDaily<wbr>Time<wbr>Records<span class="tsd-signature-symbol">(</span>month<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dailyTimeRecords<span class="tsd-signature-symbol">: </span><a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a><span class="tsd-signature-symbol">[]</span>, regularHolidays<span class="tsd-signature-symbol">?: </span><a href="types_utils.html#DayOfWeekCode" class="tsd-signature-type" data-tsd-kind="Type alias">DayOfWeekCode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/converterUtil.ts#L144">src/utils/converterUtil.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>週報用の週稼働詳細を返却する</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><code>11/01(月) 10:00-20:00 11/02(火) 10:00-19:30 11/03(水) N/A 11/04(木) 10:00-19:00 11/05(金) 10:00-19:00 ...</code></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>month: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>年月（yyyy-MM形式）</p>
+									</div>
+								</li>
+								<li>
+									<h5>dailyTimeRecords: <a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>月の入力データ</p>
+									</div>
+								</li>
+								<li>
+									<h5>regularHolidays: <a href="types_utils.html#DayOfWeekCode" class="tsd-signature-type" data-tsd-kind="Type alias">DayOfWeekCode</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>稼働詳細</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="toOverviewOfOperatingTimes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Overview<wbr>OfOperating<wbr>Times</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Overview<wbr>OfOperating<wbr>Times<span class="tsd-signature-symbol">(</span>month<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dailyTimeRecords<span class="tsd-signature-symbol">: </span><a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/converterUtil.ts#L98">src/utils/converterUtil.ts:98</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>週報用の稼働時間概要を返却する</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><code>（出力例） 10月総計：160:30h 1週：8:00h 2週：34:00h 3週：39:30h 4週：40:30h 5週：38:30h</code></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>month: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>年月（yyyy-MM形式）</p>
+									</div>
+								</li>
+								<li>
+									<h5>dailyTimeRecords: <a href="types_entity.html#DailyTimeRecord" class="tsd-signature-type" data-tsd-kind="Type alias">DailyTimeRecord</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>月のデータ</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>稼働時間概要</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="toOverviewOfTimecardPreference" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> to<wbr>Overview<wbr>OfTimecard<wbr>Preference</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Overview<wbr>OfTimecard<wbr>Preference&lt;T&gt;<span class="tsd-signature-symbol">(</span>params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>lunchBreak<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>workingTimes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/converterUtil.ts#L120">src/utils/converterUtil.ts:120</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>設定した定時と昼休憩を整形して返却する</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p>&#39;定時：10:00-18:30 （昼休憩 13:00-14:00）&#39;</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="types_utils.html#Range" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>params: <span class="tsd-signature-symbol">{ </span>lunchBreak<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">; </span>workingTimes<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> }</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> lunch<wbr>Break<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span></h5>
+										</li>
+										<li class="tsd-parameter">
+											<h5><span class="tsd-flag ts-flagOptional">Optional</span> working<wbr>Times<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">T</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>定時と昼休憩を返却</p>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -124,8 +291,20 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_converterUtil.html#dailyTimeRecordToRemarks" class="tsd-kind-icon">daily<wbr>Time<wbr>Record<wbr>ToRemarks</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="utils_converterUtil.html#omitUndefinedProps" class="tsd-kind-icon">omit<wbr>Undefined<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_converterUtil.html#toDetailsOfDailyTimeRecords" class="tsd-kind-icon">to<wbr>Details<wbr>OfDaily<wbr>Time<wbr>Records</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_converterUtil.html#toOverviewOfOperatingTimes" class="tsd-kind-icon">to<wbr>Overview<wbr>OfOperating<wbr>Times</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="utils_converterUtil.html#toOverviewOfTimecardPreference" class="tsd-kind-icon">to<wbr>Overview<wbr>OfTimecard<wbr>Preference</a>
 					</li>
 				</ul>
 			</nav>

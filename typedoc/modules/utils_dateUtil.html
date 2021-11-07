@@ -74,6 +74,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#dateStringToDateString" class="tsd-kind-icon">date<wbr>String<wbr>ToDate<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#dateToTimeString" class="tsd-kind-icon">date<wbr>ToTime<wbr>String</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#daysOfMonth" class="tsd-kind-icon">days<wbr>OfMonth</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#getThisMonthDateString" class="tsd-kind-icon">get<wbr>This<wbr>Month<wbr>Date<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#isValidDateString" class="tsd-kind-icon">is<wbr>Valid<wbr>Date<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_dateUtil.html#stringDateToDate" class="tsd-kind-icon">string<wbr>Date<wbr>ToDate</a></li>
@@ -95,7 +96,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L22">src/utils/dateUtil.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L24">src/utils/dateUtil.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -129,7 +130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L10">src/utils/dateUtil.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L12">src/utils/dateUtil.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -143,6 +144,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="daysOfMonth" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> days<wbr>OfMonth</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">days<wbr>OfMonth<span class="tsd-signature-symbol">(</span>month<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L32">src/utils/dateUtil.ts:32</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>対象月の毎日のDateの配列を返却する</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>month: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>年月（yyyy-MM形式）</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>対象月の日毎のDateの配列</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getThisMonthDateString" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>This<wbr>Month<wbr>Date<wbr>String</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -152,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L20">src/utils/dateUtil.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L22">src/utils/dateUtil.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -169,7 +202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L17">src/utils/dateUtil.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L19">src/utils/dateUtil.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -195,7 +228,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L14">src/utils/dateUtil.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L16">src/utils/dateUtil.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -221,7 +254,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/dateUtil.ts#L11">src/utils/dateUtil.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/dateUtil.ts#L13">src/utils/dateUtil.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -257,6 +290,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils_dateUtil.html#dateToTimeString" class="tsd-kind-icon">date<wbr>ToTime<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_dateUtil.html#daysOfMonth" class="tsd-kind-icon">days<wbr>OfMonth</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils_dateUtil.html#getThisMonthDateString" class="tsd-kind-icon">get<wbr>This<wbr>Month<wbr>Date<wbr>String</a>

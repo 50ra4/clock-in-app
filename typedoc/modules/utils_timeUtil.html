@@ -73,8 +73,12 @@
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#isEmptyTime" class="tsd-kind-icon">is<wbr>Empty<wbr>Time</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#isNonEmptyTime" class="tsd-kind-icon">is<wbr>Non<wbr>Empty<wbr>Time</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#minuteToTimeString" class="tsd-kind-icon">minute<wbr>ToTime<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#parseStringToTime" class="tsd-kind-icon">parse<wbr>String<wbr>ToTime</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#stringToTimeString" class="tsd-kind-icon">string<wbr>ToTime<wbr>String</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_timeUtil.html#timeRangeToMinute" class="tsd-kind-icon">time<wbr>Range<wbr>ToMinute</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="utils_timeUtil.html#timeRangeToTimeString" class="tsd-kind-icon">time<wbr>Range<wbr>ToTime<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#timeStringToTime" class="tsd-kind-icon">time<wbr>String<wbr>ToTime</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="utils_timeUtil.html#timeToTimeString" class="tsd-kind-icon">time<wbr>ToTime<wbr>String</a></li>
 							</ul>
@@ -88,22 +92,71 @@
 					<a name="isEmptyTime" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Empty<wbr>Time</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<wbr>Time<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">?: </span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<wbr>Time<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="types_utils.html#Nullable" class="tsd-signature-type" data-tsd-kind="Type alias">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">time</span><span class="tsd-signature-symbol"> is </span><a href="types_utils.html#NullOrUndefined" class="tsd-signature-type" data-tsd-kind="Type alias">NullOrUndefined</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/timeUtil.ts#L3">src/utils/timeUtil.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L4">src/utils/timeUtil.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> time: <a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a></h5>
+									<h5>time: <a href="types_utils.html#Nullable" class="tsd-signature-type" data-tsd-kind="Type alias">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">time</span><span class="tsd-signature-symbol"> is </span><a href="types_utils.html#NullOrUndefined" class="tsd-signature-type" data-tsd-kind="Type alias">NullOrUndefined</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="isNonEmptyTime" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Non<wbr>Empty<wbr>Time</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Non<wbr>Empty<wbr>Time<span class="tsd-signature-symbol">(</span>time<span class="tsd-signature-symbol">: </span><a href="types_utils.html#Nullable" class="tsd-signature-type" data-tsd-kind="Type alias">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">time</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L7">src/utils/timeUtil.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>time: <a href="types_utils.html#Nullable" class="tsd-signature-type" data-tsd-kind="Type alias">Nullable</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">time</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="minuteToTimeString" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> minute<wbr>ToTime<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">minute<wbr>ToTime<wbr>String<span class="tsd-signature-symbol">(</span>minute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, round<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L80">src/utils/timeUtil.ts:80</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>minute: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>round: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -117,7 +170,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/timeUtil.ts#L19">src/utils/timeUtil.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L23">src/utils/timeUtil.ts:23</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -140,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/timeUtil.ts#L52">src/utils/timeUtil.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L56">src/utils/timeUtil.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -150,6 +203,64 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="timeRangeToMinute" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> time<wbr>Range<wbr>ToMinute</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">time<wbr>Range<wbr>ToMinute&lt;T&gt;<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L72">src/utils/timeUtil.ts:72</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="types_utils.html#Range" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="timeRangeToTimeString" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> time<wbr>Range<wbr>ToTime<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">time<wbr>Range<wbr>ToTime<wbr>String&lt;T&gt;<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="types_utils.html#Range" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L88">src/utils/timeUtil.ts:88</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><a href="types_utils.html#Range" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">&lt;</span><a href="types_utils.html#Time" class="tsd-signature-type" data-tsd-kind="Type alias">Time</a><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>__namedParameters: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="types_utils.html#Range" class="tsd-signature-type" data-tsd-kind="Type alias">Range</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -163,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/timeUtil.ts#L10">src/utils/timeUtil.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L14">src/utils/timeUtil.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -186,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/06a9275/src/utils/timeUtil.ts#L5">src/utils/timeUtil.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/50ra4/clock-in-app/blob/3d83d94/src/utils/timeUtil.ts#L9">src/utils/timeUtil.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -218,10 +329,22 @@
 						<a href="utils_timeUtil.html#isEmptyTime" class="tsd-kind-icon">is<wbr>Empty<wbr>Time</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_timeUtil.html#isNonEmptyTime" class="tsd-kind-icon">is<wbr>Non<wbr>Empty<wbr>Time</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="utils_timeUtil.html#minuteToTimeString" class="tsd-kind-icon">minute<wbr>ToTime<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils_timeUtil.html#parseStringToTime" class="tsd-kind-icon">parse<wbr>String<wbr>ToTime</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils_timeUtil.html#stringToTimeString" class="tsd-kind-icon">string<wbr>ToTime<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="utils_timeUtil.html#timeRangeToMinute" class="tsd-kind-icon">time<wbr>Range<wbr>ToMinute</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="utils_timeUtil.html#timeRangeToTimeString" class="tsd-kind-icon">time<wbr>Range<wbr>ToTime<wbr>String</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="utils_timeUtil.html#timeStringToTime" class="tsd-kind-icon">time<wbr>String<wbr>ToTime</a>

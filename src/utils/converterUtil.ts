@@ -1,6 +1,6 @@
 import getWeekOfMonth from 'date-fns/getWeekOfMonth';
 
-import { DailyTimeRecord, Range, Time } from 'types';
+import { DailyTimeRecord, Range, Time, TimecardUserPreference } from 'types';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString, stringDateToDate } from './dateUtil';
 import { minuteToTimeString, timeRangeToMinute, timeToTimeString } from './timeUtil';
@@ -102,4 +102,25 @@ export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: Dail
     `${displayedMonth}総計：${minuteToTimeString(totalMonth)}h`,
     ...totalWeeks.map((total, i) => `${i + 1}週：${minuteToTimeString(total)}h`),
   ].join('\n');
+};
+
+/**
+ *
+ * @param dailyTimeRecords
+ * @param preference
+ * @returns 月の日々の稼働時間の概要を出力
+ * @example `
+ * 定時：10:00-18:30 （昼休憩 13:00-14:00）
+ * 11/01(月) 10:00-20:00
+ * 11/02(火) 10:00-19:30
+ * 11/03(水) N/A
+ * 11/04(木) 10:00-19:00
+ * 11/05(金) 10:00-19:00
+ * `
+ */
+export const toOverviewOfDailyTimeRecord = (
+  dailyTimeRecords: DailyTimeRecord[],
+  preference: TimecardUserPreference,
+): string => {
+  return '';
 };

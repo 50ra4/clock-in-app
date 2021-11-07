@@ -1,6 +1,10 @@
 import { useCallback, useMemo } from 'react';
 import { DailyTimeRecord, TimecardUserPreference } from 'types';
-import { toDetailsOfDailyTimeRecords, toOverviewOfOperatingTimes } from 'utils/converterUtil';
+import {
+  toDetailsOfDailyTimeRecords,
+  toOverviewOfOperatingTimes,
+  toOverviewOfTimecardPreference,
+} from 'utils/converterUtil';
 
 /**
  * month:年月（yyyy-MM形式）
@@ -19,7 +23,8 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
     ].join('\n');
     const detailsOfDailyTimeRecords = [
       '【稼働詳細】', //
-      toDetailsOfDailyTimeRecords(dailyTimeRecords, preference),
+      toOverviewOfTimecardPreference(preference),
+      toDetailsOfDailyTimeRecords(month, dailyTimeRecords),
     ].join('\n');
 
     return [overviewOfOperatingTimes, detailsOfDailyTimeRecords].join('\n\n');

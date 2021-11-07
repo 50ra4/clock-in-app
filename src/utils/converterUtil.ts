@@ -105,10 +105,22 @@ export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: Dail
 };
 
 /**
- *
- * @param dailyTimeRecords
- * @param preference
- * @returns 月の日々の稼働時間の概要を出力
+ * ユーザーが設定した定時と昼休憩を返却する
+ * @param preference TimecardUserPreference
+ * @returns 定時と昼休憩を返却
+ * @example '定時：10:00-18:30 （昼休憩 13:00-14:00）'
+ */
+export const toOverviewOfTimecardPreference = (preference?: TimecardUserPreference): string => {
+  const workingTimes = '';
+  const lunchBreakTime = '';
+  return [workingTimes, lunchBreakTime].join(' ');
+};
+
+/**
+ * 週報用の週稼働詳細を返却する
+ * @param month 年月（yyyy-MM形式）
+ * @param dailyTimeRecords 月の入力データ
+ * @returns 稼働詳細
  * @example `
  * 定時：10:00-18:30 （昼休憩 13:00-14:00）
  * 11/01(月) 10:00-20:00
@@ -116,11 +128,9 @@ export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: Dail
  * 11/03(水) N/A
  * 11/04(木) 10:00-19:00
  * 11/05(金) 10:00-19:00
+ * ...
  * `
  */
-export const toOverviewOfDailyTimeRecord = (
-  dailyTimeRecords: DailyTimeRecord[],
-  preference: TimecardUserPreference,
-): string => {
+export const toDetailsOfDailyTimeRecords = (month: string, dailyTimeRecords: DailyTimeRecord[]): string => {
   return '';
 };

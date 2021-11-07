@@ -49,7 +49,7 @@ export function UnStyledAccordion({ id, title, defaultExpanded, disabled, childr
         <h3>{title}</h3>
         <StyledArrowLeftIcon
           className={isExpanded ? AccordionClassNames.icon.expanded : AccordionClassNames.icon.collapsed}
-          color="main"
+          color="primary"
         />
       </button>
       <Divider />
@@ -74,7 +74,7 @@ export const Accordion = styled(UnStyledAccordion)`
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   margin: ${({ theme }) => `${theme.space.small}px ${theme.space.middle}px ${theme.space.middle}px`};
   padding: ${({ theme }) => `${theme.space.small}px`};
-  background-color: ${({ theme }) => theme.color.palette.default.background};
+  background-color: ${({ theme }) => theme.color.palette.main.background};
   & > button {
     height: 32px;
     display: inline-flex;
@@ -82,17 +82,14 @@ export const Accordion = styled(UnStyledAccordion)`
     align-items: center;
     width: 100%;
     padding: ${({ theme }) => `${theme.space.middle}px`};
-    background-color: ${({ theme }) => theme.color.palette.default.background};
+    background-color: ${({ theme }) => theme.color.palette.main.background};
     cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
-    &:hover {
-      opacity: ${({ disabled }) => !disabled && 0.5};
-    }
     & > h3 {
       display: inline-block;
       line-height: 32px;
       height: 32px;
       vertical-align: middle;
-      color: ${({ theme }) => theme.color.palette.default.font};
+      color: ${({ theme }) => theme.color.palette.main.font};
       font-weight: ${({ theme }) => theme.font.weight.bold};
       font-size: ${({ theme }) => theme.font.size.large}px;
     }

@@ -3,6 +3,18 @@ import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 
 export default createStoryMeta(Card, {
   title: 'surfaces/Card',
+  decorators: [
+    (story) => (
+      <div
+        style={{
+          backgroundColor: '#e8eaed',
+          padding: '20px',
+        }}
+      >
+        {story()}
+      </div>
+    ),
+  ],
 });
 
 const Template = createStoryTemplate(Card);
@@ -12,6 +24,6 @@ const text =
 
 export const Docs = Template;
 Docs.args = {
-  title: 'sample card',
+  title: 'Sample card',
   children: <p>{text}</p>,
 };

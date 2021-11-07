@@ -3,6 +3,18 @@ import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 
 export default createStoryMeta(Accordion, {
   title: 'surfaces/Accordion',
+  decorators: [
+    (story) => (
+      <div
+        style={{
+          backgroundColor: '#e8eaed',
+          padding: '20px',
+        }}
+      >
+        {story()}
+      </div>
+    ),
+  ],
 });
 
 const Template = createStoryTemplate(Accordion);

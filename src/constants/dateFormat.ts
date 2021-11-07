@@ -6,6 +6,8 @@ export const DATE_FORMAT = {
   yearMonthISO: 'yyyy-MM',
   monthDayJP: 'MM月dd日',
   monthDay: 'MM/dd',
+  monthDayWithDayOfWeekJP: 'MM月dd日(EEEEE)',
+  monthJP: 'MM月',
   hourMinuteJP: 'HH時mm分',
   hourMinuteISO: 'HH:mm',
   date: 'yyyy/MM/dd',

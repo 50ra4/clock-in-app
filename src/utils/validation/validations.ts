@@ -4,11 +4,9 @@ import { Time, Range, RestTime, InHouseWork, Nullable, NullOrUndefined } from 't
 import { stringDateToDate } from 'utils/dateUtil';
 import { isNonNullable, isNullable } from 'utils/typeGuard';
 import { messageReplacer, ValidatorFactory, ValidatorOption } from '../validationUtil';
+import { isEmptyTime } from 'utils/timeUtil';
 
 const isEmptyString = (value: Nullable<string>): value is '' | NullOrUndefined => isNullable(value) || value.length < 1;
-
-const isEmptyTime = (time: Nullable<Time>): time is NullOrUndefined =>
-  isNullable(time) || (typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined');
 
 const isValidDateStringFormat = (str: string): boolean =>
   !!str.match(/\d{4}-\d{2}-\d{2}/) && isValid(stringDateToDate(str, 'yyyy-MM-dd'));

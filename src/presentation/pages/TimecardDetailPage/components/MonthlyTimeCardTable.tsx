@@ -1,19 +1,19 @@
+/* eslint-disable complexity */
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import ja from 'date-fns/locale/ja';
 import format from 'date-fns/format';
-import endOfMonth from 'date-fns/endOfMonth';
-import eachDayOfInterval from 'date-fns/eachDayOfInterval';
 import isSunday from 'date-fns/isSunday';
 import isSaturday from 'date-fns/isSaturday';
 
 import { DailyTimeRecord, DayOfWeekCode, TimecardUserPreference } from 'types';
-import { stringDateToDate } from 'utils/dateUtil';
+import { daysOfMonth } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
 import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
 import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
 import { InfoIcon } from 'presentation/components/display/Icons/InfoIcon';
+import { dailyTimeRecordToRemarks } from 'utils/converterUtil';
 
 type Props = {
   className?: string;
@@ -32,11 +32,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   preference,
   onSelectDate,
 }: Props) {
-  const days = useMemo(() => {
-    const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
-    const end = endOfMonth(start);
-    return eachDayOfInterval({ start, end });
-  }, [month]);
+  const days = useMemo(() => daysOfMonth(month), [month]);
 
   return (
     <StyledRoot className={className}>
@@ -54,10 +50,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
           {days.map((day) => {
             const dateString = format(day, DATE_FORMAT.dateISO);
             const record = dailyRecords.find((record) => record.date === dateString);
-            // TODO: add other remarks field
-            const remarks = [record?.inHouseWorks.map(({ remarks }) => remarks), record?.remarks]
-              .filter((v) => v)
-              .join(' ');
+            const remarks = record ? dailyTimeRecordToRemarks(record, ' ') : '';
             const isHoliday = preference.regularHolidays.includes(day.getDay() as DayOfWeekCode);
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)} isHoliday={isHoliday}>
@@ -78,7 +71,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
                 <td>{record?.end ? timeToTimeString(record?.end) : '-'}</td>
                 <td>
                   <div>
-                    <p>{remarks || ' '}</p>
+                    <p>{remarks || ''}</p>
                   </div>
                 </td>
               </RecordRow>
@@ -94,7 +87,7 @@ const StyledRoot = styled.div`
   width: 100%;
   & > table {
     table-layout: fixed;
-    width: calc(100% - 2px); // for border
+    min-width: 100%;
 
     tbody {
       white-space: nowrap;
@@ -157,7 +150,6 @@ const StyledRoot = styled.div`
         padding: ${({ theme }) => `${theme.space.middle}px`};
         background-color: ${({ theme }) => theme.color.palette.primary.background};
         color: ${({ theme }) => theme.color.palette.primary.font};
-        font-weight: ${({ theme }) => theme.font.weight.bold};
         vertical-align: bottom;
 
         &:last-child {
@@ -175,14 +167,13 @@ type DayOfWeekStyledProps = {
 };
 
 const RecordRow = styled.tr<DayOfWeekStyledProps>`
-  background-color: ${({ isHoliday }) => (isHoliday ? '#deefff' : 'inherit')};
+  background-color: ${({ isHoliday }) => (isHoliday ? '#eafae6' : 'inherit')};
 
   & > th {
     & > span {
       display: block;
       margin-top: ${({ theme }) => `${theme.space.middle}px`};
-      /* TODO: change color style */
-      color: ${({ isSunday, isSaturday }) => (isSunday ? 'red' : isSaturday ? 'blue' : '#000')};
+      color: ${({ isSunday, isSaturday }) => (isSunday ? '#b50101' : isSaturday ? '#0000df' : '#000')};
     }
   }
 `;

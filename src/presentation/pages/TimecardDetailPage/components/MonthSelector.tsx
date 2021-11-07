@@ -21,7 +21,7 @@ type Props = {
 export const MonthSelector = React.memo(function MonthSelector({ className, selectedMonth, onChangeMonth }: Props) {
   const selectableRange = useMemo(() => {
     const startDate = startOfMonth(stringDateToDate(selectedMonth, DATE_FORMAT.yearMonthISO));
-    const start = addMonths(startDate, -10);
+    const start = addMonths(startDate, -3);
     const end = addDays(addMonths(startDate, 3), -1);
     return { start, end };
   }, [selectedMonth]);

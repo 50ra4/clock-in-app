@@ -1,9 +1,10 @@
+/* eslint-disable complexity */
 import React, { useCallback, useState } from 'react';
 import { useParams } from 'react-router';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
-import { isValidDateString, getThisMonthDateString } from 'utils/dateUtil';
+import { isValidDateString, getThisMonthDateString, dateStringToDateString } from 'utils/dateUtil';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQueryString';
 import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
@@ -14,6 +15,9 @@ import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useAuthentication } from 'hooks/useAuthentication';
 import { useUserPreference } from 'hooks/useUserPreference';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
+import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
+import { MonthlyOverviewDialog } from './components/MonthlyOverviewDialog';
+import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -56,12 +60,22 @@ export function MobileView() {
     month: selectedMonth,
     uid,
   });
+  const { monthlyOverview, copyMonthlyOverviewToClipboard } = useMonthlyOverview({
+    month: selectedMonth,
+    dailyTimeRecords: dailyTimeRecordsOfMonth,
+    preference: userPreference?.timecard,
+  });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
+  const [openOverviewDialog, setOpenOverviewDialog] = useState<boolean>(false);
 
   const { loggedInUid } = useAuthentication();
   const isLoggedInUser = loggedInUid === uid;
+  const selectedMonthJP = dateStringToDateString(selectedMonth, {
+    from: DATE_FORMAT.yearMonthISO,
+    to: DATE_FORMAT.yearMonthJP,
+  });
 
   const updateSelectedMonth = useCallback(
     (month: string) => {
@@ -105,6 +119,8 @@ export function MobileView() {
     [isLoggedInUser, saveDailyTimeRecord],
   );
 
+  const onCloseMonthlyOverviewDialog = useCallback(() => setOpenOverviewDialog(false), []);
+
   return (
     <StyledRoot>
       <LoadingGuard open={isFetchingPreference} />
@@ -117,6 +133,17 @@ export function MobileView() {
             dailyRecords={dailyTimeRecordsOfMonth}
             preference={userPreference.timecard}
             onSelectDate={selectEditedRecord}
+          />
+          <FloatingExportButton onClick={() => setOpenOverviewDialog(true)}>
+            <LaunchIcon color="main" titleAccess={`${selectedMonthJP}の勤怠の概要を表示する`} />
+          </FloatingExportButton>
+          <MonthlyOverviewDialog
+            open={openOverviewDialog}
+            readOnly={true}
+            title={`${selectedMonthJP}の勤怠の概要`}
+            onClose={onCloseMonthlyOverviewDialog}
+            onClickCopy={copyMonthlyOverviewToClipboard}
+            overview={monthlyOverview}
           />
           {openInputDialog && editedRecord && (
             <InputRecordDialog
@@ -135,6 +162,8 @@ export function MobileView() {
   );
 }
 
+const StyledRoot = styled(ResponsiveLayout)``;
+
 const StyledMonthSelector = styled(MonthSelector)`
   margin-bottom: ${({ theme }) => theme.space.middle}px;
   position: sticky;
@@ -151,4 +180,23 @@ const StyledMonthlyTimeCardTable = styled(MonthlyTimeCardTable)`
     )};
 `;
 
-const StyledRoot = styled(ResponsiveLayout)``;
+const FloatingExportButton = styled.button`
+  position: fixed;
+  ${({ theme }) => theme.insetSafeArea.bottom('bottom', '24px', '+')};
+  right: 24px;
+  @media (min-width: ${({ theme }) => theme.breakpoint.small}px) {
+    right: calc((100% - 600px) / 2 + 24px);
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.color.palette.primary.background};
+  width: 48px;
+  height: 48px;
+  & > svg {
+    width: 24px;
+  }
+`;

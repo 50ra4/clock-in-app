@@ -1370,16 +1370,13 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
           please enter remarks.
         </p>
       </div>
-      <div
-        className="sc-bYwzuL bNhAmW"
-      >
-        <textarea
-          id="docs"
-          name="docs"
-          onChange={[Function]}
-          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-      </div>
+      <textarea
+        className="sc-bYwzuL llNyQm"
+        id="docs"
+        name="docs"
+        onChange={[Function]}
+        value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      />
     </div>
   </div>
 </div>
@@ -1406,17 +1403,14 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
           please enter remarks.
         </p>
       </div>
-      <div
-        className="sc-bYwzuL eIuWFd"
-      >
-        <textarea
-          id="error"
-          name="error"
-          onChange={[Function]}
-          row={2}
-          value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        />
-      </div>
+      <textarea
+        className="sc-bYwzuL jAZNBV"
+        id="error"
+        name="error"
+        onChange={[Function]}
+        row={2}
+        value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      />
       <div
         className="sc-fFSPTT cVCoUN"
       >
@@ -3108,30 +3102,24 @@ exports[`Storyshots inputs/SelectInput Error 1`] = `
 `;
 
 exports[`Storyshots inputs/TextArea Docs 1`] = `
-<div
-  className="sc-bYwzuL bNhAmW"
->
-  <textarea
-    description="please enter phone number."
-    id="docs"
-    name="docs"
-    onChange={[Function]}
-    value="012012341234"
-  />
-</div>
+<textarea
+  className="sc-bYwzuL llNyQm"
+  description="please enter phone number."
+  id="docs"
+  name="docs"
+  onChange={[Function]}
+  value="012012341234"
+/>
 `;
 
 exports[`Storyshots inputs/TextArea Error 1`] = `
-<div
-  className="sc-bYwzuL ciAXiw"
->
-  <textarea
-    id="error"
-    name="error"
-    onChange={[Function]}
-    value="0120-1234-1234"
-  />
-</div>
+<textarea
+  className="sc-bYwzuL kdIkqY"
+  id="error"
+  name="error"
+  onChange={[Function]}
+  value="0120-1234-1234"
+/>
 `;
 
 exports[`Storyshots inputs/TextInput Docs 1`] = `
@@ -3320,41 +3308,6 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
           未選択にする
         </option>
         <option
-          value="2020-03"
-        >
-          2020年03月
-        </option>
-        <option
-          value="2020-04"
-        >
-          2020年04月
-        </option>
-        <option
-          value="2020-05"
-        >
-          2020年05月
-        </option>
-        <option
-          value="2020-06"
-        >
-          2020年06月
-        </option>
-        <option
-          value="2020-07"
-        >
-          2020年07月
-        </option>
-        <option
-          value="2020-08"
-        >
-          2020年08月
-        </option>
-        <option
-          value="2020-09"
-        >
-          2020年09月
-        </option>
-        <option
           value="2020-10"
         >
           2020年10月
@@ -3434,7 +3387,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 <div
-  className="sc-dFRpbK cLgvOM"
+  className="sc-dFRpbK Pjyvk"
 >
   <table>
     <thead>
@@ -3468,7 +3421,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3519,7 +3472,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3570,7 +3523,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv dmevzQ"
+        className="sc-bsatvv irXldX"
       >
         <th
           scope="row"
@@ -3621,7 +3574,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edxoHZ"
+        className="sc-bsatvv edBZyo"
       >
         <th
           scope="row"
@@ -3672,7 +3625,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv gwuonJ"
+        className="sc-bsatvv eBShDL"
       >
         <th
           scope="row"
@@ -3723,7 +3676,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3774,7 +3727,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3825,7 +3778,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3876,7 +3829,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -3927,7 +3880,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv dmevzQ"
+        className="sc-bsatvv irXldX"
       >
         <th
           scope="row"
@@ -3978,7 +3931,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edxoHZ"
+        className="sc-bsatvv edBZyo"
       >
         <th
           scope="row"
@@ -4023,13 +3976,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv gwuonJ"
+        className="sc-bsatvv eBShDL"
       >
         <th
           scope="row"
@@ -4074,13 +4027,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4125,13 +4078,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4176,13 +4129,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4227,13 +4180,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4278,13 +4231,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv dmevzQ"
+        className="sc-bsatvv irXldX"
       >
         <th
           scope="row"
@@ -4329,13 +4282,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edxoHZ"
+        className="sc-bsatvv edBZyo"
       >
         <th
           scope="row"
@@ -4380,13 +4333,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv gwuonJ"
+        className="sc-bsatvv eBShDL"
       >
         <th
           scope="row"
@@ -4431,13 +4384,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4482,13 +4435,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4533,13 +4486,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4584,13 +4537,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4635,13 +4588,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv dmevzQ"
+        className="sc-bsatvv irXldX"
       >
         <th
           scope="row"
@@ -4686,13 +4639,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edxoHZ"
+        className="sc-bsatvv edBZyo"
       >
         <th
           scope="row"
@@ -4737,13 +4690,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv gwuonJ"
+        className="sc-bsatvv eBShDL"
       >
         <th
           scope="row"
@@ -4788,13 +4741,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4839,13 +4792,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4890,13 +4843,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4941,13 +4894,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hpieqd"
+        className="sc-bsatvv hSopcx"
       >
         <th
           scope="row"
@@ -4992,13 +4945,13 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>
       </tr>
       <tr
-        className="sc-bsatvv dmevzQ"
+        className="sc-bsatvv irXldX"
       >
         <th
           scope="row"
@@ -5043,7 +4996,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <div>
             <p>
-               
+              
             </p>
           </div>
         </td>

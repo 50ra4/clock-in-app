@@ -1,6 +1,10 @@
-import { Time } from 'types';
+import { Time, Range, Nullable, NullOrUndefined } from 'types';
+import { isNullable } from './typeGuard';
 
-export const isEmptyTime = (time?: Time) => typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined';
+export const isEmptyTime = (time: Nullable<Time>): time is NullOrUndefined =>
+  isNullable(time) || (typeof time?.hour === 'undefined' && typeof time?.minute === 'undefined');
+
+export const isNonEmptyTime = (time: Nullable<Time>): time is Required<Time> => !isEmptyTime(time);
 
 export const timeToTimeString = (time: Time = {}): string =>
   isEmptyTime(time) ? '' : [time?.hour ?? 0, time?.minute ?? 0].map((v) => String(v).padStart(2, '0')).join(':');
@@ -64,3 +68,24 @@ export const stringToTimeString = (str: string = ''): string => {
   }
   return timeToTimeString({ hour, minute });
 };
+
+export const timeRangeToMinute = <T extends Range<Time>>({ start, end }: T): number => {
+  if (!isNonEmptyTime(start) || !isNonEmptyTime(end)) {
+    return Number.NaN;
+  }
+  const hourDiff = end.hour - start.hour + (start.hour > end.hour ? 24 : 0);
+  return hourDiff * 60 + end.minute - start.minute;
+};
+
+export const minuteToTimeString = (minute: number, round: number = 0): string => {
+  const hour = Math.floor(minute / 60);
+  const restMinute = minute % 60;
+  // const remainder = minute % round;
+  // const _minute = Number.isFinite(remainder) ? restMinute - remainder : restMinute;
+  return timeToTimeString({ hour, minute: restMinute });
+};
+
+export const timeRangeToTimeString = <T extends Range<Time>>({ start, end }: T): Range<string> => ({
+  start: start && timeToTimeString(start),
+  end: end && timeToTimeString(end),
+});

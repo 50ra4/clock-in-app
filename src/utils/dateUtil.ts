@@ -2,6 +2,8 @@ import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import isValid from 'date-fns/isValid';
 import startOfMonth from 'date-fns/startOfMonth';
+import endOfMonth from 'date-fns/endOfMonth';
+import eachDayOfInterval from 'date-fns/eachDayOfInterval';
 
 import utcToZonedTime from 'date-fns-tz/utcToZonedTime';
 import { DateFormat, DATE_FORMAT } from 'constants/dateFormat';
@@ -21,3 +23,14 @@ export const getThisMonthDateString = () => format(startOfMonth(new Date()), DAT
 
 export const dateStringToDateString = (dateString: string, options: { from: DateFormat; to: DateFormat }): string =>
   format(stringDateToDate(dateString, options.from), options.to);
+
+/**
+ * 対象月の毎日のDateの配列を返却する
+ * @param month 年月（yyyy-MM形式）
+ * @returns 対象月の日毎のDateの配列
+ */
+export const daysOfMonth = (month: string): Date[] => {
+  const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
+  const end = endOfMonth(start);
+  return eachDayOfInterval({ start, end });
+};

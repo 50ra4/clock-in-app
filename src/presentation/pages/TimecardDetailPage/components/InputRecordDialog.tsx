@@ -14,20 +14,20 @@ type OwnProps = {
   className?: string;
   open?: boolean;
   readOnly: boolean;
-  onClose?: (event: React.MouseEvent<unknown, MouseEvent>) => void;
   dailyTimeRecord: DailyTimeRecord;
   preference: TimecardUserPreference;
+  onClose: () => void;
   onSaveDailyTimeRecord: (record: DailyTimeRecord) => void;
   onDeleteDailyTimeRecord: (date: string) => void;
 };
 
 export const InputRecordDialog = React.memo(function InputRecordDialog({
+  className,
   open = false,
   readOnly,
-  onClose,
-  className,
   dailyTimeRecord: initialTimeRecord,
   preference,
+  onClose,
   onSaveDailyTimeRecord,
   onDeleteDailyTimeRecord,
 }: OwnProps) {

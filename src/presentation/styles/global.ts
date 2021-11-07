@@ -152,8 +152,8 @@ const customCss = (theme: StyledComponentsTheme) => css`
 
   body {
     line-height: 1;
-    color: ${theme.color.palette.main.font};
-    background-color: ${theme.color.palette.main.background};
+    color: ${theme.color.palette.base.font};
+    background-color: ${theme.color.palette.base.background};
   }
 
   p {

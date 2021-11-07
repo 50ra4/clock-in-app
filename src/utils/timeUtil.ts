@@ -84,3 +84,8 @@ export const minuteToTimeString = (minute: number, round: number = 0): string =>
   // const _minute = Number.isFinite(remainder) ? restMinute - remainder : restMinute;
   return timeToTimeString({ hour, minute: restMinute });
 };
+
+export const timeRangeToTimeString = <T extends Range<Time>>({ start, end }: T): Range<string> => ({
+  start: start && timeToTimeString(start),
+  end: end && timeToTimeString(end),
+});

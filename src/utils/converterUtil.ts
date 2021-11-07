@@ -1,9 +1,9 @@
 import getWeekOfMonth from 'date-fns/getWeekOfMonth';
 
-import { DailyTimeRecord, Range, Time, TimecardUserPreference } from 'types';
+import { DailyTimeRecord, Range, Time } from 'types';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString, stringDateToDate } from './dateUtil';
-import { minuteToTimeString, timeRangeToMinute, timeToTimeString } from './timeUtil';
+import { minuteToTimeString, timeRangeToMinute, timeRangeToTimeString, timeToTimeString } from './timeUtil';
 
 export const omitUndefinedProps = <T extends Record<string, unknown>>(obj: T) =>
   Object.fromEntries(Object.entries(obj).filter(([_, value]) => typeof value !== 'undefined')) as T;
@@ -93,6 +93,7 @@ const calcOperatingTime = (total: TotalTime | undefined): number => {
  * 5週：38:30h`
  */
 export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: DailyTimeRecord[]): string => {
+  // FIXME: add roundDownMinute
   const displayedMonth = dateStringToDateString(month, { from: DATE_FORMAT.yearMonthISO, to: DATE_FORMAT.monthJP });
   const totalPerWeek = toTotalPerWeek(dailyTimeRecords);
   const totalWeeks = Object.values(totalPerWeek).map((total) => calcOperatingTime(total));
@@ -105,15 +106,23 @@ export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: Dail
 };
 
 /**
- * ユーザーが設定した定時と昼休憩を返却する
- * @param preference TimecardUserPreference
+ * 設定した定時と昼休憩を整形して返却する
+ * @param params
  * @returns 定時と昼休憩を返却
  * @example '定時：10:00-18:30 （昼休憩 13:00-14:00）'
  */
-export const toOverviewOfTimecardPreference = (preference?: TimecardUserPreference): string => {
-  const workingTimes = '';
-  const lunchBreakTime = '';
-  return [workingTimes, lunchBreakTime].join(' ');
+// eslint-disable-next-line complexity
+export const toOverviewOfTimecardPreference = <T extends Range<Time>>(params: {
+  workingTimes?: T;
+  lunchBreak?: T;
+}): string => {
+  const workingTimes = timeRangeToTimeString(params?.workingTimes ?? {});
+  const restTime = timeRangeToTimeString(params?.lunchBreak ?? {});
+
+  return [
+    `定時：${workingTimes?.start && workingTimes?.end ? [workingTimes.start, workingTimes.end].join('-') : 'N/A'}`,
+    `（昼休憩 ${restTime?.start && restTime?.end ? [restTime.start, restTime.end].join('-') : 'N/A'}）`,
+  ].join(' ');
 };
 
 /**
@@ -122,7 +131,6 @@ export const toOverviewOfTimecardPreference = (preference?: TimecardUserPreferen
  * @param dailyTimeRecords 月の入力データ
  * @returns 稼働詳細
  * @example `
- * 定時：10:00-18:30 （昼休憩 13:00-14:00）
  * 11/01(月) 10:00-20:00
  * 11/02(火) 10:00-19:30
  * 11/03(水) N/A
@@ -132,5 +140,6 @@ export const toOverviewOfTimecardPreference = (preference?: TimecardUserPreferen
  * `
  */
 export const toDetailsOfDailyTimeRecords = (month: string, dailyTimeRecords: DailyTimeRecord[]): string => {
+  // FIXME: add roundDownMinute
   return '';
 };

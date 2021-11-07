@@ -23,7 +23,11 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
     ].join('\n');
     const detailsOfDailyTimeRecords = [
       '【稼働詳細】', //
-      toOverviewOfTimecardPreference(preference),
+      toOverviewOfTimecardPreference({
+        workingTimes: preference?.workingTimes,
+        // FIXME: use correct lunch break data
+        lunchBreak: preference?.restTimes[0],
+      }),
       toDetailsOfDailyTimeRecords(month, dailyTimeRecords),
     ].join('\n');
 

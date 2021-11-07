@@ -61,15 +61,17 @@ const StyledRoot = styled.div`
 const StyledCard = styled(Card)`
   width: 100%;
   max-width: 480px;
+  padding: ${({ theme }) => `${theme.space.large}px ${theme.space.large * 2}px ${theme.space.large * 2}px`};
+  border-radius: ${({ theme }) => theme.space.middle}px;
 `;
 const StyledDescription = styled.p`
   width: 100%;
   max-width: 480px;
   text-align: center;
   border: 1px solid ${({ theme }) => theme.color.border.dark};
-  border-radius: 5px;
-  padding: 15px 20px;
-  margin: ${({ theme }) => theme.space.middle}px;
+  border-radius: ${({ theme }) => theme.space.middle}px;
+  padding: ${({ theme }) => `${theme.space.large * 2}px ${theme.space.large * 3}px`};
+  margin: ${({ theme }) => theme.space.large}px;
 `;
 
 type FormProps = {
@@ -110,11 +112,11 @@ function RegistrationPageForm({ onSignUp }: FormProps) {
 
 const StyledForm = styled.form``;
 const StyledTextForm = styled(TextForm)`
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: ${({ theme }) => theme.space.large}px;
+  margin-bottom: ${({ theme }) => theme.space.large * 2}px;
 `;
 const StyledPasswordForm = styled(PasswordForm)`
-  margin-bottom: 20px;
+  margin-bottom: ${({ theme }) => theme.space.large * 2}px;
 `;
 
 export default RegistrationPage;

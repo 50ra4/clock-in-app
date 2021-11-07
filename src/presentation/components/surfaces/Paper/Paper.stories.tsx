@@ -3,6 +3,18 @@ import { createStoryMeta, createStoryTemplate } from 'utils/storybookUtils';
 
 export default createStoryMeta(Paper, {
   title: 'surfaces/Paper',
+  decorators: [
+    (story) => (
+      <div
+        style={{
+          backgroundColor: '#e8eaed',
+          padding: '20px',
+        }}
+      >
+        {story()}
+      </div>
+    ),
+  ],
 });
 
 const Template = createStoryTemplate(Paper);

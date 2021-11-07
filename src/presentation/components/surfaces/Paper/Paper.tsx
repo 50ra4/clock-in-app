@@ -19,7 +19,7 @@ function UnStyledPaper({ title, children, ...otherProps }: PaperProps) {
 export const Paper = styled(UnStyledPaper)`
   margin: ${({ theme }) => `${theme.space.small}px ${theme.space.middle}px ${theme.space.middle}px`};
   padding: ${({ theme }) => `${theme.space.small}px`};
-  background-color: ${({ theme }) => theme.color.palette.default.background};
+  background-color: ${({ theme }) => theme.color.palette.main.background};
   & > div {
     padding: ${({ theme }) => `${theme.space.large}px`};
   }

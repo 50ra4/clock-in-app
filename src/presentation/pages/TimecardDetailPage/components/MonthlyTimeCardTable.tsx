@@ -85,6 +85,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
 
 const StyledRoot = styled.div`
   width: 100%;
+  background-color: ${({ theme }) => theme.color.palette.main.background};
   & > table {
     table-layout: fixed;
     min-width: 100%;

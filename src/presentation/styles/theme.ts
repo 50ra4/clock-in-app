@@ -121,6 +121,10 @@ const colorPalette = {
 } as const;
 
 const bgColorPalette = {
+  base: {
+    font: fontColorPalette.black,
+    background: '#e8eaed',
+  },
   default: {
     font: fontColorPalette.white,
     background: colorPalette.gray.light,

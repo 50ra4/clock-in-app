@@ -3,13 +3,11 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import ja from 'date-fns/locale/ja';
 import format from 'date-fns/format';
-import endOfMonth from 'date-fns/endOfMonth';
-import eachDayOfInterval from 'date-fns/eachDayOfInterval';
 import isSunday from 'date-fns/isSunday';
 import isSaturday from 'date-fns/isSaturday';
 
 import { DailyTimeRecord, DayOfWeekCode, TimecardUserPreference } from 'types';
-import { stringDateToDate } from 'utils/dateUtil';
+import { daysOfMonth } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
 import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
@@ -34,11 +32,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   preference,
   onSelectDate,
 }: Props) {
-  const days = useMemo(() => {
-    const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
-    const end = endOfMonth(start);
-    return eachDayOfInterval({ start, end });
-  }, [month]);
+  const days = useMemo(() => daysOfMonth(month), [month]);
 
   return (
     <StyledRoot className={className}>

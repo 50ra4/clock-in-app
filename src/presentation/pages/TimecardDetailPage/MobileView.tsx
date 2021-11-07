@@ -17,6 +17,7 @@ import { useUserPreference } from 'hooks/useUserPreference';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
 import { MonthlyOverviewDialog } from './components/MonthlyOverviewDialog';
+import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -55,15 +56,14 @@ export function MobileView() {
   const { uid } = useParams<{ uid: string }>();
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);
-  const {
-    dailyTimeRecordsOfMonth,
-    monthlyOverview,
-    saveDailyTimeRecord,
-    removeDailyTimeRecord,
-    copyMonthlyOverviewToClipboard,
-  } = useDailyTimeRecordsOfMonth({
+  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth({
     month: selectedMonth,
     uid,
+  });
+  const { monthlyOverview, copyMonthlyOverviewToClipboard } = useMonthlyOverview({
+    month: selectedMonth,
+    dailyTimeRecords: dailyTimeRecordsOfMonth,
+    preference: userPreference?.timecard,
   });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);

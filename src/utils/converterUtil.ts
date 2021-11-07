@@ -1,8 +1,11 @@
+import ja from 'date-fns/locale/ja';
+import format from 'date-fns/format';
+import isSunday from 'date-fns/isSunday';
 import getWeekOfMonth from 'date-fns/getWeekOfMonth';
 
-import { DailyTimeRecord, Range, Time } from 'types';
+import { DailyTimeRecord, DayOfWeekCode, Range, Time } from 'types';
 import { DATE_FORMAT } from 'constants/dateFormat';
-import { dateStringToDateString, stringDateToDate } from './dateUtil';
+import { dateStringToDateString, daysOfMonth, stringDateToDate } from './dateUtil';
 import { minuteToTimeString, timeRangeToMinute, timeRangeToTimeString, timeToTimeString } from './timeUtil';
 
 export const omitUndefinedProps = <T extends Record<string, unknown>>(obj: T) =>
@@ -105,13 +108,15 @@ export const toOverviewOfOperatingTimes = (month: string, dailyTimeRecords: Dail
   ].join('\n');
 };
 
+const toWorkingTimesString = ({ start, end }: Range<string> = {}): string =>
+  !start || !end ? 'N/A' : [start, end].join('-');
+
 /**
  * 設定した定時と昼休憩を整形して返却する
  * @param params
  * @returns 定時と昼休憩を返却
  * @example '定時：10:00-18:30 （昼休憩 13:00-14:00）'
  */
-// eslint-disable-next-line complexity
 export const toOverviewOfTimecardPreference = <T extends Range<Time>>(params: {
   workingTimes?: T;
   lunchBreak?: T;
@@ -119,10 +124,7 @@ export const toOverviewOfTimecardPreference = <T extends Range<Time>>(params: {
   const workingTimes = timeRangeToTimeString(params?.workingTimes ?? {});
   const restTime = timeRangeToTimeString(params?.lunchBreak ?? {});
 
-  return [
-    `定時：${workingTimes?.start && workingTimes?.end ? [workingTimes.start, workingTimes.end].join('-') : 'N/A'}`,
-    `（昼休憩 ${restTime?.start && restTime?.end ? [restTime.start, restTime.end].join('-') : 'N/A'}）`,
-  ].join(' ');
+  return [`定時：${toWorkingTimesString(workingTimes)}`, `（昼休憩 ${toWorkingTimesString(restTime)}）`].join(' ');
 };
 
 /**
@@ -139,7 +141,32 @@ export const toOverviewOfTimecardPreference = <T extends Range<Time>>(params: {
  * ...
  * `
  */
-export const toDetailsOfDailyTimeRecords = (month: string, dailyTimeRecords: DailyTimeRecord[]): string => {
-  // FIXME: add roundDownMinute
-  return '';
-};
+export const toDetailsOfDailyTimeRecords = (
+  month: string,
+  dailyTimeRecords: DailyTimeRecord[],
+  regularHolidays: DayOfWeekCode[] = [],
+): string =>
+  daysOfMonth(month)
+    .map((day) => {
+      const base = {
+        day,
+        date: format(day, DATE_FORMAT.monthDayWithDayOfWeekJP, { locale: ja }),
+      } as const;
+      const timeRecord = dailyTimeRecords.find(({ date }) => date === format(day, DATE_FORMAT.dateISO));
+
+      if (!timeRecord) {
+        const isHoliday = regularHolidays.includes(day.getDay() as DayOfWeekCode);
+        return {
+          ...base,
+          workingTimes: isHoliday ? '休日' : 'N/A',
+        };
+      }
+
+      const workingTimes = timeRangeToTimeString({ start: timeRecord?.start, end: timeRecord?.end });
+      return {
+        ...base,
+        workingTimes: toWorkingTimesString(workingTimes),
+      };
+    })
+    .map(({ day, date, workingTimes }) => `${date} ${workingTimes}${isSunday(day) ? '\n' : ''}`)
+    .join('\n');

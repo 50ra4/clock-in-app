@@ -28,7 +28,7 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
         // FIXME: use correct lunch break data
         lunchBreak: preference?.restTimes[0],
       }),
-      toDetailsOfDailyTimeRecords(month, dailyTimeRecords),
+      toDetailsOfDailyTimeRecords(month, dailyTimeRecords, preference?.regularHolidays),
     ].join('\n');
 
     return [overviewOfOperatingTimes, detailsOfDailyTimeRecords].join('\n\n');

@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { DailyTimeRecord, TimecardUserPreference } from 'types';
-import { toOverviewOfOperatingTimes } from 'utils/converterUtil';
+import { toDetailsOfDailyTimeRecords, toOverviewOfOperatingTimes } from 'utils/converterUtil';
 
 /**
  * month:年月（yyyy-MM形式）
@@ -13,10 +13,17 @@ type Props = {
 
 export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Props) => {
   const monthlyOverview = useMemo(() => {
-    const overviewOfOperatingTimes = toOverviewOfOperatingTimes(month, dailyTimeRecords);
-    // TODO: add daily summary
-    return overviewOfOperatingTimes;
-  }, [dailyTimeRecords, month]);
+    const overviewOfOperatingTimes = [
+      '【稼働時間概要】', //
+      toOverviewOfOperatingTimes(month, dailyTimeRecords),
+    ].join('\n');
+    const detailsOfDailyTimeRecords = [
+      '【稼働詳細】', //
+      toDetailsOfDailyTimeRecords(dailyTimeRecords, preference),
+    ].join('\n');
+
+    return [overviewOfOperatingTimes, detailsOfDailyTimeRecords].join('\n\n');
+  }, [dailyTimeRecords, month, preference]);
 
   const copyMonthlyOverviewToClipboard = useCallback(() => {
     // FIXME: replace with snackbar

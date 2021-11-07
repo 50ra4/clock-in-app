@@ -17,6 +17,7 @@ import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
+import { toOverviewOfOperatingTimes } from 'utils/converterUtil';
 
 type Props = {
   uid: string;
@@ -50,6 +51,12 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     console.log(modified);
     return modified;
   }, [rootCollectionData, subCollectionData]);
+
+  const monthlyOverview = useMemo(() => {
+    const overviewOfOperatingTimes = toOverviewOfOperatingTimes(month, dailyTimeRecordsOfMonth);
+    // TODO: add daily summary
+    return overviewOfOperatingTimes;
+  }, [dailyTimeRecordsOfMonth, month]);
 
   const saveDailyTimeRecord = useCallback(
     async (data: DailyTimeRecord) => {
@@ -93,6 +100,22 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     },
     [dispatch, uid],
   );
+
+  const copyMonthlyOverviewToClipboard = useCallback(() => {
+    // FIXME: replace with snackbar
+    if (!window?.navigator?.clipboard?.writeText) {
+      window.alert('ご利用中のブラウザには対応していません!');
+      return;
+    }
+    window.navigator.clipboard
+      .writeText(monthlyOverview)
+      .then(() => {
+        window.alert('クリップボードに貼り付けました!');
+      })
+      .catch(() => {
+        window.alert('失敗しました、再度お試しください!');
+      });
+  }, [monthlyOverview]);
 
   useEffect(() => {
     if (!error) {
@@ -161,7 +184,9 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
   return {
     dailyTimeRecordsOfMonth,
+    monthlyOverview,
     saveDailyTimeRecord,
     removeDailyTimeRecord,
+    copyMonthlyOverviewToClipboard,
   };
 };

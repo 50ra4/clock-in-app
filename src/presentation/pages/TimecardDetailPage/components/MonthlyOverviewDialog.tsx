@@ -10,7 +10,7 @@ type OwnProps = {
   open?: boolean;
   readOnly: boolean;
   title: string;
-  text: string;
+  overview: string;
   onClose: () => void;
   onClickCopy: () => void;
 };
@@ -19,14 +19,14 @@ export const MonthlyOverviewDialog = React.memo(function MonthlyOverviewDialog({
   open = false,
   readOnly,
   title,
-  text,
+  overview,
   className,
   onClose,
   onClickCopy,
 }: OwnProps) {
   return (
     <StyledCustomDialog
-      id="monthly-overview-input"
+      id="monthly-overview"
       title={title}
       open={open}
       className={className}
@@ -38,7 +38,7 @@ export const MonthlyOverviewDialog = React.memo(function MonthlyOverviewDialog({
         </>
       }
     >
-      <StyledTextArea id="monthly-overview" name="monthly-overview" value={text} readOnly={readOnly} />
+      <StyledTextArea id="monthly-overview" name="monthly-overview" value={overview} readOnly={readOnly} />
     </StyledCustomDialog>
   );
 });
@@ -52,4 +52,6 @@ const StyledButton = styled(Button)`
   min-width: 80px;
 `;
 
-const StyledTextArea = styled(TextArea)``;
+const StyledTextArea = styled(TextArea)`
+  min-height: 300px;
+`;

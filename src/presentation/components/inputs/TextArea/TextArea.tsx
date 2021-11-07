@@ -25,31 +25,25 @@ export const UnStyledTextArea = React.memo(function TextArea({
   error,
   ...otherProps
 }: TextAreaProps) {
-  return (
-    <div className={className}>
-      <textarea {...otherProps} ref={ref} value={value} />
-    </div>
-  );
+  return <textarea {...otherProps} className={className} ref={ref} value={value} />;
 });
 
 export const TextArea = styled(UnStyledTextArea)`
-  & > textarea {
-    resize: none;
-    width: 100%;
-    height: ${({ row = 3 }) => row * 24}px;
-    font-size: ${({ theme }) => theme.font.size.middle}px;
-    padding: ${({ theme }) => `0 ${theme.space.large}px`};
+  resize: none;
+  width: 100%;
+  height: ${({ row = 3 }) => row * 24}px;
+  font-size: ${({ theme }) => theme.font.size.middle}px;
+  padding: ${({ theme }) => `0 ${theme.space.large}px`};
+  background-color: #ffffff;
+  ${({ error }) =>
+    error &&
+    css`
+      background-color: #ffeeff;
+      outline: 2px solid ${({ theme }) => theme.color.font.red};
+    `}
+  &:focus {
     background-color: #ffffff;
-    ${({ error }) =>
-      error &&
-      css`
-        background-color: #ffeeff;
-        outline: 2px solid ${({ theme }) => theme.color.font.red};
-      `}
-    &:focus {
-      background-color: #ffffff;
-      outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
-    }
-    caret-color: ${({ theme }) => theme.color.palette.secondary.background};
+    outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
   }
+  caret-color: ${({ theme }) => theme.color.palette.secondary.background};
 `;

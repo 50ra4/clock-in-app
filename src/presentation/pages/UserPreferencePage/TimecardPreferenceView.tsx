@@ -67,17 +67,17 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
         />
         <RestTimeFormGroup
           type="input"
-          value={formState.restTimes}
+          value={formState.otherRestTimes}
           readOnly={readOnly}
           disabled={readOnly}
-          errors={formErrors.restTimes}
+          errors={formErrors.otherRestTimes}
           sortable={true}
           max={5}
           onChange={(value) => {
-            onChangeFormState('restTimes', value);
+            onChangeFormState('otherRestTimes', value);
           }}
           onClickAdd={(prev) => {
-            onChangeFormState('restTimes', [...prev, { id: undefined }]);
+            onChangeFormState('otherRestTimes', [...prev, { id: undefined }]);
           }}
         />
         <MinuteForm

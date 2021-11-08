@@ -30,10 +30,10 @@ export const InputRecordForm = React.memo(function InputRecordForm({
   const onAddRestTime = React.useCallback(
     (prev: RestTime[]) => {
       const { start, end } =
-        prev.length === 0 ? preference.lunchRestTime : preference.restTimes[prev.length - 1] ?? { id: undefined };
+        prev.length === 0 ? preference.lunchRestTime : preference.otherRestTimes[prev.length - 1] ?? { id: undefined };
       onChangeDailyTimeRecord('restTimes', [...prev, { id: undefined, start: { ...start }, end: { ...end } }]);
     },
-    [onChangeDailyTimeRecord, preference.lunchRestTime, preference.restTimes],
+    [onChangeDailyTimeRecord, preference.lunchRestTime, preference.otherRestTimes],
   );
 
   return (

@@ -10,6 +10,17 @@ import { DATE_FORMAT } from 'constants/dateFormat';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { useInputRecordForm } from '../hooks/useInputRecordForm';
 
+const toInitialFormState = (dailyTimeRecord: DailyTimeRecord, preference: TimecardUserPreference): DailyTimeRecord => {
+  const {
+    lunchRestTime: { start, end },
+  } = preference;
+  const restTimes =
+    dailyTimeRecord.restTimes.length > 0
+      ? dailyTimeRecord.restTimes
+      : [{ id: undefined, start: { ...start }, end: { ...end } }];
+  return { ...dailyTimeRecord, restTimes };
+};
+
 type OwnProps = {
   className?: string;
   open?: boolean;
@@ -36,7 +47,7 @@ export const InputRecordDialog = React.memo(function InputRecordDialog({
     onChangeFormState: onChangeDailyTimeRecord,
     formErrors,
     hasFormError,
-  } = useInputRecordForm(initialTimeRecord);
+  } = useInputRecordForm(toInitialFormState(initialTimeRecord, preference));
 
   return (
     <StyledCustomDialog

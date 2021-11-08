@@ -24,9 +24,13 @@ export const useTimecardPreferenceForm = (initialState: TimecardUserPreference) 
       () => toValidationErrorMessage(validateMinute(formState.roundDownMinute)),
       [formState.roundDownMinute],
     ),
-    restTimes: useMemo(
-      () => formState.restTimes.map((v) => toValidationErrorMessage(validateRestTime(v))),
-      [formState.restTimes],
+    lunchRestTime: useMemo(
+      () => toValidationErrorMessage(validateTimeRange(formState.lunchRestTime)),
+      [formState.lunchRestTime],
+    ),
+    otherRestTimes: useMemo(
+      () => formState.otherRestTimes.map((v) => toValidationErrorMessage(validateRestTime(v))),
+      [formState.otherRestTimes],
     ),
     /**
      * @see https://github.com/50ra4/clock-in-app/issues/92

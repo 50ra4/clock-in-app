@@ -156,7 +156,8 @@ Docs.args = {
   preference: {
     regularHolidays: [0, 1],
     roundDownMinute: 0,
-    restTimes: [],
+    lunchRestTime: {},
+    otherRestTimes: [],
     workingTimes: {},
   },
 };

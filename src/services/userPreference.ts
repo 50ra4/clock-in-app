@@ -23,6 +23,7 @@ const docToTimecardUserPreference = (doc: firebase.firestore.DocumentSnapshot<fi
   workingEnd: doc.get('workingEnd'),
   roundDownMinute: doc.get('roundDownMinute'),
   regularHolidays: doc.get('regularHolidays'),
+  lunchRestTime: doc.get('lunchRestTime'),
   restTimes: [], // NOTE: fetch sub-collection
   // FIXME: TimecardUserPreference type
   updatedAt: doc.get('updatedAt'),
@@ -31,57 +32,59 @@ const docToTimecardUserPreference = (doc: firebase.firestore.DocumentSnapshot<fi
 
 export const readTimecardUserPreference = async (uid: string): Promise<TimecardUserPreference> => {
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
-  const restTimeCollectionRef = rootDocumentRef.collection('rest-times');
+  const otherRestTimeCollectionRef = rootDocumentRef.collection('other-rest-times');
 
   const {
     workingStart = {},
     workingEnd = {},
+    lunchRestTime = {},
     roundDownMinute = 0,
     regularHolidays = [],
   } = await rootDocumentRef.get().then(docToTimecardUserPreference);
 
-  const restTimes = await restTimeCollectionRef
+  const otherRestTimes = await otherRestTimeCollectionRef
     .orderBy('order', 'asc')
     .get()
     .then((snapshot) => snapshot.docs.map(queryToRestTime));
 
   return {
     workingTimes: { start: workingStart, end: workingEnd },
+    lunchRestTime,
     roundDownMinute,
     regularHolidays,
-    restTimes,
+    otherRestTimes,
   };
 };
 
 export const writeTimecardUserPreference = async (uid: string, data: TimecardUserPreference) => {
   const {
-    restTimes,
+    otherRestTimes,
     workingTimes: { start: workingStart, end: workingEnd },
     ...rest
   } = data;
 
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
-  const restTimeCollectionRef = rootDocumentRef.collection('rest-times');
+  const otherRestTimeCollectionRef = rootDocumentRef.collection('other-rest-times');
 
   const rootDocument = await rootDocumentRef.get();
-  const alreadySavedRestTimes = await restTimeCollectionRef
+  const alreadySavedRestTimes = await otherRestTimeCollectionRef
     .get()
     .then((snapshot) => snapshot.docs.map(queryToRestTime));
 
   const batch = firestore.batch();
 
-  // restTimes
-  const restTimeIdsToDelete = alreadySavedRestTimes.filter(
-    ({ id: previousId }) => !restTimes.some(({ id: currentId }) => currentId === previousId),
+  // otherRestTimes
+  const otherRestTimeIdsToDelete = alreadySavedRestTimes.filter(
+    ({ id: previousId }) => !otherRestTimes.some(({ id: currentId }) => currentId === previousId),
   );
-  restTimeIdsToDelete.forEach(({ id }) => {
-    const document = restTimeCollectionRef.doc(id);
+  otherRestTimeIdsToDelete.forEach(({ id }) => {
+    const document = otherRestTimeCollectionRef.doc(id);
     batch.delete(document);
   });
 
-  restTimes.forEach(({ id, start, end }, index) => {
+  otherRestTimes.forEach(({ id, start, end }, index) => {
     batch.set(
-      restTimeCollectionRef.doc(id),
+      otherRestTimeCollectionRef.doc(id),
       {
         order: index,
         start: formatTimeToQuery(start),

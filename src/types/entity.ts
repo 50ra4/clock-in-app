@@ -45,6 +45,7 @@ export type Authentication = {
 export type TimecardUserPreference = {
   workingTimes: Range<Time>;
   roundDownMinute: number;
-  restTimes: RestTime[];
+  lunchRestTime: Range<Time>;
+  otherRestTimes: RestTime[];
   regularHolidays: DayOfWeekCode[];
 };

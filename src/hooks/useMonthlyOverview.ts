@@ -25,8 +25,7 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
       '【稼働詳細】', //
       toOverviewOfTimecardPreference({
         workingTimes: preference?.workingTimes,
-        // FIXME: use correct lunch break data
-        lunchBreak: preference?.restTimes[0],
+        lunchBreak: preference?.lunchRestTime,
       }),
       toDetailsOfDailyTimeRecords(month, dailyTimeRecords, preference?.regularHolidays),
     ].join('\n');
@@ -46,7 +45,7 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
         window.alert('クリップボードに貼り付けました!');
       })
       .catch(() => {
-        window.alert('失敗しました、再度お試しください!');
+        window.alert('失敗しました、再度お試しください!');
       });
   }, [monthlyOverview]);
 

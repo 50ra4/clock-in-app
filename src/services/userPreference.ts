@@ -23,6 +23,7 @@ const docToTimecardUserPreference = (doc: firebase.firestore.DocumentSnapshot<fi
   workingEnd: doc.get('workingEnd'),
   roundDownMinute: doc.get('roundDownMinute'),
   regularHolidays: doc.get('regularHolidays'),
+  lunchRestTime: doc.get('lunchRestTime'),
   restTimes: [], // NOTE: fetch sub-collection
   // FIXME: TimecardUserPreference type
   updatedAt: doc.get('updatedAt'),
@@ -36,6 +37,7 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
   const {
     workingStart = {},
     workingEnd = {},
+    lunchRestTime = {},
     roundDownMinute = 0,
     regularHolidays = [],
   } = await rootDocumentRef.get().then(docToTimecardUserPreference);
@@ -47,6 +49,7 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
 
   return {
     workingTimes: { start: workingStart, end: workingEnd },
+    lunchRestTime,
     roundDownMinute,
     regularHolidays,
     restTimes,

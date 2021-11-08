@@ -24,6 +24,10 @@ export const useTimecardPreferenceForm = (initialState: TimecardUserPreference) 
       () => toValidationErrorMessage(validateMinute(formState.roundDownMinute)),
       [formState.roundDownMinute],
     ),
+    lunchRestTime: useMemo(
+      () => toValidationErrorMessage(validateTimeRange(formState.lunchRestTime)),
+      [formState.lunchRestTime],
+    ),
     restTimes: useMemo(
       () => formState.restTimes.map((v) => toValidationErrorMessage(validateRestTime(v))),
       [formState.restTimes],

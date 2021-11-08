@@ -52,6 +52,19 @@ export const TimecardPreferenceView = React.memo(function TimecardPreferenceView
             onChangeFormState('regularHolidays', value);
           }}
         />
+        <TimeRangeForm
+          id="lunch-rest-time"
+          name="lunch-rest-time"
+          label="お昼休憩"
+          type="input"
+          value={formState.lunchRestTime}
+          readOnly={readOnly}
+          disabled={readOnly}
+          error={formErrors.lunchRestTime}
+          onChange={(v) => {
+            onChangeFormState('lunchRestTime', v);
+          }}
+        />
         <RestTimeFormGroup
           type="input"
           value={formState.restTimes}

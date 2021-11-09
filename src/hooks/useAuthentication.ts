@@ -1,8 +1,6 @@
 import { FETCH_STATUS_ENUM, LOGIN_STATUS_ENUM } from 'constants/enum';
-import { PAGE_PATH } from 'constants/path';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
 
 import { fireAuthentication } from 'services/firebase';
 import { authenticationActions } from 'store/authentication';

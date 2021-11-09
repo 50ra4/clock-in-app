@@ -3,8 +3,11 @@ import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHead
 import { PAGE_PATH } from 'constants/path';
 import { Link } from 'presentation/components/navigation/Link/Link';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
+import { useHomeRedirection } from 'hooks/useHomeRedirection';
 
 const TopPage = () => {
+  useHomeRedirection();
+
   return (
     <WithHeaderLayout>
       <StyledRoot placement="left">
@@ -29,8 +32,6 @@ const StyledRoot = styled(ResponsiveLayout)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  & > div {
-  }
 `;
 const StyledPR = styled.h2`
   font-size: ${({ theme }) => theme.font.size.extraLarge}px;

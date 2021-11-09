@@ -1,8 +1,6 @@
 import { FETCH_STATUS_ENUM, LOGIN_STATUS_ENUM } from 'constants/enum';
-import { PAGE_PATH } from 'constants/path';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
 
 import { fireAuthentication } from 'services/firebase';
 import { authenticationActions } from 'store/authentication';
@@ -124,20 +122,4 @@ export const useDetectAuthStateChanged = () => {
   }, [error]);
 
   return { isInitialized };
-};
-
-export const useLoginRedirection = () => {
-  const history = useHistory();
-  const { isLoggedIn } = useAuthentication();
-
-  useEffect(() => {
-    if (!isLoggedIn) {
-      const searchParams = new URLSearchParams();
-      searchParams.append('from', `${history.location.pathname}${history.location.search}`);
-      // TODO: feedback message
-      history.replace({ pathname: PAGE_PATH.login, search: searchParams.toString() });
-    }
-    // NOTE: run when isLoggedIn changed
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoggedIn]);
 };

@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { Link } from 'presentation/components/navigation/Link/Link';
-import { useAuthentication, useLoginRedirection } from 'hooks/useAuthentication';
+import { useAuthentication } from 'hooks/useAuthentication';
+import { useLoginRedirection } from 'hooks/useLoginRedirection';
+
 import { replacePathParams } from 'utils/pathUtil';
 import { PAGE_PATH } from 'constants/path';
 

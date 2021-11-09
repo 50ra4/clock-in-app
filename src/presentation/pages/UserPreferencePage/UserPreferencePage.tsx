@@ -1,5 +1,6 @@
 import { useParams } from 'react-router';
-import { useAuthentication, useLoginRedirection } from 'hooks/useAuthentication';
+import { useAuthentication } from 'hooks/useAuthentication';
+import { useLoginRedirection } from 'hooks/useLoginRedirection';
 import { useUserPreference } from 'hooks/useUserPreference';
 
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';

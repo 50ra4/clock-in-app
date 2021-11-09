@@ -1,4 +1,4 @@
-import { useLoginRedirection } from 'hooks/useAuthentication';
+import { useLoginRedirection } from 'hooks/useLoginRedirection';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { MobileView } from './MobileView';
 

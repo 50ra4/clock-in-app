@@ -4,28 +4,25 @@ import { CloseIcon } from 'presentation/components/display/Icons/CloseIcon';
 import { MenuIcon } from 'presentation/components/display/Icons/MenuIcon';
 import { IconButton, IconButtonProps } from 'presentation/components/inputs/IconButton/IconButton';
 
-type OwnProps = {
+export type HeaderProps = {
   className?: string;
   title: string | React.ReactNode;
   openMenu?: boolean;
-  onToggleMenu?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  showMenuIcon?: boolean;
+  onToggleMenu?: () => void;
 };
-
-type InheritedProps = Omit<JSX.IntrinsicElements['header'], 'children' | keyof OwnProps>;
-
-export type HeaderProps = OwnProps & InheritedProps;
 
 const UnStyledHeader = React.memo(function Header({
   className,
   title,
   openMenu = false,
+  showMenuIcon = true,
   onToggleMenu,
-  ...otherProps
 }: HeaderProps) {
   return (
-    <header {...otherProps} className={className}>
+    <header className={className}>
       {typeof title === 'string' ? <h2>{title}</h2> : title}
-      <RightActionButton open={openMenu} onClick={onToggleMenu} />
+      {showMenuIcon && <RightActionButton open={openMenu} onClick={onToggleMenu} />}
     </header>
   );
 });
@@ -37,7 +34,7 @@ const RightActionButton = React.memo(function RightActionButton({
 }: IconButtonProps & { open: boolean }) {
   return (
     <IconButton {...otherProps} aria-label={open ? 'メニューを閉じる' : 'メニューを表示'}>
-      {open ? <CloseIcon /> : <MenuIcon />}
+      {open ? <CloseIcon color="main" /> : <MenuIcon color="main" />}
     </IconButton>
   );
 });

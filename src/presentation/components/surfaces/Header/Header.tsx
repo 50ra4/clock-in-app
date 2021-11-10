@@ -37,7 +37,7 @@ const RightActionButton = React.memo(function RightActionButton({
 }: IconButtonProps & { open: boolean }) {
   return (
     <IconButton {...otherProps} aria-label={open ? 'メニューを閉じる' : 'メニューを表示'}>
-      {open ? <CloseIcon /> : <MenuIcon />}
+      {open ? <CloseIcon color="main" /> : <MenuIcon color="main" />}
     </IconButton>
   );
 });

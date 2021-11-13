@@ -10,6 +10,7 @@ import { ErrorBoundary } from './ErrorBoundary';
 import { ERROR_HEADING_WITH_MESSAGE } from 'constants/error';
 import { useDetectAuthStateChanged } from 'hooks/useAuthentication';
 import { ConnectedDialog } from 'containers/ConnectedDialog';
+import { ConnectedSnackbar } from 'containers/ConnectedSnackbar';
 
 function App() {
   const { isInitialized } = useDetectAuthStateChanged();
@@ -32,6 +33,7 @@ function App() {
         </ErrorBoundary>
       </Suspense>
       <ConnectedDialog />
+      <ConnectedSnackbar />
     </ThemeProvider>
   );
 }

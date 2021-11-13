@@ -2,9 +2,10 @@ import { FETCH_STATUS_ENUM, LOGIN_STATUS_ENUM } from 'constants/enum';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { AppState } from 'store/root';
+import { showSnackbar } from 'thunks/snackbar';
 import { fireAuthentication } from 'services/firebase';
 import { authenticationActions } from 'store/authentication';
-import { AppState } from 'store/root';
 
 /**
  * @see https://usehooks.com/useAuth/
@@ -25,6 +26,7 @@ export const useAuthentication = () => {
         await fireAuthentication.setPersistence('local');
         const credential = await fireAuthentication.signInWithEmailAndPassword(email, password);
         dispatch(authenticationActions.success());
+        dispatch(showSnackbar({ content: 'ログインしました' }));
         return { result: true, credential } as const;
       } catch (error) {
         dispatch(authenticationActions.failed({ error: error as Error }));
@@ -54,6 +56,7 @@ export const useAuthentication = () => {
     try {
       await fireAuthentication.signOut();
       dispatch(authenticationActions.logout());
+      dispatch(showSnackbar({ content: 'ログアウトしました' }));
       return { result: true } as const;
     } catch (error) {
       dispatch(authenticationActions.failed({ error: error as Error }));

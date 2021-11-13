@@ -1,4 +1,6 @@
 import { useCallback, useMemo } from 'react';
+import { useDispatch } from 'react-redux';
+import { showSnackbar } from 'thunks/snackbar';
 import { DailyTimeRecord, TimecardUserPreference } from 'types';
 import {
   toDetailsOfDailyTimeRecords,
@@ -16,6 +18,7 @@ type Props = {
 };
 
 export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Props) => {
+  const dispatch = useDispatch();
   const monthlyOverview = useMemo(() => {
     const overviewOfOperatingTimes = [
       '【稼働時間概要】', //
@@ -34,20 +37,19 @@ export const useMonthlyOverview = ({ month, dailyTimeRecords, preference }: Prop
   }, [dailyTimeRecords, month, preference]);
 
   const copyMonthlyOverviewToClipboard = useCallback(() => {
-    // FIXME: replace with snackbar
     if (!window?.navigator?.clipboard?.writeText) {
-      window.alert('ご利用中のブラウザには対応していません!');
+      dispatch(showSnackbar({ severity: 'error', content: 'ご利用中のブラウザには未対応のようです' }));
       return;
     }
     window.navigator.clipboard
       .writeText(monthlyOverview)
       .then(() => {
-        window.alert('クリップボードに貼り付けました!');
+        dispatch(showSnackbar({ severity: 'success', content: 'クリップボードに貼り付けました' }));
       })
       .catch(() => {
-        window.alert('失敗しました、再度お試しください!');
+        dispatch(showSnackbar({ severity: 'error', content: 'お手数ですが、再度お試しください' }));
       });
-  }, [monthlyOverview]);
+  }, [dispatch, monthlyOverview]);
 
   return {
     monthlyOverview,

@@ -68,10 +68,11 @@ const UnStyledSnackbar = React.memo(function Snackbar({
     if (status !== SNACKBAR_STATUS.fadeOut) {
       return;
     }
-    if (onClose) {
-      setStatus(SNACKBAR_STATUS.initial);
-      onClose();
+    setStatus(SNACKBAR_STATUS.initial);
+    if (!onClose) {
+      return;
     }
+    onClose();
   };
 
   const rootClassName = matchClassNames([

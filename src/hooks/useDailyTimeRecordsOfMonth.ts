@@ -12,7 +12,7 @@ import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
-import { queryToDailyTimeRecord } from 'services/converter';
+import { documentToDailyTimeRecord } from 'services/converter';
 
 type Props = {
   uid: string;
@@ -112,7 +112,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
             updated.delete(id);
             return;
           }
-          updated.set(id, queryToDailyTimeRecord(doc));
+          updated.set(id, documentToDailyTimeRecord(doc));
         });
         setRootCollectionData(updated);
       },

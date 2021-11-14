@@ -13,39 +13,42 @@ const createAdditionalProps = (uid: string, isUpdated?: boolean) => {
 
 const formatTimeToQuery = (time?: Time) => (!time ? {} : omitUndefinedProps(time));
 
-type Query =
+type Document =
   | firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>
   | firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>;
 
-export const queryToRestTime = (query: Query): RestTime =>
+export const documentToRestTime = (document: Document): RestTime =>
   ({
-    id: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
+    id: document.id,
+    start: document.get('start'),
+    end: document.get('end'),
     // FIXME: RestTime type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
+    updatedAt: document.get('updatedAt'),
+    createdAt: document.get('createdAt'),
   } as RestTime);
 
-export const restTimeToDocument = ({ id, start, end }: RestTime, { uid, index }: { uid: string; index: number }) => ({
+export const restTimeToDocumentData = (
+  { id, start, end }: RestTime,
+  { uid, index }: { uid: string; index: number },
+) => ({
   order: index + 1,
   start: formatTimeToQuery(start),
   end: formatTimeToQuery(end),
   ...createAdditionalProps(uid, !!id),
 });
 
-export const queryToInHouseWork = (query: Query): InHouseWork =>
+export const documentToInHouseWork = (document: Document): InHouseWork =>
   ({
-    id: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    remarks: query.get('remarks'),
+    id: document.id,
+    start: document.get('start'),
+    end: document.get('end'),
+    remarks: document.get('remarks'),
     // FIXME: InHouseWork type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
+    updatedAt: document.get('updatedAt'),
+    createdAt: document.get('createdAt'),
   } as InHouseWork);
 
-export const inHouseWorkToDocument = (
+export const inHouseWorkToDocumentData = (
   { id, start, end, remarks }: InHouseWork,
   { uid, index }: { uid: string; index: number },
 ) => ({
@@ -56,20 +59,20 @@ export const inHouseWorkToDocument = (
   ...createAdditionalProps(uid, !!id),
 });
 
-export const queryToDailyTimeRecord = (query: Query): DailyTimeRecord =>
+export const documentToDailyTimeRecord = (document: Document): DailyTimeRecord =>
   ({
-    date: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    remarks: query.get('remarks'),
+    date: document.id,
+    start: document.get('start'),
+    end: document.get('end'),
+    remarks: document.get('remarks'),
     restTimes: [], // NOTE: fetch sub-collection
     inHouseWorks: [], // NOTE: fetch sub-collection
     // FIXME: DailyTimeRecords type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
+    updatedAt: document.get('updatedAt'),
+    createdAt: document.get('createdAt'),
   } as DailyTimeRecord);
 
-export const dailyTimeRecordToDocument = (
+export const dailyTimeRecordToDocumentData = (
   { start, end, remarks }: DailyTimeRecord,
   { uid, isUpdated }: { uid: string; isUpdated: boolean },
 ) => ({
@@ -79,20 +82,20 @@ export const dailyTimeRecordToDocument = (
   ...createAdditionalProps(uid, isUpdated),
 });
 
-export const queryToTimecardUserPreference = (query: Query) => ({
-  workingStart: query.get('workingStart'),
-  workingEnd: query.get('workingEnd'),
-  roundDownMinute: query.get('roundDownMinute'),
-  regularHolidays: query.get('regularHolidays'),
+export const documentToTimecardUserPreference = (document: Document) => ({
+  workingStart: document.get('workingStart'),
+  workingEnd: document.get('workingEnd'),
+  roundDownMinute: document.get('roundDownMinute'),
+  regularHolidays: document.get('regularHolidays'),
   // FIXME:
-  lunchRestTime: query.get('lunchRestTime'),
+  lunchRestTime: document.get('lunchRestTime'),
   restTimes: [], // NOTE: fetch sub-collection
   // FIXME: TimecardUserPreference type
-  updatedAt: query.get('updatedAt'),
-  createdAt: query.get('createdAt'),
+  updatedAt: document.get('updatedAt'),
+  createdAt: document.get('createdAt'),
 });
 
-export const timecardUserPreferenceToDocument = (
+export const timecardUserPreferenceToDocumentData = (
   {
     workingTimes: { start: workingStart, end: workingEnd },
     lunchRestTime: { start: lunchRestTimeStart, end: lunchRestTimeEnd },

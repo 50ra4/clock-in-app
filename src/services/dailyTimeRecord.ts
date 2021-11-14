@@ -9,11 +9,11 @@ import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
 import { firestore } from './firebase';
 import {
-  dailyTimeRecordToDocument,
-  inHouseWorkToDocument,
-  queryToInHouseWork,
-  queryToRestTime,
-  restTimeToDocument,
+  dailyTimeRecordToDocumentData,
+  inHouseWorkToDocumentData,
+  documentToInHouseWork,
+  documentToRestTime,
+  restTimeToDocumentData,
 } from './converter';
 
 const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
@@ -23,7 +23,7 @@ const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
       .collection(replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day }))
       // TODO: add order by
       .get()
-      .then((snapshot) => snapshot.docs.map(queryToRestTime))
+      .then((snapshot) => snapshot.docs.map(documentToRestTime))
   );
 };
 
@@ -34,7 +34,7 @@ const readInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]
       .collection(replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day }))
       // TODO: add order by
       .get()
-      .then((snapshot) => snapshot.docs.map(queryToInHouseWork))
+      .then((snapshot) => snapshot.docs.map(documentToInHouseWork))
   );
 };
 
@@ -80,7 +80,7 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
   });
 
   inHouseWorks.forEach((inHouseWork, index) => {
-    batch.set(inHouseWorkCollectionRef.doc(inHouseWork.id), inHouseWorkToDocument(inHouseWork, { uid, index }), {
+    batch.set(inHouseWorkCollectionRef.doc(inHouseWork.id), inHouseWorkToDocumentData(inHouseWork, { uid, index }), {
       merge: true,
     });
   });
@@ -95,11 +95,15 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
   });
 
   restTimes.forEach((restTime, index) => {
-    batch.set(restTimeCollectionRef.doc(restTime.id), restTimeToDocument(restTime, { uid, index }), { merge: true });
+    batch.set(restTimeCollectionRef.doc(restTime.id), restTimeToDocumentData(restTime, { uid, index }), {
+      merge: true,
+    });
   });
 
   // root
-  batch.set(rootDocumentRef, dailyTimeRecordToDocument(data, { uid, isUpdated: rootDocument.exists }), { merge: true });
+  batch.set(rootDocumentRef, dailyTimeRecordToDocumentData(data, { uid, isUpdated: rootDocument.exists }), {
+    merge: true,
+  });
 
   await batch.commit();
 };

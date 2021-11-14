@@ -4,10 +4,10 @@ import { TimecardUserPreference } from 'types';
 import { replacePathParams } from 'utils/pathUtil';
 import { TIMECARD_USER_PREFERENCE_DOCUMENT_PATH } from 'constants/firestore';
 import {
-  queryToRestTime,
-  queryToTimecardUserPreference,
-  restTimeToDocument,
-  timecardUserPreferenceToDocument,
+  documentToRestTime,
+  documentToTimecardUserPreference,
+  restTimeToDocumentData,
+  timecardUserPreferenceToDocumentData,
 } from './converter';
 
 export const readTimecardUserPreference = async (uid: string): Promise<TimecardUserPreference> => {
@@ -20,12 +20,12 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
     lunchRestTime = {},
     roundDownMinute = 0,
     regularHolidays = [],
-  } = await rootDocumentRef.get().then(queryToTimecardUserPreference);
+  } = await rootDocumentRef.get().then(documentToTimecardUserPreference);
 
   const otherRestTimes = await otherRestTimeCollectionRef
     .orderBy('order', 'asc')
     .get()
-    .then((snapshot) => snapshot.docs.map(queryToRestTime));
+    .then((snapshot) => snapshot.docs.map(documentToRestTime));
 
   return {
     workingTimes: { start: workingStart, end: workingEnd },
@@ -45,7 +45,7 @@ export const writeTimecardUserPreference = async (uid: string, data: TimecardUse
   const rootDocument = await rootDocumentRef.get();
   const alreadySavedRestTimes = await otherRestTimeCollectionRef
     .get()
-    .then((snapshot) => snapshot.docs.map(queryToRestTime));
+    .then((snapshot) => snapshot.docs.map(documentToRestTime));
 
   const batch = firestore.batch();
 
@@ -59,13 +59,13 @@ export const writeTimecardUserPreference = async (uid: string, data: TimecardUse
   });
 
   otherRestTimes.forEach((restTime, index) => {
-    batch.set(otherRestTimeCollectionRef.doc(restTime.id), restTimeToDocument(restTime, { uid, index }), {
+    batch.set(otherRestTimeCollectionRef.doc(restTime.id), restTimeToDocumentData(restTime, { uid, index }), {
       merge: true,
     });
   });
 
   // root
-  batch.set(rootDocumentRef, timecardUserPreferenceToDocument(data, { uid, isUpdated: rootDocument.exists }), {
+  batch.set(rootDocumentRef, timecardUserPreferenceToDocumentData(data, { uid, isUpdated: rootDocument.exists }), {
     merge: true,
   });
 

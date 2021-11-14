@@ -1,7 +1,17 @@
-import { DailyTimeRecord, InHouseWork, RestTime, TimecardUserPreference } from 'types';
-import { omitUndefinedProps } from 'utils/converterUtil';
 import { firebase } from './firebase';
-import { createAdditionalProps, formatTimeToQuery } from './utils';
+import { DailyTimeRecord, InHouseWork, RestTime, Time, TimecardUserPreference } from 'types';
+import { omitUndefinedProps } from 'utils/converterUtil';
+
+const createAdditionalProps = (uid: string, isUpdated?: boolean) => {
+  const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+
+  return {
+    ...(isUpdated ? {} : { createdAt: timestamp }),
+    updatedAt: timestamp,
+  };
+};
+
+const formatTimeToQuery = (time?: Time) => (!time ? {} : omitUndefinedProps(time));
 
 type Query =
   | firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>

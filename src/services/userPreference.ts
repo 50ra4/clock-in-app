@@ -1,34 +1,11 @@
-import { firestore, firebase } from './firebase';
+import { firestore } from './firebase';
 
-import { RestTime, TimecardUserPreference } from 'types';
+import { TimecardUserPreference } from 'types';
 import { replacePathParams } from 'utils/pathUtil';
 import { TIMECARD_USER_PREFERENCE_DOCUMENT_PATH } from 'constants/firestore';
 import { createAdditionalProps, formatTimeToQuery } from './utils';
 import { omitUndefinedProps } from 'utils/converterUtil';
-
-export const queryToRestTime = (
-  query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
-): RestTime =>
-  ({
-    id: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    // FIXME: RestTime type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
-  } as RestTime);
-
-const docToTimecardUserPreference = (doc: firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>) => ({
-  workingStart: doc.get('workingStart'),
-  workingEnd: doc.get('workingEnd'),
-  roundDownMinute: doc.get('roundDownMinute'),
-  regularHolidays: doc.get('regularHolidays'),
-  lunchRestTime: doc.get('lunchRestTime'),
-  restTimes: [], // NOTE: fetch sub-collection
-  // FIXME: TimecardUserPreference type
-  updatedAt: doc.get('updatedAt'),
-  createdAt: doc.get('createdAt'),
-});
+import { queryToRestTime, queryToTimecardUserPreference } from './converter';
 
 export const readTimecardUserPreference = async (uid: string): Promise<TimecardUserPreference> => {
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
@@ -40,7 +17,7 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
     lunchRestTime = {},
     roundDownMinute = 0,
     regularHolidays = [],
-  } = await rootDocumentRef.get().then(docToTimecardUserPreference);
+  } = await rootDocumentRef.get().then(queryToTimecardUserPreference);
 
   const otherRestTimes = await otherRestTimeCollectionRef
     .orderBy('order', 'asc')

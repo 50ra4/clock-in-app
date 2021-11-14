@@ -8,48 +8,9 @@ import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
 import { omitUndefinedProps } from 'utils/converterUtil';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
-import { firestore, firebase } from './firebase';
+import { firestore } from './firebase';
+import { queryToInHouseWork, queryToRestTime } from './converter';
 import { createAdditionalProps, formatTimeToQuery } from './utils';
-
-export const queryToRestTime = (
-  query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
-): RestTime =>
-  ({
-    id: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    // FIXME: RestTime type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
-  } as InHouseWork);
-
-export const queryToInHouseWork = (
-  query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
-): InHouseWork =>
-  ({
-    id: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    remarks: query.get('remarks'),
-    // FIXME: InHouseWork type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
-  } as InHouseWork);
-
-export const queryToDailyTimeRecord = (
-  query: firebase.firestore.QueryDocumentSnapshot<firebase.firestore.DocumentData>,
-): DailyTimeRecord =>
-  ({
-    date: query.id,
-    start: query.get('start'),
-    end: query.get('end'),
-    remarks: query.get('remarks'),
-    restTimes: [],
-    inHouseWorks: [],
-    // FIXME: DailyTimeRecords type
-    updatedAt: query.get('updatedAt'),
-    createdAt: query.get('createdAt'),
-  } as DailyTimeRecord);
 
 const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });

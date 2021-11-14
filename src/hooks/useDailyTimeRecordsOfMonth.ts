@@ -7,16 +7,12 @@ import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import {
-  readRestTimesAndInHouseWorks,
-  queryToDailyTimeRecord,
-  writeDailyTimeRecord,
-  deleteDailyTimeRecord,
-} from 'services/dailyTimeRecord';
+import { readRestTimesAndInHouseWorks, writeDailyTimeRecord, deleteDailyTimeRecord } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
+import { queryToDailyTimeRecord } from 'services/converter';
 
 type Props = {
   uid: string;

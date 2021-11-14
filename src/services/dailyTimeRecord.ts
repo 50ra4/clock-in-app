@@ -5,12 +5,16 @@ import {
   DAILY_REST_TIME_COLLECTION_PATH,
 } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import { omitUndefinedProps } from 'utils/converterUtil';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
 import { firestore } from './firebase';
-import { queryToInHouseWork, queryToRestTime } from './converter';
-import { createAdditionalProps, formatTimeToQuery } from './utils';
+import {
+  dailyTimeRecordToDocument,
+  inHouseWorkToDocument,
+  queryToInHouseWork,
+  queryToRestTime,
+  restTimeToDocument,
+} from './converter';
 
 const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
@@ -46,8 +50,7 @@ export const readRestTimesAndInHouseWorks = async (
 };
 
 export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) => {
-  // TODO: Save restTimes separately
-  const { restTimes, inHouseWorks, date, ...rest } = data;
+  const { restTimes, inHouseWorks, date } = data;
 
   const month = dateStringToDateString(date, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
 
@@ -76,19 +79,10 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
     batch.delete(document);
   });
 
-  inHouseWorks.forEach(({ id, start, end, remarks }) => {
-    const isUpdated = !!id && alreadySavedInHouseWorks.some(({ id: _id }) => _id === id);
-    const documentRef = isUpdated ? inHouseWorkCollectionRef.doc(id) : inHouseWorkCollectionRef.doc();
-    batch.set(
-      documentRef,
-      {
-        start: formatTimeToQuery(start),
-        end: formatTimeToQuery(end),
-        remarks,
-        ...createAdditionalProps(uid, !!isUpdated),
-      },
-      { merge: true },
-    );
+  inHouseWorks.forEach((inHouseWork, index) => {
+    batch.set(inHouseWorkCollectionRef.doc(inHouseWork.id), inHouseWorkToDocument(inHouseWork, { uid, index }), {
+      merge: true,
+    });
   });
 
   // restTimes
@@ -100,27 +94,12 @@ export const writeDailyTimeRecord = async (uid: string, data: DailyTimeRecord) =
     batch.delete(document);
   });
 
-  restTimes.forEach(({ id, start, end }) => {
-    batch.set(
-      restTimeCollectionRef.doc(id),
-      {
-        start: formatTimeToQuery(start),
-        end: formatTimeToQuery(end),
-        ...createAdditionalProps(uid, !!id),
-      },
-      { merge: true },
-    );
+  restTimes.forEach((restTime, index) => {
+    batch.set(restTimeCollectionRef.doc(restTime.id), restTimeToDocument(restTime, { uid, index }), { merge: true });
   });
 
   // root
-  batch.set(
-    rootDocumentRef,
-    {
-      ...omitUndefinedProps({ ...rest }),
-      ...createAdditionalProps(uid, rootDocument.exists),
-    },
-    { merge: true },
-  );
+  batch.set(rootDocumentRef, dailyTimeRecordToDocument(data, { uid, isUpdated: rootDocument.exists }), { merge: true });
 
   await batch.commit();
 };

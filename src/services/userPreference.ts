@@ -3,9 +3,12 @@ import { firestore } from './firebase';
 import { TimecardUserPreference } from 'types';
 import { replacePathParams } from 'utils/pathUtil';
 import { TIMECARD_USER_PREFERENCE_DOCUMENT_PATH } from 'constants/firestore';
-import { createAdditionalProps, formatTimeToQuery } from './utils';
-import { omitUndefinedProps } from 'utils/converterUtil';
-import { queryToRestTime, queryToTimecardUserPreference } from './converter';
+import {
+  queryToRestTime,
+  queryToTimecardUserPreference,
+  restTimeToDocument,
+  timecardUserPreferenceToDocument,
+} from './converter';
 
 export const readTimecardUserPreference = async (uid: string): Promise<TimecardUserPreference> => {
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
@@ -34,11 +37,7 @@ export const readTimecardUserPreference = async (uid: string): Promise<TimecardU
 };
 
 export const writeTimecardUserPreference = async (uid: string, data: TimecardUserPreference) => {
-  const {
-    otherRestTimes,
-    workingTimes: { start: workingStart, end: workingEnd },
-    ...rest
-  } = data;
+  const { otherRestTimes } = data;
 
   const rootDocumentRef = firestore.doc(replacePathParams(TIMECARD_USER_PREFERENCE_DOCUMENT_PATH, { uid }));
   const otherRestTimeCollectionRef = rootDocumentRef.collection('other-rest-times');
@@ -59,28 +58,16 @@ export const writeTimecardUserPreference = async (uid: string, data: TimecardUse
     batch.delete(document);
   });
 
-  otherRestTimes.forEach(({ id, start, end }, index) => {
-    batch.set(
-      otherRestTimeCollectionRef.doc(id),
-      {
-        order: index,
-        start: formatTimeToQuery(start),
-        end: formatTimeToQuery(end),
-        ...createAdditionalProps(uid, !!id),
-      },
-      { merge: true },
-    );
+  otherRestTimes.forEach((restTime, index) => {
+    batch.set(otherRestTimeCollectionRef.doc(restTime.id), restTimeToDocument(restTime, { uid, index }), {
+      merge: true,
+    });
   });
 
   // root
-  batch.set(
-    rootDocumentRef,
-    {
-      ...omitUndefinedProps({ ...rest, workingStart, workingEnd }),
-      ...createAdditionalProps(uid, rootDocument.exists),
-    },
-    { merge: true },
-  );
+  batch.set(rootDocumentRef, timecardUserPreferenceToDocument(data, { uid, isUpdated: rootDocument.exists }), {
+    merge: true,
+  });
 
   await batch.commit();
 };

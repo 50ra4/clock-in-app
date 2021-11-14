@@ -27,10 +27,7 @@ export const queryToRestTime = (query: Query): RestTime =>
     createdAt: query.get('createdAt'),
   } as RestTime);
 
-export const restTimeToDocument = (
-  { id, start, end }: RestTime,
-  { uid, index }: { isUpdated: boolean; uid: string; index: number },
-) => ({
+export const restTimeToDocument = ({ id, start, end }: RestTime, { uid, index }: { uid: string; index: number }) => ({
   order: index + 1,
   start: formatTimeToQuery(start),
   end: formatTimeToQuery(end),

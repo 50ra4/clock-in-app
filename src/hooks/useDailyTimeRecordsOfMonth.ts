@@ -7,16 +7,12 @@ import { firestore, FirestoreError } from 'services/firebase';
 import { replacePathParams } from 'utils/pathUtil';
 import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import {
-  readRestTimesAndInHouseWorks,
-  queryToDailyTimeRecord,
-  writeDailyTimeRecord,
-  deleteDailyTimeRecord,
-} from 'services/dailyTimeRecord';
+import { readRestTimesAndInHouseWorks, writeDailyTimeRecord, deleteDailyTimeRecord } from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
+import { documentToDailyTimeRecord } from 'services/converter';
 
 type Props = {
   uid: string;
@@ -116,7 +112,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
             updated.delete(id);
             return;
           }
-          updated.set(id, queryToDailyTimeRecord(doc));
+          updated.set(id, documentToDailyTimeRecord(doc));
         });
         setRootCollectionData(updated);
       },

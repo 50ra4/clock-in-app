@@ -18,24 +18,20 @@ import {
 
 const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
-  return (
-    firestore
-      .collection(replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day }))
-      // TODO: add order by
-      .get()
-      .then((snapshot) => snapshot.docs.map(documentToRestTime))
-  );
+  return firestore
+    .collection(replacePathParams(DAILY_REST_TIME_COLLECTION_PATH, { uid, month, day }))
+    .orderBy('order', 'asc')
+    .get()
+    .then((snapshot) => snapshot.docs.map(documentToRestTime));
 };
 
 const readInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]> => {
   const month = dateStringToDateString(day, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
-  return (
-    firestore
-      .collection(replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day }))
-      // TODO: add order by
-      .get()
-      .then((snapshot) => snapshot.docs.map(documentToInHouseWork))
-  );
+  return firestore
+    .collection(replacePathParams(DAILY_IN_HOUSE_WORK_COLLECTION_PATH, { uid, month, day }))
+    .orderBy('order', 'asc')
+    .get()
+    .then((snapshot) => snapshot.docs.map(documentToInHouseWork));
 };
 
 export const readRestTimesAndInHouseWorks = async (

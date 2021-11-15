@@ -7,13 +7,14 @@ import {
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
 import { dateStringToDateString } from 'utils/dateUtil';
 import { replacePathParams } from 'utils/pathUtil';
-import { firestore } from './firebase';
+import { firestore, FirestoreError, FirestoreDocumentChange } from './firebase';
 import {
   dailyTimeRecordToDocumentData,
   inHouseWorkToDocumentData,
   documentToInHouseWork,
   documentToRestTime,
   restTimeToDocumentData,
+  documentToDailyTimeRecord,
 } from './converter';
 
 const readRestTimes = async (uid: string, day: string): Promise<RestTime[]> => {
@@ -131,3 +132,29 @@ export const deleteDailyTimeRecord = async (uid: string, date: string) => {
 
   await batch.commit();
 };
+
+export const onDailyTimeRecordDocumentChanges =
+  (uid: string, month: string) =>
+  (
+    onNext: (docChanges: FirestoreDocumentChange<DailyTimeRecord>[]) => void,
+    onError?: (error: FirestoreError) => void,
+    onCompletion?: () => void,
+  ): (() => void) => {
+    const collectionPath = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
+
+    const unsubscribe = firestore.collection(collectionPath).onSnapshot(
+      (snapshot) => {
+        onNext(
+          snapshot.docChanges().map(({ type, doc }) => {
+            return type === 'removed'
+              ? { id: doc.id, type }
+              : { id: doc.id, type, data: documentToDailyTimeRecord(doc) };
+          }),
+        );
+      },
+      onError,
+      onCompletion,
+    );
+
+    return unsubscribe;
+  };

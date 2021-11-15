@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { AppState } from 'store/root';
 import { showSnackbar } from 'thunks/snackbar';
-import { fireAuthentication } from 'services/firebase';
+import * as authentication from 'services/authentication';
 import { authenticationActions } from 'store/authentication';
 
 /**
@@ -23,8 +23,8 @@ export const useAuthentication = () => {
     async (email: string, password: string) => {
       dispatch(authenticationActions.loggingIn());
       try {
-        await fireAuthentication.setPersistence('local');
-        const credential = await fireAuthentication.signInWithEmailAndPassword(email, password);
+        await authentication.setPersistence('local');
+        const credential = await authentication.signInWithEmailAndPassword(email, password);
         dispatch(authenticationActions.success());
         dispatch(showSnackbar({ content: 'ログインしました' }));
         return { result: true, credential } as const;
@@ -40,7 +40,7 @@ export const useAuthentication = () => {
     async (email: string, password: string) => {
       dispatch(authenticationActions.loggingIn());
       try {
-        const credential = await fireAuthentication.createUserWithEmailAndPassword(email, password);
+        const credential = await authentication.createUserWithEmailAndPassword(email, password);
         dispatch(authenticationActions.success());
         return { result: true, credential } as const;
       } catch (error) {
@@ -54,7 +54,7 @@ export const useAuthentication = () => {
   const signOut = useCallback(async () => {
     dispatch(authenticationActions.loggingIn());
     try {
-      await fireAuthentication.signOut();
+      await authentication.signOut();
       dispatch(authenticationActions.logout());
       dispatch(showSnackbar({ content: 'ログアウトしました' }));
       return { result: true } as const;
@@ -83,7 +83,7 @@ export const useDetectAuthStateChanged = () => {
 
   // Subscribe to user on mount
   useEffect(() => {
-    const unsubscribe = fireAuthentication.onAuthStateChanged(
+    const unsubscribe = authentication.onAuthStateChanged(
       // eslint-disable-next-line complexity
       (user) => {
         if (user) {

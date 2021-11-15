@@ -104,8 +104,8 @@ export function MobileView() {
 
   const onDeleteDailyTimeRecord = useCallback(
     async (date: string) => {
-      await removeDailyTimeRecord(date);
       setOpenInputDialog(false);
+      await removeDailyTimeRecord(date);
     },
     [removeDailyTimeRecord],
   );
@@ -115,8 +115,8 @@ export function MobileView() {
       if (!isLoggedInUser) {
         return;
       }
-      await saveDailyTimeRecord(record);
       setOpenInputDialog(false);
+      await saveDailyTimeRecord(record);
     },
     [isLoggedInUser, saveDailyTimeRecord],
   );

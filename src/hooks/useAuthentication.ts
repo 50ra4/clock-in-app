@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { AppState } from 'store/root';
 import { showSnackbar } from 'thunks/snackbar';
-import * as authentication from 'services/authentication';
+import { authentication } from 'services/authentication';
 import { authenticationActions } from 'store/authentication';
 
 /**

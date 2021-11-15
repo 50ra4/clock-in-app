@@ -1,6 +1,3 @@
 import { fireAuthentication } from 'services/firebase';
 
-const { setPersistence, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } =
-  fireAuthentication;
-
-export { setPersistence, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged };
+export { fireAuthentication as authentication };

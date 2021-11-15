@@ -16,5 +16,20 @@ const firestore = firebaseApp.firestore();
 const fireAuthentication = firebaseApp.auth();
 
 export type FirestoreError = firebase.firestore.FirestoreError;
+export type FirestoreDocumentChange<T> =
+  | {
+      type: 'added';
+      id: string;
+      data: T;
+    }
+  | {
+      type: 'modified';
+      id: string;
+      data: T;
+    }
+  | {
+      type: 'removed';
+      id: string;
+    };
 
 export { firebase, firestore, fireAuthentication };

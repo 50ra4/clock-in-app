@@ -15,6 +15,8 @@ import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
+import { SnackbarActions } from 'store/snackbar';
+import { showSnackbar } from 'thunks/snackbar';
 
 type Props = {
   uid: string;
@@ -28,7 +30,7 @@ type SubCollection = {
 };
 
 export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
-  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions>>();
+  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions | SnackbarActions>>();
 
   const [isLoading, setIsLoading] = useState(false);
   // FIXME: var-name
@@ -54,6 +56,9 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     async (data: DailyTimeRecord) => {
       setIsLoading(true);
       await writeDailyTimeRecord(uid, data)
+        .then(() => {
+          dispatch(showSnackbar({ content: '勤怠情報を更新しました' }));
+        })
         .catch((err: FirestoreError) => {
           dispatch(
             showAlertDialog({
@@ -83,6 +88,9 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
       setIsLoading(true);
       await deleteDailyTimeRecord(uid, date)
+        .then(() => {
+          dispatch(showSnackbar({ content: `${date}の勤怠を削除しました` }));
+        })
         .catch((err: FirestoreError) => {
           dispatch(
             showAlertDialog({

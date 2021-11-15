@@ -3,16 +3,18 @@ import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 
 import { AppState } from 'store/root';
-import { firestore, FirestoreError } from 'services/firebase';
-import { replacePathParams } from 'utils/pathUtil';
-import { DAILY_RECORDS_COLLECTION_PATH } from 'constants/firestore';
+import { FirestoreError } from 'services/firebase';
 import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import { readRestTimesAndInHouseWorks, writeDailyTimeRecord, deleteDailyTimeRecord } from 'services/dailyTimeRecord';
+import {
+  readRestTimesAndInHouseWorks,
+  writeDailyTimeRecord,
+  deleteDailyTimeRecord,
+  onDailyTimeRecordDocumentChanges,
+} from 'services/dailyTimeRecord';
 import { usePreviousRef } from './usePreviousRef';
 import { AppError } from 'models/AppError';
 import { ConnectedDialogActions } from 'store/connectedDialog';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
-import { documentToDailyTimeRecord } from 'services/converter';
 
 type Props = {
   uid: string;
@@ -101,18 +103,18 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     if (!uid || !month) {
       return;
     }
-
-    const collectionPath = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
-    const unsubscribe = firestore.collection(collectionPath).onSnapshot(
-      (snapshot) => {
-        const changedDocs = snapshot.docChanges().map(({ type, doc }) => ({ id: doc.id, doc, type }));
+    const unsubscribe = onDailyTimeRecordDocumentChanges(uid, month)(
+      (docChanges) => {
+        // TODO: remove
+        // eslint-disable-next-line no-console
+        console.log('docChanges', docChanges);
         const updated = new Map(previousRootCollectionData.current);
-        changedDocs.forEach(({ id, doc, type }) => {
-          if (type === 'removed') {
-            updated.delete(id);
+        docChanges.forEach((changed) => {
+          if (changed.type === 'removed') {
+            updated.delete(changed.id);
             return;
           }
-          updated.set(id, documentToDailyTimeRecord(doc));
+          updated.set(changed.id, changed.data);
         });
         setRootCollectionData(updated);
       },
@@ -125,6 +127,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
         console.log('changed onSnapshot');
       },
     );
+
     return () => {
       unsubscribe();
       setRootCollectionData(new Map());

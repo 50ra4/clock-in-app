@@ -56,10 +56,12 @@ export function MobileView() {
   const { uid } = useParams<{ uid: string }>();
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);
-  const { dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth({
-    month: selectedMonth,
-    uid,
-  });
+  const { isLoading, dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth(
+    {
+      month: selectedMonth,
+      uid,
+    },
+  );
   const { monthlyOverview, copyMonthlyOverviewToClipboard } = useMonthlyOverview({
     month: selectedMonth,
     dailyTimeRecords: dailyTimeRecordsOfMonth,
@@ -102,8 +104,8 @@ export function MobileView() {
 
   const onDeleteDailyTimeRecord = useCallback(
     async (date: string) => {
-      await removeDailyTimeRecord(date);
       setOpenInputDialog(false);
+      await removeDailyTimeRecord(date);
     },
     [removeDailyTimeRecord],
   );
@@ -113,8 +115,8 @@ export function MobileView() {
       if (!isLoggedInUser) {
         return;
       }
-      await saveDailyTimeRecord(record);
       setOpenInputDialog(false);
+      await saveDailyTimeRecord(record);
     },
     [isLoggedInUser, saveDailyTimeRecord],
   );
@@ -123,7 +125,7 @@ export function MobileView() {
 
   return (
     <StyledRoot>
-      <LoadingGuard open={isFetchingPreference} />
+      <LoadingGuard open={isLoading || isFetchingPreference} />
       {!userPreference ? null : (
         <>
           <StyledMonthSelector selectedMonth={selectedMonth} onChangeMonth={updateSelectedMonth} />

@@ -30,6 +30,7 @@ type SubCollection = {
 export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions>>();
 
+  const [isLoading, setIsLoading] = useState(false);
   // FIXME: var-name
   const [rootCollectionData, setRootCollectionData] = useState(new Map<string, DailyTimeRecord>());
   const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());
@@ -51,16 +52,18 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
   const saveDailyTimeRecord = useCallback(
     async (data: DailyTimeRecord) => {
-      // TODO: add loading...
-      await writeDailyTimeRecord(uid, data).catch((err: FirestoreError) => {
-        dispatch(
-          showAlertDialog({
-            // TODO: move to constants
-            title: 'エラー',
-            message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
-          }),
-        );
-      });
+      setIsLoading(true);
+      await writeDailyTimeRecord(uid, data)
+        .catch((err: FirestoreError) => {
+          dispatch(
+            showAlertDialog({
+              // TODO: move to constants
+              title: 'エラー',
+              message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
+            }),
+          );
+        })
+        .finally(() => setIsLoading(false));
     },
     [dispatch, uid],
   );
@@ -78,16 +81,18 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
         return;
       }
 
-      // TODO: add loading...
-      await deleteDailyTimeRecord(uid, date).catch((err: FirestoreError) => {
-        dispatch(
-          showAlertDialog({
-            // TODO: move to constants
-            title: 'エラー',
-            message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
-          }),
-        );
-      });
+      setIsLoading(true);
+      await deleteDailyTimeRecord(uid, date)
+        .catch((err: FirestoreError) => {
+          dispatch(
+            showAlertDialog({
+              // TODO: move to constants
+              title: 'エラー',
+              message: '更新に失敗しました。お手数ですが、時間がたってから再度お試しください。',
+            }),
+          );
+        })
+        .finally(() => setIsLoading(false));
     },
     [dispatch, uid],
   );
@@ -159,6 +164,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   }, [rootCollectionData, month, uid]);
 
   return {
+    isLoading,
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
     removeDailyTimeRecord,

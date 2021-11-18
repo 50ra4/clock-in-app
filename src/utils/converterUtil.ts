@@ -150,7 +150,7 @@ export const toDetailsOfDailyTimeRecords = (
     .map((day) => {
       const base = {
         day,
-        date: format(day, DATE_FORMAT.monthDayWithDayOfWeekJP, { locale: ja }),
+        date: format(day, `${DATE_FORMAT.monthDay}(${DATE_FORMAT.dayOfWeek})`, { locale: ja }),
       } as const;
       const timeRecord = dailyTimeRecords.find(({ date }) => date === format(day, DATE_FORMAT.dateISO));
 

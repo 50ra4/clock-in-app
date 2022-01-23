@@ -92,32 +92,40 @@ const TimecardReportPage = () => {
       <Tabs value={reportType} onChange={onChangeTab} items={tabItems} />
       {isLoading || isFetchingPreference ? (
         <LoadingGuard open={true} />
-      ) : reportType === 'weeklyReport' ? (
-        <>
-          <StyledTextArea id="monthly-overview" name="monthly-overview" value={monthlyOverview} readOnly={true} />
-          <ButtonWrapper>
-            <StyledButton color="primary" onClick={copyMonthlyOverviewToClipboard} text="コピー" />
-          </ButtonWrapper>
-        </>
       ) : (
-        <p>TBD</p>
+        <StyledTextArea
+          id={reportType}
+          name={reportType}
+          value={reportType === 'weeklyReport' ? monthlyOverview : 'TBD'}
+          readOnly={true}
+        />
       )}
+      <ButtonWrapper>
+        <StyledButton color="primary" onClick={copyMonthlyOverviewToClipboard} text="コピー" />
+      </ButtonWrapper>
     </WithHeaderLayout>
   );
 };
 
 const StyledTextArea = styled(TextArea)`
-  min-height: 300px;
+  ${({ theme }) =>
+    theme.insetSafeArea.topBottom(
+      'min-height',
+      `100vh - ${
+        theme.height.header + theme.space.large + theme.height.tab + theme.space.large * 2 + theme.height.button
+      }px`,
+      '+',
+    )};
 `;
 const StyledButton = styled(Button)`
   min-width: 80px;
 `;
 const ButtonWrapper = styled.div`
-  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
+  margin: ${({ theme }) => `${theme.space.large}px 0`};
   & > ${StyledButton} + ${StyledButton} {
-    margin-left: 10px;
+    margin-left: ${({ theme }) => theme.space.large}px;
   }
 `;
 export default TimecardReportPage;

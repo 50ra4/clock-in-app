@@ -1,5 +1,5 @@
-import React, { useCallback } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { useLoginRedirection } from 'hooks/useLoginRedirection';
@@ -36,7 +36,6 @@ const parseQuery = (queryString: string) => {
 const TimecardReportPage = () => {
   useLoginRedirection();
 
-  const history = useHistory();
   const { uid } = useParams<{ uid: string }>();
 
   const [{ month: selectedMonth }] = useSyncStateWithURLQueryString({
@@ -56,10 +55,6 @@ const TimecardReportPage = () => {
     preference: userPreference?.timecard,
   });
 
-  const onClickBack = useCallback(() => {
-    history.goBack();
-  }, [history]);
-
   return (
     <WithHeaderLayout>
       {isLoading || isFetchingPreference ? (
@@ -68,7 +63,6 @@ const TimecardReportPage = () => {
         <>
           <StyledTextArea id="monthly-overview" name="monthly-overview" value={monthlyOverview} readOnly={true} />
           <ButtonWrapper>
-            <StyledButton color="default" onClick={onClickBack} text="戻る" />
             <StyledButton color="primary" onClick={copyMonthlyOverviewToClipboard} text="コピー" />
           </ButtonWrapper>
         </>

@@ -1,6 +1,6 @@
 /* eslint-disable complexity */
 import React, { useCallback, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
@@ -16,8 +16,8 @@ import { useAuthentication } from 'hooks/useAuthentication';
 import { useUserPreference } from 'hooks/useUserPreference';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
-import { MonthlyOverviewDialog } from './components/MonthlyOverviewDialog';
-import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
+import { replacePathParams } from 'utils/pathUtil';
+import { PAGE_PATH } from 'constants/path';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -48,6 +48,7 @@ const parseQuery = (queryString: string) => {
 };
 
 export function MobileView() {
+  const history = useHistory();
   const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
@@ -62,15 +63,9 @@ export function MobileView() {
       uid,
     },
   );
-  const { monthlyOverview, copyMonthlyOverviewToClipboard } = useMonthlyOverview({
-    month: selectedMonth,
-    dailyTimeRecords: dailyTimeRecordsOfMonth,
-    preference: userPreference?.timecard,
-  });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
-  const [openOverviewDialog, setOpenOverviewDialog] = useState<boolean>(false);
 
   const { loggedInUid } = useAuthentication();
   const isLoggedInUser = loggedInUid === uid;
@@ -121,7 +116,10 @@ export function MobileView() {
     [isLoggedInUser, saveDailyTimeRecord],
   );
 
-  const onCloseMonthlyOverviewDialog = useCallback(() => setOpenOverviewDialog(false), []);
+  const onClickExportButton = useCallback(() => {
+    const pathname = replacePathParams(PAGE_PATH.timecardReport, { uid });
+    history.push(`${pathname}?${stringifyQuery({ month: selectedMonth })}`);
+  }, [history, selectedMonth, uid]);
 
   return (
     <StyledRoot>
@@ -136,17 +134,9 @@ export function MobileView() {
             preference={userPreference.timecard}
             onSelectDate={selectEditedRecord}
           />
-          <FloatingExportButton onClick={() => setOpenOverviewDialog(true)}>
+          <FloatingExportButton onClick={onClickExportButton}>
             <LaunchIcon color="main" titleAccess={`${selectedMonthJP}の勤怠の概要を表示する`} />
           </FloatingExportButton>
-          <MonthlyOverviewDialog
-            open={openOverviewDialog}
-            readOnly={true}
-            title={`${selectedMonthJP}の勤怠の概要`}
-            onClose={onCloseMonthlyOverviewDialog}
-            onClickCopy={copyMonthlyOverviewToClipboard}
-            overview={monthlyOverview}
-          />
           {openInputDialog && editedRecord && (
             <InputRecordDialog
               open={openInputDialog}

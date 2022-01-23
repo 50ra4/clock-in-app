@@ -46,6 +46,9 @@ export const SideNavigation = React.memo(function SideNavigation({ className, op
                   <Link to={replacePathParams(PAGE_PATH.timecardDetail, { uid })}>自分のタイムカード</Link>
                 </li>
                 <li>
+                  <Link to={replacePathParams(PAGE_PATH.timecardReport, { uid })}>レポート出力</Link>
+                </li>
+                <li>
                   <Link to={replacePathParams(PAGE_PATH.userPreference, { uid })}>設定</Link>
                 </li>
                 <li>

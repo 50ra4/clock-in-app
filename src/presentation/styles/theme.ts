@@ -272,6 +272,7 @@ const componentHeight = {
   header: 56,
   button: 48,
   input: 48,
+  tab: 48,
 } as const;
 
 export const lightTheme = {

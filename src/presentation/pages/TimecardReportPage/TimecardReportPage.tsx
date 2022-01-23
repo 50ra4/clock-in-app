@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { useLoginRedirection } from 'hooks/useLoginRedirection';
@@ -13,33 +13,59 @@ import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
+import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
+
+const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
+type ReportType = typeof ReportTypes[number];
+const isReportType = (x: string | null): x is ReportType => ReportTypes.some((t) => t === x);
+
+const tabItems: TabItem<ReportType>[] = [
+  {
+    label: '週報用',
+    value: 'weeklyReport',
+  },
+  {
+    label: '作業報告書用',
+    value: 'monthlyReport',
+  },
+];
+
+type SearchQuery = {
+  month: string;
+  type: ReportType;
+};
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
-const initialQuery = {
+const initialQuery: SearchQuery = {
   month: THIS_MONTH_DATE_STRING,
+  type: 'weeklyReport',
 };
 
-const stringifyQuery = ({ month }: { month: string }): string => {
+const stringifyQuery = ({ month, type }: SearchQuery): string => {
   const searchParams = new URLSearchParams();
   searchParams.append('month', month);
+  searchParams.append('type', type);
   return searchParams.toString();
 };
 
 const parseQuery = (queryString: string) => {
-  const queryMonth = new URLSearchParams(queryString).get('month');
+  const params = new URLSearchParams(queryString);
+  const queryMonth = params.get('month');
   const month =
     queryMonth && isValidDateString(queryMonth, DATE_FORMAT.yearMonthISO) ? queryMonth : THIS_MONTH_DATE_STRING;
-  return { month };
+
+  const queryType = params.get('type');
+  const type = isReportType(queryType) ? queryType : 'weeklyReport';
+  return { month, type };
 };
 
 const TimecardReportPage = () => {
   useLoginRedirection();
 
-  const history = useHistory();
   const { uid } = useParams<{ uid: string }>();
 
-  const [{ month: selectedMonth }] = useSyncStateWithURLQueryString({
+  const [{ month: selectedMonth, type: reportType }, setSearchParams] = useSyncStateWithURLQueryString({
     stringify: stringifyQuery,
     parser: parseQuery,
     initialQuery,
@@ -56,40 +82,50 @@ const TimecardReportPage = () => {
     preference: userPreference?.timecard,
   });
 
-  const onClickBack = useCallback(() => {
-    history.goBack();
-  }, [history]);
+  const onChangeTab = useCallback(
+    (type: ReportType) => setSearchParams((prev) => ({ ...prev, type })),
+    [setSearchParams],
+  );
 
   return (
     <WithHeaderLayout>
+      <Tabs value={reportType} onChange={onChangeTab} items={tabItems} />
       {isLoading || isFetchingPreference ? (
         <LoadingGuard open={true} />
       ) : (
-        <>
-          <StyledTextArea id="monthly-overview" name="monthly-overview" value={monthlyOverview} readOnly={true} />
-          <ButtonWrapper>
-            <StyledButton color="default" onClick={onClickBack} text="戻る" />
-            <StyledButton color="primary" onClick={copyMonthlyOverviewToClipboard} text="コピー" />
-          </ButtonWrapper>
-        </>
+        <StyledTextArea
+          id={reportType}
+          name={reportType}
+          value={reportType === 'weeklyReport' ? monthlyOverview : 'TBD'}
+          readOnly={true}
+        />
       )}
+      <ButtonWrapper>
+        <StyledButton color="primary" onClick={copyMonthlyOverviewToClipboard} text="コピー" />
+      </ButtonWrapper>
     </WithHeaderLayout>
   );
 };
 
 const StyledTextArea = styled(TextArea)`
-  min-height: 300px;
+  ${({ theme }) =>
+    theme.insetSafeArea.topBottom(
+      'min-height',
+      `100vh - ${
+        theme.height.header + theme.space.large + theme.height.tab + theme.space.large * 2 + theme.height.button
+      }px`,
+      '+',
+    )};
 `;
 const StyledButton = styled(Button)`
   min-width: 80px;
 `;
 const ButtonWrapper = styled.div`
-  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
+  margin: ${({ theme }) => `${theme.space.large}px 0`};
   & > ${StyledButton} + ${StyledButton} {
-    margin-left: 10px;
+    margin-left: ${({ theme }) => theme.space.large}px;
   }
 `;
-
 export default TimecardReportPage;

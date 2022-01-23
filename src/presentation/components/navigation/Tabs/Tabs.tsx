@@ -48,6 +48,7 @@ export const Tabs = React.memo(function Tabs<T>({
 }) as <T>(props: T) => JSX.Element;
 
 const Root = styled.div<{ color: TabColor }>`
+  height: ${({ theme }) => theme.height.tab}px;
   overflow: hidden;
   color: ${({ theme }) => theme.color.palette.default.font};
   background-color: ${({ theme }) => theme.color.palette.default.background};

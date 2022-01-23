@@ -3257,10 +3257,10 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
 
 exports[`Storyshots layouts/ResponsiveLayout Docs 1`] = `
 <div
-  className="sc-GvhzO CXkuT"
+  className="sc-bXexck ctEEBI"
 >
   <div
-    className="sc-gsWcmt kajILr"
+    className="sc-eGJWMs YFHhX"
   >
     Responsive
   </div>
@@ -3277,12 +3277,44 @@ exports[`Storyshots navigation/Link Docs 1`] = `
 </a>
 `;
 
-exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
+exports[`Storyshots navigation/Tabs Docs 1`] = `
 <div
-  className="sc-csTbgd ciyids"
+  className="sc-Arkif gKqCTX"
+  color="primary"
 >
   <button
-    className="sc-fujyAs sc-eGJWMs cuzrjr button"
+    className="sc-khIgEk cKhyWK"
+    color="primary"
+    onClick={[Function]}
+    type="button"
+  >
+    one
+  </button>
+  <button
+    className="sc-khIgEk cKhyWK"
+    color="primary"
+    onClick={[Function]}
+    type="button"
+  >
+    two
+  </button>
+  <button
+    className="sc-khIgEk cKhyWK"
+    color="primary"
+    onClick={[Function]}
+    type="button"
+  >
+    three
+  </button>
+</div>
+`;
+
+exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
+<div
+  className="sc-bsatvv jNFQfP"
+>
+  <button
+    className="sc-fujyAs sc-dFRpbK cuzrjr button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -3296,7 +3328,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
   </button>
   <div>
     <div
-      className="sc-kfYoZR yMvPd sc-bXexck"
+      className="sc-kfYoZR yMvPd sc-csTbgd"
     >
       <select
         id="selectedMonth"
@@ -3356,7 +3388,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
       </svg>
     </div>
     <button
-      className="sc-fujyAs sc-eGJWMs cuzrjr button"
+      className="sc-fujyAs sc-dFRpbK cuzrjr button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -3370,7 +3402,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
     </button>
   </div>
   <button
-    className="sc-fujyAs sc-eGJWMs cuzrjr button"
+    className="sc-fujyAs sc-dFRpbK cuzrjr button"
     color="primary"
     disabled={false}
     onClick={[Function]}
@@ -3387,7 +3419,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
 
 exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
 <div
-  className="sc-dFRpbK jQJDO"
+  className="sc-gIvpjk UhrJW"
 >
   <table>
     <thead>
@@ -3421,7 +3453,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
     </thead>
     <tbody>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3434,7 +3466,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-01の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3472,7 +3504,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3485,7 +3517,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-02の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3523,7 +3555,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv irXldX"
+        className="sc-euEtCV fmvrHj"
       >
         <th
           scope="row"
@@ -3536,7 +3568,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-03の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3574,7 +3606,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edBZyo"
+        className="sc-euEtCV kGJGIg"
       >
         <th
           scope="row"
@@ -3587,7 +3619,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-04の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3625,7 +3657,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv eBShDL"
+        className="sc-euEtCV kpqdHL"
       >
         <th
           scope="row"
@@ -3638,7 +3670,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-05の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3676,7 +3708,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3689,7 +3721,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-06の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3727,7 +3759,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3740,7 +3772,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-07の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3778,7 +3810,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3791,7 +3823,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-08の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3829,7 +3861,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -3842,7 +3874,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-09の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3880,7 +3912,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv irXldX"
+        className="sc-euEtCV fmvrHj"
       >
         <th
           scope="row"
@@ -3893,7 +3925,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-10の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3931,7 +3963,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edBZyo"
+        className="sc-euEtCV kGJGIg"
       >
         <th
           scope="row"
@@ -3944,7 +3976,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-11の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3982,7 +4014,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv eBShDL"
+        className="sc-euEtCV kpqdHL"
       >
         <th
           scope="row"
@@ -3995,7 +4027,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-12の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4033,7 +4065,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4046,7 +4078,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-13の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4084,7 +4116,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4097,7 +4129,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-14の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4135,7 +4167,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4148,7 +4180,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-15の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4186,7 +4218,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4199,7 +4231,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-16の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4237,7 +4269,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv irXldX"
+        className="sc-euEtCV fmvrHj"
       >
         <th
           scope="row"
@@ -4250,7 +4282,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-17の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4288,7 +4320,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edBZyo"
+        className="sc-euEtCV kGJGIg"
       >
         <th
           scope="row"
@@ -4301,7 +4333,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-18の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4339,7 +4371,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv eBShDL"
+        className="sc-euEtCV kpqdHL"
       >
         <th
           scope="row"
@@ -4352,7 +4384,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-19の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4390,7 +4422,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4403,7 +4435,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-20の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4441,7 +4473,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4454,7 +4486,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-21の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4492,7 +4524,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4505,7 +4537,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-22の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4543,7 +4575,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4556,7 +4588,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-23の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4594,7 +4626,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv irXldX"
+        className="sc-euEtCV fmvrHj"
       >
         <th
           scope="row"
@@ -4607,7 +4639,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-24の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4645,7 +4677,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv edBZyo"
+        className="sc-euEtCV kGJGIg"
       >
         <th
           scope="row"
@@ -4658,7 +4690,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-25の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4696,7 +4728,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv eBShDL"
+        className="sc-euEtCV kpqdHL"
       >
         <th
           scope="row"
@@ -4709,7 +4741,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-26の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4747,7 +4779,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4760,7 +4792,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-27の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4798,7 +4830,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4811,7 +4843,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-28の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4849,7 +4881,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4862,7 +4894,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-29の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4900,7 +4932,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv hSopcx"
+        className="sc-euEtCV IAGrR"
       >
         <th
           scope="row"
@@ -4913,7 +4945,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-30の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4951,7 +4983,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         </td>
       </tr>
       <tr
-        className="sc-bsatvv irXldX"
+        className="sc-euEtCV fmvrHj"
       >
         <th
           scope="row"
@@ -4964,7 +4996,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-31の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-gIvpjk niIgu"
+            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5016,7 +5048,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
   }
 >
   <section
-    className="sc-khIgEk bVpusF"
+    className="sc-jgPyTC jcHFkt"
   >
     <button
       aria-controls="accordion-undefined-header"
@@ -5028,7 +5060,7 @@ exports[`Storyshots surfaces/Accordion Docs 1`] = `
       </h3>
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN jvuzga sc-Arkif Accordion__icon--collapsed"
+        className="sc-hKFxyN jvuzga sc-hTRkXV Accordion__icon--collapsed"
         color="primary"
         size="medium"
         viewBox="0 0 24 24"
@@ -5068,7 +5100,7 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
   }
 >
   <section
-    className="sc-hTRkXV fpBGIx"
+    className="sc-gSYDnn inzyCT"
   >
     <h3>
       Sample card
@@ -5087,11 +5119,11 @@ exports[`Storyshots surfaces/Card Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Docs 1`] = `
 <header
-  className="sc-jgPyTC eDyUtm"
+  className="sc-laZMeE eFJKWb"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-cOifOu ckuqtu sc-laZMeE leXIxz"
+    className="sc-cOifOu ckuqtu sc-jffHpj lePkPK"
     href="/"
     onClick={[Function]}
   >
@@ -5099,7 +5131,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-gSYDnn"
+        className="sc-hKFxyN ivKCeV sc-iNiQyp"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -5151,7 +5183,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
 
 exports[`Storyshots surfaces/Header Text Header 1`] = `
 <header
-  className="sc-jgPyTC eDyUtm"
+  className="sc-laZMeE eFJKWb"
 >
   <h2>
     ログイン
@@ -5193,7 +5225,7 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
   }
 >
   <section
-    className="sc-iNiQyp kioXzx"
+    className="sc-eJocfa fcaysb"
   >
     <div>
       <p>
@@ -5206,7 +5238,7 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 
 exports[`Storyshots unique/AdditionalButton Docs 1`] = `
 <button
-  className="sc-fujyAs sc-jffHpj aUBae bcKPCB button"
+  className="sc-fujyAs sc-oeezt aUBae iYUOFw button"
   color="primary"
   disabled={false}
   onClick={[Function]}
@@ -5562,10 +5594,10 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-eJocfa heAsyE"
+        className="sc-hhIiOg jiyMSI"
       >
         <div
-          className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+          className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -5580,12 +5612,12 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-oeezt kGQZpL"
+          className="sc-eirqVv eZhggx"
         >
           ~
         </span>
         <div
-          className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+          className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -5599,7 +5631,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           />
         </div>
         <div
-          className="sc-jJMGnK sc-lbVvki fovkov hOvZtb"
+          className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
             className="sc-dIvrsQ egthDb input-base"
@@ -5637,7 +5669,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
+          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5678,10 +5710,10 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-eJocfa heAsyE"
+        className="sc-hhIiOg jiyMSI"
       >
         <div
-          className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+          className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -5696,12 +5728,12 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-oeezt kGQZpL"
+          className="sc-eirqVv eZhggx"
         >
           ~
         </span>
         <div
-          className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+          className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -5715,7 +5747,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           />
         </div>
         <div
-          className="sc-jJMGnK sc-lbVvki fovkov hOvZtb"
+          className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
             className="sc-dIvrsQ egthDb input-base"
@@ -5753,7 +5785,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
+          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5795,10 +5827,10 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-eJocfa heAsyE"
+        className="sc-hhIiOg jiyMSI"
       >
         <div
-          className="sc-cBoqAE sc-eirqVv FGqJu kdtVlS"
+          className="sc-cBoqAE sc-gGLxEB FGqJu gDvYDa"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -5813,12 +5845,12 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-oeezt kGQZpL"
+          className="sc-eirqVv eZhggx"
         >
           ~
         </span>
         <div
-          className="sc-cBoqAE sc-eirqVv FGqJu kdtVlS"
+          className="sc-cBoqAE sc-gGLxEB FGqJu gDvYDa"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -5832,7 +5864,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           />
         </div>
         <div
-          className="sc-jJMGnK sc-lbVvki fovkov hOvZtb"
+          className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
             className="sc-dIvrsQ jFEMLV input-base"
@@ -5871,7 +5903,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
+          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5924,10 +5956,10 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
 
 exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
 <div
-  className="sc-ckTSus llDGna"
+  className="sc-FRrlG dtJPLm"
 >
   <div
-    className="sc-fbIWvP llnagn"
+    className="sc-fXazdy kIINmH"
   >
     <div
       className="sc-iemWCZ hcPsTf"
@@ -5940,10 +5972,10 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
       </label>
       <div>
         <div
-          className="sc-eJocfa heAsyE"
+          className="sc-hhIiOg jiyMSI"
         >
           <div
-            className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+            className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
           >
             <input
               className="sc-dIvrsQ eFXUYy input-base"
@@ -5959,12 +5991,12 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
           </div>
           <span
             aria-label="から"
-            className="sc-oeezt kGQZpL"
+            className="sc-eirqVv eZhggx"
           >
             ~
           </span>
           <div
-            className="sc-gXfVKN sc-hhIiOg bXRQZR fdzFVd"
+            className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
           >
             <input
               className="sc-dIvrsQ eFXUYy input-base"
@@ -5979,7 +6011,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             />
           </div>
           <div
-            className="sc-jJMGnK sc-lbVvki fovkov hOvZtb"
+            className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
           >
             <input
               className="sc-dIvrsQ jFEMLV input-base"
@@ -6018,7 +6050,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
           </div>
           <button
             aria-label="社内作業1を削除する"
-            className="sc-bCwfaz dOpRzz sc-gGLxEB bLvysx"
+            className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -6068,10 +6100,10 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
     </div>
   </div>
   <div
-    className="sc-fXazdy bMreZP"
+    className="sc-TtZnY eUhkAi"
   >
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-dvXYtj epIZUy button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6100,18 +6132,18 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
 
 exports[`Storyshots unique/InHouseWorkFormGroup Text Type 1`] = `
 <div
-  className="sc-ckTSus llDGna"
+  className="sc-FRrlG dtJPLm"
 >
   <div
-    className="sc-fXazdy bMreZP"
+    className="sc-TtZnY eUhkAi"
   >
     <label
-      className="sc-bkbkJK fGkvBa sc-FRrlG cGhgtv"
+      className="sc-bkbkJK fGkvBa sc-dvXYtj ghUVUj"
     >
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-dvXYtj epIZUy button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6140,18 +6172,18 @@ exports[`Storyshots unique/InHouseWorkFormGroup Text Type 1`] = `
 
 exports[`Storyshots unique/InHouseWorkFormGroup Time Input Type 1`] = `
 <div
-  className="sc-ckTSus llDGna"
+  className="sc-FRrlG dtJPLm"
 >
   <div
-    className="sc-fXazdy jiFliF"
+    className="sc-TtZnY gsNOoI"
   >
     <label
-      className="sc-bkbkJK fGkvBa sc-FRrlG cGhgtv"
+      className="sc-bkbkJK fGkvBa sc-dvXYtj ghUVUj"
     >
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-dvXYtj epIZUy button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6180,11 +6212,11 @@ exports[`Storyshots unique/InHouseWorkFormGroup Time Input Type 1`] = `
 
 exports[`Storyshots unique/Logo Docs 1`] = `
 <div
-  className="sc-TtZnY bsOuJZ"
+  className="sc-amiJK gzlqWg"
 >
   <a
     aria-label="'clock in' homepage"
-    className="sc-cOifOu ckuqtu sc-laZMeE leXIxz"
+    className="sc-cOifOu ckuqtu sc-jffHpj lePkPK"
     href="/"
     onClick={[Function]}
   >
@@ -6192,7 +6224,7 @@ exports[`Storyshots unique/Logo Docs 1`] = `
       Cl
       <svg
         aria-hidden={true}
-        className="sc-hKFxyN ivKCeV sc-gSYDnn"
+        className="sc-hKFxyN ivKCeV sc-iNiQyp"
         color="default"
         size="medium"
         viewBox="0 0 24 24"
@@ -6238,10 +6270,10 @@ exports[`Storyshots unique/RestTimeForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-jHNicF fcFGQY"
+        className="sc-jOFryr gbSnGW"
       >
         <div
-          className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+          className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6258,12 +6290,12 @@ exports[`Storyshots unique/RestTimeForm Docs 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-amiJK dAOiva"
+          className="sc-hmbstg NFPsV"
         >
           ~
         </span>
         <div
-          className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+          className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6297,10 +6329,10 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-jHNicF fcFGQY"
+        className="sc-jOFryr gbSnGW"
       >
         <div
-          className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+          className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6315,12 +6347,12 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-amiJK dAOiva"
+          className="sc-hmbstg NFPsV"
         >
           ~
         </span>
         <div
-          className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+          className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6335,7 +6367,7 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
+          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6377,10 +6409,10 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-jHNicF fcFGQY"
+        className="sc-jOFryr gbSnGW"
       >
         <div
-          className="sc-cBoqAE sc-hmbstg FGqJu ksQdnj"
+          className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -6395,12 +6427,12 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-amiJK dAOiva"
+          className="sc-hmbstg NFPsV"
         >
           ~
         </span>
         <div
-          className="sc-cBoqAE sc-hmbstg FGqJu ksQdnj"
+          className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
             className="sc-dIvrsQ eFXUYy input-base"
@@ -6415,7 +6447,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
+          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6479,10 +6511,10 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
     </label>
     <div>
       <div
-        className="sc-jHNicF fcFGQY"
+        className="sc-jOFryr gbSnGW"
       >
         <div
-          className="sc-cBoqAE sc-hmbstg FGqJu ksQdnj"
+          className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6497,12 +6529,12 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
         </div>
         <span
           aria-label="から"
-          className="sc-amiJK dAOiva"
+          className="sc-hmbstg NFPsV"
         >
           ~
         </span>
         <div
-          className="sc-cBoqAE sc-hmbstg FGqJu ksQdnj"
+          className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
             className="sc-dIvrsQ QnAUU input-base"
@@ -6517,7 +6549,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
+          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6541,7 +6573,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
         </button>
         <button
           aria-label="休憩時間を上に移動する"
-          className="sc-bCwfaz dOpRzz sc-kHWWYL jeyrVE"
+          className="sc-bCwfaz dOpRzz sc-dsXzNU hqiRMA"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6585,10 +6617,10 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
 
 exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
 <div
-  className="sc-dsXzNU jOgbat"
+  className="sc-jUfyBS ldZQeS"
 >
   <div
-    className="sc-daBunf fGenYR"
+    className="sc-jQAxuV cJBEhS"
   >
     <div
       className="sc-iemWCZ hcPsTf"
@@ -6601,10 +6633,10 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
       </label>
       <div>
         <div
-          className="sc-jHNicF fcFGQY"
+          className="sc-jOFryr gbSnGW"
         >
           <div
-            className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+            className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
           >
             <input
               className="sc-dIvrsQ eFXUYy input-base"
@@ -6620,12 +6652,12 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
           </div>
           <span
             aria-label="から"
-            className="sc-amiJK dAOiva"
+            className="sc-hmbstg NFPsV"
           >
             ~
           </span>
           <div
-            className="sc-gXfVKN sc-jOFryr bXRQZR inzozm"
+            className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
           >
             <input
               className="sc-dIvrsQ eFXUYy input-base"
@@ -6641,7 +6673,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
           </div>
           <button
             aria-label="休憩時間1を削除する"
-            className="sc-bCwfaz dOpRzz sc-bTDOke bdXGCp"
+            className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -6691,10 +6723,10 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
     </div>
   </div>
   <div
-    className="sc-jQAxuV eRpoCm"
+    className="sc-fcmMJX kHgJdE"
   >
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6723,18 +6755,18 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
 
 exports[`Storyshots unique/RestTimeFormGroup Text Type 1`] = `
 <div
-  className="sc-dsXzNU jOgbat"
+  className="sc-jUfyBS ldZQeS"
 >
   <div
-    className="sc-jQAxuV eRpoCm"
+    className="sc-fcmMJX kHgJdE"
   >
     <label
-      className="sc-bkbkJK fGkvBa sc-jUfyBS dwFLGD"
+      className="sc-bkbkJK fGkvBa sc-fuISkM uhKzF"
     >
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6763,18 +6795,18 @@ exports[`Storyshots unique/RestTimeFormGroup Text Type 1`] = `
 
 exports[`Storyshots unique/RestTimeFormGroup Time Input Type 1`] = `
 <div
-  className="sc-dsXzNU jOgbat"
+  className="sc-jUfyBS ldZQeS"
 >
   <div
-    className="sc-jQAxuV cdMLBk"
+    className="sc-fcmMJX dFZQle"
   >
     <label
-      className="sc-bkbkJK fGkvBa sc-jUfyBS dwFLGD"
+      className="sc-bkbkJK fGkvBa sc-fuISkM uhKzF"
     >
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-jffHpj aUBae bcKPCB sc-fuISkM liOARM button"
+      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6814,7 +6846,7 @@ exports[`Storyshots utils/StopPropagation Test 1`] = `
   role="none"
 >
   <div
-    className="sc-fcmMJX kDHumS"
+    className="sc-gsWcmt jwyQk"
     onClick={[Function]}
     role="none"
   >

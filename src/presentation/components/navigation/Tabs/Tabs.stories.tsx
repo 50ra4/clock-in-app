@@ -9,9 +9,6 @@ const Template = createStoryTemplate(Tabs);
 
 export const Docs = Template;
 Docs.args = {
-  items: [
-    { label: 'one', isActive: true },
-    { label: 'two', isActive: false },
-    { label: 'three', isActive: false },
-  ],
+  value: 'one',
+  items: [{ label: 'one' }, { label: 'two' }, { label: 'three' }],
 };

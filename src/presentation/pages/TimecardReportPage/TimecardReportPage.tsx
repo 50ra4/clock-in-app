@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -13,11 +13,22 @@ import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
-import { Tabs } from 'presentation/components/navigation/Tabs/Tabs';
+import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
 const isReportType = (x: string | null): x is ReportType => ReportTypes.some((t) => t === x);
+
+const tabItems: TabItem<ReportType>[] = [
+  {
+    label: '週報用',
+    value: 'weeklyReport',
+  },
+  {
+    label: '作業報告書用',
+    value: 'monthlyReport',
+  },
+];
 
 type SearchQuery = {
   month: string;
@@ -71,29 +82,14 @@ const TimecardReportPage = () => {
     preference: userPreference?.timecard,
   });
 
-  const tabItems = useMemo(
-    () => [
-      {
-        label: '週報用',
-        isActive: reportType === 'weeklyReport',
-        onClick: () => {
-          setSearchParams((prev) => ({ ...prev, type: 'weeklyReport' }));
-        },
-      },
-      {
-        label: '作業報告書用',
-        isActive: reportType === 'monthlyReport',
-        onClick: () => {
-          setSearchParams((prev) => ({ ...prev, type: 'monthlyReport' }));
-        },
-      },
-    ],
-    [reportType, setSearchParams],
+  const onChangeTab = useCallback(
+    (type: ReportType) => setSearchParams((prev) => ({ ...prev, type })),
+    [setSearchParams],
   );
 
   return (
     <WithHeaderLayout>
-      <Tabs items={tabItems} />
+      <Tabs value={reportType} onChange={onChangeTab} items={tabItems} />
       {isLoading || isFetchingPreference ? (
         <LoadingGuard open={true} />
       ) : reportType === 'weeklyReport' ? (

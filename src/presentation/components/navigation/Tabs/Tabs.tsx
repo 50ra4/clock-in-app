@@ -4,30 +4,48 @@ import { ColorPalette } from 'presentation/styles/theme';
 
 type TabColor = Exclude<ColorPalette, 'default'>;
 
-type Props = {
+export type TabItem<T> = {
+  label: string;
+  value: T;
+};
+
+type Props<T> = {
   className?: string;
-  items: {
-    label: string;
-    isActive?: boolean;
-    onClick?: () => void;
-  }[];
+  items: TabItem<T>[];
+  value?: T;
+  onChange?: (value: T) => void;
   color?: TabColor;
 };
 
 /**
  * @see https://www.w3schools.com/howto/howto_js_tabs.asp
  */
-export const Tabs = React.memo(function Tabs({ className, items, color = 'primary' }: Props) {
+export const Tabs = React.memo(function Tabs<T>({
+  className,
+  value: selectedValue,
+  onChange,
+  items,
+  color = 'primary',
+}: Props<T>) {
   return (
     <Root className={className} color={color}>
-      {items.map(({ label, isActive, onClick }) => (
-        <TabItems type="button" color={color} isActive={isActive} onClick={onClick}>
+      {items.map(({ label, value }) => (
+        <TabItems
+          type="button"
+          color={color}
+          isActive={value === selectedValue}
+          onClick={() => {
+            if (value === selectedValue) return;
+            if (!onChange) return;
+            onChange(value);
+          }}
+        >
           {label}
         </TabItems>
       ))}
     </Root>
   );
-});
+}) as <T>(props: T) => JSX.Element;
 
 const Root = styled.div<{ color: TabColor }>`
   overflow: hidden;

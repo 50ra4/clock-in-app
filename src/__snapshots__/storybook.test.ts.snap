@@ -3279,32 +3279,37 @@ exports[`Storyshots navigation/Link Docs 1`] = `
 
 exports[`Storyshots navigation/Tabs Docs 1`] = `
 <div
-  className="sc-Arkif gKqCTX"
-  color="primary"
+  className="sc-Arkif cypwmm"
 >
   <button
-    className="sc-khIgEk cKhyWK"
+    className="sc-khIgEk jCwJOE"
     color="primary"
     onClick={[Function]}
     type="button"
   >
-    one
+    <span>
+      one
+    </span>
   </button>
   <button
-    className="sc-khIgEk cKhyWK"
+    className="sc-khIgEk epjwSc"
     color="primary"
     onClick={[Function]}
     type="button"
   >
-    two
+    <span>
+      two
+    </span>
   </button>
   <button
-    className="sc-khIgEk cKhyWK"
+    className="sc-khIgEk jCwJOE"
     color="primary"
     onClick={[Function]}
     type="button"
   >
-    three
+    <span>
+      three
+    </span>
   </button>
 </div>
 `;

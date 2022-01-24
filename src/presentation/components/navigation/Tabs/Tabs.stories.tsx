@@ -7,8 +7,11 @@ export default createStoryMeta(Tabs, {
 
 const Template = createStoryTemplate(Tabs);
 
+const labels = ['one', 'two', 'three'] as const;
+const items = labels.map((label) => ({ label, value: label }));
+
 export const Docs = Template;
 Docs.args = {
-  value: 'one',
-  items: [{ label: 'one' }, { label: 'two' }, { label: 'three' }],
+  value: labels[1],
+  items: items,
 };

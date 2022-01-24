@@ -28,7 +28,7 @@ export const Tabs = React.memo(function Tabs<T>({
   color = 'primary',
 }: Props<T>) {
   return (
-    <Root className={className} color={color}>
+    <Root className={className}>
       {items.map(({ label, value }) => (
         <Tab
           type="button"
@@ -40,26 +40,36 @@ export const Tabs = React.memo(function Tabs<T>({
             onChange(value);
           }}
         >
-          {label}
+          <span>{label}</span>
         </Tab>
       ))}
     </Root>
   );
 }) as <T>(props: T) => JSX.Element;
 
-const Root = styled.div<{ color: TabColor }>`
+const Root = styled.div`
   height: ${({ theme }) => theme.height.tab}px;
   overflow: hidden;
-  color: ${({ theme }) => theme.color.palette.default.font};
-  background-color: ${({ theme }) => theme.color.palette.default.background};
+  border-bottom: 1px solid ${({ theme }) => theme.color.border.light};
 `;
 
 const Tab = styled.button<{ color: TabColor; isActive?: boolean }>`
-  color: ${({ isActive, color, theme }) => (isActive ? theme.color.palette[color].font : 'inherit')};
-  background-color: ${({ isActive, color, theme }) => (isActive ? theme.color.palette[color].background : 'inherit')};
+  background-color: inherit;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   transition: 0.3s;
+
+  height: 100%;
+  border-bottom: ${({ isActive, color, theme }) =>
+    isActive ? `3px solid ${theme.color.palette[color].background}` : 'none'};
+  margin-bottom: ${({ isActive }) => (isActive ? '0' : '3px')};
+
+  & > span {
+    font-size: ${({ theme }) => theme.font.size.middle}px;
+    font-weight: ${({ theme }) => theme.font.weight.bold};
+    color: ${({ isActive, color, theme }) =>
+      isActive ? theme.color.palette[color].background : theme.color.palette.default.background};
+    padding: ${({ theme }) => `0 ${theme.space.large * 2}px`};
+  }
 `;

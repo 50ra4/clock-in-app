@@ -30,7 +30,7 @@ export const Tabs = React.memo(function Tabs<T>({
   return (
     <Root className={className} color={color}>
       {items.map(({ label, value }) => (
-        <TabItems
+        <Tab
           type="button"
           color={color}
           isActive={value === selectedValue}
@@ -41,7 +41,7 @@ export const Tabs = React.memo(function Tabs<T>({
           }}
         >
           {label}
-        </TabItems>
+        </Tab>
       ))}
     </Root>
   );
@@ -54,7 +54,7 @@ const Root = styled.div<{ color: TabColor }>`
   background-color: ${({ theme }) => theme.color.palette.default.background};
 `;
 
-const TabItems = styled.button<{ color: TabColor; isActive?: boolean }>`
+const Tab = styled.button<{ color: TabColor; isActive?: boolean }>`
   color: ${({ isActive, color, theme }) => (isActive ? theme.color.palette[color].font : 'inherit')};
   background-color: ${({ isActive, color, theme }) => (isActive ? theme.color.palette[color].background : 'inherit')};
   border: none;

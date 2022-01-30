@@ -12,6 +12,7 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/LoadingGuard';
 import { Link } from 'presentation/components/navigation/Link/Link';
 import { authenticationErrorToMessage } from 'utils/authUtil';
+import { Head } from 'Head';
 
 const RegistrationPage = () => {
   const history = useHistory();
@@ -38,6 +39,7 @@ const RegistrationPage = () => {
 
   return (
     <WithHeaderLayout>
+      <Head title="アカウント登録" />
       <LoadingGuard open={isFetching} />
       <StyledRoot>
         <StyledCard title="アカウント登録">

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Head } from 'Head';
 
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { Link } from 'presentation/components/navigation/Link/Link';
@@ -15,6 +16,7 @@ const HomePage = () => {
 
   return (
     <WithHeaderLayout>
+      <Head />
       <HomePageContents toTimeCard={replacePathParams(PAGE_PATH.timecardDetail, { uid })} />
     </WithHeaderLayout>
   );

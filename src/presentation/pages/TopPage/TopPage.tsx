@@ -4,12 +4,14 @@ import { PAGE_PATH } from 'constants/path';
 import { Link } from 'presentation/components/navigation/Link/Link';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { useHomeRedirection } from 'hooks/useHomeRedirection';
+import { Head } from 'Head';
 
 const TopPage = () => {
   useHomeRedirection();
 
   return (
     <WithHeaderLayout>
+      <Head />
       <StyledRoot placement="left">
         <StyledPR>
           <strong>"Clock in"</strong>はブラウザ上で勤怠管理ができるWebアプリケーションです。

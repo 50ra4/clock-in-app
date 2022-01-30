@@ -14,6 +14,7 @@ import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/Load
 import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
 import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
+import { Head } from 'Head';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
@@ -89,6 +90,7 @@ const TimecardReportPage = () => {
 
   return (
     <WithHeaderLayout>
+      <Head title={`${selectedMonth}のレポート`} />
       <Tabs value={reportType} onChange={onChangeTab} items={tabItems} />
       {isLoading || isFetchingPreference ? (
         <LoadingGuard open={true} />

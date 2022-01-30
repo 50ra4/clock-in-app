@@ -12,6 +12,7 @@ import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/Load
 
 import { PAGE_PATH } from 'constants/path';
 import { useAuthentication } from 'hooks/useAuthentication';
+import { Head } from 'Head';
 
 const LoginPage = () => {
   const history = useHistory();
@@ -40,6 +41,7 @@ const LoginPage = () => {
 
   return (
     <WithHeaderLayout>
+      <Head title="ログイン" />
       <LoadingGuard open={isFetching} />
       <StyledRoot>
         <StyledCard title="ログイン">

@@ -7,6 +7,7 @@ import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/Load
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { TimecardPreferenceView } from './TimecardPreferenceView';
+import { Head } from 'Head';
 
 const UserPreferencePage = (): JSX.Element => {
   useLoginRedirection();
@@ -19,6 +20,7 @@ const UserPreferencePage = (): JSX.Element => {
 
   return (
     <WithHeaderLayout>
+      <Head title="勤怠設定" />
       <ResponsiveLayout>
         <LoadingGuard open={isFetching} />
         {userPreference && (

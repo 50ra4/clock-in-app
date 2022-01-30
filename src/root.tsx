@@ -1,6 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+
 import { configureStore } from 'store/root';
 
 import App from 'presentation/App';
@@ -11,11 +13,13 @@ const store = configureStore({});
 export function AppRoot() {
   return (
     <ErrorBoundary>
-      <BrowserRouter>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </BrowserRouter>
+      </HelmetProvider>
     </ErrorBoundary>
   );
 }

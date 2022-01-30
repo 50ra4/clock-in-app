@@ -18,6 +18,7 @@ import { LoadingGuard } from 'presentation/components/feedback/LoadingGuard/Load
 import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
 import { replacePathParams } from 'utils/pathUtil';
 import { PAGE_PATH } from 'constants/path';
+import { Head } from 'Head';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -123,6 +124,7 @@ export function MobileView() {
 
   return (
     <StyledRoot>
+      <Head title={`${selectedMonthJP}の勤怠`} />
       <LoadingGuard open={isLoading || isFetchingPreference} />
       {!userPreference ? null : (
         <>

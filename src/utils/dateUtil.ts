@@ -25,12 +25,12 @@ export const dateStringToDateString = (dateString: string, options: { from: Date
   format(stringDateToDate(dateString, options.from), options.to);
 
 /**
- * 対象月の毎日のDateの配列を返却する
- * @param month 年月（yyyy-MM形式）
- * @returns 対象月の日毎のDateの配列
+ * 対象日の月のDateの配列を返却する
+ * @param month 対象日
+ * @returns 対象日の月の日毎のDateの配列
  */
-export const daysOfMonth = (month: string): Date[] => {
-  const start = stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO);
+export const daysOfMonth = (date: Date): Date[] => {
+  const start = startOfMonth(date);
   const end = endOfMonth(start);
   return eachDayOfInterval({ start, end });
 };

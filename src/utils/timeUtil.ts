@@ -89,3 +89,44 @@ export const timeRangeToTimeString = <T extends Range<Time>>({ start, end }: T):
   start: start && timeToTimeString(start),
   end: end && timeToTimeString(end),
 });
+
+export const isAfterTime = (time: Time, timeToCompare: Time): boolean => {
+  if (!isNonEmptyTime(time) || !isNonEmptyTime(timeToCompare)) {
+    throw new Error('isAfterTime does not allow non-Required Time parameters');
+  }
+  return time.hour > timeToCompare.hour || time.minute > timeToCompare.minute;
+};
+export const isBeforeTime = (time: Time, timeToCompare: Time): boolean => {
+  if (!isNonEmptyTime(time) || !isNonEmptyTime(timeToCompare)) {
+    throw new Error('isBeforeTime does not allow non-Required Time parameters');
+  }
+  return time.hour < timeToCompare.hour || time.minute < timeToCompare.minute;
+};
+export const isEqualTime = (time: Time, timeToCompare: Time): boolean => {
+  if (!isNonEmptyTime(time) || !isNonEmptyTime(timeToCompare)) {
+    throw new Error('isEqualTime does not allow non-Required Time parameters');
+  }
+  return time.hour === timeToCompare.hour && time.minute === timeToCompare.minute;
+};
+
+export const isAfterTimeRange = (range: Range<Time>, rangeToCompare: Range<Time>): boolean => {
+  try {
+    return isAfterTime(range.start ?? {}, rangeToCompare.end ?? {});
+  } catch (error) {
+    throw new Error('isAfterTimeRange does not allow non-Required Time parameters');
+  }
+};
+export const isBeforeTimeRange = (range: Range<Time>, rangeToCompare: Range<Time>): boolean => {
+  try {
+    return isBeforeTime(range.start ?? {}, rangeToCompare.end ?? {});
+  } catch (error) {
+    throw new Error('isBeforeTimeRange does not allow non-Required Time parameters');
+  }
+};
+export const isConflictTimeRange = (range: Range<Time>, rangeToCompare: Range<Time>): boolean => {
+  try {
+    return false;
+  } catch (error) {
+    throw new Error('isConflictTimeRange does not allow non-Required Time parameters');
+  }
+};

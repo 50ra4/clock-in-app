@@ -49,3 +49,5 @@ export type TimecardUserPreference = {
   otherRestTimes: RestTime[];
   regularHolidays: DayOfWeekCode[];
 };
+
+export type HolidayLookups = Record<string, { jp: string; en: string }>;

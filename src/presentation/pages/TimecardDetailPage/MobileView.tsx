@@ -19,6 +19,7 @@ import { LaunchIcon } from 'presentation/components/display/Icons/LaunchIcon';
 import { replacePathParams } from 'utils/pathUtil';
 import { PAGE_PATH } from 'constants/path';
 import { Head } from 'Head';
+import { useHoliday } from 'hooks/useHoliday';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -56,6 +57,7 @@ export function MobileView() {
     initialQuery,
   });
   const { uid } = useParams<{ uid: string }>();
+  const { holiday } = useHoliday();
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);
   const { isLoading, dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth(
@@ -134,6 +136,7 @@ export function MobileView() {
             month={selectedMonth}
             dailyRecords={dailyTimeRecordsOfMonth}
             preference={userPreference.timecard}
+            holiday={holiday}
             onSelectDate={selectEditedRecord}
           />
           <FloatingExportButton onClick={onClickExportButton}>

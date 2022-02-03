@@ -6,7 +6,7 @@ import format from 'date-fns/format';
 import isSunday from 'date-fns/isSunday';
 import isSaturday from 'date-fns/isSaturday';
 
-import { DailyTimeRecord, DayOfWeekCode, TimecardUserPreference } from 'types';
+import { DailyTimeRecord, DayOfWeekCode, HolidayLookups, TimecardUserPreference } from 'types';
 import { daysOfMonth } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
@@ -21,6 +21,7 @@ type Props = {
   month: string;
   dailyRecords: DailyTimeRecord[];
   preference: TimecardUserPreference;
+  holiday?: HolidayLookups;
   onSelectDate: (dateString: string) => void;
 };
 
@@ -30,6 +31,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   month,
   dailyRecords,
   preference,
+  holiday,
   onSelectDate,
 }: Props) {
   const days = useMemo(() => daysOfMonth(month), [month]);
@@ -50,8 +52,14 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
           {days.map((day) => {
             const dateString = format(day, DATE_FORMAT.dateISO);
             const record = dailyRecords.find((record) => record.date === dateString);
-            const remarks = record ? dailyTimeRecordToRemarks(record, ' ') : '';
-            const isHoliday = preference.regularHolidays.includes(day.getDay() as DayOfWeekCode);
+            const holidayName = holiday?.[dateString]?.jp ?? '';
+            const isHoliday = !!holidayName || preference.regularHolidays.includes(day.getDay() as DayOfWeekCode);
+            const remarks = [
+              holidayName ? `祝日(${holidayName})` : '',
+              record ? dailyTimeRecordToRemarks(record, ' ') : '',
+            ]
+              .filter((v) => !!v)
+              .join(' ');
             return (
               <RecordRow key={dateString} isSunday={isSunday(day)} isSaturday={isSaturday(day)} isHoliday={isHoliday}>
                 <th scope="row">

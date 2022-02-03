@@ -7,6 +7,7 @@ import { connectedDialogReducer } from './connectedDialog';
 import { myProfileReducer } from './myProfile';
 import { userPreferenceReducer } from './userPreference';
 import { snackbarReducer } from './snackbar';
+import { holidayModule } from './holiday';
 
 export const reducers = combineReducers({
   authentication: authenticationReducer,
@@ -14,6 +15,7 @@ export const reducers = combineReducers({
   connectedDialog: connectedDialogReducer,
   snackbar: snackbarReducer,
   userPreference: userPreferenceReducer,
+  holiday: holidayModule.reducer,
 });
 export type AppState = ReturnType<typeof reducers>;
 

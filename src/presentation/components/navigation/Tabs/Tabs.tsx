@@ -56,7 +56,6 @@ const Root = styled.div`
 const Tab = styled.button<{ color: TabColor; isActive?: boolean }>`
   background-color: inherit;
   border: none;
-  outline: none;
   cursor: pointer;
   transition: 0.3s;
 
@@ -64,6 +63,11 @@ const Tab = styled.button<{ color: TabColor; isActive?: boolean }>`
   border-bottom: ${({ isActive, color, theme }) =>
     isActive ? `3px solid ${theme.color.palette[color].background}` : 'none'};
   margin-bottom: ${({ isActive }) => (isActive ? '0' : '3px')};
+
+  &:focus {
+    outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+    outline-offset: -2px;
+  }
 
   & > span {
     font-size: ${({ theme }) => theme.font.size.middle}px;

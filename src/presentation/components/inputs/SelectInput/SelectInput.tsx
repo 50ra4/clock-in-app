@@ -71,10 +71,12 @@ export const SelectInput = styled(UnStyledSelectInput)`
       css`
         background-color: #ffeeff;
         outline: 2px solid ${({ theme }) => theme.color.font.red};
+        outline-offset: -2px;
       `}
     &:focus {
       background-color: #ffffff;
       outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+      outline-offset: -2px;
     }
     padding: ${({ theme }) => `0 38px 0 ${theme.space.large}px`};
     appearance: none;

@@ -260,7 +260,7 @@ exports[`Storyshots forms/DateForm Date Input Type 1`] = `
         className="sc-hHEiqL"
       >
         <input
-          className="sc-dIvrsQ eFXUYy sc-hHEiqL input-base"
+          className="sc-dIvrsQ jIfXBu sc-hHEiqL input-base"
           error="required"
           id="date"
           max="2021-07-31"
@@ -321,7 +321,7 @@ exports[`Storyshots forms/DateForm Docs 1`] = `
         </p>
       </div>
       <div
-        className="sc-kfYoZR yMvPd"
+        className="sc-kfYoZR dYxocZ"
       >
         <select
           id="docs"
@@ -675,7 +675,7 @@ exports[`Storyshots forms/DateForm Select Type 1`] = `
     </label>
     <div>
       <div
-        className="sc-kfYoZR yMvPd"
+        className="sc-kfYoZR dYxocZ"
       >
         <select
           id="select"
@@ -1076,7 +1076,7 @@ exports[`Storyshots forms/MinuteForm Docs 1`] = `
         className="sc-cxNHIi kRxbkg"
       >
         <input
-          className="sc-dIvrsQ egthDb input-base"
+          className="sc-dIvrsQ fcMMzv input-base"
           id="docs"
           name="docs"
           onBlur={[Function]}
@@ -1086,7 +1086,7 @@ exports[`Storyshots forms/MinuteForm Docs 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz dOpRzz sc-iwajpm"
+          className="sc-bCwfaz dA-dqWb sc-iwajpm"
           disabled={false}
           type="button"
         >
@@ -1138,7 +1138,7 @@ exports[`Storyshots forms/MinuteForm Error 1`] = `
         className="sc-cxNHIi kRxbkg"
       >
         <input
-          className="sc-dIvrsQ jFEMLV input-base"
+          className="sc-dIvrsQ iOmyKd input-base"
           error="too long"
           id="error"
           name="error"
@@ -1149,7 +1149,7 @@ exports[`Storyshots forms/MinuteForm Error 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz dOpRzz sc-iwajpm"
+          className="sc-bCwfaz dA-dqWb sc-iwajpm"
           disabled={false}
           type="button"
         >
@@ -1225,7 +1225,7 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
         className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-dIvrsQ egthDb input-base"
+          className="sc-dIvrsQ fcMMzv input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1234,7 +1234,7 @@ exports[`Storyshots forms/PasswordForm Docs 1`] = `
         />
         <button
           aria-label="パスワードを表示する"
-          className="sc-bCwfaz dOpRzz sc-iJCRrE"
+          className="sc-bCwfaz dA-dqWb sc-iJCRrE"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -1287,7 +1287,7 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         className="sc-giAqHp bjKIoq"
       >
         <input
-          className="sc-dIvrsQ jFEMLV input-base"
+          className="sc-dIvrsQ iOmyKd input-base"
           error="incorrect password"
           id="error"
           name="error"
@@ -1297,7 +1297,7 @@ exports[`Storyshots forms/PasswordForm Error 1`] = `
         />
         <button
           aria-label="パスワードを表示する"
-          className="sc-bCwfaz dOpRzz sc-iJCRrE"
+          className="sc-bCwfaz dA-dqWb sc-iJCRrE"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -1371,7 +1371,7 @@ exports[`Storyshots forms/TextAreaForm Docs 1`] = `
         </p>
       </div>
       <textarea
-        className="sc-bYwzuL llNyQm"
+        className="sc-bYwzuL bIZsGO"
         id="docs"
         name="docs"
         onChange={[Function]}
@@ -1404,7 +1404,7 @@ exports[`Storyshots forms/TextAreaForm Error 1`] = `
         </p>
       </div>
       <textarea
-        className="sc-bYwzuL jAZNBV"
+        className="sc-bYwzuL elXpcd"
         id="error"
         name="error"
         onChange={[Function]}
@@ -1465,7 +1465,7 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
         className="sc-jJMGnK fovkov"
       >
         <input
-          className="sc-dIvrsQ egthDb input-base"
+          className="sc-dIvrsQ fcMMzv input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1474,7 +1474,7 @@ exports[`Storyshots forms/TextForm Docs 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz dOpRzz sc-iklJeh"
+          className="sc-bCwfaz dA-dqWb sc-iklJeh"
           disabled={false}
           type="button"
         >
@@ -1526,7 +1526,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         className="sc-jJMGnK fovkov"
       >
         <input
-          className="sc-dIvrsQ jFEMLV input-base"
+          className="sc-dIvrsQ iOmyKd input-base"
           error="too long"
           id="error"
           name="error"
@@ -1536,7 +1536,7 @@ exports[`Storyshots forms/TextForm Error 1`] = `
         />
         <button
           aria-label="クリア"
-          className="sc-bCwfaz dOpRzz sc-iklJeh"
+          className="sc-bCwfaz dA-dqWb sc-iklJeh"
           disabled={false}
           type="button"
         >
@@ -1611,7 +1611,7 @@ exports[`Storyshots forms/TimeForm Docs 1`] = `
         className="sc-cBoqAE FGqJu"
       >
         <input
-          className="sc-dIvrsQ QnAUU input-base"
+          className="sc-dIvrsQ fbLNnM input-base"
           id="docs"
           name="docs"
           onChange={[Function]}
@@ -1642,7 +1642,7 @@ exports[`Storyshots forms/TimeForm Text Type 1`] = `
         className="sc-gXfVKN bXRQZR"
       >
         <input
-          className="sc-dIvrsQ QnAUU input-base"
+          className="sc-dIvrsQ fbLNnM input-base"
           id="select"
           name="select"
           onBlur={[Function]}
@@ -1675,7 +1675,7 @@ exports[`Storyshots forms/TimeForm Time Input Type 1`] = `
         className="sc-cBoqAE FGqJu"
       >
         <input
-          className="sc-dIvrsQ eFXUYy input-base"
+          className="sc-dIvrsQ jIfXBu input-base"
           error="required"
           id="date"
           name="date"
@@ -1738,7 +1738,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-gXfVKN sc-iTVJFM bXRQZR dTSrqG"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -1758,7 +1758,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
           className="sc-gXfVKN sc-iTVJFM bXRQZR dTSrqG"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -1770,7 +1770,7 @@ exports[`Storyshots forms/TimeRangeForm Docs 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-cTJkRt gDrjBW"
+          className="sc-bCwfaz dA-dqWb sc-cTJkRt gDrjBW"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -1824,7 +1824,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-gXfVKN sc-iTVJFM bXRQZR dTSrqG"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -1844,7 +1844,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
           className="sc-gXfVKN sc-iTVJFM bXRQZR dTSrqG"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -1856,7 +1856,7 @@ exports[`Storyshots forms/TimeRangeForm Text Type 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-cTJkRt gDrjBW"
+          className="sc-bCwfaz dA-dqWb sc-cTJkRt gDrjBW"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -1903,7 +1903,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-cBoqAE sc-iBzEeX FGqJu iwqwOZ"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="enter time"
             id="time"
             name="time"
@@ -1923,7 +1923,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
           className="sc-cBoqAE sc-iBzEeX FGqJu iwqwOZ"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="enter time"
             id="time-end"
             name="time-end"
@@ -1965,7 +1965,7 @@ exports[`Storyshots forms/TimeRangeForm Time Type 1`] = `
 exports[`Storyshots inputs/BackSpaceButton Docs 1`] = `
 <button
   aria-label="削除"
-  className="sc-bCwfaz dOpRzz"
+  className="sc-bCwfaz dA-dqWb"
   disabled={false}
   type="button"
 >
@@ -2455,7 +2455,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
   className="sc-hHEiqL"
 >
   <input
-    className="sc-dIvrsQ QnAUU sc-hHEiqL input-base"
+    className="sc-dIvrsQ fbLNnM sc-hHEiqL input-base"
     id="docs"
     max="2021-07-31"
     min="2021-07-01"
@@ -2469,7 +2469,7 @@ exports[`Storyshots inputs/DateInput Docs 1`] = `
 
 exports[`Storyshots inputs/DateSelect Docs 1`] = `
 <div
-  className="sc-kfYoZR yMvPd"
+  className="sc-kfYoZR dYxocZ"
 >
   <select
     id="docs"
@@ -2658,7 +2658,7 @@ exports[`Storyshots inputs/DateSelect Docs 1`] = `
 exports[`Storyshots inputs/DeleteButton Docs 1`] = `
 <button
   aria-label="削除"
-  className="sc-bCwfaz dOpRzz"
+  className="sc-bCwfaz dA-dqWb"
   disabled={false}
   type="button"
 >
@@ -2683,7 +2683,7 @@ exports[`Storyshots inputs/DeleteButton Docs 1`] = `
 
 exports[`Storyshots inputs/IconButton Docs 1`] = `
 <button
-  className="sc-bCwfaz dOpRzz"
+  className="sc-bCwfaz dA-dqWb"
   disabled={false}
   type="button"
 >
@@ -2709,7 +2709,7 @@ exports[`Storyshots inputs/IconButton Docs 1`] = `
 exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 <button
   aria-label="クリア"
-  className="sc-bCwfaz dOpRzz"
+  className="sc-bCwfaz dA-dqWb"
   disabled={false}
   type="button"
 >
@@ -2734,7 +2734,7 @@ exports[`Storyshots inputs/InputClearButton Docs 1`] = `
 
 exports[`Storyshots inputs/MonthSelect Docs 1`] = `
 <div
-  className="sc-kfYoZR yMvPd"
+  className="sc-kfYoZR dYxocZ"
 >
   <select
     id="docs"
@@ -2845,7 +2845,7 @@ exports[`Storyshots inputs/NumberInput Docs 1`] = `
   className="sc-cxNHIi kRxbkg"
 >
   <input
-    className="sc-dIvrsQ egthDb input-base"
+    className="sc-dIvrsQ fcMMzv input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2854,7 +2854,7 @@ exports[`Storyshots inputs/NumberInput Docs 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz dOpRzz sc-iwajpm"
+    className="sc-bCwfaz dA-dqWb sc-iwajpm"
     disabled={false}
     type="button"
   >
@@ -2883,7 +2883,7 @@ exports[`Storyshots inputs/NumberInput Error 1`] = `
   className="sc-cxNHIi kRxbkg"
 >
   <input
-    className="sc-dIvrsQ jFEMLV input-base"
+    className="sc-dIvrsQ iOmyKd input-base"
     error="enter without hyphens"
     id="error"
     max={60}
@@ -2894,7 +2894,7 @@ exports[`Storyshots inputs/NumberInput Error 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz dOpRzz sc-iwajpm"
+    className="sc-bCwfaz dA-dqWb sc-iwajpm"
     disabled={false}
     type="button"
   >
@@ -2923,7 +2923,7 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
   className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-dIvrsQ egthDb input-base"
+    className="sc-dIvrsQ fcMMzv input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -2932,7 +2932,7 @@ exports[`Storyshots inputs/PasswordInput Docs 1`] = `
   />
   <button
     aria-label="パスワードを表示する"
-    className="sc-bCwfaz dOpRzz sc-iJCRrE"
+    className="sc-bCwfaz dA-dqWb sc-iJCRrE"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -2962,7 +2962,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
   className="sc-giAqHp bjKIoq"
 >
   <input
-    className="sc-dIvrsQ jFEMLV input-base"
+    className="sc-dIvrsQ iOmyKd input-base"
     error="incorrect password"
     id="error"
     name="error"
@@ -2972,7 +2972,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
   />
   <button
     aria-label="パスワードを表示する"
-    className="sc-bCwfaz dOpRzz sc-iJCRrE"
+    className="sc-bCwfaz dA-dqWb sc-iJCRrE"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -2999,7 +2999,7 @@ exports[`Storyshots inputs/PasswordInput Error 1`] = `
 
 exports[`Storyshots inputs/SelectInput Docs 1`] = `
 <div
-  className="sc-kfYoZR yMvPd"
+  className="sc-kfYoZR dYxocZ"
 >
   <select
     id="docs"
@@ -3051,7 +3051,7 @@ exports[`Storyshots inputs/SelectInput Docs 1`] = `
 
 exports[`Storyshots inputs/SelectInput Error 1`] = `
 <div
-  className="sc-kfYoZR YxrTT"
+  className="sc-kfYoZR jBXFtv"
 >
   <select
     id="error"
@@ -3103,7 +3103,7 @@ exports[`Storyshots inputs/SelectInput Error 1`] = `
 
 exports[`Storyshots inputs/TextArea Docs 1`] = `
 <textarea
-  className="sc-bYwzuL llNyQm"
+  className="sc-bYwzuL bIZsGO"
   description="please enter phone number."
   id="docs"
   name="docs"
@@ -3114,7 +3114,7 @@ exports[`Storyshots inputs/TextArea Docs 1`] = `
 
 exports[`Storyshots inputs/TextArea Error 1`] = `
 <textarea
-  className="sc-bYwzuL kdIkqY"
+  className="sc-bYwzuL ibKrms"
   id="error"
   name="error"
   onChange={[Function]}
@@ -3127,7 +3127,7 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
   className="sc-jJMGnK fovkov"
 >
   <input
-    className="sc-dIvrsQ egthDb input-base"
+    className="sc-dIvrsQ fcMMzv input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -3136,7 +3136,7 @@ exports[`Storyshots inputs/TextInput Docs 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz dOpRzz sc-iklJeh"
+    className="sc-bCwfaz dA-dqWb sc-iklJeh"
     disabled={false}
     type="button"
   >
@@ -3165,7 +3165,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
   className="sc-jJMGnK fovkov"
 >
   <input
-    className="sc-dIvrsQ jFEMLV input-base"
+    className="sc-dIvrsQ iOmyKd input-base"
     error="enter without hyphens"
     id="error"
     name="error"
@@ -3175,7 +3175,7 @@ exports[`Storyshots inputs/TextInput Error 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz dOpRzz sc-iklJeh"
+    className="sc-bCwfaz dA-dqWb sc-iklJeh"
     disabled={false}
     type="button"
   >
@@ -3204,7 +3204,7 @@ exports[`Storyshots inputs/TimeInput Docs 1`] = `
   className="sc-cBoqAE FGqJu"
 >
   <input
-    className="sc-dIvrsQ QnAUU input-base"
+    className="sc-dIvrsQ fbLNnM input-base"
     id="docs"
     name="docs"
     onChange={[Function]}
@@ -3220,7 +3220,7 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
   className="sc-gXfVKN bXRQZR"
 >
   <input
-    className="sc-dIvrsQ egthDb input-base"
+    className="sc-dIvrsQ fcMMzv input-base"
     id="docs"
     name="docs"
     onBlur={[Function]}
@@ -3230,7 +3230,7 @@ exports[`Storyshots inputs/TimeTextInput Docs 1`] = `
   />
   <button
     aria-label="クリア"
-    className="sc-bCwfaz dOpRzz"
+    className="sc-bCwfaz dA-dqWb"
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -3282,7 +3282,7 @@ exports[`Storyshots navigation/Tabs Docs 1`] = `
   className="sc-Arkif cypwmm"
 >
   <button
-    className="sc-khIgEk jCwJOE"
+    className="sc-khIgEk kqAtLW"
     color="primary"
     onClick={[Function]}
     type="button"
@@ -3292,7 +3292,7 @@ exports[`Storyshots navigation/Tabs Docs 1`] = `
     </span>
   </button>
   <button
-    className="sc-khIgEk epjwSc"
+    className="sc-khIgEk kLjBDe"
     color="primary"
     onClick={[Function]}
     type="button"
@@ -3302,7 +3302,7 @@ exports[`Storyshots navigation/Tabs Docs 1`] = `
     </span>
   </button>
   <button
-    className="sc-khIgEk jCwJOE"
+    className="sc-khIgEk kqAtLW"
     color="primary"
     onClick={[Function]}
     type="button"
@@ -3333,7 +3333,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthSelector Docs 1`] = `
   </button>
   <div>
     <div
-      className="sc-kfYoZR yMvPd sc-csTbgd"
+      className="sc-kfYoZR dYxocZ sc-csTbgd"
     >
       <select
         id="selectedMonth"
@@ -3471,7 +3471,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-01の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3522,7 +3522,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-02の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3573,7 +3573,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-03の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3624,7 +3624,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-04の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3675,7 +3675,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-05の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3726,7 +3726,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-06の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3777,7 +3777,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-07の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3828,7 +3828,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-08の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3879,7 +3879,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-09の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3930,7 +3930,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-10の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -3981,7 +3981,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-11の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4032,7 +4032,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-12の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4083,7 +4083,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-13の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4134,7 +4134,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-14の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4185,7 +4185,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-15の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4236,7 +4236,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-16の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4287,7 +4287,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-17の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4338,7 +4338,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-18の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4389,7 +4389,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-19の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4440,7 +4440,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-20の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4491,7 +4491,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-21の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4542,7 +4542,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-22の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4593,7 +4593,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-23の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4644,7 +4644,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-24の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4695,7 +4695,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-25の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4746,7 +4746,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-26の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4797,7 +4797,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-27の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4848,7 +4848,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-28の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4899,7 +4899,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-29の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -4950,7 +4950,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-30の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5001,7 +5001,7 @@ exports[`Storyshots pages/TimecardDetailPage/MonthlyTimeCardTable Docs 1`] = `
         <td>
           <button
             aria-label="2021-07-31の勤怠を修正する"
-            className="sc-bCwfaz dOpRzz sc-fHCHyC DtnKA"
+            className="sc-bCwfaz dA-dqWb sc-fHCHyC DtnKA"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5161,7 +5161,7 @@ exports[`Storyshots surfaces/Header Docs 1`] = `
   </a>
   <button
     aria-label="メニューを表示"
-    className="sc-bCwfaz dOpRzz"
+    className="sc-bCwfaz dA-dqWb"
     disabled={false}
     type="button"
   >
@@ -5195,7 +5195,7 @@ exports[`Storyshots surfaces/Header Text Header 1`] = `
   </h2>
   <button
     aria-label="メニューを表示"
-    className="sc-bCwfaz dOpRzz"
+    className="sc-bCwfaz dA-dqWb"
     disabled={false}
     type="button"
   >
@@ -5243,7 +5243,7 @@ exports[`Storyshots surfaces/Paper Docs 1`] = `
 
 exports[`Storyshots unique/AdditionalButton Docs 1`] = `
 <button
-  className="sc-fujyAs sc-oeezt aUBae iYUOFw button"
+  className="sc-fujyAs sc-oeezt aUBae bgTLfQ button"
   color="primary"
   disabled={false}
   onClick={[Function]}
@@ -5605,7 +5605,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="docs"
             name="docs"
             onBlur={[Function]}
@@ -5625,7 +5625,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="docs-end"
             name="docs-end"
             onBlur={[Function]}
@@ -5639,7 +5639,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
-            className="sc-dIvrsQ egthDb input-base"
+            className="sc-dIvrsQ fcMMzv input-base"
             id="docs-remarks"
             name="inHouseWork-remarks"
             onChange={[Function]}
@@ -5649,7 +5649,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
           />
           <button
             aria-label="クリア"
-            className="sc-bCwfaz dOpRzz sc-iklJeh"
+            className="sc-bCwfaz dA-dqWb sc-iklJeh"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5674,7 +5674,7 @@ exports[`Storyshots unique/InHouseWorkForm Docs 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
+          className="sc-bCwfaz dA-dqWb sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5721,7 +5721,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -5741,7 +5741,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -5755,7 +5755,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
-            className="sc-dIvrsQ egthDb input-base"
+            className="sc-dIvrsQ fcMMzv input-base"
             id="text-remarks"
             name="inHouseWork-remarks"
             onChange={[Function]}
@@ -5765,7 +5765,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
           />
           <button
             aria-label="クリア"
-            className="sc-bCwfaz dOpRzz sc-iklJeh"
+            className="sc-bCwfaz dA-dqWb sc-iklJeh"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5790,7 +5790,7 @@ exports[`Storyshots unique/InHouseWorkForm Text Type 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
+          className="sc-bCwfaz dA-dqWb sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5838,7 +5838,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           className="sc-cBoqAE sc-gGLxEB FGqJu gDvYDa"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="required"
             id="input"
             name="input"
@@ -5858,7 +5858,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           className="sc-cBoqAE sc-gGLxEB FGqJu gDvYDa"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="required"
             id="input-end"
             name="input-end"
@@ -5872,7 +5872,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
         >
           <input
-            className="sc-dIvrsQ jFEMLV input-base"
+            className="sc-dIvrsQ iOmyKd input-base"
             error="required"
             id="input-remarks"
             name="inHouseWork-remarks"
@@ -5883,7 +5883,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
           />
           <button
             aria-label="クリア"
-            className="sc-bCwfaz dOpRzz sc-iklJeh"
+            className="sc-bCwfaz dA-dqWb sc-iklJeh"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -5908,7 +5908,7 @@ exports[`Storyshots unique/InHouseWorkForm Time Input Type 1`] = `
         </div>
         <button
           aria-label="社内作業を削除する"
-          className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
+          className="sc-bCwfaz dA-dqWb sc-fbIWvP bXfte"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -5983,7 +5983,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
           >
             <input
-              className="sc-dIvrsQ eFXUYy input-base"
+              className="sc-dIvrsQ jIfXBu input-base"
               error="required"
               id="inHouseWork-1"
               name="inHouseWork"
@@ -6004,7 +6004,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-gXfVKN sc-lbVvki bXRQZR WsUwJ"
           >
             <input
-              className="sc-dIvrsQ eFXUYy input-base"
+              className="sc-dIvrsQ jIfXBu input-base"
               error="required"
               id="inHouseWork-1-end"
               name="inHouseWork-end"
@@ -6019,7 +6019,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             className="sc-jJMGnK sc-ckTSus fovkov eJxhoa"
           >
             <input
-              className="sc-dIvrsQ jFEMLV input-base"
+              className="sc-dIvrsQ iOmyKd input-base"
               error="required"
               id="inHouseWork-1-remarks"
               name="inHouseWork-remarks"
@@ -6030,7 +6030,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
             />
             <button
               aria-label="クリア"
-              className="sc-bCwfaz dOpRzz sc-iklJeh"
+              className="sc-bCwfaz dA-dqWb sc-iklJeh"
               disabled={false}
               onClick={[Function]}
               type="button"
@@ -6055,7 +6055,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
           </div>
           <button
             aria-label="社内作業1を削除する"
-            className="sc-bCwfaz dOpRzz sc-fbIWvP bXfte"
+            className="sc-bCwfaz dA-dqWb sc-fbIWvP bXfte"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -6108,7 +6108,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Docs 1`] = `
     className="sc-TtZnY eUhkAi"
   >
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6148,7 +6148,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Text Type 1`] = `
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6188,7 +6188,7 @@ exports[`Storyshots unique/InHouseWorkFormGroup Time Input Type 1`] = `
       社内作業
     </label>
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-jHNicF gOHGgv button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-jHNicF gOHGgv button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6281,7 +6281,7 @@ exports[`Storyshots unique/RestTimeForm Docs 1`] = `
           className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             disabled={false}
             id="docs"
             name="docs"
@@ -6303,7 +6303,7 @@ exports[`Storyshots unique/RestTimeForm Docs 1`] = `
           className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             disabled={false}
             id="docs-end"
             name="docs-end"
@@ -6340,7 +6340,7 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
           className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text"
             name="text"
             onBlur={[Function]}
@@ -6360,7 +6360,7 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
           className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             id="text-end"
             name="text-end"
             onBlur={[Function]}
@@ -6372,7 +6372,7 @@ exports[`Storyshots unique/RestTimeForm Text Type 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
+          className="sc-bCwfaz dA-dqWb sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6420,7 +6420,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
           className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="required"
             id="input"
             name="input"
@@ -6440,7 +6440,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
           className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
-            className="sc-dIvrsQ eFXUYy input-base"
+            className="sc-dIvrsQ jIfXBu input-base"
             error="required"
             id="input-end"
             name="input-end"
@@ -6452,7 +6452,7 @@ exports[`Storyshots unique/RestTimeForm Time Input Type 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
+          className="sc-bCwfaz dA-dqWb sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6522,7 +6522,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
           className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             disabled={false}
             id="sort-up"
             name="sort-up"
@@ -6542,7 +6542,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
           className="sc-cBoqAE sc-bTDOke FGqJu cRmBuj"
         >
           <input
-            className="sc-dIvrsQ QnAUU input-base"
+            className="sc-dIvrsQ fbLNnM input-base"
             disabled={false}
             id="sort-up-end"
             name="sort-up-end"
@@ -6554,7 +6554,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
         </div>
         <button
           aria-label="休憩時間を削除する"
-          className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
+          className="sc-bCwfaz dA-dqWb sc-hOPeYd gHaSpx"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6578,7 +6578,7 @@ exports[`Storyshots unique/RestTimeForm With Sort Up 1`] = `
         </button>
         <button
           aria-label="休憩時間を上に移動する"
-          className="sc-bCwfaz dOpRzz sc-dsXzNU hqiRMA"
+          className="sc-bCwfaz dA-dqWb sc-dsXzNU hqiRMA"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -6644,7 +6644,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
           >
             <input
-              className="sc-dIvrsQ eFXUYy input-base"
+              className="sc-dIvrsQ jIfXBu input-base"
               error="required"
               id="restTime-1"
               name="restTime"
@@ -6665,7 +6665,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
             className="sc-gXfVKN sc-eKYRIR bXRQZR kABBnq"
           >
             <input
-              className="sc-dIvrsQ eFXUYy input-base"
+              className="sc-dIvrsQ jIfXBu input-base"
               error="required"
               id="restTime-1-end"
               name="restTime-end"
@@ -6678,7 +6678,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
           </div>
           <button
             aria-label="休憩時間1を削除する"
-            className="sc-bCwfaz dOpRzz sc-hOPeYd gHaSpx"
+            className="sc-bCwfaz dA-dqWb sc-hOPeYd gHaSpx"
             disabled={false}
             onClick={[Function]}
             type="button"
@@ -6731,7 +6731,7 @@ exports[`Storyshots unique/RestTimeFormGroup Docs 1`] = `
     className="sc-fcmMJX kHgJdE"
   >
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6771,7 +6771,7 @@ exports[`Storyshots unique/RestTimeFormGroup Text Type 1`] = `
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}
@@ -6811,7 +6811,7 @@ exports[`Storyshots unique/RestTimeFormGroup Time Input Type 1`] = `
       休憩時間
     </label>
     <button
-      className="sc-fujyAs sc-oeezt aUBae iYUOFw sc-GvhzO kEcPYj button"
+      className="sc-fujyAs sc-oeezt aUBae bgTLfQ sc-GvhzO kEcPYj button"
       color="primary"
       disabled={false}
       onClick={[Function]}

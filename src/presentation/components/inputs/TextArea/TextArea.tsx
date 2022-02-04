@@ -40,10 +40,12 @@ export const TextArea = styled(UnStyledTextArea)`
     css`
       background-color: #ffeeff;
       outline: 2px solid ${({ theme }) => theme.color.font.red};
+      outline-offset: -2px;
     `}
   &:focus {
     background-color: #ffffff;
     outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+    outline-offset: -2px;
   }
   caret-color: ${({ theme }) => theme.color.palette.secondary.background};
 `;

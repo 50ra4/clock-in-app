@@ -34,5 +34,6 @@ export const IconButton = styled(UnStyledIconButton)`
   padding: ${({ theme }) => theme.space.middle}px;
   &:focus {
     outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+    outline-offset: -2px;
   }
 `;

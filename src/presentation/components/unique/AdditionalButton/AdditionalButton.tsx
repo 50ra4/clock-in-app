@@ -32,5 +32,6 @@ const StyledButton = styled(Button)`
   }
   &:focus {
     outline: 2px solid ${({ theme }) => theme.color.palette.secondary.background};
+    outline-offset: -2px;
   }
 `;

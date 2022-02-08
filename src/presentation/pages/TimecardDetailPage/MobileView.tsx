@@ -4,9 +4,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { DATE_FORMAT } from 'constants/dateFormat';
-import { isValidDateString, getThisMonthDateString, dateStringToDateString } from 'utils/dateUtil';
+import { getThisMonthDateString, dateStringToDateString } from 'utils/dateUtil';
 import { ResponsiveLayout } from 'presentation/layouts/ResponsiveLayout/ResponsiveLayout';
-import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQueryString';
 import { MonthSelector, monthSelectorHeight } from './components/MonthSelector';
 import { MonthlyTimeCardTable } from './components/MonthlyTimeCardTable';
 import { DailyTimeRecord } from 'types';
@@ -20,6 +19,8 @@ import { replacePathParams } from 'utils/pathUtil';
 import { PAGE_PATH } from 'constants/path';
 import { Head } from 'Head';
 import { useHoliday } from 'hooks/useHoliday';
+import { useUrlQueryString } from 'hooks/useUrlQueryString';
+import { getMonthStringOrElse } from 'utils/urlQueryStringUtil';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -32,10 +33,6 @@ const INITIAL_STATE: DailyTimeRecord = {
   remarks: '',
 };
 
-const initialQuery = {
-  month: THIS_MONTH_DATE_STRING,
-} as const;
-
 const stringifyQuery = ({ month }: { month: string }): string => {
   const searchParams = new URLSearchParams();
   searchParams.append('month', month);
@@ -43,18 +40,14 @@ const stringifyQuery = ({ month }: { month: string }): string => {
 };
 
 const parseQuery = (queryString: string) => {
-  const queryMonth = new URLSearchParams(queryString).get('month');
-  const month =
-    queryMonth && isValidDateString(queryMonth, DATE_FORMAT.yearMonthISO) ? queryMonth : THIS_MONTH_DATE_STRING;
-  return { month };
+  const params = new URLSearchParams(queryString);
+  return { month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING)(params) };
 };
 
 export function MobileView() {
   const history = useHistory();
-  const [{ month: selectedMonth }, setQuery] = useSyncStateWithURLQueryString({
-    stringify: stringifyQuery,
+  const [{ month: selectedMonth }, setQuery] = useUrlQueryString({
     parser: parseQuery,
-    initialQuery,
   });
   const { uid } = useParams<{ uid: string }>();
   const { holiday } = useHoliday();

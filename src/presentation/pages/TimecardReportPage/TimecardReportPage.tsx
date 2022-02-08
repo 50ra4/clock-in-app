@@ -4,9 +4,8 @@ import styled from 'styled-components';
 
 import { useLoginRedirection } from 'hooks/useLoginRedirection';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
-import { getThisMonthDateString, isValidDateString } from 'utils/dateUtil';
-import { DATE_FORMAT } from 'constants/dateFormat';
-import { useSyncStateWithURLQueryString } from 'hooks/useSyncStateWithURLQueryString';
+import { getThisMonthDateString } from 'utils/dateUtil';
+import { useUrlQueryString } from 'hooks/useUrlQueryString';
 import { useUserPreference } from 'hooks/useUserPreference';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
@@ -15,10 +14,11 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
 import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
 import { Head } from 'Head';
+import { getGenericsOrElse, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
-const isReportType = (x: string | null): x is ReportType => ReportTypes.some((t) => t === x);
+const isReportType = (x: unknown): x is ReportType => ReportTypes.some((t) => t === x);
 
 const tabItems: TabItem<ReportType>[] = [
   {
@@ -31,34 +31,14 @@ const tabItems: TabItem<ReportType>[] = [
   },
 ];
 
-type SearchQuery = {
-  month: string;
-  type: ReportType;
-};
-
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
-
-const initialQuery: SearchQuery = {
-  month: THIS_MONTH_DATE_STRING,
-  type: 'weeklyReport',
-};
-
-const stringifyQuery = ({ month, type }: SearchQuery): string => {
-  const searchParams = new URLSearchParams();
-  searchParams.append('month', month);
-  searchParams.append('type', type);
-  return searchParams.toString();
-};
 
 const parseQuery = (queryString: string) => {
   const params = new URLSearchParams(queryString);
-  const queryMonth = params.get('month');
-  const month =
-    queryMonth && isValidDateString(queryMonth, DATE_FORMAT.yearMonthISO) ? queryMonth : THIS_MONTH_DATE_STRING;
-
-  const queryType = params.get('type');
-  const type = isReportType(queryType) ? queryType : 'weeklyReport';
-  return { month, type };
+  return {
+    month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING)(params),
+    type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType)(params),
+  };
 };
 
 const TimecardReportPage = () => {
@@ -66,10 +46,8 @@ const TimecardReportPage = () => {
 
   const { uid } = useParams<{ uid: string }>();
 
-  const [{ month: selectedMonth, type: reportType }, setSearchParams] = useSyncStateWithURLQueryString({
-    stringify: stringifyQuery,
+  const [{ month: selectedMonth, type: reportType }, setSearchParams] = useUrlQueryString({
     parser: parseQuery,
-    initialQuery,
   });
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);

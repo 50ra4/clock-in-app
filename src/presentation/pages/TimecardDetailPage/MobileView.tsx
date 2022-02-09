@@ -20,7 +20,7 @@ import { PAGE_PATH } from 'constants/path';
 import { Head } from 'Head';
 import { useHoliday } from 'hooks/useHoliday';
 import { useUrlQueryString } from 'hooks/useUrlQueryString';
-import { createURLQueryParser, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
+import { createURLQueryParser, getDateStringOrElse } from 'utils/urlQueryStringUtil';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -40,7 +40,7 @@ const stringifyQuery = ({ month }: { month: string }): string => {
 };
 
 const parser = createURLQueryParser({
-  month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING),
+  month: getDateStringOrElse('month', () => THIS_MONTH_DATE_STRING, DATE_FORMAT.yearMonthISO),
 });
 
 export function MobileView() {

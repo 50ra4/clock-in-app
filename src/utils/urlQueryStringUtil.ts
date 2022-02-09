@@ -1,4 +1,4 @@
-import { DATE_FORMAT } from 'constants/dateFormat';
+import { DateFormat } from 'constants/dateFormat';
 import { isValidDateString } from './dateUtil';
 
 type Primitive = string | number | boolean | null | undefined;
@@ -20,10 +20,11 @@ export const stringifyURLQuery = <T extends URLQueryObject>(query: T) => {
   return params.toString();
 };
 
-export const getMonthStringOrElse = (key: string, onNone: () => string) => (params: URLSearchParams) => {
-  const value = params.get(key);
-  return value && isValidDateString(value, DATE_FORMAT.yearMonthISO) ? value : onNone();
-};
+export const getDateStringOrElse =
+  (key: string, onNone: () => string, format: DateFormat) => (params: URLSearchParams) => {
+    const value = params.get(key);
+    return value && isValidDateString(value, format) ? value : onNone();
+  };
 
 export const getGenericsOrElse =
   <T>(key: string, onNone: () => T, is: (x: unknown) => x is T) =>

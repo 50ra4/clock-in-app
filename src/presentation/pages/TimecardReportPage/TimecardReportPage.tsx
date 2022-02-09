@@ -14,7 +14,8 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
 import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
 import { Head } from 'Head';
-import { createURLQueryParser, getGenericsOrElse, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
+import { createURLQueryParser, getGenericsOrElse, getDateStringOrElse } from 'utils/urlQueryStringUtil';
+import { DATE_FORMAT } from 'constants/dateFormat';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
@@ -34,7 +35,7 @@ const tabItems: TabItem<ReportType>[] = [
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
 const parser = createURLQueryParser({
-  month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING),
+  month: getDateStringOrElse('month', () => THIS_MONTH_DATE_STRING, DATE_FORMAT.yearMonthISO),
   type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType),
 });
 

@@ -2,8 +2,9 @@ import { DATE_FORMAT } from 'constants/dateFormat';
 import { isValidDateString } from './dateUtil';
 
 type Primitive = string | number | boolean | null | undefined;
-export type URLQueryObject = Record<string, Primitive | NonNullable<Primitive>[] | Set<NonNullable<Primitive>>>;
-export const stringifySearchParams = <T extends URLQueryObject>(query: T) => {
+type URLQueryObjectValue = Primitive | NonNullable<Primitive>[] | Set<NonNullable<Primitive>>;
+export type URLQueryObject = Record<string, URLQueryObjectValue>;
+export const stringifyURLQuery = <T extends URLQueryObject>(query: T) => {
   const params = new URLSearchParams();
   // eslint-disable-next-line complexity
   Object.entries(query).forEach(([key, value]) => {

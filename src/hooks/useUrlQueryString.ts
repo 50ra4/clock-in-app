@@ -1,15 +1,20 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import { URLQueryObject, stringifySearchParams } from 'utils/urlQueryStringUtil';
+import { URLQueryObject, stringifyURLQuery } from 'utils/urlQueryStringUtil';
 
-type Props<T> = {
+type Props<T extends URLQueryObject> = {
   parser: (queryString: string) => T;
+  stringify?: (urlQuery: T) => string;
   options?: {
     shouldPush?: boolean;
   };
 };
 
-export const useUrlQueryString = <T extends URLQueryObject>({ parser, options = { shouldPush: false } }: Props<T>) => {
+export const useUrlQueryString = <T extends URLQueryObject>({
+  parser,
+  stringify = stringifyURLQuery,
+  options = { shouldPush: false },
+}: Props<T>) => {
   const history = useHistory();
   const { search } = history.location;
 
@@ -21,11 +26,11 @@ export const useUrlQueryString = <T extends URLQueryObject>({ parser, options = 
       const updated = stateAction instanceof Function ? stateAction(query) : stateAction;
       history[action](
         action === 'replace'
-          ? { ...history.location, search: stringifySearchParams(updated) }
-          : { pathname: history.location.pathname, search: stringifySearchParams(updated) },
+          ? { ...history.location, search: stringify(updated) }
+          : { pathname: history.location.pathname, search: stringify(updated) },
       );
     },
-    [history, options?.shouldPush, query],
+    [history, options?.shouldPush, query, stringify],
   );
 
   return [query, setQuery] as const;

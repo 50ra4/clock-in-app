@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
-import { URLQueryObject, stringifyURLQuery } from 'utils/urlQueryStringUtil';
+import { URLQueryObject, stringifyURLQuery } from 'utils/URLQueryStringUtil';
 
 type Props<T extends URLQueryObject> = {
   parser: (queryString: string) => T;
@@ -10,7 +10,7 @@ type Props<T extends URLQueryObject> = {
   };
 };
 
-export const useUrlQueryString = <T extends URLQueryObject>({
+export const useURLQueryString = <T extends URLQueryObject>({
   parser,
   stringify = stringifyURLQuery,
   options = { shouldPush: false },

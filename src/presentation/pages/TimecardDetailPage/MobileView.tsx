@@ -19,8 +19,8 @@ import { replacePathParams } from 'utils/pathUtil';
 import { PAGE_PATH } from 'constants/path';
 import { Head } from 'Head';
 import { useHoliday } from 'hooks/useHoliday';
-import { useUrlQueryString } from 'hooks/useUrlQueryString';
-import { createURLQueryParser, getDateStringOrElse } from 'utils/urlQueryStringUtil';
+import { useURLQueryString } from 'hooks/useURLQueryString';
+import { createURLQueryParser, getDateStringOrElse } from 'utils/URLQueryStringUtil';
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
@@ -45,7 +45,7 @@ const parser = createURLQueryParser({
 
 export function MobileView() {
   const history = useHistory();
-  const [{ month: selectedMonth }, setQuery] = useUrlQueryString({
+  const [{ month: selectedMonth }, setQuery] = useURLQueryString({
     parser,
   });
   const { uid } = useParams<{ uid: string }>();

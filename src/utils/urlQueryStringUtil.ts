@@ -31,3 +31,16 @@ export const getGenericsOrElse =
     const value = params.get(key);
     return is(value) ? value : onNone();
   };
+
+export const createURLQueryParser =
+  <T extends Record<string, (params: URLSearchParams) => URLQueryObjectValue>>(obj: T) =>
+  (queryString: string) => {
+    const params = new URLSearchParams(queryString);
+    return Object.entries(obj).reduce(
+      (acc, [key, converter]) => ({
+        ...acc,
+        [key]: converter(params),
+      }),
+      {} as { [K in keyof T]: ReturnType<T[K]> },
+    );
+  };

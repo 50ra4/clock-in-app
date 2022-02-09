@@ -14,7 +14,7 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
 import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
 import { Head } from 'Head';
-import { getGenericsOrElse, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
+import { createURLQueryParser, getGenericsOrElse, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
@@ -33,13 +33,10 @@ const tabItems: TabItem<ReportType>[] = [
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
-const parseQuery = (queryString: string) => {
-  const params = new URLSearchParams(queryString);
-  return {
-    month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING)(params),
-    type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType)(params),
-  };
-};
+const parser = createURLQueryParser({
+  month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING),
+  type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType),
+});
 
 const TimecardReportPage = () => {
   useLoginRedirection();
@@ -47,7 +44,7 @@ const TimecardReportPage = () => {
   const { uid } = useParams<{ uid: string }>();
 
   const [{ month: selectedMonth, type: reportType }, setSearchParams] = useUrlQueryString({
-    parser: parseQuery,
+    parser,
   });
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);

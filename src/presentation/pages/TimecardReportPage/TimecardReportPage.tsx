@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useLoginRedirection } from 'hooks/useLoginRedirection';
 import { WithHeaderLayout } from 'presentation/layouts/WithHeaderLayout/WithHeaderLayout';
 import { getThisMonthDateString } from 'utils/dateUtil';
-import { useUrlQueryString } from 'hooks/useUrlQueryString';
+import { useURLQueryString } from 'hooks/useURLQueryString';
 import { useUserPreference } from 'hooks/useUserPreference';
 import { useDailyTimeRecordsOfMonth } from 'hooks/useDailyTimeRecordsOfMonth';
 import { useMonthlyOverview } from 'hooks/useMonthlyOverview';
@@ -14,7 +14,8 @@ import { Button } from 'presentation/components/inputs/Button/Button';
 import { TextArea } from 'presentation/components/inputs/TextArea/TextArea';
 import { TabItem, Tabs } from 'presentation/components/navigation/Tabs/Tabs';
 import { Head } from 'Head';
-import { getGenericsOrElse, getMonthStringOrElse } from 'utils/urlQueryStringUtil';
+import { createURLQueryParser, getGenericsOrElse, getDateStringOrElse } from 'utils/URLQueryStringUtil';
+import { DATE_FORMAT } from 'constants/dateFormat';
 
 const ReportTypes = ['weeklyReport', 'monthlyReport'] as const;
 type ReportType = typeof ReportTypes[number];
@@ -33,21 +34,18 @@ const tabItems: TabItem<ReportType>[] = [
 
 const THIS_MONTH_DATE_STRING = getThisMonthDateString();
 
-const parseQuery = (queryString: string) => {
-  const params = new URLSearchParams(queryString);
-  return {
-    month: getMonthStringOrElse('month', () => THIS_MONTH_DATE_STRING)(params),
-    type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType)(params),
-  };
-};
+const parser = createURLQueryParser({
+  month: getDateStringOrElse('month', () => THIS_MONTH_DATE_STRING, DATE_FORMAT.yearMonthISO),
+  type: getGenericsOrElse<ReportType>('type', () => 'weeklyReport', isReportType),
+});
 
 const TimecardReportPage = () => {
   useLoginRedirection();
 
   const { uid } = useParams<{ uid: string }>();
 
-  const [{ month: selectedMonth, type: reportType }, setSearchParams] = useUrlQueryString({
-    parser: parseQuery,
+  const [{ month: selectedMonth, type: reportType }, setSearchParams] = useURLQueryString({
+    parser,
   });
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);

@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FirestoreError } from 'services/firebase';
 import { DailyTimeRecord } from 'types';
-import { writeDailyTimeRecord, deleteDailyTimeRecord } from 'services/dailyTimeRecord';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
 import { showSnackbar } from 'thunks/snackbar';
-import { loadMonthlyRecord } from 'thunks/dailyTimeRecord';
+import { loadDailyTimeRecordOfMonth, removeDailyTimeRecord, updateDailyTimeRecord } from 'thunks/dailyTimeRecord';
 import { useAppDispatch } from './useAppDispatch';
 import { useSelector } from 'react-redux';
 import { AppState } from 'store/root';
@@ -32,7 +31,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
   useEffect(() => {
     setIsLoading(true);
-    dispatch(loadMonthlyRecord(uid, month))
+    dispatch(loadDailyTimeRecordOfMonth(uid, month))
       .catch(setError)
       .finally(() => setIsLoading(false));
   }, [dispatch, month, uid]);
@@ -40,7 +39,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   const saveDailyTimeRecord = useCallback(
     async (data: DailyTimeRecord) => {
       setIsLoading(true);
-      await writeDailyTimeRecord(uid, data)
+      await dispatch(updateDailyTimeRecord(uid, data))
         .then(() => {
           dispatch(showSnackbar({ content: '勤怠情報を更新しました' }));
         })
@@ -58,7 +57,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     [dispatch, uid],
   );
 
-  const removeDailyTimeRecord = useCallback(
+  const remove = useCallback(
     async (date: string) => {
       const result = await dispatch(
         showConfirmDialog({
@@ -72,7 +71,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
       }
 
       setIsLoading(true);
-      await deleteDailyTimeRecord(uid, date)
+      await dispatch(removeDailyTimeRecord(uid, date))
         .then(() => {
           dispatch(showSnackbar({ content: `${date}の勤怠を削除しました` }));
         })
@@ -99,6 +98,6 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     isLoading,
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
-    removeDailyTimeRecord,
+    removeDailyTimeRecord: remove,
   };
 };

@@ -1,4 +1,6 @@
 import { DATE_FORMAT } from 'constants/dateFormat';
+import addMilliseconds from 'date-fns/addMilliseconds';
+import isAfter from 'date-fns/isAfter';
 import {
   readDailyTimeRecordOfMonth,
   readDailyTimeRecord,
@@ -6,14 +8,33 @@ import {
   deleteDailyTimeRecord,
 } from 'services/dailyTimeRecord';
 import { dailyTimeRecordModule } from 'store/dailyTimeRecord';
-import { AppDispatch } from 'store/root';
+import { AppDispatch, AppState } from 'store/root';
 import { DailyTimeRecord } from 'types';
 import { dateStringToDateString } from 'utils/dateUtil';
+import { isNonNullable } from 'utils/typeGuard';
 
-export const loadDailyTimeRecordOfMonth = (uid: string, month: string) => async (dispatch: AppDispatch) =>
-  readDailyTimeRecordOfMonth(uid, month).then((records) => {
-    dispatch(dailyTimeRecordModule.actions.updateMonthly(records, uid, month));
-  });
+const cacheMilliseconds = 30 * 60 * 1000;
+
+export const loadDailyTimeRecordOfMonth =
+  (uid: string, month: string, options?: { shouldForce?: boolean; cache?: number }) =>
+  // eslint-disable-next-line complexity
+  async (dispatch: AppDispatch, getState: () => AppState) => {
+    const state = getState().dailyTimeRecord?.[uid]?.[month];
+    if (!options?.shouldForce && typeof state !== 'undefined') {
+      const dateToCompare = addMilliseconds(new Date(), -(options?.cache ?? cacheMilliseconds));
+      const isOver = !!Object.values(state ?? {})
+        .filter(isNonNullable)
+        .map(({ meta }) => new Date(meta.updatedAt))
+        .find((date) => isAfter(dateToCompare, date));
+      if (!isOver) {
+        return Promise.resolve();
+      }
+    }
+
+    return readDailyTimeRecordOfMonth(uid, month).then((records) => {
+      dispatch(dailyTimeRecordModule.actions.updateMonthly(records, uid, month));
+    });
+  };
 
 export const loadDailyTimeRecord = (uid: string, month: string, date: string) => async (dispatch: AppDispatch) =>
   readDailyTimeRecord(uid, date).then((record) => {

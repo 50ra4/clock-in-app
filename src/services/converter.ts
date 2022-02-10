@@ -22,9 +22,9 @@ export const documentToRestTime = (document: Document): RestTime =>
     id: document.id,
     start: document.get('start'),
     end: document.get('end'),
-    // FIXME: RestTime type
-    updatedAt: document.get('updatedAt'),
-    createdAt: document.get('createdAt'),
+    // // FIXME: RestTime type
+    // updatedAt: document.get('updatedAt'),
+    // createdAt: document.get('createdAt'),
   } as RestTime);
 
 export const restTimeToDocumentData = (
@@ -43,9 +43,9 @@ export const documentToInHouseWork = (document: Document): InHouseWork =>
     start: document.get('start'),
     end: document.get('end'),
     remarks: document.get('remarks'),
-    // FIXME: InHouseWork type
-    updatedAt: document.get('updatedAt'),
-    createdAt: document.get('createdAt'),
+    // // FIXME: InHouseWork type
+    // updatedAt: document.get('updatedAt'),
+    // createdAt: document.get('createdAt'),
   } as InHouseWork);
 
 export const inHouseWorkToDocumentData = (
@@ -67,9 +67,9 @@ export const documentToDailyTimeRecord = (document: Document): DailyTimeRecord =
     remarks: document.get('remarks'),
     restTimes: [], // NOTE: fetch sub-collection
     inHouseWorks: [], // NOTE: fetch sub-collection
-    // FIXME: DailyTimeRecords type
-    updatedAt: document.get('updatedAt'),
-    createdAt: document.get('createdAt'),
+    // // FIXME: DailyTimeRecords type
+    // updatedAt: document.get('updatedAt'),
+    // createdAt: document.get('createdAt'),
   } as DailyTimeRecord);
 
 export const dailyTimeRecordToDocumentData = (

@@ -54,5 +54,17 @@ export const dailyTimeRecordModule = createSlice({
         );
       },
     },
+    removeDaily: {
+      prepare(date: string, uid: string, month: string) {
+        return { payload: { date }, meta: { uid, month, updatedAt: new Date().toISOString() } };
+      },
+      reducer(state, action: PayloadAction<{ date: string }, string, ActionMeta>) {
+        return mergePartial(state, action.meta.uid, (user) =>
+          mergePartial(user ?? {}, action.meta.month, (month) =>
+            Object.fromEntries(Object.entries(month ?? {}).filter(([date]) => date !== action.payload.date)),
+          ),
+        );
+      },
+    },
   },
 });

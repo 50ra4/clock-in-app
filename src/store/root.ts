@@ -7,6 +7,7 @@ import { myProfileReducer } from './myProfile';
 import { userPreferenceReducer } from './userPreference';
 import { snackbarReducer } from './snackbar';
 import { holidayModule } from './holiday';
+import { dailyTimeRecordModule } from './dailyTimeRecord';
 
 const reducers = combineReducers({
   authentication: authenticationReducer,
@@ -15,6 +16,7 @@ const reducers = combineReducers({
   snackbar: snackbarReducer,
   userPreference: userPreferenceReducer,
   holiday: holidayModule.reducer,
+  dailyTimeRecord: dailyTimeRecordModule.reducer,
 });
 export type AppState = ReturnType<typeof reducers>;
 

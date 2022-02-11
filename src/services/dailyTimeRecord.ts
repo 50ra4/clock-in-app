@@ -35,8 +35,7 @@ const readInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]
     .then((snapshot) => snapshot.docs.map(documentToInHouseWork));
 };
 
-// FIXME: remove export
-export const readRestTimesAndInHouseWorks = async (
+const readRestTimesAndInHouseWorks = async (
   uid: string,
   day: string,
 ): Promise<Pick<DailyTimeRecord, 'inHouseWorks' | 'restTimes'>> => {

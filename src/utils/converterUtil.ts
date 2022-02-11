@@ -146,7 +146,7 @@ export const toDetailsOfDailyTimeRecords = (
   dailyTimeRecords: DailyTimeRecord[],
   regularHolidays: DayOfWeekCode[] = [],
 ): string =>
-  daysOfMonth(month)
+  daysOfMonth(stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO))
     .map((day) => {
       const base = {
         day,

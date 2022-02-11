@@ -7,7 +7,7 @@ import isSunday from 'date-fns/isSunday';
 import isSaturday from 'date-fns/isSaturday';
 
 import { DailyTimeRecord, DayOfWeekCode, HolidayLookups, TimecardUserPreference } from 'types';
-import { daysOfMonth } from 'utils/dateUtil';
+import { daysOfMonth, stringDateToDate } from 'utils/dateUtil';
 import { DATE_FORMAT } from 'constants/dateFormat';
 import { timeToTimeString } from 'utils/timeUtil';
 import { EditIcon } from 'presentation/components/display/Icons/EditIcon';
@@ -34,7 +34,7 @@ export const MonthlyTimeCardTable = React.memo(function MonthlyTimeCardTable({
   holiday,
   onSelectDate,
 }: Props) {
-  const days = useMemo(() => daysOfMonth(month), [month]);
+  const days = useMemo(() => daysOfMonth(stringDateToDate(`${month}-01`, DATE_FORMAT.dateISO)), [month]);
 
   return (
     <StyledRoot className={className}>

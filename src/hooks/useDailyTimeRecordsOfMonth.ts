@@ -59,7 +59,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     [dispatch, uid],
   );
 
-  const remove = useCallback(
+  const clearDailyTimeRecord = useCallback(
     async (date: string) => {
       const result = await dispatch(
         showConfirmDialog({
@@ -101,6 +101,6 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     lastUpdatedAt,
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
-    removeDailyTimeRecord: remove,
+    clearDailyTimeRecord,
   };
 };

@@ -52,12 +52,10 @@ export function MobileView() {
   const { holiday } = useHoliday();
 
   const { isFetching: isFetchingPreference, userPreference } = useUserPreference(uid);
-  const { isLoading, dailyTimeRecordsOfMonth, saveDailyTimeRecord, removeDailyTimeRecord } = useDailyTimeRecordsOfMonth(
-    {
-      month: selectedMonth,
-      uid,
-    },
-  );
+  const { isLoading, dailyTimeRecordsOfMonth, saveDailyTimeRecord, clearDailyTimeRecord } = useDailyTimeRecordsOfMonth({
+    month: selectedMonth,
+    uid,
+  });
 
   const [editedRecord, setEditedRecord] = useState<DailyTimeRecord | undefined>(undefined);
   const [openInputDialog, setOpenInputDialog] = useState<boolean>(false);
@@ -95,9 +93,9 @@ export function MobileView() {
   const onDeleteDailyTimeRecord = useCallback(
     async (date: string) => {
       setOpenInputDialog(false);
-      await removeDailyTimeRecord(date);
+      await clearDailyTimeRecord(date);
     },
-    [removeDailyTimeRecord],
+    [clearDailyTimeRecord],
   );
 
   const onSaveDailyTimeRecord = useCallback(

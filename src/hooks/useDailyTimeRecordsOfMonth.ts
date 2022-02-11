@@ -8,6 +8,7 @@ import { useAppDispatch } from './useAppDispatch';
 import { useSelector } from 'react-redux';
 import { AppState } from 'store/root';
 import { isNonNullable } from 'utils/typeGuard';
+import min from 'date-fns/min';
 
 type Props = {
   uid: string;
@@ -21,13 +22,14 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   const [error, setError] = useState<Error | null>(null);
 
   const dailyTimeRecordsOfMonthByUser = useSelector((state: AppState) => state.dailyTimeRecord?.[uid]?.[month]);
-  const dailyTimeRecordsOfMonth = useMemo(
-    () =>
-      Object.values(dailyTimeRecordsOfMonthByUser ?? {})
-        .filter(isNonNullable)
-        .map(({ data }) => data),
-    [dailyTimeRecordsOfMonthByUser],
-  );
+  const { dailyTimeRecordsOfMonth, lastUpdatedAt } = useMemo(() => {
+    const records = Object.values(dailyTimeRecordsOfMonthByUser ?? {}).filter(isNonNullable);
+    const lastUpdatedAt = !records.length ? new Date() : min(records.map(({ meta }) => new Date(meta.updatedAt)));
+    return {
+      dailyTimeRecordsOfMonth: records.map(({ data }) => data),
+      lastUpdatedAt,
+    };
+  }, [dailyTimeRecordsOfMonthByUser]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -96,6 +98,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
 
   return {
     isLoading,
+    lastUpdatedAt,
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
     removeDailyTimeRecord: remove,

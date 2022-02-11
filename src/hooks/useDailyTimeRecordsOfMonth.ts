@@ -1,61 +1,47 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
-
-import { AppState } from 'store/root';
 import { FirestoreError } from 'services/firebase';
-import { DailyTimeRecord, InHouseWork, RestTime } from 'types';
-import {
-  readRestTimesAndInHouseWorks,
-  writeDailyTimeRecord,
-  deleteDailyTimeRecord,
-  onDailyTimeRecordDocumentChanges,
-} from 'services/dailyTimeRecord';
-import { usePreviousRef } from './usePreviousRef';
-import { AppError } from 'models/AppError';
-import { ConnectedDialogActions } from 'store/connectedDialog';
+import { DailyTimeRecord } from 'types';
 import { showAlertDialog, showConfirmDialog } from 'thunks/connectedDialog';
-import { SnackbarActions } from 'store/snackbar';
 import { showSnackbar } from 'thunks/snackbar';
+import { loadDailyTimeRecordOfMonth, removeDailyTimeRecord, updateDailyTimeRecord } from 'thunks/dailyTimeRecord';
+import { useAppDispatch } from './useAppDispatch';
+import { useSelector } from 'react-redux';
+import { AppState } from 'store/root';
+import { isNonNullable } from 'utils/typeGuard';
+import min from 'date-fns/min';
 
 type Props = {
   uid: string;
   month: string;
 };
 
-// FIXME: name
-type SubCollection = {
-  inHouseWorks: InHouseWork[];
-  restTimes: RestTime[];
-};
-
 export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
-  const dispatch = useDispatch<ThunkDispatch<AppState, unknown, ConnectedDialogActions | SnackbarActions>>();
+  const dispatch = useAppDispatch();
 
   const [isLoading, setIsLoading] = useState(false);
-  // FIXME: var-name
-  const [rootCollectionData, setRootCollectionData] = useState(new Map<string, DailyTimeRecord>());
-  const [subCollectionData, setSubCollectionData] = useState(new Map<string, SubCollection>());
   const [error, setError] = useState<Error | null>(null);
 
-  const previousRootCollectionData = usePreviousRef(rootCollectionData);
+  const dailyTimeRecordsOfMonthByUser = useSelector((state: AppState) => state.dailyTimeRecord?.[uid]?.[month]);
+  const { dailyTimeRecordsOfMonth, lastUpdatedAt } = useMemo(() => {
+    const records = Object.values(dailyTimeRecordsOfMonthByUser ?? {}).filter(isNonNullable);
+    const lastUpdatedAt = !records.length ? new Date() : min(records.map(({ meta }) => new Date(meta.updatedAt)));
+    return {
+      dailyTimeRecordsOfMonth: records.map(({ data }) => data),
+      lastUpdatedAt,
+    };
+  }, [dailyTimeRecordsOfMonthByUser]);
 
-  const dailyTimeRecordsOfMonth = useMemo(() => {
-    // FIXME: modify the dailyRecords type definition
-    const modified = Array.from(rootCollectionData.values()).map((record) => ({
-      ...record,
-      ...subCollectionData.get(record.date),
-    }));
-    // TODO: remove
-    // eslint-disable-next-line no-console
-    console.log(modified);
-    return modified;
-  }, [rootCollectionData, subCollectionData]);
+  useEffect(() => {
+    setIsLoading(true);
+    dispatch(loadDailyTimeRecordOfMonth(uid, month))
+      .catch(setError)
+      .finally(() => setIsLoading(false));
+  }, [dispatch, month, uid]);
 
   const saveDailyTimeRecord = useCallback(
     async (data: DailyTimeRecord) => {
       setIsLoading(true);
-      await writeDailyTimeRecord(uid, data)
+      await dispatch(updateDailyTimeRecord(uid, data))
         .then(() => {
           dispatch(showSnackbar({ content: '勤怠情報を更新しました' }));
         })
@@ -73,7 +59,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
     [dispatch, uid],
   );
 
-  const removeDailyTimeRecord = useCallback(
+  const clearDailyTimeRecord = useCallback(
     async (date: string) => {
       const result = await dispatch(
         showConfirmDialog({
@@ -87,7 +73,7 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
       }
 
       setIsLoading(true);
-      await deleteDailyTimeRecord(uid, date)
+      await dispatch(removeDailyTimeRecord(uid, date))
         .then(() => {
           dispatch(showSnackbar({ content: `${date}の勤怠を削除しました` }));
         })
@@ -106,75 +92,15 @@ export const useDailyTimeRecordsOfMonth = ({ uid, month }: Props) => {
   );
 
   useEffect(() => {
-    if (!error) {
-      return;
-    }
+    if (!error) return;
     throw error;
   });
 
-  useEffect(() => {
-    if (!uid || !month) {
-      return;
-    }
-    const unsubscribe = onDailyTimeRecordDocumentChanges(uid, month)(
-      (docChanges) => {
-        // TODO: remove
-        // eslint-disable-next-line no-console
-        console.log('docChanges', docChanges);
-        const updated = new Map(previousRootCollectionData.current);
-        docChanges.forEach((changed) => {
-          if (changed.type === 'removed') {
-            updated.delete(changed.id);
-            return;
-          }
-          updated.set(changed.id, changed.data);
-        });
-        setRootCollectionData(updated);
-      },
-      (error) => {
-        setError(new AppError('FAILED_READ_DATA', { message: error.message, stack: error.stack }));
-      },
-      () => {
-        // TODO: ???
-        // eslint-disable-next-line no-console
-        console.log('changed onSnapshot');
-      },
-    );
-
-    return () => {
-      unsubscribe();
-      setRootCollectionData(new Map());
-    };
-  }, [month, previousRootCollectionData, uid]);
-
-  useEffect(() => {
-    const days = Array.from(rootCollectionData.keys());
-    if (!uid || !month || days.length < 1) {
-      return;
-    }
-
-    const getDataOfMonth = days.map(async (day) => ({
-      day,
-      ...(await readRestTimesAndInHouseWorks(uid, day)),
-    }));
-
-    Promise.all(getDataOfMonth)
-      .then((res) => {
-        const updatedData = new Map<string, SubCollection>();
-        res.forEach(({ day, ...rest }) => {
-          updatedData.set(day, rest);
-        });
-        setSubCollectionData(updatedData);
-      })
-      .catch((error) => {
-        setError(new AppError('FAILED_READ_DATA', { message: error.message, stack: error.stack }));
-      });
-  }, [rootCollectionData, month, uid]);
-
   return {
     isLoading,
+    lastUpdatedAt,
     dailyTimeRecordsOfMonth,
     saveDailyTimeRecord,
-    removeDailyTimeRecord,
+    clearDailyTimeRecord,
   };
 };

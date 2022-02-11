@@ -35,7 +35,7 @@ const readInHouseWorks = async (uid: string, day: string): Promise<InHouseWork[]
     .then((snapshot) => snapshot.docs.map(documentToInHouseWork));
 };
 
-export const readRestTimesAndInHouseWorks = async (
+const readRestTimesAndInHouseWorks = async (
   uid: string,
   day: string,
 ): Promise<Pick<DailyTimeRecord, 'inHouseWorks' | 'restTimes'>> => {
@@ -158,3 +158,27 @@ export const onDailyTimeRecordDocumentChanges =
 
     return unsubscribe;
   };
+
+export const readDailyTimeRecordOfMonth = async (uid: string, month: string): Promise<DailyTimeRecord[]> => {
+  const collectionPath = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
+  return await firestore
+    .collection(collectionPath)
+    .get()
+    .then((snapshot) => snapshot.docs.map(documentToDailyTimeRecord))
+    .then((records) =>
+      Promise.all(
+        records.map(async (record) => ({ ...record, ...(await readRestTimesAndInHouseWorks(uid, record.date)) })),
+      ),
+    );
+};
+
+export const readDailyTimeRecord = async (uid: string, date: string): Promise<DailyTimeRecord> => {
+  const month = dateStringToDateString(date, { from: DATE_FORMAT.dateISO, to: DATE_FORMAT.yearMonthISO });
+  const collectionPath = replacePathParams(DAILY_RECORDS_COLLECTION_PATH, { uid, month });
+  return await firestore
+    .collection(collectionPath)
+    .doc(date)
+    .get()
+    .then((snapshot) => documentToDailyTimeRecord(snapshot))
+    .then(async (record) => ({ ...record, ...(await readRestTimesAndInHouseWorks(uid, record.date)) }));
+};

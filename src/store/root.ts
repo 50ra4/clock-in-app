@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { combineReducers, compose, applyMiddleware, StoreCreator, createStore } from '@reduxjs/toolkit';
+import { combineReducers, applyMiddleware, configureStore as _configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import { ROOT_ACTIONS } from './rootActions';
 import { authenticationReducer } from './authentication';
@@ -8,30 +7,32 @@ import { myProfileReducer } from './myProfile';
 import { userPreferenceReducer } from './userPreference';
 import { snackbarReducer } from './snackbar';
 import { holidayModule } from './holiday';
+import { dailyTimeRecordModule } from './dailyTimeRecord';
 
-export const reducers = combineReducers({
+const reducers = combineReducers({
   authentication: authenticationReducer,
   myProfile: myProfileReducer,
   connectedDialog: connectedDialogReducer,
   snackbar: snackbarReducer,
   userPreference: userPreferenceReducer,
   holiday: holidayModule.reducer,
+  dailyTimeRecord: dailyTimeRecordModule.reducer,
 });
 export type AppState = ReturnType<typeof reducers>;
 
-const rootReducer = (state: any, action: any) => {
+const rootReducer: typeof reducers = (state, action) => {
   if (action.type === ROOT_ACTIONS.initializeState) {
     state = undefined;
   }
   return reducers(state, action);
 };
 
-// enhance
-const enhancers = compose(
-  applyMiddleware(thunk),
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__
-    ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-    : (f: StoreCreator) => f,
-);
-
-export const configureStore = (initialState: any) => createStore(rootReducer, initialState, enhancers);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const configureStore = (initialState: any) =>
+  _configureStore({
+    reducer: rootReducer,
+    preloadedState: initialState,
+    devTools: true,
+    enhancers: [applyMiddleware(thunk)],
+  });
+export type AppDispatch = ReturnType<typeof configureStore>['dispatch'];
